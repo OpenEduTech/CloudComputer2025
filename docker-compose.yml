@@ -4,6 +4,7 @@ services:
   # 1. 前端服务
   frontend:
     build: ./frontend
+    restart: always
     ports:
       - "5173:5173"
     volumes:
@@ -19,6 +20,7 @@ services:
   # 2. 后端 API 服务
   backend:
     build: ./backend
+    restart: always
     ports:
       - "8000:8000"
     volumes:
@@ -38,6 +40,7 @@ services:
   # 3. 智能体 Worker 服务
   worker:
     build: ./agent_engine
+    restart: always
     volumes:
       - ./agent_engine:/app
       - ./chroma_data:/app/chroma_data # 持久化向量数据
@@ -54,6 +57,7 @@ services:
   # 4. 消息队列 Redis
   redis:
     image: redis:7-alpine
+    restart: always
     ports:
       - "6379:6379"
     volumes:
@@ -64,6 +68,7 @@ services:
   # 5. 图数据库 Neo4j
   neo4j:
     image: neo4j:5.17.0
+    restart: always
     ports:
       - "7474:7474" # HTTP Console
       - "7687:7687" # Bolt Protocol
