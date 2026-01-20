@@ -13,10 +13,12 @@ import {
   Card,
   Row,
   Col,
-  Statistic
+  Statistic,
+  message,
+  Select, // Import Select
+  Form
 } from 'antd';
 import { 
-  SearchOutlined, 
   BookOutlined, 
   FileTextOutlined, 
   LinkOutlined, 
@@ -27,10 +29,10 @@ import {
 import ReactECharts from 'echarts-for-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Custom Hooks & Data
+// Custom Hooks & Components
 import useGraphOption from './useGraphOption';
-import { mockGraphData } from './mockGraphData';
 import AgentStatus from './components/AgentStatus';
+import { createTask, getTaskStatus, getGraphData } from './api';
 
 const { Header, Content } = Layout;
 const { Title, Text, Paragraph } = Typography;
@@ -39,11 +41,12 @@ const { Search } = Input;
 function App() {
   // --- State ---
   const [isSearching, setIsSearching] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false); // Used to toggle between intro and graph
+  const [hasSearched, setHasSearched] = useState(false);
   const [graphData, setGraphData] = useState(null);
   const [selectedNode, setSelectedNode] = useState(null);
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [searchDepth, setSearchDepth] = useState(2); // Default depth
   
   // Simulation State
   const [taskStatus, setTaskStatus] = useState({
@@ -53,6 +56,8 @@ function App() {
     message: ''
   });
 
+  const pollingTimerRef = useRef(null);
+
   // --- Theme ---
   const { token } = theme.useToken();
   const echartsRef = useRef(null);
@@ -61,66 +66,83 @@ function App() {
   const option = useGraphOption(graphData, token);
 
   // --- Handlers ---
-  const handleSearch = (value) => {
+  const handleSearch = async (value) => {
     if (!value) return;
     setSearchValue(value);
     setIsSearching(true);
     setHasSearched(true);
-    setGraphData(null); // Clear previous data
+    setGraphData(null); 
     setSelectedNode(null);
     setDrawerVisible(false);
 
-    // Start Simulation of Backend Polling
-    simulateBackendProcessing();
+    try {
+        // 1. Send Task Creation Request
+        const { task_id } = await createTask(value, { depth: searchDepth });
+        console.log(`Task created with ID: ${task_id}`);
+
+        // 2. Start Polling
+        startPolling(task_id);
+
+    } catch (error) {
+        console.error("Search failed:", error);
+        message.error("Failed to start search task. Please check backend connection.");
+        setIsSearching(false);
+    }
   };
 
-  const simulateBackendProcessing = () => {
-    // Defines the sequence of status updates from "Backend"
-    const sequence = [
-      { status: 'PROCESSING', step_index: 0, progress: 5, message: '任务已发送至 Redis 队列...' },
-      { status: 'PROCESSING', step_index: 1, progress: 20, message: 'AI Worker (Agent) 已接单...' },
-      { status: 'PROCESSING', step_index: 2, progress: 45, message: '正在检索 ArXiv 和教科书...' },
-      { status: 'PROCESSING', step_index: 3, progress: 70, message: '正在提取实体与关系...' },
-      { status: 'PROCESSING', step_index: 4, progress: 90, message: '图谱构建完成，正在渲染...' },
-      { status: 'SUCCESS', step_index: 5, progress: 100, message: 'Completed' }
-    ];
+  const startPolling = (taskId) => {
+    if (pollingTimerRef.current) clearInterval(pollingTimerRef.current);
 
-    let currentIndex = 0;
+    pollingTimerRef.current = setInterval(async () => {
+        try {
+            const statusData = await getTaskStatus(taskId);
+            setTaskStatus(statusData);
 
-    const interval = setInterval(() => {
-      if (currentIndex >= sequence.length) {
-        clearInterval(interval);
-        return;
-      }
-
-      const statusUpdate = sequence[currentIndex];
-      setTaskStatus(statusUpdate);
-
-      if (statusUpdate.status === 'SUCCESS') {
-        handleAgentComplete();
-        clearInterval(interval);
-      }
-
-      currentIndex++;
-    }, 1500); // Update every 1.5s to simulate work
+            if (statusData.status === 'SUCCESS') {
+                clearInterval(pollingTimerRef.current);
+                fetchGraph(statusData.result_node_id || searchValue);
+            } else if (statusData.status === 'FAILED') {
+                clearInterval(pollingTimerRef.current);
+                setIsSearching(false);
+                message.error(statusData.error || "Task processing failed.");
+            }
+        } catch (error) {
+            console.error("Polling error:", error);
+        }
+    }, 1000);
   };
 
-  const handleAgentComplete = () => {
-    setIsSearching(false);
-    // In a real app, we would fetch data here.
-    // For now, load mock data.
-    setGraphData(mockGraphData);
+  // Cleanup on unmount
+  useEffect(() => {
+      return () => {
+          if (pollingTimerRef.current) clearInterval(pollingTimerRef.current);
+      };
+  }, []);
+
+  const fetchGraph = async (nodeId) => {
+    try {
+        const data = await getGraphData(nodeId, searchDepth);
+        
+        if (data.nodes && data.nodes.length > 0) {
+            setGraphData(data);
+        } else {
+            message.warning("No graph data found for this concept.");
+        }
+    } catch (error) {
+        console.error("Failed to fetch graph:", error);
+        message.error("Failed to load knowledge graph.");
+    } finally {
+        setIsSearching(false);
+    }
   };
 
   const onChartClick = useCallback((params) => {
     if (params.dataType === 'node') {
       const node = params.data;
       
-      // Check if URL exists and is valid
       if (node.url && node.url.startsWith('http')) {
         window.open(node.url, '_blank', 'noopener,noreferrer');
       } else {
-        // If no URL or local resource, open detail drawer
         setSelectedNode(node);
         setDrawerVisible(true);
       }
@@ -252,7 +274,20 @@ function App() {
             <Title level={4} style={{ margin: 0, letterSpacing: -0.5 }}>AutoKGS</Title>
           </div>
 
-          <div style={{ flex: 1, maxWidth: 600, margin: '0 24px' }}>
+          <div style={{ flex: 1, maxWidth: 600, margin: '0 24px', display: 'flex', gap: '8px' }}>
+             <Select
+                defaultValue={2}
+                style={{ width: 120 }}
+                onChange={(value) => setSearchDepth(value)}
+                disabled={isSearching}
+                options={[
+                  { value: 1, label: 'Depth: 1' },
+                  { value: 2, label: 'Depth: 2' },
+                  { value: 3, label: 'Depth: 3' },
+                  { value: 4, label: 'Depth: 4' },
+                  { value: 5, label: 'Depth: 5' },
+                ]}
+              />
             <Search 
               placeholder="输入科学概念开启探索，例如：Transformer Architecture..." 
               allowClear 
@@ -260,10 +295,7 @@ function App() {
               size="large"
               onSearch={handleSearch}
               disabled={isSearching}
-              style={{
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                borderRadius: 8
-              }}
+              style={{ flex: 1 }}
             />
           </div>
 

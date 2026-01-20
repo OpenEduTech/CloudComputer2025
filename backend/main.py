@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import redis
-from config import settings
+from routers import task, graph
+from database.neo4j_utils import close_driver
 
 app = FastAPI(title="AutoKGS API", version="0.1.0")
 
-# 允许跨域，方便前端开发
+# 允许跨域
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,39 +14,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 连接 Redis
-try:
-    r = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, decode_responses=True)
-except Exception as e:
-    print(f"Error connecting to Redis: {e}")
-    r = None
+# 注册路由
+app.include_router(task.router)
+app.include_router(graph.router)
 
-# 统一健康检查逻辑
-def health_check():
-    redis_status = "connected"
-    try:
-        if r:
-            r.ping()
-        else:
-            redis_status = "not initialized"
-    except Exception as e:
-        redis_status = f"failed: {str(e)}"
-        
-    return {
-        "service": "AutoKGS Backend",
-        "status": "running",
-        "redis_connection": redis_status
-    }
+@app.on_event("shutdown")
+def shutdown_event():
+    close_driver()
 
-# 兼容两种路径，防止 Nginx/Proxy 转发问题
 @app.get("/")
 def read_root():
-    return health_check()
+    return {"status": "AutoKGS Backend Running"}
 
 @app.get("/api/")
 def read_api_root():
-    return health_check()
-
-@app.get("/api/test")
-def test_api():
-    return {"message": "Hello from AutoKGS Backend!"}
+    return {"status": "AutoKGS API Running"}
