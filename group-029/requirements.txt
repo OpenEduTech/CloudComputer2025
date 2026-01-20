@@ -8,3 +8,4 @@ langchain==0.2.16
 langchain-openai==0.1.25
 langgraph==0.2.34
 pdfminer.six==20231228
+python-multipart==0.0.9

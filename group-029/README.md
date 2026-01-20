@@ -37,3 +37,8 @@ docker compose up --build
 - `POST /questions`：生成题目
 - `POST /grade`：判卷并记录错题
 - `GET /wrongbook/{session_id}`：查询错题本
+
+## 最小测试流程
+1. 启动服务后访问 `GET /health`。
+2. `POST /sessions` 上传 PDF，获取 `session_id`。
+3. `POST /questions` 传入 `session_id` 生成题目。
