@@ -29,6 +29,12 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
 2) 简答题：满分 2，根据覆盖要点给分（0/1/2），并给出简洁解析。
 3) 必须输出 JSON 数组，每个元素包含：
    qid, is_correct, score, explanation
+4) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
+
+示例（仅示例，不要复述）：
+[
+  {"qid": "mc_1", "is_correct": true, "score": 1, "explanation": "示例解析"}
+]
 
 题目：
 {questions}

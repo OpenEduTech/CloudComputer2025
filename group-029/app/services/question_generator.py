@@ -19,6 +19,20 @@ def _build_prompt():
 3) 输出严格 JSON 数组，每个元素包含：
    qid, qtype, question, options(选择题需要), answer, explanation, evidence
 4) evidence 必须引用资料中的原文片段（可多条）。
+5) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
+
+示例（仅示例，不要复述）：
+[
+  {
+    "qid": "mc_1",
+    "qtype": "multiple_choice",
+    "question": "示例题干",
+    "options": ["A...", "B...", "C...", "D..."],
+    "answer": "B",
+    "explanation": "示例解析",
+    "evidence": ["[c1] 示例证据"]
+  }
+]
 
 资料片段：
 {context}
