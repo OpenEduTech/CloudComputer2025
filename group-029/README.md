@@ -30,7 +30,27 @@ docker compose up --build
 ```
 
 ## 环境变量
-复制 `.env.example` 为 `.env` 并填写配置。
+复制 `.env.example` 为 `.env` 并填写配置，修改后需重启服务。
+
+```powershell
+Copy-Item .env.example .env
+notepad .env
+```
+
+参数说明：
+- `LLM_API_KEY`：大模型平台的真实密钥
+- `LLM_BASE_URL`：兼容 OpenAI API 的基础地址
+- `LLM_MODEL`：模型名称（如 deepseek-chat）
+- `LLM_TEMPERATURE`：生成随机度，建议 0.2~0.5
+- `REDIS_URL`：Redis 连接地址  
+  - 本地运行：`redis://127.0.0.1:6379/0`
+  - Docker 运行：保持默认 `redis://redis:6379/0`
+- `USE_LANGGRAPH`：是否使用 LangGraph（当前为预留开关）
+
+## 本地与 Docker 的区别说明
+- 本地运行时，如果 Redis 不在本机，需要先启动 Redis 服务。
+- Docker 运行时，`docker-compose.yml` 会自动启动 Redis。
+- 修改 `.env` 后必须重启服务，否则配置不会生效。
 
 ## API 简要
 - `POST /sessions`：上传 PDF 并创建会话
@@ -44,3 +64,8 @@ docker compose up --build
 3. `POST /questions` 传入 `session_id` 生成题目。
 4. `POST /grade` 传入题目与答案进行判卷。
 5. `GET /wrongbook/{session_id}` 查询错题本。
+
+## 文档
+- `docs/ARCHITECTURE.md`：架构与数据流
+- `docs/WORKSPLIT.md`：分工说明
+- `docs/DEMO_SCRIPT.md`：演示脚本

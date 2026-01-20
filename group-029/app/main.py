@@ -1,4 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 import os
 from uuid import uuid4
 
@@ -25,6 +27,10 @@ from app.core.config import settings
 # API 入口文件：提供健康检查与后续业务路由
 app = FastAPI(title="学习评估与巩固智能体", version="0.1.0")
 
+# 挂载静态前端页面
+STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
 
 @app.get("/health")
 def health_check():
@@ -34,6 +40,12 @@ def health_check():
         "model": settings.llm_model,
         "use_langgraph": settings.use_langgraph,
     }
+
+
+@app.get("/")
+def index():
+    # 单页前端入口
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
 
 @app.post("/sessions", response_model=SessionCreateResponse)
