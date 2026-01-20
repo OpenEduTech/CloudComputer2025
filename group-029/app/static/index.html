@@ -73,6 +73,15 @@
         font-weight: bold;
         color: #7a3e00;
       }
+      .tag {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+        margin-left: 6px;
+      }
+      .tag.right { background: #e2f6e2; color: #1d5f2c; }
+      .tag.wrong { background: #fde2e2; color: #7a1d1d; }
       .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -146,12 +155,14 @@
           uploadStatus.textContent = "请选择 PDF 文件";
           return;
         }
+        uploadBtn.disabled = true;
         uploadStatus.textContent = "上传中...";
         const form = new FormData();
         form.append("file", file);
         const res = await fetch("/sessions", { method: "POST", body: form });
         if (!res.ok) {
           uploadStatus.textContent = "上传失败";
+          uploadBtn.disabled = false;
           return;
         }
         const data = await res.json();
@@ -159,10 +170,12 @@
         uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
         genBtn.disabled = false;
         wrongbookBtn.disabled = false;
+        uploadBtn.disabled = false;
       };
 
       genBtn.onclick = async () => {
         genStatus.textContent = "生成中...";
+        genBtn.disabled = true;
         const body = {
           session_id: state.sessionId,
           num_mcq: Number(document.getElementById("mcqCount").value || 3),
@@ -175,6 +188,7 @@
         });
         if (!res.ok) {
           genStatus.textContent = "生成失败";
+          genBtn.disabled = false;
           return;
         }
         const data = await res.json();
@@ -182,6 +196,7 @@
         genStatus.textContent = "生成完成";
         renderQuestions();
         gradeBtn.disabled = false;
+        genBtn.disabled = false;
       };
 
       function renderQuestions() {
@@ -206,6 +221,7 @@
 
       gradeBtn.onclick = async () => {
         gradeStatus.textContent = "判卷中...";
+        gradeBtn.disabled = true;
         const answers = [];
         document.querySelectorAll("[data-qid]").forEach((el) => {
           answers.push({ qid: el.getAttribute("data-qid"), answer: el.value });
@@ -222,18 +238,28 @@
         });
         if (!res.ok) {
           gradeStatus.textContent = "判卷失败";
+          gradeBtn.disabled = false;
           return;
         }
         const data = await res.json();
         gradeStatus.textContent = "判卷完成";
-        gradeResult.innerHTML = `<div class="score">总分：${data.total_score}</div>`;
+        const correctCount = data.items.filter(i => i.is_correct).length;
+        const totalCount = data.items.length;
+        gradeResult.innerHTML = `<div class="score">总分：${data.total_score} / ${totalCount * 2}</div>
+                                 <div>正确题数：${correctCount} / ${totalCount}</div>`;
         data.items.forEach((i) => {
           const div = document.createElement("div");
           div.className = "question-card";
-          div.innerHTML = `<div><strong>${i.qid}</strong> - ${i.is_correct ? "正确" : "错误"} - 得分 ${i.score}</div>
+          div.innerHTML = `<div><strong>${i.qid}</strong>
+                             <span class="tag ${i.is_correct ? "right" : "wrong"}">
+                               ${i.is_correct ? "正确" : "错误"}
+                             </span>
+                             得分 ${i.score}
+                           </div>
                            <div>解析：${i.explanation}</div>`;
           gradeResult.appendChild(div);
         });
+        gradeBtn.disabled = false;
       };
 
       wrongbookBtn.onclick = async () => {
