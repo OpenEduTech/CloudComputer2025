@@ -114,8 +114,16 @@ function App() {
 
   const onChartClick = useCallback((params) => {
     if (params.dataType === 'node') {
-      setSelectedNode(params.data);
-      setDrawerVisible(true);
+      const node = params.data;
+      
+      // Check if URL exists and is valid
+      if (node.url && node.url.startsWith('http')) {
+        window.open(node.url, '_blank', 'noopener,noreferrer');
+      } else {
+        // If no URL or local resource, open detail drawer
+        setSelectedNode(node);
+        setDrawerVisible(true);
+      }
     }
   }, []);
 

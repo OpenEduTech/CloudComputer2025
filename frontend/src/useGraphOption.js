@@ -4,8 +4,17 @@ const useGraphOption = (data, themeToken) => {
   const option = useMemo(() => {
     if (!data || !data.nodes) return {};
 
+    // Filter out isolated nodes
+    const connectedNodeIds = new Set();
+    data.links.forEach(link => {
+      connectedNodeIds.add(link.source);
+      connectedNodeIds.add(link.target);
+    });
+
+    const visibleNodes = data.nodes.filter(node => connectedNodeIds.has(node.id));
+
     // Extract unique groups for legend
-    const categories = Array.from(new Set(data.nodes.map(n => n.group))).map(name => ({ name }));
+    const categories = Array.from(new Set(visibleNodes.map(n => n.group))).map(name => ({ name }));
     
     // Tech/Scientific Color Palette
     const colors = [
@@ -98,7 +107,7 @@ const useGraphOption = (data, themeToken) => {
           type: 'graph',
           layout: 'force',
           draggable: true, // Enable dragging
-          data: data.nodes.map(node => ({
+          data: visibleNodes.map(node => ({
             ...node,
             name: node.label,
             category: categories.findIndex(c => c.name === node.group),
