@@ -42,3 +42,4 @@ docker compose up --build
 1. 启动服务后访问 `GET /health`。
 2. `POST /sessions` 上传 PDF，获取 `session_id`。
 3. `POST /questions` 传入 `session_id` 生成题目。
+4. `POST /grade` 传入题目与答案进行判卷。

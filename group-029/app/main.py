@@ -7,11 +7,15 @@ from app.models import (
     QuestionGenerateRequest,
     QuestionGenerateResponse,
     QuestionItem,
+    GradeRequest,
+    GradeResponse,
+    GradeItem,
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
 from app.services.session_store import create_session, load_chunks
 from app.services.question_generator import generate_questions
+from app.services.grader import grade_answers
 
 from app.core.config import settings
 
@@ -65,3 +69,23 @@ def generate_questions_api(req: QuestionGenerateRequest):
         )
     questions = [QuestionItem(**q) for q in data]
     return QuestionGenerateResponse(session_id=req.session_id, questions=questions)
+
+
+@app.post("/grade", response_model=GradeResponse)
+def grade_api(req: GradeRequest):
+    result, raw = grade_answers(
+        [q.model_dump() for q in req.questions],
+        req.answers,
+    )
+    if not result:
+        raise HTTPException(
+            status_code=500,
+            detail="判卷失败，请检查 LLM 配置或 data/llm_raw.txt",
+        )
+    items = [GradeItem(**r) for r in result]
+    total_score = sum(i.score for i in items)
+    return GradeResponse(
+        session_id=req.session_id,
+        total_score=total_score,
+        items=items,
+    )
