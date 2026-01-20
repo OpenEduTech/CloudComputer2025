@@ -43,3 +43,4 @@ docker compose up --build
 2. `POST /sessions` 上传 PDF，获取 `session_id`。
 3. `POST /questions` 传入 `session_id` 生成题目。
 4. `POST /grade` 传入题目与答案进行判卷。
+5. `GET /wrongbook/{session_id}` 查询错题本。

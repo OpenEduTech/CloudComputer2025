@@ -82,3 +82,10 @@ class GradeResponse(BaseModel):
     session_id: str
     total_score: float
     items: list[GradeItem]
+
+
+# 错题本查询结果
+class WrongbookResponse(BaseModel):
+    session_id: str
+    total_wrong: int
+    items: list[dict]

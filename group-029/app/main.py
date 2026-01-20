@@ -10,12 +10,14 @@ from app.models import (
     GradeRequest,
     GradeResponse,
     GradeItem,
+    WrongbookResponse,
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
 from app.services.session_store import create_session, load_chunks
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
+from app.services.wrongbook_store import save_wrong_items, load_wrong_items
 
 from app.core.config import settings
 
@@ -83,9 +85,37 @@ def grade_api(req: GradeRequest):
             detail="判卷失败，请检查 LLM 配置或 data/llm_raw.txt",
         )
     items = [GradeItem(**r) for r in result]
+    # 收集错题并写入 Redis
+    wrong_items = []
+    for q in req.questions:
+        for r in items:
+            if q.qid == r.qid and not r.is_correct:
+                wrong_items.append(
+                    {
+                        "qid": q.qid,
+                        "question": q.question,
+                        "user_answer": next(
+                            (a["answer"] for a in req.answers if a["qid"] == q.qid),
+                            "",
+                        ),
+                        "correct_answer": q.answer,
+                        "explanation": r.explanation,
+                    }
+                )
+    save_wrong_items(req.session_id, wrong_items)
     total_score = sum(i.score for i in items)
     return GradeResponse(
         session_id=req.session_id,
         total_score=total_score,
+        items=items,
+    )
+
+
+@app.get("/wrongbook/{session_id}", response_model=WrongbookResponse)
+def wrongbook_api(session_id: str):
+    items = load_wrong_items(session_id)
+    return WrongbookResponse(
+        session_id=session_id,
+        total_wrong=len(items),
         items=items,
     )
