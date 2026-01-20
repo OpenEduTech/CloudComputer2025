@@ -104,7 +104,7 @@ graph TD
 | :--- | :--- | :--- |
 | **前端框架** | **React** + **Vite** | 基于组件化架构构建单页应用 (SPA)，实现数据与视图分离，提供流畅的用户交互体验。 |
 | **图谱渲染** | **Apache ECharts** | 使用高性能可视化引擎渲染大规模力导向图，支持节点的高亮、折叠与动态交互。 |
-| **UI 组件库** | **Ant Design** | 采用企业级 UI 设计语言，确保界面交互的一致性与美观度。 |
+| **UI 组件库** | **Ant Design** + **Framer Motion** | 采用企业级 UI 设计语言与 Framer Motion 动画库，构建具备磨砂玻璃质感 (Glassmorphism) 与流畅动效的沉浸式界面。 |
 
 #### 智能体 (Agent System)
 | 模块 | 技术选型 | 技术方案说明 |
@@ -133,10 +133,14 @@ graph TD
 
 2. **配置环境变量**
    复制示例配置并修改（如需使用 OpenAI API）：
-   ```bash
-   cp .env.example .env
-   # 编辑 .env 文件填入你的 API Key
-   ```
+  ```bash
+  # --- Neo4j 数据库配置 ---
+  NEO4J_USER=neo4j
+  NEO4J_PASSWORD=1234567888
+
+  # --- OpenAI API 配置 ---
+  OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
 
 3. **启动服务**
    ```bash
@@ -222,10 +226,23 @@ AutoKGS/
       "group": "Physics",
       "size": 50,
       "info": "热力学中表示系统的混乱程度...",
-      // ---【新增关键字段】---
-      "source": "Wikipedia: Entropy_(thermodynamics)",  // [高分项] 证明你是基于搜索结果生成的
-      "url": "https://en.wikipedia.org/wiki/Entropy", // [前端交互] 点击节点能跳转，极其加分！
-      "confidence": 0.95  // [校验项] Auditor 打分，低于 0.6 的前端可以标红警告
+      // ---【示例1：来自教科书 (RAG)】---
+      "source_type": "textbook", 
+      "source": "《复杂系统导论》 (Introduction to Complexity)", 
+      "url": "", // 点击跳转到课本
+      "confidence": 0.98
+    },
+    {
+      "id": "信息不确定性(Uncertainty)",
+      "label": "信息不确定性",
+      "group": "Information Theory",
+      "size": 40,
+      "info": "信息论的核心概念...",
+      // ---【示例2：来自论文 (ArXiv)】---
+      "source_type": "paper",
+      "source": "A Mathematical Theory of Communication",
+      "url": "https://arxiv.org/abs/cs/9809005", // 点击跳转 ArXiv
+      "confidence": 0.92
     }
   ],
   "links": [
@@ -234,8 +251,8 @@ AutoKGS/
       "target": "信息不确定性",
       "relation": "MATHEMATICAL_BASIS",
       "desc": "香农借鉴了玻尔兹曼公式...",
-      // ---【新增关键字段】---
-      "citation": "Shannon, C. E. (1948). A Mathematical Theory of Communication." // [高分项] 关系的学术引用
+      // ---【关系引用】（如有）---
+      "citation": "Shannon, C. E. (1948). A Mathematical Theory of Communication."
     }
   ]
 }
@@ -260,23 +277,43 @@ AutoKGS/
 ### 任务状态格式：
 *存入 Redis Key-Value (Key: `task:550e8400...`)* 后端接口会不断轮询读取这个 Key。
 
+#### 1. 状态流转定义 (Step Definitions)
+前端根据 `step_index` (0-4) 展示不同的加载动画步骤。后端需按照以下阶段更新 Redis：
+
+| Step | Status | Progress | Message (示例) | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | PROCESSING | 5 | "任务已发送至 Redis 队列..." | 初始状态，等待 Worker 领取 |
+| **1** | PROCESSING | 20 | "AI Worker (Agent) 已接单..." | Worker 开始执行 |
+| **2** | PROCESSING | 45 | "正在检索 ArXiv 和教科书..." | Miner Agent 进行混合检索 |
+| **3** | PROCESSING | 70 | "正在提取实体与关系..." | LLM 阅读文本并抽取知识 |
+| **4** | PROCESSING | 90 | "图谱构建完成，正在渲染..." | 校验通过，写入 Neo4j |
+| **5** | SUCCESS | 100 | "Completed" | 任务彻底完成，返回结果 |
+
+#### 2. JSON 示例
+
+**进行中 (Processing):**
 ```json
 {
   "status": "PROCESSING",
-  "progress": 30,       // 前端可以显示进度条！(加分项)
-  "message": "正在搜索 Wikipedia..."
+  "step_index": 2,       
+  "progress": 45,
+  "message": "正在检索 ArXiv 和教科书..."
 }
 ```
 
+**成功 (Success):**
 ```json
 {
   "status": "SUCCESS",
+  "step_index": 5,
   "progress": 100,
   "result_node_id": "Entropy", // 告诉后端去 Neo4j 查哪个主节点
+  "message": "Completed",
   "completed_at": 1709876599
 }
 ```
 
+**失败 (Failed):**
 ```json
 {
   "status": "FAILED",
