@@ -1,4 +1,5 @@
 import json
+import os
 import re
 
 from langchain_openai import ChatOpenAI
@@ -52,4 +53,8 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
             return data, raw
     except json.JSONDecodeError:
         pass
+    # 记录原始输出，便于排查
+    os.makedirs("data", exist_ok=True)
+    with open(os.path.join("data", "llm_grade_raw.txt"), "w", encoding="utf-8") as f:
+        f.write(raw)
     return [], raw

@@ -64,6 +64,9 @@ def generate_questions_api(req: QuestionGenerateRequest):
     # 简化策略：取前若干片段作为上下文
     use_chunks = chunks[:10]
     data, raw = generate_questions(use_chunks, req.num_mcq, req.num_short)
+    # 校验：题目必须包含证据片段
+    if data:
+        data = [q for q in data if q.get("evidence")]
     if not data:
         raise HTTPException(
             status_code=500,
@@ -79,6 +82,9 @@ def grade_api(req: GradeRequest):
         [q.model_dump() for q in req.questions],
         req.answers,
     )
+    # 校验：结果必须包含解析
+    if result:
+        result = [r for r in result if r.get("explanation")]
     if not result:
         raise HTTPException(
             status_code=500,
@@ -102,7 +108,11 @@ def grade_api(req: GradeRequest):
                         "explanation": r.explanation,
                     }
                 )
-    save_wrong_items(req.session_id, wrong_items)
+    try:
+        save_wrong_items(req.session_id, wrong_items)
+    except Exception:
+        # Redis 不可用时不影响判卷结果
+        pass
     total_score = sum(i.score for i in items)
     return GradeResponse(
         session_id=req.session_id,
