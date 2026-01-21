@@ -42,9 +42,9 @@ notepad .env
 - `LLM_BASE_URL`：兼容 OpenAI API 的基础地址
 - `LLM_MODEL`：模型名称（如 deepseek-chat）
 - `LLM_TEMPERATURE`：生成随机度，建议 0.2~0.5
-- `REDIS_URL`：Redis 连接地址  
+- `REDIS_URL`：Redis 连接地址（默认自动识别本地/Docker）
   - 本地运行：`redis://127.0.0.1:6379/0`
-  - Docker 运行：保持默认 `redis://redis:6379/0`
+  - Docker 运行：`redis://redis:6379/0`
 - `USE_LANGGRAPH`：是否使用 LangGraph（当前为预留开关）
 
 ## 本地与 Docker 的区别说明
