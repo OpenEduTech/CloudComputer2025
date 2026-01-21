@@ -17,6 +17,28 @@ def _extract_json_text(raw: str) -> str:
     return raw
 
 
+def _build_check_prompt() -> ChatPromptTemplate:
+    # 判卷校验提示词，减少幻觉与不一致评分
+    return ChatPromptTemplate.from_template(
+        """
+你是判卷结果的校验官。请检查评分结果是否与题目、参考答案、学生答案一致。
+要求：
+1) 若发现评分/对错不一致，修正为合理结果。
+2) 保留原有 qid，不新增或删除条目。
+3) 输出严格 JSON 数组，每个元素包含：qid, is_correct, score, explanation。
+4) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
+
+题目：{questions}
+
+学生答案：{answers}
+
+参考答案：{reference}
+
+原始评分：{graded}
+"""
+    )
+
+
 def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dict]) -> tuple[list[dict], str]:
     if not settings.llm_api_key:
         raise ValueError("LLM_API_KEY 未配置")
@@ -53,6 +75,27 @@ def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dic
     try:
         data = json.loads(json_text)
         if isinstance(data, list):
+            # 进入校验环节
+            check_prompt = _build_check_prompt()
+            check_chain = check_prompt | llm | StrOutputParser()
+            reference = [
+                {"qid": q["qid"], "answer": q.get("answer", "")} for q in questions
+            ]
+            checked_raw = check_chain.invoke(
+                {
+                    "questions": questions,
+                    "answers": answers,
+                    "reference": reference,
+                    "graded": data,
+                }
+            )
+            checked_text = _extract_json_text(checked_raw)
+            try:
+                checked = json.loads(checked_text)
+                if isinstance(checked, list):
+                    return checked, raw
+            except json.JSONDecodeError:
+                pass
             return data, raw
     except json.JSONDecodeError:
         pass
