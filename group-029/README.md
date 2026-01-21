@@ -46,6 +46,7 @@ notepad .env
   - Docker 运行：`redis://redis:6379/0`
 - `USE_LANGGRAPH`：是否使用 LangGraph（预留开关）
 - `MAX_UPLOAD_MB`：PDF 上传大小限制（默认 20）
+- `difficulty_ratio`：出题难度梯度比例（易:中:难），默认 `4:4:2`
 
 ## 检索增强说明
 系统在出题与判卷时，会根据教材片段与问题文本进行轻量检索，挑选相关片段传入 LLM：

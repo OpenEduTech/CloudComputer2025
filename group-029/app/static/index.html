@@ -219,6 +219,8 @@
             <input id="saCount" type="number" min="1" max="6" value="2" />
           </div>
         </div>
+        <label>难度梯度（易:中:难）</label>
+        <input id="difficultyRatio" type="text" value="4:4:2" />
         <div class="hint">建议总题量不超过 12 题，保证生成质量。</div>
         <button id="genBtn" disabled>生成题目</button>
         <div class="status" id="genStatus">等待会话</div>
@@ -262,6 +264,7 @@
       const fileName = document.getElementById("fileName");
       const genStatus = document.getElementById("genStatus");
       const genError = document.getElementById("genError");
+      const difficultyRatio = document.getElementById("difficultyRatio");
       const gradeStatus = document.getElementById("gradeStatus");
       const gradeError = document.getElementById("gradeError");
       const questionsDiv = document.getElementById("questions");
@@ -314,7 +317,8 @@
         state.questions.forEach((q, idx) => {
           const card = document.createElement("div");
           card.className = "question-card";
-          card.innerHTML = `<div><strong>Q${idx + 1} (${q.qtype})</strong> ${q.question}</div>`;
+          const diff = q.difficulty ? `<span class="pill">难度：${q.difficulty}</span>` : "";
+          card.innerHTML = `<div><strong>Q${idx + 1} (${q.qtype})</strong> ${q.question} ${diff}</div>`;
           if (q.options) {
             const optList = q.options.map(o => `<div>${o}</div>`).join("");
             card.innerHTML += `<div style="margin-top:6px;">${optList}</div>`;
@@ -406,10 +410,12 @@
         }
         genStatus.innerHTML = `<span class="spinner"></span>生成中...`;
         genBtn.disabled = true;
+        const ratio = difficultyRatio.value.trim() || "4:4:2";
         const body = {
           session_id: state.sessionId,
           num_mcq: mcqVal,
-          num_short: saVal
+          num_short: saVal,
+          difficulty_ratio: ratio
         };
         const res = await fetch("/questions", {
           method: "POST",

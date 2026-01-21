@@ -140,7 +140,7 @@ def generate_questions_api(req: QuestionGenerateRequest):
 
     # 检索增强：挑选更相关的片段作为上下文
     use_chunks = select_chunks_for_generation(chunks, top_k=10)
-    data, raw = generate_questions(use_chunks, req.num_mcq, req.num_short)
+    data, raw = generate_questions(use_chunks, req.num_mcq, req.num_short, req.difficulty_ratio)
 
     # 校验：题目必须包含证据片段
     if data:

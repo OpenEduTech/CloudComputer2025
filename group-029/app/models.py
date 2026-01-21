@@ -41,6 +41,7 @@ class QuestionGenerateRequest(BaseModel):
     session_id: str = Field(..., description="会话 ID")
     num_mcq: int = Field(3, description="选择题数量")
     num_short: int = Field(2, description="简答题数量")
+    difficulty_ratio: str = Field("4:4:2", description="难度梯度比例（易:中:难）")
 
 
 # 题目结构
@@ -52,6 +53,7 @@ class QuestionItem(BaseModel):
     answer: str
     explanation: str
     evidence: list[str]
+    difficulty: str | None = None
 
     @field_validator("options", mode="before")
     @classmethod

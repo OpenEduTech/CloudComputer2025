@@ -14,10 +14,11 @@ def _build_prompt():
         """
 你是一名机器学习课程助教。根据给定资料生成题目。要求：
 1) 生成 {num_mcq} 道选择题 + {num_short} 道简答题。
-2) 题目覆盖核心概念、公式、算法步骤。
-3) 输出严格 JSON 数组，每个元素包含：qid, qtype, question, options(选择题需要), answer, explanation, evidence。
-4) evidence 必须引用资料中的原文片段（可多条）。
-5) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
+2) 题目覆盖核心概念、公式、算法步骤，并体现难度梯度。
+3) 难度梯度比例为 易:中:难 = {difficulty_ratio}，请尽量按比例控制。
+4) 输出严格 JSON 数组，每个元素包含：qid, qtype, question, options(选择题需要), answer, explanation, evidence, difficulty(易/中/难)。
+5) evidence 必须引用资料中的原文片段（可多条）。
+6) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
 示例（仅示例，不要复述）：[
   {{
     "qid": "mc_1",
@@ -26,7 +27,8 @@ def _build_prompt():
     "options": ["A...", "B...", "C...", "D..."],
     "answer": "B",
     "explanation": "示例解析",
-    "evidence": ["[c1] 示例证据"]
+    "evidence": ["[c1] 示例证据"],
+    "difficulty": "中"
   }}
 ]
 
@@ -48,7 +50,7 @@ def _extract_json_text(raw: str) -> str:
     return raw
 
 
-def generate_questions(chunks: list[dict], num_mcq: int, num_short: int) -> tuple[list[dict], str]:
+def generate_questions(chunks: list[dict], num_mcq: int, num_short: int, difficulty_ratio: str) -> tuple[list[dict], str]:
     if not settings.llm_api_key:
         raise ValueError("LLM_API_KEY 未配置")
 
@@ -66,6 +68,7 @@ def generate_questions(chunks: list[dict], num_mcq: int, num_short: int) -> tupl
             "context": context,
             "num_mcq": num_mcq,
             "num_short": num_short,
+            "difficulty_ratio": difficulty_ratio,
         }
     )
     json_text = _extract_json_text(raw)
