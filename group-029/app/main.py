@@ -23,6 +23,7 @@ from app.services.session_store import create_session, load_chunks, list_session
 from app.services.session_namer import generate_session_name
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
+from app.services.retriever import select_chunks_for_generation, select_chunks_for_question
 from app.services.wrongbook_store import save_wrong_items, load_wrong_items_all, summarize_wrong_items
 from app.services.qa_store import save_questions, save_answers, save_grade, load_latest_record
 
@@ -105,8 +106,8 @@ def generate_questions_api(req: QuestionGenerateRequest):
     if not chunks:
         raise HTTPException(status_code=404, detail="未找到会话或切分内容为空")
 
-    # 简化策略：取前若干片段作为上下文
-    use_chunks = chunks[:10]
+    # 检索增强：挑选更相关的片段作为上下文
+    use_chunks = select_chunks_for_generation(chunks, top_k=10)
     data, raw = generate_questions(use_chunks, req.num_mcq, req.num_short)
 
     # 校验：题目必须包含证据片段
@@ -129,9 +130,16 @@ def generate_questions_api(req: QuestionGenerateRequest):
 
 @app.post("/grade", response_model=GradeResponse)
 def grade_api(req: GradeRequest):
+    chunks = load_chunks(req.session_id)
+    contexts = []
+    for q in req.questions:
+        picked = select_chunks_for_question(chunks, q.question, q.answer, top_k=3)
+        context_text = "\n".join([f"[{c['chunk_id']}]{c['text']}" for c in picked])
+        contexts.append({"qid": q.qid, "context": context_text})
     result, raw = grade_answers(
         [q.model_dump() for q in req.questions],
         req.answers,
+        contexts,
     )
 
     # 校验：结果必须包含解释

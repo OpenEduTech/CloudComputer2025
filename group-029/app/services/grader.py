@@ -17,7 +17,7 @@ def _extract_json_text(raw: str) -> str:
     return raw
 
 
-def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict], str]:
+def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dict]) -> tuple[list[dict], str]:
     if not settings.llm_api_key:
         raise ValueError("LLM_API_KEY 未配置")
 
@@ -36,6 +36,8 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
 题目：{questions}
 
 学生答案：{answers}
+
+参考资料（按 qid 对应）：{contexts}
 """
     )
 
@@ -46,7 +48,7 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
         temperature=settings.llm_temperature,
     )
     chain = prompt | llm | StrOutputParser()
-    raw = chain.invoke({"questions": questions, "answers": answers})
+    raw = chain.invoke({"questions": questions, "answers": answers, "contexts": contexts})
     json_text = _extract_json_text(raw)
     try:
         data = json.loads(json_text)
