@@ -99,6 +99,12 @@ class GradeResponse(BaseModel):
     items: list[GradeItem]
 
 
+class RecordResponse(BaseModel):
+    session_id: str
+    questions: list[dict]
+    answers: list[dict]
+
+
 # 错题本查询结果
 class WrongbookResponse(BaseModel):
     session_id: str

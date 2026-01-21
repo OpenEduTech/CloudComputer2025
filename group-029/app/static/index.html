@@ -180,7 +180,9 @@
 
         <h3 style="margin-top:16px;">错题本</h3>
         <button id="wrongbookBtn" disabled>刷新错题本</button>
+        <button id="recordBtn" disabled style="margin-left:6px;">查看最近作答</button>
         <div id="wrongbook"></div>
+        <div id="records"></div>
       </section>
     </main>
 
@@ -194,6 +196,7 @@
       const genBtn = document.getElementById("genBtn");
       const gradeBtn = document.getElementById("gradeBtn");
       const wrongbookBtn = document.getElementById("wrongbookBtn");
+      const recordBtn = document.getElementById("recordBtn");
       const resetBtn = document.getElementById("resetBtn");
       const refreshSessionsBtn = document.getElementById("refreshSessionsBtn");
       const uploadStatus = document.getElementById("uploadStatus");
@@ -208,6 +211,7 @@
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
       const wrongbookDiv = document.getElementById("wrongbook");
+      const recordsDiv = document.getElementById("records");
 
       uploadBtn.onclick = async () => {
         uploadError.style.display = "none";
@@ -234,6 +238,7 @@
         sessionInfo.textContent = `会话 ID：${state.sessionId}`;
         genBtn.disabled = false;
         wrongbookBtn.disabled = false;
+        recordBtn.disabled = false;
         uploadBtn.disabled = false;
         fetchSessions();
       };
@@ -365,6 +370,31 @@
         wrongbookDiv.scrollIntoView({ behavior: "smooth" });
       };
 
+      recordBtn.onclick = async () => {
+        if (!state.sessionId) return;
+        const res = await fetch(`/records/${state.sessionId}`);
+        if (!res.ok) {
+          recordsDiv.textContent = "作答记录获取失败";
+          return;
+        }
+        const data = await res.json();
+        recordsDiv.innerHTML = `<div style="margin-top:8px;">最近作答记录</div>`;
+        if (!data.questions || data.questions.length === 0) {
+          recordsDiv.innerHTML += `<div>暂无题目记录</div>`;
+          return;
+        }
+        data.questions.forEach((q) => {
+          const ans = (data.answers || []).find(a => a.qid === q.qid);
+          const div = document.createElement("div");
+          div.className = "question-card";
+          div.innerHTML = `<div><strong>${q.qid}</strong> ${q.question}</div>
+                           <div>你的答案：${ans ? ans.answer : "未作答"}</div>
+                           <div>参考答案：${q.answer}</div>`;
+          recordsDiv.appendChild(div);
+        });
+        recordsDiv.scrollIntoView({ behavior: "smooth" });
+      };
+
       resetBtn.onclick = () => {
         state.sessionId = "";
         state.questions = [];
@@ -379,6 +409,8 @@
         genBtn.disabled = true;
         gradeBtn.disabled = true;
         wrongbookBtn.disabled = true;
+        recordBtn.disabled = true;
+        recordsDiv.innerHTML = "";
       };
 
       async function fetchSessions() {

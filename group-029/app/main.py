@@ -14,6 +14,7 @@ from app.models import (
     GradeRequest,
     GradeResponse,
     GradeItem,
+    RecordResponse,
     WrongbookResponse,
 )
 from app.services.pdf_loader import load_pdf_text
@@ -22,6 +23,7 @@ from app.services.session_store import create_session, load_chunks, list_session
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
 from app.services.wrongbook_store import save_wrong_items, load_wrong_items, summarize_wrong_items
+from app.services.qa_store import save_questions, save_answers, load_latest_record
 
 from app.core.config import settings
 
@@ -98,6 +100,10 @@ def generate_questions_api(req: QuestionGenerateRequest):
             detail="题目生成失败，请检查 LLM 配置或 data/llm_raw.txt",
         )
     questions = [QuestionItem(**q) for q in data]
+    try:
+        save_questions(req.session_id, [q.model_dump() for q in questions])
+    except Exception:
+        pass
     return QuestionGenerateResponse(session_id=req.session_id, questions=questions)
 
 
@@ -116,6 +122,10 @@ def grade_api(req: GradeRequest):
             detail="判卷失败，请检查 LLM 配置或 data/llm_raw.txt",
         )
     items = [GradeItem(**r) for r in result]
+    try:
+        save_answers(req.session_id, req.answers)
+    except Exception:
+        pass
     # 收集错题并写入 Redis
     wrong_items = []
     for q in req.questions:
@@ -156,3 +166,8 @@ def wrongbook_api(session_id: str):
         items=items,
         summary=summary,
     )
+
+
+@app.get("/records/{session_id}", response_model=RecordResponse)
+def record_api(session_id: str):
+    return RecordResponse(**load_latest_record(session_id))

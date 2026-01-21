@@ -59,6 +59,7 @@ notepad .env
 - `POST /questions`：生成题目
 - `POST /grade`：判卷并记录错题
 - `GET /wrongbook/{session_id}`：查询错题本
+- `GET /records/{session_id}`：查看最近一次题目与作答
 
 ## 最小测试流程
 1. 启动服务后访问 `GET /health`。
