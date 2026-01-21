@@ -38,11 +38,21 @@ def load_wrong_items_all() -> list[dict]:
     key = "wrongbook:all"
     raw = client.lrange(key, 0, -1)
     result = []
+    mutated = False
     for r in raw:
         try:
-            result.append(json.loads(r))
+            item = json.loads(r)
         except json.JSONDecodeError:
             continue
+        if not item.get("record_id"):
+            item["record_id"] = uuid4().hex
+            mutated = True
+        result.append(item)
+    if mutated:
+        client.delete(key)
+        payload = [json.dumps(i, ensure_ascii=False) for i in result]
+        if payload:
+            client.rpush(key, *payload)
     return result
 
 
