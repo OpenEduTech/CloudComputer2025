@@ -41,6 +41,7 @@ pnpm-debug.log*
 
 # --- IDE & OS ---
 .idea/
+./trae/
 .vscode/
 *.swp
 *.swo
