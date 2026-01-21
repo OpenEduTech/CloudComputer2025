@@ -13,6 +13,7 @@ class SessionItem(BaseModel):
     session_id: str
     name: str
     created_at: str
+    last_accessed: str
     chunk_count: int
 
 
@@ -23,6 +24,16 @@ class SessionListResponse(BaseModel):
 class SessionDeleteResponse(BaseModel):
     session_id: str
     deleted: bool
+
+
+class SessionRenameRequest(BaseModel):
+    name: str = Field(..., description="新的会话名称")
+
+
+class SessionRenameResponse(BaseModel):
+    session_id: str
+    name: str
+    updated: bool
 
 
 # 出题请求

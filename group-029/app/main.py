@@ -8,6 +8,8 @@ from app.models import (
     SessionCreateResponse,
     SessionListResponse,
     SessionDeleteResponse,
+    SessionRenameRequest,
+    SessionRenameResponse,
     QuestionGenerateRequest,
     QuestionGenerateResponse,
     QuestionItem,
@@ -19,7 +21,14 @@ from app.models import (
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
-from app.services.session_store import create_session, load_chunks, list_sessions, delete_session
+from app.services.session_store import (
+    create_session,
+    load_chunks,
+    list_sessions,
+    delete_session,
+    update_session_name,
+    touch_session,
+)
 from app.services.session_namer import generate_session_name
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
@@ -100,6 +109,12 @@ def delete_session_api(session_id: str):
     return SessionDeleteResponse(session_id=session_id, deleted=deleted)
 
 
+@app.patch("/sessions/{session_id}", response_model=SessionRenameResponse)
+def rename_session_api(session_id: str, req: SessionRenameRequest):
+    updated = update_session_name(session_id, req.name)
+    return SessionRenameResponse(session_id=session_id, name=req.name, updated=updated)
+
+
 @app.post("/questions", response_model=QuestionGenerateResponse)
 def generate_questions_api(req: QuestionGenerateRequest):
     chunks = load_chunks(req.session_id)
@@ -124,6 +139,7 @@ def generate_questions_api(req: QuestionGenerateRequest):
         save_questions(req.session_id, [q.model_dump() for q in questions])
     except Exception:
         pass
+    touch_session(req.session_id)
 
     return QuestionGenerateResponse(session_id=req.session_id, questions=questions)
 
@@ -188,6 +204,7 @@ def grade_api(req: GradeRequest):
         pass
 
     total_score = sum(i.score for i in items)
+    touch_session(req.session_id)
     return GradeResponse(
         session_id=req.session_id,
         total_score=total_score,
@@ -209,4 +226,5 @@ def wrongbook_api_all():
 
 @app.get("/records/{session_id}", response_model=RecordResponse)
 def record_api(session_id: str):
+    touch_session(session_id)
     return RecordResponse(**load_latest_record(session_id))

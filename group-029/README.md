@@ -55,6 +55,7 @@ notepad .env
 - `GET /sessions`：会话列表
 - `POST /sessions`：上传 PDF 并创建会话
 - `DELETE /sessions/{session_id}`：删除会话
+- `PATCH /sessions/{session_id}`：重命名会话
 - `POST /questions`：生成题目
 - `POST /grade`：判卷并记录错题
 - `GET /wrongbook/all`：查询全局错题本

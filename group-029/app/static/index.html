@@ -193,6 +193,8 @@
         <h2>会话列表</h2>
         <div class="status" id="sessionInfo">当前会话：未生成</div>
         <button id="refreshSessionsBtn">刷新会话列表</button>
+        <label for="sessionSearch">搜索会话</label>
+        <input id="sessionSearch" type="text" placeholder="输入关键词过滤" />
         <div class="status" id="sessionListStatus">暂无会话</div>
         <div id="sessionList"></div>
       </aside>
@@ -268,6 +270,7 @@
       const gradeEmpty = document.getElementById("gradeEmpty");
       const sessionListStatus = document.getElementById("sessionListStatus");
       const sessionListDiv = document.getElementById("sessionList");
+      const sessionSearch = document.getElementById("sessionSearch");
 
       function setError(el, msg) {
         if (!msg) {
@@ -467,29 +470,28 @@
         fetchSessions();
       };
 
-      async function fetchSessions() {
-        sessionListStatus.innerHTML = `<span class="spinner"></span>加载会话列表...`;
+      function renderSessionList(sessions) {
+        const keyword = sessionSearch.value.trim();
+        const filtered = keyword
+          ? sessions.filter((s) => (s.name || s.session_id).includes(keyword))
+          : sessions;
         sessionListDiv.innerHTML = "";
-        const res = await fetch("/sessions");
-        if (!res.ok) {
-          sessionListStatus.textContent = "会话列表获取失败";
+        if (filtered.length === 0) {
+          sessionListStatus.textContent = keyword ? "没有匹配的会话" : "暂无会话";
           return;
         }
-        const data = await res.json();
-        if (!data.sessions || data.sessions.length === 0) {
-          sessionListStatus.textContent = "暂无会话";
-          return;
-        }
-        sessionListStatus.textContent = `共 ${data.sessions.length} 个会话`;
-        data.sessions.forEach((s) => {
+        sessionListStatus.textContent = `共 ${filtered.length} 个会话`;
+        filtered.forEach((s) => {
           const div = document.createElement("div");
           div.className = "question-card session-item";
           div.innerHTML = `<details>
                              <summary><strong>${s.name || s.session_id}</strong></summary>
                              <div class="session-meta">切分：${s.chunk_count}</div>
                              <div class="session-meta">创建时间：${s.created_at}</div>
+                             <div class="session-meta">最近访问：${s.last_accessed || "-"}</div>
                              <div class="actions">
                                <button data-use="${s.session_id}" data-name="${s.name || s.session_id}">切换到该会话</button>
+                               <button data-rename="${s.session_id}" data-old="${s.name || s.session_id}">重命名</button>
                                <button data-del="${s.session_id}">删除会话</button>
                              </div>
                            </details>`;
@@ -505,6 +507,22 @@
             await loadSessionRecords(id);
           };
         });
+        document.querySelectorAll("[data-rename]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-rename");
+            const oldName = e.target.getAttribute("data-old");
+            const newName = window.prompt("请输入新的会话名称：", oldName);
+            if (!newName || !newName.trim()) {
+              return;
+            }
+            await fetch(`/sessions/${id}`, {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name: newName.trim() })
+            });
+            fetchSessions();
+          };
+        });
         document.querySelectorAll("[data-del]").forEach((btn) => {
           btn.onclick = async (e) => {
             const id = e.target.getAttribute("data-del");
@@ -515,6 +533,19 @@
             fetchSessions();
           };
         });
+      }
+
+      async function fetchSessions() {
+        sessionListStatus.innerHTML = `<span class="spinner"></span>加载会话列表...`;
+        sessionListDiv.innerHTML = "";
+        const res = await fetch("/sessions");
+        if (!res.ok) {
+          sessionListStatus.textContent = "会话列表获取失败";
+          return;
+        }
+        const data = await res.json();
+        const sessions = data.sessions || [];
+        renderSessionList(sessions);
       }
 
       async function loadSessionRecords(sessionId) {
@@ -532,6 +563,7 @@
       }
 
       refreshSessionsBtn.onclick = fetchSessions;
+      sessionSearch.addEventListener("input", fetchSessions);
       fetchSessions();
     </script>
   </body>
