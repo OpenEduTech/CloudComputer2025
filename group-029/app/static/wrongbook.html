@@ -118,9 +118,10 @@
         const summaryList = Object.entries(summary.by_keyword || {})
           .map(([k, v]) => `<span class="pill">${k}：${v}</span>`)
           .join("");
-        const suggestion = summary.total > 0
-          ? "建议优先复习错题关键词对应章节，并完成同类练习。"
-          : "当前无错题，可提升题量或难度。";
+        const suggestion = summary.suggestion
+          || (summary.total > 0
+            ? "建议优先复习错题关键词对应章节，并完成同类练习。"
+            : "当前无错题，可提升题量或难度。");
         summaryDiv.innerHTML = `<div>错题数：${data.total_wrong}</div>
                                 <div style="margin-top:6px;"><strong>关键词统计</strong></div>
                                 <div>${summaryList || "暂无统计"}</div>

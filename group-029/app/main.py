@@ -40,6 +40,7 @@ from app.services.wrongbook_store import (
     load_wrong_items_all,
     summarize_wrong_items,
     delete_wrong_item,
+    build_personal_suggestion,
 )
 from app.services.qa_store import save_questions, save_answers, save_grade, load_latest_record
 
@@ -255,7 +256,7 @@ def wrongbook_api_all():
         session_id="all",
         total_wrong=len(items),
         items=items,
-        summary=summary,
+        summary={**summary, "suggestion": build_personal_suggestion(summary)},
     )
 
 
