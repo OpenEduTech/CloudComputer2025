@@ -12,7 +12,10 @@
 - **深度关联挖掘**：利用智能体在不同学科领域（数学、物理、社会学等）自动寻找相关概念。
 - **自动化图谱构建**：从非结构化文本中提取实体及其关系，生成标准化的图结构数据。
 - **交互式可视化**：提供 Web 端动态交互界面，支持力导向图的拖拽、缩放与点击跳转。
+- **多视图切换**：支持**知识图谱 (Knowledge Graph)** 与 **思维导图 (Mind Map)** 两种视图模式，满足不同场景下的知识探索需求。
 - **幻觉校验机制**：引入审计智能体（Auditor Agent）对生成内容进行学术引用校验，确保准确性。
+- **证据与可信度呈现**：关系边展示 `desc/citation`，并以 `confidence` 强化高可信节点主干图。
+- **筛选与导出**：支持 Domain/Relation/Confidence 过滤，支持导出当前图谱 JSON。
 
 ---
 
@@ -108,7 +111,7 @@ graph TD
 | :--- | :--- | :--- |
 | **前端框架** | **React** + **Vite** | 基于组件化架构构建单页应用 (SPA)，实现数据与视图分离，提供流畅的用户交互体验。 |
 | **图谱渲染** | **Apache ECharts** | 使用高性能可视化引擎渲染大规模力导向图，支持节点的高亮、折叠与动态交互。 |
-| **UI 组件库** | **Ant Design** | 采用企业级 UI 设计语言，确保界面交互的一致性与美观度。 |
+| **UI 组件库** | **Ant Design** + **Framer Motion** | 采用企业级 UI 设计语言与 Framer Motion 动画库，构建具备磨砂玻璃质感 (Glassmorphism) 与流畅动效的沉浸式界面。 |
 
 #### 智能体 (Agent System)
 | 模块 | 技术选型 | 技术方案说明 |
@@ -117,6 +120,14 @@ graph TD
 113→| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
 | **RAG 检索** | **ChromaDB** | 部署本地向量数据库支持 **RAG (检索增强生成)**，对教科书进行高维向量索引，弥补模型知识盲区。 |
 
+---
+
+## 2.3 前端可解释与架构稳定性
+
+### 前端可解释性
+- **边级证据卡片**：点击关系边查看 `relation/desc/citation`，更易讲清“为什么有关联”。  
+- **主干图 / 探索层**：以 `confidence` 构建主干图（Main），并可切换到 Explore 查看全量关系。  
+- **导出**：支持导出当前图谱 JSON。  
 ---
 
 ## 3. 快速开始 (Quick Start)
@@ -137,10 +148,14 @@ graph TD
 
 2. **配置环境变量**
    复制示例配置并修改（如需使用 OpenAI API）：
-   ```bash
-   cp .env.example .env
-   # 编辑 .env 文件填入你的 API Key
-   ```
+  ```bash
+  # --- Neo4j 数据库配置 ---
+  NEO4J_USER=neo4j
+  NEO4J_PASSWORD=1234567888
+
+  # --- OpenAI API 配置 ---
+  OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
 
 3. **启动服务**
    ```bash
@@ -226,10 +241,23 @@ AutoKGS/
       "group": "Physics",
       "size": 50,
       "info": "热力学中表示系统的混乱程度...",
-      // ---【新增关键字段】---
-      "source": "Wikipedia: Entropy_(thermodynamics)",  // [高分项] 证明你是基于搜索结果生成的
-      "url": "https://en.wikipedia.org/wiki/Entropy", // [前端交互] 点击节点能跳转，极其加分！
-      "confidence": 0.95  // [校验项] Auditor 打分，低于 0.6 的前端可以标红警告
+      // ---【示例1：来自教科书 (RAG)】---
+      "source_type": "textbook", 
+      "source": "《复杂系统导论》 (Introduction to Complexity)", 
+      "url": "", // 点击跳转到课本
+      "confidence": 0.98
+    },
+    {
+      "id": "信息不确定性(Uncertainty)",
+      "label": "信息不确定性",
+      "group": "Information Theory",
+      "size": 40,
+      "info": "信息论的核心概念...",
+      // ---【示例2：来自论文 (ArXiv)】---
+      "source_type": "paper",
+      "source": "A Mathematical Theory of Communication",
+      "url": "https://arxiv.org/abs/cs/9809005", // 点击跳转 ArXiv
+      "confidence": 0.92
     }
   ],
   "links": [
@@ -238,8 +266,8 @@ AutoKGS/
       "target": "信息不确定性",
       "relation": "MATHEMATICAL_BASIS",
       "desc": "香农借鉴了玻尔兹曼公式...",
-      // ---【新增关键字段】---
-      "citation": "Shannon, C. E. (1948). A Mathematical Theory of Communication." // [高分项] 关系的学术引用
+      // ---【关系引用】（如有）---
+      "citation": "Shannon, C. E. (1948). A Mathematical Theory of Communication."
     }
   ]
 }
@@ -264,23 +292,43 @@ AutoKGS/
 ### 任务状态格式：
 *存入 Redis Key-Value (Key: `task:550e8400...`)* 后端接口会不断轮询读取这个 Key。
 
+#### 1. 状态流转定义 (Step Definitions)
+前端根据 `step_index` (0-4) 展示不同的加载动画步骤。后端需按照以下阶段更新 Redis：
+
+| Step | Status | Progress | Message (示例) | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | PROCESSING | 5 | "任务已发送至 Redis 队列..." | 初始状态，等待 Worker 领取 |
+| **1** | PROCESSING | 20 | "AI Worker (Agent) 已接单..." | Worker 开始执行 |
+| **2** | PROCESSING | 45 | "正在检索 ArXiv 和教科书..." | Miner Agent 进行混合检索 |
+| **3** | PROCESSING | 70 | "正在提取实体与关系..." | LLM 阅读文本并抽取知识 |
+| **4** | PROCESSING | 90 | "图谱构建完成，正在渲染..." | 校验通过，写入 Neo4j |
+| **5** | SUCCESS | 100 | "Completed" | 任务彻底完成，返回结果 |
+
+#### 2. JSON 示例
+
+**进行中 (Processing):**
 ```json
 {
   "status": "PROCESSING",
-  "progress": 30,       // 前端可以显示进度条！(加分项)
-  "message": "正在搜索 Wikipedia..."
+  "step_index": 2,       
+  "progress": 45,
+  "message": "正在检索 ArXiv 和教科书..."
 }
 ```
 
+**成功 (Success):**
 ```json
 {
   "status": "SUCCESS",
+  "step_index": 5,
   "progress": 100,
   "result_node_id": "Entropy", // 告诉后端去 Neo4j 查哪个主节点
+  "message": "Completed",
   "completed_at": 1709876599
 }
 ```
 
+**失败 (Failed):**
 ```json
 {
   "status": "FAILED",
