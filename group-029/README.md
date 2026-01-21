@@ -60,6 +60,7 @@ notepad .env
 - `POST /questions`：生成题目
 - `POST /grade`：判卷并记录错题
 - `GET /wrongbook/all`：查询全局错题本
+- `DELETE /wrongbook/{record_id}`：删除单条错题记录
 - `GET /records/{session_id}`：获取会话最近一次题目/作答/判卷
 
 ## 前端入口

@@ -18,6 +18,7 @@ from app.models import (
     GradeItem,
     RecordResponse,
     WrongbookResponse,
+    WrongbookDeleteResponse,
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
@@ -33,7 +34,12 @@ from app.services.session_namer import generate_session_name
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
 from app.services.retriever import select_chunks_for_generation, select_chunks_for_question
-from app.services.wrongbook_store import save_wrong_items, load_wrong_items_all, summarize_wrong_items
+from app.services.wrongbook_store import (
+    save_wrong_items,
+    load_wrong_items_all,
+    summarize_wrong_items,
+    delete_wrong_item,
+)
 from app.services.qa_store import save_questions, save_answers, save_grade, load_latest_record
 
 from app.core.config import settings
@@ -233,6 +239,12 @@ def wrongbook_api_all():
         items=items,
         summary=summary,
     )
+
+
+@app.delete("/wrongbook/{record_id}", response_model=WrongbookDeleteResponse)
+def wrongbook_delete_api(record_id: str):
+    deleted = delete_wrong_item(record_id)
+    return WrongbookDeleteResponse(record_id=record_id, deleted=deleted)
 
 
 @app.get("/records/{session_id}", response_model=RecordResponse)

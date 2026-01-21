@@ -125,3 +125,8 @@ class WrongbookResponse(BaseModel):
     total_wrong: int
     items: list[dict]
     summary: dict
+
+
+class WrongbookDeleteResponse(BaseModel):
+    record_id: str
+    deleted: bool

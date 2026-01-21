@@ -134,8 +134,19 @@
                            <div>你的答案：${w.user_answer}</div>
                            <div>正确答案：${w.correct_answer}</div>
                            <div>解析：${w.explanation}</div>
-                           <div class="muted">会话：${w.session_id}</div>`;
+                           <div class="muted">会话：${w.session_id}</div>
+                           <button data-del="${w.record_id}">删除</button>`;
           itemsDiv.appendChild(div);
+        });
+        document.querySelectorAll("[data-del]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-del");
+            if (!id) {
+              return;
+            }
+            await fetch(`/wrongbook/${id}`, { method: "DELETE" });
+            loadWrongbook();
+          };
         });
       }
 

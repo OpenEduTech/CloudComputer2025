@@ -1,5 +1,6 @@
 ﻿import json
 from datetime import datetime
+from uuid import uuid4
 
 import redis
 
@@ -20,6 +21,7 @@ def save_wrong_items(session_id: str, items: list[dict]) -> int:
     now = datetime.utcnow().isoformat()
     payload = []
     for item in items:
+        item["record_id"] = item.get("record_id") or uuid4().hex
         item["timestamp"] = now
         item["session_id"] = session_id
         payload.append(json.dumps(item, ensure_ascii=False))
@@ -42,6 +44,33 @@ def load_wrong_items_all() -> list[dict]:
         except json.JSONDecodeError:
             continue
     return result
+
+
+def delete_wrong_item(record_id: str) -> bool:
+    """
+    删除指定错题记录。
+    """
+    client = _get_client()
+    key = "wrongbook:all"
+    raw = client.lrange(key, 0, -1)
+    kept = []
+    deleted = False
+    for r in raw:
+        try:
+            item = json.loads(r)
+        except json.JSONDecodeError:
+            continue
+        if item.get("record_id") == record_id and not deleted:
+            deleted = True
+            continue
+        kept.append(item)
+    if not deleted:
+        return False
+    client.delete(key)
+    if kept:
+        payload = [json.dumps(i, ensure_ascii=False) for i in kept]
+        client.rpush(key, *payload)
+    return True
 
 
 def summarize_wrong_items(items: list[dict]) -> dict:
