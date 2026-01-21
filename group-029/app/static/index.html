@@ -173,6 +173,41 @@
         color: var(--muted);
         margin-top: 6px;
       }
+      .chat-box {
+        margin: 12px 0;
+        padding: 10px;
+        border: 1px solid #e4cdbb;
+        border-radius: 12px;
+        background: #fffdf9;
+      }
+      .chat-messages {
+        max-height: 220px;
+        overflow-y: auto;
+        padding: 6px;
+        background: #fff7ef;
+        border-radius: 8px;
+      }
+      .chat-msg {
+        margin: 6px 0;
+        padding: 6px 8px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      .chat-msg.user { background: #fde8d3; }
+      .chat-msg.bot { background: #f1eee9; }
+      .chat-sources {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .chat-input {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .chat-input input {
+        flex: 1;
+      }
       @media (max-width: 1100px) {
         main { grid-template-columns: 1fr; }
       }
@@ -201,6 +236,15 @@
 
       <section>
         <h2>流程区</h2>
+        <h3>0. 对话式入口</h3>
+        <div class="chat-box">
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input">
+            <input id="chatInput" type="text" placeholder="输入指令或问题，例如：出题 3 2 4:4:2 / 判卷 / 感知机的更新规则是什么？" />
+            <button id="chatSendBtn">发送</button>
+          </div>
+          <div class="hint">指令：上传、出题 数量、判卷、重置、文本:内容、帮助；非指令将自动进入问答。</div>
+        </div>
         <h3>1. 上传 PDF</h3>
         <input id="pdfFile" type="file" accept=".pdf" />
         <div class="status" id="fileName">未选择文件</div>
@@ -272,6 +316,9 @@
       const gradeError = document.getElementById("gradeError");
       const textBtn = document.getElementById("textBtn");
       const rawText = document.getElementById("rawText");
+      const chatMessages = document.getElementById("chatMessages");
+      const chatInput = document.getElementById("chatInput");
+      const chatSendBtn = document.getElementById("chatSendBtn");
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
       const questionsEmpty = document.getElementById("questionsEmpty");
@@ -311,6 +358,31 @@
         setError(uploadError, "");
         setError(genError, "");
         setError(gradeError, "");
+      }
+
+      function appendChat(role, text, sources = []) {
+        const div = document.createElement("div");
+        div.className = `chat-msg ${role}`;
+        div.textContent = text;
+        if (sources.length) {
+          const detail = document.createElement("details");
+          detail.className = "chat-sources";
+          const summary = document.createElement("summary");
+          summary.textContent = "查看证据片段";
+          detail.appendChild(summary);
+          sources.forEach((s) => {
+            const p = document.createElement("div");
+            p.textContent = s;
+            detail.appendChild(p);
+          });
+          div.appendChild(detail);
+        }
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function showChatHelp() {
+        appendChat("bot", "指令示例：上传 / 出题 3 2 4:4:2 / 判卷 / 重置 / 文本:你的内容 / 帮助");
       }
 
       function renderQuestions(savedAnswers = []) {
@@ -435,6 +507,128 @@
         textBtn.disabled = false;
         fetchSessions();
       };
+
+      async function createSessionFromText(text) {
+        const res = await fetch("/sessions/text", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+        if (!res.ok) {
+          throw new Error("文本创建失败");
+        }
+        return res.json();
+      }
+
+      function parseGenerateCommand(input) {
+        const match = input.match(/出题\s+(\d+)\s+(\d+)(?:\s+(\d+:\d+:\d+))?/);
+        if (!match) {
+          return null;
+        }
+        return {
+          mcq: Number(match[1]),
+          sa: Number(match[2]),
+          ratio: match[3] || "4:4:2"
+        };
+      }
+
+      chatSendBtn.onclick = async () => {
+        const text = chatInput.value.trim();
+        if (!text) {
+          return;
+        }
+        appendChat("user", text);
+        chatInput.value = "";
+
+        if (text.startsWith("文本:")) {
+          const content = text.slice(3).trim();
+          if (!content) {
+            appendChat("bot", "请在“文本:”后输入内容。");
+            return;
+          }
+          try {
+            const data = await createSessionFromText(content);
+            resetView();
+            state.sessionId = data.session_id;
+            state.sessionName = data.name || data.session_id;
+            uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+            sessionInfo.textContent = `当前会话：${state.sessionName}`;
+            genBtn.disabled = false;
+            fetchSessions();
+            appendChat("bot", "已创建文本会话，可以继续“出题”。");
+          } catch {
+            appendChat("bot", "文本创建失败，请检查内容。");
+          }
+          return;
+        }
+
+        if (text === "上传") {
+          if (!document.getElementById("pdfFile").files[0]) {
+            appendChat("bot", "请先选择 PDF 文件，再输入“上传”。");
+            return;
+          }
+          await uploadBtn.onclick();
+          appendChat("bot", "已触发上传，请查看状态。");
+          return;
+        }
+
+        if (text.startsWith("出题")) {
+          const config = parseGenerateCommand(text);
+          if (!config) {
+            appendChat("bot", "格式示例：出题 3 2 4:4:2");
+            return;
+          }
+          document.getElementById("mcqCount").value = config.mcq;
+          document.getElementById("saCount").value = config.sa;
+          difficultyRatio.value = config.ratio;
+          await genBtn.onclick();
+          appendChat("bot", "已触发出题，请查看结果区。");
+          return;
+        }
+
+        if (text === "判卷") {
+          if (gradeBtn.disabled) {
+            appendChat("bot", "请先生成题目并填写答案。");
+            return;
+          }
+          await gradeBtn.onclick();
+          appendChat("bot", "已触发判卷，请查看结果区。");
+          return;
+        }
+
+        if (text === "重置") {
+          resetBtn.onclick();
+          appendChat("bot", "已重置会话状态。");
+          return;
+        }
+
+        if (text === "帮助") {
+          showChatHelp();
+          return;
+        }
+
+        if (!state.sessionId) {
+          appendChat("bot", "请先上传 PDF 或创建文本会话。");
+          return;
+        }
+        try {
+          const res = await fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ session_id: state.sessionId, message: text })
+          });
+          if (!res.ok) {
+            appendChat("bot", "回答失败，请稍后重试。");
+            return;
+          }
+          const data = await res.json();
+          appendChat("bot", data.answer, data.sources || []);
+        } catch {
+          appendChat("bot", "调用失败，请检查网络或服务状态。");
+        }
+      };
+
+      showChatHelp();
 
       genBtn.onclick = async () => {
         setError(genError, "");
