@@ -55,6 +55,9 @@
         color: #8c7b6f;
         font-size: 13px;
       }
+      .chart {
+        height: 280px;
+      }
     </style>
   </head>
   <body>
@@ -65,12 +68,44 @@
     <main>
       <button id="refreshBtn">刷新</button>
       <div id="summary" class="card"></div>
+      <div id="chart" class="card chart"></div>
       <div id="items"></div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     <script>
       const summaryDiv = document.getElementById("summary");
       const itemsDiv = document.getElementById("items");
+      const chartDiv = document.getElementById("chart");
       const refreshBtn = document.getElementById("refreshBtn");
+      let chartInstance = null;
+
+      function renderChart(summary) {
+        const data = Object.entries(summary.by_keyword || {})
+          .map(([name, value]) => ({ name, value }));
+        if (!chartInstance) {
+          chartInstance = echarts.init(chartDiv);
+          window.addEventListener("resize", () => {
+            chartInstance && chartInstance.resize();
+          });
+        }
+        if (data.length === 0) {
+          chartDiv.innerHTML = "暂无关键词统计数据";
+          return;
+        }
+        chartInstance.setOption({
+          tooltip: { trigger: "item" },
+          series: [
+            {
+              type: "pie",
+              radius: ["35%", "70%"],
+              avoidLabelOverlap: true,
+              itemStyle: { borderRadius: 8, borderColor: "#fff", borderWidth: 2 },
+              label: { color: "#2a241f" },
+              data
+            }
+          ]
+        });
+      }
 
       async function loadWrongbook() {
         const res = await fetch("/wrongbook/all");
@@ -90,6 +125,7 @@
                                 <div style="margin-top:6px;"><strong>关键词统计</strong></div>
                                 <div>${summaryList || "暂无统计"}</div>
                                 <div style="margin-top:6px;">建议：${suggestion}</div>`;
+        renderChart(summary);
         itemsDiv.innerHTML = "";
         data.items.forEach((w) => {
           const div = document.createElement("div");
