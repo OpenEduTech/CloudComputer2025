@@ -11,12 +11,17 @@
         --accent: #c36a2d;
         --paper: #fff8f0;
         --muted: #8c7b6f;
+        --ok: #1f7a4c;
+        --bad: #b12b2b;
+        --shadow: 0 14px 30px rgba(0,0,0,0.08);
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: "STSong", "SimSun", "Noto Serif SC", serif;
-        background: radial-gradient(circle at 10% 10%, #fde3c2, #f5f1e8);
+        background:
+          radial-gradient(circle at 12% 8%, #fde3c2, #f5f1e8 60%),
+          linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
         color: var(--ink);
       }
       header {
@@ -25,6 +30,8 @@
         border-bottom: 2px solid #e7b57c;
       }
       h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: 1px; }
+      h2 { font-size: 18px; margin: 0 0 10px; }
+      h3 { font-size: 15px; margin: 12px 0 6px; }
       p { margin: 0; color: var(--muted); }
       main {
         display: grid;
@@ -37,9 +44,8 @@
         border: 1px solid #e7d5c3;
         border-radius: 12px;
         padding: 16px 18px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        box-shadow: var(--shadow);
       }
-      section h2 { margin: 0 0 10px; font-size: 18px; }
       label { display: block; margin: 10px 0 6px; }
       input[type="file"],
       input[type="text"],
@@ -59,7 +65,10 @@
         color: white;
         border-radius: 6px;
         cursor: pointer;
+        transition: transform 0.08s ease, box-shadow 0.2s ease;
+        box-shadow: 0 6px 14px rgba(195,106,45,0.25);
       }
+      button:hover { transform: translateY(-1px); }
       button:disabled { background: #c9a48d; cursor: not-allowed; }
       .status { margin-top: 8px; color: var(--muted); font-size: 13px; }
       .question-card {
@@ -80,8 +89,37 @@
         font-size: 12px;
         margin-left: 6px;
       }
-      .tag.right { background: #e2f6e2; color: #1d5f2c; }
-      .tag.wrong { background: #fde2e2; color: #7a1d1d; }
+      .tag.right { background: #d9f4e3; color: var(--ok); }
+      .tag.wrong { background: #fde2e2; color: var(--bad); }
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #f1e3d6;
+        margin-right: 6px;
+      }
+      .spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #d4b79b;
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .error {
+        margin-top: 8px;
+        padding: 8px;
+        border: 1px solid #f2b5b5;
+        background: #fdeaea;
+        border-radius: 6px;
+        color: #7a1d1d;
+        display: none;
+      }
       .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -99,12 +137,15 @@
     </header>
     <main>
       <section>
-        <h2>1. 上传 PDF</h2>
+        <h2>流程区</h2>
+        <h3>1. 上传 PDF</h3>
         <input id="pdfFile" type="file" accept=".pdf" />
         <button id="uploadBtn">上传并解析</button>
         <div class="status" id="uploadStatus">未上传</div>
+        <div class="status" id="sessionInfo">会话 ID：未生成</div>
+        <div class="error" id="uploadError"></div>
 
-        <h2 style="margin-top:16px;">2. 生成题目</h2>
+        <h3 style="margin-top:16px;">2. 生成题目</h3>
         <div class="grid">
           <div>
             <label>选择题数量</label>
@@ -117,16 +158,24 @@
         </div>
         <button id="genBtn" disabled>生成题目</button>
         <div class="status" id="genStatus">等待会话</div>
+        <div class="error" id="genError"></div>
+
+        <h3 style="margin-top:16px;">3. 作答与判卷</h3>
+        <button id="gradeBtn" disabled>提交判卷</button>
+        <button id="resetBtn" style="margin-left:6px;">一键重置</button>
+        <div class="status" id="gradeStatus">等待题目</div>
+        <div class="error" id="gradeError"></div>
       </section>
 
       <section>
-        <h2>3. 作答与判卷</h2>
+        <h2>结果区</h2>
+        <h3>题目列表</h3>
         <div id="questions"></div>
-        <button id="gradeBtn" disabled>提交判卷</button>
-        <div class="status" id="gradeStatus">等待题目</div>
+
+        <h3 style="margin-top:16px;">判卷结果</h3>
         <div id="gradeResult"></div>
 
-        <h2 style="margin-top:16px;">4. 错题本</h2>
+        <h3 style="margin-top:16px;">错题本</h3>
         <button id="wrongbookBtn" disabled>刷新错题本</button>
         <div id="wrongbook"></div>
       </section>
@@ -142,39 +191,49 @@
       const genBtn = document.getElementById("genBtn");
       const gradeBtn = document.getElementById("gradeBtn");
       const wrongbookBtn = document.getElementById("wrongbookBtn");
+      const resetBtn = document.getElementById("resetBtn");
       const uploadStatus = document.getElementById("uploadStatus");
+      const sessionInfo = document.getElementById("sessionInfo");
+      const uploadError = document.getElementById("uploadError");
       const genStatus = document.getElementById("genStatus");
+      const genError = document.getElementById("genError");
       const gradeStatus = document.getElementById("gradeStatus");
+      const gradeError = document.getElementById("gradeError");
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
       const wrongbookDiv = document.getElementById("wrongbook");
 
       uploadBtn.onclick = async () => {
+        uploadError.style.display = "none";
         const file = document.getElementById("pdfFile").files[0];
         if (!file) {
           uploadStatus.textContent = "请选择 PDF 文件";
           return;
         }
         uploadBtn.disabled = true;
-        uploadStatus.textContent = "上传中...";
+        uploadStatus.innerHTML = `<span class="spinner"></span>上传中...`;
         const form = new FormData();
         form.append("file", file);
         const res = await fetch("/sessions", { method: "POST", body: form });
         if (!res.ok) {
           uploadStatus.textContent = "上传失败";
+          uploadError.textContent = "上传或解析失败，请检查 PDF。";
+          uploadError.style.display = "block";
           uploadBtn.disabled = false;
           return;
         }
         const data = await res.json();
         state.sessionId = data.session_id;
         uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+        sessionInfo.textContent = `会话 ID：${state.sessionId}`;
         genBtn.disabled = false;
         wrongbookBtn.disabled = false;
         uploadBtn.disabled = false;
       };
 
       genBtn.onclick = async () => {
-        genStatus.textContent = "生成中...";
+        genError.style.display = "none";
+        genStatus.innerHTML = `<span class="spinner"></span>生成中...`;
         genBtn.disabled = true;
         const body = {
           session_id: state.sessionId,
@@ -188,6 +247,8 @@
         });
         if (!res.ok) {
           genStatus.textContent = "生成失败";
+          genError.textContent = "题目生成失败，请稍后重试。";
+          genError.style.display = "block";
           genBtn.disabled = false;
           return;
         }
@@ -220,7 +281,8 @@
       }
 
       gradeBtn.onclick = async () => {
-        gradeStatus.textContent = "判卷中...";
+        gradeError.style.display = "none";
+        gradeStatus.innerHTML = `<span class="spinner"></span>判卷中...`;
         gradeBtn.disabled = true;
         const answers = [];
         document.querySelectorAll("[data-qid]").forEach((el) => {
@@ -238,6 +300,8 @@
         });
         if (!res.ok) {
           gradeStatus.textContent = "判卷失败";
+          gradeError.textContent = "判卷失败，请检查答案或稍后重试。";
+          gradeError.style.display = "block";
           gradeBtn.disabled = false;
           return;
         }
@@ -259,6 +323,7 @@
                            <div>解析：${i.explanation}</div>`;
           gradeResult.appendChild(div);
         });
+        gradeResult.scrollIntoView({ behavior: "smooth" });
         gradeBtn.disabled = false;
       };
 
@@ -270,7 +335,17 @@
           return;
         }
         const data = await res.json();
-        wrongbookDiv.innerHTML = `<div>错题数：${data.total_wrong}</div>`;
+        const summary = data.summary || { total: 0, by_keyword: {} };
+        const summaryList = Object.entries(summary.by_keyword || {})
+          .map(([k, v]) => `<span class="pill">${k}：${v}</span>`)
+          .join("");
+        const suggestion = summary.total > 0
+          ? "建议优先复习错题关键词对应的章节，并再次完成同类题目。"
+          : "当前无错题，建议继续提升题量或提高难度。";
+        wrongbookDiv.innerHTML = `<div>错题数：${data.total_wrong}</div>
+                                  <div style="margin-top:6px;">关键词统计：</div>
+                                  <div>${summaryList || "暂无统计"}</div>
+                                  <div style="margin-top:6px;">建议：${suggestion}</div>`;
         data.items.forEach((w) => {
           const div = document.createElement("div");
           div.className = "question-card";
@@ -280,6 +355,23 @@
                            <div>解析：${w.explanation}</div>`;
           wrongbookDiv.appendChild(div);
         });
+        wrongbookDiv.scrollIntoView({ behavior: "smooth" });
+      };
+
+      resetBtn.onclick = () => {
+        state.sessionId = "";
+        state.questions = [];
+        document.getElementById("pdfFile").value = "";
+        uploadStatus.textContent = "未上传";
+        sessionInfo.textContent = "会话 ID：未生成";
+        genStatus.textContent = "等待会话";
+        gradeStatus.textContent = "等待题目";
+        questionsDiv.innerHTML = "";
+        gradeResult.innerHTML = "";
+        wrongbookDiv.innerHTML = "";
+        genBtn.disabled = true;
+        gradeBtn.disabled = true;
+        wrongbookBtn.disabled = true;
       };
     </script>
   </body>
