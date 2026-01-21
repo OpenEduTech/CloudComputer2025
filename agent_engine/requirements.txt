@@ -11,3 +11,6 @@ EbookLib
 beautifulsoup4
 mobi
 tqdm
+arxiv
+wikipedia
+neo4j

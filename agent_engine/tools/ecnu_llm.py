@@ -55,6 +55,8 @@ class ECNULLM:
             return data['choices'][0]['message']['content']
         except Exception as e:
             print(f"Error calling ECNU LLM: {e}")
+            if 'response' in locals():
+                 print(f"Response Content: {response.text}")
             return None
 
     def extract_keywords(self, text: str, prompt_template: str) -> list:
