@@ -1,0 +1,125 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alerts@example.com'
+  smtp_auth_username: 'alerts@example.com'
+  smtp_auth_password: 'your-smtp-password'
+
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'
+
+route:
+  group_by: ['alertname', 'severity', 'team']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 12h
+  receiver: 'default-receiver'
+
+  routes:
+    # Critical 告警发送到所有渠道
+    - match:
+        severity: critical
+      receiver: 'critical-receiver'
+      continue: true
+
+    # Warning 告警发送到邮件和Slack
+    - match:
+        severity: warning
+      receiver: 'warning-receiver'
+
+    # Backend 团队告警
+    - match:
+        team: backend
+      receiver: 'backend-team'
+
+    # DevOps 团队告警
+    - match:
+        team: devops
+      receiver: 'devops-team'
+
+    # Security 团队告警
+    - match:
+        team: security
+      receiver: 'security-team'
+
+receivers:
+  - name: 'default-receiver'
+    email_configs:
+      - to: 'team@example.com'
+        headers:
+          Subject: '[智能学习助手] {{ .GroupLabels.alertname }}'
+
+  - name: 'critical-receiver'
+    email_configs:
+      - to: 'oncall@example.com'
+        headers:
+          Subject: '[CRITICAL] 智能学习助手告警: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+        channel: '#alerts-critical'
+        title: '[CRITICAL] 智能学习助手告警'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'danger'
+
+  - name: 'warning-receiver'
+    email_configs:
+      - to: 'team@example.com'
+        headers:
+          Subject: '[WARNING] 智能学习助手告警: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+        channel: '#alerts-warning'
+        title: '[WARNING] 智能学习助手告警'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'warning'
+
+  - name: 'backend-team'
+    email_configs:
+      - to: 'backend-team@example.com'
+        headers:
+          Subject: '[Backend] 智能学习助手告警: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+        channel: '#backend-alerts'
+        title: '[Backend] 智能学习助手告警'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'warning'
+
+  - name: 'devops-team'
+    email_configs:
+      - to: 'devops-team@example.com'
+        headers:
+          Subject: '[DevOps] 智能学习助手告警: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+        channel: '#devops-alerts'
+        title: '[DevOps] 智能学习助手告警'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'warning'
+
+  - name: 'security-team'
+    email_configs:
+      - to: 'security-team@example.com'
+        headers:
+          Subject: '[Security] 智能学习助手告警: {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+        channel: '#security-alerts'
+        title: '[Security] 智能学习助手告警'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'danger'
+
+inhibit_rules:
+  # 如果存在 critical 告警，则抑制 warning 告警
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
+
+  # 如果服务不可用，则抑制该服务的其他告警
+  - source_match:
+      alertname: 'ServiceDown'
+    target_match_re:
+      alertname: '(HighErrorRate|HighResponseTime|PodCrashLooping)'
+    equal: ['service']

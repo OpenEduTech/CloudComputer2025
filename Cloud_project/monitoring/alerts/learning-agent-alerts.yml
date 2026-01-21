@@ -1,0 +1,220 @@
+groups:
+  - name: learning_agent_alerts
+    interval: 30s
+    rules:
+      # 高错误率告警
+      - alert: HighErrorRate
+        expr: |
+          sum(rate(http_requests_total{namespace="learning-agent",status=~"5.."}[5m])) 
+          / sum(rate(http_requests_total{namespace="learning-agent"}[5m])) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "智能学习助手系统错误率过高"
+          description: "命名空间 {{ $labels.namespace }} 的错误率在过去5分钟内超过10%"
+          runbook_url: "https://wiki.example.com/runbooks/high-error-rate"
+
+      # 高响应时间告警
+      - alert: HighResponseTime
+        expr: |
+          histogram_quantile(0.95, 
+            sum(rate(http_request_duration_seconds_bucket{namespace="learning-agent"}[5m])) by (le, service)
+          ) > 1
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "智能学习助手系统响应时间过长"
+          description: "服务 {{ $labels.service }} 的P95响应时间在过去5分钟内超过1秒"
+          runbook_url: "https://wiki.example.com/runbooks/high-response-time"
+
+      # Pod 崩溃告警
+      - alert: PodCrashLooping
+        expr: |
+          rate(kube_pod_container_status_restarts_total{namespace="learning-agent"}[15m]) > 0
+        for: 5m
+        labels:
+          severity: critical
+          team: devops
+        annotations:
+          summary: "Pod 频繁重启"
+          description: "Pod {{ $labels.pod }} 在过去15分钟内频繁重启"
+          runbook_url: "https://wiki.example.com/runbooks/pod-crash-looping"
+
+      # Pod 未就绪告警
+      - alert: PodNotReady
+        expr: |
+          sum by (namespace, pod) (kube_pod_status_ready{condition="false", namespace="learning-agent"})
+          > 0
+        for: 5m
+        labels:
+          severity: warning
+          team: devops
+        annotations:
+          summary: "Pod 未就绪"
+          description: "命名空间 {{ $labels.namespace }} 中的 Pod {{ $labels.pod }} 未就绪超过5分钟"
+          runbook_url: "https://wiki.example.com/runbooks/pod-not-ready"
+
+      # CPU 使用率过高告警
+      - alert: HighCPUUsage
+        expr: |
+          sum(rate(container_cpu_usage_seconds_total{namespace="learning-agent"}[5m])) by (pod)
+          / sum(kube_pod_container_resource_limits_cpu_cores{namespace="learning-agent"}) by (pod) > 0.8
+        for: 10m
+        labels:
+          severity: warning
+          team: devops
+        annotations:
+          summary: "CPU 使用率过高"
+          description: "Pod {{ $labels.pod }} 的 CPU 使用率在过去10分钟内超过80%"
+          runbook_url: "https://wiki.example.com/runbooks/high-cpu-usage"
+
+      # 内存使用率过高告警
+      - alert: HighMemoryUsage
+        expr: |
+          sum(container_memory_working_set_bytes{namespace="learning-agent"}) by (pod)
+          / sum(kube_pod_container_resource_limits_memory_bytes{namespace="learning-agent"}) by (pod) > 0.85
+        for: 10m
+        labels:
+          severity: warning
+          team: devops
+        annotations:
+          summary: "内存使用率过高"
+          description: "Pod {{ $labels.pod }} 的内存使用率在过去10分钟内超过85%"
+          runbook_url: "https://wiki.example.com/runbooks/high-memory-usage"
+
+      # 磁盘空间不足告警
+      - alert: DiskSpaceLow
+        expr: |
+          (node_filesystem_avail_bytes{mountpoint="/", fstype!="tmpfs"} 
+          / node_filesystem_size_bytes{mountpoint="/", fstype!="tmpfs"}) < 0.15
+        for: 5m
+        labels:
+          severity: critical
+          team: devops
+        annotations:
+          summary: "磁盘空间不足"
+          description: "节点 {{ $labels.instance }} 的磁盘空间低于15%"
+          runbook_url: "https://wiki.example.com/runbooks/disk-space-low"
+
+      # MongoDB 连接失败告警
+      - alert: MongoDBConnectionFailed
+        expr: |
+          mongodb_up{namespace="learning-agent"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "MongoDB 连接失败"
+          description: "MongoDB 实例 {{ $labels.instance }} 无法连接"
+          runbook_url: "https://wiki.example.com/runbooks/mongodb-connection-failed"
+
+      # Redis 连接失败告警
+      - alert: RedisConnectionFailed
+        expr: |
+          redis_up{namespace="learning-agent"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          team: backend
+        annotations:
+          summary: "Redis 连接失败"
+          description: "Redis 实例 {{ $labels.instance }} 无法连接"
+          runbook_url: "https://wiki.example.com/runbooks/redis-connection-failed"
+
+      # API 密钥认证失败告警
+      - alert: APIKeyAuthFailed
+        expr: |
+          rate(api_auth_failures_total{namespace="learning-agent"}[5m]) > 0
+        for: 5m
+        labels:
+          severity: warning
+          team: security
+        annotations:
+          summary: "API 密钥认证失败"
+          description: "API 密钥认证失败率在过去5分钟内超过0"
+          runbook_url: "https://wiki.example.com/runbooks/api-key-auth-failed"
+
+      # 试卷生成失败告警
+      - alert: ExamGenerationFailed
+        expr: |
+          rate(exam_generation_failures_total{namespace="learning-agent"}[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "试卷生成失败"
+          description: "试卷生成失败率在过去5分钟内超过0.1次/秒"
+          runbook_url: "https://wiki.example.com/runbooks/exam-generation-failed"
+
+      # 评分失败告警
+      - alert: GradingFailed
+        expr: |
+          rate(grading_failures_total{namespace="learning-agent"}[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "评分失败"
+          description: "评分失败率在过去5分钟内超过0.1次/秒"
+          runbook_url: "https://wiki.example.com/runbooks/grading-failed"
+
+      # 数据库连接池耗尽告警
+      - alert: DatabaseConnectionPoolExhausted
+        expr: |
+          (database_connections_active{namespace="learning-agent"} 
+          / database_connections_max{namespace="learning-agent"}) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "数据库连接池耗尽"
+          description: "数据库连接池使用率超过90%"
+          runbook_url: "https://wiki.example.com/runbooks/database-connection-pool-exhausted"
+
+      # 缓存命中率过低告警
+      - alert: LowCacheHitRate
+        expr: |
+          (rate(cache_hits_total{namespace="learning-agent"}[5m]) 
+          / (rate(cache_hits_total{namespace="learning-agent"}[5m]) + rate(cache_misses_total{namespace="learning-agent"}[5m]))) < 0.5
+        for: 10m
+        labels:
+          severity: warning
+          team: backend
+        annotations:
+          summary: "缓存命中率过低"
+          description: "缓存命中率在过去10分钟内低于50%"
+          runbook_url: "https://wiki.example.com/runbooks/low-cache-hit-rate"
+
+      # 服务不可用告警
+      - alert: ServiceDown
+        expr: |
+          up{namespace="learning-agent",job=~"quiz-generator|quiz-grader|mistake-manager"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          team: devops
+        annotations:
+          summary: "服务不可用"
+          description: "服务 {{ $labels.job }} 不可用"
+          runbook_url: "https://wiki.example.com/runbooks/service-down"
+
+      # 集群节点不可用告警
+      - alert: NodeNotReady
+        expr: |
+          kube_node_status_ready{condition="true"} == 0
+        for: 5m
+        labels:
+          severity: critical
+          team: devops
+        annotations:
+          summary: "集群节点不可用"
+          description: "节点 {{ $labels.node }} 不可用超过5分钟"
+          runbook_url: "https://wiki.example.com/runbooks/node-not-ready"

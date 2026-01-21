@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quiz-grader-service
+  namespace: learning-agent
+  labels:
+    app: quiz-grader
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: quiz-grader
+  template:
+    metadata:
+      labels:
+        app: quiz-grader
+    spec:
+      containers:
+      - name: quiz-grader
+        image: learning-agent:quiz-grader:latest
+        ports:
+        - containerPort: 8002
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: learning-agent-secrets
+              key: openai-api-key
+        - name: OPENAI_API_BASE
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: openai-api-base
+        - name: MONGO_URI
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: mongo-uri
+        - name: REDIS_CLUSTER_NODES
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: redis-cluster-nodes
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: learning-agent-secrets
+              key: redis-password
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: log-level
+        - name: SERVICE_TYPE
+          value: "quiz_grader"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quiz-grader-service
+  namespace: learning-agent
+  labels:
+    app: quiz-grader
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8002
+    targetPort: 8002
+  selector:
+    app: quiz-grader
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: quiz-grader-hpa
+  namespace: learning-agent
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: quiz-grader-service
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
