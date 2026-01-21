@@ -63,21 +63,28 @@ def generate_questions(chunks: list[dict], num_mcq: int, num_short: int, difficu
     )
     prompt = _build_prompt()
     chain = prompt | llm | StrOutputParser()
-    raw = chain.invoke(
-        {
-            "context": context,
-            "num_mcq": num_mcq,
-            "num_short": num_short,
-            "difficulty_ratio": difficulty_ratio,
-        }
-    )
-    json_text = _extract_json_text(raw)
-    try:
-        data = json.loads(json_text)
-        if isinstance(data, list):
-            return data, raw
-    except json.JSONDecodeError:
-        pass
+    def _invoke_once() -> tuple[list[dict], str]:
+        raw = chain.invoke(
+            {
+                "context": context,
+                "num_mcq": num_mcq,
+                "num_short": num_short,
+                "difficulty_ratio": difficulty_ratio,
+            }
+        )
+        json_text = _extract_json_text(raw)
+        try:
+            data = json.loads(json_text)
+            if isinstance(data, list):
+                return data, raw
+        except json.JSONDecodeError:
+            pass
+        return [], raw
+
+    data, raw = _invoke_once()
+    if not data:
+        # 失败时重试一次，减少偶发格式错误
+        data, raw = _invoke_once()
 
     os.makedirs("data", exist_ok=True)
     with open(os.path.join("data", "llm_raw.txt"), "w", encoding="utf-8") as f:

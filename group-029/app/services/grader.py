@@ -24,15 +24,16 @@ def _build_check_prompt() -> ChatPromptTemplate:
 你是判卷结果的校验官。请检查评分结果是否与题目、参考答案、学生答案一致。
 要求：
 1) 若发现评分/对错不一致，修正为合理结果。
-2) 保留原有 qid，不新增或删除条目。
-3) 输出严格 JSON 数组，每个元素包含：qid, is_correct, score, explanation。
-4) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
+2) 选择题需确保参考答案与选项一致；若不一致，优先纠正评分为错误并说明原因。
+3) 保留原有 qid，不新增或删除条目。
+4) 输出严格 JSON 数组，每个元素包含：qid, is_correct, score, explanation。
+5) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
 
 题目：{questions}
 
 学生答案：{answers}
 
-参考答案：{reference}
+参考答案与选项：{reference}
 
 原始评分：{graded}
 """
@@ -79,7 +80,8 @@ def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dic
             check_prompt = _build_check_prompt()
             check_chain = check_prompt | llm | StrOutputParser()
             reference = [
-                {"qid": q["qid"], "answer": q.get("answer", "")} for q in questions
+                {"qid": q["qid"], "answer": q.get("answer", ""), "options": q.get("options")}
+                for q in questions
             ]
             checked_raw = check_chain.invoke(
                 {
