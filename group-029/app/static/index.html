@@ -89,6 +89,8 @@
       button:hover { transform: translateY(-1px); }
       button:disabled { background: #c9a48d; cursor: not-allowed; }
       .status { margin-top: 8px; color: var(--muted); font-size: 13px; }
+      .status.ok { color: var(--ok); }
+      .status.warn { color: var(--bad); }
       .question-card {
         margin: 12px 0;
         padding: 10px;
@@ -157,6 +159,20 @@
         margin-top: 8px;
         flex-wrap: wrap;
       }
+      .empty {
+        padding: 12px;
+        border-radius: 10px;
+        background: #f7efe5;
+        color: var(--muted);
+        font-size: 13px;
+        border: 1px dashed #e4cdbb;
+        margin-top: 8px;
+      }
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
       @media (max-width: 1100px) {
         main { grid-template-columns: 1fr; }
       }
@@ -185,6 +201,7 @@
         <h2>流程区</h2>
         <h3>1. 上传 PDF</h3>
         <input id="pdfFile" type="file" accept=".pdf" />
+        <div class="status" id="fileName">未选择文件</div>
         <button id="uploadBtn">上传并解析</button>
         <div class="status" id="uploadStatus">未上传</div>
         <div class="error" id="uploadError"></div>
@@ -193,13 +210,14 @@
         <div class="grid">
           <div>
             <label>选择题数量</label>
-            <input id="mcqCount" type="text" value="3" />
+            <input id="mcqCount" type="number" min="1" max="10" value="3" />
           </div>
           <div>
             <label>简答题数量</label>
-            <input id="saCount" type="text" value="2" />
+            <input id="saCount" type="number" min="1" max="6" value="2" />
           </div>
         </div>
+        <div class="hint">建议总题量不超过 12 题，保证生成质量。</div>
         <button id="genBtn" disabled>生成题目</button>
         <div class="status" id="genStatus">等待会话</div>
         <div class="error" id="genError"></div>
@@ -214,9 +232,11 @@
       <section>
         <h2>结果区</h2>
         <h3>题目列表</h3>
+        <div id="questionsEmpty" class="empty">尚未生成题目，请先上传教材并生成题目。</div>
         <div id="questions"></div>
 
         <h3 style="margin-top:16px;">判卷结果</h3>
+        <div id="gradeEmpty" class="empty">等待判卷结果。</div>
         <div id="gradeResult"></div>
       </section>
     </main>
@@ -237,12 +257,15 @@
       const sessionInfo = document.getElementById("sessionInfo");
       const uploadStatus = document.getElementById("uploadStatus");
       const uploadError = document.getElementById("uploadError");
+      const fileName = document.getElementById("fileName");
       const genStatus = document.getElementById("genStatus");
       const genError = document.getElementById("genError");
       const gradeStatus = document.getElementById("gradeStatus");
       const gradeError = document.getElementById("gradeError");
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
+      const questionsEmpty = document.getElementById("questionsEmpty");
+      const gradeEmpty = document.getElementById("gradeEmpty");
       const sessionListStatus = document.getElementById("sessionListStatus");
       const sessionListDiv = document.getElementById("sessionList");
 
@@ -262,12 +285,15 @@
         state.questions = [];
         state.grade = null;
         document.getElementById("pdfFile").value = "";
+        fileName.textContent = "未选择文件";
         uploadStatus.textContent = "未上传";
         sessionInfo.textContent = "当前会话：未生成";
         genStatus.textContent = "等待会话";
         gradeStatus.textContent = "等待题目";
         questionsDiv.innerHTML = "";
         gradeResult.innerHTML = "";
+        questionsEmpty.style.display = "block";
+        gradeEmpty.style.display = "block";
         genBtn.disabled = true;
         gradeBtn.disabled = true;
         setError(uploadError, "");
@@ -277,6 +303,7 @@
 
       function renderQuestions(savedAnswers = []) {
         questionsDiv.innerHTML = "";
+        questionsEmpty.style.display = state.questions.length ? "none" : "block";
         const answerMap = {};
         savedAnswers.forEach((a) => {
           answerMap[a.qid] = a.answer;
@@ -302,8 +329,10 @@
       function renderGrade(grade, answers = []) {
         if (!grade) {
           gradeResult.innerHTML = "";
+          gradeEmpty.style.display = "block";
           return;
         }
+        gradeEmpty.style.display = "none";
         const answerMap = {};
         answers.forEach((a) => {
           answerMap[a.qid] = a.answer;
@@ -328,6 +357,11 @@
           gradeResult.appendChild(div);
         });
       }
+
+      document.getElementById("pdfFile").addEventListener("change", (e) => {
+        const f = e.target.files[0];
+        fileName.textContent = f ? `已选择：${f.name}` : "未选择文件";
+      });
 
       uploadBtn.onclick = async () => {
         setError(uploadError, "");
@@ -360,12 +394,19 @@
 
       genBtn.onclick = async () => {
         setError(genError, "");
+        const mcqVal = Number(document.getElementById("mcqCount").value || 0);
+        const saVal = Number(document.getElementById("saCount").value || 0);
+        if (mcqVal <= 0 || saVal <= 0) {
+          genStatus.textContent = "生成失败";
+          setError(genError, "题目数量需为正整数。");
+          return;
+        }
         genStatus.innerHTML = `<span class="spinner"></span>生成中...`;
         genBtn.disabled = true;
         const body = {
           session_id: state.sessionId,
-          num_mcq: Number(document.getElementById("mcqCount").value || 3),
-          num_short: Number(document.getElementById("saCount").value || 2)
+          num_mcq: mcqVal,
+          num_short: saVal
         };
         const res = await fetch("/questions", {
           method: "POST",
@@ -386,6 +427,7 @@
         renderGrade(null);
         gradeBtn.disabled = false;
         genBtn.disabled = false;
+        questionsDiv.scrollIntoView({ behavior: "smooth" });
       };
 
       gradeBtn.onclick = async () => {

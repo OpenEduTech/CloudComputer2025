@@ -70,6 +70,7 @@ notepad .env
 3. `POST /questions` 传入 `session_id` 生成题目。
 4. `POST /grade` 传入题目与答案进行判卷。
 5. `GET /wrongbook/all` 查看错题本。
+6. 主页空状态提示应随步骤自动切换（未生成题目/等待判卷）。
 
 ## 文档
 - `docs/ARCHITECTURE.md`：架构与数据流
