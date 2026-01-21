@@ -53,7 +53,9 @@ notepad .env
 - 修改 `.env` 后必须重启服务，否则配置不会生效。
 
 ## API 简要
+- `GET /sessions`：会话列表
 - `POST /sessions`：上传 PDF 并创建会话
+- `DELETE /sessions/{session_id}`：删除会话
 - `POST /questions`：生成题目
 - `POST /grade`：判卷并记录错题
 - `GET /wrongbook/{session_id}`：查询错题本

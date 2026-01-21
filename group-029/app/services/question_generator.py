@@ -23,7 +23,7 @@ def _build_prompt():
 
 示例（仅示例，不要复述）：
 [
-  {
+  {{
     "qid": "mc_1",
     "qtype": "multiple_choice",
     "question": "示例题干",
@@ -31,7 +31,7 @@ def _build_prompt():
     "answer": "B",
     "explanation": "示例解析",
     "evidence": ["[c1] 示例证据"]
-  }
+  }}
 ]
 
 资料片段：

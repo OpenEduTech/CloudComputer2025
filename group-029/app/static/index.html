@@ -144,6 +144,9 @@
         <div class="status" id="uploadStatus">未上传</div>
         <div class="status" id="sessionInfo">会话 ID：未生成</div>
         <div class="error" id="uploadError"></div>
+        <button id="refreshSessionsBtn" style="margin-top:6px;">刷新会话列表</button>
+        <div class="status" id="sessionListStatus">暂无会话</div>
+        <div id="sessionList"></div>
 
         <h3 style="margin-top:16px;">2. 生成题目</h3>
         <div class="grid">
@@ -192,9 +195,12 @@
       const gradeBtn = document.getElementById("gradeBtn");
       const wrongbookBtn = document.getElementById("wrongbookBtn");
       const resetBtn = document.getElementById("resetBtn");
+      const refreshSessionsBtn = document.getElementById("refreshSessionsBtn");
       const uploadStatus = document.getElementById("uploadStatus");
       const sessionInfo = document.getElementById("sessionInfo");
       const uploadError = document.getElementById("uploadError");
+      const sessionListStatus = document.getElementById("sessionListStatus");
+      const sessionListDiv = document.getElementById("sessionList");
       const genStatus = document.getElementById("genStatus");
       const genError = document.getElementById("genError");
       const gradeStatus = document.getElementById("gradeStatus");
@@ -229,6 +235,7 @@
         genBtn.disabled = false;
         wrongbookBtn.disabled = false;
         uploadBtn.disabled = false;
+        fetchSessions();
       };
 
       genBtn.onclick = async () => {
@@ -373,6 +380,43 @@
         gradeBtn.disabled = true;
         wrongbookBtn.disabled = true;
       };
+
+      async function fetchSessions() {
+        sessionListStatus.innerHTML = `<span class="spinner"></span>加载会话列表...`;
+        sessionListDiv.innerHTML = "";
+        const res = await fetch("/sessions");
+        if (!res.ok) {
+          sessionListStatus.textContent = "会话列表获取失败";
+          return;
+        }
+        const data = await res.json();
+        if (!data.sessions || data.sessions.length === 0) {
+          sessionListStatus.textContent = "暂无会话";
+          return;
+        }
+        sessionListStatus.textContent = `共 ${data.sessions.length} 个会话`;
+        data.sessions.forEach((s) => {
+          const div = document.createElement("div");
+          div.className = "question-card";
+          div.innerHTML = `<div><strong>${s.session_id}</strong></div>
+                           <div>切分数：${s.chunk_count}</div>
+                           <div>创建时间：${s.created_at}</div>
+                           <button data-del="${s.session_id}">删除会话</button>`;
+          sessionListDiv.appendChild(div);
+        });
+        document.querySelectorAll("[data-del]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-del");
+            await fetch(`/sessions/${id}`, { method: "DELETE" });
+            if (state.sessionId === id) {
+              resetBtn.onclick();
+            }
+            fetchSessions();
+          };
+        });
+      }
+
+      refreshSessionsBtn.onclick = fetchSessions;
     </script>
   </body>
 </html>

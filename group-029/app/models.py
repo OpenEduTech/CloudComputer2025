@@ -8,6 +8,21 @@ class SessionCreateResponse(BaseModel):
     chunk_count: int = Field(..., description="切分后的片段数量")
 
 
+class SessionItem(BaseModel):
+    session_id: str
+    created_at: str
+    chunk_count: int
+
+
+class SessionListResponse(BaseModel):
+    sessions: list[SessionItem]
+
+
+class SessionDeleteResponse(BaseModel):
+    session_id: str
+    deleted: bool
+
+
 # 出题请求
 class QuestionGenerateRequest(BaseModel):
     session_id: str = Field(..., description="会话 ID")
@@ -89,3 +104,4 @@ class WrongbookResponse(BaseModel):
     session_id: str
     total_wrong: int
     items: list[dict]
+    summary: dict

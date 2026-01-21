@@ -33,7 +33,7 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
 
 示例（仅示例，不要复述）：
 [
-  {"qid": "mc_1", "is_correct": true, "score": 1, "explanation": "示例解析"}
+  {{"qid": "mc_1", "is_correct": true, "score": 1, "explanation": "示例解析"}}
 ]
 
 题目：

@@ -40,3 +40,20 @@ def load_wrong_items(session_id: str) -> list[dict]:
         except json.JSONDecodeError:
             continue
     return result
+
+
+def summarize_wrong_items(items: list[dict]) -> dict:
+    """
+    简单统计错题情况：按题型关键词计数。
+    """
+    summary = {
+        "total": len(items),
+        "by_keyword": {}
+    }
+    for item in items:
+        text = item.get("question", "")
+        # 简单关键词统计
+        for key in ["感知机", "收敛", "损失函数", "超平面", "更新"]:
+            if key in text:
+                summary["by_keyword"][key] = summary["by_keyword"].get(key, 0) + 1
+    return summary

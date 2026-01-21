@@ -6,6 +6,8 @@ from uuid import uuid4
 
 from app.models import (
     SessionCreateResponse,
+    SessionListResponse,
+    SessionDeleteResponse,
     QuestionGenerateRequest,
     QuestionGenerateResponse,
     QuestionItem,
@@ -16,10 +18,10 @@ from app.models import (
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
-from app.services.session_store import create_session, load_chunks
+from app.services.session_store import create_session, load_chunks, list_sessions, delete_session
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
-from app.services.wrongbook_store import save_wrong_items, load_wrong_items
+from app.services.wrongbook_store import save_wrong_items, load_wrong_items, summarize_wrong_items
 
 from app.core.config import settings
 
@@ -66,6 +68,17 @@ def create_session_api(file: UploadFile = File(...)):
     chunks = split_text(text)
     session_id = create_session(chunks)
     return SessionCreateResponse(session_id=session_id, chunk_count=len(chunks))
+
+
+@app.get("/sessions", response_model=SessionListResponse)
+def list_sessions_api():
+    return SessionListResponse(sessions=list_sessions())
+
+
+@app.delete("/sessions/{session_id}", response_model=SessionDeleteResponse)
+def delete_session_api(session_id: str):
+    deleted = delete_session(session_id)
+    return SessionDeleteResponse(session_id=session_id, deleted=deleted)
 
 
 @app.post("/questions", response_model=QuestionGenerateResponse)
@@ -136,8 +149,10 @@ def grade_api(req: GradeRequest):
 @app.get("/wrongbook/{session_id}", response_model=WrongbookResponse)
 def wrongbook_api(session_id: str):
     items = load_wrong_items(session_id)
+    summary = summarize_wrong_items(items)
     return WrongbookResponse(
         session_id=session_id,
         total_wrong=len(items),
         items=items,
+        summary=summary,
     )
