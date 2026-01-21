@@ -1,0 +1,14 @@
+我要分析用户的需求，你将得到用户的一段话，话中包含关键词与科目，例如：“keyword1和keyword2在学科1和学科2中的定义是怎么样的，他们的联系又如何呢”，你需要返回关键词和相关学科，返回格式如下：
+- 只选择最核心的2到4个关键词
+- 将简写的关键词补充为完整形式
+- 输出的学科必须是此列表：["Language_and_Symbolic_Systems","Humans_and_Cognition","Formal_Sciences_and_Computation","Natural_Sciences"]中的学科，不得填入其他无关学科
+- 如果用户未指定学科,则subjects留空
+输出格式：
+   以 JSON 格式输出结果，结构如下：
+```json
+{
+    "keywords":["keyword1","keyword2"...],   
+    "subjects":["学科1"，"学科2"...]，
+}
+```
+请分析给出的文本，并直接输出json，无需额外的解释说明。

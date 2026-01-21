@@ -1,7 +1,13 @@
 langgraph
 langchain
+langchain-community
 langchain-openai
 langchain-chroma
 chromadb
 redis
 python-dotenv
+sentence-transformers
+EbookLib
+beautifulsoup4
+mobi
+tqdm
