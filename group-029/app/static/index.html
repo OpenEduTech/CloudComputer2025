@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
@@ -13,12 +13,12 @@
         --muted: #8c7b6f;
         --ok: #1f7a4c;
         --bad: #b12b2b;
-        --shadow: 0 14px 30px rgba(0,0,0,0.08);
+        --shadow: 0 16px 32px rgba(0,0,0,0.08);
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: "STSong", "SimSun", "Noto Serif SC", serif;
+        font-family: "LXGW WenKai", "STKaiti", "Songti SC", "Noto Serif SC", serif;
         background:
           radial-gradient(circle at 12% 8%, #fde3c2, #f5f1e8 60%),
           linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
@@ -28,18 +28,36 @@
         padding: 24px 32px;
         background: linear-gradient(120deg, #f8d7a8, #f3c893);
         border-bottom: 2px solid #e7b57c;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
       }
       h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: 1px; }
       h2 { font-size: 18px; margin: 0 0 10px; }
       h3 { font-size: 15px; margin: 12px 0 6px; }
       p { margin: 0; color: var(--muted); }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .header-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .header-actions a {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #fff3e6;
+        border: 1px solid #e7b57c;
+      }
       main {
         display: grid;
-        grid-template-columns: 1.1fr 1fr;
-        gap: 20px;
+        grid-template-columns: 280px 1fr 1fr;
+        gap: 18px;
         padding: 24px 32px 40px;
       }
-      section {
+      section,
+      aside {
         background: var(--paper);
         border: 1px solid #e7d5c3;
         border-radius: 12px;
@@ -78,10 +96,7 @@
         border-radius: 10px;
         background: #fffdf9;
       }
-      .score {
-        font-weight: bold;
-        color: #7a3e00;
-      }
+      .score { font-weight: bold; color: #7a3e00; }
       .tag {
         display: inline-block;
         padding: 2px 6px;
@@ -125,28 +140,54 @@
         grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
-      @media (max-width: 980px) {
+      .session-item details {
+        padding: 8px 0;
+      }
+      .session-item summary {
+        cursor: pointer;
+      }
+      .session-meta {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 1100px) {
         main { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>学习评估与巩固智能体</h1>
-      <p>上传教材 → 自动出题 → 作答判卷 → 错题本</p>
+      <div>
+        <h1>学习评估与巩固智能体</h1>
+        <p>上传教材 → 自动出题 → 作答判卷 → 错题复盘</p>
+      </div>
+      <div class="header-actions">
+        <a href="/wrongbook" target="_blank">错题本</a>
+      </div>
     </header>
     <main>
+      <aside>
+        <h2>会话列表</h2>
+        <div class="status" id="sessionInfo">当前会话：未生成</div>
+        <button id="refreshSessionsBtn">刷新会话列表</button>
+        <div class="status" id="sessionListStatus">暂无会话</div>
+        <div id="sessionList"></div>
+      </aside>
+
       <section>
         <h2>流程区</h2>
         <h3>1. 上传 PDF</h3>
         <input id="pdfFile" type="file" accept=".pdf" />
         <button id="uploadBtn">上传并解析</button>
         <div class="status" id="uploadStatus">未上传</div>
-        <div class="status" id="sessionInfo">会话 ID：未生成</div>
         <div class="error" id="uploadError"></div>
-        <button id="refreshSessionsBtn" style="margin-top:6px;">刷新会话列表</button>
-        <div class="status" id="sessionListStatus">暂无会话</div>
-        <div id="sessionList"></div>
 
         <h3 style="margin-top:16px;">2. 生成题目</h3>
         <div class="grid">
@@ -177,44 +218,119 @@
 
         <h3 style="margin-top:16px;">判卷结果</h3>
         <div id="gradeResult"></div>
-
-        <h3 style="margin-top:16px;">错题本</h3>
-        <button id="wrongbookBtn" disabled>刷新错题本</button>
-        <button id="recordBtn" disabled style="margin-left:6px;">查看最近作答</button>
-        <div id="wrongbook"></div>
-        <div id="records"></div>
       </section>
     </main>
 
     <script>
       const state = {
         sessionId: "",
-        questions: []
+        sessionName: "",
+        questions: [],
+        grade: null
       };
 
       const uploadBtn = document.getElementById("uploadBtn");
       const genBtn = document.getElementById("genBtn");
       const gradeBtn = document.getElementById("gradeBtn");
-      const wrongbookBtn = document.getElementById("wrongbookBtn");
-      const recordBtn = document.getElementById("recordBtn");
       const resetBtn = document.getElementById("resetBtn");
       const refreshSessionsBtn = document.getElementById("refreshSessionsBtn");
-      const uploadStatus = document.getElementById("uploadStatus");
       const sessionInfo = document.getElementById("sessionInfo");
+      const uploadStatus = document.getElementById("uploadStatus");
       const uploadError = document.getElementById("uploadError");
-      const sessionListStatus = document.getElementById("sessionListStatus");
-      const sessionListDiv = document.getElementById("sessionList");
       const genStatus = document.getElementById("genStatus");
       const genError = document.getElementById("genError");
       const gradeStatus = document.getElementById("gradeStatus");
       const gradeError = document.getElementById("gradeError");
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
-      const wrongbookDiv = document.getElementById("wrongbook");
-      const recordsDiv = document.getElementById("records");
+      const sessionListStatus = document.getElementById("sessionListStatus");
+      const sessionListDiv = document.getElementById("sessionList");
+
+      function setError(el, msg) {
+        if (!msg) {
+          el.textContent = "";
+          el.style.display = "none";
+          return;
+        }
+        el.textContent = msg;
+        el.style.display = "block";
+      }
+
+      function resetView() {
+        state.sessionId = "";
+        state.sessionName = "";
+        state.questions = [];
+        state.grade = null;
+        document.getElementById("pdfFile").value = "";
+        uploadStatus.textContent = "未上传";
+        sessionInfo.textContent = "当前会话：未生成";
+        genStatus.textContent = "等待会话";
+        gradeStatus.textContent = "等待题目";
+        questionsDiv.innerHTML = "";
+        gradeResult.innerHTML = "";
+        genBtn.disabled = true;
+        gradeBtn.disabled = true;
+        setError(uploadError, "");
+        setError(genError, "");
+        setError(gradeError, "");
+      }
+
+      function renderQuestions(savedAnswers = []) {
+        questionsDiv.innerHTML = "";
+        const answerMap = {};
+        savedAnswers.forEach((a) => {
+          answerMap[a.qid] = a.answer;
+        });
+        state.questions.forEach((q, idx) => {
+          const card = document.createElement("div");
+          card.className = "question-card";
+          card.innerHTML = `<div><strong>Q${idx + 1} (${q.qtype})</strong> ${q.question}</div>`;
+          if (q.options) {
+            const optList = q.options.map(o => `<div>${o}</div>`).join("");
+            card.innerHTML += `<div style="margin-top:6px;">${optList}</div>`;
+          }
+          card.innerHTML += `<label>你的答案</label>`;
+          if (q.qtype === "short_answer") {
+            card.innerHTML += `<textarea data-qid="${q.qid}">${answerMap[q.qid] || ""}</textarea>`;
+          } else {
+            card.innerHTML += `<input type="text" data-qid="${q.qid}" placeholder="例如：A" value="${answerMap[q.qid] || ""}" />`;
+          }
+          questionsDiv.appendChild(card);
+        });
+      }
+
+      function renderGrade(grade, answers = []) {
+        if (!grade) {
+          gradeResult.innerHTML = "";
+          return;
+        }
+        const answerMap = {};
+        answers.forEach((a) => {
+          answerMap[a.qid] = a.answer;
+        });
+        const correctCount = grade.items.filter(i => i.is_correct).length;
+        const totalCount = grade.items.length;
+        gradeResult.innerHTML = `<div class="score">总分：${grade.total_score} / ${totalCount * 2}</div>
+                                 <div>正确题数：${correctCount} / ${totalCount}</div>`;
+        grade.items.forEach((i) => {
+          const div = document.createElement("div");
+          div.className = "question-card";
+          const question = state.questions.find(q => q.qid === i.qid);
+          div.innerHTML = `<div><strong>${i.qid}</strong>
+                             <span class="tag ${i.is_correct ? "right" : "wrong"}">
+                               ${i.is_correct ? "正确" : "错误"}
+                             </span>
+                             得分 ${i.score}
+                           </div>
+                           <div>你的答案：${answerMap[i.qid] || "-"}</div>
+                           <div>参考答案：${question ? question.answer : "-"}</div>
+                           <div>解析：${i.explanation}</div>`;
+          gradeResult.appendChild(div);
+        });
+      }
 
       uploadBtn.onclick = async () => {
-        uploadError.style.display = "none";
+        setError(uploadError, "");
         const file = document.getElementById("pdfFile").files[0];
         if (!file) {
           uploadStatus.textContent = "请选择 PDF 文件";
@@ -227,24 +343,23 @@
         const res = await fetch("/sessions", { method: "POST", body: form });
         if (!res.ok) {
           uploadStatus.textContent = "上传失败";
-          uploadError.textContent = "上传或解析失败，请检查 PDF。";
-          uploadError.style.display = "block";
+          setError(uploadError, "上传或解析失败，请检查 PDF。");
           uploadBtn.disabled = false;
           return;
         }
         const data = await res.json();
+        resetView();
         state.sessionId = data.session_id;
+        state.sessionName = data.name || data.session_id;
         uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
-        sessionInfo.textContent = `会话 ID：${state.sessionId}`;
+        sessionInfo.textContent = `当前会话：${state.sessionName}`;
         genBtn.disabled = false;
-        wrongbookBtn.disabled = false;
-        recordBtn.disabled = false;
         uploadBtn.disabled = false;
         fetchSessions();
       };
 
       genBtn.onclick = async () => {
-        genError.style.display = "none";
+        setError(genError, "");
         genStatus.innerHTML = `<span class="spinner"></span>生成中...`;
         genBtn.disabled = true;
         const body = {
@@ -259,41 +374,22 @@
         });
         if (!res.ok) {
           genStatus.textContent = "生成失败";
-          genError.textContent = "题目生成失败，请稍后重试。";
-          genError.style.display = "block";
+          setError(genError, "题目生成失败，请稍后重试。");
           genBtn.disabled = false;
           return;
         }
         const data = await res.json();
         state.questions = data.questions;
+        state.grade = null;
         genStatus.textContent = "生成完成";
         renderQuestions();
+        renderGrade(null);
         gradeBtn.disabled = false;
         genBtn.disabled = false;
       };
 
-      function renderQuestions() {
-        questionsDiv.innerHTML = "";
-        state.questions.forEach((q, idx) => {
-          const card = document.createElement("div");
-          card.className = "question-card";
-          card.innerHTML = `<div><strong>Q${idx + 1} (${q.qtype})</strong> ${q.question}</div>`;
-          if (q.options) {
-            const optList = q.options.map(o => `<div>${o}</div>`).join("");
-            card.innerHTML += `<div style="margin-top:6px;">${optList}</div>`;
-          }
-          card.innerHTML += `<label>你的答案</label>`;
-          if (q.qtype === "short_answer") {
-            card.innerHTML += `<textarea data-qid="${q.qid}"></textarea>`;
-          } else {
-            card.innerHTML += `<input type="text" data-qid="${q.qid}" placeholder="例如：A" />`;
-          }
-          questionsDiv.appendChild(card);
-        });
-      }
-
       gradeBtn.onclick = async () => {
-        gradeError.style.display = "none";
+        setError(gradeError, "");
         gradeStatus.innerHTML = `<span class="spinner"></span>判卷中...`;
         gradeBtn.disabled = true;
         const answers = [];
@@ -312,105 +408,21 @@
         });
         if (!res.ok) {
           gradeStatus.textContent = "判卷失败";
-          gradeError.textContent = "判卷失败，请检查答案或稍后重试。";
-          gradeError.style.display = "block";
+          setError(gradeError, "判卷失败，请检查答案或稍后重试。");
           gradeBtn.disabled = false;
           return;
         }
         const data = await res.json();
         gradeStatus.textContent = "判卷完成";
-        const correctCount = data.items.filter(i => i.is_correct).length;
-        const totalCount = data.items.length;
-        gradeResult.innerHTML = `<div class="score">总分：${data.total_score} / ${totalCount * 2}</div>
-                                 <div>正确题数：${correctCount} / ${totalCount}</div>`;
-        data.items.forEach((i) => {
-          const div = document.createElement("div");
-          div.className = "question-card";
-          div.innerHTML = `<div><strong>${i.qid}</strong>
-                             <span class="tag ${i.is_correct ? "right" : "wrong"}">
-                               ${i.is_correct ? "正确" : "错误"}
-                             </span>
-                             得分 ${i.score}
-                           </div>
-                           <div>解析：${i.explanation}</div>`;
-          gradeResult.appendChild(div);
-        });
+        state.grade = data;
+        renderGrade(data, answers);
         gradeResult.scrollIntoView({ behavior: "smooth" });
         gradeBtn.disabled = false;
       };
 
-      wrongbookBtn.onclick = async () => {
-        if (!state.sessionId) return;
-        const res = await fetch(`/wrongbook/${state.sessionId}`);
-        if (!res.ok) {
-          wrongbookDiv.textContent = "查询失败";
-          return;
-        }
-        const data = await res.json();
-        const summary = data.summary || { total: 0, by_keyword: {} };
-        const summaryList = Object.entries(summary.by_keyword || {})
-          .map(([k, v]) => `<span class="pill">${k}：${v}</span>`)
-          .join("");
-        const suggestion = summary.total > 0
-          ? "建议优先复习错题关键词对应的章节，并再次完成同类题目。"
-          : "当前无错题，建议继续提升题量或提高难度。";
-        wrongbookDiv.innerHTML = `<div>错题数：${data.total_wrong}</div>
-                                  <div style="margin-top:6px;">关键词统计：</div>
-                                  <div>${summaryList || "暂无统计"}</div>
-                                  <div style="margin-top:6px;">建议：${suggestion}</div>`;
-        data.items.forEach((w) => {
-          const div = document.createElement("div");
-          div.className = "question-card";
-          div.innerHTML = `<div><strong>${w.qid}</strong> ${w.question}</div>
-                           <div>你的答案：${w.user_answer}</div>
-                           <div>正确答案：${w.correct_answer}</div>
-                           <div>解析：${w.explanation}</div>`;
-          wrongbookDiv.appendChild(div);
-        });
-        wrongbookDiv.scrollIntoView({ behavior: "smooth" });
-      };
-
-      recordBtn.onclick = async () => {
-        if (!state.sessionId) return;
-        const res = await fetch(`/records/${state.sessionId}`);
-        if (!res.ok) {
-          recordsDiv.textContent = "作答记录获取失败";
-          return;
-        }
-        const data = await res.json();
-        recordsDiv.innerHTML = `<div style="margin-top:8px;">最近作答记录</div>`;
-        if (!data.questions || data.questions.length === 0) {
-          recordsDiv.innerHTML += `<div>暂无题目记录</div>`;
-          return;
-        }
-        data.questions.forEach((q) => {
-          const ans = (data.answers || []).find(a => a.qid === q.qid);
-          const div = document.createElement("div");
-          div.className = "question-card";
-          div.innerHTML = `<div><strong>${q.qid}</strong> ${q.question}</div>
-                           <div>你的答案：${ans ? ans.answer : "未作答"}</div>
-                           <div>参考答案：${q.answer}</div>`;
-          recordsDiv.appendChild(div);
-        });
-        recordsDiv.scrollIntoView({ behavior: "smooth" });
-      };
-
       resetBtn.onclick = () => {
-        state.sessionId = "";
-        state.questions = [];
-        document.getElementById("pdfFile").value = "";
-        uploadStatus.textContent = "未上传";
-        sessionInfo.textContent = "会话 ID：未生成";
-        genStatus.textContent = "等待会话";
-        gradeStatus.textContent = "等待题目";
-        questionsDiv.innerHTML = "";
-        gradeResult.innerHTML = "";
-        wrongbookDiv.innerHTML = "";
-        genBtn.disabled = true;
-        gradeBtn.disabled = true;
-        wrongbookBtn.disabled = true;
-        recordBtn.disabled = true;
-        recordsDiv.innerHTML = "";
+        resetView();
+        fetchSessions();
       };
 
       async function fetchSessions() {
@@ -429,26 +441,56 @@
         sessionListStatus.textContent = `共 ${data.sessions.length} 个会话`;
         data.sessions.forEach((s) => {
           const div = document.createElement("div");
-          div.className = "question-card";
-          div.innerHTML = `<div><strong>${s.session_id}</strong></div>
-                           <div>切分数：${s.chunk_count}</div>
-                           <div>创建时间：${s.created_at}</div>
-                           <button data-del="${s.session_id}">删除会话</button>`;
+          div.className = "question-card session-item";
+          div.innerHTML = `<details>
+                             <summary><strong>${s.name || s.session_id}</strong></summary>
+                             <div class="session-meta">切分：${s.chunk_count}</div>
+                             <div class="session-meta">创建时间：${s.created_at}</div>
+                             <div class="actions">
+                               <button data-use="${s.session_id}" data-name="${s.name || s.session_id}">切换到该会话</button>
+                               <button data-del="${s.session_id}">删除会话</button>
+                             </div>
+                           </details>`;
           sessionListDiv.appendChild(div);
+        });
+        document.querySelectorAll("[data-use]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-use");
+            const name = e.target.getAttribute("data-name");
+            state.sessionId = id;
+            state.sessionName = name;
+            sessionInfo.textContent = `当前会话：${state.sessionName}`;
+            await loadSessionRecords(id);
+          };
         });
         document.querySelectorAll("[data-del]").forEach((btn) => {
           btn.onclick = async (e) => {
             const id = e.target.getAttribute("data-del");
             await fetch(`/sessions/${id}`, { method: "DELETE" });
             if (state.sessionId === id) {
-              resetBtn.onclick();
+              resetView();
             }
             fetchSessions();
           };
         });
       }
 
+      async function loadSessionRecords(sessionId) {
+        const res = await fetch(`/records/${sessionId}`);
+        if (!res.ok) {
+          return;
+        }
+        const data = await res.json();
+        state.questions = data.questions || [];
+        state.grade = data.grade || null;
+        renderQuestions(data.answers || []);
+        renderGrade(state.grade, data.answers || []);
+        genBtn.disabled = false;
+        gradeBtn.disabled = state.questions.length === 0;
+      }
+
       refreshSessionsBtn.onclick = fetchSessions;
+      fetchSessions();
     </script>
   </body>
 </html>

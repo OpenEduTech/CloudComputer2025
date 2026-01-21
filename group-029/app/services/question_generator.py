@@ -1,4 +1,4 @@
-import json
+﻿import json
 import os
 import re
 from langchain_openai import ChatOpenAI
@@ -12,17 +12,13 @@ def _build_prompt():
     # 生成题目提示词，要求输出 JSON
     return ChatPromptTemplate.from_template(
         """
-你是一名机器学习课程助教。根据给定资料生成题目。
-要求：
+你是一名机器学习课程助教。根据给定资料生成题目。要求：
 1) 生成 {num_mcq} 道选择题 + {num_short} 道简答题。
 2) 题目覆盖核心概念、公式、算法步骤。
-3) 输出严格 JSON 数组，每个元素包含：
-   qid, qtype, question, options(选择题需要), answer, explanation, evidence
+3) 输出严格 JSON 数组，每个元素包含：qid, qtype, question, options(选择题需要), answer, explanation, evidence。
 4) evidence 必须引用资料中的原文片段（可多条）。
 5) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
-
-示例（仅示例，不要复述）：
-[
+示例（仅示例，不要复述）：[
   {{
     "qid": "mc_1",
     "qtype": "multiple_choice",
@@ -34,15 +30,14 @@ def _build_prompt():
   }}
 ]
 
-资料片段：
-{context}
+资料片段：{context}
 """
     )
 
 
 def _extract_json_text(raw: str) -> str:
     # 优先提取 ```json ... ``` 代码块
-    match = re.search(r"```(?:json)?\\s*(\\[[\\s\\S]*?\\])\\s*```", raw, re.IGNORECASE)
+    match = re.search(r"```(?:json)?\s*(\[[\s\S]*?\])\s*```", raw, re.IGNORECASE)
     if match:
         return match.group(1)
     # 退化为截取首尾方括号内容

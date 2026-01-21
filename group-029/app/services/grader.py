@@ -1,4 +1,4 @@
-import json
+﻿import json
 import os
 import re
 
@@ -10,7 +10,7 @@ from app.core.config import settings
 
 
 def _extract_json_text(raw: str) -> str:
-    # 提取 JSON 数组/对象，避免模型输出混入说明文字
+    # 提取 JSON 数组/对象，避免模型输出混入说明文本
     match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", raw, re.IGNORECASE)
     if match:
         return match.group(1)
@@ -27,20 +27,15 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
 评分规则：
 1) 选择题：答案匹配则满分 1，否则 0。
 2) 简答题：满分 2，根据覆盖要点给分（0/1/2），并给出简洁解析。
-3) 必须输出 JSON 数组，每个元素包含：
-   qid, is_correct, score, explanation
+3) 必须输出 JSON 数组，每个元素包含：qid, is_correct, score, explanation。
 4) 禁止输出除 JSON 以外的任何文本（不要 Markdown）。
-
-示例（仅示例，不要复述）：
-[
+示例（仅示例，不要复述）：[
   {{"qid": "mc_1", "is_correct": true, "score": 1, "explanation": "示例解析"}}
 ]
 
-题目：
-{questions}
+题目：{questions}
 
-学生答案：
-{answers}
+学生答案：{answers}
 """
     )
 
@@ -59,6 +54,7 @@ def grade_answers(questions: list[dict], answers: list[dict]) -> tuple[list[dict
             return data, raw
     except json.JSONDecodeError:
         pass
+
     # 记录原始输出，便于排查
     os.makedirs("data", exist_ok=True)
     with open(os.path.join("data", "llm_grade_raw.txt"), "w", encoding="utf-8") as f:

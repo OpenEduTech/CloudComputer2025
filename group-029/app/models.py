@@ -1,4 +1,4 @@
-import json
+﻿import json
 from pydantic import BaseModel, Field, field_validator
 
 
@@ -6,10 +6,12 @@ from pydantic import BaseModel, Field, field_validator
 class SessionCreateResponse(BaseModel):
     session_id: str = Field(..., description="会话 ID")
     chunk_count: int = Field(..., description="切分后的片段数量")
+    name: str = Field(..., description="会话名称")
 
 
 class SessionItem(BaseModel):
     session_id: str
+    name: str
     created_at: str
     chunk_count: int
 
@@ -103,6 +105,7 @@ class RecordResponse(BaseModel):
     session_id: str
     questions: list[dict]
     answers: list[dict]
+    grade: dict | None = None
 
 
 # 错题本查询结果

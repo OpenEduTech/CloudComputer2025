@@ -1,4 +1,4 @@
-import json
+﻿import json
 from datetime import datetime
 
 import redis
@@ -38,14 +38,29 @@ def save_answers(session_id: str, answers: list[dict]) -> None:
     client.set(key, json.dumps(payload, ensure_ascii=False))
 
 
+def save_grade(session_id: str, grade: dict) -> None:
+    """
+    保存最近一次判卷结果。
+    """
+    client = _get_client()
+    key = f"grade:{session_id}:latest"
+    payload = {
+        "session_id": session_id,
+        "updated_at": datetime.utcnow().isoformat(),
+        "grade": grade,
+    }
+    client.set(key, json.dumps(payload, ensure_ascii=False))
+
+
 def load_latest_record(session_id: str) -> dict:
     """
-    读取最近一次题目与作答。
+    读取最近一次题目、作答与判卷结果。
     """
     client = _get_client()
     q_raw = client.get(f"questions:{session_id}")
     a_raw = client.get(f"answers:{session_id}:latest")
-    result = {"session_id": session_id, "questions": [], "answers": []}
+    g_raw = client.get(f"grade:{session_id}:latest")
+    result = {"session_id": session_id, "questions": [], "answers": [], "grade": None}
     if q_raw:
         try:
             result["questions"] = json.loads(q_raw).get("questions", [])
@@ -54,6 +69,11 @@ def load_latest_record(session_id: str) -> dict:
     if a_raw:
         try:
             result["answers"] = json.loads(a_raw).get("answers", [])
+        except json.JSONDecodeError:
+            pass
+    if g_raw:
+        try:
+            result["grade"] = json.loads(g_raw).get("grade")
         except json.JSONDecodeError:
             pass
     return result

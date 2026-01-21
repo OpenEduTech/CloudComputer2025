@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+﻿from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import os
@@ -20,15 +20,16 @@ from app.models import (
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
 from app.services.session_store import create_session, load_chunks, list_sessions, delete_session
+from app.services.session_namer import generate_session_name
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
-from app.services.wrongbook_store import save_wrong_items, load_wrong_items, summarize_wrong_items
-from app.services.qa_store import save_questions, save_answers, load_latest_record
+from app.services.wrongbook_store import save_wrong_items, load_wrong_items_all, summarize_wrong_items
+from app.services.qa_store import save_questions, save_answers, save_grade, load_latest_record
 
 from app.core.config import settings
 
 
-# API 入口文件：提供健康检查与后续业务路由
+# API 入口文件：提供健康检查与业务路由
 app = FastAPI(title="学习评估与巩固智能体", version="0.1.0")
 
 # 挂载静态前端页面
@@ -52,10 +53,17 @@ def index():
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
 
+@app.get("/wrongbook")
+def wrongbook_page():
+    # 错题本独立页面
+    return FileResponse(os.path.join(STATIC_DIR, "wrongbook.html"))
+
+
 @app.post("/sessions", response_model=SessionCreateResponse)
 def create_session_api(file: UploadFile = File(...)):
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="仅支持 PDF 文件")
+
     # 确保上传临时目录存在，避免文件名带中文导致路径问题
     os.makedirs("data", exist_ok=True)
     temp_path = os.path.join("data", f"{uuid4().hex}.pdf")
@@ -65,11 +73,19 @@ def create_session_api(file: UploadFile = File(...)):
         text = load_pdf_text(temp_path)
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"PDF 解析失败: {exc}") from exc
+
     if not text.strip():
         raise HTTPException(status_code=400, detail="PDF 解析失败或内容为空")
+
     chunks = split_text(text)
-    session_id = create_session(chunks)
-    return SessionCreateResponse(session_id=session_id, chunk_count=len(chunks))
+    filename = os.path.splitext(os.path.basename(file.filename))[0]
+    session_name = generate_session_name(text, filename)
+    session_id = create_session(chunks, session_name)
+    return SessionCreateResponse(
+        session_id=session_id,
+        chunk_count=len(chunks),
+        name=session_name,
+    )
 
 
 @app.get("/sessions", response_model=SessionListResponse)
@@ -88,9 +104,11 @@ def generate_questions_api(req: QuestionGenerateRequest):
     chunks = load_chunks(req.session_id)
     if not chunks:
         raise HTTPException(status_code=404, detail="未找到会话或切分内容为空")
+
     # 简化策略：取前若干片段作为上下文
     use_chunks = chunks[:10]
     data, raw = generate_questions(use_chunks, req.num_mcq, req.num_short)
+
     # 校验：题目必须包含证据片段
     if data:
         data = [q for q in data if q.get("evidence")]
@@ -99,11 +117,13 @@ def generate_questions_api(req: QuestionGenerateRequest):
             status_code=500,
             detail="题目生成失败，请检查 LLM 配置或 data/llm_raw.txt",
         )
+
     questions = [QuestionItem(**q) for q in data]
     try:
         save_questions(req.session_id, [q.model_dump() for q in questions])
     except Exception:
         pass
+
     return QuestionGenerateResponse(session_id=req.session_id, questions=questions)
 
 
@@ -113,19 +133,29 @@ def grade_api(req: GradeRequest):
         [q.model_dump() for q in req.questions],
         req.answers,
     )
-    # 校验：结果必须包含解析
+
+    # 校验：结果必须包含解释
     if result:
         result = [r for r in result if r.get("explanation")]
     if not result:
         raise HTTPException(
             status_code=500,
-            detail="判卷失败，请检查 LLM 配置或 data/llm_raw.txt",
+            detail="判卷失败，请检查 LLM 配置或 data/llm_grade_raw.txt",
         )
+
     items = [GradeItem(**r) for r in result]
     try:
         save_answers(req.session_id, req.answers)
+        save_grade(
+            req.session_id,
+            {
+                "total_score": sum(i.score for i in items),
+                "items": [i.model_dump() for i in items],
+            },
+        )
     except Exception:
         pass
+
     # 收集错题并写入 Redis
     wrong_items = []
     for q in req.questions:
@@ -148,6 +178,7 @@ def grade_api(req: GradeRequest):
     except Exception:
         # Redis 不可用时不影响判卷结果
         pass
+
     total_score = sum(i.score for i in items)
     return GradeResponse(
         session_id=req.session_id,
@@ -156,12 +187,12 @@ def grade_api(req: GradeRequest):
     )
 
 
-@app.get("/wrongbook/{session_id}", response_model=WrongbookResponse)
-def wrongbook_api(session_id: str):
-    items = load_wrong_items(session_id)
+@app.get("/wrongbook/all", response_model=WrongbookResponse)
+def wrongbook_api_all():
+    items = load_wrong_items_all()
     summary = summarize_wrong_items(items)
     return WrongbookResponse(
-        session_id=session_id,
+        session_id="all",
         total_wrong=len(items),
         items=items,
         summary=summary,
