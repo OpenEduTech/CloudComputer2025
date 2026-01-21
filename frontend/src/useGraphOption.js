@@ -72,6 +72,9 @@ const useGraphOption = (data, themeToken) => {
                     </div>
                 `;
             } else if (params.dataType === 'edge') {
+                 const citationInfo = params.data.citation
+                    ? `<div style="margin-top: 6px; color: #666;"><span style="color: #999;">Citation:</span> ${params.data.citation}</div>`
+                    : `<div style="margin-top: 6px; color: #999;">Citation: N/A</div>`;
                  return `
                     <div style="font-size: 12px;">
                         <div style="color: #666; margin-bottom: 4px;">Relationship</div>
@@ -79,6 +82,7 @@ const useGraphOption = (data, themeToken) => {
                         <span style="color: #999;"> --[ ${params.data.relation} ]--> </span> 
                         <b>${params.data.target}</b>
                         ${params.data.desc ? `<div style="margin-top: 4px; color: #555;">${params.data.desc}</div>` : ''}
+                        ${citationInfo}
                     </div>
                  `;
             }
@@ -107,19 +111,23 @@ const useGraphOption = (data, themeToken) => {
           type: 'graph',
           layout: 'force',
           draggable: true, // Enable dragging
-          data: visibleNodes.map(node => ({
+          data: visibleNodes.map(node => {
+            const confidenceScore = typeof node.confidence === 'number' ? node.confidence : 0.6;
+            const emphasisSize = Math.round(confidenceScore * 12);
+            return {
             ...node,
             name: node.label,
             category: categories.findIndex(c => c.name === node.group),
             // Distinct shapes with meaning
             symbol: node.source_type === 'textbook' ? 'circle' : 'diamond', 
             // Dynamic sizing based on confidence/importance
-            symbolSize: (node.size || 30) + (node.confidence * 10), 
+            symbolSize: (node.size || 30) + emphasisSize, 
             itemStyle: {
                 borderColor: '#fff',
                 borderWidth: 2,
                 shadowBlur: 10,
-                shadowColor: 'rgba(0, 0, 0, 0.2)'
+                shadowColor: 'rgba(0, 0, 0, 0.2)',
+                opacity: 0.65 + (confidenceScore * 0.35)
             },
             label: {
                 show: true,
@@ -131,19 +139,23 @@ const useGraphOption = (data, themeToken) => {
                 borderRadius: 4,
                 padding: [2, 4]
             }
-          })),
-          links: data.links.map(link => ({
+            };
+          }),
+          links: data.links.map(link => {
+              const hasCitation = Boolean(link.citation);
+              return {
               ...link,
               value: link.relation,
               lineStyle: {
-                  color: 'source',
+                      color: hasCitation ? '#fa8c16' : '#9e9e9e',
                   curveness: 0.2,
-                  opacity: 0.6,
-                  width: 1.5
+                      opacity: hasCitation ? 0.8 : 0.35,
+                      width: hasCitation ? 2.2 : 1.2
               },
               symbol: ['none', 'arrow'], // Add arrows
               symbolSize: 8
-          })),
+              };
+          }),
           categories: categories,
           roam: true,
           label: {
@@ -151,7 +163,7 @@ const useGraphOption = (data, themeToken) => {
             formatter: '{b}'
           },
           lineStyle: {
-            color: 'source',
+            color: '#9e9e9e',
             curveness: 0.3
           },
           emphasis: {

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { 
   Layout, 
   Input, 
@@ -15,8 +15,10 @@ import {
   Col,
   Statistic,
   message,
-  Select, // Import Select
-  Form
+  Select, 
+  Radio, // Import Radio
+  Divider,
+  Slider
 } from 'antd';
 import { 
   BookOutlined, 
@@ -24,13 +26,16 @@ import {
   LinkOutlined, 
   ShareAltOutlined,
   ExperimentOutlined,
-  ThunderboltOutlined
+  ThunderboltOutlined,
+  ApartmentOutlined, // For Mind Map icon
+  DeploymentUnitOutlined // For Graph icon
 } from '@ant-design/icons';
 import ReactECharts from 'echarts-for-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Custom Hooks & Components
 import useGraphOption from './useGraphOption';
+import useMindMapOption from './useMindMapOption';
 import AgentStatus from './components/AgentStatus';
 import { createTask, getTaskStatus, getGraphData } from './api';
 
@@ -47,6 +52,10 @@ function App() {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [searchDepth, setSearchDepth] = useState(2); // Default depth
+  const [viewMode, setViewMode] = useState('graph'); // 'graph' or 'mindmap'
+  const [selectedEdge, setSelectedEdge] = useState(null);
+  const [graphLayer, setGraphLayer] = useState('main');
+  const [mainConfidenceMin, setMainConfidenceMin] = useState(70);
   
   // Simulation State
   const [taskStatus, setTaskStatus] = useState({
@@ -62,8 +71,44 @@ function App() {
   const { token } = theme.useToken();
   const echartsRef = useRef(null);
   
+  const getNodeConfidence = useCallback((node) => {
+    return typeof node?.confidence === 'number' ? node.confidence : 0.6;
+  }, []);
+
+  const layeredGraphData = useMemo(() => {
+    if (!graphData) return null;
+    if (graphLayer === 'explore') return graphData;
+
+    const threshold = mainConfidenceMin / 100;
+    const nodeMap = new Map(graphData.nodes.map(node => [node.id, node]));
+    const links = graphData.links.filter(link => {
+      const sourceNode = nodeMap.get(link.source);
+      const targetNode = nodeMap.get(link.target);
+      const sourceConfidence = getNodeConfidence(sourceNode);
+      const targetConfidence = getNodeConfidence(targetNode);
+      return Math.min(sourceConfidence, targetConfidence) >= threshold;
+    });
+
+    const nodeIdSet = new Set();
+    links.forEach(link => {
+      nodeIdSet.add(link.source);
+      nodeIdSet.add(link.target);
+    });
+
+    let nodes = graphData.nodes.filter(node => nodeIdSet.has(node.id));
+    if (nodes.length === 0) {
+      nodes = graphData.nodes.filter(node => getNodeConfidence(node) >= threshold);
+    }
+    return { nodes, links };
+  }, [graphData, graphLayer, mainConfidenceMin, getNodeConfidence]);
+
   // Custom ECharts Option
-  const option = useGraphOption(graphData, token);
+  const graphOption = useGraphOption(layeredGraphData, token);
+  const mindMapOption = useMindMapOption(layeredGraphData, searchValue);
+
+  const option = useMemo(() => {
+      return viewMode === 'mindmap' ? mindMapOption : graphOption;
+  }, [viewMode, graphOption, mindMapOption]);
 
   // --- Handlers ---
   const handleSearch = async (value) => {
@@ -73,7 +118,10 @@ function App() {
     setHasSearched(true);
     setGraphData(null); 
     setSelectedNode(null);
+    setSelectedEdge(null);
     setDrawerVisible(false);
+    setGraphLayer('main');
+    setMainConfidenceMin(70);
 
     try {
         // 1. Send Task Creation Request
@@ -125,6 +173,8 @@ function App() {
         
         if (data.nodes && data.nodes.length > 0) {
             setGraphData(data);
+            setGraphLayer('main');
+            setMainConfidenceMin(70);
         } else {
             message.warning("No graph data found for this concept.");
         }
@@ -136,6 +186,18 @@ function App() {
     }
   };
 
+  const handleExportJson = () => {
+    if (!layeredGraphData) return;
+    const filename = `autokgs_${searchValue || 'graph'}.json`;
+    const blob = new Blob([JSON.stringify(layeredGraphData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   const onChartClick = useCallback((params) => {
     if (params.dataType === 'node') {
       const node = params.data;
@@ -144,8 +206,13 @@ function App() {
         window.open(node.url, '_blank', 'noopener,noreferrer');
       } else {
         setSelectedNode(node);
+        setSelectedEdge(null);
         setDrawerVisible(true);
       }
+    } else if (params.dataType === 'edge') {
+      setSelectedEdge(params.data);
+      setSelectedNode(null);
+      setDrawerVisible(true);
     }
   }, []);
 
@@ -155,10 +222,46 @@ function App() {
 
   // --- Render Helpers ---
   const renderDrawerContent = () => {
-    if (!selectedNode) return null;
+    if (!selectedNode && !selectedEdge) return null;
+
+    if (selectedEdge) {
+      const hasCitation = Boolean(selectedEdge.citation);
+      return (
+        <div style={{ paddingBottom: 20 }}>
+          <Space direction="vertical" size="large" style={{ width: '100%' }}>
+            <div>
+              <Tag color={hasCitation ? 'orange' : 'default'} style={{ marginBottom: 8 }}>
+                {hasCitation ? 'Evidence-Backed' : 'No Citation'}
+              </Tag>
+              <Title level={4} style={{ margin: 0 }}>
+                {selectedEdge.source} → {selectedEdge.target}
+              </Title>
+              <Text type="secondary">{selectedEdge.relation}</Text>
+            </div>
+
+            <Card size="small" style={{ background: '#f8f9fa' }}>
+              <Text strong style={{ display: 'block', marginBottom: 6 }}>Relation Description</Text>
+              <Text style={{ color: '#555' }}>
+                {selectedEdge.desc || 'No description available.'}
+              </Text>
+            </Card>
+
+            <Card
+              size="small"
+              title={<Space><FileTextOutlined /> Citation</Space>}
+            >
+              <Text style={{ color: hasCitation ? '#333' : '#999' }}>
+                {selectedEdge.citation || 'No citation provided.'}
+              </Text>
+            </Card>
+          </Space>
+        </div>
+      );
+    }
 
     const isPaper = selectedNode.source_type === 'paper';
-    const confidenceScore = (selectedNode.confidence * 100).toFixed(0);
+    const confidenceValue = typeof selectedNode.confidence === 'number' ? selectedNode.confidence : 0.6;
+    const confidenceScore = (confidenceValue * 100).toFixed(0);
     const confidenceColor = confidenceScore >= 90 ? '#52c41a' : confidenceScore >= 80 ? '#faad14' : '#f5222d';
 
     return (
@@ -274,7 +377,17 @@ function App() {
             <Title level={4} style={{ margin: 0, letterSpacing: -0.5 }}>AutoKGS</Title>
           </div>
 
-          <div style={{ flex: 1, maxWidth: 600, margin: '0 24px', display: 'flex', gap: '8px' }}>
+          <div style={{ flex: 1, maxWidth: 800, margin: '0 24px', display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <Radio.Group 
+                value={viewMode} 
+                onChange={(e) => setViewMode(e.target.value)}
+                buttonStyle="solid"
+                disabled={isSearching}
+            >
+                <Radio.Button value="graph"><DeploymentUnitOutlined /> Graph</Radio.Button>
+                <Radio.Button value="mindmap"><ApartmentOutlined /> Mind Map</Radio.Button>
+            </Radio.Group>
+
              <Select
                 defaultValue={2}
                 style={{ width: 120 }}
@@ -326,6 +439,57 @@ function App() {
                <AgentStatus statusData={taskStatus} />
             )}
           </AnimatePresence>
+
+          {/* Layer Panel */}
+          {graphData && (
+            <Card
+              size="small"
+              style={{
+                position: 'absolute',
+                top: 16,
+                left: 16,
+                width: 300,
+                zIndex: 10,
+                background: 'rgba(255,255,255,0.95)',
+                boxShadow: '0 6px 18px rgba(0,0,0,0.08)'
+              }}
+            >
+              <Title level={5} style={{ marginBottom: 8 }}>Graph Layer</Title>
+              <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <div>
+                  <Radio.Group
+                    value={graphLayer}
+                    onChange={(e) => setGraphLayer(e.target.value)}
+                    buttonStyle="solid"
+                    disabled={isSearching}
+                  >
+                    <Radio.Button value="main">Main</Radio.Button>
+                    <Radio.Button value="explore">Explore</Radio.Button>
+                  </Radio.Group>
+                </div>
+
+                {graphLayer === 'main' && (
+                  <div>
+                    <Text type="secondary">Main Confidence ≥ {mainConfidenceMin}%</Text>
+                    <Slider
+                      min={50}
+                      max={95}
+                      value={mainConfidenceMin}
+                      onChange={setMainConfidenceMin}
+                      disabled={isSearching}
+                    />
+                  </div>
+                )}
+
+                <Divider style={{ margin: '8px 0' }} />
+                <Space>
+                  <Button size="small" type="primary" onClick={handleExportJson}>
+                    Export JSON
+                  </Button>
+                </Space>
+              </Space>
+            </Card>
+          )}
 
           {/* 3. Graph Canvas */}
           {graphData && (

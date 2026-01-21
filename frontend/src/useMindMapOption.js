@@ -24,13 +24,15 @@ const useMindMapOption = (data, rootId) => {
     // 3. 递归注入样式到数据节点
     const injectStyle = (node) => {
         const color = groupColorMap[node.group] || '#ccc';
+        const confidenceValue = typeof node.confidence === 'number' ? node.confidence : 0.6;
         
         node.itemStyle = {
             color: color,
             borderColor: '#fff',
             borderWidth: 2,
             shadowBlur: 5,
-            shadowColor: 'rgba(0,0,0,0.1)'
+            shadowColor: 'rgba(0,0,0,0.1)',
+            opacity: 0.65 + (confidenceValue * 0.35)
         };
 
         node.symbol = node.source_type === 'paper' ? 'rect' : 'circle';
@@ -111,6 +113,7 @@ const useMindMapOption = (data, rootId) => {
                           <span style="color: #888; font-size: 12px;">Incoming Relation:</span><br/>
                           <b>${node.relationToParent}</b>
                           ${node.relationDesc ? `<div style="font-size: 11px; color: #666; margin-top: 2px;">${node.relationDesc}</div>` : ''}
+                          ${node.relationCitation ? `<div style="font-size: 11px; color: #999; margin-top: 2px;">Citation: ${node.relationCitation}</div>` : ''}
                         </div>` 
                     : '';
                 

@@ -33,7 +33,12 @@ export const convertGraphToTree = (data, rootId) => {
     const adj = {};
     data.links.forEach(link => {
         if (!adj[link.source]) adj[link.source] = [];
-        adj[link.source].push({ target: link.target, relation: link.relation, desc: link.desc });
+        adj[link.source].push({ 
+            target: link.target, 
+            relation: link.relation, 
+            desc: link.desc,
+            citation: link.citation
+        });
     });
 
     // 4. Recursive Build with Path-based Cycle Detection (Unrolling DAG)
@@ -67,6 +72,7 @@ export const convertGraphToTree = (data, rootId) => {
                 // Add relation info to the child for tooltip/edge label
                 childNode.relationToParent = edge.relation;
                 childNode.relationDesc = edge.desc;
+                childNode.relationCitation = edge.citation;
                 children.push(childNode);
             }
         });
