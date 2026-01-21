@@ -18,7 +18,10 @@ import {
   Select, 
   Radio, // Import Radio
   Divider,
-  Slider
+  Slider,
+  Modal,
+  List,
+  Empty
 } from 'antd';
 import { 
   BookOutlined, 
@@ -28,7 +31,8 @@ import {
   ExperimentOutlined,
   ThunderboltOutlined,
   ApartmentOutlined, // For Mind Map icon
-  DeploymentUnitOutlined // For Graph icon
+  DeploymentUnitOutlined, // For Graph icon
+  HistoryOutlined
 } from '@ant-design/icons';
 import ReactECharts from 'echarts-for-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -42,6 +46,7 @@ import { createTask, getTaskStatus, getGraphData } from './api';
 const { Header, Content } = Layout;
 const { Title, Text, Paragraph } = Typography;
 const { Search } = Input;
+const HISTORY_STORAGE_KEY = 'autokgs_search_history';
 
 function App() {
   // --- State ---
@@ -56,6 +61,8 @@ function App() {
   const [selectedEdge, setSelectedEdge] = useState(null);
   const [graphLayer, setGraphLayer] = useState('main');
   const [mainConfidenceMin, setMainConfidenceMin] = useState(70);
+  const [historyVisible, setHistoryVisible] = useState(false);
+  const [searchHistory, setSearchHistory] = useState([]);
   
   // Simulation State
   const [taskStatus, setTaskStatus] = useState({
@@ -66,6 +73,7 @@ function App() {
   });
 
   const pollingTimerRef = useRef(null);
+  const searchDepthRef = useRef(searchDepth);
 
   // --- Theme ---
   const { token } = theme.useToken();
@@ -110,9 +118,37 @@ function App() {
       return viewMode === 'mindmap' ? mindMapOption : graphOption;
   }, [viewMode, graphOption, mindMapOption]);
 
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          setSearchHistory(parsed);
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load search history:', error);
+    }
+  }, []);
+
+  const persistHistory = useCallback((entries) => {
+    setSearchHistory(entries);
+    try {
+      localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(entries));
+    } catch (error) {
+      console.warn('Failed to save search history:', error);
+    }
+  }, []);
+
   // --- Handlers ---
-  const handleSearch = async (value) => {
+  const handleSearch = async (value, depthOverride) => {
     if (!value) return;
+    const depthUsed = typeof depthOverride === 'number' ? depthOverride : searchDepthRef.current;
+    if (typeof depthOverride === 'number') {
+      setSearchDepth(depthUsed);
+      searchDepthRef.current = depthUsed;
+    }
     setSearchValue(value);
     setIsSearching(true);
     setHasSearched(true);
@@ -125,8 +161,12 @@ function App() {
 
     try {
         // 1. Send Task Creation Request
-        const { task_id } = await createTask(value, { depth: searchDepth });
+        const { task_id } = await createTask(value, { depth: depthUsed });
         console.log(`Task created with ID: ${task_id}`);
+
+        const newEntry = { keyword: value, depth: depthUsed, time: Date.now() };
+        const nextHistory = [newEntry, ...searchHistory.filter(entry => !(entry.keyword === value && entry.depth === depthUsed))].slice(0, 20);
+        persistHistory(nextHistory);
 
         // 2. Start Polling
         startPolling(task_id);
@@ -169,7 +209,7 @@ function App() {
 
   const fetchGraph = async (nodeId) => {
     try {
-        const data = await getGraphData(nodeId, searchDepth);
+        const data = await getGraphData(nodeId, searchDepthRef.current);
         
         if (data.nodes && data.nodes.length > 0) {
             setGraphData(data);
@@ -196,6 +236,15 @@ function App() {
     link.download = filename;
     link.click();
     URL.revokeObjectURL(url);
+  };
+
+  const handleUseHistory = (entry) => {
+    setHistoryVisible(false);
+    handleSearch(entry.keyword, entry.depth);
+  };
+
+  const handleClearHistory = () => {
+    persistHistory([]);
   };
 
   const onChartClick = useCallback((params) => {
@@ -391,7 +440,10 @@ function App() {
              <Select
                 defaultValue={2}
                 style={{ width: 120 }}
-                onChange={(value) => setSearchDepth(value)}
+                onChange={(value) => {
+                  setSearchDepth(value);
+                  searchDepthRef.current = value;
+                }}
                 disabled={isSearching}
                 options={[
                   { value: 1, label: 'Depth: 1' },
@@ -414,7 +466,9 @@ function App() {
 
           <Space>
              <Button type="text" icon={<LinkOutlined />}>Docs</Button>
-             <Button type="primary" ghost>Login</Button>
+             <Button type="primary" ghost icon={<HistoryOutlined />} onClick={() => setHistoryVisible(true)}>
+               History
+             </Button>
           </Space>
         </Header>
 
@@ -529,6 +583,42 @@ function App() {
           >
             {renderDrawerContent()}
           </Drawer>
+
+          <Modal
+            title="Search History"
+            open={historyVisible}
+            onCancel={() => setHistoryVisible(false)}
+            footer={[
+              <Button key="clear" onClick={handleClearHistory} disabled={searchHistory.length === 0}>
+                Clear
+              </Button>,
+              <Button key="close" type="primary" onClick={() => setHistoryVisible(false)}>
+                Close
+              </Button>
+            ]}
+          >
+            {searchHistory.length === 0 ? (
+              <Empty description="No search history yet" />
+            ) : (
+              <List
+                dataSource={searchHistory}
+                renderItem={(item) => (
+                  <List.Item
+                    actions={[
+                      <Button type="link" key="use" onClick={() => handleUseHistory(item)}>
+                        Use
+                      </Button>
+                    ]}
+                  >
+                    <List.Item.Meta
+                      title={`${item.keyword} (Depth: ${item.depth})`}
+                      description={new Date(item.time).toLocaleString()}
+                    />
+                  </List.Item>
+                )}
+              />
+            )}
+          </Modal>
 
         </Content>
       </Layout>
