@@ -23,6 +23,8 @@ class Settings(BaseModel):
     # Redis 与运行模式配置
     redis_url: str = os.getenv("REDIS_URL", _default_redis_url())
     use_langgraph: int = int(os.getenv("USE_LANGGRAPH", "1"))
+    # 安全与稳定性配置
+    max_upload_mb: int = int(os.getenv("MAX_UPLOAD_MB", "20"))
 
 
 settings = Settings()

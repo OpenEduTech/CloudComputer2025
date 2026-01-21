@@ -45,6 +45,7 @@ notepad .env
   - 本地运行：`redis://127.0.0.1:6379/0`
   - Docker 运行：`redis://redis:6379/0`
 - `USE_LANGGRAPH`：是否使用 LangGraph（预留开关）
+- `MAX_UPLOAD_MB`：PDF 上传大小限制（默认 20）
 
 ## 检索增强说明
 系统在出题与判卷时，会根据教材片段与问题文本进行轻量检索，挑选相关片段传入 LLM：

@@ -78,9 +78,20 @@ def create_session_api(file: UploadFile = File(...)):
     os.makedirs("data", exist_ok=True)
     temp_path = os.path.join("data", f"{uuid4().hex}.pdf")
     try:
+        content = file.file.read()
+        max_bytes = settings.max_upload_mb * 1024 * 1024
+        if len(content) > max_bytes:
+            raise HTTPException(
+                status_code=413,
+                detail=f"PDF 超过大小限制（{settings.max_upload_mb}MB）",
+            )
+        if not content.startswith(b"%PDF"):
+            raise HTTPException(status_code=400, detail="文件不是有效的 PDF")
         with open(temp_path, "wb") as f:
-            f.write(file.file.read())
+            f.write(content)
         text = load_pdf_text(temp_path)
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"PDF 解析失败: {exc}") from exc
 
