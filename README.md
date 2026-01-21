@@ -62,28 +62,32 @@ graph TD
         subgraph Pipeline ["Agent Pipeline (LangGraph)"]
             Planner("Planner Agent<br/>(路径规划)"):::ai
             Miner("Miner Agent<br/>(混合检索)"):::ai
-            Builder("Graph Builder<br/>(JSON构建)"):::ai
-            Auditor("Auditor Agent<br/>(幻觉校验)"):::ai
+            Query("Query Agent<br/>(质量评估)"):::ai
+            MinerOnline("Miner Online<br/>(联网兜底)"):::ai
+            Validator("Validator Agent<br/>(置信度打分)"):::ai
+            Relation("Relation Agent<br/>(跨学科关联)"):::ai
         end
         
         Redis -->|"4.领取任务 (POP)"| Worker
-        Worker -->|"5.初始化"| Planner
-        Planner -->|"6.下发检索指令"| Miner
+        Worker -->|"5.启动"| Planner
+        Planner -->|"6.生成关键词与领域"| Miner
         
         %% --- 核心检索逻辑变更 ---
-        Miner <-->|"6a.API搜索"| Arxiv
-        Miner <-->|"6b.RAG检索"| VectorDB
+        Miner <-->|"7a.本地 RAG"| VectorDB
+        Miner --> Query
         
-        Miner --> Builder
-        Builder --> Auditor
+        Query -->|"7b.结果不足?"| MinerOnline
+        Query -.->|"足够"| Validator
         
-        %% --- 核心容错循环 (红线) ---
-        Auditor -.->|"格式错误/幻觉 (Retry)"| Builder
-        linkStyle 13 stroke:#c62828,stroke-width:2px,color:red,stroke-dasharray: 5 5;
+        MinerOnline <-->|"7c.外部API (ArXiv/Wiki)"| Arxiv
+        MinerOnline --> Validator
         
-        %% --- 成功落地 ---
-        Auditor -->|"7a.校验通过 (Write)"| Neo4j
-        Auditor -.->|"7b.更新状态 (Success)"| Redis
+        Validator -->|"8.节点打分"| Relation
+        
+        %% --- 关系构建与落地 ---
+        Relation -->|"9.生成 Links"| Worker
+        Worker -->|"10a.写入图谱"| Neo4j
+        Worker -.->|"10b.更新状态"| Redis
     end
 
     %% --- 全局连线样式 ---
@@ -109,8 +113,8 @@ graph TD
 #### 智能体 (Agent System)
 | 模块 | 技术选型 | 技术方案说明 |
 | :--- | :--- | :--- |
-| **Agent 编排** | **LangGraph** | 采用**有向有环图 (Cyclic Graph)** 架构编排智能体，支持“生成-校验-修正”的**自愈**流程。 |
-| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
+112→| **Agent 编排** | **Workflow Chain** | 采用线性工作流 + 决策分支（Planner → Miner → Query → Online/Local → Validator → Relation）架构，支持基于数据质量的动态路径选择。 |
+113→| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
 | **RAG 检索** | **ChromaDB** | 部署本地向量数据库支持 **RAG (检索增强生成)**，对教科书进行高维向量索引，弥补模型知识盲区。 |
 
 ---
