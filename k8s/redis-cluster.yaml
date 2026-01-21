@@ -1,0 +1,92 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config
+  namespace: learning-agent
+data:
+  redis.conf: |
+    cluster-enabled yes
+    cluster-config-file nodes.conf
+    cluster-node-timeout 5000
+    appendonly yes
+    requirepass redis_password
+    masterauth redis_password
+    bind 0.0.0.0
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redis-secret
+  namespace: learning-agent
+type: Opaque
+stringData:
+  redis-password: redis_password
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis
+  namespace: learning-agent
+spec:
+  serviceName: redis
+  replicas: 6
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:alpine
+        ports:
+        - containerPort: 6379
+        - containerPort: 16379
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
+        - name: redis-config
+          mountPath: /usr/local/etc/redis
+        command:
+        - redis-server
+        - /usr/local/etc/redis/redis.conf
+      volumes:
+      - name: redis-config
+        configMap:
+          name: redis-config
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: learning-agent
+spec:
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+    targetPort: 6379
+  clusterIP: None
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: learning-agent
+spec:
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+    targetPort: 6379
+  type: ClusterIP

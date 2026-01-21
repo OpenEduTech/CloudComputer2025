@@ -1,0 +1,375 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test:
+    name: 运行测试
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov pytest-asyncio
+    
+    - name: 运行单元测试
+      run: |
+        pytest tests/ -v --cov=. --cov-report=xml --cov-report=html
+    
+    - name: 上传测试报告
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-report
+        path: htmlcov/
+    
+    - name: 上传覆盖率报告
+      uses: codecov/codecov-action@v3
+      if: always()
+      with:
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  lint:
+    name: 代码检查
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black isort mypy
+    
+    - name: 运行Flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: 运行Black
+      run: |
+        black --check .
+    
+    - name: 运行isort
+      run: |
+        isort --check-only .
+    
+    - name: 运行mypy
+      run: |
+        mypy . --ignore-missing-imports
+
+  security:
+    name: 安全扫描
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 运行Trivy漏洞扫描
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+    
+    - name: 上传Trivy结果
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  build:
+    name: 构建镜像
+    runs-on: ubuntu-latest
+    needs: [test, lint, security]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 设置Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: 登录到容器注册表
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 提取元数据
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha,prefix={{branch}}-
+          type=raw,value=latest,enable={{is_default_branch}}
+    
+    - name: 构建并推送应用镜像
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: 构建并推送出题服务镜像
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        target: quiz-generator
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-generator-${{ github.sha }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: 构建并推送判卷服务镜像
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        target: quiz-grader
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-grader-${{ github.sha }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: 构建并推送错题管理服务镜像
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        target: mistake-manager
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:mistake-manager-${{ github.sha }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  deploy-staging:
+    name: 部署到测试环境
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    environment:
+      name: staging
+      url: https://staging.example.com
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 配置Kubectl
+      uses: azure/k8s-set-context@v3
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ secrets.STAGING_KUBE_CONFIG }}
+    
+    - name: 更新Kubernetes部署
+      run: |
+        kubectl set image deployment/quiz-generator-service \
+          quiz-generator=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-generator-${{ github.sha }} \
+          -n learning-agent
+        
+        kubectl set image deployment/quiz-grader-service \
+          quiz-grader=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-grader-${{ github.sha }} \
+          -n learning-agent
+        
+        kubectl set image deployment/mistake-manager-service \
+          mistake-manager=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:mistake-manager-${{ github.sha }} \
+          -n learning-agent
+    
+    - name: 等待部署完成
+      run: |
+        kubectl rollout status deployment/quiz-generator-service -n learning-agent --timeout=5m
+        kubectl rollout status deployment/quiz-grader-service -n learning-agent --timeout=5m
+        kubectl rollout status deployment/mistake-manager-service -n learning-agent --timeout=5m
+    
+    - name: 运行集成测试
+      run: |
+        python tests/integration_test.py --env staging
+    
+    - name: 回滚（如果测试失败）
+      if: failure()
+      run: |
+        kubectl rollout undo deployment/quiz-generator-service -n learning-agent
+        kubectl rollout undo deployment/quiz-grader-service -n learning-agent
+        kubectl rollout undo deployment/mistake-manager-service -n learning-agent
+
+  deploy-production:
+    name: 部署到生产环境
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://production.example.com
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 配置Kubectl
+      uses: azure/k8s-set-context@v3
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ secrets.PRODUCTION_KUBE_CONFIG }}
+    
+    - name: 蓝绿部署
+      run: |
+        # 创建新版本的部署
+        kubectl apply -f k8s/quiz-generator-deployment.yaml
+        kubectl apply -f k8s/quiz-grader-deployment.yaml
+        kubectl apply -f k8s/mistake-manager-deployment.yaml
+        
+        # 更新镜像
+        kubectl set image deployment/quiz-generator-service \
+          quiz-generator=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-generator-${{ github.sha }} \
+          -n learning-agent
+        
+        kubectl set image deployment/quiz-grader-service \
+          quiz-grader=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:quiz-grader-${{ github.sha }} \
+          -n learning-agent
+        
+        kubectl set image deployment/mistake-manager-service \
+          mistake-manager=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:mistake-manager-${{ github.sha }} \
+          -n learning-agent
+    
+    - name: 等待部署完成
+      run: |
+        kubectl rollout status deployment/quiz-generator-service -n learning-agent --timeout=5m
+        kubectl rollout status deployment/quiz-grader-service -n learning-agent --timeout=5m
+        kubectl rollout status deployment/mistake-manager-service -n learning-agent --timeout=5m
+    
+    - name: 健康检查
+      run: |
+        kubectl wait --for=condition=ready pod -l app=quiz-generator -n learning-agent --timeout=5m
+        kubectl wait --for=condition=ready pod -l app=quiz-grader -n learning-agent --timeout=5m
+        kubectl wait --for=condition=ready pod -l app=mistake-manager -n learning-agent --timeout=5m
+    
+    - name: 运行冒烟测试
+      run: |
+        python tests/smoke_test.py --env production
+    
+    - name: 回滚（如果测试失败）
+      if: failure()
+      run: |
+        kubectl rollout undo deployment/quiz-generator-service -n learning-agent
+        kubectl rollout undo deployment/quiz-grader-service -n learning-agent
+        kubectl rollout undo deployment/mistake-manager-service -n learning-agent
+    
+    - name: 通知部署成功
+      if: success()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        text: '生产环境部署成功！'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+    
+    - name: 通知部署失败
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        text: '生产环境部署失败！'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+  performance-test:
+    name: 性能测试
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+    
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install locust
+    
+    - name: 运行性能测试
+      run: |
+        locust -f performance_test.py --headless \
+          --users 100 --spawn-rate 10 \
+          --run-time 5m --host https://staging.example.com \
+          --html performance-report.html
+    
+    - name: 上传性能测试报告
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: performance-report
+        path: performance-report.html
+
+  notify:
+    name: 通知
+    runs-on: ubuntu-latest
+    needs: [test, lint, security, build]
+    if: always()
+    
+    steps:
+    - name: 发送通知
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        text: |
+          CI/CD Pipeline完成
+          测试: ${{ needs.test.result }}
+          代码检查: ${{ needs.lint.result }}
+          安全扫描: ${{ needs.security.result }}
+          构建: ${{ needs.build.result }}
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}

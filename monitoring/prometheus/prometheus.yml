@@ -1,0 +1,78 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'learning-agent-cluster'
+    environment: 'production'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - 'alertmanager:9093'
+
+rule_files:
+  - '/etc/prometheus/rules/*.yml'
+
+scrape_configs:
+  # Prometheus 自监控
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Alertmanager 监控
+  - job_name: 'alertmanager'
+    static_configs:
+      - targets: ['alertmanager:9093']
+
+  # API 网关监控
+  - job_name: 'api-gateway'
+    static_configs:
+      - targets: ['api-gateway:80']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # 出题服务监控
+  - job_name: 'quiz-generator'
+    static_configs:
+      - targets: ['quiz-generator-service:8001']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # 判卷服务监控
+  - job_name: 'quiz-grader'
+    static_configs:
+      - targets: ['quiz-grader-service:8002']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # 错题管理服务监控
+  - job_name: 'mistake-manager'
+    static_configs:
+      - targets: ['mistake-manager-service:8003']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # MongoDB 监控
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongo1:27017', 'mongo2:27017', 'mongo3:27017']
+    metrics_path: '/metrics'
+
+  # Redis 监控
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis1:6379', 'redis2:6379', 'redis3:6379', 'redis4:6379', 'redis5:6379', 'redis6:6379']
+    metrics_path: '/metrics'
+
+  # Node Exporter 监控
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 30s
+
+  # cAdvisor 监控容器
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+    scrape_interval: 30s
