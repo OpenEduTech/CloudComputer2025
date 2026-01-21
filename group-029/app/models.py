@@ -7,6 +7,7 @@ class SessionCreateResponse(BaseModel):
     session_id: str = Field(..., description="会话 ID")
     chunk_count: int = Field(..., description="切分后的片段数量")
     name: str = Field(..., description="会话名称")
+    source_type: str = Field(..., description="数据来源类型（pdf/text）")
 
 
 class SessionItem(BaseModel):
@@ -34,6 +35,11 @@ class SessionRenameResponse(BaseModel):
     session_id: str
     name: str
     updated: bool
+
+
+class SessionTextCreateRequest(BaseModel):
+    text: str = Field(..., description="原始文本内容")
+    name: str | None = Field(None, description="可选会话名称")
 
 
 # 出题请求

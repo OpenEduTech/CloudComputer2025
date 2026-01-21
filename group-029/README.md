@@ -59,6 +59,7 @@ notepad .env
 ## API 简表
 - `GET /sessions`：会话列表
 - `POST /sessions`：上传 PDF 并创建会话
+- `POST /sessions/text`：提交文本并创建会话
 - `DELETE /sessions/{session_id}`：删除会话
 - `PATCH /sessions/{session_id}`：重命名会话
 - `POST /questions`：生成题目

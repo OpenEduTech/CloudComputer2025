@@ -207,6 +207,9 @@
         <button id="uploadBtn">上传并解析</button>
         <div class="status" id="uploadStatus">未上传</div>
         <div class="error" id="uploadError"></div>
+        <div class="hint">或直接粘贴文本生成会话：</div>
+        <textarea id="rawText" placeholder="在此粘贴教材或笔记文本"></textarea>
+        <button id="textBtn">用文本创建会话</button>
 
         <h3 style="margin-top:16px;">2. 生成题目</h3>
         <div class="grid">
@@ -267,6 +270,8 @@
       const difficultyRatio = document.getElementById("difficultyRatio");
       const gradeStatus = document.getElementById("gradeStatus");
       const gradeError = document.getElementById("gradeError");
+      const textBtn = document.getElementById("textBtn");
+      const rawText = document.getElementById("rawText");
       const questionsDiv = document.getElementById("questions");
       const gradeResult = document.getElementById("gradeResult");
       const questionsEmpty = document.getElementById("questionsEmpty");
@@ -291,6 +296,7 @@
         state.questions = [];
         state.grade = null;
         document.getElementById("pdfFile").value = "";
+        rawText.value = "";
         fileName.textContent = "未选择文件";
         uploadStatus.textContent = "未上传";
         sessionInfo.textContent = "当前会话：未生成";
@@ -396,6 +402,37 @@
         sessionInfo.textContent = `当前会话：${state.sessionName}`;
         genBtn.disabled = false;
         uploadBtn.disabled = false;
+        fetchSessions();
+      };
+
+      textBtn.onclick = async () => {
+        setError(uploadError, "");
+        const text = rawText.value.trim();
+        if (!text) {
+          uploadStatus.textContent = "请先粘贴文本";
+          return;
+        }
+        textBtn.disabled = true;
+        uploadStatus.innerHTML = `<span class="spinner"></span>文本处理中...`;
+        const res = await fetch("/sessions/text", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+        if (!res.ok) {
+          uploadStatus.textContent = "文本创建失败";
+          setError(uploadError, "文本解析失败，请检查内容。");
+          textBtn.disabled = false;
+          return;
+        }
+        const data = await res.json();
+        resetView();
+        state.sessionId = data.session_id;
+        state.sessionName = data.name || data.session_id;
+        uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+        sessionInfo.textContent = `当前会话：${state.sessionName}`;
+        genBtn.disabled = false;
+        textBtn.disabled = false;
         fetchSessions();
       };
 

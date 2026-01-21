@@ -10,6 +10,7 @@ from app.models import (
     SessionDeleteResponse,
     SessionRenameRequest,
     SessionRenameResponse,
+    SessionTextCreateRequest,
     QuestionGenerateRequest,
     QuestionGenerateResponse,
     QuestionItem,
@@ -112,6 +113,23 @@ def create_session_api(file: UploadFile = File(...)):
         session_id=session_id,
         chunk_count=len(chunks),
         name=session_name,
+        source_type="pdf",
+    )
+
+
+@app.post("/sessions/text", response_model=SessionCreateResponse)
+def create_session_text_api(req: SessionTextCreateRequest):
+    raw_text = (req.text or "").strip()
+    if not raw_text:
+        raise HTTPException(status_code=400, detail="文本内容不能为空")
+    chunks = split_text(raw_text)
+    session_name = req.name or generate_session_name(raw_text, "文本会话")
+    session_id = create_session(chunks, session_name)
+    return SessionCreateResponse(
+        session_id=session_id,
+        chunk_count=len(chunks),
+        name=session_name,
+        source_type="text",
     )
 
 
