@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "core_concept": "熵",
+    "normalized_concept": "熵",
+    "domains": ["数学", "物理", "计算机/AI"],
+    "version": "mock-v1",
+    "generated_at": "2024-01-01T12:00:00Z",
+    "stats": {
+      "num_nodes": 12,
+      "num_edges": 18,
+      "num_domains_covered": 3
+    },
+    "notes": "示例图谱数据"
+  },
+  "nodes": [
+    {
+      "id": "core_1",
+      "label": "熵",
+      "field": "核心",
+      "type": "core",
+      "summary": "信息论中的熵，表示不确定性",
+      "importance": 1.0,
+      "confidence": 0.95
+    },
+    {
+      "id": "node_1",
+      "label": "信息熵",
+      "field": "计算机/AI",
+      "type": "bridge",
+      "summary": "香农信息熵",
+      "importance": 0.9,
+      "confidence": 0.9
+    },
+    {
+      "id": "node_2",
+      "label": "热力学熵",
+      "field": "物理",
+      "type": "normal",
+      "summary": "热力学第二定律",
+      "importance": 0.8,
+      "confidence": 0.85
+    }
+  ],
+  "edges": [
+    {
+      "source": "core_1",
+      "target": "node_1",
+      "relation": "应用于",
+      "relation_type": "应用关联",
+      "confidence": 0.9,
+      "evidence": "熵的概念被香农引入信息论",
+      "direction": "directed"
+    }
+  ]
+}

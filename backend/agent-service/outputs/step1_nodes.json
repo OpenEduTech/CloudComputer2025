@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "Entropy",
+      "label": "熵",
+      "field": "核心",
+      "type": "core",
+      "summary": "熵是描述系统无序度或信息不确定性的核心度量。在热力学中，它表征系统的热力学状态和能量耗散方向；在信息论中，它量化了信息的不确定性或随机变量的平均信息量。它是连接物理、信息科学等多个领域的桥梁性概念。",
+      "aliases": [
+        "热力学熵",
+        "信息熵",
+        "熵增"
+      ],
+      "importance": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "id": "Shannon_Entropy",
+      "label": "香农熵",
+      "field": "数学",
+      "type": "bridge",
+      "summary": "香农熵是信息论中信息不确定性的数学度量，定义为概率分布的函数。它是核心概念“熵”在信息科学领域的直接数学形式化，用于量化随机变量的平均信息量，是通信编码和数据压缩的理论基础。",
+      "aliases": [
+        "信息熵"
+      ],
+      "importance": 0.9,
+      "confidence": 0.95
+    },
+    {
+      "id": "Kullback_Leibler_Divergence",
+      "label": "KL散度",
+      "field": "数学",
+      "type": "normal",
+      "summary": "KL散度（相对熵）是衡量两个概率分布差异的非对称度量。它基于信息熵的概念，描述用一个分布近似另一个分布时损失的信息量，在统计学、机器学习和信息论中用于模型比较和优化。",
+      "aliases": [
+        "相对熵"
+      ],
+      "importance": 0.75,
+      "confidence": 0.85
+    },
+    {
+      "id": "Thermodynamic_Entropy",
+      "label": "热力学熵",
+      "field": "物理",
+      "type": "bridge",
+      "summary": "热力学熵是描述系统微观状态无序度的物理量，与能量耗散和过程不可逆性相关。它是核心概念“熵”的经典物理起源，由克劳修斯和玻尔兹曼等人定义，其增加原理（熵增定律）是热力学第二定律的核心。",
+      "aliases": [
+        "克劳修斯熵",
+        "玻尔兹曼熵"
+      ],
+      "importance": 0.95,
+      "confidence": 0.98
+    },
+    {
+      "id": "Entropy_of_Black_Hole",
+      "label": "黑洞熵",
+      "field": "物理",
+      "type": "normal",
+      "summary": "黑洞熵是将热力学熵的概念推广到黑洞的物理量，由贝肯斯坦和霍金提出。它与黑洞视界的面积成正比，揭示了引力、热力学和量子理论之间的深刻联系，是理论物理的重要概念。",
+      "aliases": [
+        "贝肯斯坦-霍金熵"
+      ],
+      "importance": 0.7,
+      "confidence": 0.8
+    },
+    {
+      "id": "Cross_Entropy",
+      "label": "交叉熵",
+      "field": "计算机/AI",
+      "type": "normal",
+      "summary": "交叉熵在机器学习中常用作分类模型的损失函数，衡量模型预测概率分布与真实标签分布的差异。它源于信息论中的熵概念，用于评估和优化模型性能，是深度学习训练中的核心工具之一。",
+      "aliases": [],
+      "importance": 0.85,
+      "confidence": 0.9
+    },
+    {
+      "id": "Entropy_in_Decision_Trees",
+      "label": "决策树中的熵",
+      "field": "计算机/AI",
+      "type": "normal",
+      "summary": "在决策树算法（如ID3、C4.5）中，熵被用来度量数据集的纯度或不纯度，以选择最佳特征进行分裂。这是信息熵概念在机器学习中的直接应用，用于构建分类模型和特征选择。",
+      "aliases": [
+        "信息增益（基）"
+      ],
+      "importance": 0.8,
+      "confidence": 0.88
+    },
+    {
+      "id": "Entropy_in_Neuroscience",
+      "label": "神经活动熵",
+      "field": "生物/神经科学",
+      "type": "normal",
+      "summary": "神经活动熵是借用信息熵概念来量化神经元放电序列或脑网络活动复杂性与不确定性的度量。它用于描述神经信号的信息含量、大脑状态的复杂度或紊乱程度，与认知功能和某些神经系统疾病相关。",
+      "aliases": [
+        "神经复杂度",
+        "脑电熵"
+      ],
+      "importance": 0.65,
+      "confidence": 0.75
+    },
+    {
+      "id": "Genetic_Entropy",
+      "label": "遗传熵",
+      "field": "生物/神经科学",
+      "type": "normal",
+      "summary": "遗传熵是一个有争议的类比概念，指在缺乏自然选择等机制时，有害突变在种群中累积导致遗传信息“退化”或适应性下降的趋势。它是对热力学熵增在生物进化领域的一种方法论类比，关联较弱，主要用于特定假说讨论。",
+      "aliases": [],
+      "importance": 0.4,
+      "confidence": 0.5
+    },
+    {
+      "id": "Economic_Uncertainty",
+      "label": "经济不确定性",
+      "field": "社会科学/经济学",
+      "type": "normal",
+      "summary": "经济不确定性指经济决策者面临未来状态不可预知的程度。关联较弱，主要为方法论类比：信息熵作为量化不确定性的数学工具，其思想可类比应用于构建经济不确定性指数或分析市场信息效率，但并非直接使用熵公式。",
+      "aliases": [
+        "市场不确定性"
+      ],
+      "importance": 0.55,
+      "confidence": 0.55
+    },
+    {
+      "id": "Entropy_in_Complexity_Economics",
+      "label": "复杂性经济学中的熵",
+      "field": "社会科学/经济学",
+      "type": "bridge",
+      "summary": "在复杂性经济学中，熵的概念被借用来描述经济系统的无序度、多样性或演化路径的不可预测性。这是一种跨学科的方法论映射，用于分析经济结构的演化、创新扩散或资源分配的效率，与物理熵有思想上的联系但应用形式不同。",
+      "aliases": [],
+      "importance": 0.6,
+      "confidence": 0.65
+    },
+    {
+      "id": "Maximum_Entropy_Principle",
+      "label": "最大熵原理",
+      "field": "数学",
+      "type": "bridge",
+      "summary": "最大熵原理是指在已知部分约束条件下，选择熵最大的概率分布作为最无偏的推断。它是信息论和统计力学中的核心方法论，广泛应用于自然语言处理、图像重建、生态学等多个领域，是熵概念的重要应用和拓展。",
+      "aliases": [
+        "MaxEnt"
+      ],
+      "importance": 0.8,
+      "confidence": 0.9
+    }
+  ]
+}
