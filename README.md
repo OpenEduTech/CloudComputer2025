@@ -9,14 +9,15 @@
 构建一个基于多智能体（Multi-Agent）协作的系统，自动挖掘跨领域概念的桥梁，并构建可视化的知识图谱，帮助用户发现“远亲概念”的逻辑联系。
 
 **功能清单**：
+
 - **深度关联挖掘**：利用智能体在不同学科领域（数学、物理、社会学等）自动寻找相关概念。
 - **自动化图谱构建**：从非结构化文本中提取实体及其关系，生成标准化的图结构数据。
 - **混合检索增强 (RAG + Online)**：结合本地教科书知识库（RAG）与在线学术资源（ArXiv/Wikipedia），确保知识的广度与深度。
 - **交互式可视化**：提供 Web 端动态交互界面，支持力导向图的拖拽、缩放与点击跳转。
 - **多视图切换**：支持**知识图谱 (Knowledge Graph)** 与 **思维导图 (Mind Map)** 两种视图模式，满足不同场景下的知识探索需求。
-- **幻觉校验机制**：引入审计智能体（Auditor Agent）对生成内容进行学术引用校验，确保准确性。
+- **幻觉校验机制**：引入`Query Agent(质量评估智能体)`和`Validator Agent(置信度打分智能体)`对生成内容评估是否需要联网增强和是否达到可以展示的置信度标准，拒绝大模型的幻觉影响。
 - **证据与可信度呈现**：关系边展示 `desc/citation`，并以 `confidence` 强化高可信节点主干图。
-- **筛选与导出**：支持 Domain/Relation/Confidence 过滤，支持导出当前图谱 JSON。
+- **筛选与导出**：支持主干图(设置置信度阈值)和探索层(展示全部节点)的切换，支持导出当前图谱 JSON 文件。
 - **知识库导入**：提供工具自动扫描并导入 EPUB/MOBI 格式教科书到向量数据库。
 
 ---
@@ -38,7 +39,7 @@ graph TD
 
     %% --- 外部交互 ---
     User(("用户 User")) -->|"1.输入关键词"| FE
-    FE -->|"10.渲染图谱展示"| User
+    FE -->|"13.渲染图谱展示"| User
 
     %% --- Member A: 架构与工程 (Infrastructure) ---
     subgraph GroupA ["Member A: 架构与工程 (Infrastructure)"]
@@ -52,8 +53,8 @@ graph TD
         FE <-->|"2.HTTP请求/轮询"| API
         API -->|"3.发布任务 (PUSH)"| Redis
         
-        API <-->|"8.读取图谱数据 (Query)"| Neo4j
-        API -->|"9.返回完整数据"| FE
+        API <-->|"11.读取图谱数据 (Query)"| Neo4j
+        API -->|"12.返回完整数据"| FE
     end
 
     %% --- 外部学术资源 ---
@@ -64,7 +65,7 @@ graph TD
         direction TB
         Worker["Worker 容器 (Agent Runner)"]:::eng
         
-        subgraph Pipeline ["Agent Pipeline (LangGraph)"]
+        subgraph Pipeline ["Agent Pipeline"]
             Planner("Planner Agent<br/>(路径规划)"):::ai
             Miner("Miner Agent<br/>(混合检索)"):::ai
             Query("Query Agent<br/>(质量评估)"):::ai
@@ -116,90 +117,115 @@ graph TD
 | **UI 组件库** | **Ant Design** + **Framer Motion** | 采用企业级 UI 设计语言与 Framer Motion 动画库，构建具备磨砂玻璃质感 (Glassmorphism) 与流畅动效的沉浸式界面。 |
 
 #### 智能体 (Agent System)
-| 模块 | 技术选型 | 技术方案说明 |
-| :--- | :--- | :--- |
+
+| 模块           | 技术选型            | 技术方案说明                                                 |
+| :------------- | :------------------ | :----------------------------------------------------------- |
 | **Agent 编排** | **Custom Workflow** | 采用线性工作流 + 并发执行（Planner → Miner/MinerOnline → Validator → Relation）架构，支持多线程并发检索。 |
 | **大模型支持** | **ECNU-LLM / Kimi** | 支持接入 ECNU 校内 LLM 或 Moonshot AI (Kimi) API 进行语义理解与生成。 |
-| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
-| **RAG 检索** | **ChromaDB** | 部署本地向量数据库支持 **RAG (检索增强生成)**，对教科书进行高维向量索引，弥补模型知识盲区。 |
+| **图数据库**   | **Neo4j**           | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
+| **RAG 检索**   | **ChromaDB**        | 部署本地向量数据库支持 **RAG (检索增强生成)**，对教科书进行高维向量索引，弥补模型知识盲区。 |
+
 
 ---
-
 ## 3. 快速开始 (Quick Start)
 
 本项目基于 Docker 构建，可实现一键部署。
 
 ### 前置要求
+
 - Docker Desktop 或 Docker Engine
 - Docker Compose
 
 ### 启动步骤
 
 1. **克隆项目**
+
    ```bash
    git clone <repository_url>
    cd AutoKGS
    ```
 
 2. **配置环境变量**
-   在 `agent_engine` 或根目录下创建 `.env` 文件（或修改 `docker-compose.yml` 中的环境变量）：
+   由于 `.env` 文件包含敏感信息，通常不包含在代码仓库中。你需要手动创建 `.env` 文件。
+
+   在项目根目录下创建 `.env` 文件，并填入以下内容：
+
    ```bash
-   # --- 基础配置 ---
-   # Neo4j
+   # --- Neo4j 数据库配置 ---
    NEO4J_URI=bolt://neo4j:7687
    NEO4J_USER=neo4j
-   NEO4J_PASSWORD=password
+   NEO4J_PASSWORD=password # 请修改为你想要的密码
    
-   # Redis
+   # --- Redis 配置 ---
    REDIS_HOST=redis
    REDIS_PORT=6379
    
-   # ChromaDB
+   # --- ChromaDB 配置 ---
    CHROMA_SERVER_HOST=chromadb
    CHROMA_SERVER_PORT=8000
    
-   # --- LLM 配置 (二选一) ---
-   # 1. ECNU LLM
+   # --- LLM 配置 ---
+   
+   # 1. ECNU LLM (推荐，用于本地 RAG 和逻辑处理)
    LLM_API_KEY=your_ecnu_api_key
    LLM_API_BASE=https://api.ecnu.edu.cn/v1
    EMBEDDING_MODEL=ecnu-embedding-small
    
-   # 2. Kimi (Moonshot AI)
+   # 2. Kimi (Moonshot AI) (用于联网检索兜底)
    KIMI_API_KEY=sk-xxxxxxxx
+   KIMI_API_BASE=https://api.moonshot.cn/v1
    ```
 
 3. **启动服务**
+
    ```bash
    docker-compose up --build -d
    ```
 
 4. **访问服务**
+
    - **前端界面**: [http://localhost:5173](http://localhost:5173)
    - **后端 API**: [http://localhost:8000/docs](http://localhost:8000/docs)
-   - **Neo4j 控制台**: [http://localhost:7474](http://localhost:7474)
+   - **Neo4j 控制台**: [http://localhost:7474](http://localhost:7474) (账号: neo4j / 密码: 你在.env中设置的密码)
    - **ChromaDB**: [http://localhost:8001](http://localhost:8001)
 
-### 数据导入
+### 数据导入 (RAG 增强)
 
-这是教科书数据：
+为了让 AI 拥有更专业的学科知识，你可以导入本地教科书数据。
 
-通过网盘分享的文件：data.7z
-链接: https://pan.baidu.com/s/1aOxGAS_UwNEWgix-l9Y4wA?pwd=6ju3 提取码: 6ju3
+**数据资源：**
+我们提供了一份基础的学科分类教科书数据集：
 
-如果需要导入本地教科书以增强 RAG 能力：
+*   **下载链接**: https://pan.baidu.com/s/1aOxGAS_UwNEWgix-l9Y4wA?pwd=6ju3 
+*   **提取码**: 6ju3
 
-1. 将 `.epub` 或 `.mobi` 格式的电子书放入 `./data` 目录。
-2. 运行导入脚本：
+还提供了经处理后的教科书的向量集：
+
+- **下载链接**：https://pan.baidu.com/s/1wIaPRWgOmV66hAy9oRtgBQ?pwd=wvhy
+- **提取码**：wvhy
+
+**导入方式（任选其一）：**
+
+**方式 A：扫描教科书文件（链接可能因版权问题而失效，此时需要切换方式B或者联系我们获取）**
+1. 下载并解压 `data.7z`。
+2. 将解压得到的 `data` 文件夹（包含 `.epub` / `.mobi`）放在项目根目录的 `/data`。  
+   *(注：`/data` 已映射到容器内 `/app/data`)*
+3. 执行导入脚本：
    ```bash
-   # 进入 worker 容器
    docker compose exec worker bash
-   
-   # 运行导入工具
    python -m tools.ingest_books
    ```
+   *脚本会递归扫描 `/app/data` 并写入 ChromaDB。*
 
+**方式 B：导入 ChromaDump（快速恢复）**
+1. 将 `chroma_dump.json` 放到 `/data`（容器内路径为 `/app/data/chroma_dump.json`）。
+2. 执行导入脚本：
+   ```bash
+   docker compose exec worker bash
+   python -m tools.import_chromadb
+   ```
+   *脚本会按 collection 批量 upsert 到 ChromaDB。*
 ---
-
 ## 4. 项目结构
 
 ```Plaintext
@@ -252,104 +278,6 @@ AutoKGS/
 └── redis_data/              # Redis 数据持久化
 ```
 
-## 5. 数据交互格式
 
-### 任务状态 (Redis)
-后端轮询 `task:{uuid}` 获取实时进度：
 
-```json
-{
-  "status": "PROCESSING",
-  "step_index": 2,       
-  "progress": 45,
-  "message": "正在并行检索 (1/4)..."
-}
-```
-
-### 图数据结构 (Neo4j -> Frontend)
-```json
-{
-  "nodes": [
-    {
-      "id": "UUID",
-      "label": "熵",
-      "group": "Natural_Sciences",
-      "source_type": "textbook", 
-      "confidence": 0.98,
-      "info": "..."
-    }
-  ],
-  "links": [
-    {
-      "source": "UUID_A",
-      "target": "UUID_B",
-      "relation": "RELATED_TO",
-      "citation": "Source A; Source B"
-    }
-  ]
-}
-```
-
-### Redis格式：
-
-#### 任务发布：
-
-```json
-{
-  "task_id": "550e8400-e29b-41d4...", //UUID，唯一凭证
-  "keyword": "熵",                    // 用户输入
-  "params": {                         // (可选) 额外参数
-    "depth": 3,                       // 搜索深度
-    "language": "zh"
-  },
-  "created_at": 1709876543
-}
-```
-
-### 任务状态格式：
-*存入 Redis Key-Value (Key: `task:550e8400...`)* 后端接口会不断轮询读取这个 Key。
-
-#### 1. 状态流转定义 (Step Definitions)
-前端根据 `step_index` (0-4) 展示不同的加载动画步骤。后端需按照以下阶段更新 Redis：
-
-| Step | Status | Progress | Message (示例) | 说明 |
-| :--- | :--- | :--- | :--- | :--- |
-| **0** | PROCESSING | 5 | "任务已发送至 Redis 队列..." | 初始状态，等待 Worker 领取 |
-| **1** | PROCESSING | 20 | "AI Worker (Agent) 已接单..." | Worker 开始执行 |
-| **2** | PROCESSING | 45 | "正在检索 ArXiv 和教科书..." | Miner Agent 进行混合检索 |
-| **3** | PROCESSING | 70 | "正在提取实体与关系..." | LLM 阅读文本并抽取知识 |
-| **4** | PROCESSING | 90 | "图谱构建完成，正在渲染..." | 校验通过，写入 Neo4j |
-| **5** | SUCCESS | 100 | "Completed" | 任务彻底完成，返回结果 |
-
-#### 2. JSON 示例
-
-**进行中 (Processing):**
-```json
-{
-  "status": "PROCESSING",
-  "step_index": 2,       
-  "progress": 45,
-  "message": "正在检索 ArXiv 和教科书..."
-}
-```
-
-**成功 (Success):**
-```json
-{
-  "status": "SUCCESS",
-  "step_index": 5,
-  "progress": 100,
-  "result_node_id": "Entropy", // 告诉后端去 Neo4j 查哪个主节点
-  "message": "Completed",
-  "completed_at": 1709876599
-}
-```
-
-**失败 (Failed):**
-```json
-{
-  "status": "FAILED",
-  "error": "搜索超时，请稍后重试"
-}
-```
 
