@@ -1,0 +1,49 @@
+InterKnow_Graph_Agent-main/       # 项目根目录（操作目录）
+├── config.py                     # API Key、模型等配置
+├── db.json                       # TinyDB 本地存储文件（运行时生成/覆盖）
+├── Dockerfile                    # 容器化配置
+├── main.py                       # 入口，启动 FastAPI 与模拟负载线程
+├── README.md                     # 快速指令说明
+├── requirements.txt              # 依赖列表
+├── sample_data.json              # 示例图谱数据（根目录副本）
+├── structure.txt                 # 项目结构说明
+├── backend/                      # 后端
+│   ├── models/                   # 智能体与图谱相关逻辑
+│   │   ├── bloom_filter.py       # 简易布隆过滤器缓存查询
+│   │   ├── chat.py               # 聊天接口封装火山方舟模型
+│   │   ├── llm_graph_builder.py  # 生成/校验跨学科知识图谱
+│   │   ├── prompt_templates.md   # Prompt 模板说明
+│   │   └── lib/                  # 工具库
+│   │       ├── __init__.py
+│   │       ├── ark_io.py         # Ark SDK I/O 解析
+│   │       ├── prompts.py        # Prompt 组装工具
+│   │       ├── quality.py        # 内容质量与覆盖校验
+│   │       └── sanitize.py       # JSON 修复与节点裁剪
+│   └── routing/                  # 路由层
+│       └── router.py             # FastAPI 接口与页面路由
+├── frontend/                     # 前端
+│   ├── static/                   # 静态资源
+│   │   ├── css/                  # 样式
+│   │   │   ├── clock_set.css
+│   │   │   ├── navigater.css
+│   │   │   └── styles.css
+│   │   ├── js/                     # 业务 JS
+│   │   │   ├── app.js              # 图谱交互与 ECharts 渲染
+│   │   │   ├── clock.js
+│   │   │   ├── counts_and_tokens.js
+│   │   │   └── find.js
+│   │   ├── js_lib/                 # 本地库
+│   │   │   ├── clock_lib.js
+│   │   │   └── echarts.min.js
+│   │   ├── json/                   # 本地示例与缓存
+│   │   │   └── sample_data.json
+│   │   └── video/                  # 演示视频占位
+│   └── templates/                  # HTML 模板
+│       ├── find.html               # 批量查询页面
+│       ├── graph.html              # 知识图谱展示页
+│       ├── index.html              # 主界面
+│       └── technologies.html       # 技术展示页
+└── test/                           # 测试脚本
+	├── dump_graph.py               # 生成并导出图谱
+	├── healthcheck.py              # LLM/接口健康检查
+	└── show_all_data_in_mongodb.py # DB/TinyDB 数据查看

@@ -1,0 +1,23 @@
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    
+    .digital-clock {
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: -0.025em;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    .date-display {
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 0.5rem;
+        color: #ffffff; 
+    }
+}

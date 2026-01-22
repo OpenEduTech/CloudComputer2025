@@ -1,0 +1,195 @@
+{
+  "nodes": [
+    {
+      "id": "phy_thermo_entropy",
+      "name": "热力学熵",
+      "category": "物理学",
+      "discipline": "物理",
+      "description": "克劳修斯定义的热力学状态函数，衡量宏观系统的无序程度，是熵概念的起源，孤立系统熵增不可逆是热力学第二定律的核心内容。",
+      "value": 40
+    },
+    {
+      "id": "phy_boltzmann_entropy",
+      "name": "玻尔兹曼熵",
+      "category": "物理学",
+      "discipline": "物理",
+      "description": "统计力学视角下的熵定义，公式为S=k lnΩ，将宏观熵与系统微观状态数Ω关联，是热力学熵的微观解释。",
+      "value": 16
+    },
+    {
+      "id": "phy_black_hole_entropy",
+      "name": "黑洞熵",
+      "category": "物理学",
+      "discipline": "物理",
+      "description": "描述黑洞内部无序程度的物理量，与黑洞事件视界面积成正比，是热力学熵在引力系统中的延伸。",
+      "value": 16
+    },
+    {
+      "id": "math_shannon_entropy",
+      "name": "香农信息熵",
+      "category": "数学",
+      "discipline": "数学",
+      "description": "香农提出的量化随机变量不确定性的数学度量，是熵在信息论中的延伸，用于衡量信息的混乱程度或缺失程度。",
+      "value": 34
+    },
+    {
+      "id": "math_kl_divergence",
+      "name": "相对熵（KL散度）",
+      "category": "数学",
+      "discipline": "数学",
+      "description": "基于信息熵扩展的数学指标，衡量两个概率分布之间的差异程度，量化用一个分布近似另一个时的信息损失。",
+      "value": 16
+    },
+    {
+      "id": "cs_decision_tree_entropy",
+      "name": "决策树熵",
+      "category": "计算机科学",
+      "discipline": "计算机",
+      "description": "机器学习决策树算法中的核心指标，通过计算信息熵或基尼系数，选择最优分裂特征以最小化分类不确定性。",
+      "value": 16
+    },
+    {
+      "id": "cs_entropy_coding",
+      "name": "熵编码",
+      "category": "计算机科学",
+      "discipline": "计算机",
+      "description": "无损数据压缩技术，利用信息熵原理，对出现概率高的符号分配短编码，实现高效数据压缩。",
+      "value": 16
+    },
+    {
+      "id": "bio_bio_entropy",
+      "name": "生物熵",
+      "category": "生物学",
+      "discipline": "生物",
+      "description": "衡量生物系统无序程度的指标，生物通过摄入外界负熵（如食物、能量）维持自身有序，熵增过多会导致细胞衰老。",
+      "value": 22
+    },
+    {
+      "id": "bio_dissipative_structure",
+      "name": "耗散结构",
+      "category": "生物学",
+      "discipline": "生物",
+      "description": "普利高津提出的远离平衡态的有序系统，生物个体、生态系统均属此类，通过交换物质能量抵消熵增维持稳定。",
+      "value": 16
+    },
+    {
+      "id": "soc_social_entropy",
+      "name": "社会熵",
+      "category": "哲学/社会科学",
+      "discipline": "社会学",
+      "description": "衡量社会系统无序程度的概念，社会通过制度、文化等负熵流维持秩序，熵增表现为冲突加剧、效率低下。",
+      "value": 22
+    },
+    {
+      "id": "soc_cultural_entropy",
+      "name": "文化熵",
+      "category": "哲学/社会科学",
+      "discipline": "社会学",
+      "description": "衡量文化系统多样性与无序性的指标，文化交流熵增可能导致同质化，创新传承则引入负熵维持文化活力。",
+      "value": 16
+    }
+  ],
+  "links": [
+    {
+      "source": "phy_thermo_entropy",
+      "target": "phy_boltzmann_entropy",
+      "relation": "提供微观统计解释",
+      "label": "提供微观统计解释",
+      "name": "提供微观统计解释",
+      "relation_short": "提供微观统计解释",
+      "edge_label": "提供微观统计解释",
+      "description": "热力学熵是宏观状态函数，玻尔兹曼熵从统计力学角度将其与微观状态数关联，填补了宏观与微观熵概念的逻辑空白，深化了对熵本质的理解。"
+    },
+    {
+      "source": "phy_thermo_entropy",
+      "target": "phy_black_hole_entropy",
+      "relation": "拓展至极端引力系统",
+      "label": "拓展至极端引力系统",
+      "name": "拓展至极端引力系统",
+      "relation_short": "拓展至极端引力系统",
+      "edge_label": "拓展至极端引力系统",
+      "description": "黑洞熵将热力学熵的无序度量逻辑延伸至黑洞系统，提出熵与视界面积成正比的关系，验证了熵作为普适无序指标的特性。"
+    },
+    {
+      "source": "math_shannon_entropy",
+      "target": "phy_thermo_entropy",
+      "relation": "借鉴热力学熵核心逻辑",
+      "label": "借鉴热力学熵核心逻辑",
+      "name": "借鉴热力学熵核心逻辑",
+      "relation_short": "借鉴热力学熵核心逻辑",
+      "edge_label": "借鉴热力学熵核心逻辑",
+      "description": "香农定义信息熵时，借鉴了热力学熵衡量无序的思想，将其扩展到信息领域量化不确定性，二者数学形式相似但应用场景不同。"
+    },
+    {
+      "source": "math_kl_divergence",
+      "target": "math_shannon_entropy",
+      "relation": "基于信息熵扩展衍生",
+      "label": "基于信息熵扩展衍生",
+      "name": "基于信息熵扩展衍生",
+      "relation_short": "基于信息熵扩展衍生",
+      "edge_label": "基于信息熵扩展衍生",
+      "description": "相对熵（KL散度）通过计算两个概率分布的熵差，量化分布间的信息损失，是香农信息熵的重要衍生指标，用于机器学习等领域。"
+    },
+    {
+      "source": "cs_decision_tree_entropy",
+      "target": "math_shannon_entropy",
+      "relation": "应用信息熵计算逻辑",
+      "label": "应用信息熵计算逻辑",
+      "name": "应用信息熵计算逻辑",
+      "relation_short": "应用信息熵计算逻辑",
+      "edge_label": "应用信息熵计算逻辑",
+      "description": "决策树算法通过计算香农信息熵的变化（信息增益），选择能最大化降低分类不确定性的特征，实现模型的最优分裂。"
+    },
+    {
+      "source": "cs_entropy_coding",
+      "target": "math_shannon_entropy",
+      "relation": "依托信息熵理论基础",
+      "label": "依托信息熵理论基础",
+      "name": "依托信息熵理论基础",
+      "relation_short": "依托信息熵理论基础",
+      "edge_label": "依托信息熵理论基础",
+      "description": "熵编码技术利用香农信息熵对符号概率的量化结果，为高概率符号分配短编码，实现无损数据压缩，是信息熵的典型工程应用。"
+    },
+    {
+      "source": "bio_bio_entropy",
+      "target": "phy_thermo_entropy",
+      "relation": "延伸至生物系统领域",
+      "label": "延伸至生物系统领域",
+      "name": "延伸至生物系统领域",
+      "relation_short": "延伸至生物系统领域",
+      "edge_label": "延伸至生物系统领域",
+      "description": "生物熵借鉴热力学熵的无序度量逻辑，描述生物系统的有序状态，生物通过摄入负熵抵消内部熵增，符合热力学第二定律的拓展应用。"
+    },
+    {
+      "source": "bio_dissipative_structure",
+      "target": "bio_bio_entropy",
+      "relation": "通过负熵维持系统有序",
+      "label": "通过负熵维持系统有序",
+      "name": "通过负熵维持系统有序",
+      "relation_short": "通过负熵维持系统有序",
+      "edge_label": "通过负熵维持系统有序",
+      "description": "耗散结构理论解释了生物系统如何通过与外界交换物质能量引入负熵，抵消内部熵增，维持低熵的有序结构，是生物熵应用的核心机制。"
+    },
+    {
+      "source": "soc_social_entropy",
+      "target": "phy_thermo_entropy",
+      "relation": "类比热力学熵概念框架",
+      "label": "类比热力学熵概念框架",
+      "name": "类比热力学熵概念框架",
+      "relation_short": "类比热力学熵概念框架",
+      "edge_label": "类比热力学熵概念框架",
+      "description": "社会熵类比热力学熵的无序度量逻辑，将社会系统的秩序与熵增关联，通过制度、文化等负熵流抑制熵增，维持社会稳定运行。"
+    },
+    {
+      "source": "soc_cultural_entropy",
+      "target": "soc_social_entropy",
+      "relation": "构成社会熵的子维度",
+      "label": "构成社会熵的子维度",
+      "name": "构成社会熵的子维度",
+      "relation_short": "构成社会熵的子维度",
+      "edge_label": "构成社会熵的子维度",
+      "description": "文化熵是社会熵在文化领域的具体体现，文化的无序或同质化会加剧社会熵增，而文化创新、传承则为社会引入负熵，维持系统活力。"
+    }
+  ],
+  "tokens": 5180
+}
