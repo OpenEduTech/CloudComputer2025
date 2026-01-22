@@ -1,8 +1,4 @@
-langgraph
 langchain
-langchain-community
-langchain-openai
-langchain-chroma
 chromadb
 redis
 python-dotenv
@@ -14,3 +10,4 @@ tqdm
 arxiv
 wikipedia
 neo4j
+requests

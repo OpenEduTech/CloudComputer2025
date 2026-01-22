@@ -11,11 +11,13 @@
 **功能清单**：
 - **深度关联挖掘**：利用智能体在不同学科领域（数学、物理、社会学等）自动寻找相关概念。
 - **自动化图谱构建**：从非结构化文本中提取实体及其关系，生成标准化的图结构数据。
+- **混合检索增强 (RAG + Online)**：结合本地教科书知识库（RAG）与在线学术资源（ArXiv/Wikipedia），确保知识的广度与深度。
 - **交互式可视化**：提供 Web 端动态交互界面，支持力导向图的拖拽、缩放与点击跳转。
 - **多视图切换**：支持**知识图谱 (Knowledge Graph)** 与 **思维导图 (Mind Map)** 两种视图模式，满足不同场景下的知识探索需求。
 - **幻觉校验机制**：引入审计智能体（Auditor Agent）对生成内容进行学术引用校验，确保准确性。
 - **证据与可信度呈现**：关系边展示 `desc/citation`，并以 `confidence` 强化高可信节点主干图。
 - **筛选与导出**：支持 Domain/Relation/Confidence 过滤，支持导出当前图谱 JSON。
+- **知识库导入**：提供工具自动扫描并导入 EPUB/MOBI 格式教科书到向量数据库。
 
 ---
 
@@ -116,18 +118,11 @@ graph TD
 #### 智能体 (Agent System)
 | 模块 | 技术选型 | 技术方案说明 |
 | :--- | :--- | :--- |
-112→| **Agent 编排** | **Workflow Chain** | 采用线性工作流 + 决策分支（Planner → Miner → Query → Online/Local → Validator → Relation）架构，支持基于数据质量的动态路径选择。 |
-113→| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
+| **Agent 编排** | **Custom Workflow** | 采用线性工作流 + 并发执行（Planner → Miner/MinerOnline → Validator → Relation）架构，支持多线程并发检索。 |
+| **大模型支持** | **ECNU-LLM / Kimi** | 支持接入 ECNU 校内 LLM 或 Moonshot AI (Kimi) API 进行语义理解与生成。 |
+| **图数据库** | **Neo4j** | 使用原生图数据库存储知识实体及其拓扑结构，利用 Cypher 语言高效执行多跳查询。 |
 | **RAG 检索** | **ChromaDB** | 部署本地向量数据库支持 **RAG (检索增强生成)**，对教科书进行高维向量索引，弥补模型知识盲区。 |
 
----
-
-## 2.3 前端可解释与架构稳定性
-
-### 前端可解释性
-- **边级证据卡片**：点击关系边查看 `relation/desc/citation`，更易讲清“为什么有关联”。  
-- **主干图 / 探索层**：以 `confidence` 构建主干图（Main），并可切换到 Explore 查看全量关系。  
-- **导出**：支持导出当前图谱 JSON。  
 ---
 
 ## 3. 快速开始 (Quick Start)
@@ -147,15 +142,31 @@ graph TD
    ```
 
 2. **配置环境变量**
-   复制示例配置并修改（如需使用 OpenAI API）：
-  ```bash
-  # --- Neo4j 数据库配置 ---
-  NEO4J_USER=neo4j
-  NEO4J_PASSWORD=1234567888
-
-  # --- OpenAI API 配置 ---
-  OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  ```
+   在 `agent_engine` 或根目录下创建 `.env` 文件（或修改 `docker-compose.yml` 中的环境变量）：
+   ```bash
+   # --- 基础配置 ---
+   # Neo4j
+   NEO4J_URI=bolt://neo4j:7687
+   NEO4J_USER=neo4j
+   NEO4J_PASSWORD=password
+   
+   # Redis
+   REDIS_HOST=redis
+   REDIS_PORT=6379
+   
+   # ChromaDB
+   CHROMA_SERVER_HOST=chromadb
+   CHROMA_SERVER_PORT=8000
+   
+   # --- LLM 配置 (二选一) ---
+   # 1. ECNU LLM
+   LLM_API_KEY=your_ecnu_api_key
+   LLM_API_BASE=https://api.ecnu.edu.cn/v1
+   EMBEDDING_MODEL=ecnu-embedding-small
+   
+   # 2. Kimi (Moonshot AI)
+   KIMI_API_KEY=sk-xxxxxxxx
+   ```
 
 3. **启动服务**
    ```bash
@@ -165,12 +176,27 @@ graph TD
 4. **访问服务**
    - **前端界面**: [http://localhost:5173](http://localhost:5173)
    - **后端 API**: [http://localhost:8000/docs](http://localhost:8000/docs)
-   - **Neo4j 控制台**: [http://localhost:7474](http://localhost:7474) (默认账号: neo4j / 密码见 .env)
+   - **Neo4j 控制台**: [http://localhost:7474](http://localhost:7474)
+   - **ChromaDB**: [http://localhost:8001](http://localhost:8001)
 
-### 停止服务
-```bash
-docker-compose down
-```
+### 数据导入
+
+这是教科书数据：
+
+通过网盘分享的文件：data.7z
+链接: https://pan.baidu.com/s/1aOxGAS_UwNEWgix-l9Y4wA?pwd=6ju3 提取码: 6ju3
+
+如果需要导入本地教科书以增强 RAG 能力：
+
+1. 将 `.epub` 或 `.mobi` 格式的电子书放入 `./data` 目录。
+2. 运行导入脚本：
+   ```bash
+   # 进入 worker 容器
+   docker compose exec worker bash
+   
+   # 运行导入工具
+   python -m tools.ingest_books
+   ```
 
 ---
 
@@ -183,91 +209,82 @@ AutoKGS/
 ├── .env                        # 环境变量
 ├── .gitignore                        
 │
-├── docs/                    # [文档] 交付物
-│
-├── frontend/                # [服务1] 前端容器
+├── frontend/                # [服务1] 前端容器 (React + Vite)
 │   ├── Dockerfile
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── node_modules/
-│   └── src/
-│       ├── components/
-│       ├── api/
-│       └── App.jsx
-│       └── main.jsx
+│   ├── src/
+│   │   ├── components/
+│   │   ├── api/
+│   │   ├── useGraphOption.js   # 图谱配置
+│   │   ├── useMindMapOption.js # 思维导图配置
+│   │   └── App.jsx
+│   └── ...
 │
-├── backend/                 # [服务2] 后端 API 容器
+├── backend/                 # [服务2] 后端 API 容器 (FastAPI)
 │   ├── Dockerfile
-│   ├── requirements.txt
 │   ├── main.py                 # FastAPI 入口
-│   ├── config.py               # 配置读取
-│   ├── routers/
-│   └── database/
+│   ├── routers/                # 路由定义 (Task, Graph)
+│   └── database/               # 数据库连接工具
 │
-├── agent_engine/            # [服务3] 智能体 Worker 容器
+├── agent_engine/            # [服务3] 智能体 Worker 容器 (Python)
 │   ├── Dockerfile              
-│   ├── requirements.txt        
-│   ├── worker_main.py          # 主程序
+│   ├── worker_main.py          # Worker 主程序 (监听 Redis)
+│   ├── workflow.py             # Agent 工作流编排
 │   ├── config.py               
 │   │
-│   ├── textbooks/           # RAG源数据：存放 .pdf 教科书文件
-│   │
-│   ├── agents/              # 智能体逻辑
-│   │   ├── planner.py          # 规划
-│   │   ├── miner.py            # 混合调用 ArXiv 和 RAG
-│   │   ├── builder.py          # 构建 JSON
-│   │   └── auditor.py          # 校验 (负责打回重做)
+│   ├── agents/              # 智能体实现
+│   │   ├── planner.py          # 规划 Agent
+│   │   ├── miner.py            # 挖掘 Agent (RAG)
+│   │   ├── miner_online.py     # 联网 Agent
+│   │   ├── query.py            # 质检 Agent
+│   │   ├── validator.py        # 验证 Agent
+│   │   └── relation.py         # 关系 Agent
 │   │
 │   ├── tools/               # 工具链
-│   │   ├── search_arxiv.py     # ArXiv 论文搜索工具
-│   │   └── rag_retriever.py    #  Chroma 本地教科书检索工具
+│   │   ├── ingest_books.py     # 图书导入工具
+│   │   ├── ecnu_llm.py         # LLM 封装
+│   │   ├── search_arxiv.py     # ArXiv 工具
+│   │   └── rag_retriever.py    # RAG 检索器
 │   │
-│   ├── utils/               # 通用工具
-│   │
-│   └── prompts/             # 提示词迭代
+│   └── prompt/              # Prompt 模板
 │
-├── neo4j_data/              # Neo4j 数据挂载
-└── chroma_data/             # 向量数据库数据挂载 (防止重启后RAG失效)
+├── neo4j_data/              # Neo4j 数据持久化
+├── chroma_data/             # ChromaDB 数据持久化
+└── redis_data/              # Redis 数据持久化
 ```
-## 5.数据格式
-### 图数据格式：
 
+## 5. 数据交互格式
+
+### 任务状态 (Redis)
+后端轮询 `task:{uuid}` 获取实时进度：
+
+```json
+{
+  "status": "PROCESSING",
+  "step_index": 2,       
+  "progress": 45,
+  "message": "正在并行检索 (1/4)..."
+}
+```
+
+### 图数据结构 (Neo4j -> Frontend)
 ```json
 {
   "nodes": [
     {
-      "id": "熵(Entropy)",
+      "id": "UUID",
       "label": "熵",
-      "group": "Physics",
-      "size": 50,
-      "info": "热力学中表示系统的混乱程度...",
-      // ---【示例1：来自教科书 (RAG)】---
+      "group": "Natural_Sciences",
       "source_type": "textbook", 
-      "source": "《复杂系统导论》 (Introduction to Complexity)", 
-      "url": "", // 点击跳转到课本
-      "confidence": 0.98
-    },
-    {
-      "id": "信息不确定性(Uncertainty)",
-      "label": "信息不确定性",
-      "group": "Information Theory",
-      "size": 40,
-      "info": "信息论的核心概念...",
-      // ---【示例2：来自论文 (ArXiv)】---
-      "source_type": "paper",
-      "source": "A Mathematical Theory of Communication",
-      "url": "https://arxiv.org/abs/cs/9809005", // 点击跳转 ArXiv
-      "confidence": 0.92
+      "confidence": 0.98,
+      "info": "..."
     }
   ],
   "links": [
     {
-      "source": "熵(Entropy)",
-      "target": "信息不确定性",
-      "relation": "MATHEMATICAL_BASIS",
-      "desc": "香农借鉴了玻尔兹曼公式...",
-      // ---【关系引用】（如有）---
-      "citation": "Shannon, C. E. (1948). A Mathematical Theory of Communication."
+      "source": "UUID_A",
+      "target": "UUID_B",
+      "relation": "RELATED_TO",
+      "citation": "Source A; Source B"
     }
   ]
 }
@@ -335,5 +352,4 @@ AutoKGS/
   "error": "搜索超时，请稍后重试"
 }
 ```
-
 
