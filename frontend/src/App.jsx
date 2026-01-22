@@ -157,14 +157,14 @@ function App() {
     setSelectedEdge(null);
     setDrawerVisible(false);
     setGraphLayer('main');
-    setMainConfidenceMin(70);
+    setMainConfidenceMin(0);
 
     try {
         // 1. Send Task Creation Request
         const { task_id } = await createTask(value, { depth: depthUsed });
         console.log(`Task created with ID: ${task_id}`);
 
-        const newEntry = { keyword: value, depth: depthUsed, time: Date.now() };
+        const newEntry = { keyword: value, depth: depthUsed, time: Date.now(), task_id };
         const nextHistory = [newEntry, ...searchHistory.filter(entry => !(entry.keyword === value && entry.depth === depthUsed))].slice(0, 20);
         persistHistory(nextHistory);
 
@@ -238,9 +238,41 @@ function App() {
     URL.revokeObjectURL(url);
   };
 
-  const handleUseHistory = (entry) => {
+  const handleUseHistory = async (entry) => {
     setHistoryVisible(false);
-    handleSearch(entry.keyword, entry.depth);
+    
+    // If we have a task_id, try to fetch that specific graph directly
+    if (entry.task_id) {
+        setIsSearching(true);
+        setGraphData(null);
+        setSelectedNode(null);
+        setSelectedEdge(null);
+        setDrawerVisible(false);
+        setSearchValue(entry.keyword);
+        
+        try {
+            const data = await getGraphByTask(entry.task_id);
+            if (data.nodes && data.nodes.length > 0) {
+                setGraphData(data);
+                setGraphLayer('main');
+                setMainConfidenceMin(70);
+                message.success("Loaded graph from history.");
+            } else {
+                message.warning("Historical graph data not found. Re-running search...");
+                // Fallback: Re-run search if data is missing
+                handleSearch(entry.keyword, entry.depth);
+            }
+        } catch (error) {
+            console.error("Failed to load history graph:", error);
+            message.error("Failed to load history. Re-running search...");
+            handleSearch(entry.keyword, entry.depth);
+        } finally {
+            setIsSearching(false);
+        }
+    } else {
+        // Old history entries without task_id: Re-run search
+        handleSearch(entry.keyword, entry.depth);
+    }
   };
 
   const handleClearHistory = () => {
@@ -527,7 +559,7 @@ function App() {
                     <Text type="secondary">Main Confidence ≥ {mainConfidenceMin}%</Text>
                     <Slider
                       min={50}
-                      max={95}
+                      max={100}
                       value={mainConfidenceMin}
                       onChange={setMainConfidenceMin}
                       disabled={isSearching}

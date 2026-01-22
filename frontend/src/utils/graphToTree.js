@@ -18,10 +18,13 @@ export const convertGraphToTree = (data, rootId) => {
     let root = nodeMap[rootId];
     if (!root) {
         // Fallback: Try to find a node with label matching rootId (case-insensitive)
-        const potentialRoot = data.nodes.find(n => n.label.toLowerCase() === rootId?.toLowerCase());
+        // Ensure rootId is not null/undefined before calling toLowerCase
+        const safeRootId = (rootId || '').toLowerCase();
+        const potentialRoot = data.nodes.find(n => (n.label || '').toLowerCase() === safeRootId);
+        
         if (potentialRoot) {
             root = nodeMap[potentialRoot.id];
-        } else {
+        } else if (data.nodes.length > 0) {
              // Fallback: Pick the node with the most connections? Or just the first one?
              root = nodeMap[data.nodes[0].id];
         }

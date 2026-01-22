@@ -48,8 +48,24 @@ class ECNULLM:
             "stream": False
         }
         
+        # Configure requests with retry strategy
+        from requests.adapters import HTTPAdapter
+        from urllib3.util.retry import Retry
+        
+        session = requests.Session()
+        retry = Retry(
+            total=3, 
+            backoff_factor=1, 
+            status_forcelist=[500, 502, 503, 504],
+            allowed_methods=["POST"]
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount("https://", adapter)
+        session.mount("http://", adapter)
+
         try:
-            response = requests.post(url, headers=headers, json=payload, timeout=60)
+            # Increase timeout significantly as LLM inference can be slow
+            response = session.post(url, headers=headers, json=payload, timeout=120)
             response.raise_for_status()
             data = response.json()
             return data['choices'][0]['message']['content']

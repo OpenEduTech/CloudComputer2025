@@ -25,14 +25,23 @@ const useMindMapOption = (data, rootId) => {
     const injectStyle = (node) => {
         const color = groupColorMap[node.group] || '#ccc';
         const confidenceValue = typeof node.confidence === 'number' ? node.confidence : 0.6;
+        const isLowConfidence = confidenceValue < 0.66;
         
         node.itemStyle = {
             color: color,
-            borderColor: '#fff',
-            borderWidth: 2,
+            borderColor: isLowConfidence ? '#ff4d4f' : '#fff', // Red border for low confidence
+            borderWidth: isLowConfidence ? 4 : 2,
             shadowBlur: 5,
             shadowColor: 'rgba(0,0,0,0.1)',
             opacity: 0.65 + (confidenceValue * 0.35)
+        };
+
+        // Highlight label as well
+        node.label = {
+            color: isLowConfidence ? '#cf1322' : '#333',
+            fontWeight: isLowConfidence ? 'bold' : 'bold', // Always bold for mindmap, but maybe extra?
+            textBorderColor: '#fff',
+            textBorderWidth: 3,
         };
 
         node.symbol = node.source_type === 'paper' ? 'rect' : 'circle';

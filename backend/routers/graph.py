@@ -1,6 +1,6 @@
 import logging
 from fastapi import APIRouter, HTTPException, Query
-from database.neo4j_utils import query_node_and_neighbors
+from database.neo4j_utils import query_node_and_neighbors, query_graph_by_task_id
 
 # Setup logging
 logger = logging.getLogger("graph_router")
@@ -10,6 +10,23 @@ router = APIRouter(
     prefix="/api/graph",
     tags=["graph"]
 )
+
+@router.get("/task/{task_id}")
+def get_graph_by_task(task_id: str):
+    """
+    根据 task_id 获取该任务生成的特定图谱
+    """
+    logger.info(f"Received graph request for task_id: {task_id}")
+    try:
+        data = query_graph_by_task_id(task_id)
+        if data is None:
+             raise HTTPException(status_code=503, detail="Neo4j service unavailable")
+        
+        logger.info(f"Successfully retrieved task graph with {len(data.get('nodes', []))} nodes")
+        return data
+    except Exception as e:
+        logger.error(f"Internal Server Error in get_graph_by_task: {e}")
+        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 @router.get("/{node_id}")
 def get_graph_data(node_id: str, depth: int = Query(1, ge=1, le=5)):

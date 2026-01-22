@@ -9,7 +9,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - VITE_API_URL=http://localhost:8000
+      - VITE_API_URL=http://backend:8000
     depends_on:
       - backend
     networks:
@@ -48,7 +48,6 @@ services:
       - CHROMA_SERVER_HOST=chromadb
       - CHROMA_SERVER_PORT=8000
       - EMBEDDING_MODEL=ecnu-embedding-small
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - LLM_API_KEY=${LLM_API_KEY}
       - KIMI_API_KEY=${KIMI_API_KEY}
       - NEO4J_URI=bolt://neo4j:7687
@@ -92,7 +91,7 @@ services:
     image: chromadb/chroma:latest
     restart: always
     ports:
-      - "8000:8000"
+      - "8001:8000"
     volumes:
       - chroma_data:/chroma/chroma
     environment:

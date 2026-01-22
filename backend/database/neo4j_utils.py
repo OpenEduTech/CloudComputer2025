@@ -45,13 +45,14 @@ def query_node_and_neighbors(node_id: str, depth: int = 1):
     # 这种方式对于处理图数据更直观
     
     # 查询所有涉及的边
+    # 修正：startNode 和 endNode 在 UNWIND 之后需要重新定位
+    # 但更直接的方式是：
     basic_path_query = f"""
     MATCH (startNode:Entity) 
     WHERE startNode.id = $node_id OR toLower(startNode.label) CONTAINS toLower($node_id)
     WITH startNode LIMIT 1
     MATCH p = (startNode)-[*0..{depth}]-(endNode:Entity)
     UNWIND relationships(p) as rel
-    WITH startNode, endNode, rel
     RETURN startNode(rel) as source, rel, endNode(rel) as target
     LIMIT 500
     """
@@ -94,9 +95,8 @@ def query_node_and_neighbors(node_id: str, depth: int = 1):
                     final_nodes[target["id"]] = target
                     
                     # 兼容处理 relation 属性
-                    # 如果 rel 是 neo4j.graph.Relationship 对象，使用 .type
-                    # 如果是 dict (通常不会，除非 apoc)，使用 ["relation"]
-                    rel_type = rel.type if hasattr(rel, 'type') else rel.get("relation", "RELATED_TO")
+                    # 优先使用 relation 属性，因为 write_graph 时可能将具体关系存为属性，而 type 统一为 RELATED
+                    rel_type = rel.get("relation") or (rel.type if hasattr(rel, 'type') else "RELATED_TO")
                     
                     link_key = (source["id"], target["id"], rel_type)
                     if link_key not in links_set:
@@ -119,6 +119,82 @@ def query_node_and_neighbors(node_id: str, depth: int = 1):
         raise e
 
     logger.info(f"Returning {len(final_nodes)} nodes and {len(final_links)} links.")
+    return {
+        "nodes": list(final_nodes.values()),
+        "links": final_links
+    }
+
+def query_graph_by_task_id(task_id: str):
+    """
+    根据 task_id 查询该任务生成的图谱（节点和边）。
+    """
+    driver = get_driver()
+    if not driver:
+        return None
+        
+    logger.info(f"Querying graph for task_id: {task_id}")
+    
+    final_nodes = {}
+    final_links = []
+    links_set = set()
+    
+    try:
+        with driver.session() as session:
+            # 1. 查询属于该 task_id 的所有节点
+            node_query = """
+            MATCH (n:Entity)
+            WHERE $task_id IN n.task_ids
+            RETURN n
+            """
+            logger.info(f"Executing node query for task_id: {task_id}")
+            node_res = session.run(node_query, task_id=task_id)
+            for record in node_res:
+                n = dict(record["n"])
+                final_nodes[n["id"]] = n
+                
+            logger.info(f"Found {len(final_nodes)} nodes for task_id: {task_id}")
+
+            # 2. 查询属于该 task_id 的所有边
+            rel_query = """
+            MATCH (n:Entity)-[r]-(m:Entity)
+            WHERE $task_id IN r.task_ids
+            RETURN startNode(r) as source, r, endNode(r) as target
+            """
+            logger.info(f"Executing relationship query for task_id: {task_id}")
+            rel_res = session.run(rel_query, task_id=task_id)
+            
+            for record in rel_res:
+                source = dict(record["source"])
+                target = dict(record["target"])
+                r = record["r"]
+                
+                # 确保 source 和 target 都在 final_nodes 中 (理论上应该都在，但为了完整性)
+                if source["id"] not in final_nodes:
+                    final_nodes[source["id"]] = source
+                if target["id"] not in final_nodes:
+                    final_nodes[target["id"]] = target
+                    
+                # 优先使用 relation 属性
+                rel_type = r.get("relation") or (r.type if hasattr(r, 'type') else "RELATED_TO")
+                link_key = (source["id"], target["id"], rel_type)
+                
+                if link_key not in links_set:
+                    links_set.add(link_key)
+                    final_links.append({
+                        "source": source["id"],
+                        "target": target["id"],
+                        "relation": rel_type,
+                        "desc": r.get("desc", ""),
+                        "citation": r.get("citation", "")
+                    })
+            
+            logger.info(f"Found {len(final_links)} links for task_id: {task_id}")
+                        
+    except Exception as e:
+        logger.error(f"Error querying by task_id: {e}")
+        logger.error(traceback.format_exc())
+        return {"nodes": [], "links": []}
+
     return {
         "nodes": list(final_nodes.values()),
         "links": final_links

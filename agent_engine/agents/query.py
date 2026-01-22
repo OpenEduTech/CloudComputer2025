@@ -2,7 +2,7 @@ from agents.base_agent import BaseAgent
 
 class QueryAgent(BaseAgent):
     def __init__(self):
-        super().__init__("query.txt", model_type="ecnu")
+        super().__init__("query.txt", model_type="kimi")
 
     def run(self, miner_result):
         # 简单逻辑：如果 Miner 返回空，直接返回 yes

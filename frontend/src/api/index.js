@@ -22,4 +22,9 @@ export const getGraphData = async (nodeId, depth = 2) => {
   return response.data;
 };
 
+export const getGraphByTask = async (taskId) => {
+  const response = await api.get(`/api/graph/task/${taskId}`);
+  return response.data;
+};
+
 export default api;

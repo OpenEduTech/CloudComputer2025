@@ -38,10 +38,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .npm/
+frontend/node_modules/
 
 # --- IDE & OS ---
 .idea/
-./trae/
+.trae/
 .vscode/
 *.swp
 *.swo

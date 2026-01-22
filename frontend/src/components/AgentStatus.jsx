@@ -25,23 +25,23 @@ const AgentStatus = ({ statusData }) => {
       icon: <CloudUploadOutlined />,
     },
     {
-      title: 'Agent 接单',
-      description: 'AI Worker (Agent) 已接单...',
+      title: 'Agent 规划',
+      description: '正在拆解任务与生成查询计划...',
       icon: <RobotOutlined />,
     },
     {
-      title: '知识检索',
-      description: '正在检索 ArXiv 和教科书...',
+      title: '知识挖掘',
+      description: '正在检索知识并验证可信度...',
       icon: <ReadOutlined />,
     },
     {
-      title: '信息抽取',
-      description: '正在提取实体与关系...',
+      title: '关系推理',
+      description: '正在分析实体间的隐式关系...',
       icon: <NodeIndexOutlined />,
     },
     {
       title: '图谱构建',
-      description: '图谱构建完成，正在渲染...',
+      description: '正在写入图数据库并渲染...',
       icon: <CheckCircleOutlined />,
     },
   ];

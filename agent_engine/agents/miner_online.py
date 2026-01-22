@@ -7,8 +7,8 @@ class MinerOnlineAgent(BaseAgent):
     def __init__(self):
         super().__init__("miner_online.txt", model_type="kimi")
 
-    def run(self, keyword, subject):
-        print(f"Miner Online Agent searching for: {keyword} in {subject}")
+    def run(self, keyword, subject, depth=2):
+        print(f"Miner Online Agent searching for: {keyword} in {subject} (Depth: {depth})")
         
         # 1. Search Arxiv
         arxiv_results = search_arxiv(f"{subject} {keyword}")

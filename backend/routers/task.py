@@ -13,11 +13,15 @@ router = APIRouter(
     tags=["tasks"]
 )
 
+# Simple in-memory storage fallback
+in_memory_store = {}
+
 # 连接 Redis
 try:
     redis_client = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, decode_responses=True)
+    redis_client.ping()
 except Exception as e:
-    print(f"Error connecting to Redis: {e}")
+    print(f"Warning: Redis not available ({e}). Using in-memory storage.")
     redis_client = None
 
 class TaskRequest(BaseModel):
@@ -54,7 +58,9 @@ async def simulate_agent_processing(task_id: str, keyword: str):
         await asyncio.sleep(2) 
         if redis_client:
             redis_client.set(key, json.dumps(step))
-            print(f"Updated task {task_id} to step {step.get('step_index')}")
+        else:
+            in_memory_store[key] = json.dumps(step)
+            print(f"Updated task {task_id} to step {step.get('step_index')} (In-Memory)")
 
 @router.post("")
 async def create_task(request: TaskRequest, background_tasks: BackgroundTasks):
@@ -79,9 +85,17 @@ async def create_task(request: TaskRequest, background_tasks: BackgroundTasks):
             "message": "任务已发送至 Redis 队列..."
         }
         redis_client.set(f"task:{task_id}", json.dumps(initial_status))
+    else:
+        initial_status = {
+            "status": "PROCESSING", 
+            "step_index": 0, 
+            "progress": 5, 
+            "message": "任务已初始化 (In-Memory)..."
+        }
+        in_memory_store[f"task:{task_id}"] = json.dumps(initial_status)
 
     # 传递 keyword 给模拟函数
-    background_tasks.add_task(simulate_agent_processing, task_id, request.keyword)
+    # background_tasks.add_task(simulate_agent_processing, task_id, request.keyword)
     return {"task_id": task_id}
 
 @router.get("/{task_id}/status")
@@ -89,11 +103,12 @@ def get_task_status(task_id: str):
     """
     获取任务当前状态
     """
-    if not redis_client:
-        raise HTTPException(status_code=503, detail="Redis service unavailable")
-    
     key = f"task:{task_id}"
-    status_json = redis_client.get(key)
+    
+    if redis_client:
+        status_json = redis_client.get(key)
+    else:
+        status_json = in_memory_store.get(key)
     
     if not status_json:
         raise HTTPException(status_code=404, detail="Task not found")

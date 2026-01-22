@@ -51,7 +51,7 @@ const useGraphOption = (data, themeToken) => {
                     : node.source;
                 
                 return `
-                    <div style="min-width: 200px;">
+                    <div style="min-width: 200px; max-height: 400px; overflow-y: auto;">
                         <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px; color: ${node.color};">
                            ${node.label}
                         </div>
@@ -114,17 +114,22 @@ const useGraphOption = (data, themeToken) => {
           data: visibleNodes.map(node => {
             const confidenceScore = typeof node.confidence === 'number' ? node.confidence : 0.6;
             const emphasisSize = Math.round(confidenceScore * 12);
+            // Highlight low confidence nodes with red border or color
+            const isLowConfidence = confidenceScore < 0.66;
+            
             return {
             ...node,
-            name: node.label,
+            name: node.id, // Use UUID as unique identifier for linking
+            displayName: node.label, // Store label for display
             category: categories.findIndex(c => c.name === node.group),
             // Distinct shapes with meaning
             symbol: node.source_type === 'textbook' ? 'circle' : 'diamond', 
             // Dynamic sizing based on confidence/importance
             symbolSize: (node.size || 30) + emphasisSize, 
             itemStyle: {
-                borderColor: '#fff',
-                borderWidth: 2,
+                // If low confidence, override border color to RED
+                borderColor: isLowConfidence ? '#ff4d4f' : '#fff',
+                borderWidth: isLowConfidence ? 4 : 2,
                 shadowBlur: 10,
                 shadowColor: 'rgba(0, 0, 0, 0.2)',
                 opacity: 0.65 + (confidenceScore * 0.35)
@@ -132,9 +137,10 @@ const useGraphOption = (data, themeToken) => {
             label: {
                 show: true,
                 position: 'right', // Put labels on the right to reduce overlap
-                formatter: '{b}',
+                formatter: (params) => params.data.displayName, // Display the label text
                 fontSize: 12,
-                color: '#333',
+                color: isLowConfidence ? '#cf1322' : '#333', // Red text for low confidence
+                fontWeight: isLowConfidence ? 'bold' : 'normal',
                 backgroundColor: 'rgba(255,255,255,0.7)',
                 borderRadius: 4,
                 padding: [2, 4]

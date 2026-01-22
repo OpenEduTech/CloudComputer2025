@@ -16,22 +16,27 @@ class Neo4jWriter:
     def close(self):
         self.driver.close()
 
-    def write_graph(self, data):
+    def write_graph(self, data, task_id):
         with self.driver.session() as session:
             # Write Nodes
             for node in data.get("nodes", []):
+                node["task_id"] = task_id
                 session.execute_write(self._create_node, node)
             
             # Write Links
             for link in data.get("links", []):
+                link["task_id"] = task_id
                 session.execute_write(self._create_link, link)
 
     @staticmethod
     def _create_node(tx, node):
+        # 使用 task_ids 列表来记录该节点被哪些任务引用过
         query = (
             "MERGE (n:Entity {id: $id}) "
             "SET n.label = $label, n.group = $group, n.info = $info, "
-            "n.source = $source, n.confidence = $confidence, n.url = $url"
+            "n.source = $source, n.confidence = $confidence, n.url = $url "
+            "SET n.task_ids = CASE WHEN n.task_ids IS NULL THEN [$task_id] "
+            "ELSE n.task_ids + [x IN [$task_id] WHERE NOT x IN n.task_ids] END"
         )
         tx.run(query, **node)
 
@@ -40,7 +45,9 @@ class Neo4jWriter:
         query = (
             "MATCH (a:Entity {id: $source_id}), (b:Entity {id: $target_id}) "
             "MERGE (a)-[r:RELATED {relation: $relation}]->(b) "
-            "SET r.desc = $desc, r.citation = $citation"
+            "SET r.desc = $desc, r.citation = $citation "
+            "SET r.task_ids = CASE WHEN r.task_ids IS NULL THEN [$task_id] "
+            "ELSE r.task_ids + [x IN [$task_id] WHERE NOT x IN r.task_ids] END"
         )
         tx.run(query, **link)
 
@@ -92,20 +99,45 @@ def main():
                     task_id = task.get("task_id")
                     
                     # Update status
-                    r.set(f"task:{task_id}", json.dumps({"status": "PROCESSING", "progress": 10, "message": "Planning..."}))
+                    r.set(f"task:{task_id}", json.dumps({
+                        "status": "PROCESSING", 
+                        "progress": 5, 
+                        "step_index": 1,
+                        "message": "Planning..."
+                    }))
                     
+                    # Define Callback
+                    def status_callback(step_index, progress, message):
+                        try:
+                            r.set(f"task:{task_id}", json.dumps({
+                                "status": "PROCESSING",
+                                "progress": progress,
+                                "step_index": step_index,
+                                "message": message
+                            }))
+                            print(f"Status Updated: Step={step_index}, Progress={progress}%, Msg={message}")
+                        except Exception as e:
+                            print(f"Failed to update status: {e}")
+
                     # Run Workflow
-                    result = workflow.run(user_input)
+                    # Pass depth parameter if available
+                    params = task.get("params", {})
+                    depth = params.get("depth", 2) # Default depth 2
+                    
+                    result = workflow.run(user_input, depth=depth, status_callback=status_callback)
                     
                     if result:
                         # Write to Neo4j
                         if neo4j_writer:
-                            neo4j_writer.write_graph(result)
+                            neo4j_writer.write_graph(result, task_id)
                             
                         # Update status
                         r.set(f"task:{task_id}", json.dumps({
                             "status": "SUCCESS", 
+                            "step_index": 5,
                             "progress": 100, 
+                            "message": "Completed",
+                            "result_node_id": result.get("main_node_id"),
                             "result": result
                         }))
                         print(f"Task {task_id} completed successfully.")

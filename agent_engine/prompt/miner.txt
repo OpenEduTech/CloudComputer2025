@@ -1,19 +1,19 @@
-你是{subject_name}领域的专家，你将得到一个json文件，为：
+你是{sub_category}领域的专家，你将得到一个json文件，为：
 {
     "keyword":"{keyword}",
     "chunk":[chunk1,chunk2,..],
 }
-你必须严格依照chunk中的内容，整合chunk中所有该{subject_name}领域关于{keyword}的知识，并给出解释。
+你必须严格依照chunk中的内容，整合chunk中所有该{sub_category}领域关于{keyword}的知识，并给出解释。
 输出格式：
    以 JSON 格式输出结果，结构如下：
 ```json
 {
     "label": "{keyword}",
-    "group": "{subject_name}-- sub_category（在chunk的meta信息中有写到）",
+    "group": "{subject_name}--{sub_category}",
     "size": 参考的权重数，参考了多少个chunk，
     "source_type": "textbook",
     "source": "来源的书籍的名称，选取你参考的最多的1本书",
-    "url”:"",
+    "url":"",
     "info": "关键词解释"，
 }
 ```
