@@ -1,0 +1,58 @@
+:root {
+  --app-max-width: 1320px;
+  --app-bg: #e8f1ff;
+  --app-surface: #ffffff;
+  --app-surface-alt: #f3f7ff;
+  --app-accent: #1d4ed8;
+
+  --el-color-primary: #2563eb;
+  --el-color-primary-light-3: #5b8ef3;
+  --el-color-primary-light-5: #7aa7f6;
+  --el-color-primary-light-7: #a7c4fb;
+  --el-color-primary-light-8: #c3d7fd;
+  --el-color-primary-dark-2: #1d4ed8;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #e8f1ff 0%, #f7faff 100%);
+  color: var(--el-text-color-primary);
+  font-size: 15px;
+}
+
+body.el-popup-parent--hidden {
+  overflow-y: auto !important;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 统一卡片与标题观感（不改变 Element Plus 组件行为） */
+.el-card {
+  border-radius: var(--el-border-radius-round);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  background: var(--app-surface);
+}
+
+.el-card__header {
+  padding: 16px 20px;
+}
+
+.el-card__body {
+  padding: 20px;
+}
+
+/* 让长内容更易读 */
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

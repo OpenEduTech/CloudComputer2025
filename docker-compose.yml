@@ -1,0 +1,102 @@
+services:
+  # 前端服务
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ppt-assistant-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # 后端服务
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ppt-assistant-backend
+    ports:
+      - "8002:8000"
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_API_BASE=${DEEPSEEK_API_BASE}
+      - DEEPSEEK_MODEL=${DEEPSEEK_MODEL}
+      - DEEPSEEK_EMBEDDING_MODEL=${DEEPSEEK_EMBEDDING_MODEL}
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - ANONYMIZED_TELEMETRY=FALSE
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - WIKIPEDIA_API_ENABLED=${WIKIPEDIA_API_ENABLED}
+      - ARXIV_API_ENABLED=${ARXIV_API_ENABLED}
+      - SEMANTIC_SCHOLAR_API_ENABLED=${SEMANTIC_SCHOLAR_API_ENABLED}
+      - OPENALEX_API_ENABLED=${OPENALEX_API_ENABLED}
+      - STACKEXCHANGE_API_ENABLED=${STACKEXCHANGE_API_ENABLED}
+      - BING_SEARCH_API_ENABLED=${BING_SEARCH_API_ENABLED}
+      - GOOGLE_CSE_API_ENABLED=${GOOGLE_CSE_API_ENABLED}
+      - SEMANTIC_SCHOLAR_API_KEY=${SEMANTIC_SCHOLAR_API_KEY}
+      - OPENALEX_EMAIL=${OPENALEX_EMAIL}
+      - STACKEXCHANGE_KEY=${STACKEXCHANGE_KEY}
+      - BING_SEARCH_API_KEY=${BING_SEARCH_API_KEY}
+      - GOOGLE_CSE_API_KEY=${GOOGLE_CSE_API_KEY}
+      - GOOGLE_CSE_ENGINE_ID=${GOOGLE_CSE_ENGINE_ID}
+      - OCR_ENABLED=${OCR_ENABLED}
+      - TESSERACT_CMD=${TESSERACT_CMD}
+      - LOCAL_PREFILTER_ENABLED=${LOCAL_PREFILTER_ENABLED}
+      - LOCAL_PREFILTER_MODEL_PATH=${LOCAL_PREFILTER_MODEL_PATH}
+      - ANSWER_SIMILARITY_THRESHOLD=${ANSWER_SIMILARITY_THRESHOLD}
+    volumes:
+      # Windows/WSL2 某些环境下 build 时 COPY 可能把源码复制为全 0（导致 "null bytes" SyntaxError）。
+      # 这里将源码目录以 bind mount 方式挂载，确保容器运行时读取到真实源码。
+      - ./backend/app:/app/app
+      - ./backend/uploads:/app/uploads
+      - ./backend/data:/app/data
+      - ./backend/logs:/app/logs
+    depends_on:
+      - chromadb
+      - redis
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # ChromaDB向量数据库
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:0.5.0
+    container_name: ppt-assistant-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chromadb-data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    container_name: ppt-assistant-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  chromadb-data:
+    driver: local
+  redis-data:
+    driver: local

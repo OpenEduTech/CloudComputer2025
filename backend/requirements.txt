@@ -1,0 +1,47 @@
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# LLM (DeepSeek兼容OpenAI SDK)
+openai==1.10.0
+
+# Document Parsing
+python-pptx==0.6.23
+PyMuPDF==1.23.8
+Pillow==10.2.0
+pytesseract==0.3.10
+feedparser==6.0.11
+
+# Vector Database
+# 需要与 docker-compose 中的 chromadb 服务端版本兼容。
+# 为避免 `chromadb/chroma:latest` 跟随升级导致不兼容，这里与 compose 中的镜像版本一起固定在 0.5.0。
+chromadb==0.5.0
+
+# Cache
+redis==5.0.1
+hiredis==2.3.2
+
+# Data Processing
+numpy==1.26.3
+pandas==2.1.4
+
+# HTTP Client
+httpx==0.26.0
+aiohttp==3.9.1
+
+# Environment
+python-dotenv==1.0.0
+
+# Validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Utilities
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dateutil==2.8.2
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
