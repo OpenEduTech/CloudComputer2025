@@ -1,0 +1,49 @@
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
+
+# Test/tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs/temp
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# local notes/assets
+/1.md
+/*.pdf
+/mistakes.json
+
+# local demos
+/asr_demo.py
+/pypdf_demo.py
+/kimi_pdf_demo.py
+/groq_asr_demo.py
+
+# frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+
+# uploads
+/storage/
