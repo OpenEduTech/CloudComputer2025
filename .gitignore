@@ -1,0 +1,11 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*.so
+.env
+.venv/
+venv/
+# 编辑器相关
+.idea/
+.vscode/
+*.swp
