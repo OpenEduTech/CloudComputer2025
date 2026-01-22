@@ -2,7 +2,7 @@ from agents.base_agent import BaseAgent
 
 class ValidatorAgent(BaseAgent):
     def __init__(self):
-        super().__init__("val.txt", model_type="kimi")
+        super().__init__("val.txt", model_type="ecnu")
 
     def run(self, node_data, subject):
         keyword = node_data.get("label")

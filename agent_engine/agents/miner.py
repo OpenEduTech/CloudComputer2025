@@ -4,7 +4,7 @@ from tools.rag_retriever import RagRetriever
 
 class MinerAgent(BaseAgent):
     def __init__(self):
-        super().__init__("miner.txt", model_type="kimi")
+        super().__init__("miner.txt", model_type="ecnu")
         self.retriever = RagRetriever() # 使用默认的 ecnu-embedding
 
     def run(self, keyword, subject, depth=2):

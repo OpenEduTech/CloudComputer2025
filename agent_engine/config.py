@@ -20,28 +20,20 @@ class Settings:
     @property
     def AVAILABLE_SUBJECTS(self):
         """
-        动态获取 data 目录下的所有学科（文件夹名称）。
-        仅返回一级目录。
+        Hardcoded list of subjects corresponding to the top-level directories in 'data'.
         """
-        data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
-        try:
-            if not os.path.exists(data_dir):
-                # Fallback defaults if data dir doesn't exist yet
-                return [
-                    "Language_and_Symbolic_Systems",
-                    "Humans_and_Cognition", 
-                    "Formal_Sciences_and_Computation",
-                    "Natural_Sciences"
-                ]
-            
-            subjects = [
-                d for d in os.listdir(data_dir) 
-                if os.path.isdir(os.path.join(data_dir, d)) and not d.startswith('.')
-            ]
-            return subjects if subjects else ["General"]
-        except Exception as e:
-            print(f"Error reading subjects from data dir: {e}")
-            return ["General"]
+        return [
+            "Business_and_Management",
+            "Engineering_and_Technological_Applications",
+            "Ethics_ Governance_ and_Safety",
+            "Formal_Sciences_and_Computation",
+            "Humanities_and History",
+            "Humans_and_Cognition",
+            "Language_and_Symbolic_Systems",
+            "Medicine_and_Health_Sciences",
+            "Natural_Sciences",
+            "Social_Science"
+        ]
 
     '''
     CHATECNU请求头示例

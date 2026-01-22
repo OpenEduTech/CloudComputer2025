@@ -3,7 +3,7 @@ from agents.base_agent import BaseAgent
 
 class RelationAgent(BaseAgent):
     def __init__(self):
-        super().__init__("relation.txt", model_type="kimi")
+        super().__init__("relation.txt", model_type="ecnu")
 
     def run(self, node1, node2):
         subject1 = node1.get("group")
