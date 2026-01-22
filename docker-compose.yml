@@ -1,0 +1,120 @@
+# PatPat-Inconsistency-Hunter Docker Compose 配置
+# 长文本事实卫士 - 云原生部署配置
+
+services:
+  # 后端服务
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: patpat-server
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=PatPat-Inconsistency-Hunter
+      - DEBUG=false
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_API_BASE=${DEEPSEEK_API_BASE:-https://api.deepseek.com}
+      - DEEPSEEK_MODEL=${DEEPSEEK_MODEL:-deepseek-chat}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DATABASE_URL=postgresql://patpat:patpat123@postgres:5432/patpat_db
+      - LOG_LEVEL=INFO
+    depends_on:
+      - redis
+      - postgres
+    volumes:
+      - ./logs:/app/logs
+      - ./uploads:/app/uploads  # 映射上传文件目录，方便在宿主机访问图片
+      - ./models:/app/models    # 映射视觉模型目录
+      - ./server/app:/app/app   # 挂载代码目录（开发模式，改代码只需 restart）
+      - ./server/LocalInternVL.py:/app/LocalInternVL.py  # 挂载视觉模型模块
+    # GPU 支持 (Docker Compose V2)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - patpat-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # 前端服务
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: patpat-client
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+    networks:
+      - patpat-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis 服务 - 事实黑板
+  redis:
+    image: redis:7-alpine
+    container_name: patpat-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - patpat-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: patpat-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=patpat
+      - POSTGRES_PASSWORD=patpat123
+      - POSTGRES_DB=patpat_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./server/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - patpat-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U patpat -d patpat_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  patpat-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
+
