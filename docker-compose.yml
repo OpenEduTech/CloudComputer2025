@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: agent_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      # Keys should be provided in .env or environment
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-sk-c20873c2404043a6bd935d590621dfe1}
+      - ZHIPU_API_KEY=${ZHIPU_API_KEY}
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6.0
+    container_name: agent_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

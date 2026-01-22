@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+motor
+python-multipart
+pydantic-settings
+python-jose[cryptography]
+bcrypt>=4.0.0
+zai-sdk
+langchain
+langchain-openai
+httpx
+pytest
+pytest-asyncio
+python-dotenv
+pydantic[email]
+pypdf
+email-validator>=2.0.0
