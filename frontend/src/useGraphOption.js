@@ -37,51 +37,67 @@ const useGraphOption = (data, themeToken) => {
       },
       tooltip: {
         trigger: 'item',
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        borderColor: '#eee',
+        confine: true,
+        enterable: true,
+        backgroundColor: 'rgba(255, 255, 255, 0.96)', // 微调透明度以确认更新
+        borderColor: '#e8e8e8',
         borderWidth: 1,
+        // 策略调整：在外层强制固定宽度，确保 ECharts 能正确计算位置
+        extraCssText: 'width: 260px !important; max-width: 260px !important; white-space: normal !important; word-wrap: break-word !important; word-break: break-word !important; box-shadow: 0 6px 16px rgba(0,0,0,0.12); border-radius: 8px;',
         textStyle: {
-          color: '#333'
+          color: '#333',
+          fontSize: 13
         },
         formatter: (params) => {
             if (params.dataType === 'node') {
                 const node = params.data;
+                const color = params.color || '#5470c6';
                 const sourceInfo = node.url 
                     ? `<a href="${node.url}" target="_blank" style="color: #1677ff; text-decoration: none;">${node.source} 🔗</a>` 
                     : node.source;
                 
                 return `
-                    <div style="min-width: 200px; max-height: 400px; overflow-y: auto;">
-                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px; color: ${node.color};">
+                    <div style="width: 100%; max-height: 300px; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                        <div style="font-weight: 600; font-size: 15px; margin-bottom: 8px; color: ${color}; line-height: 1.4;">
                            ${node.label}
                         </div>
-                        <div style="font-size: 12px; margin-bottom: 4px;">
-                           <span style="color: #666;">Type:</span> 
-                           <b>${node.source_type === 'paper' ? '📄 Paper' : '📘 Textbook'}</b>
+                        <div style="font-size: 12px; margin-bottom: 6px; color: #666; display: flex; align-items: center;">
+                           <span style="font-weight: 600; margin-right: 4px;">Type:</span> 
+                           <span style="background: ${node.source_type === 'paper' ? '#e6f7ff' : '#f6ffed'}; color: ${node.source_type === 'paper' ? '#1890ff' : '#52c41a'}; padding: 1px 6px; border-radius: 4px; font-size: 11px;">
+                             ${node.source_type === 'paper' ? 'PAPER' : 'TEXTBOOK'}
+                           </span>
                         </div>
-                        <div style="font-size: 12px; margin-bottom: 4px;">
-                           <span style="color: #666;">Source:</span> ${sourceInfo}
+                        <div style="font-size: 12px; margin-bottom: 6px; color: #666; line-height: 1.4;">
+                           <span style="font-weight: 600;">Source:</span> ${sourceInfo}
                         </div>
-                        <div style="font-size: 12px; margin-bottom: 8px;">
-                           <span style="color: #666;">Confidence:</span> 
-                           <span style="color: ${(node.confidence * 100) > 80 ? '#52c41a' : '#faad14'}">${(node.confidence * 100).toFixed(0)}%</span>
+                        <div style="font-size: 12px; margin-bottom: 10px; color: #666;">
+                           <span style="font-weight: 600;">Confidence:</span> 
+                           <span style="color: ${(node.confidence * 100) > 80 ? '#52c41a' : '#faad14'}; font-weight: 600;">${(node.confidence * 100).toFixed(0)}%</span>
                         </div>
-                        <div style="font-size: 12px; color: #555; padding-top: 8px; border-top: 1px solid #eee; line-height: 1.4;">
+                        <div style="font-size: 13px; color: #444; padding-top: 10px; border-top: 1px solid #f0f0f0; line-height: 1.6;">
                            ${node.info || 'No description available.'}
                         </div>
                     </div>
                 `;
             } else if (params.dataType === 'edge') {
                  const citationInfo = params.data.citation
-                    ? `<div style="margin-top: 6px; color: #666;"><span style="color: #999;">Citation:</span> ${params.data.citation}</div>`
-                    : `<div style="margin-top: 6px; color: #999;">Citation: N/A</div>`;
+                    ? `<div style="margin-top: 8px; padding: 8px; background: #f9f9f9; border-radius: 4px; color: #666; font-size: 12px; line-height: 1.4;">
+                         <span style="font-weight: 600; color: #999;">Citation:</span> ${params.data.citation}
+                       </div>`
+                    : '';
+                 
                  return `
-                    <div style="font-size: 12px;">
-                        <div style="color: #666; margin-bottom: 4px;">Relationship</div>
-                        <b>${params.data.source}</b> 
-                        <span style="color: #999;"> --[ ${params.data.relation} ]--> </span> 
-                        <b>${params.data.target}</b>
-                        ${params.data.desc ? `<div style="margin-top: 4px; color: #555;">${params.data.desc}</div>` : ''}
+                    <div style="width: 100%; max-height: 300px; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                        <div style="color: #999; margin-bottom: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Relationship</div>
+                        <div style="font-size: 13px; margin-bottom: 8px; line-height: 1.4; color: #333;">
+                            <span style="font-weight: 600;">${params.data.source}</span> 
+                            <span style="color: #bbb; margin: 0 6px;">➜</span> 
+                            <span style="font-weight: 600;">${params.data.target}</span>
+                        </div>
+                        <div style="font-size: 12px; color: #1677ff; background: #e6f7ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px;">
+                            ${params.data.relation}
+                        </div>
+                        ${params.data.desc ? `<div style="margin-top: 4px; font-size: 13px; color: #444; line-height: 1.6;">${params.data.desc}</div>` : ''}
                         ${citationInfo}
                     </div>
                  `;

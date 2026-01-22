@@ -108,9 +108,11 @@ const useMindMapOption = (data, rootId) => {
         backgroundColor: 'rgba(255, 255, 255, 0.98)',
         borderColor: '#ddd',
         borderWidth: 1,
-        extraCssText: 'max-width: 300px; white-space: normal; word-break: break-word; box-shadow: 0 4px 12px rgba(0,0,0,0.15);',
+        // 策略调整：在外层强制固定宽度，确保 ECharts 能正确计算位置
+        extraCssText: 'width: 260px !important; max-width: 260px !important; white-space: normal !important; word-wrap: break-word !important; word-break: break-word !important; box-shadow: 0 6px 16px rgba(0,0,0,0.12); border-radius: 8px;',
         textStyle: {
-            color: '#333'
+            color: '#333',
+            fontSize: 13
         },
         formatter: (params) => {
             if (params.seriesType === 'scatter') return '';
@@ -118,28 +120,30 @@ const useMindMapOption = (data, rootId) => {
             const node = params.data;
             if (node.name) {
                 const relationInfo = node.relationToParent 
-                    ? `<div style="padding: 4px 0; border-bottom: 1px dashed #eee; margin-bottom: 8px;">
-                          <span style="color: #888; font-size: 12px;">Incoming Relation:</span><br/>
-                          <b>${node.relationToParent}</b>
-                          ${node.relationDesc ? `<div style="font-size: 11px; color: #666; margin-top: 2px;">${node.relationDesc}</div>` : ''}
-                          ${node.relationCitation ? `<div style="font-size: 11px; color: #999; margin-top: 2px;">Citation: ${node.relationCitation}</div>` : ''}
+                    ? `<div style="padding-bottom: 8px; border-bottom: 1px dashed #eee; margin-bottom: 8px;">
+                          <div style="color: #999; font-size: 11px; margin-bottom: 2px;">INCOMING RELATION</div>
+                          <div style="font-weight: 600; color: #1677ff; background: #e6f7ff; padding: 2px 6px; border-radius: 4px; display: inline-block; font-size: 12px;">${node.relationToParent}</div>
+                          ${node.relationDesc ? `<div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.4;">${node.relationDesc}</div>` : ''}
+                          ${node.relationCitation ? `<div style="font-size: 11px; color: #999; margin-top: 4px; background: #f9f9f9; padding: 4px; border-radius: 4px;">Ref: ${node.relationCitation}</div>` : ''}
                         </div>` 
                     : '';
                 
                 return `
-                    <div style="padding: 4px;">
+                    <div style="width: 100%; max-height: 300px; overflow-y: auto; padding-right: 5px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                         ${relationInfo}
-                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 6px; color: #333;">
+                        <div style="font-weight: 600; font-size: 15px; margin-bottom: 6px; color: #333; line-height: 1.4;">
                            ${node.name}
                         </div>
-                        <div style="font-size: 12px; margin-bottom: 4px;">
-                           <span style="color: #666;">Type:</span> 
-                           <b>${node.source_type === 'paper' ? '📄 Paper' : '📘 Textbook'}</b>
+                        <div style="font-size: 12px; margin-bottom: 6px; color: #666; display: flex; align-items: center;">
+                           <span style="font-weight: 600; margin-right: 4px;">Type:</span> 
+                           <span style="background: ${node.source_type === 'paper' ? '#e6f7ff' : '#f6ffed'}; color: ${node.source_type === 'paper' ? '#1890ff' : '#52c41a'}; padding: 1px 6px; border-radius: 4px; font-size: 11px;">
+                             ${node.source_type === 'paper' ? 'PAPER' : 'TEXTBOOK'}
+                           </span>
                         </div>
-                        <div style="font-size: 12px; color: #555; line-height: 1.4; margin-bottom: 6px;">${node.info || ''}</div>
-                        <div style="font-size: 12px; color: #999; border-top: 1px solid #f0f0f0; padding-top: 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Confidence: ${(node.confidence * 100).toFixed(0)}%</span>
-                            ${node.url ? `<a href="${node.url}" target="_blank" style="color: #1677ff; text-decoration: none; font-weight: bold; cursor: pointer;">Open Link 🔗</a>` : ''}
+                        <div style="font-size: 13px; color: #444; line-height: 1.6; margin-bottom: 8px;">${node.info || ''}</div>
+                        <div style="font-size: 12px; color: #999; border-top: 1px solid #f0f0f0; padding-top: 8px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: ${(node.confidence * 100) > 80 ? '#52c41a' : '#faad14'}">${(node.confidence * 100).toFixed(0)}% Confidence</span>
+                            ${node.url ? `<a href="${node.url}" target="_blank" style="color: #1677ff; text-decoration: none; font-weight: 600;">Open Link →</a>` : ''}
                         </div>
                     </div>
                 `;
