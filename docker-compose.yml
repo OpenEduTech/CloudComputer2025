@@ -1,0 +1,45 @@
+version: "3.8"
+services :
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    restart: always
+    depends_on:
+      - mongodb
+  
+
+  mongodb:
+    image: mongo:7.0.5
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+
+  #前端
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    restart: always
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  mongodb_config:
