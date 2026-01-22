@@ -1,0 +1,264 @@
+openapi: 3.0.3
+info:
+  title: Agent Service API - 跨学科知识图谱智能体
+  version: 1.0.0
+  description: |
+    内部智能体服务接口（B 调用 A）。
+    返回结果必须符合 schema/graph.schema.json（GraphJSON v1.1）。
+    说明：LLM Provider 可为 DeepSeek（实现细节不写在 OpenAPI 内）。
+
+servers:
+  - url: http://localhost:8001
+
+tags:
+  - name: Agent
+    description: 智能体图谱生成
+  - name: System
+    description: 系统与健康检查
+
+paths:
+  /agent/v1/build:
+    post:
+      tags: [Agent]
+      summary: 生成 GraphJSON（最终结果）
+      description: |
+        输入概念与约束，返回 GraphJSON。
+        Agent 内部应包含：Step0 输入检查、Step1 关联挖掘、Step2 关系抽取、
+        Step3 结构化输出、Step4 校验/修复（如 JSON Schema 校验与重试）。
+      operationId: agentBuild
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AgentBuildRequest"
+            examples:
+              entropy:
+                summary: 示例-熵
+                value:
+                  concept: "熵"
+                  constraints:
+                    domains: ["数学","物理","计算机/AI","生物/神经科学","社会科学/经济学"]
+                    max_nodes: 30
+                    max_edges: 50
+                    min_confidence: 0.55
+                  output:
+                    format: "graphjson"
+                    schema_version: "v1.1"
+      responses:
+        "200":
+          description: 返回 GraphJSON（符合 schema/graph.schema.json）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GraphJSON"
+        "400":
+          description: 输入不合法（Step0 失败）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                invalidInput:
+                  value:
+                    error:
+                      code: INVALID_INPUT
+                      message: "concept 不能为空或包含非法字符"
+        "422":
+          description: Agent 输出结构不合规（schema 校验失败）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                schemaFailed:
+                  value:
+                    error:
+                      code: SCHEMA_VALIDATION_FAILED
+                      message: "edges[3].confidence 不在 [0,1]"
+        "429":
+          description: 上游 LLM 限流/配额不足（或本服务限流）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: 服务内部错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /agent/v1/build_debug:
+    post:
+      tags: [Agent]
+      summary: 生成 GraphJSON（返回中间产物，便于演示/调试）
+      description: |
+        可选接口：返回 result + intermediate（step0~step4 的关键中间产物）。
+        用于演示“智能体策略”“校验层”等评分点。
+      operationId: agentBuildDebug
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AgentBuildRequest"
+      responses:
+        "200":
+          description: 返回最终图谱与中间产物
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AgentDebugResponse"
+        "400":
+          description: 输入不合法
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "422":
+          description: 输出结构不合规
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: 服务内部错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /agent/v1/health:
+    get:
+      tags: [System]
+      summary: Agent 服务健康检查
+      operationId: agentHealth
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    enum: ["ok"]
+
+components:
+  schemas:
+    Domain:
+      type: string
+      enum: ["数学", "物理", "计算机/AI", "生物/神经科学", "社会科学/经济学"]
+
+    AgentBuildRequest:
+      type: object
+      additionalProperties: false
+      required: [concept, constraints, output]
+      properties:
+        concept:
+          type: string
+          minLength: 1
+          maxLength: 60
+          description: 输入核心概念（中文为主）
+        constraints:
+          type: object
+          additionalProperties: false
+          required: [domains, max_nodes, max_edges, min_confidence]
+          properties:
+            domains:
+              type: array
+              items:
+                $ref: "#/components/schemas/Domain"
+              minItems: 1
+              uniqueItems: true
+            max_nodes:
+              type: integer
+              minimum: 5
+              maximum: 100
+              example: 30
+            max_edges:
+              type: integer
+              minimum: 0
+              maximum: 200
+              example: 50
+            min_confidence:
+              type: number
+              minimum: 0
+              maximum: 1
+              example: 0.55
+        output:
+          type: object
+          additionalProperties: false
+          required: [format, schema_version]
+          properties:
+            format:
+              type: string
+              enum: ["graphjson"]
+            schema_version:
+              type: string
+              example: "v1.1"
+
+    GraphJSON:
+      type: object
+      description: |
+        图谱生成结果（GraphJSON v1.1）。
+        详细字段约束以 schema/graph.schema.json 为准。
+      required: [meta, nodes, edges]
+      properties:
+        meta:
+          type: object
+        nodes:
+          type: array
+          items:
+            type: object
+        edges:
+          type: array
+          items:
+            type: object
+
+    AgentDebugResponse:
+      type: object
+      additionalProperties: false
+      required: [result, intermediate]
+      properties:
+        result:
+          $ref: "#/components/schemas/GraphJSON"
+        intermediate:
+          type: object
+          additionalProperties: false
+          required: [step0, step1, step2, step3, step4]
+          properties:
+            step0:
+              type: object
+              description: 输入检查与规范化结果
+            step1:
+              type: object
+              description: 跨学科概念挖掘输出（按域分组）
+            step2:
+              type: object
+              description: 关系抽取输出（triples 等）
+            step3:
+              type: object
+              description: 结构化组装输出（nodes/edges 草稿）
+            step4:
+              type: object
+              description: 校验/修复与过滤结果（removed_edges 等）
+
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required: [code, message]
+          properties:
+            code:
+              type: string
+            message:
+              type: string
