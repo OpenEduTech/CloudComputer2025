@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>跨学科知识图谱智能体（增强版）</title>
+  <style>
+    body { font-family: Arial, "Microsoft YaHei", sans-serif; margin: 0; }
+    .bar { display:flex; gap:12px; padding:12px; border-bottom:1px solid #eee; align-items:center; flex-wrap: wrap; }
+    input { width: 360px; padding:10px; font-size:14px; }
+    button { padding:10px 14px; cursor:pointer; }
+    #status { padding: 0 12px; color:#555; }
+    #chart { width: 100%; height: calc(100vh - 72px); }
+    .hint { color:#888; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div>核心概念：</div>
+    <input id="concept" value="卷积神经网络" />
+    <button onclick="run()">生成图谱</button>
+    <label class="hint"><input id="writeNeo" type="checkbox" checked />写入Neo4j</label>
+    <div id="status"></div>
+    <div class="hint">提示：拖拽/缩放；悬停节点/边查看推理与置信度。</div>
+  </div>
+  <div id="chart"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script>
+    const chart = echarts.init(document.getElementById('chart'));
+
+    function setStatus(msg) { document.getElementById('status').innerText = msg; }
+
+    function normDisc(d) {
+      if (!d) return '未知';
+      if (d.includes('核心')) return '核心概念';
+      return d;
+    }
+
+    async function run() {
+      const concept = document.getElementById('concept').value.trim();
+      const writeNeo = document.getElementById('writeNeo').checked;
+      if (!concept) return;
+
+      setStatus('生成中：多学科挖掘 + 多跳扩展 + 构建桥梁关系 ...');
+      chart.showLoading();
+
+      try {
+        const resp = await fetch(`/api/graph?concept=${encodeURIComponent(concept)}&write_neo4j=${writeNeo}`);
+        if (!resp.ok) throw new Error(await resp.text());
+        const data = await resp.json();
+
+        const categoriesSet = new Map();
+        data.nodes.forEach(n => categoriesSet.set(normDisc(n.discipline), true));
+        const categories = Array.from(categoriesSet.keys()).map(name => ({ name }));
+
+        const nodes = data.nodes.map(n => ({
+          id: String(n.id),
+          name: n.name,
+          category: categories.findIndex(c => c.name === normDisc(n.discipline)),
+          value: `${normDisc(n.discipline)} | level=${n.level} | conf=${(n.confidence??0).toFixed(2)}`,
+          symbolSize: n.level === 0 ? 70 : (n.level === 1 ? 36 : 28),
+          label: { show: true }
+        }));
+
+        const links = data.edges.map(e => ({
+          source: String(e.source),
+          target: String(e.target),
+          value: `rel=${e.relation} | conf=${(e.confidence??0).toFixed(2)}\n${e.logic || ""}`
+        }));
+
+        chart.hideLoading();
+        setStatus(`完成：节点 ${data.node_count} 个，边 ${data.edge_count} 条`);
+
+        chart.setOption({
+          tooltip: {
+            formatter: (p) => {
+              if (p.dataType === 'edge') return p.data.value || '';
+              return `${p.data.name}<br/>${p.data.value}`;
+            }
+          },
+          legend: [{ data: categories.map(c => c.name) }],
+          series: [{
+            type: 'graph',
+            layout: 'force',
+            roam: true,
+            draggable: true,
+            categories,
+            data: nodes,
+            links,
+            label: { show: true },
+            force: { repulsion: 260, edgeLength: 120 },
+            edgeSymbol: ['none', 'arrow']
+          }]
+        });
+
+      } catch (e) {
+        chart.hideLoading();
+        setStatus('失败：' + (e?.message || e));
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>
