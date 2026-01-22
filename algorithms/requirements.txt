@@ -1,0 +1,14 @@
+# 算法模块依赖
+
+# 向量嵌入和语义相似度
+openai>=1.0.0
+numpy>=1.24.0
+
+# HTTP请求
+aiohttp>=3.9.0
+
+# Wikipedia访问
+wikipedia>=1.4.0
+
+# XML解析（Arxiv）
+# 使用Python内置的xml.etree.ElementTree，无需额外安装

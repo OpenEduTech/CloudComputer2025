@@ -1,0 +1,32 @@
+# ConceptGraph AI - Agent模块依赖
+
+# 核心依赖
+pydantic==2.5.0
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# LLM相关
+openai==1.6.1
+tiktoken==0.5.2
+
+# 异步支持
+asyncio==3.4.3
+aiohttp==3.9.1
+
+# 工具库
+requests==2.31.0
+python-dateutil==2.8.2
+
+# 日志
+loguru==0.7.2
+
+# 代码质量
+black==24.1.0
+isort==5.13.2
+flake8==7.0.0
+mypy==1.8.0
+
+# 测试
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
