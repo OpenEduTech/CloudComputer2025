@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨学科知识图谱智能体</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1419;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #0f1419 0%, #1a1f2e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+        
+        .search-box {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 15px 20px;
+            font-size: 16px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 2px solid rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s;
+            color: #e2e8f0;
+        }
+        
+        input[type="text"]::placeholder {
+            color: #64748b;
+        }
+        
+        input[type="text"]:focus {
+            border-color: #60a5fa;
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        }
+        
+        button {
+            padding: 15px 40px;
+            font-size: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .examples {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .example-tag {
+            padding: 8px 15px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #93c5fd;
+        }
+        
+        .example-tag:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #60a5fa;
+            color: #dbeafe;
+            transform: translateY(-1px);
+        }
+        
+        .graph-container {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            min-height: 600px;
+        }
+        
+        #graph {
+            width: 100%;
+            height: 600px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            color: #94a3b8;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(59, 130, 246, 0.2);
+            border-top: 4px solid #60a5fa;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .metadata {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        
+        .metadata-item {
+            display: inline-block;
+            margin-right: 20px;
+            color: #94a3b8;
+        }
+        
+        .metadata-item strong {
+            color: #e2e8f0;
+        }
+        
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 跨学科知识图谱智能体</h1>
+            <p>探索概念在不同学科领域的深层联系</p>
+        </div>
+        
+        <div class="search-box">
+            <div class="input-group">
+                <input type="text" id="conceptInput" placeholder="输入一个概念，如：熵、神经网络、进化..." />
+                <button id="generateBtn" onclick="generateGraph()">生成图谱</button>
+            </div>
+            <div class="examples">
+                <span style="color: #94a3b8; margin-right: 10px;">示例：</span>
+                <span class="example-tag" onclick="setExample('熵')">熵</span>
+                <span class="example-tag" onclick="setExample('神经网络')">神经网络</span>
+                <span class="example-tag" onclick="setExample('进化')">进化</span>
+                <span class="example-tag" onclick="setExample('最小二乘法')">最小二乘法</span>
+                <span class="example-tag" onclick="setExample('反馈')">反馈</span>
+            </div>
+        </div>
+        
+        <div class="graph-container">
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>正在分析概念关联，请稍候...</p>
+            </div>
+            <div id="graph"></div>
+            <div id="metadata" class="metadata" style="display: none;"></div>
+            <div id="error" class="error" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 检测协议和hostname，支持file://协议和localhost
+        const isFileProtocol = window.location.protocol === 'file:';
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const API_BASE = (isFileProtocol || isLocalhost)
+            ? 'http://127.0.0.1:5000'
+            : '/api';
+        
+        console.log('API_BASE:', API_BASE, 'Protocol:', window.location.protocol, 'Hostname:', window.location.hostname);
+        
+        let chart = null;
+        
+        function setExample(concept) {
+            document.getElementById('conceptInput').value = concept;
+        }
+        
+        async function generateGraph() {
+            const concept = document.getElementById('conceptInput').value.trim();
+            
+            if (!concept) {
+                alert('请输入一个概念');
+                return;
+            }
+            
+            // UI状态
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('graph').style.display = 'none';
+            document.getElementById('metadata').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ concept })
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || '生成失败');
+                }
+                
+                // 检查数据格式
+                if (!result.data || !result.data.nodes || result.data.nodes.length === 0) {
+                    throw new Error('图谱数据为空，请重试');
+                }
+                
+                console.log('图谱数据:', result.data);
+                console.log('节点数:', result.data.nodes.length);
+                console.log('连接数:', result.data.links ? result.data.links.length : 0);
+                
+                // 渲染图谱
+                renderGraph(result.data);
+                
+                // 显示元数据
+                showMetadata(result.metadata, result.validation_summary);
+                
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                document.getElementById('generateBtn').disabled = false;
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+        
+        function renderGraph(data) {
+            const container = document.getElementById('graph');
+            container.style.display = 'block';
+            
+            console.log('开始渲染图谱，数据:', data);
+            console.log('节点数量:', data.nodes ? data.nodes.length : 0);
+            console.log('连接数量:', data.links ? data.links.length : 0);
+            console.log('分类数量:', data.categories ? data.categories.length : 0);
+            
+            // 检查容器是否存在
+            if (!container) {
+                console.error('图谱容器不存在！');
+                return;
+            }
+            
+            // 初始化或重用图表实例
+            if (!chart) {
+                try {
+                    chart = echarts.init(container, null, {
+                        renderer: 'canvas',
+                        width: 'auto',
+                        height: 'auto'
+                    });
+                    console.log('ECharts 初始化成功');
+                } catch (e) {
+                    console.error('ECharts 初始化失败:', e);
+                    showError('图表初始化失败: ' + e.message);
+                    return;
+                }
+            }
+            
+            // 预处理节点数据，设置标签样式和颜色
+            const processedNodes = data.nodes.map(node => {
+                const newNode = Object.assign({}, node);
+                
+                // 设置标签样式
+                if (newNode.category === 'core') {
+                    newNode.label = {
+                        show: true,
+                        fontSize: 16,
+                        fontWeight: 'bold',
+                        color: '#60a5fa'
+                    };
+                } else {
+                    newNode.label = {
+                        show: true,
+                        fontSize: 12,
+                        fontWeight: 'normal',
+                        color: '#e2e8f0'
+                    };
+                }
+                
+                // 设置边框颜色和宽度
+                if (!newNode.itemStyle) {
+                    newNode.itemStyle = {};
+                }
+                
+                if (newNode.category === 'core') {
+                    newNode.itemStyle.borderColor = '#60a5fa';
+                    newNode.itemStyle.borderWidth = 3;
+                } else {
+                    const relationType = newNode.relation_type || '';
+                    if (relationType === '直接关联') {
+                        newNode.itemStyle.borderColor = '#34d399';
+                    } else if (relationType === '理论基础') {
+                        newNode.itemStyle.borderColor = '#60a5fa';
+                    } else if (relationType === '应用') {
+                        newNode.itemStyle.borderColor = '#a78bfa';
+                    } else if (relationType === '类比') {
+                        newNode.itemStyle.borderColor = '#f59e0b';
+                    } else if (relationType === '远亲概念') {
+                        newNode.itemStyle.borderColor = '#ef4444';
+                    } else {
+                        newNode.itemStyle.borderColor = '#94a3b8';
+                    }
+                    newNode.itemStyle.borderWidth = 2;
+                }
+                
+                // 确保 symbolSize 是数字
+                if (typeof newNode.symbolSize !== 'number') {
+                    newNode.symbolSize = newNode.category === 'core' ? 100 : 50;
+                }
+                
+                // 确保 symbol 存在
+                if (!newNode.symbol) {
+                    newNode.symbol = newNode.category === 'core' ? 'circle' : 'circle';
+                }
+                
+                return newNode;
+            });
+            
+            console.log('处理后的节点:', processedNodes);
+            
+            const option = {
+                backgroundColor: 'transparent',
+                title: {
+                    text: '跨学科知识图谱',
+                    left: 'center',
+                    top: 10,
+                    textStyle: {
+                        color: '#e2e8f0',
+                        fontSize: 20,
+                        fontWeight: 'bold'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(30, 41, 59, 0.95)',
+                    borderColor: 'rgba(59, 130, 246, 0.5)',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#e2e8f0'
+                    },
+                    formatter: function(params) {
+                        if (params.dataType === 'node') {
+                            const node = params.data;
+                            let html = `<strong style="color: #60a5fa; font-size: 14px;">${node.name}</strong><br/>`;
+                            html += `<span style="color: #94a3b8;">学科: ${node.discipline || '核心概念'}</span><br/>`;
+                            if (node.relation_type && node.relation_type !== 'core') {
+                                html += `<span style="color: #a78bfa;">关系类型: ${node.relation_type}</span><br/>`;
+                            }
+                            if (node.bridge_concept) {
+                                html += `<span style="color: #34d399;">桥梁概念: ${node.bridge_concept}</span><br/>`;
+                            }
+                            if (node.description) {
+                                html += `<span style="color: #cbd5e1; font-size: 12px;">${node.description}</span>`;
+                            }
+                            return html;
+                        } else if (params.dataType === 'edge') {
+                            const edge = params.data;
+                            let html = `<strong style="color: #60a5fa;">${edge.label || '关联'}</strong><br/>`;
+                            if (edge.description) {
+                                html += `<span style="color: #cbd5e1;">${edge.description}</span>`;
+                            }
+                            return html;
+                        }
+                    }
+                },
+                legend: [{
+                    data: data.categories.map(c => c.name),
+                    orient: 'vertical',
+                    left: 10,
+                    top: 50,
+                    textStyle: {
+                        color: '#94a3b8'
+                    },
+                    itemGap: 10
+                }],
+                series: [{
+                    type: 'graph',
+                    layout: 'force',
+                    data: processedNodes,
+                    links: data.links || [],
+                    categories: data.categories || [],
+                    roam: true,
+                    draggable: true,
+                    label: {
+                        show: true,
+                        position: 'right',
+                        color: '#e2e8f0',
+                        fontSize: 12
+                    },
+                    lineStyle: {
+                        color: 'rgba(148, 163, 184, 0.4)',
+                        width: 2,
+                        curveness: 0.2
+                    },
+                    force: {
+                        initLayout: 'circular',
+                        repulsion: 500,
+                        edgeLength: 150,
+                        gravity: 0.1,
+                        layoutAnimation: true,
+                        friction: 0.6
+                    },
+                    emphasis: {
+                        focus: 'adjacency',
+                        lineStyle: {
+                            width: 4,
+                            color: '#60a5fa'
+                        },
+                        label: {
+                            fontSize: 15,
+                            fontWeight: 'bold',
+                            color: '#dbeafe'
+                        },
+                        itemStyle: {
+                            shadowBlur: 20,
+                            shadowColor: 'rgba(96, 165, 250, 0.8)'
+                        }
+                    },
+                    // 节点样式会根据 data 中的 symbol 和 symbolSize 自动应用
+                    itemStyle: {
+                        borderColor: '#94a3b8',
+                        borderWidth: 2
+                    }
+                }]
+            };
+            
+            try {
+                chart.setOption(option, true); // true 表示不合并，完全替换
+                console.log('图表配置已应用');
+                
+                // 确保图表渲染
+                setTimeout(function() {
+                    if (chart) {
+                        chart.resize();
+                        console.log('图表已调整大小');
+                    }
+                }, 200);
+            } catch (e) {
+                console.error('设置图表选项失败:', e);
+                showError('渲染失败: ' + e.message);
+            }
+        }
+        
+        function showMetadata(metadata, validation) {
+            const container = document.getElementById('metadata');
+            container.style.display = 'block';
+            container.innerHTML = `
+                <div class="metadata-item"><strong>核心概念:</strong> ${metadata.core_concept}</div>
+                <div class="metadata-item"><strong>节点数:</strong> ${metadata.total_nodes}</div>
+                <div class="metadata-item"><strong>关联数:</strong> ${metadata.total_edges}</div>
+                <div class="metadata-item"><strong>涉及学科:</strong> ${metadata.disciplines.join(', ')}</div>
+                <div class="metadata-item"><strong>验证通过:</strong> ${validation.validated_relations}/${validation.total_relations}</div>
+            `;
+        }
+        
+        function showError(message) {
+            const container = document.getElementById('error');
+            container.style.display = 'block';
+            container.textContent = '错误: ' + message;
+        }
+        
+        // 回车键触发
+        document.getElementById('conceptInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateGraph();
+            }
+        });
+        
+        // 窗口大小改变时重绘
+        window.addEventListener('resize', function() {
+            if (chart) {
+                chart.resize();
+            }
+        });
+    </script>
+</body>
+</html>
+
