@@ -7,9 +7,13 @@ __pycache__/
 venv/
 .env
 
-# logs
+# Node
+node_modules/
+dist/
+build/
+.vite/
+.next/
+
+# logs / OS
 *.log
-
-# macOS
 .DS_Store
-
