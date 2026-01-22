@@ -1,99 +1,135 @@
-# CloudComputer2025
-《智能体云原生开发》期末大作业需求说明书
-1. 作业目标
-本大作业要求大家综合运用云原生技术（Cloud Native）与大模型智能体（LLM Agents），构建一个具备实际应用价值的学习相关系统。重点考察大家对工程的理解与工程实现能力。
-2. 交付物
-1. 代码仓库（GitHub/GitLab）：包含 Dockerfile、依赖配置文件、完整源码及环境配置指南。
-2. 演示视频（3-5分钟）：录屏展示核心功能，并包含 1 分钟左右的架构讲解（需说明数据流向及云服务调用逻辑）。
-3. 技术文档（PDF/Word/MD都可以）：
-  - 架构设计：系统架构图及使用到的云原生组件（如 Docker、K8S、 Redis, Serverless、微服务等）, LLM Agent的工具链等。
-  - 分工说明：明确每位成员的贡献百分比及具体负责模块。
-  - 智能体策略：展示系统中关键的 Prompt 模板及其LLM Agent设计过程和工具链。
-给同学们的开发建议：
-1. 架构优先： 所有的命题体现“云原生”特征，避免单一脚本运行，使用容器化部署。
-2. 注重容错： 大模型存在幻觉，你的智能体设计要考虑校验环节（Check layer）。
-3. 分工明确： 建议组员分为“算法/Agent 组”和“架构/工程组”，在分工介绍中详细说明。
+# InterKnow_Graph_Agent
+云计算大作业都在这里
 
----
-3. 命题详细说明
-命题一：PPT 内容扩展智能体 
-- 痛点场景： 考前复习只有干巴巴的 PPT 标题，缺乏背景细节和深度解释，导致自学效率低下。
-- 核心目标： 开发一个能“读懂” PPT 逻辑并自动查漏补缺的智能助手。
-- 输入要求： PPT 文件（本地上传或云端 URL）。
-- 至少包含下面功能清单：
-  - 语义解析： 识别 PPT 的层级结构（如目录、主标题、子标题、正文及图片描述）。
-  - 知识扩充： 针对每一页知识点，自动调用 LLM 或搜索工具补充原理说明、公式推导或代码示例。
-  - 多维搜索： 联动外部权威资源（如 Wikipedia, Arxiv, 学术 API）获取延伸阅读材料。
-- 云原生技术（仅参考）：
-  - 使用 Unstructured 或 PyMuPDF 进行文档解析。
-  - 使用 Vector Database（如 Milvus, Pinecone）存储 PPT 切片，实现基于语义的相关性检索。
-- 考核指标： 笔记的逻辑结构是否清晰；联想内容与原 PPT 内容的语义相关度。
 
----
-命题二：学习效果评估和巩固智能体 
-- 痛点场景： 学完新知识后缺乏客观的评估手段，无法发现自己的知识盲点。
-- 核心目标： 构建一个能基于学习资料自动出题、判卷并进行个性化纠偏的闭环系统。
-- 输入要求： 特定领域的教材、PDF 笔记或录音转写文本。
-- 至少包含下面功能清单：
-  - 动态出题： 根据资料自动生成选择题、简答题，并确保题目覆盖核心考点。
-  - 智能判卷： 分析用户输入的答案，不仅给出对错，更要给出详尽的解析。
-  - 弱点记忆： 自动收集用户高频错误，生成“错题本”。
-- 云原生技术（仅参考）：
-  - 使用 Redis 或 MongoDB 存储用户的学习状态和历史错题（持久化记忆）。
-  - 利用 LLM 评估模式（如 Prometheus 提示词法）以及Agent的一些策略提高判卷的公平性。
-- 考核指标： 出题的难度梯度是否合理；针对错题的“小灶”建议是否有针对性。
+cd /home/damn/InterKnow_Graph_Agent-main9.0/InterKnow_Graph_Agent-main9.0
 
----
-命题三：跨学科知识图谱智能体
-- 痛点场景： 知识碎片化严重，难以看透不同学科间（如神经科学与深度学习）的内在关联。例如学习“神经网络”时，不知道它和“生物学”或“高等数学”到底有什么深层联系。
-- 核心目标： 利用智能体挖掘跨领域概念的桥梁，并构建可视化的知识图谱。
-- 输入要求： 一个核心概念词（例如“熵”、“最小二乘法”）。
-- 至少包含下面功能清单：
-  - 关联挖掘： 强制 Agent 在不同学科领域（数学、物理、社会学等）寻找相关概念。
-  - 图谱构建： 提取实体及其关系，生成标准的节点/边数据结构（JSON）。
-  - 动态可视化： 在 Web 端渲染可交互的跨学科知识网。
-- 云原生技术（仅参考）：
-  - 后端使用 Neo4j 图数据库或轻量级图形数据结构存储关系。
-  - 前端使用 D3.js 或 Echarts 进行关系拓扑展示。
-- 考核指标： 发现“远亲概念”的逻辑合理性；图谱展示的直观性。
+docker build -t interknow_graph_agent .
 
----
-命题四：行研雷达智能体——增量追踪与更新
-- 痛点场景： 行业报告时效性极差，传统报告往往“生成即过时”，无法应对瞬息万变的市场。
-- 核心目标： 开发一个具备定时巡检、增量比对和冲突报警功能的动态监控智能体。
-- 输入要求： 初始行研报告或行业核心关键词。
-- 至少包含下面功能清单：
-  - 自动巡检： 利用云端定时器实现 24 小时自动全网资讯抓取。
-  - 增量对比： 比对“新发现”与“旧结论”，识别数据变化（如预测增长率从 5% 调至 2%）。
-  - 冲突仲裁： 当信息源冲突时，根据来源优先级（官方 > 媒体 > 传闻）自动判定可信度。
-- 云原生技术（仅参考）：
-  - 使用 Serverless Functions（如 AWS Lambda, 阿里云 FC）配合 Cron Triggers。
-  - 使用 Object Storage (S3/OSS) 存储报告版本历史。
-- 考核指标： 能否准确识别并高亮显示关键数据的变动；定时任务的稳定性。
+docker run -p 8000:8000 interknow_graph_agent
 
----
-命题五：长文本“事实卫士”智能体
-- 痛点场景： 长文档（如毕业论文、可行性报告）多人协同或分章节生成时，极易出现逻辑自相矛盾。
-- 核心目标： 构建一个作为“中间件”的校验智能体，确保长文档事实的一致性。
-- 输入要求： 5000 字以上的长文档内容。
-- 至少包含下面功能清单：
-  - 事实提取： 自动提取文中的关键事实（数据、日期、结论、人名）。
-  - 冲突检测： 扫描全文，发现并高亮前后不统一的描述（如第一章和第五章对同一数据的引用冲突）。
-  - 溯源校验： 自动联网核实冲突事实的真实来源，并给出修正建议。
-- 云原生技术（仅参考）：
-  - 使用 Redis 作为“事实黑板” 实现并发状态下的统一事实注册。
-  - 实现结果的可视化分析仪表盘（Dashboard）。
-- 考核指标： 冲突查杀的准确率；对重复内容和逻辑矛盾的识别广度。
+http://127.0.0.1:8000/graph.html
 
----
-4. 评分标准（总分 100）
-不卷代码行数，也不卷文档长度，希望大家真正从下面几个点做出有价值的东西：
-- 技术架构（30%）：是否合理使用了云原生组件，系统是否考虑了稳定性和扩展性。
-- 智能逻辑（30%）：工程架构，Prompt 工程、推理链路（CoT）、事实准确性等，提示词是否严谨，Agent 是否能处理异常输入或模型幻觉。
-- 工程质量（20%）：代码规范、README、Dockerfile、分工文档，是否能让老师看得懂。
-- 演示效果（20%）：视频讲解清晰度、场景解决的痛点深度Demo 演示是否流畅。
-扣分项与警戒线
-  - 硬伤扣分 ( -10~20分)：  代码无法在 Docker 或标准环境中运行成功。
-  - 严重违规 ( 取消成绩)： 
-    - 抄袭他人已有开源项目且未注明引用。
-    - 分工文档造假。
+docker stop interknow_graph_agent
+docker rm interknow_graph_agent
+
+## 1. 项目概览
+InterKnow Graph Agent——跨学科知识图谱智能体。
+
+核心目标：输入任意“核心概念”，生成跨学科节点与关系，并在 Web 前端以可交互图谱展示，同时提供聊天与统计面板。
+
+运行形态为FastAPI 后端 + 火山方舟 LLM + TinyDB 本地缓存 + ECharts 前端，支持 Docker 一键启动。
+
+## 2. 架构设计
+主要组件
+
+  - 后端：FastAPI 服务 [main.py](main.py)、API 路由 [backend/routing/router.py](backend/routing/router.py)，业务逻辑集中在 [backend/models](backend/models)。
+  
+  - 智能体与工具链：LLM 图谱生成 [backend/models/llm_graph_builder.py](backend/models/llm_graph_builder.py)，聊天接口 [backend/models/chat.py](backend/models/chat.py)，Prompt 及校验工具位于 [backend/models/lib](backend/models/lib)。
+  
+  - 前端：页面模板 [frontend/templates/graph.html](frontend/templates/graph.html) 等，交互脚本 [frontend/static/js/app.js](frontend/static/js/app.js)，ECharts 库 [frontend/static/js_lib/echarts.min.js](frontend/static/js_lib/echarts.min.js)。
+  
+  - 数据与演示：示例图 [frontend/static/json/sample_data.json](frontend/static/json/sample_data.json)，根目录同步副本 [sample_data.json](sample_data.json)。
+  
+  - 测试与运维：健康检查脚本 [test/healthcheck.py](test/healthcheck.py)，图谱导出脚本 [test/dump_graph.py](test/dump_graph.py)。
+
+
+数据流（/api/graph）
+  1) 前端提交概念到 FastAPI；
+  2) 布隆过滤器命中则直接从 TinyDB 复用；
+  3) 未命中时调用火山方舟模型生成图；
+  4) 经过 JSON 解析、内容校验、再生成/修复；
+  5) 将 nodes/links 下发前端渲染并累积 token 计数。
+
+部署拓扑：容器内运行 uvicorn，监听 8000 端口，静态文件与模板由 FastAPI 内建服务，外部仅需暴露 8000（或经网关/K8S Ingress 代理）。
+
+## 3. 云原生与工程实践
+容器化：提供 Dockerfile，可在干净环境 `docker build -t interknow_graph_agent .` 后 `docker run -p 8000:8000 interknow_graph_agent` 启动。
+
+弹性与缓存：布隆过滤器 + TinyDB 复用热点概念；前端离线模式自动回退本地样例，避免后端不可用导致空白页。
+
+观测与健壮性：LLM 调用计入 tokens/counts（/api/counts_and_tokens），校验层裁剪孤立节点、限制关系长度，减少幻觉和断链；健康检查脚本方便接入 CI。
+
+## 4. 模块说明
+ 后端入口与路由：
+  - [main.py](main.py) 启动 uvicorn，并模拟其他用户更新计数，演示并发访问场景。
+  - [backend/routing/router.py](backend/routing/router.py) 提供 /api/graph、/api/chat、/api/counts_and_tokens 以及页面路由。
+
+ 智能体核心：
+  - [backend/models/llm_graph_builder.py](backend/models/llm_graph_builder.py) 调用 Ark 模型生成图，包含强约束校验、再生成逻辑、节点/关系补全与缩放。
+  - [backend/models/chat.py](backend/models/chat.py) 将最近 8 轮对话压缩为提示，调用同一 Ark 模型返回回复与 token 用量。
+  - 辅助库 [backend/models/lib](backend/models/lib) 负责 Prompt 拼装、JSON 解析、质量检查（学科覆盖、关系合理性）和节点裁剪。
+
+ 前端：
+  - 模板 [frontend/templates/graph.html](frontend/templates/graph.html) 等负责页面布局。
+  - 脚本 [frontend/static/js/app.js](frontend/static/js/app.js) 处理查询、文件导入导出、ECharts 渲染、离线样例回退与信息面板；其余 JS 管理计数展示、查找页等。
+  - 样式 [frontend/static/css](frontend/static/css) 控制导航、时钟与主题风格。
+ 
+ 数据与测试：
+ - TinyDB 数据文件 [db.json](db.json) 在运行时生成；测试脚本位于 [test](test)。
+
+## 5. 智能体策略与 Prompt 工程
+Prompt 生成与模型调用：
+  - 使用 `build_prompt()` 生成首轮提示，限制节点/边规模，要求跨学科覆盖。
+  - 若校验失败，`stronger_prompt_for_regen()` 触发第二轮生成以提高质量；必要时使用 `force_json_repair_prompt()` 修复 JSON。
+
+质量控制：
+  - 阈值设置：最小学科数、最小有效边数、关系长度范围、跨学科边比例、通用关系占比上限等，防止幻觉和过度概括。
+  - `content_check()` 过滤无效或过长关系，`prune_isolated_nodes()` 移除孤立节点，`compute_node_values_scaled()` 放大节点权重以优化力导布局。
+
+缓存与降级：
+  - 布隆过滤器避免重复 LLM 调用；TinyDB 持久化热点概念；前端离线模式使用本地样例。
+- 输出增强：为空 description 自动补文案；将 token 用量回传用于计费/监控。
+
+
+## 6. 部署与运行
+- 配置：在 [config.py](config.py) 填入有效的 `BASE_URL`、`API_KEY`、`MODEL_ID`（建议改为读取环境变量并避免提交密钥）。
+- 本地运行：先安装依赖再启动，默认监听 8000。
+
+  - Windows（PowerShell/CMD）
+    ```powershell
+    cd "C:\Users\13903\Desktop\云计算系统\大作业\版本4\InterKnow_Graph_Agent-main"
+    python -m pip install -r requirements.txt
+    python -u .\main.py
+    ```
+
+  - Git Bash（POSIX 路径）
+    ```bash
+    cd "/c/Users/13903/Desktop/云计算系统/大作业/版本4/InterKnow_Graph_Agent-main"
+    python -m pip install -r requirements.txt
+    python -u main.py
+    ```
+  - 核对 `python` 与 `pip` 一致：
+    ```bash
+    python -c "import sys; print(sys.executable)"
+    python -m pip --version
+    ```
+- 容器运行：`docker build -t interknow_graph_agent .`，`docker run -p 8000:8000 interknow_graph_agent`，访问 `http://127.0.0.1:8000/graph.html`。
+
+
+## 7. 路由速览
+- 页面：
+  - `/index.html` 首页
+  - `/graph.html` 图谱可视化
+  - `/find.html` 知识查询
+- API：
+  - `POST /api/graph` 生成概念图谱
+  - `POST /api/chat` 聊天与用量返回
+  - `POST /api/counts_and_tokens` 累计调用与 tokens
+- 资源下载：
+  - `GET /download/source` 打包并下载 `frontend/static/downloads` 目录为 `downloads.zip`（下载完成后服务端自动清理临时 zip；若目录不存在返回 404）。
+
+前端样式与资源均通过 `/frontend/static/...` 挂载，模板中引用样式请使用 `frontend/static/css/navigater.css`
+
+
+## 8. 演示与测试
+演示见演示视频，包含架构讲解（数据流、云原生组件、Agent 工具链），示例查询和离线回退过程。
+
+测试：
+  - 运行 [test/healthcheck.py](test/healthcheck.py) 验证 LLM 与 API 可用性。
+  - 运行 [test/dump_graph.py](test/dump_graph.py) 生成示例图谱，检查 JSON 结构。
+  
+通过 /api/counts_and_tokens 展示累计 tokens 与调用次数，可在前端计数面板显示。
+
+
+
