@@ -76,6 +76,7 @@ def delete_wrong_item(record_id: str) -> bool:
         kept.append(item)
     if not deleted:
         return False
+    # 重建列表，保证删除后数据一致
     client.delete(key)
     if kept:
         payload = [json.dumps(i, ensure_ascii=False) for i in kept]
@@ -91,7 +92,7 @@ def summarize_wrong_items(items: list[dict]) -> dict:
         "total": len(items),
         "by_keyword": {},
     }
-    keywords = ["感知机", "收敛", "损失函数", "超平面", "更新", "梯度", "判别", "线性可分"]
+    keywords = ["定义", "公式", "步骤", "条件", "推导", "性质", "应用", "对比", "示例", "误区"]
     for item in items:
         text = item.get("question", "")
         for key in keywords:
@@ -110,14 +111,16 @@ def build_personal_suggestion(summary: dict) -> str:
     ordered = sorted(by_keyword.items(), key=lambda x: x[1], reverse=True)
     top = [k for k, _ in ordered[:3]]
     mapping = {
-        "感知机": "重点回顾感知机模型定义、几何解释与更新规则。",
-        "收敛": "复习收敛性定理的条件与证明思路，关注线性可分前提。",
-        "损失函数": "梳理感知机损失函数推导与几何含义，比较几何距离与函数间隔。",
-        "超平面": "巩固超平面方程与法向量含义，理解分类边界的移动。",
-        "更新": "强化参数更新公式的来源与直观意义，结合梯度下降理解方向。",
-        "梯度": "复习梯度下降的推导过程，掌握对 w 与 b 的偏导。",
-        "判别": "理解判别模型与生成模型区别，掌握感知机的判别特性。",
-        "线性可分": "强化线性可分的定义与例子，理解不可分时的局限。",
+        "定义": "优先复习核心概念的定义、术语含义与适用范围。",
+        "公式": "梳理关键公式的来源与符号含义，确保能正确代入与推导。",
+        "步骤": "复盘算法或流程步骤，明确每一步的输入输出与作用。",
+        "条件": "关注成立条件与前提假设，避免在不适用场景中误用结论。",
+        "推导": "补齐推导链路，理解公式或结论如何得到。",
+        "性质": "总结关键性质与特点，并与相似概念区分。",
+        "应用": "结合典型应用场景或例题，验证理解是否到位。",
+        "对比": "列出易混概念差异点，避免混淆。",
+        "示例": "通过代表性例子回顾概念与公式的具体用法。",
+        "误区": "针对常见错误点做专项纠偏，标注易错原因。",
     }
     suggestions = [mapping.get(k, f"复习与“{k}”相关的定义、性质与应用场景。") for k in top]
     return " ".join(suggestions)

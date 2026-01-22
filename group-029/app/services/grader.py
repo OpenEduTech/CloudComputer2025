@@ -46,7 +46,7 @@ def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dic
 
     prompt = ChatPromptTemplate.from_template(
         """
-你是严格的机器学习助教，请根据题目与学生答案进行判卷。
+你是严格的课程助教，请根据题目与学生答案进行判卷。
 评分规则：
 1) 选择题：答案匹配则满分 1，否则 0。
 2) 简答题：满分 2，根据覆盖要点给分（0/1/2），并给出简洁解析。
@@ -83,6 +83,7 @@ def grade_answers(questions: list[dict], answers: list[dict], contexts: list[dic
                 {"qid": q["qid"], "answer": q.get("answer", ""), "options": q.get("options")}
                 for q in questions
             ]
+            # 二次校验：纠正评分不一致与选项不匹配
             checked_raw = check_chain.invoke(
                 {
                     "questions": questions,

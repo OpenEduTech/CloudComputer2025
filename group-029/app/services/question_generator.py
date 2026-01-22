@@ -12,7 +12,7 @@ def _build_prompt():
     # 生成题目提示词，要求输出 JSON
     return ChatPromptTemplate.from_template(
         """
-你是一名机器学习课程助教。根据给定资料生成题目。要求：
+你是一名课程助教。根据给定资料生成题目。要求：
 1) 生成 {num_mcq} 道选择题 + {num_short} 道简答题。
 2) 题目覆盖核心概念、公式、算法步骤，并体现难度梯度。
 3) 难度梯度比例为 易:中:难 = {difficulty_ratio}，请尽量按比例控制。
@@ -50,6 +50,39 @@ def _extract_json_text(raw: str) -> str:
     return raw
 
 
+def _sanitize_json_text(text: str) -> str:
+    """
+    修复 JSON 字符串中未转义的换行，避免解析失败。
+    """
+    result = []
+    in_string = False
+    escape = False
+    for ch in text:
+        if in_string:
+            if escape:
+                result.append(ch)
+                escape = False
+                continue
+            if ch == "\\":
+                result.append(ch)
+                escape = True
+                continue
+            if ch == "\"":
+                in_string = False
+                result.append(ch)
+                continue
+            if ch in ("\n", "\r"):
+                # 字符串内的换行替换为可解析形式
+                result.append("\\n")
+                continue
+            result.append(ch)
+        else:
+            if ch == "\"":
+                in_string = True
+            result.append(ch)
+    return "".join(result)
+
+
 def generate_questions(chunks: list[dict], num_mcq: int, num_short: int, difficulty_ratio: str) -> tuple[list[dict], str]:
     if not settings.llm_api_key:
         raise ValueError("LLM_API_KEY 未配置")
@@ -72,18 +105,23 @@ def generate_questions(chunks: list[dict], num_mcq: int, num_short: int, difficu
                 "difficulty_ratio": difficulty_ratio,
             }
         )
-        json_text = _extract_json_text(raw)
+        json_text = _sanitize_json_text(_extract_json_text(raw))
         try:
             data = json.loads(json_text)
             if isinstance(data, list):
                 return data, raw
         except json.JSONDecodeError:
-            pass
+            try:
+                data = json.loads(json_text, strict=False)
+                if isinstance(data, list):
+                    return data, raw
+            except json.JSONDecodeError:
+                pass
         return [], raw
 
     data, raw = _invoke_once()
     if not data:
-        # 失败时重试一次，减少偶发格式错误
+        # 失败时重试一次，减少偶发格式错误导致的空结果
         data, raw = _invoke_once()
 
     os.makedirs("data", exist_ok=True)

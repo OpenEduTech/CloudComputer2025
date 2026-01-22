@@ -42,6 +42,16 @@ class SessionTextCreateRequest(BaseModel):
     name: str | None = Field(None, description="可选会话名称")
 
 
+class ChatRequest(BaseModel):
+    session_id: str = Field(..., description="会话 ID")
+    message: str = Field(..., description="用户问题")
+
+
+class ChatResponse(BaseModel):
+    answer: str
+    sources: list[str]
+
+
 # 出题请求
 class QuestionGenerateRequest(BaseModel):
     session_id: str = Field(..., description="会话 ID")

@@ -20,6 +20,8 @@ from app.models import (
     RecordResponse,
     WrongbookResponse,
     WrongbookDeleteResponse,
+    ChatRequest,
+    ChatResponse,
 )
 from app.services.pdf_loader import load_pdf_text
 from app.services.text_chunker import split_text
@@ -35,6 +37,7 @@ from app.services.session_namer import generate_session_name
 from app.services.question_generator import generate_questions
 from app.services.grader import grade_answers
 from app.services.retriever import select_chunks_for_generation, select_chunks_for_question
+from app.services.chat_agent import chat_answer
 from app.services.wrongbook_store import (
     save_wrong_items,
     load_wrong_items_all,
@@ -120,6 +123,7 @@ def create_session_api(file: UploadFile = File(...)):
 
 @app.post("/sessions/text", response_model=SessionCreateResponse)
 def create_session_text_api(req: SessionTextCreateRequest):
+    # 文本会话入口，用于非 PDF 场景
     raw_text = (req.text or "").strip()
     if not raw_text:
         raise HTTPException(status_code=400, detail="文本内容不能为空")
@@ -132,6 +136,22 @@ def create_session_text_api(req: SessionTextCreateRequest):
         name=session_name,
         source_type="text",
     )
+
+
+@app.post("/chat", response_model=ChatResponse)
+def chat_api(req: ChatRequest):
+    # 对话式问答入口，基于会话内容回答问题
+    if not req.message.strip():
+        raise HTTPException(status_code=400, detail="问题不能为空")
+    chunks = load_chunks(req.session_id)
+    if not chunks:
+        raise HTTPException(status_code=404, detail="未找到会话或切分内容为空")
+    use_chunks = select_chunks_for_question(chunks, req.message, None, top_k=3)
+    answer, sources = chat_answer(use_chunks, req.message)
+    if not answer:
+        raise HTTPException(status_code=500, detail="回答生成失败")
+    touch_session(req.session_id)
+    return ChatResponse(answer=answer, sources=sources)
 
 
 @app.get("/sessions", response_model=SessionListResponse)
@@ -164,6 +184,14 @@ def generate_questions_api(req: QuestionGenerateRequest):
     # 校验：题目必须包含证据片段
     if data:
         data = [q for q in data if q.get("evidence")]
+    if not data:
+        # 兜底：尝试直接解析 LLM 原始输出，避免偶发解析问题
+        try:
+            with open(os.path.join("data", "llm_raw.txt"), "r", encoding="utf-8") as f:
+                import json
+                data = json.load(f)
+        except Exception:
+            data = []
     if not data:
         raise HTTPException(
             status_code=500,

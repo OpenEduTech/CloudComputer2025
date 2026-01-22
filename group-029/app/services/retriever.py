@@ -22,8 +22,10 @@ def _extract_units(text: str) -> list[str]:
     if not text:
         return []
     if _has_cjk(text):
+        # 中文场景用双字切片，兼顾召回与效率
         clean = re.sub(r"\s+", "", text)
         return [clean[i : i + 2] for i in range(len(clean) - 1)]
+    # 英文/数字场景用词粒度
     return _WORD_RE.findall(text.lower())
 
 
@@ -44,6 +46,7 @@ def select_chunks_for_generation(chunks: list[dict], top_k: int = 10) -> list[di
     keywords = {k for k, _ in global_counter.most_common(60)}
     scored = []
     for idx, (counter, chunk) in enumerate(counters):
+        # 使用关键词频次作为粗排得分
         score = sum(counter.get(k, 0) for k in keywords)
         scored.append((score, idx, chunk))
     scored.sort(key=lambda x: (-x[0], x[1]))
@@ -63,6 +66,7 @@ def select_chunks_for_question(chunks: list[dict], question: str, answer: str | 
     scored = []
     for idx, chunk in enumerate(chunks):
         counter = _build_counter(chunk.get("text", ""))
+        # 基于关键词重叠进行轻量相关性打分
         score = sum(counter.get(k, 0) for k in query_counter.keys())
         scored.append((score, idx, chunk))
     scored.sort(key=lambda x: (-x[0], x[1]))

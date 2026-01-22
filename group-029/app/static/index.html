@@ -240,7 +240,7 @@
         <div class="chat-box">
           <div class="chat-messages" id="chatMessages"></div>
           <div class="chat-input">
-            <input id="chatInput" type="text" placeholder="输入指令或问题，例如：出题 3 2 4:4:2 / 判卷 / 感知机的更新规则是什么？" />
+            <input id="chatInput" type="text" placeholder="输入指令或问题，例如：出题 3 2 4:4:2 / 判卷 / 这个概念的定义与应用是什么？" />
             <button id="chatSendBtn">发送</button>
           </div>
           <div class="hint">指令：上传、出题 数量、判卷、重置、文本:内容、帮助；非指令将自动进入问答。</div>
@@ -607,6 +607,7 @@
           return;
         }
 
+        // 默认走对话式问答接口
         if (!state.sessionId) {
           appendChat("bot", "请先上传 PDF 或创建文本会话。");
           return;
