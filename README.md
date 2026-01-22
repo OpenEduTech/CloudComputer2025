@@ -45,11 +45,6 @@
 - `.env.example`：环境变量模板
 - `.gitignore`：Git 忽略配置
 
-## 快速进入项目
-```powershell
-cd D:\实验作业\云计算\大作业2\CloudComputer2025\group-029
-```
-
 ## 推荐阅读
 - 运行与配置：`group-029/docs/ENVIRONMENT.markdown`
 - 项目说明与测试流程：`group-029/README.md`
