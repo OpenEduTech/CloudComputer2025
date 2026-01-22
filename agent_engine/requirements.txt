@@ -1,0 +1,13 @@
+langchain
+chromadb
+redis
+python-dotenv
+sentence-transformers
+EbookLib
+beautifulsoup4
+mobi
+tqdm
+arxiv
+wikipedia
+neo4j
+requests
