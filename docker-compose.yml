@@ -1,0 +1,17 @@
+services:
+  ppt-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SILICONFLOW_API_KEY: ${SILICONFLOW_API_KEY}
+      SILICONFLOW_BASE_URL: ${SILICONFLOW_BASE_URL}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./core/chroma_db:/app/core/chroma_db
+      - chroma_cache:/root/.cache
+    restart: unless-stopped
+
+volumes:
+  chroma_cache:

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注册 · PPT Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/ui/assets/app.css" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-50">
+    <div class="min-h-screen flex items-center justify-center px-6">
+      <div class="max-w-md w-full">
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-8 shadow-2xl">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-2xl font-semibold">注册</h1>
+              <p class="mt-2 text-sm text-slate-300">创建账号后即可登录使用</p>
+            </div>
+            <a href="/ui/login.html" class="text-xs text-slate-300 hover:text-white">去登录</a>
+          </div>
+
+          <form id="registerForm" class="mt-8 space-y-4">
+            <div>
+              <label class="text-xs text-slate-300">用户名</label>
+              <input name="username" autocomplete="username" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 outline-none focus:ring-2 focus:ring-white/20" placeholder="4-32 位字母/数字/下划线" />
+            </div>
+            <div>
+              <label class="text-xs text-slate-300">密码</label>
+              <input name="password" type="password" autocomplete="new-password" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 outline-none focus:ring-2 focus:ring-white/20" placeholder="至少 6 位" />
+            </div>
+            <div>
+              <label class="text-xs text-slate-300">确认密码</label>
+              <input name="password2" type="password" autocomplete="new-password" class="mt-2 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 outline-none focus:ring-2 focus:ring-white/20" placeholder="再次输入密码" />
+            </div>
+
+            <div id="registerError" class="hidden rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-200"></div>
+            <div id="registerOk" class="hidden rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-4 py-3 text-sm text-emerald-200"></div>
+
+            <button type="submit" class="w-full rounded-xl bg-white text-slate-900 px-4 py-2.5 text-sm font-medium hover:bg-slate-100">
+              注册
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/ui/assets/app.js"></script>
+    <script>
+      window.PPT_AGENT_PAGE = 'register';
+      window.PPT_AGENT_BOOT && window.PPT_AGENT_BOOT();
+    </script>
+  </body>
+</html>
