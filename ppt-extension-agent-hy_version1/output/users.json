@@ -1,0 +1,143 @@
+{
+  "users": [
+    {
+      "username": "jerry_yung@163.com",
+      "password_hash": "$pbkdf2-sha256$29000$fE/pHUMIgRDC2Lu3Vuo9Rw$ID4ixxk4ET2dEZhD4Ov1ILHTIRkijblfYdNnq10cHaQ",
+      "email": "",
+      "goals": {
+        "topic": "机器学习"
+      },
+      "preferences": {},
+      "plans": [
+        {
+          "topic": "机器学习",
+          "created_at": "2026-01-20T17:11:32.432060",
+          "content": {
+            "weeks": [
+              {
+                "week": 1,
+                "targets": [
+                  "理解机器学习基本概念与类型",
+                  "掌握Python用于数据分析的基础库（NumPy, Pandas）",
+                  "学习数据预处理与探索性数据分析（EDA）",
+                  "理解线性回归模型的基本原理与实现"
+                ],
+                "daily_tasks": [
+                  {
+                    "day": 1,
+                    "task": "了解机器学习定义、应用场景及主要类型（监督、无监督、强化学习）。安装Python及Jupyter Notebook。"
+                  },
+                  {
+                    "day": 2,
+                    "task": "学习NumPy基础：数组创建、数学运算、索引切片。完成相关练习。"
+                  },
+                  {
+                    "day": 3,
+                    "task": "学习Pandas基础：Series和DataFrame、数据读取、查看数据、选择列与行。"
+                  },
+                  {
+                    "day": 4,
+                    "task": "使用Pandas进行数据清洗：处理缺失值、重复值、数据类型转换。"
+                  },
+                  {
+                    "day": 5,
+                    "task": "学习探索性数据分析（EDA）：使用描述性统计、可视化（Matplotlib/Seaborn基础）了解数据分布与关系。"
+                  },
+                  {
+                    "day": 6,
+                    "task": "理解线性回归的数学直觉（拟合直线、最小二乘法）及在现实中的简单例子。"
+                  },
+                  {
+                    "day": 7,
+                    "task": "使用Scikit-learn实现简单线性回归，在模拟数据集或经典数据集（如波士顿房价）上进行训练与预测。"
+                  }
+                ]
+              },
+              {
+                "week": 2,
+                "targets": [
+                  "理解分类问题与逻辑回归模型",
+                  "学习模型评估基础方法",
+                  "了解机器学习工作流程与模型泛化概念",
+                  "完成一个端到端的小型机器学习项目"
+                ],
+                "daily_tasks": [
+                  {
+                    "day": 1,
+                    "task": "理解分类问题。学习逻辑回归的基本原理（Sigmoid函数、决策边界），与线性回归的区别。"
+                  },
+                  {
+                    "day": 2,
+                    "task": "使用Scikit-learn实现逻辑回归，在一个分类数据集（如鸢尾花Iris）上进行训练。"
+                  },
+                  {
+                    "day": 3,
+                    "task": "学习分类模型的评估指标：准确率、精确率、召回率、F1分数、混淆矩阵。计算并解读这些指标。"
+                  },
+                  {
+                    "day": 4,
+                    "task": "理解过拟合、欠拟合、训练集/测试集划分、交叉验证的基本概念。学习使用`train_test_split`。"
+                  },
+                  {
+                    "day": 5,
+                    "task": "了解特征工程基础概念（如特征缩放：标准化/归一化）及其对模型的影响。"
+                  },
+                  {
+                    "day": 6,
+                    "task": "项目实战第一部分：选择一个入门数据集（如泰坦尼克生存预测），进行完整的数据清洗、EDA和特征处理。"
+                  },
+                  {
+                    "day": 7,
+                    "task": "项目实战第二部分：对处理好的数据应用逻辑回归模型，评估模型性能，并总结学习心得与后续学习方向。"
+                  }
+                ]
+              }
+            ],
+            "resources": [
+              {
+                "name": "吴恩达机器学习课程（Coursera）",
+                "link": "https://www.coursera.org/learn/machine-learning",
+                "description": "经典入门课程，注重理论直觉。"
+              },
+              {
+                "name": "Scikit-learn官方文档",
+                "link": "https://scikit-learn.org/stable/user_guide.html",
+                "description": "API查询和简单教程的最佳来源。"
+              },
+              {
+                "name": "Kaggle Learn 微课程",
+                "link": "https://www.kaggle.com/learn/intro-to-machine-learning",
+                "description": "交互式实践入门，包含练习题。"
+              },
+              {
+                "name": "《Python Data Science Handbook》（Jake VanderPlas）",
+                "link": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+                "description": "免费在线版，NumPy, Pandas, Matplotlib的绝佳指南。"
+              }
+            ],
+            "evaluation": [
+              {
+                "title": "第一周测验",
+                "questions": [
+                  "监督学习和无监督学习的主要区别是什么？",
+                  "使用NumPy创建一个形状为（3，4）的随机数组，并计算其所有元素的平均值。",
+                  "在Pandas中，如何处理DataFrame中的缺失值（至少列出两种方法）？",
+                  "线性回归模型试图最小化什么目标函数（写出名称）？"
+                ]
+              },
+              {
+                "title": "第二周测验与项目",
+                "questions": [
+                  "逻辑回归是用于解决什么类型的问题？它的输出值域是什么？",
+                  "对于一个医疗诊断模型，我们更关注高精确率还是高召回率？为什么？",
+                  "为什么需要将数据集划分为训练集和测试集？",
+                  "【项目】在您完成的端到端项目中，您采取了哪些数据预处理步骤？模型的准确率是多少？您认为有哪些特征可能对预测结果最重要？"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
