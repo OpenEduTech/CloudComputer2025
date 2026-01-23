@@ -1,0 +1,35 @@
+{
+  "llm": {
+    "api_key": "sk-aikhxaddyhhvwodwvcdwwkrvvbqlwglkbigapjvwqjowdbah",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "model": "deepseek-ai/DeepSeek-V3.2-Exp"
+  },
+  "retrieval": {
+    "preferred_sources": [
+      "arxiv",
+      "wikipedia"
+    ],
+    "max_results": 3,
+    "local_rag_priority": true
+  },
+  "expansion": {
+    "max_revisions": 2,
+    "min_gap_priority": 3,
+    "temperature": 0.7
+  },
+  "streaming": {
+    "enabled": true,
+    "chunk_size": 50
+  },
+  "knowledge_base": {
+    "path": "./knowledge_base",
+    "chunk_size": 1000,
+    "chunk_overlap": 200
+  },
+  "vector_store": {
+    "path": "./ppt_vector_db",
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "embedding_model": "BAAI/bge-m3"
+  }
+}

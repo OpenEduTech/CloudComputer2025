@@ -1,0 +1,15 @@
+# 忽略前端依赖
+node_modules/
+dist/
+
+# 忽略 Python 环境和缓存
+__pycache__/
+*.pyc
+venv/
+.env
+.idea/
+
+# 忽略系统文件
+.sqlite3
+.DS_Store
+Thumbs.db

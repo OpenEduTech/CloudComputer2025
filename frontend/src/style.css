@@ -1,0 +1,184 @@
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary-color: #8b5cf6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --transition-fast: 0.15s;
+  --transition-normal: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 按钮基础样式 */
+button {
+  font-family: inherit;
+  font-size: 14px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+/* 卡片基础样式 */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* 加载动画 */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 公式样式 */
+.formula {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+  overflow-x: auto;
+}
+
+/* 代码块样式 */
+.code-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* 链接样式 */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.tag-blue { background: #dbeafe; color: #1e40af; }
+.tag-green { background: #dcfce7; color: #166534; }
+.tag-purple { background: #f3e8ff; color: #6b21a8; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .view-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    background: white;
+  }
+
+  .navbar,
+  .btn-print,
+  .btn-reset {
+    display: none;
+  }
+
+  .slide-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+  }
+}
