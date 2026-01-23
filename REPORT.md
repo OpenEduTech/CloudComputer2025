@@ -8,6 +8,8 @@ https://github.com/LuYuan-Zjyy/CloudComputer2025（成品提交）
 
 https://github.com/LuYuan-Zjyy/factguardian（原仓库，可看到具体分工commit情况）
 
+演示视频请见链接：[云计算大作业 —— 长文本事实卫士_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1KfzNBdEFn/?buvid=Y54E6A5DD79803BE4070B15319EC7D2FCAD0&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=5DgUfFEXb10Ofb%2Fdu%2FOS0Q%3D%3D&plat_id=116&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=CA77D354-36DA-4C92-8238-16B4B1D3AC8F&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1769156728&unique_k=tn8NVzJ&up_id=402873341)
+
 ## 一、项目概述
 
 ### 1.1 研究背景与痛点
@@ -1082,7 +1084,6 @@ LSH相似度过滤：
 **冲突检测性能优化**：
 | 优化策略 | 原始性能 | 优化后 | 提升倍数 | 说明 |
 |---------|---------|-------|---------|------|
-| LSH相似度过滤 | 100条事实 4950对比对，60秒 | ~50对，5秒 | 12-50x | 减少不必要的LLM调用 |
 | LSH相似度过滤 | 500条事实 124750对比对，15分钟 | ~200对，30秒 | 30-600x | 适配大规模文档 |
 | 批量并行验证 | 串行验证50对，50秒 | 并行验证，5秒 | 10x | 充分利用网络并发 |
 | 重复内容检测 | 需LLM调用(1秒/对) | O(n)单遍扫描，<100ms | 10-100x | 无需LLM调用，极速 |

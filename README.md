@@ -1,19 +1,21 @@
-## 📖 项目简介
+## 项目简介
 
 FactGuardian 是一个基于大语言模型（LLM）的智能文档审核系统，能够自动从文档中提取关键事实，检测内部逻辑冲突，并通过外部验证来验证事实来源。系统特别适用于多人员协作文档的质量控制，如学术论文、可行性报告、技术文档等。
 
+演示视频请见链接：[云计算大作业 —— 长文本事实卫士_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1KfzNBdEFn/?buvid=Y54E6A5DD79803BE4070B15319EC7D2FCAD0&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=5DgUfFEXb10Ofb%2Fdu%2FOS0Q%3D%3D&plat_id=116&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=CA77D354-36DA-4C92-8238-16B4B1D3AC8F&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1769156728&unique_k=tn8NVzJ&up_id=402873341)
+
 ### 核心能力
 
-- 🔍 **智能事实提取**：基于 LLM 的结构化事实提取，支持多种事实类型
-- ⚔️ **冲突检测**：自动检测文档内部的数据不一致、逻辑矛盾、时间冲突
-- ✅ **来源验证**：通过网络搜索和权威来源进行外部事实验证
-- 📊 **参考对比**：跨文档相似性分析和引用关系检测
-- 🖼️ **图文对比**：验证文本描述与视觉图表的一致性
-- 🚀 **高性能**：批量并行处理，支持大规模文档分析
+- **智能事实提取**：基于 LLM 的结构化事实提取，支持多种事实类型
+- **冲突检测**：自动检测文档内部的数据不一致、逻辑矛盾、时间冲突
+- **来源验证**：通过网络搜索和权威来源进行外部事实验证
+- **参考对比**：跨文档相似性分析和引用关系检测
+- **图文对比**：验证文本描述与视觉图表的一致性
+- **高性能**：批量并行处理，支持大规模文档分析
 
 ---
 
-## ✨ 功能特性
+## 功能特性
 
 ### 核心功能
 
@@ -54,7 +56,7 @@ FactGuardian 是一个基于大语言模型（LLM）的智能文档审核系统�
 
 ---
 
-## 🚀 快速开始
+## 快速开始
 
 ### 前置要求
 
@@ -121,7 +123,7 @@ docker-compose up -d --build
 
 ---
 
-## 📚 使用指南
+## 使用指南
 
 ### Web 界面使用
 
@@ -227,7 +229,7 @@ eventSource.onmessage = (event) => {
 
 ---
 
-## 🏗️ 项目结构
+## 项目结构
 
 ```
 factguardian/
@@ -312,7 +314,7 @@ factguardian/
 
 ---
 
-## 🔧 开发指南
+## 开发指南
 
 ### 本地开发环境
 
@@ -409,7 +411,7 @@ python test_auto.py main.docx ref-compare reference1.docx
 
 ---
 
-## 📡 API 文档
+## API 文档
 
 ### 核心端点
 
@@ -436,7 +438,7 @@ python test_auto.py main.docx ref-compare reference1.docx
 
 ---
 
-## 🐳 Docker 部署
+## Docker 部署
 
 ### 开发环境
 
@@ -477,7 +479,7 @@ docker-compose -f docker-compose.prod.yml ps
 
 ---
 
-## 🔍 技术架构
+## 技术架构
 
 ### 系统架构图
 
@@ -525,7 +527,7 @@ docker-compose -f docker-compose.prod.yml ps
 
 ---
 
-## 📊 性能指标
+## 性能指标
 
 - **事实提取**：平均 2-5 秒/章节（取决于章节长度和 LLM 响应时间）
 - **冲突检测**：300 对事实约 15-20 秒（批量并行处理，batch_size=10）
@@ -535,7 +537,7 @@ docker-compose -f docker-compose.prod.yml ps
 
 ---
 
-## 🛠️ 故障排除
+## 故障排除
 
 ### 常见问题
 
@@ -607,36 +609,7 @@ docker-compose -f docker-compose.prod.yml ps
 
 ---
 
-## 📝 更新日志
-
-### v1.0.0 (2025-01)
-
-**核心功能**
-- ✅ 文档解析（DOCX、PDF、TXT、MD）
-- ✅ 事实提取（结构化提取，支持多种事实类型）
-- ✅ 冲突检测（数据不一致、逻辑矛盾、时间冲突）
-- ✅ 事实验证（外部搜索 + LLM 评估）
-- ✅ 重复内容检测
-
-**扩展功能**
-- ✅ 参考文档对比
-- ✅ 图文一致性对比
-
-**性能优化**
-- ✅ 批量并行处理
-- ✅ Redis 缓存（支持内存降级）
-- ✅ SSE 实时进度推送
-- ✅ LSH 相似度过滤（可选）
-
-**稳定性提升**
-- ✅ 完善的错误处理和容错机制
-- ✅ JSON 解析容错（多策略提取）
-- ✅ 服务降级策略（Redis、搜索、Vision API）
-- ✅ 健康检查端点
-
----
-
-## 👥 项目成员
+## 项目成员
 
 - **詹江叶煜** (10235501471) - 冲突监测功能实现
 - **马舒童** (10235501462) - 冲突监测功能优化与前端页面搭建
@@ -646,25 +619,9 @@ docker-compose -f docker-compose.prod.yml ps
 
 ---
 
-## 📚 相关文档
+## 相关文档
 
 - [实验报告](EXPERIMENT_REPORT.md) - 详细实验报告
 - [待办事项](TODO.md) - 开发路线图
 - [分工文档](分工.md) - 项目分工说明
 
----
-
-## 🙏 致谢
-
-- [FastAPI](https://fastapi.tiangolo.com/) - 现代化的 Python Web 框架
-- [React](https://react.dev/) - 用户界面库
-- [DeepSeek](https://www.deepseek.com/) - 大语言模型服务
-- [Redis](https://redis.io/) - 内存数据结构存储
-- [Vite](https://vitejs.dev/) - 下一代前端构建工具
-- [Tailwind CSS](https://tailwindcss.com/) - 实用优先的 CSS 框架
-
----
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
