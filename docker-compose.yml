@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+  # 前端服务
+  frontend:
+    build: ./frontend
+    container_name: agent_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - agent_network
+
+  # 后端服务
   backend:
     build: ./backend
     container_name: agent_backend
@@ -8,12 +20,19 @@ services:
       - "8000:8000"
     environment:
       - MONGODB_URL=mongodb://mongo:27017
-      # Keys should be provided in .env or environment
-      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-sk-c20873c2404043a6bd935d590621dfe1}
+      - MONGODB_DB_NAME=smart_learning
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
       - ZHIPU_API_KEY=${ZHIPU_API_KEY}
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-change-in-production}
     depends_on:
       - mongo
+    volumes:
+      - ./backend/uploads:/app/uploads
+    networks:
+      - agent_network
+    restart: unless-stopped
 
+  # MongoDB 数据库
   mongo:
     image: mongo:6.0
     container_name: agent_mongo
@@ -21,6 +40,18 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - agent_network
+    restart: unless-stopped
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   mongo_data:
+
+networks:
+  agent_network:
+    driver: bridge

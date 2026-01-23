@@ -79,6 +79,8 @@ async def generate_quiz(
     content: PDF解析后的文本内容
     title: 测验标题
     count: 题目数量
+    
+    注意：由于包含题目生成和验证，可能需要较长时间（30-60秒）
     """
     if not content or len(content.strip()) == 0:
         raise HTTPException(status_code=400, detail="Content cannot be empty")
@@ -86,8 +88,21 @@ async def generate_quiz(
     # 获取用户年级信息
     user_grade = current_user.grade if hasattr(current_user, 'grade') and current_user.grade else "初中"
     
-    # 生成题目（传入年级信息）
-    questions = await question_generator.generate_questions(content, count, user_grade)
+    print(f"⏱️  开始生成题目（预计需要30-60秒）...")
+    import time
+    start_time = time.time()
+    
+    try:
+        # 生成题目（传入年级信息）
+        questions = await question_generator.generate_questions(content, count, user_grade)
+        
+        elapsed_time = time.time() - start_time
+        print(f"✅ 题目生成完成，耗时: {elapsed_time:.1f}秒")
+        
+    except Exception as e:
+        elapsed_time = time.time() - start_time
+        print(f"❌ 题目生成失败，耗时: {elapsed_time:.1f}秒，错误: {e}")
+        raise HTTPException(status_code=500, detail=f"生成题目失败: {str(e)}")
     
     quiz_data = {
         "title": title,
@@ -173,5 +188,19 @@ async def submit_quiz(
     print(f"   result_id: {result_id}")
     print(f"   result_response: {result_response}")
     print("=" * 50)
+    
+    # 后台任务：更新错题分析缓存
+    import asyncio
+    from app.services.agents.tutor import tutor_agent
+    
+    async def update_cache_background():
+        try:
+            print("🔄 后台任务：更新错题分析缓存...")
+            await tutor_agent.update_analysis_cache(str(current_user.id))
+        except Exception as e:
+            print(f"⚠️  后台更新缓存失败: {e}")
+    
+    # 启动后台任务（不等待完成）
+    asyncio.create_task(update_cache_background())
     
     return result_response

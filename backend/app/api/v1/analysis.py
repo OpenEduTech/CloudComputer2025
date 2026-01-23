@@ -10,10 +10,18 @@ router = APIRouter()
 
 @router.get("/mistakes")
 async def get_mistake_analysis(current_user: UserResponse = Depends(deps.get_current_user)) -> Dict:
-    # Get recent results
-    cursor = db.db.quiz_results.find({"user_id": str(current_user.id)}).sort("created_at", -1)
-    history_data = await cursor.to_list(length=20)
-    history = [QuizResult(**r) for r in history_data]
-    
-    analysis = await tutor_agent.analyze_mistakes(history)
+    """
+    获取错题分析
+    优先使用缓存，缓存不存在或过期时重新分析
+    """
+    analysis = await tutor_agent.get_cached_analysis(str(current_user.id))
+    return analysis
+
+@router.post("/mistakes/refresh")
+async def refresh_mistake_analysis(current_user: UserResponse = Depends(deps.get_current_user)) -> Dict:
+    """
+    强制刷新错题分析
+    用户可以手动触发重新分析
+    """
+    analysis = await tutor_agent.update_analysis_cache(str(current_user.id))
     return analysis

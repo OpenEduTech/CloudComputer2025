@@ -1,6 +1,7 @@
 from app.services.llm_factory import LLMFactory
 from app.models.quiz import QuizResult
 from typing import List, Dict, Tuple
+from datetime import datetime
 import json
 
 class TutorAgent:
@@ -51,6 +52,113 @@ class TutorAgent:
             print(f"⚠️  验证建议时出错: {e}")
             # 如果验证失败，默认通过
             return True, "验证系统异常，默认通过"
+
+    async def update_analysis_cache(self, user_id: str) -> Dict:
+        """
+        更新用户的错题分析缓存
+        在提交测验后自动调用
+        """
+        from app.core.database import db
+        from bson import ObjectId
+        
+        print(f"🔄 更新用户 {user_id} 的错题分析缓存...")
+        
+        # 获取用户最近的测验结果
+        cursor = db.db.quiz_results.find({"user_id": user_id}).sort("created_at", -1)
+        history_data = await cursor.to_list(length=20)
+        history = [QuizResult(**r) for r in history_data]
+        
+        # 执行分析
+        analysis = await self.analyze_mistakes(history)
+        
+        # 保存到缓存
+        cache_data = {
+            "user_id": user_id,
+            "weak_points": analysis["weak_points"],
+            "recommendations": analysis["recommendations"],
+            "total_mistakes": len(analysis["recent_mistakes"]),
+            "last_updated": datetime.utcnow()
+        }
+        
+        # 更新或插入缓存
+        await db.db.mistake_analysis_cache.update_one(
+            {"user_id": user_id},
+            {"$set": cache_data},
+            upsert=True
+        )
+        
+        print(f"✅ 错题分析缓存已更新")
+        return analysis
+
+    async def get_cached_analysis(self, user_id: str) -> Dict:
+        """
+        获取缓存的错题分析
+        如果缓存不存在或过期，则重新分析
+        """
+        from app.core.database import db
+        from datetime import datetime, timedelta
+        
+        # 尝试从缓存获取
+        cache = await db.db.mistake_analysis_cache.find_one({"user_id": user_id})
+        
+        if cache:
+            # 检查缓存是否过期（超过1小时）
+            last_updated = cache.get("last_updated")
+            if last_updated and datetime.utcnow() - last_updated < timedelta(hours=1):
+                print(f"✅ 使用缓存的错题分析（更新于 {last_updated}）")
+                
+                # 获取最近错题详情
+                cursor = db.db.quiz_results.find({"user_id": user_id}).sort("created_at", -1)
+                history_data = await cursor.to_list(length=20)
+                history = [QuizResult(**r) for r in history_data]
+                
+                recent_mistakes = []
+                for result in history:
+                    from bson import ObjectId
+                    try:
+                        quiz = await db.db.quiz.find_one({"_id": ObjectId(result.quiz_id)})
+                        if not quiz:
+                            continue
+                            
+                        questions_map = {q["id"]: q for q in quiz["questions"]}
+                        
+                        for grading in result.results:
+                            if not grading.is_correct:
+                                question_data = questions_map.get(grading.question_id)
+                                if not question_data:
+                                    continue
+                                    
+                                user_answer = ""
+                                for ans in result.submission.answers:
+                                    if ans.question_id == grading.question_id:
+                                        user_answer = ans.user_answer
+                                        break
+                                
+                                recent_mistakes.append({
+                                    "question": question_data,
+                                    "user_answer": user_answer,
+                                    "result": {
+                                        "question_id": grading.question_id,
+                                        "is_correct": grading.is_correct,
+                                        "score": grading.score,
+                                        "feedback": grading.feedback,
+                                        "error_type": grading.error_type,
+                                        "explanation": grading.analysis
+                                    }
+                                })
+                    except Exception as e:
+                        print(f"Error processing result: {e}")
+                        continue
+                
+                return {
+                    "recent_mistakes": recent_mistakes,
+                    "weak_points": cache.get("weak_points", []),
+                    "recommendations": cache.get("recommendations", [])
+                }
+        
+        # 缓存不存在或过期，重新分析
+        print(f"⚠️  缓存不存在或已过期，重新分析...")
+        return await self.update_analysis_cache(user_id)
 
     async def analyze_mistakes(self, history: List[QuizResult]) -> Dict:
         # Collect all mistakes with full context

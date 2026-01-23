@@ -206,14 +206,21 @@ class QuestionGeneratorAgent:
             
             print(f"✓ 成功为{grade}学生生成 {len(questions)} 道题目")
             
-            # Check layer: 验证题目是否基于原文
+            # Check layer: 验证题目是否基于原文（并发验证以节省时间）
             print("🔍 开始验证题目准确性（避免幻觉）...")
+            import asyncio
+            
+            # 并发验证所有题目
+            verification_tasks = [
+                self._verify_question(question, context) 
+                for question in questions
+            ]
+            verification_results = await asyncio.gather(*verification_tasks)
+            
             verified_questions = []
             rejected_questions = []
             
-            for i, question in enumerate(questions):
-                is_valid, reason = await self._verify_question(question, context)
-                
+            for i, (question, (is_valid, reason)) in enumerate(zip(questions, verification_results)):
                 if is_valid:
                     verified_questions.append(question)
                     print(f"  ✓ 题目 {i+1} 验证通过: {reason[:50]}...")
