@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习评估智能体</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #39c5bb 0%, #2fa89f 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #39c5bb;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #39c5bb;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #39c5bb;
+        }
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        button {
+            background: linear-gradient(135deg, #39c5bb 0%, #2fa89f 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(57, 197, 187, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        .error {
+            background: #ef4444;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        .quiz-question {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #39c5bb;
+        }
+        .material-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-left: 4px solid #39c5bb;
+            overflow: hidden;
+        }
+        .material-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            cursor: pointer;
+            background: rgba(57,197,187,0.08);
+        }
+        .material-summary:hover {
+            background: rgba(57,197,187,0.15);
+        }
+        .material-summary strong {
+            color: #222;
+            display: block;
+        }
+        .material-summary p {
+            margin-top: 4px;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .material-detail {
+            display: none;
+            padding: 18px;
+            border-top: 1px solid #e3e3e3;
+        }
+        .material-detail.active {
+            display: block;
+        }
+        .quiz-question h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .inline-status {
+            margin-top: 6px;
+            font-size: 0.85em;
+            color: #555;
+        }
+        .option {
+            margin: 8px 0;
+        }
+        .option input[type="radio"] {
+            margin-right: 8px;
+        }
+        .feedback-item {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .feedback-correct {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        .feedback-incorrect {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+        .score-badge {
+            display: inline-block;
+            background: #39c5bb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .weakness-item {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #ffc107;
+        }
+        .hidden {
+            display: none;
+        }
+        .flex-row {
+            display: flex;
+            gap: 10px;
+        }
+        .flex-row input {
+            flex: 1;
+        }
+        small {
+            color: #666;
+            font-size: 0.85em;
+        }
+        .tab-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            flex: 1;
+            min-width: 140px;
+            background: rgba(255,255,255,0.25);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: white;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .tab-btn.active {
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(0,0,0,0.15);
+        }
+        .tab-page {
+            display: none;
+        }
+        .tab-page.active {
+            display: block;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .pagination span {
+            color: #333;
+            font-weight: 600;
+        }
+        .pagination-btn {
+            padding: 8px 18px;
+            font-size: 14px;
+        }
+        .collapse-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .collapse-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            cursor: pointer;
+            background: rgba(57,197,187,0.12);
+        }
+        .collapse-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #39c5bb;
+        }
+        .collapse-body {
+            display: none;
+            padding: 18px;
+        }
+        .collapse-body.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 学习评估智能体</h1>
+
+        <div class="collapse-card">
+            <div class="collapse-header" onclick="toggleCollapse('apiSettingsBody', this)">
+                <h2>API 连接设置</h2>
+                <span style="color:#39c5bb;font-weight:600;">展开 ▼</span>
+            </div>
+            <div class="collapse-body" id="apiSettingsBody">
+                <p style="color:#555;margin-bottom:10px;">如在不同主机/协议访问前端，可在此调整后端地址并测试连通。</p>
+                <div class="form-group">
+                    <label for="apiBaseInput">API 基础地址</label>
+                    <input type="text" id="apiBaseInput" placeholder="例如 http://localhost:8000">
+                    <small>当前：<span id="apiBaseDisplay"></span></small>
+                </div>
+                <div class="flex-row" style="margin-bottom:10px;">
+                    <button onclick="saveApiBase()">保存地址</button>
+                    <button onclick="testApiBase()">测试连通</button>
+                </div>
+                <div id="apiBaseResult"></div>
+            </div>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="switchPage('materialsPage', this)">学习资料 · 记忆点</button>
+            <button class="tab-btn" onclick="switchPage('quizPage', this)">测验与判卷</button>
+            <button class="tab-btn" onclick="switchPage('historyPage', this)">历史记录</button>
+            <button class="tab-btn" onclick="switchPage('weaknessPage', this)">错题与申诉</button>
+        </div>
+
+        <section id="materialsPage" class="tab-page active">
+            <div class="card">
+                <h2>上传学习资料</h2>
+                <div class="form-group">
+                    <label for="userId">用户ID *</label>
+                    <input type="text" id="userId" placeholder="例如: user001" value="user001">
+                </div>
+                <div class="form-group">
+                    <label for="topic">主题（可选）</label>
+                    <input type="text" id="topic" placeholder="例如: 云原生技术">
+                </div>
+                <div class="form-group">
+                    <label for="content">学习内容 *</label>
+                    <textarea id="content" placeholder="粘贴或输入学习资料文本...&#10;例如：Docker 是一个开源的容器化平台..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="inlineMemoryTitle">记忆点标题（可选）</label>
+                    <input type="text" id="inlineMemoryTitle" placeholder="例如：Docker 核心概念">
+                </div>
+                <div class="form-group">
+                    <label for="inlineMemoryContent">记忆点内容（可选）</label>
+                    <textarea id="inlineMemoryContent" placeholder="若为空将由 AI 自动生成 2-3 句记忆要点"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="inlineMemoryTags">记忆点标签（可选，用逗号分隔）</label>
+                    <input type="text" id="inlineMemoryTags" placeholder="容器,镜像,部署">
+                </div>
+                <div class="form-group">
+                    <label for="materialFile">上传 PDF/录音（自动转文本）</label>
+                    <input type="file" id="materialFile" accept=".txt,.md,.pdf,.mp3,.m4a,.wav,.aac,.flac,.ogg">
+                    <small>文件内容将转为文本后统一纳入学习资料</small>
+                </div>
+                <div class="flex-row" style="margin-bottom:10px;">
+                    <button onclick="uploadMaterial()">上传文本</button>
+                    <button onclick="uploadMaterialFile()">文件转文本并上传</button>
+                </div>
+                <div id="uploadResult"></div>
+            </div>
+
+            <div class="card">
+                <h2>学习资料管理</h2>
+                <div class="form-group">
+                    <label for="materialListUserId">用户ID *</label>
+                    <input type="text" id="materialListUserId" value="user001" placeholder="例如: user001">
+                </div>
+                <div class="flex-row" style="margin-bottom:10px;">
+                    <input type="text" id="materialFilterTopic" placeholder="按主题筛选 (可选)">
+                    <input type="text" id="materialKeyword" placeholder="内容关键词 (可选)">
+                </div>
+                <div class="flex-row" style="margin-bottom:10px;">
+                    <button onclick="loadMaterials()">加载资料</button>
+                    <button onclick="clearMaterialFilters()">清空筛选</button>
+                </div>
+                <div id="materialList"></div>
+            </div>
+
+            <div class="card">
+                <h2>📌 记忆点管理</h2>
+                <p style="margin-bottom:10px;color:#555;">可手动补充或搜索记忆点，灵活编辑日常学习心得。</p>
+                <div class="form-group">
+                    <label for="memoryUserId">用户ID *</label>
+                    <input type="text" id="memoryUserId" value="user001" placeholder="与上传资料用户一致">
+                </div>
+                <div class="form-group">
+                    <label for="memoryTitle">标题 *</label>
+                    <input type="text" id="memoryTitle" placeholder="例如：Redis 持久化要点">
+                </div>
+                <div class="form-group">
+                    <label for="memoryTags">标签（用逗号分隔）</label>
+                    <input type="text" id="memoryTags" placeholder="缓存,持久化">
+                </div>
+                <div class="form-group">
+                    <label for="memoryContent">内容 *</label>
+                    <textarea id="memoryContent" placeholder="填写要记忆的要点..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="memoryKeyword">搜索关键词（标题/内容/标签）</label>
+                    <input type="text" id="memoryKeyword" placeholder="输入关键词后刷新">
+                </div>
+                <div class="flex-row" style="margin-bottom:10px;">
+                    <button onclick="createMemory()">新增记忆点</button>
+                    <button onclick="loadMemories()">刷新列表</button>
+                </div>
+                <div id="memoryResult"></div>
+                <div id="memoryList"></div>
+            </div>
+        </section>
+
+        <section id="quizPage" class="tab-page">
+            <div class="card">
+                <h2>生成测验</h2>
+                <div class="form-group">
+                    <label for="quizUserId">用户ID *</label>
+                    <input type="text" id="quizUserId" placeholder="与上传资料时相同" value="user001">
+                </div>
+                <div class="form-group">
+                    <label for="quizTopic">主题（可选）</label>
+                    <input type="text" id="quizTopic" placeholder="筛选特定主题的资料">
+                </div>
+                <div class="form-group">
+                    <label for="numQuestions">题目数量</label>
+                    <input type="text" id="numQuestions" value="4" placeholder="2-10">
+                    <small>建议 2-10 题</small>
+                </div>
+                <button onclick="generateQuiz()">生成测验</button>
+                <div id="quizResult"></div>
+            </div>
+
+            <div id="quizArea" class="card">
+                <h2>开始答题</h2>
+                <div id="questions">
+                    <p style="color: #999; text-align: center; padding: 30px;">
+                        💡 请先在上方生成测验，题目将在此显示
+                    </p>
+                </div>
+                <button id="submitBtn" onclick="submitAnswers()" style="display: none;">提交答案</button>
+                <div id="gradeResult"></div>
+            </div>
+        </section>
+
+        <section id="historyPage" class="tab-page">
+            <div class="card">
+                <h2>🗂️ 历史测验</h2>
+                <div class="form-group">
+                    <label for="historyUserId">用户ID</label>
+                    <input type="text" id="historyUserId" value="user001" placeholder="例如: user001">
+                </div>
+                <button onclick="loadHistory()">查看历史记录</button>
+                <div id="historyResult" style="margin-top:10px;"></div>
+            </div>
+        </section>
+
+        <section id="weaknessPage" class="tab-page">
+            <div class="card">
+                <h2>错题本与申诉</h2>
+                <div class="form-group">
+                    <label for="weaknessUserId">用户ID</label>
+                    <input type="text" id="weaknessUserId" placeholder="例如: user001" value="user001">
+                </div>
+                <button onclick="getWeaknessBook()">查看错题本</button>
+                <div id="weaknessResult"></div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const resolvedProtocol = window.location.protocol === 'file:' ? 'http:' : (window.location.protocol || 'http:');
+        const resolvedHost = window.location.protocol === 'file:' ? 'localhost' : (window.location.hostname || 'localhost');
+        const defaultApiBase = `${resolvedProtocol}//${resolvedHost}:8000`;
+        const API_STORAGE_KEY = 'apiBaseOverride';
+        function getStoredApiBase() {
+            try {
+                return window.localStorage.getItem(API_STORAGE_KEY);
+            } catch (error) {
+                console.warn('无法读取本地存储 API 地址', error);
+                return null;
+            }
+        }
+        let API_BASE = normalizeBase(getStoredApiBase() || window.__API_BASE__ || defaultApiBase);
+        const MATERIAL_PAGE_SIZE = 10;
+        let currentQuiz = null;
+        let materialCache = [];
+        let materialPage = 1;
+        let expandedMaterialId = null;
+
+        function escapeHtml(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function normalizeBase(input) {
+            let value = (input || '').trim();
+            if (!value) return defaultApiBase;
+            if (value.startsWith('/')) {
+                return value.replace(/\/$/, '');
+            }
+            if (!/^https?:\/\//i.test(value)) {
+                value = `${resolvedProtocol}//${value.replace(/^\/+/, '')}`;
+            }
+            return value.replace(/\/$/, '');
+        }
+
+        function updateApiBaseDisplay() {
+            const display = document.getElementById('apiBaseDisplay');
+            const input = document.getElementById('apiBaseInput');
+            if (display) display.textContent = API_BASE;
+            if (input && document.activeElement !== input) input.value = API_BASE;
+        }
+
+        function initApiBase() {
+            API_BASE = normalizeBase(getStoredApiBase() || window.__API_BASE__ || defaultApiBase);
+            updateApiBaseDisplay();
+        }
+
+        function saveApiBase() {
+            const input = document.getElementById('apiBaseInput');
+            const resultDiv = document.getElementById('apiBaseResult');
+            if (!input) return;
+            API_BASE = normalizeBase(input.value);
+            try {
+                window.localStorage.setItem(API_STORAGE_KEY, API_BASE);
+            } catch (error) {
+                console.warn('保存 API 地址失败', error);
+            }
+            updateApiBaseDisplay();
+            if (resultDiv) {
+                resultDiv.innerHTML = '<div style="color:#39c5bb;">✅ 地址已更新，立即测试连通性...</div>';
+            }
+            testApiBase();
+        }
+
+        async function testApiBase() {
+            const resultDiv = document.getElementById('apiBaseResult');
+            if (resultDiv) {
+                resultDiv.innerHTML = '<div style="color:#39c5bb;">⏳ 正在测试 API...</div>';
+            }
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), 5000);
+            try {
+                const response = await fetch(`${API_BASE}/health`, { signal: controller.signal });
+                clearTimeout(timer);
+                if (response.ok) {
+                    if (resultDiv) resultDiv.innerHTML = `<div class="success">✅ API 可用：${API_BASE}</div>`;
+                } else {
+                    if (resultDiv) resultDiv.innerHTML = `<div class="error">⚠️ API 状态码 ${response.status}，请检查后端</div>`;
+                }
+            } catch (error) {
+                clearTimeout(timer);
+                if (resultDiv) resultDiv.innerHTML = `<div class="error">❌ 无法连接 ${API_BASE}：${error.message}</div>`;
+            }
+        }
+
+        function switchPage(pageId, btn) {
+            document.querySelectorAll('.tab-page').forEach(page => page.classList.remove('active'));
+            const target = document.getElementById(pageId);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        function toggleMaterial(materialId) {
+            if (expandedMaterialId === materialId) {
+                expandedMaterialId = null;
+            } else {
+                expandedMaterialId = materialId;
+            }
+            renderMaterialList(materialCache);
+        }
+
+        function toggleCollapse(bodyId, headerEl) {
+            const body = document.getElementById(bodyId);
+            if (!body) return;
+            const isActive = body.classList.contains('active');
+            body.classList.toggle('active');
+            const label = headerEl?.querySelector('span');
+            if (label) {
+                label.textContent = body.classList.contains('active') ? '收起 ▲' : '展开 ▼';
+            }
+        }
+
+        // 上传学习资料
+        async function uploadMaterial() {
+            const userId = document.getElementById('userId').value.trim();
+            const topic = document.getElementById('topic').value.trim();
+            const content = document.getElementById('content').value.trim();
+            const memoryTitle = document.getElementById('inlineMemoryTitle').value.trim();
+            const memoryContent = document.getElementById('inlineMemoryContent').value.trim();
+            const memoryTagsRaw = document.getElementById('inlineMemoryTags').value.trim();
+            const resultDiv = document.getElementById('uploadResult');
+
+            if (!userId || !content) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID和学习内容</div>';
+                return;
+            }
+
+            try {
+                const payload = {
+                    user_id: userId,
+                    topic: topic || null,
+                    content: content
+                };
+                if (memoryTitle) payload.memory_title = memoryTitle;
+                if (memoryContent) payload.memory_content = memoryContent;
+                payload.memory_tags = memoryTagsRaw
+                    ? memoryTagsRaw.split(',').map(t => t.trim()).filter(Boolean)
+                    : null;
+
+                const response = await fetch(`${API_BASE}/materials`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    const memoMsg = data.memory_info
+                        ? (data.memory_generated ? 'AI 已根据资料生成记忆点' : '已保存自定义记忆点')
+                        : '未生成记忆点';
+                    resultDiv.innerHTML = `<div class="success">✅ 资料上传成功！ID: ${data.material_id}｜${memoMsg}</div>`;
+                    document.getElementById('content').value = '';
+                    document.getElementById('inlineMemoryTitle').value = '';
+                    document.getElementById('inlineMemoryContent').value = '';
+                    document.getElementById('inlineMemoryTags').value = '';
+                    loadMaterials();
+                    loadMemories();
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 上传失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        async function uploadMaterialFile() {
+            const userId = document.getElementById('userId').value.trim();
+            const topic = document.getElementById('topic').value.trim();
+            const memoryTitle = document.getElementById('inlineMemoryTitle').value.trim();
+            const memoryContent = document.getElementById('inlineMemoryContent').value.trim();
+            const memoryTagsRaw = document.getElementById('inlineMemoryTags').value.trim();
+            const fileInput = document.getElementById('materialFile');
+            const resultDiv = document.getElementById('uploadResult');
+
+            if (!userId) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+            if (!fileInput.files || !fileInput.files.length) {
+                resultDiv.innerHTML = '<div class="error">请选择需要转换的文件</div>';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('user_id', userId);
+            if (topic) formData.append('topic', topic);
+            if (memoryTitle) formData.append('memory_title', memoryTitle);
+            if (memoryContent) formData.append('memory_content', memoryContent);
+            if (memoryTagsRaw) formData.append('memory_tags', memoryTagsRaw);
+            formData.append('file', fileInput.files[0]);
+            resultDiv.innerHTML = '<div style="color:#39c5bb;">⏳ 正在转换文件...</div>';
+
+            try {
+                const response = await fetch(`${API_BASE}/materials/ingest`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    const memoMsg = data.memory_info
+                        ? (data.memory_generated ? 'AI 已根据资料生成记忆点' : '已保存自定义记忆点')
+                        : '未生成记忆点';
+                    resultDiv.innerHTML = `<div class="success">✅ 文件上传并转文本成功！ID: ${data.material_id}｜${memoMsg}</div>`;
+                    fileInput.value = '';
+                    loadMaterials();
+                    loadMemories();
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 转换失败: ${data.detail || JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        function clearMaterialFilters() {
+            document.getElementById('materialFilterTopic').value = '';
+            document.getElementById('materialKeyword').value = '';
+            loadMaterials();
+        }
+
+        async function loadMaterials() {
+            const userId = document.getElementById('materialListUserId').value.trim();
+            const topic = document.getElementById('materialFilterTopic').value.trim();
+            const keyword = document.getElementById('materialKeyword').value.trim();
+            const listDiv = document.getElementById('materialList');
+            if (!userId) {
+                listDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+            const params = new URLSearchParams({ user_id: userId });
+            if (topic) params.append('topic', topic);
+            if (keyword) params.append('keyword', keyword);
+            listDiv.innerHTML = '<div style="color:#39c5bb;">⏳ 加载中...</div>';
+            try {
+                const response = await fetch(`${API_BASE}/materials?${params.toString()}`);
+                const data = await response.json();
+                if (response.ok) {
+                    materialCache = data;
+                    materialPage = 1;
+                    expandedMaterialId = null;
+                    renderMaterialList(materialCache);
+                } else {
+                    listDiv.innerHTML = `<div class="error">❌ 加载失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                listDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        function renderMaterialList(items) {
+            const listDiv = document.getElementById('materialList');
+            if (!items.length) {
+                listDiv.innerHTML = '<div class="success">暂无学习资料</div>';
+                return;
+            }
+            const totalPages = Math.max(1, Math.ceil(items.length / MATERIAL_PAGE_SIZE));
+            if (materialPage > totalPages) materialPage = totalPages;
+            if (materialPage < 1) materialPage = 1;
+            const startIdx = (materialPage - 1) * MATERIAL_PAGE_SIZE;
+            const pageItems = items.slice(startIdx, startIdx + MATERIAL_PAGE_SIZE);
+            if (expandedMaterialId && !pageItems.some(item => item.material_id === expandedMaterialId)) {
+                expandedMaterialId = null;
+            }
+
+            let html = '';
+            pageItems.forEach(item => {
+                const materialId = item.material_id || '';
+                const safeTopic = escapeHtml(item.topic || '未分组主题');
+                const rawContent = item.content || '';
+                const safeContent = escapeHtml(rawContent);
+                const snippet = escapeHtml(rawContent.slice(0, 70) + (rawContent.length > 70 ? '...' : ''));
+                const expanded = expandedMaterialId === materialId;
+                html += `
+                    <div class="material-card">
+                        <div class="material-summary" onclick="toggleMaterial('${materialId}')">
+                            <div>
+                                <strong>${safeTopic}</strong>
+                                <p>${snippet}</p>
+                            </div>
+                            <span style="color:#39c5bb;font-weight:600;">
+                                ${expanded ? '收起 ▲' : '展开 ▼'}
+                            </span>
+                        </div>
+                        <div class="material-detail ${expanded ? 'active' : ''}">
+                            <small style="color:#777;">ID: ${escapeHtml(materialId)}</small>
+                            <div class="form-group" style="margin-top:8px;">
+                                <label>主题</label>
+                                <input type="text" id="material-topic-${materialId}" value="${escapeHtml(item.topic || '')}">
+                            </div>
+                            <div class="form-group">
+                                <label>学习内容</label>
+                                <textarea id="material-content-${materialId}" rows="5">${safeContent}</textarea>
+                            </div>
+                            <div class="flex-row" style="margin-top:8px;">
+                                <button onclick="saveMaterial('${materialId}')">保存修改</button>
+                                <button onclick="deleteMaterial('${materialId}')">删除</button>
+                            </div>
+                            <div class="inline-status" id="material-status-${materialId}"></div>
+                        </div>
+                    </div>
+                `;
+            });
+            if (items.length > MATERIAL_PAGE_SIZE) {
+                html += `
+                    <div class="pagination">
+                        <button class="pagination-btn" onclick="changeMaterialPage(-1)" ${materialPage === 1 ? 'disabled' : ''}>上一页</button>
+                        <span>第 ${materialPage} / ${totalPages} 页</span>
+                        <button class="pagination-btn" onclick="changeMaterialPage(1)" ${materialPage === totalPages ? 'disabled' : ''}>下一页</button>
+                    </div>
+                `;
+            }
+            listDiv.innerHTML = html;
+        }
+
+        function changeMaterialPage(step) {
+            const totalPages = Math.max(1, Math.ceil(materialCache.length / MATERIAL_PAGE_SIZE));
+            const target = materialPage + step;
+            if (target < 1 || target > totalPages) return;
+            materialPage = target;
+            expandedMaterialId = null;
+            renderMaterialList(materialCache);
+        }
+
+        async function saveMaterial(materialId) {
+            const userId = document.getElementById('materialListUserId').value.trim();
+            if (!userId) {
+                alert('请先填写用户ID');
+                return;
+            }
+            const topicInput = document.getElementById(`material-topic-${materialId}`);
+            const contentInput = document.getElementById(`material-content-${materialId}`);
+            const statusDiv = document.getElementById(`material-status-${materialId}`);
+            if (!topicInput || !contentInput) {
+                alert('无法找到对应的表单元素');
+                return;
+            }
+            const topic = topicInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!content) {
+                statusDiv.innerHTML = '<div class="error">学习内容不能为空</div>';
+                return;
+            }
+            const payload = { topic, content };
+            try {
+                statusDiv.innerHTML = '<span style="color:#39c5bb;">💾 保存中...</span>';
+                const response = await fetch(`${API_BASE}/materials/${materialId}?user_id=${encodeURIComponent(userId)}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    statusDiv.innerHTML = '<div class="success" style="margin-top:6px;">已保存</div>';
+                } else {
+                    statusDiv.innerHTML = `<div class="error">保存失败: ${data.detail || JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">网络错误: ${error.message}</div>`;
+            }
+        }
+
+        async function deleteMaterial(materialId) {
+            const userId = document.getElementById('materialListUserId').value.trim();
+            if (!userId) {
+                alert('请先填写用户ID');
+                return;
+            }
+            if (!confirm('确定删除该资料吗？')) return;
+            try {
+                const response = await fetch(`${API_BASE}/materials/${materialId}?user_id=${encodeURIComponent(userId)}`, {
+                    method: 'DELETE'
+                });
+                if (response.ok) {
+                    loadMaterials();
+                } else {
+                    const data = await response.json();
+                    alert('删除失败: ' + JSON.stringify(data));
+                }
+            } catch (error) {
+                alert('网络错误: ' + error.message);
+            }
+        }
+
+        // 生成测验
+        async function generateQuiz() {
+            const userId = document.getElementById('quizUserId').value.trim();
+            const topic = document.getElementById('quizTopic').value.trim();
+            const numQuestionsInput = parseInt(document.getElementById('numQuestions').value, 10);
+            const numQuestions = Number.isNaN(numQuestionsInput) ? 4 : numQuestionsInput;
+            const resultDiv = document.getElementById('quizResult');
+
+            if (!userId) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<div style="color: #39c5bb;">⏳ 正在生成测验...</div>';
+
+            try {
+                const response = await fetch(`${API_BASE}/quizzes`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        user_id: userId,
+                        topic: topic || null,
+                        num_questions: numQuestions || 4,
+                        difficulty_span: ['easy', 'medium', 'hard']
+                    })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    currentQuiz = data;
+                    displayQuiz(data);
+                    resultDiv.innerHTML = '<div class="success">✅ 测验生成成功！请向下滚动答题</div>';
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 生成失败: ${data.detail || JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 显示测验题目
+        function displayQuiz(quiz) {
+            const questionsDiv = document.getElementById('questions');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            let html = '';
+            quiz.questions.forEach((q, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <h4>第 ${index + 1} 题 [${q.difficulty}]</h4>
+                        <p><strong>${q.stem}</strong></p>
+                `;
+                
+                if (q.type === 'mcq' && q.options) {
+                    html += '<div style="margin-top: 10px;">';
+                    q.options.forEach(opt => {
+                        html += `
+                            <div class="option">
+                                <label>
+                                    <input type="radio" name="q_${q.id}" value="${opt}">
+                                    ${opt}
+                                </label>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                } else {
+                    html += `<input type="text" id="answer_${q.id}" placeholder="请输入答案" style="margin-top: 10px;">`;
+                }
+                
+                html += '</div>';
+            });
+            
+            questionsDiv.innerHTML = html;
+            submitBtn.style.display = 'inline-block';
+            document.getElementById('gradeResult').innerHTML = '';
+        }
+
+        // 提交答案
+        async function submitAnswers() {
+            if (!currentQuiz) {
+                alert('请先生成测验');
+                return;
+            }
+
+            const answers = [];
+            currentQuiz.questions.forEach(q => {
+                let answer = '';
+                if (q.type === 'mcq') {
+                    const selected = document.querySelector(`input[name="q_${q.id}"]:checked`);
+                    answer = selected ? selected.value : '';
+                } else {
+                    answer = document.getElementById(`answer_${q.id}`).value.trim();
+                }
+                answers.push({question_id: q.id, answer: answer});
+            });
+
+            const userId = document.getElementById('quizUserId').value.trim();
+            const resultDiv = document.getElementById('gradeResult');
+            resultDiv.innerHTML = '<div style="color: #39c5bb;">⏳ 正在判卷...</div>';
+
+            try {
+                const response = await fetch(`${API_BASE}/grade`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        user_id: userId,
+                        quiz_id: currentQuiz.quiz_id,
+                        answers: answers
+                    })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    displayGrade(data);
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 判卷失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 显示判卷结果
+        function displayGrade(grade) {
+            const resultDiv = document.getElementById('gradeResult');
+            let html = `<div class="score-badge">📊 得分: ${grade.score}分</div><br>`;
+            
+            grade.feedback.forEach((fb, index) => {
+                const cls = fb.correct ? 'feedback-correct' : 'feedback-incorrect';
+                const icon = fb.correct ? '✅' : '❌';
+                html += `
+                    <div class="feedback-item ${cls}">
+                        <strong>${icon} 第 ${index + 1} 题: ${fb.correct ? '正确' : '错误'}</strong>
+                        <p style="margin-top: 8px;">${fb.rationale}</p>
+                        ${fb.suggested_review ? `<p style="margin-top: 8px; color: #d97706;"><strong>建议：</strong>${fb.suggested_review}</p>` : ''}
+                    </div>
+                `;
+            });
+            
+            resultDiv.innerHTML = html;
+        }
+
+        // 查看错题本
+        async function getWeaknessBook() {
+            const userId = document.getElementById('weaknessUserId').value.trim();
+            const resultDiv = document.getElementById('weaknessResult');
+
+            if (!userId) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/weakness-book/${userId}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    if (data.entries && data.entries.length > 0) {
+                        let html = `<h3 style="margin: 15px 0; color: #333;">共 ${data.entries.length} 道错题</h3>`;
+                        data.entries.forEach((entry, index) => {
+                            html += `
+                                <div class="weakness-item">
+                                    <h4>错题 ${index + 1}</h4>
+                                    <p><strong>题目：</strong>${entry.stem}</p>
+                                    <p><strong>你的答案：</strong>${entry.last_incorrect_answer}</p>
+                                    ${entry.expected ? `<p><strong>正确答案：</strong>${entry.expected}</p>` : ''}
+                                    ${entry.suggested_review ? `<p style="color: #d97706;"><strong>建议：</strong>${entry.suggested_review}</p>` : ''}
+                                    ${entry.appeal_status ? `<p><strong>申诉状态：</strong>${entry.appeal_status}</p>` : ''}
+                                    <div style="margin-top:10px;">
+                                        <button onclick="appealQuestion('${entry.quiz_id || ''}','${entry.question_id}')">申诉重新批阅</button>
+                                        <button style="background:#ef4444;margin-left:8px;" onclick="deleteWeakness('${entry.question_id}')">删除错题</button>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        resultDiv.innerHTML = html;
+                    } else {
+                        resultDiv.innerHTML = '<div class="success">🎉 暂无错题，继续保持！</div>';
+                    }
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 查询失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 记忆点：新增
+        async function createMemory() {
+            const userId = document.getElementById('memoryUserId').value.trim();
+            const title = document.getElementById('memoryTitle').value.trim();
+            const tags = document.getElementById('memoryTags').value.trim();
+            const content = document.getElementById('memoryContent').value.trim();
+            const resultDiv = document.getElementById('memoryResult');
+            if (!userId || !title || !content) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID、标题和内容</div>';
+                return;
+            }
+            try {
+                const response = await fetch(`${API_BASE}/memories`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        user_id: userId,
+                        title,
+                        content,
+                        tags: tags ? tags.split(',').map(t => t.trim()).filter(Boolean) : []
+                    })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    resultDiv.innerHTML = '<div class="success">✅ 新增成功</div>';
+                    document.getElementById('memoryTitle').value = '';
+                    document.getElementById('memoryContent').value = '';
+                    loadMemories();
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 记忆点：刷新
+        async function loadMemories() {
+            const userId = document.getElementById('memoryUserId').value.trim();
+            const keyword = document.getElementById('memoryKeyword').value.trim();
+            const listDiv = document.getElementById('memoryList');
+            if (!userId) {
+                listDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+            const params = new URLSearchParams({ user_id: userId });
+            if (keyword) params.append('keyword', keyword);
+            listDiv.innerHTML = '<div style="color:#39c5bb;">⏳ 加载中...</div>';
+            try {
+                const response = await fetch(`${API_BASE}/memories?${params.toString()}`);
+                const data = await response.json();
+                if (response.ok) {
+                    if (!data.length) {
+                        listDiv.innerHTML = '<div class="success">暂无记忆点</div>';
+                        return;
+                    }
+                    let html = '';
+                    data.forEach(item => {
+                        const memoryId = item.memory_id || '';
+                        const safeTitle = escapeHtml(item.title || '');
+                        const safeContent = escapeHtml(item.content || '');
+                        const tagsStr = Array.isArray(item.tags) ? item.tags.join(', ') : '';
+                        const safeTags = escapeHtml(tagsStr);
+                        html += `
+                            <div class="quiz-question">
+                                <small style="color:#777;">ID: ${escapeHtml(memoryId)}</small>
+                                <div class="form-group" style="margin-top:8px;">
+                                    <label>标题</label>
+                                    <input type="text" id="memory-title-${memoryId}" value="${safeTitle}">
+                                </div>
+                                <div class="form-group">
+                                    <label>内容</label>
+                                    <textarea id="memory-content-${memoryId}" rows="4">${safeContent}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>标签（逗号分隔）</label>
+                                    <input type="text" id="memory-tags-${memoryId}" value="${safeTags}">
+                                </div>
+                                <div class="flex-row" style="margin-top:8px;">
+                                    <button onclick="saveMemory('${memoryId}', '${userId}')">保存修改</button>
+                                    <button onclick="deleteMemory('${memoryId}', '${userId}')">删除</button>
+                                </div>
+                                <div class="inline-status" id="memory-status-${memoryId}"></div>
+                            </div>
+                        `;
+                    });
+                    listDiv.innerHTML = html;
+                } else {
+                    listDiv.innerHTML = `<div class="error">❌ 加载失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                listDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        async function saveMemory(memoryId, providedUserId) {
+            const fallbackUserId = document.getElementById('memoryUserId').value.trim();
+            const userId = (providedUserId && providedUserId.trim()) || fallbackUserId;
+            if (!userId) {
+                alert('请先填写用户ID');
+                return;
+            }
+            const titleInput = document.getElementById(`memory-title-${memoryId}`);
+            const contentInput = document.getElementById(`memory-content-${memoryId}`);
+            const tagsInput = document.getElementById(`memory-tags-${memoryId}`);
+            const statusDiv = document.getElementById(`memory-status-${memoryId}`);
+            if (!titleInput || !contentInput || !tagsInput) {
+                alert('无法找到对应的表单元素');
+                return;
+            }
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!title || !content) {
+                statusDiv.innerHTML = '<div class="error">标题和内容不能为空</div>';
+                return;
+            }
+            const tags = tagsInput.value
+                .split(',')
+                .map(t => t.trim())
+                .filter(Boolean);
+            const payload = { title, content, tags };
+            try {
+                statusDiv.innerHTML = '<span style="color:#39c5bb;">💾 保存中...</span>';
+                const response = await fetch(`${API_BASE}/memories/${memoryId}?user_id=${encodeURIComponent(userId)}`, {
+                    method: 'PATCH',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    statusDiv.innerHTML = '<div class="success" style="margin-top:6px;">已保存</div>';
+                } else {
+                    statusDiv.innerHTML = `<div class="error">保存失败: ${data.detail || JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 记忆点：删除
+        async function deleteMemory(memoryId, userId) {
+            if (!confirm('确定删除该记忆点吗？')) return;
+            try {
+                const response = await fetch(`${API_BASE}/memories/${memoryId}?user_id=${encodeURIComponent(userId)}`, { method: 'DELETE' });
+                if (response.ok) {
+                    loadMemories();
+                } else {
+                    const data = await response.json();
+                    alert('删除失败: ' + JSON.stringify(data));
+                }
+            } catch (error) {
+                alert('网络错误: ' + error.message);
+            }
+        }
+
+        // 历史测验
+        async function loadHistory() {
+            const userId = document.getElementById('historyUserId').value.trim();
+            const resultDiv = document.getElementById('historyResult');
+            if (!userId) {
+                resultDiv.innerHTML = '<div class="error">请填写用户ID</div>';
+                return;
+            }
+            resultDiv.innerHTML = '<div style="color:#39c5bb;">⏳ 加载中...</div>';
+            try {
+                const response = await fetch(`${API_BASE}/quizzes/history?user_id=${encodeURIComponent(userId)}`);
+                const data = await response.json();
+                if (response.ok) {
+                    if (!data.length) {
+                        resultDiv.innerHTML = '<div class="success">暂无历史记录</div>';
+                        return;
+                    }
+                    let html = '';
+                    data.forEach(item => {
+                        html += `
+                            <div class="quiz-question">
+                                <h4>测验 ${item.quiz_id}</h4>
+                                <p><strong>得分：</strong>${item.score}</p>
+                                <p><small>${item.created_at}</small></p>
+                            </div>
+                        `;
+                    });
+                    resultDiv.innerHTML = html;
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ 加载失败: ${JSON.stringify(data)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ 网络错误: ${error.message}</div>`;
+            }
+        }
+
+        // 申诉错题
+        async function appealQuestion(quizId, questionId) {
+            const userId = document.getElementById('weaknessUserId').value.trim();
+            if (!quizId || !questionId) {
+                alert('缺少必要参数，无法申诉');
+                return;
+            }
+            try {
+                const response = await fetch(`${API_BASE}/weakness-book/appeal`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        user_id: userId,
+                        quiz_id: quizId,
+                        question_id: questionId
+                    })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    alert(`申诉完成：${data.correct ? '已改判正确' : '维持错误'}\n理由：${data.rationale}`);
+                    getWeaknessBook();
+                } else {
+                    alert('申诉失败: ' + JSON.stringify(data));
+                }
+            } catch (error) {
+                alert('网络错误: ' + error.message);
+            }
+        }
+
+        async function deleteWeakness(questionId) {
+            const userId = document.getElementById('weaknessUserId').value.trim();
+            if (!userId) {
+                alert('请先填写用户ID');
+                return;
+            }
+            if (!questionId) {
+                alert('缺少题目标识，无法删除');
+                return;
+            }
+            if (!confirm('确定从错题本中删除该条记录吗？')) return;
+            try {
+                const response = await fetch(`${API_BASE}/weakness-book/${encodeURIComponent(userId)}/${encodeURIComponent(questionId)}`, {
+                    method: 'DELETE'
+                });
+                if (response.ok) {
+                    alert('已删除错题');
+                    getWeaknessBook();
+                } else {
+                    const data = await response.json();
+                    alert('删除失败: ' + (data.detail || JSON.stringify(data)));
+                }
+            } catch (error) {
+                alert('网络错误: ' + error.message);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initApiBase();
+            testApiBase();
+            loadMaterials();
+            loadMemories();
+        });
+    </script>
+</body>
+</html>
