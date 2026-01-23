@@ -1,0 +1,4778 @@
+{
+  "concept": "神经网络",
+  "nodes": [
+    {
+      "id": "现代神经网络",
+      "label": "现代神经网络",
+      "description": "可被视为赫布学习定律和图灵思想的工程化结晶，是连接主义学派在人工智能领域的实践体现。<SEP>Modern neural networks, seen as the engineering crystallization of Hebb's learning law and Turing's ideas.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "控制论",
+      "label": "控制论",
+      "description": "诺伯特·维纳在1948年提出的科学，将动物与机器的控制和通讯置于同一理论框架中。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "C4.5",
+      "label": "C4.5",
+      "description": "C4.5是一种决策树生成算法。<SEP>C4.5是一种决策树学习算法，引入了信息增益比作为特征选择的标准，以减少信息增益容易选择特征值多的特征的问题。<SEP>A later iteration of the ID3 algorithm, also proposed by Ross Quinlan, which can use information gain or gain ratio.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 6
+    },
+    {
+      "id": "条件熵",
+      "label": "条件熵",
+      "description": "Conditional entropy, denoted as H(X|Y), measures the remaining uncertainty in a random variable X given knowledge of another random variable Y, calculated as the sum over x and y of p(x, y) times the base-2 logarithm of 1/p(x|y).",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437"
+      ],
+      "size": 5
+    },
+    {
+      "id": "弗朗西斯·克里克",
+      "label": "弗朗西斯·克里克",
+      "description": "A British physicist who, together with James Watson, discovered the double-helix structure of DNA in 1953 and later proposed the \"central dogma.\"",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 5
+    },
+    {
+      "id": "克劳德·艾尔伍德·香农",
+      "label": "克劳德·艾尔伍德·香农",
+      "description": "信息论的创立者，指出信息的本质在于消除不确定性，即降低熵的过程。<SEP>克劳德·艾尔伍德·香农是信息论的创始人，他在1938年发表了重要的硕士学位论文，并于1948年发表了《通信的一个数学理论》，为密码破译和数字通信理论做出了贡献。",
+      "domains": [
+        "信息论",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577",
+        "chunk-a6f27f56460cd35be08035e374a80238"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Softmax函数",
+      "label": "Softmax函数",
+      "description": "Softmax函数是一种常用于多分类问题的函数，可以将输出层的多个连续值转换为概率分布。",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-23713b5f1cb0ee19178382510009449e"
+      ],
+      "size": 2
+    },
+    {
+      "id": "逻辑回归",
+      "label": "逻辑回归",
+      "description": "逻辑回归是一种分类算法，与最大熵模型同属于对数线性分类模型。",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-f34ecacf5f99ee02bae6647b8bd65153"
+      ],
+      "size": 3
+    },
+    {
+      "id": "特征选择",
+      "label": "特征选择",
+      "description": "特征选择是决策树学习的一个步骤，在于选取对训练数据具有分类能力的特征，基本方法包括信息增益、信息增益比和基尼系数。<SEP>Feature selection is the process of selecting a subset of relevant features for model construction, covered in the lecture.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Batchsize",
+      "label": "Batchsize",
+      "description": "Batchsize是神经网络训练中的一个参数，降低它可以节省显存。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-36562522576eae8192339d548d0a1406"
+      ],
+      "size": 2
+    },
+    {
+      "id": "受限玻尔兹曼机",
+      "label": "受限玻尔兹曼机",
+      "description": "受限玻尔兹曼机是一种深度学习模型，是深度玻尔兹曼机的基础组件。<SEP>一种用于学习概率分布的生成式随机人工神经网络，由可见单元和隐藏单元构成。<SEP>受限玻尔兹曼机(Restricted Boltzmann Machine, RBM) is a two-layer neural network model widely used in industry, such as in recommendation systems.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-93a18801c2737ad9536660fe9501c9d8",
+        "chunk-52188c2297ba9ea322f462b96137a3c3",
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 6
+    },
+    {
+      "id": "流浪地球",
+      "label": "流浪地球",
+      "description": "流浪地球(The Wandering Earth) is a science fiction story by Liu Cixin where the Earth's rotation is affected, causing the sun to rise from the west, used as an example of a surprising posterior distribution.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49"
+      ],
+      "size": 2
+    },
+    {
+      "id": "最佳编码长度",
+      "label": "最佳编码长度",
+      "description": "对于具有特定出现概率的字母，其最优的编码长度是log_2 p(x)。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce"
+      ],
+      "size": 3
+    },
+    {
+      "id": "自回归生成模型",
+      "label": "自回归生成模型",
+      "description": "A category of models, including RNNs, PixelCNN, and Transformer, used in the proposed method.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-5b96b65f16399f35c9b04de8b22d0796"
+      ],
+      "size": 3
+    },
+    {
+      "id": "类别概率分布",
+      "label": "类别概率分布",
+      "description": "The probability distribution of categories, either from the actual data or model predictions.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "预测误差",
+      "label": "预测误差",
+      "description": "预测误差是认知模型与感知数据之间的差距，最小化预测误差是维持生命体稳定的核心。<SEP>预测误差的中位数是评估预测工具性能的指标。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-cc989a9fb47a8cd36db8fe7fb353106b"
+      ],
+      "size": 4
+    },
+    {
+      "id": "信息传递模型",
+      "label": "信息传递模型",
+      "description": "信息传递模型描述了信息从发送方(信源)通过信道传递到接收方(信宿)的过程，涉及编码、噪音和传递准确性等问题。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-a6f27f56460cd35be08035e374a80238"
+      ],
+      "size": 4
+    },
+    {
+      "id": "电子元件",
+      "label": "电子元件",
+      "description": "Electronic components used in a thought experiment to replace biological neurons.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "深度学习算法",
+      "label": "深度学习算法",
+      "description": "A class of machine learning algorithms, particularly popular for their strong performance in classification.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-d6085544a08784bc3999c91c72c5594a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "泊松点过程",
+      "label": "泊松点过程",
+      "description": "Poisson point process is a stochastic process used to model the distribution and interaction of nodes.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-8c2cb0873e78699bf2531a59b921954f"
+      ],
+      "size": 3
+    },
+    {
+      "id": "信道编码定理",
+      "label": "信道编码定理",
+      "description": "信道编码定理是信息论中的核心定理之一，从数学角度看是最优编码的存在性定理。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-5d34d389fc9a72d98bce995b723199a6"
+      ],
+      "size": 4
+    },
+    {
+      "id": "杰弗里·辛顿",
+      "label": "杰弗里·辛顿",
+      "description": "杰弗里·辛顿是深度学习奠基者，在2025年世界人工智能大会上指出人类大脑和大语言模型对语言的理解方式几乎相同。<SEP>A person who proposed a thought experiment about replacing neurons with electronic components to question the material basis of intelligence.<SEP>A researcher credited with the invention of the Boltzmann machine.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a",
+        "chunk-d0e494da55d171b3a3a8b96678397514"
+      ],
+      "size": 4
+    },
+    {
+      "id": "归一化常数",
+      "label": "归一化常数",
+      "description": "A constant used to normalize a probability distribution or other mathematical function.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-882f6cc5b251194ec83bb3e0280e7611"
+      ],
+      "size": 3
+    },
+    {
+      "id": "自然",
+      "label": "自然",
+      "description": "The scientific journal in which James Watson and Francis Crick published their famous paper on the double-helix structure of DNA.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "ID3",
+      "label": "ID3",
+      "description": "ID3是一种决策树生成算法。<SEP>ID3是一种决策树学习算法，使用信息增益作为特征选择的标准，容易偏向于取值较多的特征。<SEP>An algorithm for building decision trees, short for \"Iterative Dichotomiser 3,\" proposed by Ross Quinlan, using entropy and information gain.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 7
+    },
+    {
+      "id": "分布Q",
+      "label": "分布Q",
+      "description": "分布Q通常表示数据的理论分布、模型分布或对分布P的近似分布。",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-e7d56d1a1382da4ef9c8e90e4d8fd39f"
+      ],
+      "size": 2
+    },
+    {
+      "id": "本发明",
+      "label": "本发明",
+      "description": "This invention combines model output feature vectors and text data features, using Gini impurity and Shannon entropy to define functions that measure the likelihood of test cases being misclassified.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-dc26f10df4bfd7aac2de935884b8ad3f"
+      ],
+      "size": 4
+    },
+    {
+      "id": "大脑",
+      "label": "大脑",
+      "description": "能够通过突触的动态可塑性从经验中学习，提升信息处理效率，并将生命经验写入自身结构的器官。<SEP>大脑是整合先验知识和感官数据后推理出现实的器官，遵循贝叶斯逻辑以最小化自由能。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 6
+    },
+    {
+      "id": "网络",
+      "label": "网络",
+      "description": "The network's output layer partition function is discussed in relation to the input data.<SEP>A network is a structure composed of nodes and edges, used here as a model in statistical mechanics.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-bc6cd88a44423ac7bc4a08969a8b99f8",
+        "chunk-7d7618b6fffb013ab6c5a2ca3a3fea50"
+      ],
+      "size": 3
+    },
+    {
+      "id": "图灵测试",
+      "label": "图灵测试",
+      "description": "阿兰·图灵在1950年论文中提出的功能主义智能定义，通过自然语言交流判断机器是否具备智能。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "不确定性",
+      "label": "不确定性",
+      "description": "Refers to the absence of fuzziness or uncertainty in a system's exact dynamics.<SEP>Treated as a random variable with a probability distribution W (mean zero) in the maximum entropy inference framework.<SEP>Uncertainty is a state of having limited knowledge where it is impossible to exactly describe the existing state, a key concept related to entropy.",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-40c170209efa5da46edeea817792b434",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 4
+    },
+    {
+      "id": "突触",
+      "label": "突触",
+      "description": "神经元之间的连接结构，其强度和连接的可塑性是大脑学习、记忆与环境适应的生物学基础。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "损失函数",
+      "label": "损失函数",
+      "description": "损失函数是机器学习中用于优化模型参数的函数，最大熵模型在优化过程中会使用它。<SEP>A function used in machine learning, particularly in neural network training for classification problems, to measure the error between predicted and actual outcomes.<SEP>损失函数用于衡量模型预测与真实值之间的差异，交叉熵是神经网络中广泛使用的一种损失函数。<SEP>损失函数追踪人工智能模型输出的错误程度，通过量化预测值与实际值之间的差异来实现。<SEP>损失函数是叶结点经验熵的期望，用于评估决策树模型的分类效果，值越小表示分类效果越好。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-f34ecacf5f99ee02bae6647b8bd65153",
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6",
+        "chunk-3fc4861498cff05f95c61b9202e2155c"
+      ],
+      "size": 9
+    },
+    {
+      "id": "PEP剪枝法",
+      "label": "PEP剪枝法",
+      "description": "PEP(悲观错误剪枝)是一种自上而下的后剪枝方法，由Quinlan提出，C4.5算法采用此法，根据剪枝前后的错误率判定是否修剪子树。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 2
+    },
+    {
+      "id": "过渡概率",
+      "label": "过渡概率",
+      "description": "Transition probabilities (P) that are inferred simultaneously with uncertainty and Lagrange multipliers.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5"
+      ],
+      "size": 3
+    },
+    {
+      "id": "图1",
+      "label": "图1",
+      "description": "图1直观呈现了语言模型作为智能体大脑，遵循最小化自由能机制产生行为的过程。<SEP>Figure 1 is a visual representation, likely a graph or chart, showing the partition function of the Karate Club network.<SEP>A figure referenced in the article, likely illustrating the proposed innovative method.",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-7d7618b6fffb013ab6c5a2ca3a3fea50",
+        "chunk-5b96b65f16399f35c9b04de8b22d0796"
+      ],
+      "size": 2
+    },
+    {
+      "id": "深度玻尔兹曼机",
+      "label": "深度玻尔兹曼机",
+      "description": "深度玻尔兹曼机是一种以受限玻尔兹曼机为基础的深度学习模型，本质是一种特殊构造的神经网络。<SEP>深度玻尔兹曼机(Deep Boltzmann Machine, DBM) is an extension of the Restricted Boltzmann Machine (RBM) and is considered within the realm of deep learning.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-93a18801c2737ad9536660fe9501c9d8",
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 3
+    },
+    {
+      "id": "MaxCal",
+      "label": "MaxCal",
+      "description": "Maximum Caliber, a method for inferring paths in dynamical systems.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-40c170209efa5da46edeea817792b434"
+      ],
+      "size": 3
+    },
+    {
+      "id": "自由能原理",
+      "label": "自由能原理",
+      "description": "The Free Energy Principle, explaining why the brain must operate based on Bayesian logic due to physical constraints of life.<SEP>自由能原理是一个数学框架，描述智能系统(包括大脑和机器)通过最小化自由能(即预测误差)来维持自身在不确定环境中的存续。<SEP>自由能原理由卡尔·弗里斯顿提出，认为生命体必须最小化自由能以在熵增世界中维持自身结构和秩序。<SEP>A principle connecting cognitive frameworks to the physical mechanism of life resisting entropy increase.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 10
+    },
+    {
+      "id": "数学模型",
+      "label": "数学模型",
+      "description": "A mathematical model sought to understand the brain's cognitive mechanisms.<SEP>Mathematical model is the tool being designed to describe the signal dynamics.",
+      "domains": [
+        "信息论",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-8c2cb0873e78699bf2531a59b921954f"
+      ],
+      "size": 2
+    },
+    {
+      "id": "热力学信息神经网络",
+      "label": "热力学信息神经网络",
+      "description": "采用归纳偏差来执行热力学第一和第二定律的强制执行。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-39fe5cddbd852d7e5e0202a65cc33f68"
+      ],
+      "size": 3
+    },
+    {
+      "id": "均方误差",
+      "label": "均方误差",
+      "description": "均方误差是一种损失函数，通常是回归算法的默认函数，计算预测值和真实值之间平方差的平均值。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6"
+      ],
+      "size": 4
+    },
+    {
+      "id": "平均绝对误差",
+      "label": "平均绝对误差",
+      "description": "平均绝对误差是一种损失函数，用于衡量预测值和实际值之间的平均绝对差，对异常值更具鲁棒性。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "最优编码",
+      "label": "最优编码",
+      "description": "最优编码是编码定理和信道编码定理所证明其存在的一种理想编码方式。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-5d34d389fc9a72d98bce995b723199a6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "NP难问题",
+      "label": "NP难问题",
+      "description": "寻找最优决策树是一个NP难问题，通常通过启发式方法解决，可能陷入局部最优。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-3fc4861498cff05f95c61b9202e2155c"
+      ],
+      "size": 2
+    },
+    {
+      "id": "智能的第一性原理",
+      "label": "智能的第一性原理",
+      "description": "The first principle of intelligence: a system's ability to use information to maintain its own order and resist entropy increase.<SEP>智能的第一性原理是从物理学、数学与信息论角度理解智能本质的宏观视角，认为智能是用信息抵抗熵增的组织方式。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-890027492eed3ffaa84135ada616a525"
+      ],
+      "size": 2
+    },
+    {
+      "id": "分类任务",
+      "label": "分类任务",
+      "description": "分类任务是指将输入数据分配到预定义类别的过程，本文中以文本分类为例。<SEP>分类任务是机器学习中的一种任务，目标是将输入数据(如文本)划分到预定义的类别中，例如政治、经济、娱乐等。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49"
+      ],
+      "size": 3
+    },
+    {
+      "id": "埃尔温·薛定谔",
+      "label": "埃尔温·薛定谔",
+      "description": "A physicist who, in 1944, proposed the groundbreaking insight in his book \"What is Life?\" that life feeds on \"negative entropy\" and that the program for maintaining order is stored in an \"aperiodic crystal.\"<SEP>埃尔温·薛定谔是物理学家，在其著作《生命是什么？》中提出了“生命以负熵为食”的洞见。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 2
+    },
+    {
+      "id": "骰子",
+      "label": "骰子",
+      "description": "一种用于产生随机数的多面体玩具，在示例中用于说明概率分布和期望。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 2
+    },
+    {
+      "id": "中心法则",
+      "label": "中心法则",
+      "description": "A principle proposed by Francis Crick explaining how life produces various proteins according to the DNA program.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "薛定谔",
+      "label": "薛定谔",
+      "description": "薛定谔是物理学家，在其著作《生命是什么》中讨论了熵与生命的关系。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 2
+    },
+    {
+      "id": "概率分布",
+      "label": "概率分布",
+      "description": "概率分布是数学和统计学中的一个核心概念，用于描述随机变量所有可能取值及其对应概率的完整情况。它本质上是一个数学函数，为某个实验或随机过程的不同可能结果分配其发生的概率，通常记作 p(x) 或 q(x)。在机器学习和信息论的上下文中，概率分布具有特别重要的意义。它是计算信息熵和交叉熵等关键度量的基础，这些度量用于量化信息或比较不同分布之间的差异。\n\n在多类分类模型的场景中，模型的输出通常就是一个概率分布，它表示输入样本属于每个可能类别的概率。在相关讨论中，概率分布常被区分为两种：一种是真实的数据分布（即期望输出，常表示为 p(x)），另一种是模型学习或预测出的分布（即实际输出，常表示为 q(x)）。因此，概率分布既是描述随机现象的理论工具，也是评估和优化预测模型性能的实践基础。<SEP>描述随机变量各可能取值发生概率的函数。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-380e2aedf9b91dc7de5d8747a6aa5723",
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-726d03cb1277ab1c0a32f929ee13c3fc",
+        "chunk-23713b5f1cb0ee19178382510009449e",
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-c83ff92607271cc36071ca55ac4a8385",
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 11
+    },
+    {
+      "id": "热力学第二定律",
+      "label": "热力学第二定律",
+      "description": "热力学基本定律之一，被热力学信息神经网络强制执行。<SEP>热力学第二定律是热力学的三条基本定律之一，它表述了热力学过程的不可逆性。<SEP>热力学第二定律指出，在一个孤立系统中，熵(无序程度)只会不断增加，不会减少，描述了宇宙从有序走向无序的底层趋势。<SEP>A fundamental law of thermodynamics stating that the total entropy of an isolated system can never decrease over time.<SEP>热力学第二定律是物理学中的一个基本定律，其数学表述借助熵的概念来描述热力学系统的不可逆过程。<SEP>热力学第二定律描述了孤立系统的熵总是趋向于增加。",
+      "domains": [
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-39fe5cddbd852d7e5e0202a65cc33f68",
+        "chunk-aedc5bd9c6d5647339e7b59deea0f006",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a",
+        "chunk-d0e494da55d171b3a3a8b96678397514",
+        "chunk-1248b4cdb9c5b6a4f15c20d0991319ae",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 4
+    },
+    {
+      "id": "定量分析",
+      "label": "定量分析",
+      "description": "定量分析是指依据统计数据建立数学模型，计算与病变相关的各项量化指标(如有丝分裂数目)，以提供更客观的诊断结果。<SEP>一种分析方法，在数字病理中使诊断更加准确和客观。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+        "chunk-b332af60e3fc8fedacf0ad7703f20c18"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Softmax",
+      "label": "Softmax",
+      "description": "Softmax函数是一种常用于多分类问题的函数，可以将输出层的多个连续值转换为概率分布。",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-23713b5f1cb0ee19178382510009449e"
+      ],
+      "size": 2
+    },
+    {
+      "id": "前向神经网络",
+      "label": "前向神经网络",
+      "description": "前向神经网络is a category of neural network models in deep learning, including DNN and CNN, characterized by forward propagation of signals.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "信息增益比",
+      "label": "信息增益比",
+      "description": "信息增益比是信息增益和特征熵的比值，是C4.5算法中引入的特征选择标准，用于解决信息增益偏向取值较多特征的问题。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9"
+      ],
+      "size": 3
+    },
+    {
+      "id": "赫布学习定律",
+      "label": "赫布学习定律",
+      "description": "A learning rule proposed by Donald Hebb stating that neurons that fire together wire together, revealing the brain's plasticity where synaptic connections are strengthened or weakened based on co-activation.<SEP>Hebb's learning law, a foundational concept in neuroscience and connectionism.<SEP>Hebbian learning rule, a theory in neuroscience that explains synaptic plasticity, mentioned as part of the foundation for modern neural networks.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 4
+    },
+    {
+      "id": "思想实验",
+      "label": "思想实验",
+      "description": "A thought experiment involving the gradual replacement of neurons with electronic components to explore the nature of intelligence and consciousness.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 4
+    },
+    {
+      "id": "最大熵原理马尔可夫问题",
+      "label": "最大熵原理马尔可夫问题",
+      "description": "A generalized approach using the maximum entropy principle to model conditional Markov processes for complex systems with continuously evolving data.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5"
+      ],
+      "size": 5
+    },
+    {
+      "id": "特征A_g",
+      "label": "特征A_g",
+      "description": "特征A_g是决策树算法中计算出的具有最大信息增益的特征，用于对数据集进行划分。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 2
+    },
+    {
+      "id": "男孩",
+      "label": "男孩",
+      "description": "男孩是举例中说话的人，他陈述了关于四川气候的事件。<SEP>男孩is a character in the communication model analogy who confesses his love to the girl, acting as the information sender.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 3
+    },
+    {
+      "id": "大语言模型",
+      "label": "大语言模型",
+      "description": "大语言模型是一种人工智能体的大脑，其认知方式和优化逻辑与人类大脑在最小化自由能上功能相似。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-eec0721be9c4be236261d47be592d37a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "郭毅可",
+      "label": "郭毅可",
+      "description": "郭毅可是文章的作者，提出了人类智能与机器智能共生共融的观点，并基于“物理同源、数学同构”的底层逻辑进行阐述。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "决策树",
+      "label": "决策树",
+      "description": "决策树是一种机器学习模型，信息增益用于评估特征对其的贡献。<SEP>A model based on a tree structure used for decision-making, applicable to classification and regression tasks.<SEP>决策树是一种用于分类和回归的机器学习模型，其构建涉及特征选择、生成和剪枝。<SEP>决策树是一种基本的分类和回归方法，呈树形结构，表示基于特征对实例进行分类的过程，可以认为是if-then规则的集合或定义在特征空间和类空间上的条件概率分布。<SEP>A machine learning model that uses a tree-like structure to make decisions, employing a divide-and-conquer strategy and greedy search to find optimal split points.<SEP>Decision tree is a predictive modeling approach used in machine learning for classification and regression, discussed in the lecture.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6",
+        "chunk-a79596200294b5109fdd0cf885110f83",
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-b787493679d2ca259f397315e308f4b1",
+        "chunk-331e8c8473a3dbee58697ad677051f43",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 12
+    },
+    {
+      "id": "太阳从西边升起",
+      "label": "太阳从西边升起",
+      "description": "太阳从西边升起is the surprising real event in \"The Wandering Earth\" example, representing the posterior distribution that contradicts common prior belief.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49"
+      ],
+      "size": 3
+    },
+    {
+      "id": "dGbyG",
+      "label": "dGbyG",
+      "description": "dGbyG是基于图神经网络开发的代谢反应标准吉布斯自由能预测工具。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-cc989a9fb47a8cd36db8fe7fb353106b"
+      ],
+      "size": 2
+    },
+    {
+      "id": "CCP剪枝法",
+      "label": "CCP剪枝法",
+      "description": "CCP(代价复杂度剪枝)是一种后剪枝方法，由完全树开始逐步剪枝得到子树序列，并在验证集上选择损失函数最小的树。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 4
+    },
+    {
+      "id": "探索",
+      "label": "探索",
+      "description": "A strategy where an agent chooses actions to learn more, reflecting advanced cognitive functions like curiosity and hypothesis generation.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "循环神经网络",
+      "label": "循环神经网络",
+      "description": "A type of neural network architecture formed when hidden units are interconnected, making learning challenging.<SEP>An autoregressive generative model used in the proposed method.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-b2aa136f0a91bbc88ed87eed07a66512",
+        "chunk-5b96b65f16399f35c9b04de8b22d0796"
+      ],
+      "size": 3
+    },
+    {
+      "id": "交叉熵损失函数",
+      "label": "交叉熵损失函数",
+      "description": "交叉熵损失函数是人工智能领域，特别是深度学习中，用于衡量模型预测结果与实际标签之间差异的重要工具。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+      ],
+      "size": 6
+    },
+    {
+      "id": "模型",
+      "label": "模型",
+      "description": "模型结合了多种约束，并有一个唯一的解。<SEP>Model refers to a mathematical representation of a system or process, discussed in the context of Bayes classification.",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-e4d6318364157e6228ebc39c8c646b45",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 2
+    },
+    {
+      "id": "基尼系数",
+      "label": "基尼系数",
+      "description": "基尼系数代表了模型的不纯度，基尼系数越小则不纯度越低，特征越好，是CART分类树算法使用的特征选择标准。<SEP>基尼系数是CART算法中用于度量数据集纯度的指标，当基尼系数小于阈值ε_1时，停止递归。<SEP>A measure used in the CART algorithm to determine the ideal attribute for splitting; it measures how often a randomly chosen attribute would be incorrectly classified.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-b787493679d2ca259f397315e308f4b1",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 4
+    },
+    {
+      "id": "神经科学家",
+      "label": "神经科学家",
+      "description": "神经科学家是追踪大脑区域之间连接的研究人员。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-c78a1678dd8dd1d890f89ffee94c2631"
+      ],
+      "size": 2
+    },
+    {
+      "id": "热力学",
+      "label": "热力学",
+      "description": "热力学信息神经网络所属的物理学分支。<SEP>热力学是物理学的一个分支，包含三条基本定律。<SEP>本研究属于热力学领域。<SEP>Thermodynamics is a branch of physics dealing with heat, work, and temperature.<SEP>A branch of physics that studies heat, work, and energy, and is the domain in which the concept of entropy is discussed.<SEP>热力学是物理学的一个分支，熵是其核心概念之一。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-39fe5cddbd852d7e5e0202a65cc33f68",
+        "chunk-aedc5bd9c6d5647339e7b59deea0f006",
+        "chunk-cc989a9fb47a8cd36db8fe7fb353106b",
+        "chunk-76741d601c3b02adb5beb29cf0c31924",
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-31dfc0a8415a0647f471a1cab88d6e36"
+      ],
+      "size": 3
+    },
+    {
+      "id": "相对熵",
+      "label": "相对熵",
+      "description": "Relative entropy, also known as Kullback-Leibler divergence and denoted as D_q(p), measures the difference between two probability distributions p(x) and q(x), calculated as the sum over x of p(x) times the base-2 logarithm of p(x)/q(x).<SEP>Relative entropy, also known as KL divergence, is a measure of the difference between two probability distributions P and Q. It is asymmetric and quantifies the extra bits needed to encode samples from P using a code optimized for Q.<SEP>相对熵，又称KL散度，是由交叉熵引申而来的概念，它衡量后验交叉熵与先验信息熵的差值，表示一个相对的吃惊程度。<SEP>相对熵是信息论中与交叉熵相关的概念，是交叉熵损失函数的基础之一。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-0c9d3f43376e35055643ae46b0d5a233",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+      ],
+      "size": 8
+    },
+    {
+      "id": "递归式共进化",
+      "label": "递归式共进化",
+      "description": "递归式共进化描述了人类与智能机器在深度融合过程中形成自加速的正向反馈链，相互促进并推动整个智能系统向更高维组织形态跃迁的过程。<SEP>递归式共进化描述智能机器与人类能力之间相互促进、形成正向反馈链的进化模式，推动整个智能系统向更高维组织形态跃迁。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-890027492eed3ffaa84135ada616a525",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "神经网络训练",
+      "label": "神经网络训练",
+      "description": "A process in machine learning where neural networks are optimized using input data.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 2
+    },
+    {
+      "id": "蛋白质",
+      "label": "蛋白质",
+      "description": "Proteins are produced according to the DNA program, and their existence is for the purpose of processing information more efficiently to enable survival and reproduction.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 2
+    },
+    {
+      "id": "编码",
+      "label": "编码",
+      "description": "编码是信息传递中对信息进行表达的方式，如使用不同的语言，它并非信息本身，而是一种表达形式。<SEP>编码是通信系统中的一个过程，用于将信息转换为适合传输的形式。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 3
+    },
+    {
+      "id": "编码定理",
+      "label": "编码定理",
+      "description": "编码定理是信息论的核心理论，阐述了在通信信道中实现可靠传输的可能性。<SEP>编码定理是信息论中的核心定理之一，从数学角度看是最优编码的存在性定理。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-c78284e4671aee8befd9c6871d1db529",
+        "chunk-5d34d389fc9a72d98bce995b723199a6"
+      ],
+      "size": 5
+    },
+    {
+      "id": "深度学习",
+      "label": "深度学习",
+      "description": "深度学习is a field of machine learning that includes various neural network models such as DNN, CNN, RNN, LSTM, and Boltzmann Machines.<SEP>深度学习是机器学习中一种基于对数据进行特征学习的方法，通过组合低层特征学习到数据的高层特征表达，常用于图像处理与计算机视觉领域。<SEP>一种人工智能技术，在数字病理分析中用于细胞和组织检测、分割、癌症分类和分级。<SEP>深度学习是人工智能的一个子领域，交叉熵损失函数在其中被广泛使用。",
+      "domains": [
+        "机器学习",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e378397631b5d452d5eb095ebbfde434",
+        "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+        "chunk-b332af60e3fc8fedacf0ad7703f20c18",
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+      ],
+      "size": 9
+    },
+    {
+      "id": "最大熵模型",
+      "label": "最大熵模型",
+      "description": "最大熵模型是基于最大熵原理构建的统计模型，用于在满足给定约束条件下选择熵最大的概率分布。<SEP>最大熵模型是一种典型的分类算法，属于对数线性分类模型，与逻辑回归类似。<SEP>最大熵模型是一种数学模型，其主要工作在于(人工)提取特征，当完成特征提取后，该模型给出了一种最佳的利用特征的方式。<SEP>最大熵模型是一种统计模型，在文本分类中用于计算每个类别的概率。<SEP>最大熵模型是一种基于概率的方法，用于构建概率模型，其核心思想是在给定约束条件下选择熵最大的概率分布。<SEP>A statistical model used for classification, less commonly applied in the era of deep learning.",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-d4b315e54e592e86c3a5acfef7099954",
+        "chunk-f34ecacf5f99ee02bae6647b8bd65153",
+        "chunk-8985837bff3264915ed561ec4d80111b",
+        "chunk-23713b5f1cb0ee19178382510009449e",
+        "chunk-2dd1a13b5c662bd9e747f8aa4b9d3361",
+        "chunk-d6085544a08784bc3999c91c72c5594a"
+      ],
+      "size": 9
+    },
+    {
+      "id": "病理切片",
+      "label": "病理切片",
+      "description": "病理切片是病理诊断的金标准，通过组织染色和显微相机数字化后形成数字病理切片，用于临床诊断和科研。<SEP>用于癌症诊断的临床样本，是诊断的金标准。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+        "chunk-b332af60e3fc8fedacf0ad7703f20c18"
+      ],
+      "size": 3
+    },
+    {
+      "id": "利用",
+      "label": "利用",
+      "description": "A strategy where an agent chooses actions most likely to yield good outcomes, reflecting reinforcement learning logic.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "梯度下降",
+      "label": "梯度下降",
+      "description": "Gradient descent, an optimization mechanism used in machine learning to adjust parameters.<SEP>梯度下降是一种优化方法，MSE损失函数因其易于通过梯度下降进行优化而具有优势。",
+      "domains": [
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "反馈神经网络",
+      "label": "反馈神经网络",
+      "description": "反馈神经网络is a category of neural network models in deep learning, including RNN and LSTM, characterized by feedback connections.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "创新方法",
+      "label": "创新方法",
+      "description": "The innovative method is applied for the efficient calculation of the dynamic partition function.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-5b96b65f16399f35c9b04de8b22d0796"
+      ],
+      "size": 3
+    },
+    {
+      "id": "主动推断",
+      "label": "主动推断",
+      "description": "主动推断是智能产生行为的机制，指系统通过行动改变外部世界，使感官输入更接近自身模型的预测。<SEP>A mechanism where a system takes action to make the external world conform to its predictions, reducing the gap between expectation and perception.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 4
+    },
+    {
+      "id": "诺伯特·维纳",
+      "label": "诺伯特·维纳",
+      "description": "美国科学家，创立控制论，认为智能核心在于“目标→行动→反馈”的闭环结构，强调反馈与调节。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 2
+    },
+    {
+      "id": "物理同源",
+      "label": "物理同源",
+      "description": "物理同源指碳基大脑与硅基芯片在物理层面都遵循热力学定律，是精密的、通过吸收信息抵抗熵增的信息化系统。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "统计物理学",
+      "label": "统计物理学",
+      "description": "A branch of physics that applies statistical methods to understand the behavior of physical systems with many particles.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-882f6cc5b251194ec83bb3e0280e7611"
+      ],
+      "size": 2
+    },
+    {
+      "id": "能量最小化思想",
+      "label": "能量最小化思想",
+      "description": "能量最小化思想是Hopfield网络的核心思想之一，影响了后来的玻尔兹曼机等模型的发展。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-673b334bee153545178b73f52b190891"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Huber损失",
+      "label": "Huber损失",
+      "description": "Huber损失是一种平滑L1损失，旨在平衡MAE和MSE的优势，包含一个可调整的超参数δ作为过渡点。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Foley",
+      "label": "Foley",
+      "description": "An economist who developed a statistical equilibrium theory of markets based on the sets of offers from market participants.<SEP>Developed the statistical equilibrium theory of markets.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 4
+    },
+    {
+      "id": "Golan",
+      "label": "Golan",
+      "description": "A researcher who used the maximum entropy principle to derive a multivariate stochastic theory for the distribution of firm sizes in an economy.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 2
+    },
+    {
+      "id": "输出层配分函数",
+      "label": "输出层配分函数",
+      "description": "The output layer partition function of the network is stated to be equal to the partition function of the input data.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-bc6cd88a44423ac7bc4a08969a8b99f8"
+      ],
+      "size": 4
+    },
+    {
+      "id": "强化学习",
+      "label": "强化学习",
+      "description": "Reinforcement learning, a logic reflected in the exploitation strategy of intelligent agents.<SEP>A technique combined with autoregressive generative models in the proposed method.",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-5b96b65f16399f35c9b04de8b22d0796"
+      ],
+      "size": 3
+    },
+    {
+      "id": "多层神经网络",
+      "label": "多层神经网络",
+      "description": "A type of neural network architecture with multiple layers, known for its powerful fitting capability.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-d6085544a08784bc3999c91c72c5594a"
+      ],
+      "size": 2
+    },
+    {
+      "id": "香农熵",
+      "label": "香农熵",
+      "description": "The Shannon entropy, which needs to be defined for probability distributions P and uncertainty W in the maximum entropy inference problem.<SEP>Shannon entropy is a concept used in the invention to define a function that measures the likelihood of test cases being misclassified and to rank them.",
+      "domains": [
+        "信息论",
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-dc26f10df4bfd7aac2de935884b8ad3f"
+      ],
+      "size": 4
+    },
+    {
+      "id": "出现概率",
+      "label": "出现概率",
+      "description": "字母在文本信息中出现的可能性，记为p(x)。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce"
+      ],
+      "size": 3
+    },
+    {
+      "id": "好奇心",
+      "label": "好奇心",
+      "description": "An intrinsic drive for an intelligent agent to enhance long-term survival and optimize future decision models in an uncertain world, no longer an \"additional trait\".",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "智能体",
+      "label": "智能体",
+      "description": "An agent, such as an embodied large model, endowed with active inference capabilities.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "A Symbolic Analysis of Relay and Switching Circuits",
+      "label": "A Symbolic Analysis of Relay and Switching Circuits",
+      "description": "这是克劳德·香农在1938年发表的硕士学位论文，该论文使他获得了美国Alfred Noble协会美国工程师奖，并被权威人士高度评价。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-a6f27f56460cd35be08035e374a80238"
+      ],
+      "size": 2
+    },
+    {
+      "id": "误差",
+      "label": "误差",
+      "description": "The difference or loss between the actual and predicted category probability distributions.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "舰船通信网络",
+      "label": "舰船通信网络",
+      "description": "Ship communication network is the specific type of network being studied.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-8c2cb0873e78699bf2531a59b921954f"
+      ],
+      "size": 3
+    },
+    {
+      "id": "神经网络",
+      "label": "神经网络",
+      "description": "神经网络是一种广泛应用于机器学习的计算模型。它通过将输入信号X映射到输出信号Y来执行诸如分类等任务，能够解决包括异或问题在内的复杂非线性关系。神经网络在概念上可以被抽象为一种通信模型，这使得信息论的概念，特别是交叉熵，能够被应用于模型的优化过程。此外，存在一些特殊构造的神经网络，例如深度玻尔兹曼机。在技术实现层面，神经网络的特定设计或训练方法有时可以用于节省计算资源，例如显存。",
+      "domains": [
+        "信息论",
+        "机器学习",
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+        "chunk-93a18801c2737ad9536660fe9501c9d8",
+        "chunk-36562522576eae8192339d548d0a1406",
+        "chunk-3fc4861498cff05f95c61b9202e2155c"
+      ],
+      "size": 11
+    },
+    {
+      "id": "工程观点",
+      "label": "工程观点",
+      "description": "工程观点认为编码定理和信道编码定理缺乏结构性，无法直接指导最优编码的具体实现。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-5d34d389fc9a72d98bce995b723199a6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "测试用例",
+      "label": "测试用例",
+      "description": "Test cases are the subjects being analyzed and ranked by the functions defined in the invention.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-dc26f10df4bfd7aac2de935884b8ad3f"
+      ],
+      "size": 4
+    },
+    {
+      "id": "贝叶斯大脑",
+      "label": "贝叶斯大脑",
+      "description": "The Bayesian Brain hypothesis, which posits the brain as an active inference machine making \"best guesses.\"<SEP>贝叶斯大脑是一种认知框架，描述大脑通过贝叶斯推理不断更新对世界的预测模型，以最小化预测误差。<SEP>A unified mathematical framework for human and machine cognition.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "詹姆斯·沃森",
+      "label": "詹姆斯·沃森",
+      "description": "An American molecular biologist who, together with Francis Crick, discovered the double-helix structure of DNA in 1953.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "均匀分布",
+      "label": "均匀分布",
+      "description": "在没有约束的情况下，均匀分布是熵最大的概率分布。<SEP>一种概率分布，所有可能结果发生的概率均相等。",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-d4b315e54e592e86c3a5acfef7099954",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 3
+    },
+    {
+      "id": "宏观热现象",
+      "label": "宏观热现象",
+      "description": "Macroscopic thermal phenomena refer to observable heat-related events like heat transfer and work.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-76741d601c3b02adb5beb29cf0c31924"
+      ],
+      "size": 2
+    },
+    {
+      "id": "HopField网络",
+      "label": "HopField网络",
+      "description": "一种具有对称权重且无自连接的递归神经网络，其网络动力学过程会最小化一个能量函数。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-52188c2297ba9ea322f462b96137a3c3"
+      ],
+      "size": 4
+    },
+    {
+      "id": "信息",
+      "label": "信息",
+      "description": "信息是生命、意识、技术、文化等系统在局部区域对抗混沌(熵增)的核心要素。",
+      "domains": [
+        "信息论",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-890027492eed3ffaa84135ada616a525",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 3
+    },
+    {
+      "id": "李德毅",
+      "label": "李德毅",
+      "description": "李德毅是院士，在《人工智能看哲学》一文中提出了人类智能与机器智能“物理上同源，数学上同构”的观点。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "METE (生态学最大熵原理)",
+      "label": "METE (生态学最大熵原理)",
+      "description": "The Maximum Entropy Theory of Ecology, a theoretical framework that predicts patterns of species abundance, spatial distribution, and energetics across scales and taxa.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 4
+    },
+    {
+      "id": "Bayes公式",
+      "label": "Bayes公式",
+      "description": "将条件概率P(x|y)与联合概率P(x, y)和边缘概率P(y)联系起来的公式，形式为P(x|y) = P(x, y) / P(y)。<SEP>Bayes' formula or theorem is a fundamental probability rule used in Bayes classification.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 4
+    },
+    {
+      "id": "模型预测",
+      "label": "模型预测",
+      "description": "The output probability distribution of categories generated by a neural network model.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "报价集",
+      "label": "报价集",
+      "description": "Sets of offers from market agents reflecting their desired and feasible transactions, conditioned on their information, technological possibilities, endowments, and preferences.<SEP>Sets of offers from market participants reflecting their desired and feasible trades, used as the starting point for market analysis in Foley's theory.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 3
+    },
+    {
+      "id": "女孩",
+      "label": "女孩",
+      "description": "女孩是举例中听男孩说话的人，她对关于四川气候的陈述会感到震惊。<SEP>女孩is a character used in the communication model analogy to explain cross-entropy, representing the information receiver whose level of surprise depends on her prior expectations.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 4
+    },
+    {
+      "id": "期望输出",
+      "label": "期望输出",
+      "description": "期望输出是机器学习模型训练中希望得到的理想概率分布，通常由真实标签或目标分布表示。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c83ff92607271cc36071ca55ac4a8385"
+      ],
+      "size": 3
+    },
+    {
+      "id": "负熵",
+      "label": "负熵",
+      "description": "A concept proposed by Erwin Schrödinger, meaning that life feeds on \"negative entropy\" by importing order from the external environment to maintain its highly ordered structure locally.<SEP>负熵是物理学家埃尔温·薛定谔提出的概念，指生命体从外界摄取用以抵抗内部熵增、维持有序状态的能量或信息。<SEP>负熵是系统为维持自身秩序所需要吸收的有序性或信息，是智能系统(包括人类和机器)生存的必要资源。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-890027492eed3ffaa84135ada616a525",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 3
+    },
+    {
+      "id": "CART",
+      "label": "CART",
+      "description": "CART是一种决策树生成算法。<SEP>CART是一种决策树学习算法，使用基尼系数作为特征选择的标准，基尼系数代表了模型的不纯度，基尼系数越小则不纯度越低。<SEP>An algorithm for building decision trees, short for \"Classification and Regression Trees,\" proposed by Leo Breiman, often using the Gini index.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 3
+    },
+    {
+      "id": "先验分布",
+      "label": "先验分布",
+      "description": "先验分布是信息接收方在观测数据之前，心中默认或预期的概率分布。<SEP>在观测到数据之前，对模型参数不确定性的概率描述。",
+      "domains": [
+        "信息论",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 4
+    },
+    {
+      "id": "智能",
+      "label": "智能",
+      "description": "吸收信息以对抗熵增的能力，其本质不由物理载体决定，核心在于目标设定、行动影响和反馈调节的闭环。<SEP>Intelligence is an adaptive ability that allows organisms to rapidly \"iterate\" within a single generation through learning and memory, emerging from the coordinated work of neurons.<SEP>智能被理解为一个不断“减少自由能”的过程，核心机制是最小化预测误差。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 8
+    },
+    {
+      "id": "因果解释",
+      "label": "因果解释",
+      "description": "A direct interpretation of the impact of each exogenous variable on each inferred transition probability.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5"
+      ],
+      "size": 2
+    },
+    {
+      "id": "人工智能",
+      "label": "人工智能",
+      "description": "一个技术领域，包括深度学习，用于推动病理分析从定性向定量转变。<SEP>人工智能是交叉熵损失函数应用的一个主要领域。",
+      "domains": [
+        "机器学习",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+      ],
+      "size": 3
+    },
+    {
+      "id": "空间分布",
+      "label": "空间分布",
+      "description": "A probability distribution in METE that describes the spatial aggregation of individuals within a species across an area.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 3
+    },
+    {
+      "id": "连接主义",
+      "label": "连接主义",
+      "description": "人工智能学派，强调人类智能与机器智能在物理和功能上同源，是现代神经网络成功的关键思想基础。<SEP>A school of thought in artificial intelligence that emphasizes the connectionist approach, key to modern AI success.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "字母",
+      "label": "字母",
+      "description": "文本信息中的基本组成单位，其出现具有特定的概率。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce"
+      ],
+      "size": 3
+    },
+    {
+      "id": "生成式模型",
+      "label": "生成式模型",
+      "description": "一种从数据生成过程角度进行建模的统计模型，当先验分布为均匀分布时，其最大似然估计等价于最小二乘法。<SEP>通过联合概率P(x, c)或似然P(x|c)和先验P(c)来建模，并用于分类的模型。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 3
+    },
+    {
+      "id": "隐藏单元",
+      "label": "隐藏单元",
+      "description": "Units within a Boltzmann machine that can be connected to each other.<SEP>受限玻尔兹曼机中代表数据潜在特征的一种神经元。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-b2aa136f0a91bbc88ed87eed07a66512",
+        "chunk-52188c2297ba9ea322f462b96137a3c3"
+      ],
+      "size": 4
+    },
+    {
+      "id": "刘建平Pinard",
+      "label": "刘建平Pinard",
+      "description": "The poster/author of the blog text containing the technical discussion on RBMs.<SEP>刘建平Pinard is the author of the document discussing neural network models in deep learning.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-1fc2a79f5ff94f4338a312c2e0a2db74",
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "JioNLP Article",
+      "label": "JioNLP Article",
+      "description": "The JioNLP article explains the concept of cross-entropy and its application in neural networks.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-56a41b95a520be32c97da3124e41c828"
+      ],
+      "size": 3
+    },
+    {
+      "id": "信息增益",
+      "label": "信息增益",
+      "description": "Information gain is a term used in contexts like Bayesian inference to describe the gain in information when updating beliefs from a prior distribution q to a posterior distribution p, equivalent to KL divergence.<SEP>A criterion used in decision tree algorithms to select the best attribute for splitting data, calculated as the reduction in entropy.<SEP>信息增益是用于度量特征对于决策树的贡献的一个度量标准。<SEP>A criterion for selecting the best feature to split on in a decision tree.<SEP>信息增益是特征对训练数据集的信息增益，定义为集合的经验熵与特征给定条件下经验条件熵之差，是ID3算法使用的特征选择标准。<SEP>信息增益是决策树算法中用于选择最优划分特征的一种度量标准，当信息增益小于阈值ε时，停止划分并返回单节点树。<SEP>A metric used in the ID3 algorithm to evaluate candidate splits in a decision tree.",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-0c9d3f43376e35055643ae46b0d5a233",
+        "chunk-93b5920864ffe7c0f735f87ccf578d34",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6",
+        "chunk-a79596200294b5109fdd0cf885110f83",
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-b787493679d2ca259f397315e308f4b1",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 10
+    },
+    {
+      "id": "生态结构函数",
+      "label": "生态结构函数",
+      "description": "A joint probability distribution in METE that describes the allocation of individuals among species and their metabolic rates, conditioned on state variables.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4"
+      ],
+      "size": 3
+    },
+    {
+      "id": "神经元网络",
+      "label": "神经元网络",
+      "description": "大脑中由神经元连接形成的网络，其连接模式的改变是学习和记忆的物理基础。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 3
+    },
+    {
+      "id": "生命",
+      "label": "生命",
+      "description": "生命是热力学第二定律的“逆行者”，作为开放系统持续与外部环境交换能量与物质，通过摄取“负熵”来维持自身的秩序和结构。<SEP>Life is described as feeding on \"negative entropy,\" maintaining order by exchanging energy and matter with the external environment, and fundamentally characterized by maintaining order within chaos.<SEP>生命是希望在一个熵增世界中维持自身结构和秩序的系统，其物理特性决定了大脑必须遵循贝叶斯逻辑。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 5
+    },
+    {
+      "id": "联合熵",
+      "label": "联合熵",
+      "description": "Joint entropy, denoted as H(X, Y), measures the total uncertainty of two random variables X and Y together, calculated as the sum over x and y of p(x, y) times the base-2 logarithm of 1/p(x, y).<SEP>The joint entropy of P and W, which is maximized under constraints in the inference problem.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-1aee14dcece6506b2fb182a424fefbd5"
+      ],
+      "size": 6
+    },
+    {
+      "id": "Hopfield网络",
+      "label": "Hopfield网络",
+      "description": "The Hopfield network is a discrete feedback neural network (recurrent neural network) proposed by physicist John Hopfield in 1982.<SEP>Hopfield网络是一种神经网络模型，在1980年代神经网络复兴中起到重要作用，为神经网络的记忆机制和递归结构提供了基础。",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-76741d601c3b02adb5beb29cf0c31924",
+        "chunk-673b334bee153545178b73f52b190891"
+      ],
+      "size": 2
+    },
+    {
+      "id": "广义的最大熵原理马尔可夫问题",
+      "label": "广义的最大熵原理马尔可夫问题",
+      "description": "A generalized maximum entropy principle Markov problem.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-40c170209efa5da46edeea817792b434"
+      ],
+      "size": 3
+    },
+    {
+      "id": "softmax",
+      "label": "softmax",
+      "description": "A mathematical function that converts a vector of numbers into a probability distribution.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-882f6cc5b251194ec83bb3e0280e7611"
+      ],
+      "size": 2
+    },
+    {
+      "id": "玻尔兹曼",
+      "label": "玻尔兹曼",
+      "description": "Boltzmann is a physicist associated with the statistical interpretation of entropy.<SEP>玻尔兹曼是提出熵的统计力学定义公式S = k * ln W的物理学家。<SEP>玻尔兹曼是物理学家，提出了熵的统计解释，公式为S=k*lnW。",
+      "domains": [
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-76741d601c3b02adb5beb29cf0c31924",
+        "chunk-74f709ca5bbf7d60213a39cdce19a507",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "概率分布P(v,h)",
+      "label": "概率分布P(v,h)",
+      "description": "概率分布P(v,h) is the probability distribution defining the state of an RBM given $v$ and $h$, expressed as $P(v,h) = \\frac{1}{Z}e^{-E(v,h)}$.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "无向模型",
+      "label": "无向模型",
+      "description": "一种概率图模型，其配分函数依赖于模型参数。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-f5c5908d5644515cf8bcda82498e6671"
+      ],
+      "size": 2
+    },
+    {
+      "id": "通信系统",
+      "label": "通信系统",
+      "description": "通信系统是包括信息发送方、接收方、信道和编码的场景，是理解信息论的背景框架。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 4
+    },
+    {
+      "id": "阿兰·图灵",
+      "label": "阿兰·图灵",
+      "description": "认为复杂思维可拆解为机械步骤的开创者，提出了图灵机和图灵测试，影响了人工智能的发展方向。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 2
+    },
+    {
+      "id": "变分自编码器",
+      "label": "变分自编码器",
+      "description": "Variational autoencoder (VAE) is a type of generative model whose objective function is composed of KL divergence, used for learning latent space representations.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-0c9d3f43376e35055643ae46b0d5a233"
+      ],
+      "size": 2
+    },
+    {
+      "id": "广义方法",
+      "label": "广义方法",
+      "description": "A generalized method discussed for solving complex problems without increasing model complexity.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-40c170209efa5da46edeea817792b434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "随机变量",
+      "label": "随机变量",
+      "description": "A variable whose possible values are numerical outcomes of a random phenomenon, denoted as X and Y in the context of joint, conditional entropy, and mutual information.<SEP>在信息论中，未知的信息内容(如男孩要说的话)可以被视为一个随机变量X，其信息量与其发生的概率相关。<SEP>随机变量是一个变量，其可能值由随机现象的结果决定，信息熵的计算与其概率分布有关。",
+      "domains": [
+        "信息论",
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 5
+    },
+    {
+      "id": "统计均衡理论",
+      "label": "统计均衡理论",
+      "description": "A theory of market analysis that begins with the set of offers from market agents and maximizes the entropy of the distribution of market transactions.",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-1aee14dcece6506b2fb182a424fefbd5"
+      ],
+      "size": 4
+    },
+    {
+      "id": "剪枝",
+      "label": "剪枝",
+      "description": "剪枝是一种通过移除决策树的部分子树来简化模型、避免过拟合的技术。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-3fc4861498cff05f95c61b9202e2155c"
+      ],
+      "size": 3
+    },
+    {
+      "id": "分类交叉熵损失",
+      "label": "分类交叉熵损失",
+      "description": "分类交叉熵损失是一种应用于多类分类的损失函数，模型以概率分布的形式输出预测。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-408bf4ea5cb0bf2933de13a97fd69ee6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "类别",
+      "label": "类别",
+      "description": "类别是多分类问题中数据可能被分配到的目标分组。<SEP>类别是分类任务中预定义的组别，本文示例包括政治、经济、娱乐、社会、科技、历史、家庭等七种类型。",
+      "domains": [
+        "信息论",
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-23713b5f1cb0ee19178382510009449e",
+        "chunk-56a41b95a520be32c97da3124e41c828"
+      ],
+      "size": 3
+    },
+    {
+      "id": "碳基神经元",
+      "label": "碳基神经元",
+      "description": "Carbon-based neurons, the biological material of the human brain, contrasted with electronic components in the thought experiment.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 3
+    },
+    {
+      "id": "并行计算结构",
+      "label": "并行计算结构",
+      "description": "并行计算结构是一种计算架构，在文中特指玻尔兹曼机所采用的结构。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-29b81edcfc109c880298f79878843454"
+      ],
+      "size": 3
+    },
+    {
+      "id": "衡量测试用例被错误分类可能性大小的函数",
+      "label": "衡量测试用例被错误分类可能性大小的函数",
+      "description": "The invention defines functions that measure the likelihood of test cases being misclassified.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-dc26f10df4bfd7aac2de935884b8ad3f"
+      ],
+      "size": 3
+    },
+    {
+      "id": "分布",
+      "label": "分布",
+      "description": "Probability distribution, referenced as P(X) and Q(X) in the context of calculating KL divergence.<SEP>描述字母出现概率的整体情况。<SEP>The arrangement or spread of particles across different states in a system.",
+      "domains": [
+        "信息论",
+        "数学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-bcb9e2b1f343c904193b0f647416ae0e",
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce",
+        "chunk-882f6cc5b251194ec83bb3e0280e7611"
+      ],
+      "size": 3
+    },
+    {
+      "id": "人脑",
+      "label": "人脑",
+      "description": "The human brain, described as highly complex and the seat of cognitive abilities.<SEP>人脑是包含约860亿个神经元的器官。",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-c78a1678dd8dd1d890f89ffee94c2631"
+      ],
+      "size": 2
+    },
+    {
+      "id": "实际输出",
+      "label": "实际输出",
+      "description": "实际输出是机器学习模型根据输入数据计算出的预测概率分布。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-c83ff92607271cc36071ca55ac4a8385"
+      ],
+      "size": 3
+    },
+    {
+      "id": "后剪枝",
+      "label": "后剪枝",
+      "description": "后剪枝是在决策树构建完成后，用叶子节点替代置信度不达标的节点子树的剪枝方法，包括CCP、REP、PEP、MEP等方法。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 3
+    },
+    {
+      "id": "Bayes分类",
+      "label": "Bayes分类",
+      "description": "一种基于贝叶斯定理的分类方法，旨在最小化分类错误的期望代价。<SEP>Bayes classification is a statistical method for classification based on Bayes' theorem, discussed in the lecture.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 6
+    },
+    {
+      "id": "基尼不纯度",
+      "label": "基尼不纯度",
+      "description": "Gini impurity is a function used in the invention to measure the likelihood of test cases being misclassified and to rank them.<SEP>A criterion for selecting the best feature to split on in a decision tree.",
+      "domains": [
+        "信息论",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-dc26f10df4bfd7aac2de935884b8ad3f",
+        "chunk-a79596200294b5109fdd0cf885110f83"
+      ],
+      "size": 4
+    },
+    {
+      "id": "熵",
+      "label": "熵",
+      "description": "熵是一个在热力学、统计物理学和信息论等多个学科中具有核心重要性的概念，其核心含义是衡量系统或信息的不确定性、无序度或混乱程度。\n\n在物理学领域，熵最初由鲁道夫·克劳修斯引入，是一个热力学概念，用于量化系统的无序度，其变化由公式 ΔS = ΔQ/T 描述。根据热力学第二定律，孤立系统的熵总是趋向于增加至最大值。路德维希·玻尔兹曼给出了熵的微观统计解释，其定义公式为 S = k * ln W，其中W代表系统的微观状态数。生命体等开放系统通过消耗能量和物质来抵抗熵增，维持有序结构。\n\n在信息论领域，熵由克劳德·香农定义，通常表示为H(p)，是随机变量不确定性的度量，也是接收每条消息时所包含的平均信息量，被称为信息熵或平均自信息量。其数学定义为对概率分布中所有可能结果的信息量求和，用以量化平均信息内容。以2为底的对数所计算的信息熵，是平均编码长度的度量。KL散度（相对熵）可以通过信息熵与交叉熵来表达，而交叉熵损失函数也基于此概念。\n\n在机器学习领域，熵被用作度量数据集中不确定性、不纯度或无序度的指标。它在决策树算法（如ID3）中至关重要，用于计算经验熵和经验条件熵，进而作为计算信息增益和信息增益比的基础，以评估候选分割点。\n\n熵的概念具有统一性，既度量物理系统的无序度，也度量信息中的不确定性。它也可以被视为一种分散度的度量，例如在经济学中，能使交易分布熵最大化的分配是在给定约束下最分散的可能状态。<SEP>一个系统无序度或信息不确定性的度量。<SEP>Entropy is a concept from information theory and thermodynamics, measuring uncertainty or disorder, covered in the lecture.<SEP>熵是最大熵模型中的核心概念，代表概率分布的不确定性或信息量，模型旨在最大化此值。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-380e2aedf9b91dc7de5d8747a6aa5723",
+        "chunk-9e4905d7255ffcf74cb7aad95daffceb",
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-0c9d3f43376e35055643ae46b0d5a233",
+        "chunk-d4b315e54e592e86c3a5acfef7099954",
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a",
+        "chunk-76741d601c3b02adb5beb29cf0c31924",
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-ed0ca1ab77e5b700d5a4eb0d861cccb4",
+        "chunk-1248b4cdb9c5b6a4f15c20d0991319ae",
+        "chunk-31dfc0a8415a0647f471a1cab88d6e36",
+        "chunk-74f709ca5bbf7d60213a39cdce19a507",
+        "chunk-0662825c74f8b5ee226b4f32d6eae491",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce",
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5",
+        "chunk-93b5920864ffe7c0f735f87ccf578d34",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6",
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-331e8c8473a3dbee58697ad677051f43",
+        "chunk-2f3b241c528a53767a4138490b41e2f0",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0",
+        "chunk-2dd1a13b5c662bd9e747f8aa4b9d3361"
+      ],
+      "size": 26
+    },
+    {
+      "id": "机器智能",
+      "label": "机器智能",
+      "description": "Machine intelligence, whose core goal is to effectively organize machines into a precisely operating information-based anti-entropy system.<SEP>机器智能是硅基系统(如人工智能)所具备的智能形态，其本质同样是系统通过吸收信息以抵抗熵增、维系自身秩序的能力，在高速建模与数据处理上具有专长。<SEP>Machine intelligence, discussed in contrast to and in commonality with human intelligence.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 8
+    },
+    {
+      "id": "机器学习",
+      "label": "机器学习",
+      "description": "机器学习（Machine Learning）是一个研究领域，属于计算机科学和人工智能的范畴。该领域专注于使用算法和统计模型，使计算机系统能够从数据中学习和改进，而无需进行明确的、针对特定任务的编程。机器学习的基础内容涵盖多个方面，包括信息论。在方法上，该领域运用诸如梯度下降等优化机制来训练模型。决策树学习是机器学习领域内的一种具体方法。根据文档及其元数据的指示，当前文本内容所属的领域正是机器学习。<SEP>The domain or field of study to which the document content belongs.<SEP>Machine learning is the field or domain to which the lecture content belongs.",
+      "domains": [
+        "信息论",
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-c83ff92607271cc36071ca55ac4a8385",
+        "chunk-93b5920864ffe7c0f735f87ccf578d34",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6",
+        "chunk-a79596200294b5109fdd0cf885110f83",
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+        "chunk-331e8c8473a3dbee58697ad677051f43",
+        "chunk-074ae094f32d31b781b0e74bdeb88703",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 6
+    },
+    {
+      "id": "贝叶斯定理",
+      "label": "贝叶斯定理",
+      "description": "Bayes' theorem, the elegant mathematical formula at the core of Bayesian theory.<SEP>贝叶斯定理是大脑推理所遵循的数学逻辑，用于在最小化自由能的过程中更新信念。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-eec0721be9c4be236261d47be592d37a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "公式S=k*lnW",
+      "label": "公式S=k*lnW",
+      "description": "公式S = k * ln W是熵的统计力学定义，由玻尔兹曼提出，将熵与系统的微观状态数联系起来。<SEP>这是玻尔兹曼提出的熵的统计力学公式，其中S是熵，k是玻尔兹曼常数，W是微观状态数。",
+      "domains": [
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-74f709ca5bbf7d60213a39cdce19a507",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "香农",
+      "label": "香农",
+      "description": "香农是信息论的创始人，提出了信息熵的概念。<SEP>香农是信息论的创始人，提出了信息熵的概念。",
+      "domains": [
+        "信息论",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-0662825c74f8b5ee226b4f32d6eae491",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "数字病理",
+      "label": "数字病理",
+      "description": "数字病理是病理学的一个分支，涉及将病理切片数字化，以方便保存、传输和分析，被认为是病理学发展的重要转折点。<SEP>一个医学领域，涉及病理切片的数字化和分析。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+        "chunk-b332af60e3fc8fedacf0ad7703f20c18"
+      ],
+      "size": 3
+    },
+    {
+      "id": "彩票",
+      "label": "彩票",
+      "description": "彩票是一种博彩工具，中奖概率极低，在例子中用于演示低概率事件带来的高信息量。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 2
+    },
+    {
+      "id": "通信模型",
+      "label": "通信模型",
+      "description": "通信模型是描述信号从输入到输出传输过程的框架，在本文中用于类比神经网络。<SEP>通信模型是信息论中描述信息从发送方到接收方传递过程的抽象框架，交叉熵可以用来衡量接收方接收到的信息相对于其预期的吃惊程度。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49"
+      ],
+      "size": 3
+    },
+    {
+      "id": "熵增",
+      "label": "熵增",
+      "description": "The increase in entropy, a state of disorder, which life resists.<SEP>熵增是热力学第二定律的核心概念，指系统自发趋向于无序和混乱的状态，是宇宙的基本趋势。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-890027492eed3ffaa84135ada616a525"
+      ],
+      "size": 4
+    },
+    {
+      "id": "过拟合",
+      "label": "过拟合",
+      "description": "过拟合是指模型对训练数据分类很准确，但对未知测试数据分类准确性下降的现象，通常由于模型过于复杂导致。<SEP>过拟合是模型过于复杂而过度拟合训练数据，导致泛化能力下降的现象，剪枝可以用于避免过拟合。<SEP>A modeling error where a model is too complex and learns the noise in the training data, reducing its generalizability.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-b787493679d2ca259f397315e308f4b1",
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 3
+    },
+    {
+      "id": "叶结点t",
+      "label": "叶结点t",
+      "description": "叶结点t是决策树T的终端节点，包含N_t个样本点，其中N_tk个属于k类，其分类混乱程度用经验熵H_t(T)度量。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 2
+    },
+    {
+      "id": "记忆",
+      "label": "记忆",
+      "description": "记忆并非存储在文件中，而是大脑中特定神经元网络的连接模式，是经验、知识和思考过程留下的物理性痕迹。<SEP>Memory is described as the \"connection pattern\" of specific neural networks in the brain, where experiences and knowledge leave physical traces by altering synaptic strengths and connections.<SEP>记忆是大脑用新证据修正旧模型的过程，是感知和学习的一部分，旨在最小化预测误差。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-eec0721be9c4be236261d47be592d37a",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577"
+      ],
+      "size": 4
+    },
+    {
+      "id": "四川",
+      "label": "四川",
+      "description": "四川是一个地区，在例子中遭遇了有气象观测记录以来最干旱高温的夏天，这是一个低概率事件。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 4
+    },
+    {
+      "id": "平均编码长度",
+      "label": "平均编码长度",
+      "description": "整段文本信息中所有字母编码长度的期望值，计算公式为-∑ p(x) log_2 p(x)。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce"
+      ],
+      "size": 3
+    },
+    {
+      "id": "离散型HopField网络",
+      "label": "离散型HopField网络",
+      "description": "一种激活函数为符号函数的HopField网络，其神经元状态为二进制。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-52188c2297ba9ea322f462b96137a3c3"
+      ],
+      "size": 2
+    },
+    {
+      "id": "KL散度",
+      "label": "KL散度",
+      "description": "Kullback-Leibler divergence, a measure used to calculate the distance or difference between two probability distributions.<SEP>KL散度是一种度量，用于衡量使用基于分布Q的编码来编码来自分布P的样本平均所需的额外比特数。<SEP>KL divergence, short for Kullback–Leibler divergence, is another name for relative entropy. It measures the non-symmetric difference between two probability distributions.<SEP>KL散度是一种用于衡量两个概率分布之间差异的目标函数，在比较学习概率分布和源概率分布时被使用。<SEP>KL散度是相对熵的另一种称呼，用于衡量两个概率分布之间的差异。",
+      "domains": [
+        "信息论",
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-bcb9e2b1f343c904193b0f647416ae0e",
+        "chunk-e7d56d1a1382da4ef9c8e90e4d8fd39f",
+        "chunk-0c9d3f43376e35055643ae46b0d5a233",
+        "chunk-726d03cb1277ab1c0a32f929ee13c3fc",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49"
+      ],
+      "size": 7
+    },
+    {
+      "id": "CART算法",
+      "label": "CART算法",
+      "description": "CART算法是一种决策树生成算法，它使用基尼系数作为特征选择标准，并采用CCP剪枝法进行剪枝。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 3
+    },
+    {
+      "id": "经验熵",
+      "label": "经验熵",
+      "description": "经验熵用于衡量一个叶结点中分类结果的混乱程度，值越大表示分类结果越混乱，分类效果越差。<SEP>经验熵用于度量叶结点中分类结果的混乱程度，经验熵越大表示分类结果越混乱，其计算公式基于叶结点中各类别样本的比例。",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-3fc4861498cff05f95c61b9202e2155c",
+        "chunk-b787493679d2ca259f397315e308f4b1"
+      ],
+      "size": 4
+    },
+    {
+      "id": "DNA双螺旋结构",
+      "label": "DNA双螺旋结构",
+      "description": "The molecular structure of DNA discovered by James Watson and Francis Crick, explaining that the arrangement of ATCG bases constitutes the genetic code of life.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a"
+      ],
+      "size": 5
+    },
+    {
+      "id": "阈值",
+      "label": "阈值",
+      "description": "神经元的参数，决定其状态改变所需的输入水平。<SEP>Threshold is a parameter used in the ID3 algorithm to determine whether to stop splitting and return a leaf node.",
+      "domains": [
+        "机器学习",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-52188c2297ba9ea322f462b96137a3c3",
+        "chunk-b5a3719d78ce70f7d68e86833b8aa9a9"
+      ],
+      "size": 3
+    },
+    {
+      "id": "配分函数",
+      "label": "配分函数",
+      "description": "The partition function is a central concept, noted to remain constant during the training process from time t=0 to t=∞.<SEP>The partition function is a fundamental quantity in statistical mechanics that sums over all possible states of a system; here, it quantifies the amount of information retained on all original nodes of a network.<SEP>配分函数是统计力学中的一个核心概念，用于计算系统的热力学性质。<SEP>分数函数的一种，通常用于描述系统的统计分布。<SEP>一个依赖于模型参数的函数，在计算无向模型的概率时起到归一化作用。<SEP>A function in statistical mechanics that sums over all possible states of a system, used to calculate thermodynamic properties.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-bc6cd88a44423ac7bc4a08969a8b99f8",
+        "chunk-7d7618b6fffb013ab6c5a2ca3a3fea50",
+        "chunk-36562522576eae8192339d548d0a1406",
+        "chunk-08c978d767db01aaeef63f40ea958f51",
+        "chunk-f5c5908d5644515cf8bcda82498e6671",
+        "chunk-882f6cc5b251194ec83bb3e0280e7611"
+      ],
+      "size": 8
+    },
+    {
+      "id": "代价函数",
+      "label": "代价函数",
+      "description": "用于衡量分类器性能的函数，定义为将样本错误分类的期望代价。<SEP>Cost function is a function that maps an event or values of one or more variables onto a real number intuitively representing some \"cost\" associated with the event, mentioned in the context of Bayes classification.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c",
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 2
+    },
+    {
+      "id": "人类智能",
+      "label": "人类智能",
+      "description": "Human intelligence, which shares a physical and functional homology with machine intelligence according to the text.<SEP>人类智能是碳基生命体(人类)所具备的智能形态，其本质是系统通过吸收信息以抵抗熵增、维系自身秩序的能力，在具身探索与推理决策上具有优势。<SEP>Human intelligence, discussed in contrast to and in commonality with machine intelligence.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-3a748b94de215b941d68d078dd68dd6d",
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 8
+    },
+    {
+      "id": "数学观点",
+      "label": "数学观点",
+      "description": "数学观点将编码定理和信道编码定理视为最优编码的存在性定理。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-5d34d389fc9a72d98bce995b723199a6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "小北",
+      "label": "小北",
+      "description": "小北是一个买彩票的人，他经历了未中奖和两次中奖的事件，用以说明信息量的大小。<SEP>小北是一个购买彩票的人，在连续中奖两次后对彩票系统产生怀疑，后来发现彩票中心主任是他的父亲，因此其中奖概率被暗中提高。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 4
+    },
+    {
+      "id": "Ross Quinlan",
+      "label": "Ross Quinlan",
+      "description": "The proposer of the ID3 and C4.5 decision tree algorithms.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-331e8c8473a3dbee58697ad677051f43"
+      ],
+      "size": 3
+    },
+    {
+      "id": "自由能框架",
+      "label": "自由能框架",
+      "description": "A theoretical framework that unifies cognition and action, aiming to minimize free energy by reducing the gap between internal models and sensory input.",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-477b045a573ebc356439c0b836643741"
+      ],
+      "size": 2
+    },
+    {
+      "id": "人工神经网络",
+      "label": "人工神经网络",
+      "description": "人工神经网络是一种并行计算结构，文中指出玻尔兹曼机就是这种结构。<SEP>Artificial neural network is the method used to establish the mapping relationship between mesoscopic damage and macroscopic stiffness of solid propellants.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-29b81edcfc109c880298f79878843454",
+        "chunk-f922579134fc1d01217fc44031832b5f"
+      ],
+      "size": 2
+    },
+    {
+      "id": "对数线性分类模型",
+      "label": "对数线性分类模型",
+      "description": "对数线性分类模型是一类分类算法的总称，最大熵模型和逻辑回归都属于此类模型。",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-f34ecacf5f99ee02bae6647b8bd65153"
+      ],
+      "size": 3
+    },
+    {
+      "id": "神经元",
+      "label": "神经元",
+      "description": "A type of cell, described as the \"chosen one,\" whose core mission is to process higher-level information to achieve intelligence through signal transmission via axons, dendrites, and synapses.<SEP>Biological neurons in the human brain, considered in a thought experiment about material substitution.<SEP>神经网络中的基本计算单元，具有输入、权重、阈值和状态等特征。<SEP>神经元是大脑细胞，通过生物电讯号激活并相互连接形成网络。",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+        "chunk-477b045a573ebc356439c0b836643741",
+        "chunk-52188c2297ba9ea322f462b96137a3c3",
+        "chunk-c78a1678dd8dd1d890f89ffee94c2631"
+      ],
+      "size": 9
+    },
+    {
+      "id": "节点",
+      "label": "节点",
+      "description": "Nodes are the fundamental units or points within the communication network.",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-8c2cb0873e78699bf2531a59b921954f"
+      ],
+      "size": 3
+    },
+    {
+      "id": "特征",
+      "label": "特征",
+      "description": "特征是最大熵模型处理的对象，模型的主要工作在于(人工)提取特征。<SEP>特征是机器学习模型中的输入变量，其重要性可以通过信息增益来度量。",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-8985837bff3264915ed561ec4d80111b",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+      ],
+      "size": 3
+    },
+    {
+      "id": "信息论",
+      "label": "信息论",
+      "description": "信息论（Information Theory）是由克劳德·香农（Claude Shannon）创立的数学理论，是数学和计算机科学的一个分支。它主要研究信息的量化、存储、传输和处理，其核心在于阐述信息的本质是消除不确定性。信息论的核心概念之一是熵，该理论为交叉熵提供了理论基础。\n\n信息论是数字通信理论的基础，旨在解决通信中的基本问题。它也为脉冲耦合神经网络等相关研究提供了领域背景。作为一个基础性理论，信息论在机器学习、自然语言处理等多个现代科技领域有着广泛的应用。此外，该领域的研究也提供了将博弈论与实证证据联系起来的推理框架。在相关文档的元数据中，信息论常被标识为所提及的研究领域或学科。<SEP>研究信息传输、处理和度量的科学领域。<SEP>信息论是研究信息传输、处理、量化和应用的科学领域。<SEP>The domain or field of study mentioned in the document metadata.<SEP>信息论是交叉熵损失函数概念起源的学科领域。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-9e4905d7255ffcf74cb7aad95daffceb",
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-54a0d4972c29a80d85d0bae2eef78577",
+        "chunk-31dfc0a8415a0647f471a1cab88d6e36",
+        "chunk-c236f82f4d1c6b66d541fbb6f8076051",
+        "chunk-b3aee2cd221856b5ea7d30d3400aa8dd",
+        "chunk-8c2cb0873e78699bf2531a59b921954f",
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+        "chunk-0da87cc9d247bbbc97d0642c59a0a3ce",
+        "chunk-c78284e4671aee8befd9c6871d1db529",
+        "chunk-5d34d389fc9a72d98bce995b723199a6",
+        "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+      ],
+      "size": 13
+    },
+    {
+      "id": "克劳修斯",
+      "label": "克劳修斯",
+      "description": "Rudolf Clausius is a physicist who defined entropy from macroscopic thermal phenomena such as heat transfer and work.<SEP>A German physicist who originally introduced the concept of entropy.<SEP>克劳修斯是引入熵概念并用于表述热力学第二定律的物理学家。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-76741d601c3b02adb5beb29cf0c31924",
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-1248b4cdb9c5b6a4f15c20d0991319ae"
+      ],
+      "size": 3
+    },
+    {
+      "id": "输入数据",
+      "label": "输入数据",
+      "description": "The input data is described as a one-dimensional Ising model.<SEP>The actual data fed into a neural network model for training or prediction.",
+      "domains": [
+        "机器学习",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-bc6cd88a44423ac7bc4a08969a8b99f8",
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 5
+    },
+    {
+      "id": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "label": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "description": "This is the title and content of a lecture or course material covering topics including Bayes classification, entropy, decision trees, and feature selection.",
+      "domains": [
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-2f3b241c528a53767a4138490b41e2f0"
+      ],
+      "size": 6
+    },
+    {
+      "id": "数学同构",
+      "label": "数学同构",
+      "description": "数学同构指“贝叶斯大脑”与“自由能原理”为人类智能和机器智能构建了统一的认知框架，其核心工作机制都是通过持续学习与交互最小化预测误差。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-728fd00b31adc6c169bac4b11f4d064a"
+      ],
+      "size": 4
+    },
+    {
+      "id": "互信息",
+      "label": "互信息",
+      "description": "Mutual information, denoted as I(X, Y), measures the amount of information obtained about one random variable through observing another random variable, calculated as the sum over x and y of p(x, y) times the base-2 logarithm of p(x, y)/(p(x)p(y)).",
+      "domains": [
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437"
+      ],
+      "size": 5
+    },
+    {
+      "id": "交叉熵",
+      "label": "交叉熵",
+      "description": "交叉熵（Cross-entropy）是信息论中的一个核心概念，用于衡量两个概率分布之间的差异或距离。在数学上，它被表示为 H(p, q) 或 H_p(q)，其含义是使用一个为概率分布 q 设计的编码方案，来编码来自真实概率分布 p 的事件时，所需的平均比特数。其计算公式通常为对真实分布 p(x) 与模型分布 q(x) 的对数期望求和，即 -Σ p(x) log q(x)（或以 1/q(x) 的形式表达）。交叉熵的值越小，表明两个概率分布越接近。\n\n这一概念与信息熵和KL散度（Kullback–Leibler divergence）的计算密切相关，常被用作比较分布差异的度量。在机器学习领域，特别是神经网络中，交叉熵被广泛用作损失函数，以量化模型预测的概率分布与真实标签分布之间的差异，从而指导模型的优化过程。从认知角度看，交叉熵也可以理解为当使用一个主观预期的概率分布去观测随机变量，而真实分布与之不同时所感受到的平均“惊讶”程度。",
+      "domains": [
+        "信息论",
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-b0156872199d42b66461b7109077a437",
+        "chunk-bcb9e2b1f343c904193b0f647416ae0e",
+        "chunk-0c9d3f43376e35055643ae46b0d5a233",
+        "chunk-56a41b95a520be32c97da3124e41c828",
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+        "chunk-c83ff92607271cc36071ca55ac4a8385",
+        "chunk-c110f5c53d8d82646eee2498b51ba01a"
+      ],
+      "size": 19
+    },
+    {
+      "id": "最大熵原理",
+      "label": "最大熵原理",
+      "description": "最大熵原理认为在所有可能的概率分布中，熵最大的分布是最好的。<SEP>The principle of maximum entropy.<SEP>A principle used to infer probability distributions by maximizing entropy under given constraints, applied in economics, ecology, and other fields.<SEP>A principle used to develop statistical equilibrium models, including quantal response in economic interactions.<SEP>最大熵原理指出，在所有可能的概率分布中，熵最大的分布是最合理的。<SEP>在满足已知约束条件的所有可能概率分布中，选择熵最大的那一个分布的原则。",
+      "domains": [
+        "数学",
+        "机器学习"
+      ],
+      "source_chunks": [
+        "chunk-d4b315e54e592e86c3a5acfef7099954",
+        "chunk-1aee14dcece6506b2fb182a424fefbd5",
+        "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4",
+        "chunk-40c170209efa5da46edeea817792b434",
+        "chunk-62fad8ab846c9df991d8fe50bdf2edf6",
+        "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+      ],
+      "size": 9
+    },
+    {
+      "id": "贝叶斯最优分类器",
+      "label": "贝叶斯最优分类器",
+      "description": "一种分类器，其目标是找到使期望代价最小的决策函数。",
+      "domains": [
+        "未知"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c"
+      ],
+      "size": 2
+    },
+    {
+      "id": "信道",
+      "label": "信道",
+      "description": "Channel refers to the communication pathway whose properties are being modeled.<SEP>信道是信息传递模型中的信息介质，如电话线，负责传递信息，但可能引入噪音影响信息准确性。<SEP>信道是通信系统中的一个组成部分，用于传输信息。",
+      "domains": [
+        "信息论"
+      ],
+      "source_chunks": [
+        "chunk-8c2cb0873e78699bf2531a59b921954f",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 4
+    },
+    {
+      "id": "信息熵",
+      "label": "信息熵",
+      "description": "信息熵是熵的别称，指接收的每条消息中包含的信息的平均量。<SEP>Information entropy, a concept compared with cross-entropy in the calculation of KL divergence.<SEP>信息熵是香农提出的概念，用于量化信息的不确定性。<SEP>A concept from information theory, often referred to as Entropy.<SEP>信息熵又称信息量，用于量化在通信过程中传递了多少信息，其值取决于事件发生的概率。<SEP>信息熵是信息论中度量随机变量不确定性的平均信息量，公式为H(X)=∑p(x)log2(1/p(x))，其值非负。",
+      "domains": [
+        "信息论",
+        "数学"
+      ],
+      "source_chunks": [
+        "chunk-9e4905d7255ffcf74cb7aad95daffceb",
+        "chunk-bcb9e2b1f343c904193b0f647416ae0e",
+        "chunk-0662825c74f8b5ee226b4f32d6eae491",
+        "chunk-33949af9012de6222abbb5ee9e909273",
+        "chunk-a6f27f56460cd35be08035e374a80238",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973"
+      ],
+      "size": 6
+    },
+    {
+      "id": "对数似然",
+      "label": "对数似然",
+      "description": "模型参数的对数似然函数，其梯度包含配分函数梯度的贡献。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-f5c5908d5644515cf8bcda82498e6671"
+      ],
+      "size": 2
+    },
+    {
+      "id": "判别式模型",
+      "label": "判别式模型",
+      "description": "直接根据后验概率P(c|x)决定样本点x的归类结果的模型。",
+      "domains": [
+        "未知"
+      ],
+      "source_chunks": [
+        "chunk-92f40240065404b9b3529cf829f8077c"
+      ],
+      "size": 2
+    },
+    {
+      "id": "玻尔兹曼机",
+      "label": "玻尔兹曼机",
+      "description": "A type of stochastic recurrent neural network invented by Geoffrey Hinton.<SEP>玻尔兹曼机是一种适用于解决包含大量“弱”约束的约束满足问题的并行计算结构。<SEP>A type of neural network where hidden units can be interconnected, forming recurrent neural networks, which makes learning difficult.<SEP>玻尔兹曼机是一种受Hopfield网络能量最小化思想影响的后续神经网络模型。<SEP>玻尔兹曼机is the third category of neural network models in deep learning discussed in the document, with Restricted Boltzmann Machine (RBM) being a prominent example.",
+      "domains": [
+        "物理学-热力学",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-d0e494da55d171b3a3a8b96678397514",
+        "chunk-29b81edcfc109c880298f79878843454",
+        "chunk-b2aa136f0a91bbc88ed87eed07a66512",
+        "chunk-673b334bee153545178b73f52b190891",
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 7
+    },
+    {
+      "id": "能量函数",
+      "label": "能量函数",
+      "description": "为神经网络(如HopField网络)定义的函数，随着网络更新而减小，表明网络收敛到稳定状态。<SEP>能量函数for an RBM, given state vectors $v$ and $h$, is defined as $E(v,h) = -a^Tv - b^Th - h^TWv$.<SEP>分数函数的一种，通常与系统的能量状态相关。",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-52188c2297ba9ea322f462b96137a3c3",
+        "chunk-e378397631b5d452d5eb095ebbfde434",
+        "chunk-08c978d767db01aaeef63f40ea958f51"
+      ],
+      "size": 4
+    },
+    {
+      "id": "归纳偏差",
+      "label": "归纳偏差",
+      "description": "用于构建热力学信息神经网络，以强制执行热力学定律。",
+      "domains": [
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-39fe5cddbd852d7e5e0202a65cc33f68"
+      ],
+      "size": 2
+    },
+    {
+      "id": "信息量",
+      "label": "信息量",
+      "description": "信息量是信息论中的概念，衡量信息接收方对信息的直观震惊程度，与事件发生的概率成反比。<SEP>信息量是衡量一个事件发生所带来的信息多少的度量，通常用概率的负对数表示，概率越小的事件发生，其信息量越大。<SEP>Information quantity refers to the measure of information content; in this context, it is what the partition function of the network represents.",
+      "domains": [
+        "信息论",
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+        "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+        "chunk-7d7618b6fffb013ab6c5a2ca3a3fea50"
+      ],
+      "size": 5
+    },
+    {
+      "id": "对数损失函数",
+      "label": "对数损失函数",
+      "description": "对数损失函数is the loss function used for training RBM models on a dataset of m samples, aiming to minimize $L(W,a,b) = -\\sum\\limits_{i=1}^{m}ln(P(V^{(i)}))$.",
+      "domains": [
+        "统计力学"
+      ],
+      "source_chunks": [
+        "chunk-e378397631b5d452d5eb095ebbfde434"
+      ],
+      "size": 2
+    },
+    {
+      "id": "分类问题",
+      "label": "分类问题",
+      "description": "A type of problem in machine learning and statistics where the goal is to categorize data into predefined classes.<SEP>A type of problem in machine learning where the goal is to assign categories to data points.",
+      "domains": [
+        "机器学习",
+        "物理学-热力学"
+      ],
+      "source_chunks": [
+        "chunk-6135ecccd835afdfdaba2f58578ed61e",
+        "chunk-d6085544a08784bc3999c91c72c5594a"
+      ],
+      "size": 4
+    }
+  ],
+  "edges": [
+    {
+      "source": "现代神经网络",
+      "target": "连接主义",
+      "relation": "related",
+      "description": "连接主义强调智能的物理同源性，是现代神经网络得以成功和发展的关键思想基础。"
+    },
+    {
+      "source": "现代神经网络",
+      "target": "赫布学习定律",
+      "relation": "related",
+      "description": "Modern neural networks are described as the engineering crystallization of Hebb's learning law.<SEP>Modern neural networks are considered an engineering crystallization of Hebbian learning principles."
+    },
+    {
+      "source": "控制论",
+      "target": "智能",
+      "relation": "related",
+      "description": "控制论指出智能的核心在于具备“目标→行动→反馈”的闭环结构，强调反馈是智能的调节机制。"
+    },
+    {
+      "source": "控制论",
+      "target": "诺伯特·维纳",
+      "relation": "related",
+      "description": "诺伯特·维纳创立了控制论，为动物和机器的控制与通讯提供了统一的理论框架。"
+    },
+    {
+      "source": "C4.5",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "The C4.5 algorithm can use information gain to evaluate splits."
+    },
+    {
+      "source": "C4.5",
+      "target": "决策树",
+      "relation": "related",
+      "description": "C4.5是用于生成决策树的一种算法。<SEP>C4.5是决策树算法发展过程中的一个重要版本，使用信息增益比进行特征选择以改进ID3。"
+    },
+    {
+      "source": "C4.5",
+      "target": "ID3",
+      "relation": "related",
+      "description": "C4.5 is a later iteration and successor to the ID3 algorithm."
+    },
+    {
+      "source": "C4.5",
+      "target": "信息增益比",
+      "relation": "related",
+      "description": "C4.5算法使用信息增益比作为其核心特征选择的标准，以解决ID3的缺陷。"
+    },
+    {
+      "source": "C4.5",
+      "target": "Ross Quinlan",
+      "relation": "related",
+      "description": "Ross Quinlan is also the proposer and developer of the C4.5 algorithm."
+    },
+    {
+      "source": "条件熵",
+      "target": "熵",
+      "relation": "related",
+      "description": "Conditional entropy is derived from entropy and measures the uncertainty of one variable given knowledge of another."
+    },
+    {
+      "source": "条件熵",
+      "target": "联合熵",
+      "relation": "related",
+      "description": "Joint entropy can be decomposed into the sum of conditional entropy and the entropy of the other variable, showing their mathematical relationship."
+    },
+    {
+      "source": "条件熵",
+      "target": "随机变量",
+      "relation": "related",
+      "description": "Conditional entropy measures the uncertainty of one random variable given the knowledge of another random variable."
+    },
+    {
+      "source": "条件熵",
+      "target": "互信息",
+      "relation": "related",
+      "description": "Mutual information can also be expressed as the reduction in uncertainty (entropy) of one variable given knowledge of another, linking it to conditional entropy."
+    },
+    {
+      "source": "弗朗西斯·克里克",
+      "target": "詹姆斯·沃森",
+      "relation": "related",
+      "description": "James Watson and Francis Crick collaborated to discover the structure of DNA."
+    },
+    {
+      "source": "弗朗西斯·克里克",
+      "target": "DNA双螺旋结构",
+      "relation": "related",
+      "description": "Francis Crick, together with James Watson, discovered and elucidated the double-helix structure of DNA."
+    },
+    {
+      "source": "弗朗西斯·克里克",
+      "target": "自然",
+      "relation": "related",
+      "description": "Francis Crick, along with James Watson, published their discovery of the DNA double helix in the journal \"Nature.\""
+    },
+    {
+      "source": "弗朗西斯·克里克",
+      "target": "中心法则",
+      "relation": "related",
+      "description": "Francis Crick proposed the \"central dogma\" to explain how life produces proteins according to the DNA program."
+    },
+    {
+      "source": "克劳德·艾尔伍德·香农",
+      "target": "信息论",
+      "relation": "related",
+      "description": "克劳德·艾尔伍德·香农创立了信息论，阐述了信息消除不确定性的本质。<SEP>克劳德·香农是信息论的创始人，他通过发表《通信的一个数学理论》开创了这一领域。"
+    },
+    {
+      "source": "克劳德·艾尔伍德·香农",
+      "target": "A Symbolic Analysis of Relay and Switching Circuits",
+      "relation": "related",
+      "description": "克劳德·香农撰写并发表了这篇重要的硕士学位论文。"
+    },
+    {
+      "source": "Softmax函数",
+      "target": "类别",
+      "relation": "related",
+      "description": "Softmax函数为每个类别计算一个概率值。"
+    },
+    {
+      "source": "逻辑回归",
+      "target": "最大熵模型",
+      "relation": "related",
+      "description": "最大熵模型和逻辑回归在算法类型上类似，都属于对数线性分类模型。"
+    },
+    {
+      "source": "逻辑回归",
+      "target": "对数线性分类模型",
+      "relation": "related",
+      "description": "逻辑回归是一种具体的对数线性分类模型。"
+    },
+    {
+      "source": "特征选择",
+      "target": "决策树",
+      "relation": "related",
+      "description": "特征选择是决策树学习过程中的三个关键步骤之一。"
+    },
+    {
+      "source": "特征选择",
+      "target": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "relation": "related",
+      "description": "The lecture covers the topic of feature selection."
+    },
+    {
+      "source": "Batchsize",
+      "target": "神经网络",
+      "relation": "related",
+      "description": "在神经网络训练中，调整Batchsize是一个关键的参数设置，直接影响资源消耗。"
+    },
+    {
+      "source": "受限玻尔兹曼机",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "The Boltzmann machine category includes the Restricted Boltzmann Machine (RBM), which is the most widely used model in practical applications like recommendation systems."
+    },
+    {
+      "source": "受限玻尔兹曼机",
+      "target": "深度玻尔兹曼机",
+      "relation": "related",
+      "description": "深度玻尔兹曼机以受限玻尔兹曼机为基础构建而成。<SEP>The Deep Boltzmann Machine (DBM) is an extension and generalization of the Restricted Boltzmann Machine (RBM)."
+    },
+    {
+      "source": "受限玻尔兹曼机",
+      "target": "隐藏单元",
+      "relation": "related",
+      "description": "受限玻尔兹曼机包含学习数据潜在表示的隐藏单元。"
+    },
+    {
+      "source": "受限玻尔兹曼机",
+      "target": "能量函数",
+      "relation": "related",
+      "description": "The RBM model uses an energy function $E(v,h)$ to define the state energy given vectors $v$ and $h$."
+    },
+    {
+      "source": "受限玻尔兹曼机",
+      "target": "对数损失函数",
+      "relation": "related",
+      "description": "The RBM model uses the logarithmic loss function for training on a dataset to optimize its parameters $W, a, b$."
+    },
+    {
+      "source": "流浪地球",
+      "target": "太阳从西边升起",
+      "relation": "related",
+      "description": "In the story \"The Wandering Earth,\" a key event is that the sun rises from the west due to changes in Earth's rotation."
+    },
+    {
+      "source": "最佳编码长度",
+      "target": "出现概率",
+      "relation": "related",
+      "description": "字母的最佳编码长度由其出现概率的对数决定。"
+    },
+    {
+      "source": "最佳编码长度",
+      "target": "平均编码长度",
+      "relation": "related",
+      "description": "所有字母的最佳编码长度按概率加权求和，得到整段文本的平均编码长度。"
+    },
+    {
+      "source": "自回归生成模型",
+      "target": "循环神经网络",
+      "relation": "related",
+      "description": "Autoregressive generative models include recurrent neural networks as a specific type."
+    },
+    {
+      "source": "自回归生成模型",
+      "target": "创新方法",
+      "relation": "related",
+      "description": "The innovative method utilizes autoregressive generative models."
+    },
+    {
+      "source": "类别概率分布",
+      "target": "输入数据",
+      "relation": "related",
+      "description": "Input data is characterized by its actual category probability distribution."
+    },
+    {
+      "source": "类别概率分布",
+      "target": "模型预测",
+      "relation": "related",
+      "description": "The model prediction generates a predicted category probability distribution."
+    },
+    {
+      "source": "预测误差",
+      "target": "智能",
+      "relation": "related",
+      "description": "智能系统通过最小化预测误差来减少自由能。"
+    },
+    {
+      "source": "预测误差",
+      "target": "大脑",
+      "relation": "related",
+      "description": "大脑通过最小化预测误差(自由能)来维持稳定并适应环境。"
+    },
+    {
+      "source": "预测误差",
+      "target": "dGbyG",
+      "relation": "related",
+      "description": "dGbyG工具将验证集预测误差的中位数减小到4.11 kJ/mol。"
+    },
+    {
+      "source": "信息传递模型",
+      "target": "信息论",
+      "relation": "related",
+      "description": "信息论为理解信息传递模型提供了理论基础，该模型抽象描述了通信过程。"
+    },
+    {
+      "source": "信息传递模型",
+      "target": "信道",
+      "relation": "related",
+      "description": "信息传递模型包含信道作为信息传递的介质。"
+    },
+    {
+      "source": "信息传递模型",
+      "target": "编码",
+      "relation": "related",
+      "description": "信息传递过程涉及对信息使用不同的编码方式。"
+    },
+    {
+      "source": "电子元件",
+      "target": "思想实验",
+      "relation": "related",
+      "description": "The thought experiment involves substituting biological neurons with electronic components."
+    },
+    {
+      "source": "电子元件",
+      "target": "碳基神经元",
+      "relation": "related",
+      "description": "Electronic components are contrasted with and proposed as substitutes for carbon-based neurons."
+    },
+    {
+      "source": "深度学习算法",
+      "target": "最大熵模型",
+      "relation": "related",
+      "description": "Deep learning algorithms have largely replaced maximum entropy models for classification due to superior performance."
+    },
+    {
+      "source": "深度学习算法",
+      "target": "分类问题",
+      "relation": "related",
+      "description": "Deep learning algorithms are now the prevalent method for solving classification problems."
+    },
+    {
+      "source": "深度学习算法",
+      "target": "多层神经网络",
+      "relation": "related",
+      "description": "Deep learning algorithms are often implemented using multi-layer neural networks."
+    },
+    {
+      "source": "泊松点过程",
+      "target": "节点",
+      "relation": "related",
+      "description": "The Poisson point process is used to model the distribution and relationships between nodes."
+    },
+    {
+      "source": "泊松点过程",
+      "target": "信道",
+      "relation": "related",
+      "description": "The Poisson point process is used to construct the model of the communication channel."
+    },
+    {
+      "source": "信道编码定理",
+      "target": "最优编码",
+      "relation": "related",
+      "description": "信道编码定理从数学上证明了最优编码的存在。"
+    },
+    {
+      "source": "信道编码定理",
+      "target": "数学观点",
+      "relation": "related",
+      "description": "从数学观点看，信道编码定理是关于最优编码的存在性定理。"
+    },
+    {
+      "source": "信道编码定理",
+      "target": "工程观点",
+      "relation": "related",
+      "description": "从工程观点看，信道编码定理不是结构性的，不能直接指导实现。"
+    },
+    {
+      "source": "杰弗里·辛顿",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "杰弗里·辛顿指出，人类大脑和大语言模型对语言的理解方式几乎是同一种方式，揭示了人类智能与机器智能在机制上的相似性。"
+    },
+    {
+      "source": "杰弗里·辛顿",
+      "target": "思想实验",
+      "relation": "related",
+      "description": "Geoffrey Hinton proposed a thought experiment to explore the material basis of intelligence and consciousness."
+    },
+    {
+      "source": "杰弗里·辛顿",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "Geoffrey Hinton is credited with inventing the Boltzmann machine."
+    },
+    {
+      "source": "归一化常数",
+      "target": "配分函数",
+      "relation": "related",
+      "description": "The partition function is also referred to as the normalization constant."
+    },
+    {
+      "source": "归一化常数",
+      "target": "softmax",
+      "relation": "related",
+      "description": "The softmax function utilizes a normalization constant in its computation."
+    },
+    {
+      "source": "自然",
+      "target": "詹姆斯·沃森",
+      "relation": "related",
+      "description": "James Watson, along with Francis Crick, published their discovery of the DNA double helix in the journal \"Nature.\""
+    },
+    {
+      "source": "ID3",
+      "target": "熵",
+      "relation": "related",
+      "description": "The ID3 algorithm uses entropy as a key metric to evaluate candidate splits."
+    },
+    {
+      "source": "ID3",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "ID3算法使用信息增益作为其核心特征选择的标准。<SEP>The ID3 algorithm uses information gain as a metric to evaluate candidate splits."
+    },
+    {
+      "source": "ID3",
+      "target": "阈值",
+      "relation": "related",
+      "description": "The ID3 algorithm uses a threshold parameter to decide whether the information gain of the best feature is sufficient to continue splitting."
+    },
+    {
+      "source": "ID3",
+      "target": "决策树",
+      "relation": "related",
+      "description": "ID3是用于生成决策树的一种算法。<SEP>ID3是决策树算法发展过程中的一个重要版本，使用信息增益进行特征选择。"
+    },
+    {
+      "source": "ID3",
+      "target": "Ross Quinlan",
+      "relation": "related",
+      "description": "Ross Quinlan is the proposer and developer of the ID3 algorithm."
+    },
+    {
+      "source": "分布Q",
+      "target": "KL散度",
+      "relation": "related",
+      "description": "KL散度用于度量使用基于分布Q的编码来编码样本所需的额外比特数。"
+    },
+    {
+      "source": "本发明",
+      "target": "香农熵",
+      "relation": "related",
+      "description": "The invention defines and applies a function based on Shannon entropy."
+    },
+    {
+      "source": "本发明",
+      "target": "基尼不纯度",
+      "relation": "related",
+      "description": "The invention defines and applies a function based on Gini impurity."
+    },
+    {
+      "source": "本发明",
+      "target": "衡量测试用例被错误分类可能性大小的函数",
+      "relation": "related",
+      "description": "The invention defines functions that measure the likelihood of test cases being misclassified."
+    },
+    {
+      "source": "大脑",
+      "target": "贝叶斯定理",
+      "relation": "related",
+      "description": "大脑基于贝叶斯定理进行工作，以最小化预测误差的方式进行推理和学习。"
+    },
+    {
+      "source": "大脑",
+      "target": "自由能原理",
+      "relation": "related",
+      "description": "大脑遵循自由能原理，通过最小化自由能来维持自身结构并抵抗熵增。"
+    },
+    {
+      "source": "大脑",
+      "target": "大语言模型",
+      "relation": "related",
+      "description": "大语言模型与人类大脑在认知方式和优化逻辑上功能相似，都遵循最小化自由能的原则。"
+    },
+    {
+      "source": "大脑",
+      "target": "突触",
+      "relation": "related",
+      "description": "大脑通过突触层面的动态可塑性进行学习、记忆和适应环境。"
+    },
+    {
+      "source": "网络",
+      "target": "输出层配分函数",
+      "relation": "related",
+      "description": "The network possesses an output layer partition function as one of its properties."
+    },
+    {
+      "source": "网络",
+      "target": "配分函数",
+      "relation": "related",
+      "description": "The partition function is defined for the network and has a clear physical meaning related to information."
+    },
+    {
+      "source": "图灵测试",
+      "target": "智能",
+      "relation": "related",
+      "description": "图灵测试曾被视为衡量机器智能的核心标准，关注机器在行为上能否表现得像在思考。"
+    },
+    {
+      "source": "图灵测试",
+      "target": "阿兰·图灵",
+      "relation": "related",
+      "description": "阿兰·图灵提出了图灵测试，从行为表现(尤其是语言能力)来功能性地定义机器智能。"
+    },
+    {
+      "source": "不确定性",
+      "target": "熵",
+      "relation": "related",
+      "description": "Entropy is a measure of uncertainty."
+    },
+    {
+      "source": "不确定性",
+      "target": "广义方法",
+      "relation": "related",
+      "description": "The generalized method simplifies to classical principles under the condition of no uncertainty."
+    },
+    {
+      "source": "不确定性",
+      "target": "MaxCal",
+      "relation": "related",
+      "description": "MaxCal converges to the same result as other methods when there is no uncertainty."
+    },
+    {
+      "source": "突触",
+      "target": "神经元网络",
+      "relation": "related",
+      "description": "神经元网络由突触连接构成，突触的可塑性(强弱和增减)是网络学习和适应的基础。"
+    },
+    {
+      "source": "损失函数",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵是神经网络中广泛使用的损失函数，用于优化模型。"
+    },
+    {
+      "source": "损失函数",
+      "target": "最大熵模型",
+      "relation": "related",
+      "description": "最大熵模型在优化过程中会使用损失函数来调整模型参数。"
+    },
+    {
+      "source": "损失函数",
+      "target": "神经网络",
+      "relation": "related",
+      "description": "在用于分类问题的神经网络训练中，损失函数得到了广泛应用，用于评估和优化模型。"
+    },
+    {
+      "source": "损失函数",
+      "target": "均方误差",
+      "relation": "related",
+      "description": "均方误差是损失函数的一种特定类型，通常用作回归算法的默认函数。"
+    },
+    {
+      "source": "损失函数",
+      "target": "平均绝对误差",
+      "relation": "related",
+      "description": "平均绝对误差是损失函数的一种类型，以其对异常值的鲁棒性为特点。"
+    },
+    {
+      "source": "损失函数",
+      "target": "分类交叉熵损失",
+      "relation": "related",
+      "description": "分类交叉熵损失是损失函数的一种类型，专门应用于多类分类问题。"
+    },
+    {
+      "source": "损失函数",
+      "target": "经验熵",
+      "relation": "related",
+      "description": "损失函数是叶结点经验熵的期望，经验熵是计算损失函数的基础组成部分。"
+    },
+    {
+      "source": "损失函数",
+      "target": "剪枝",
+      "relation": "related",
+      "description": "剪枝过程通过比较剪枝前后的损失函数值来决定是否进行剪枝，以优化模型。"
+    },
+    {
+      "source": "PEP剪枝法",
+      "target": "后剪枝",
+      "relation": "related",
+      "description": "PEP剪枝法是后剪枝方法中的一种具体实现。"
+    },
+    {
+      "source": "过渡概率",
+      "target": "最大熵原理马尔可夫问题",
+      "relation": "related",
+      "description": "Transition probabilities (P) are one of the outputs inferred in the optimization of the maximum entropy Markov problem."
+    },
+    {
+      "source": "过渡概率",
+      "target": "因果解释",
+      "relation": "related",
+      "description": "Each exogenous variable has a direct causal interpretation regarding its impact on the inferred transition probabilities."
+    },
+    {
+      "source": "图1",
+      "target": "大语言模型",
+      "relation": "related",
+      "description": "图1直观呈现了以语言模型作为智能体大脑，驱动其产生行为并遵循最小化自由能机制的过程。"
+    },
+    {
+      "source": "深度玻尔兹曼机",
+      "target": "神经网络",
+      "relation": "related",
+      "description": "深度玻尔兹曼机被描述为一种特殊构造的神经网络。"
+    },
+    {
+      "source": "MaxCal",
+      "target": "广义的最大熵原理马尔可夫问题",
+      "relation": "related",
+      "description": "The generalized method discussed can be simplified to MaxCal under conditions of no uncertainty and a system in a steady state."
+    },
+    {
+      "source": "自由能原理",
+      "target": "熵",
+      "relation": "related",
+      "description": "自由能原理的核心是生命体通过最小化自由能来对抗宇宙的无序化趋势(熵增)。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "机器智能",
+      "relation": "related",
+      "description": "“自由能原理”是描述机器智能(及广义智能系统)认知和工作机制的理论框架，其核心是通过最小化自由能(预测误差)来适应环境。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "贝叶斯定理",
+      "relation": "related",
+      "description": "The Free Energy Principle explains that the brain must work based on Bayesian logic due to the physical nature of life itself.<SEP>自由能原理从生命的物理观出发，推导出大脑必须遵循贝叶斯逻辑的必然性。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "贝叶斯大脑",
+      "relation": "related",
+      "description": "The Bayesian brain establishes a unified cognitive framework, which is connected via the free energy principle to the physical mechanism of life."
+    },
+    {
+      "source": "自由能原理",
+      "target": "智能",
+      "relation": "related",
+      "description": "智能的核心机制被理解为不断“减少自由能”的过程。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "生命",
+      "relation": "related",
+      "description": "生命体的物理特性(对抗宇宙无序化)决定了其必须遵循自由能原理以维持存续。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "记忆",
+      "relation": "related",
+      "description": "记忆作为用新证据修正旧模型的过程，是自由能最小化在认知层面的体现。"
+    },
+    {
+      "source": "自由能原理",
+      "target": "熵增",
+      "relation": "related",
+      "description": "The free energy principle connects cognitive frameworks to the physical mechanism of life resisting entropy increase."
+    },
+    {
+      "source": "数学模型",
+      "target": "舰船通信网络",
+      "relation": "related",
+      "description": "The mathematical model is applied to analyze the ship communication network."
+    },
+    {
+      "source": "热力学信息神经网络",
+      "target": "归纳偏差",
+      "relation": "related",
+      "description": "热力学信息神经网络采用归纳偏差来构建，以强制执行热力学定律。"
+    },
+    {
+      "source": "热力学信息神经网络",
+      "target": "热力学第二定律",
+      "relation": "related",
+      "description": "热力学信息神经网络执行热力学第二定律的强制执行。"
+    },
+    {
+      "source": "均方误差",
+      "target": "梯度下降",
+      "relation": "related",
+      "description": "均方误差损失函数因其易于通过梯度下降方法进行优化而具有优势。"
+    },
+    {
+      "source": "均方误差",
+      "target": "Huber损失",
+      "relation": "related",
+      "description": "Huber损失旨在平衡均方误差和平均绝对误差的优势，提供更好的优化特性。"
+    },
+    {
+      "source": "平均绝对误差",
+      "target": "Huber损失",
+      "relation": "related",
+      "description": "Huber损失结合了平均绝对误差对异常值的鲁棒性。"
+    },
+    {
+      "source": "最优编码",
+      "target": "编码定理",
+      "relation": "related",
+      "description": "编码定理从数学上证明了最优编码的存在。"
+    },
+    {
+      "source": "NP难问题",
+      "target": "决策树",
+      "relation": "related",
+      "description": "寻找最优的决策树是一个NP难问题，这限制了其精确求解。"
+    },
+    {
+      "source": "智能的第一性原理",
+      "target": "熵增",
+      "relation": "related",
+      "description": "The first principle of intelligence defines it as a system's ability to use information to maintain order and resist entropy increase.<SEP>智能的第一性原理从科学和哲学层面，将智能理解为信息抵抗熵增(宇宙基本趋势)的组织方式。"
+    },
+    {
+      "source": "分类任务",
+      "target": "类别",
+      "relation": "related",
+      "description": "分类任务的目标是将输入数据分配到预定义的类别中。"
+    },
+    {
+      "source": "分类任务",
+      "target": "神经网络",
+      "relation": "related",
+      "description": "神经网络常用于执行分类任务，例如对文本进行多类别分类。"
+    },
+    {
+      "source": "埃尔温·薛定谔",
+      "target": "负熵",
+      "relation": "related",
+      "description": "Erwin Schrödinger proposed the concept that life feeds on \"negative entropy\" to maintain order.<SEP>物理学家埃尔温·薛定谔在其著作《生命是什么？》中提出了“生命以负熵为食”的洞见。"
+    },
+    {
+      "source": "骰子",
+      "target": "概率分布",
+      "relation": "related",
+      "description": "骰子每次投掷的结果由一个特定的概率分布来描述。"
+    },
+    {
+      "source": "中心法则",
+      "target": "DNA双螺旋结构",
+      "relation": "related",
+      "description": "The DNA double-helix structure provides the informational basis for life, which is functionally extended by the central dogma explaining protein production."
+    },
+    {
+      "source": "中心法则",
+      "target": "蛋白质",
+      "relation": "related",
+      "description": "The central dogma explains how life produces various proteins according to the DNA program."
+    },
+    {
+      "source": "薛定谔",
+      "target": "熵",
+      "relation": "related",
+      "description": "薛定谔在其著作《生命是什么》中探讨了熵与生命系统的关系。"
+    },
+    {
+      "source": "概率分布",
+      "target": "熵",
+      "relation": "related",
+      "description": "Entropy is defined as a function of a probability distribution, measuring the average uncertainty or information content inherent in that distribution."
+    },
+    {
+      "source": "概率分布",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "Cross-entropy is calculated using two probability distributions, representing the expected coding length when one distribution is used to model another.<SEP>交叉熵的计算需要两个概率分布：真实的概率分布(后验分布)和预期的概率分布(先验分布)。<SEP>交叉熵用于度量两个概率分布(期望输出与实际输出)之间的距离。"
+    },
+    {
+      "source": "概率分布",
+      "target": "相对熵",
+      "relation": "related",
+      "description": "Relative entropy measures the divergence between two probability distributions, quantifying how one distribution differs from another."
+    },
+    {
+      "source": "概率分布",
+      "target": "KL散度",
+      "relation": "related",
+      "description": "KL散度被用作目标函数来衡量概率分布之间的差异。"
+    },
+    {
+      "source": "概率分布",
+      "target": "最大熵模型",
+      "relation": "related",
+      "description": "在文本分类中，最大熵模型用于计算每个类别的概率分布。"
+    },
+    {
+      "source": "概率分布",
+      "target": "Softmax",
+      "relation": "related",
+      "description": "Softmax函数的核心功能是将数值向量转换为一个概率分布。"
+    },
+    {
+      "source": "概率分布",
+      "target": "期望输出",
+      "relation": "related",
+      "description": "期望输出被定义为概率分布p，是模型训练的目标分布。"
+    },
+    {
+      "source": "概率分布",
+      "target": "实际输出",
+      "relation": "related",
+      "description": "实际输出被定义为概率分布q，是模型产生的预测分布。"
+    },
+    {
+      "source": "概率分布",
+      "target": "分类交叉熵损失",
+      "relation": "related",
+      "description": "分类交叉熵损失应用于多类分类，模型以概率分布的形式输出预测。"
+    },
+    {
+      "source": "热力学第二定律",
+      "target": "熵",
+      "relation": "related",
+      "description": "热力学第二定律的核心内容是描述孤立系统中熵(无序度)只会不断增加的趋势。<SEP>热力学第二定律的数学表述主要借助熵的概念来完成。<SEP>热力学第二定律描述了孤立系统中熵总是增加的规律。"
+    },
+    {
+      "source": "热力学第二定律",
+      "target": "热力学",
+      "relation": "related",
+      "description": "热力学第二定律是热力学的三条基本定律之一。"
+    },
+    {
+      "source": "定量分析",
+      "target": "深度学习",
+      "relation": "related",
+      "description": "深度学习推动病理分析从定性向定量分析转变。"
+    },
+    {
+      "source": "定量分析",
+      "target": "病理切片",
+      "relation": "related",
+      "description": "定量分析应用于病理切片，通过计算量化指标(如有丝分裂数目)来提供更客观的病理诊断。"
+    },
+    {
+      "source": "前向神经网络",
+      "target": "深度学习",
+      "relation": "related",
+      "description": "Deep learning encompasses the category of feedforward neural network models, which includes DNN and CNN."
+    },
+    {
+      "source": "信息增益比",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "信息增益比是在信息增益基础上发展而来的改进标准，旨在减少对取值较多特征的偏向。"
+    },
+    {
+      "source": "赫布学习定律",
+      "target": "神经元",
+      "relation": "related",
+      "description": "Neurons operate according to the Hebbian Learning rule, where their connections are strengthened through co-activation."
+    },
+    {
+      "source": "赫布学习定律",
+      "target": "记忆",
+      "relation": "related",
+      "description": "The Hebbian Learning rule provides the mechanism by which experiences and learning physically alter synaptic connections, forming the basis of memory."
+    },
+    {
+      "source": "思想实验",
+      "target": "神经元",
+      "relation": "related",
+      "description": "The thought experiment involves the gradual replacement of biological neurons."
+    },
+    {
+      "source": "最大熵原理马尔可夫问题",
+      "target": "联合熵",
+      "relation": "related",
+      "description": "The joint entropy of P and W is maximized under constraints in the generalized maximum entropy Markov problem."
+    },
+    {
+      "source": "最大熵原理马尔可夫问题",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "The maximum entropy principle opens a path for modeling conditional Markov processes in complex systems with evolving data."
+    },
+    {
+      "source": "最大熵原理马尔可夫问题",
+      "target": "香农熵",
+      "relation": "related",
+      "description": "In the maximum entropy inference problem, Shannon entropy needs to be defined for the probability distributions P and W."
+    },
+    {
+      "source": "特征A_g",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "信息增益被用作度量标准来选择最优划分特征A_g。"
+    },
+    {
+      "source": "男孩",
+      "target": "女孩",
+      "relation": "related",
+      "description": "In the communication model analogy, the boy sends a love confession (information) to the girl, who is the receiver."
+    },
+    {
+      "source": "男孩",
+      "target": "四川",
+      "relation": "related",
+      "description": "男孩陈述了四川遭遇极端气候的事件，这句话信息量很大。"
+    },
+    {
+      "source": "郭毅可",
+      "target": "机器智能",
+      "relation": "related",
+      "description": "郭毅可作为文章作者，系统阐述了机器智能的本质及其与人类智能的关系。"
+    },
+    {
+      "source": "郭毅可",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "郭毅可作为文章作者，系统阐述了人类智能的本质及其与机器智能的关系。"
+    },
+    {
+      "source": "决策树",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "信息增益是用于度量特征对于决策树贡献的度量标准。<SEP>When implementing a decision tree by hand, selecting the best split feature involves criteria like information gain."
+    },
+    {
+      "source": "决策树",
+      "target": "机器学习",
+      "relation": "related",
+      "description": "Decision tree is a specific model and method within the broader field of machine learning."
+    },
+    {
+      "source": "决策树",
+      "target": "神经网络",
+      "relation": "related",
+      "description": "对于决策树难以学习的复杂关系(如异或)，神经网络可以作为替代的分类方法。"
+    },
+    {
+      "source": "决策树",
+      "target": "基尼不纯度",
+      "relation": "related",
+      "description": "When implementing a decision tree by hand, selecting the best split feature involves criteria like Gini impurity."
+    },
+    {
+      "source": "决策树",
+      "target": "CART",
+      "relation": "related",
+      "description": "CART是用于生成决策树的一种算法。<SEP>CART是决策树算法发展过程中的一个重要版本，使用基尼系数进行特征选择。"
+    },
+    {
+      "source": "决策树",
+      "target": "过拟合",
+      "relation": "related",
+      "description": "过拟合是决策树模型可能遇到的问题，源于构建了过于复杂的树。<SEP>Large, complex decision trees are prone to overfitting, reducing their ability to generalize."
+    },
+    {
+      "source": "决策树",
+      "target": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "relation": "related",
+      "description": "The lecture covers the topic of decision trees."
+    },
+    {
+      "source": "太阳从西边升起",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "\"The sun rises from the west\" in the story is the surprising posterior distribution, and the cross-entropy measures the shock when this information is received against the prior belief."
+    },
+    {
+      "source": "CCP剪枝法",
+      "target": "经验熵",
+      "relation": "related",
+      "description": "在CCP剪枝法的损失函数计算中，会涉及到叶节点的经验熵。"
+    },
+    {
+      "source": "CCP剪枝法",
+      "target": "CART算法",
+      "relation": "related",
+      "description": "CART算法采用CCP剪枝法作为其剪枝策略。"
+    },
+    {
+      "source": "CCP剪枝法",
+      "target": "后剪枝",
+      "relation": "related",
+      "description": "CCP剪枝法是后剪枝方法中的一种具体实现。"
+    },
+    {
+      "source": "探索",
+      "target": "利用",
+      "relation": "related",
+      "description": "Exploitation and exploration are two strategies between which an intelligent agent with active inference capabilities continuously weighs."
+    },
+    {
+      "source": "探索",
+      "target": "好奇心",
+      "relation": "related",
+      "description": "Exploration reflects advanced cognitive functions such as curiosity and hypothesis generation."
+    },
+    {
+      "source": "循环神经网络",
+      "target": "隐藏单元",
+      "relation": "related",
+      "description": "Interconnected hidden units can form recurrent neural networks."
+    },
+    {
+      "source": "交叉熵损失函数",
+      "target": "熵",
+      "relation": "related",
+      "description": "熵是信息论中的基础概念，是构成交叉熵损失函数理论来源的一部分。"
+    },
+    {
+      "source": "交叉熵损失函数",
+      "target": "信息论",
+      "relation": "related",
+      "description": "交叉熵损失函数的概念源于信息论中的熵和相对熵。"
+    },
+    {
+      "source": "交叉熵损失函数",
+      "target": "相对熵",
+      "relation": "related",
+      "description": "相对熵是信息论中的概念，是构成交叉熵损失函数理论来源的一部分。"
+    },
+    {
+      "source": "交叉熵损失函数",
+      "target": "深度学习",
+      "relation": "related",
+      "description": "交叉熵损失函数是深度学习中用于衡量模型预测结果与实际标签差异的核心工具。"
+    },
+    {
+      "source": "交叉熵损失函数",
+      "target": "人工智能",
+      "relation": "related",
+      "description": "交叉熵损失函数在人工智能领域被用作衡量预测与标签差异的重要工具。"
+    },
+    {
+      "source": "模型",
+      "target": "Bayes分类",
+      "relation": "related",
+      "description": "A model is the implementation or representation form of Bayes classification."
+    },
+    {
+      "source": "基尼系数",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "基尼系数是作为信息增益(和信息增益比)的替代品出现的，用于避免基于熵模型的对数运算。"
+    },
+    {
+      "source": "基尼系数",
+      "target": "CART",
+      "relation": "related",
+      "description": "CART算法使用基尼系数作为其核心特征选择的标准。<SEP>The CART algorithm typically uses the Gini index to determine the ideal attribute for splitting."
+    },
+    {
+      "source": "基尼系数",
+      "target": "CART算法",
+      "relation": "related",
+      "description": "CART算法使用基尼系数作为特征选择和数据集纯度度量的标准。"
+    },
+    {
+      "source": "神经科学家",
+      "target": "神经元",
+      "relation": "related",
+      "description": "神经科学家着眼于神经元来研究大脑连接。"
+    },
+    {
+      "source": "热力学",
+      "target": "熵",
+      "relation": "related",
+      "description": "熵是热力学领域的核心概念，用于描述系统的无序程度。"
+    },
+    {
+      "source": "相对熵",
+      "target": "熵",
+      "relation": "related",
+      "description": "Relative entropy quantifies the divergence of a probability distribution from another distribution, building upon the concept of entropy.<SEP>KL divergence can be expressed using entropy; specifically, D_KL(p||q) = H(p, q) - H(p), where H(p) is the entropy of distribution p."
+    },
+    {
+      "source": "相对熵",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "Relative entropy can be expressed as the difference between cross-entropy and entropy, linking these two measures.<SEP>KL divergence can be expressed using cross-entropy; specifically, D_KL(p||q) = H(p, q) - H(p), where H(p, q) is the cross-entropy.<SEP>相对熵(KL散度)由交叉熵引申而来，是交叉熵与信息熵的差值，表示相对的吃惊程度。"
+    },
+    {
+      "source": "相对熵",
+      "target": "KL散度",
+      "relation": "related",
+      "description": "Relative entropy is also known as KL divergence (Kullback–Leibler divergence); they refer to the same concept.<SEP>相对熵和KL散度是同一个概念的不同名称，都用于衡量两个概率分布之间的差异。"
+    },
+    {
+      "source": "相对熵",
+      "target": "信息增益",
+      "relation": "related",
+      "description": "Relative entropy is also referred to as information gain in certain contexts, such as measuring belief updates in Bayesian inference."
+    },
+    {
+      "source": "相对熵",
+      "target": "变分自编码器",
+      "relation": "related",
+      "description": "The variational autoencoder uses KL divergence as a component of its objective function for training."
+    },
+    {
+      "source": "递归式共进化",
+      "target": "机器智能",
+      "relation": "related",
+      "description": "机器智能在与人类智能的深度融合中，将通过“递归式共进化”形成正向反馈链，推动整个智能系统向更高维形态跃迁。"
+    },
+    {
+      "source": "递归式共进化",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "人类智能在与机器智能的深度融合中，将通过“递归式共进化”形成正向反馈链，推动自身认知结构和思维方式的演进。"
+    },
+    {
+      "source": "神经网络训练",
+      "target": "输入数据",
+      "relation": "related",
+      "description": "Neural network training utilizes input data to learn and optimize the model."
+    },
+    {
+      "source": "编码",
+      "target": "通信系统",
+      "relation": "related",
+      "description": "编码是通信系统的一个关键组成部分，负责信息的转换处理。"
+    },
+    {
+      "source": "编码定理",
+      "target": "信息论",
+      "relation": "related",
+      "description": "编码定理是信息论领域的核心理论，构成了该学科的基础。"
+    },
+    {
+      "source": "编码定理",
+      "target": "数学观点",
+      "relation": "related",
+      "description": "从数学观点看，编码定理是关于最优编码的存在性定理。"
+    },
+    {
+      "source": "编码定理",
+      "target": "工程观点",
+      "relation": "related",
+      "description": "从工程观点看，编码定理不是结构性的，不能直接指导实现。"
+    },
+    {
+      "source": "深度学习",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "Deep learning encompasses the category of Boltzmann machine neural network models."
+    },
+    {
+      "source": "深度学习",
+      "target": "刘建平Pinard",
+      "relation": "related",
+      "description": "刘建平Pinard authored a document that discusses the field of deep learning and its neural network models."
+    },
+    {
+      "source": "深度学习",
+      "target": "反馈神经网络",
+      "relation": "related",
+      "description": "Deep learning encompasses the category of feedback neural network models, which includes RNN and LSTM."
+    },
+    {
+      "source": "深度学习",
+      "target": "数字病理",
+      "relation": "related",
+      "description": "深度学习技术被应用于数字病理领域，用于对数字病理切片进行定量分析，辅助病理诊断。<SEP>深度学习是应用于数字病理分析的人工智能技术。"
+    },
+    {
+      "source": "深度学习",
+      "target": "人工智能",
+      "relation": "related",
+      "description": "深度学习是人工智能技术的一种代表。"
+    },
+    {
+      "source": "最大熵模型",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "最大熵模型是基于最大熵原理构建的。"
+    },
+    {
+      "source": "最大熵模型",
+      "target": "对数线性分类模型",
+      "relation": "related",
+      "description": "最大熵模型是一种具体的对数线性分类模型。"
+    },
+    {
+      "source": "最大熵模型",
+      "target": "特征",
+      "relation": "related",
+      "description": "最大熵模型的主要工作在于(人工)提取特征，特征是该模型的输入和处理对象。"
+    },
+    {
+      "source": "最大熵模型",
+      "target": "分类问题",
+      "relation": "related",
+      "description": "Maximum entropy models were historically used for classification problems."
+    },
+    {
+      "source": "病理切片",
+      "target": "数字病理",
+      "relation": "related",
+      "description": "数字病理涉及将传统的病理切片通过染色和数字化技术转换为数字病理切片，便于分析和存储。<SEP>数字病理涉及病理切片的数字化和分析。"
+    },
+    {
+      "source": "利用",
+      "target": "强化学习",
+      "relation": "related",
+      "description": "The exploitation strategy reflects the logic of reinforcement learning."
+    },
+    {
+      "source": "梯度下降",
+      "target": "机器学习",
+      "relation": "related",
+      "description": "Gradient descent is an optimization mechanism used within the field of machine learning."
+    },
+    {
+      "source": "创新方法",
+      "target": "强化学习",
+      "relation": "related",
+      "description": "The innovative method combines reinforcement learning techniques."
+    },
+    {
+      "source": "主动推断",
+      "target": "智能",
+      "relation": "related",
+      "description": "主动推断是智能系统为最小化自由能而采取的行动路径，即改变世界以配合预测。"
+    },
+    {
+      "source": "主动推断",
+      "target": "自由能框架",
+      "relation": "related",
+      "description": "Active inference is the behavioral mechanism within the free energy framework for reducing prediction errors."
+    },
+    {
+      "source": "主动推断",
+      "target": "智能体",
+      "relation": "related",
+      "description": "Intelligent agents are being endowed with active inference capabilities."
+    },
+    {
+      "source": "物理同源",
+      "target": "机器智能",
+      "relation": "related",
+      "description": "机器智能(硅基芯片)在物理层面与人类智能同源，都是遵循热力学定律、通过吸收信息抵抗熵增的精密信息化系统。"
+    },
+    {
+      "source": "物理同源",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "人类智能(碳基大脑)在物理层面与机器智能同源，都是遵循热力学定律、通过吸收信息抵抗熵增的精密信息化系统。"
+    },
+    {
+      "source": "物理同源",
+      "target": "李德毅",
+      "relation": "related",
+      "description": "李德毅院士在《人工智能看哲学》一文中提出了人类智能与机器智能“物理上同源”的观点。"
+    },
+    {
+      "source": "统计物理学",
+      "target": "配分函数",
+      "relation": "related",
+      "description": "The partition function originates from and is a key concept in statistical physics."
+    },
+    {
+      "source": "能量最小化思想",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "Hopfield网络的能量最小化思想影响了后来玻尔兹曼机等模型的发展。"
+    },
+    {
+      "source": "能量最小化思想",
+      "target": "Hopfield网络",
+      "relation": "related",
+      "description": "能量最小化思想是Hopfield网络的核心思想之一，构成了其理论基础。"
+    },
+    {
+      "source": "Foley",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "Scharfenaker and Foley adopted the maximum entropy principle to develop a statistical equilibrium of quantal response."
+    },
+    {
+      "source": "Foley",
+      "target": "统计均衡理论",
+      "relation": "related",
+      "description": "Foley developed the statistical equilibrium theory of markets."
+    },
+    {
+      "source": "Foley",
+      "target": "报价集",
+      "relation": "related",
+      "description": "Foley's statistical equilibrium theory of markets begins with the analysis of sets of offers from market participants."
+    },
+    {
+      "source": "Golan",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "Golan applied the maximum entropy principle to develop a stochastic theory for the distribution of firm sizes in an economy."
+    },
+    {
+      "source": "输出层配分函数",
+      "target": "配分函数",
+      "relation": "related",
+      "description": "The output layer partition function is stated to be equal to the partition function of the input data."
+    },
+    {
+      "source": "输出层配分函数",
+      "target": "输入数据",
+      "relation": "related",
+      "description": "The output layer partition function is equal to the partition function of the input data."
+    },
+    {
+      "source": "香农熵",
+      "target": "测试用例",
+      "relation": "related",
+      "description": "The function based on Shannon entropy measures the misclassification likelihood of test cases and ranks them."
+    },
+    {
+      "source": "出现概率",
+      "target": "字母",
+      "relation": "related",
+      "description": "每个字母都有一个对应的出现概率。"
+    },
+    {
+      "source": "好奇心",
+      "target": "智能体",
+      "relation": "related",
+      "description": "Curiosity is an intrinsic drive and necessity for intelligent agents to enhance survival and optimize models in uncertain worlds."
+    },
+    {
+      "source": "误差",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "Cross-entropy is a method used to calculate the error or loss between distributions."
+    },
+    {
+      "source": "误差",
+      "target": "输入数据",
+      "relation": "related",
+      "description": "Error is calculated by comparing the model prediction against the input data's actual distribution."
+    },
+    {
+      "source": "误差",
+      "target": "模型预测",
+      "relation": "related",
+      "description": "Error represents the discrepancy between the model's predicted distribution and the actual distribution."
+    },
+    {
+      "source": "舰船通信网络",
+      "target": "节点",
+      "relation": "related",
+      "description": "Nodes are the constituent elements that make up the ship communication network."
+    },
+    {
+      "source": "神经网络",
+      "target": "信息论",
+      "relation": "related",
+      "description": "信息论的概念，如信息熵，在神经网络模型中同样适用。<SEP>信息论可以应用于神经网络等领域，神经网络模型可以被抽象看作一种通信系统。"
+    },
+    {
+      "source": "神经网络",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵被用作神经网络的损失函数，以衡量模型预测分布与真实分布之间的差异。<SEP>在机器学习中，交叉熵常被用作神经网络的损失函数，以衡量模型预测分布与真实分布之间的差异。"
+    },
+    {
+      "source": "神经网络",
+      "target": "分类问题",
+      "relation": "related",
+      "description": "神经网络被应用于解决分类问题的训练中。"
+    },
+    {
+      "source": "神经网络",
+      "target": "通信模型",
+      "relation": "related",
+      "description": "神经网络可以被看作一个通信模型，其中输入信号X被映射为输出信号Y。"
+    },
+    {
+      "source": "神经网络",
+      "target": "JioNLP Article",
+      "relation": "related",
+      "description": "The JioNLP article explains the application of cross-entropy in neural networks."
+    },
+    {
+      "source": "测试用例",
+      "target": "基尼不纯度",
+      "relation": "related",
+      "description": "The function based on Gini impurity measures the misclassification likelihood of test cases and ranks them."
+    },
+    {
+      "source": "测试用例",
+      "target": "衡量测试用例被错误分类可能性大小的函数",
+      "relation": "related",
+      "description": "The functions measure the likelihood of test cases being misclassified."
+    },
+    {
+      "source": "贝叶斯大脑",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "“贝叶斯大脑”是描述人类智能认知和工作机制的理论框架，其核心是通过贝叶斯推理最小化预测误差。"
+    },
+    {
+      "source": "贝叶斯大脑",
+      "target": "贝叶斯定理",
+      "relation": "related",
+      "description": "The Bayesian Brain hypothesis applies Bayes' theorem to the process of perception."
+    },
+    {
+      "source": "詹姆斯·沃森",
+      "target": "DNA双螺旋结构",
+      "relation": "related",
+      "description": "James Watson, together with Francis Crick, discovered and elucidated the double-helix structure of DNA."
+    },
+    {
+      "source": "均匀分布",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "在没有任何约束的情况下，最大熵原理选择均匀分布作为最佳模型。"
+    },
+    {
+      "source": "均匀分布",
+      "target": "先验分布",
+      "relation": "related",
+      "description": "当先验分布为均匀分布时，最大后验估计退化为最大似然估计。"
+    },
+    {
+      "source": "宏观热现象",
+      "target": "克劳修斯",
+      "relation": "related",
+      "description": "Rudolf Clausius defined entropy based on observations of macroscopic thermal phenomena."
+    },
+    {
+      "source": "HopField网络",
+      "target": "神经元",
+      "relation": "related",
+      "description": "HopField网络由多个相互作用的神经元组成。"
+    },
+    {
+      "source": "HopField网络",
+      "target": "能量函数",
+      "relation": "related",
+      "description": "HopField网络的动力学受其最小化的能量函数支配，以达到稳定状态。"
+    },
+    {
+      "source": "HopField网络",
+      "target": "离散型HopField网络",
+      "relation": "related",
+      "description": "离散型HopField网络是使用离散激活函数的一种特定类型的HopField网络。"
+    },
+    {
+      "source": "信息",
+      "target": "信息论",
+      "relation": "related",
+      "description": "信息论中的“信息”指能够说什么，其传递是一个消除不确定性的过程。"
+    },
+    {
+      "source": "信息",
+      "target": "熵增",
+      "relation": "related",
+      "description": "生命、意识、技术、文化等系统利用信息在局部区域对抗熵增带来的混沌，形成短暂的逆流。"
+    },
+    {
+      "source": "李德毅",
+      "target": "数学同构",
+      "relation": "related",
+      "description": "李德毅院士在《人工智能看哲学》一文中提出了人类智能与机器智能“数学上同构”的观点。"
+    },
+    {
+      "source": "METE (生态学最大熵原理)",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "METE is a specific ecological theory built upon the general framework of the maximum entropy principle."
+    },
+    {
+      "source": "METE (生态学最大熵原理)",
+      "target": "生态结构函数",
+      "relation": "related",
+      "description": "The ecological structure function is a core probability distribution derived within the METE framework to describe species and individual attributes."
+    },
+    {
+      "source": "METE (生态学最大熵原理)",
+      "target": "空间分布",
+      "relation": "related",
+      "description": "The spatial distribution is a core probability distribution in METE that predicts how individuals of a species are aggregated in space."
+    },
+    {
+      "source": "Bayes公式",
+      "target": "Bayes分类",
+      "relation": "related",
+      "description": "Bayes' formula is the mathematical foundation for Bayes classification."
+    },
+    {
+      "source": "Bayes公式",
+      "target": "判别式模型",
+      "relation": "related",
+      "description": "Bayes公式将条件概率联系起来，是判别式模型与生成式模型相关联的关键。"
+    },
+    {
+      "source": "Bayes公式",
+      "target": "生成式模型",
+      "relation": "related",
+      "description": "生成式模型通过Bayes公式将后验概率P(c|x)转化为似然P(x|c)和先验P(c)的乘积问题。"
+    },
+    {
+      "source": "报价集",
+      "target": "统计均衡理论",
+      "relation": "related",
+      "description": "Market analysis in the statistical equilibrium theory begins with the set of offers from market agents."
+    },
+    {
+      "source": "女孩",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "The girl's level of surprise upon receiving the boy's confession is used as an analogy to explain the concept of cross-entropy."
+    },
+    {
+      "source": "女孩",
+      "target": "四川",
+      "relation": "related",
+      "description": "女孩听到男孩关于四川气候的陈述后会感到震惊，因为这是一个低概率事件。"
+    },
+    {
+      "source": "期望输出",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵将期望输出作为衡量实际输出准确性的目标或基准。"
+    },
+    {
+      "source": "负熵",
+      "target": "生命",
+      "relation": "related",
+      "description": "根据薛定谔的洞见，生命体以“负熵”为食，通过从外界摄取负熵来维持自身的秩序和结构。<SEP>Life feeds on \"negative entropy,\" which is the fundamental principle for maintaining its ordered structure."
+    },
+    {
+      "source": "先验分布",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵衡量的是用“自以为的”先验分布去观测世界时产生的吃惊程度。"
+    },
+    {
+      "source": "先验分布",
+      "target": "生成式模型",
+      "relation": "related",
+      "description": "生成式模型包含对模型参数的先验分布假设。"
+    },
+    {
+      "source": "智能",
+      "target": "信息论",
+      "relation": "related",
+      "description": "信息论为理解智能提供了统一视角，即智能是吸收信息以对抗熵增(消除不确定性)的能力。"
+    },
+    {
+      "source": "智能",
+      "target": "神经元",
+      "relation": "related",
+      "description": "Neurons are the physical carriers of intelligence, and their coordinated work leads to the emergence of intelligent functions."
+    },
+    {
+      "source": "空间分布",
+      "target": "生态结构函数",
+      "relation": "related",
+      "description": "Together, the ecological structure function and the spatial distribution form the basis for generating testable ecological predictions within METE."
+    },
+    {
+      "source": "连接主义",
+      "target": "机器智能",
+      "relation": "related",
+      "description": "The connectionist school of thought, which emphasizes the homology between human and machine intelligence, is key to the success of modern AI."
+    },
+    {
+      "source": "字母",
+      "target": "分布",
+      "relation": "related",
+      "description": "所有字母的出现概率共同构成了一个概率分布。"
+    },
+    {
+      "source": "隐藏单元",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "Boltzmann machines contain hidden units as part of their structure."
+    },
+    {
+      "source": "JioNLP Article",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "The JioNLP article explains the concept of cross-entropy."
+    },
+    {
+      "source": "信息增益",
+      "target": "熵",
+      "relation": "related",
+      "description": "Information gain is calculated based on the reduction in entropy (impurity) before and after a dataset split."
+    },
+    {
+      "source": "信息增益",
+      "target": "特征",
+      "relation": "related",
+      "description": "信息增益用于度量特征的重要性。"
+    },
+    {
+      "source": "神经元网络",
+      "target": "记忆",
+      "relation": "related",
+      "description": "记忆的本质是神经元网络的连接模式，存储于大脑的物理结构中。"
+    },
+    {
+      "source": "生命",
+      "target": "熵",
+      "relation": "related",
+      "description": "生命的本质是抵抗熵增、维持有序的“逆行者”，通过摄取负熵来对抗热力学第二定律所描述的熵增趋势。<SEP>生命体在一个熵增的宇宙中必须不断吸收和处理信息以抵御熵增，维持自身结构。"
+    },
+    {
+      "source": "生命",
+      "target": "DNA双螺旋结构",
+      "relation": "related",
+      "description": "The DNA double-helix structure explains the informational essence of life, with the arrangement of ATCG bases constituting its genetic code."
+    },
+    {
+      "source": "联合熵",
+      "target": "熵",
+      "relation": "related",
+      "description": "Joint entropy generalizes the concept of entropy to measure the combined uncertainty of two or more random variables."
+    },
+    {
+      "source": "联合熵",
+      "target": "随机变量",
+      "relation": "related",
+      "description": "Joint entropy measures the combined uncertainty of two random variables, X and Y."
+    },
+    {
+      "source": "联合熵",
+      "target": "互信息",
+      "relation": "related",
+      "description": "Mutual information can be expressed in terms of joint entropy and the individual entropies of the variables."
+    },
+    {
+      "source": "广义的最大熵原理马尔可夫问题",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "The generalized maximum entropy principle Markov problem shares the same dimensionality (number of constraints and Lagrange multipliers) as the maximum entropy principle."
+    },
+    {
+      "source": "玻尔兹曼",
+      "target": "熵",
+      "relation": "related",
+      "description": "玻尔兹曼为熵提供了统计解释，并提出了公式S=k*lnW。"
+    },
+    {
+      "source": "玻尔兹曼",
+      "target": "公式S=k*lnW",
+      "relation": "related",
+      "description": "玻尔兹曼提出了熵的统计力学定义公式S = k * ln W。<SEP>玻尔兹曼提出了熵的统计力学公式S=k*lnW。"
+    },
+    {
+      "source": "概率分布P(v,h)",
+      "target": "能量函数",
+      "relation": "related",
+      "description": "The energy function $E(v,h)$ serves as the basis for defining the probability distribution $P(v,h)$ of the RBM state."
+    },
+    {
+      "source": "无向模型",
+      "target": "配分函数",
+      "relation": "related",
+      "description": "无向模型的概率计算依赖于配分函数，该函数是模型的一个关键组成部分。"
+    },
+    {
+      "source": "通信系统",
+      "target": "信息论",
+      "relation": "related",
+      "description": "理解信息论的概念需要脑补出一个包括发送方、接收方、信道和编码的通信系统场景。"
+    },
+    {
+      "source": "通信系统",
+      "target": "信道",
+      "relation": "related",
+      "description": "信道是通信系统的一个关键组成部分，负责信息的传输。"
+    },
+    {
+      "source": "随机变量",
+      "target": "信息熵",
+      "relation": "related",
+      "description": "信息熵与随机变量相关联，用于衡量该变量所代表事件的信息量。<SEP>信息熵是根据随机变量的概率分布计算得出的，用于度量其平均不确定性。"
+    },
+    {
+      "source": "随机变量",
+      "target": "互信息",
+      "relation": "related",
+      "description": "Mutual information quantifies the amount of information shared between two random variables."
+    },
+    {
+      "source": "统计均衡理论",
+      "target": "熵",
+      "relation": "related",
+      "description": "The market allocates agents to offer sets to maximize the entropy of the market transaction distribution."
+    },
+    {
+      "source": "剪枝",
+      "target": "过拟合",
+      "relation": "related",
+      "description": "剪枝是一种通过降低模型复杂度来预防决策树过拟合的技术。"
+    },
+    {
+      "source": "碳基神经元",
+      "target": "神经元",
+      "relation": "related",
+      "description": "Neurons are specified as being carbon-based, the biological material in question."
+    },
+    {
+      "source": "并行计算结构",
+      "target": "玻尔兹曼机",
+      "relation": "related",
+      "description": "玻尔兹曼机本身就是一种并行计算结构。"
+    },
+    {
+      "source": "并行计算结构",
+      "target": "人工神经网络",
+      "relation": "related",
+      "description": "文中明确指出，这里的并行计算结构就是人工神经网络。"
+    },
+    {
+      "source": "分布",
+      "target": "KL散度",
+      "relation": "related",
+      "description": "KL divergence is used to calculate the distance or difference between two probability distributions."
+    },
+    {
+      "source": "人脑",
+      "target": "神经元",
+      "relation": "related",
+      "description": "人脑内包含约860亿个神经元。"
+    },
+    {
+      "source": "实际输出",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵衡量模型的实际输出(预测概率分布)与期望输出之间的接近程度。"
+    },
+    {
+      "source": "Bayes分类",
+      "target": "代价函数",
+      "relation": "related",
+      "description": "Bayes分类方法的核心是定义一个代价函数来评估和最小化分类错误。<SEP>Cost function is a component or concept used within Bayes classification."
+    },
+    {
+      "source": "Bayes分类",
+      "target": "贝叶斯最优分类器",
+      "relation": "related",
+      "description": "Bayes分类的目标是找到贝叶斯最优分类器，即最小化期望代价的分类器。"
+    },
+    {
+      "source": "Bayes分类",
+      "target": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "relation": "related",
+      "description": "The lecture covers the topic of Bayes classification."
+    },
+    {
+      "source": "熵",
+      "target": "信息论",
+      "relation": "related",
+      "description": "熵是信息论中的一个核心概念，用于量化信息。<SEP>熵是信息论领域的核心概念，用于描述系统的无序程度。"
+    },
+    {
+      "source": "熵",
+      "target": "信息熵",
+      "relation": "related",
+      "description": "信息熵是熵的另一个名称，两者指代同一概念。<SEP>信息熵即熵，是信息论中用于度量不确定性的核心概念。<SEP>信息熵的概念来源于热力学的熵，因为信息对于接收方而言总是在增加。"
+    },
+    {
+      "source": "熵",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "Cross-entropy is an extension of entropy that compares a true distribution against a model distribution, using the same logarithmic measure of information."
+    },
+    {
+      "source": "熵",
+      "target": "互信息",
+      "relation": "related",
+      "description": "Mutual information is a fundamental concept derived from entropy that measures the shared information between two variables."
+    },
+    {
+      "source": "熵",
+      "target": "最大熵原理",
+      "relation": "related",
+      "description": "最大熵原理的核心思想是选择熵最大的分布。<SEP>最大熵原理将熵作为选择最合理概率分布的准则。<SEP>最大熵原理是在已知约束下，选择使熵最大化的概率分布。"
+    },
+    {
+      "source": "熵",
+      "target": "克劳修斯",
+      "relation": "related",
+      "description": "Rudolf Clausius defined the concept of entropy from macroscopic thermal phenomena.<SEP>克劳修斯是引入熵这一物理概念的德国物理学家。<SEP>克劳修斯是引入熵这一概念的物理学家。"
+    },
+    {
+      "source": "熵",
+      "target": "公式S=k*lnW",
+      "relation": "related",
+      "description": "熵由公式S = k * ln W定义，该公式是熵的统计力学表达式。"
+    },
+    {
+      "source": "熵",
+      "target": "平均编码长度",
+      "relation": "related",
+      "description": "以2为底的平均编码长度就是信息熵。"
+    },
+    {
+      "source": "熵",
+      "target": "香农",
+      "relation": "related",
+      "description": "香农在信息论中提出了信息熵的概念。"
+    },
+    {
+      "source": "熵",
+      "target": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "relation": "related",
+      "description": "The lecture covers the topic of entropy."
+    },
+    {
+      "source": "机器智能",
+      "target": "人类智能",
+      "relation": "related",
+      "description": "The text states that machine intelligence and human intelligence share a physical and functional homology, with the same core goal of forming an anti-entropy system.<SEP>人类智能在具身探索与推理决策上的优势，与机器智能在高速建模与数据处理上的专长，形成高度互补而非竞争的关系，二者走向共生共融。<SEP>Human intelligence and machine intelligence are compared and found to share a common core mechanism."
+    },
+    {
+      "source": "机器智能",
+      "target": "数学同构",
+      "relation": "related",
+      "description": "机器智能的认知框架可以用“自由能原理”和贝叶斯推理来描述，这与人类智能的数学框架同构。"
+    },
+    {
+      "source": "机器学习",
+      "target": "信息论",
+      "relation": "related",
+      "description": "信息论是机器学习领域的基础内容。"
+    },
+    {
+      "source": "机器学习",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵是机器学习领域中的一个核心概念，常用于模型训练中的损失函数。"
+    },
+    {
+      "source": "机器学习",
+      "target": "第九讲： Bayes分类、熵、决策树、特征选择",
+      "relation": "related",
+      "description": "The lecture content belongs to the field of machine learning."
+    },
+    {
+      "source": "香农",
+      "target": "信息熵",
+      "relation": "related",
+      "description": "香农创立了信息论并定义了信息熵的概念。"
+    },
+    {
+      "source": "彩票",
+      "target": "小北",
+      "relation": "related",
+      "description": "小北购买彩票，经历了未中奖和两次中奖的事件。"
+    },
+    {
+      "source": "通信模型",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵的概念可以放在通信模型中理解，表示信息接收方接收到的信息相对于其预期的吃惊程度。"
+    },
+    {
+      "source": "叶结点t",
+      "target": "经验熵",
+      "relation": "related",
+      "description": "经验熵H_t(T)是用于度量叶结点t上分类结果混乱程度的指标。"
+    },
+    {
+      "source": "四川",
+      "target": "信息量",
+      "relation": "related",
+      "description": "四川遭遇极端高温干旱是一个低概率事件，因此描述该事件的话语信息量非常大。"
+    },
+    {
+      "source": "KL散度",
+      "target": "信息熵",
+      "relation": "related",
+      "description": "KL divergence directly assesses the difference between cross-entropy and information entropy."
+    },
+    {
+      "source": "KL散度",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "KL divergence directly assesses the difference between cross-entropy and information entropy."
+    },
+    {
+      "source": "阈值",
+      "target": "神经元",
+      "relation": "related",
+      "description": "每个神经元都有一个阈值，该阈值影响其状态是否根据加权输入而改变。"
+    },
+    {
+      "source": "配分函数",
+      "target": "信息量",
+      "relation": "related",
+      "description": "The partition function represents the quantity of information retained on the original nodes of the network."
+    },
+    {
+      "source": "配分函数",
+      "target": "对数似然",
+      "relation": "related",
+      "description": "对数似然相对于参数的梯度包含一项对应于配分函数梯度的项，体现了它们之间的数学依赖关系。"
+    },
+    {
+      "source": "人类智能",
+      "target": "数学同构",
+      "relation": "related",
+      "description": "人类智能的认知框架可以用“贝叶斯大脑”和“自由能原理”来描述，这与机器智能的数学框架同构。"
+    },
+    {
+      "source": "小北",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "小北购买彩票的经历被用作解释交叉熵概念的直观例子，他因真实中奖概率与预期不同而感到吃惊，这种吃惊程度就是交叉熵。"
+    },
+    {
+      "source": "小北",
+      "target": "信息量",
+      "relation": "related",
+      "description": "小北对未中奖不惊讶(信息量低)，对中奖非常震惊(信息量高)，体现了信息量衡量震惊程度。"
+    },
+    {
+      "source": "信息论",
+      "target": "交叉熵",
+      "relation": "related",
+      "description": "交叉熵的概念源于信息论，用于量化两个概率分布之间的差异。"
+    },
+    {
+      "source": "信息论",
+      "target": "信息熵",
+      "relation": "related",
+      "description": "信息熵是信息论中的一个核心概念，用于量化信息量。"
+    },
+    {
+      "source": "交叉熵",
+      "target": "信息量",
+      "relation": "related",
+      "description": "交叉熵的计算依赖于信息量的概念，它是对真实概率分布下信息量的期望。"
+    }
+  ],
+  "total_nodes": 216,
+  "total_edges": 314
+}

@@ -1,0 +1,9522 @@
+{
+  "doc-cb5e07f0bad1ec285e66b4df8be69531": {
+    "relation_pairs": [
+      [
+        "文本",
+        "深度学习模型"
+      ],
+      [
+        "神经元",
+        "神经网络"
+      ],
+      [
+        "声音",
+        "深度学习模型"
+      ],
+      [
+        "图片",
+        "深度学习模型"
+      ],
+      [
+        "神经网络",
+        "节点"
+      ],
+      [
+        "分层结构",
+        "节点"
+      ],
+      [
+        "分层结构",
+        "神经元"
+      ],
+      [
+        "深度学习模型",
+        "神经网络"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1769001796,
+    "update_time": 1769001796,
+    "_id": "doc-cb5e07f0bad1ec285e66b4df8be69531"
+  },
+  "doc-7fa0f1d079cce0d3f93ea8a1820caf82": {
+    "relation_pairs": [
+      [
+        "Dot Product",
+        "Perceptron"
+      ],
+      [
+        "Narrator",
+        "Weight"
+      ],
+      [
+        "AI Researcher",
+        "Wang Yin"
+      ],
+      [
+        "Model",
+        "Training"
+      ],
+      [
+        "AI Expert",
+        "Artificial General Intelligence (AGI)"
+      ],
+      [
+        "Logic Problem",
+        "Prolog"
+      ],
+      [
+        "Nano Degree Course",
+        "One-On-One Tutoring"
+      ],
+      [
+        "Dataset",
+        "Training"
+      ],
+      [
+        "Training",
+        "Trial And Error"
+      ],
+      [
+        "Narrator",
+        "Threshold"
+      ],
+      [
+        "Perceptron",
+        "Sigmoid Function"
+      ],
+      [
+        "AI Expert",
+        "Mind"
+      ],
+      [
+        "AI Researcher",
+        "Brain"
+      ],
+      [
+        "Artificial Neuron",
+        "Perceptron"
+      ],
+      [
+        "Code Review",
+        "Nano Degree Course"
+      ],
+      [
+        "Input Vector",
+        "Weight Vector"
+      ],
+      [
+        "Bias",
+        "Threshold"
+      ],
+      [
+        "AI Researcher",
+        "Cognitive Science"
+      ],
+      [
+        "Michael Nielsen",
+        "Neural Networks And Deep Learning"
+      ],
+      [
+        "AI Research",
+        "Brain Science"
+      ],
+      [
+        "Image Comparison Algorithm",
+        "Threshold"
+      ],
+      [
+        "AI Research",
+        "Yin Wang"
+      ],
+      [
+        "Partial Derivative",
+        "Training"
+      ],
+      [
+        "Bias",
+        "Training"
+      ],
+      [
+        "AI Researcher",
+        "Neuroscience"
+      ],
+      [
+        "Perceptron",
+        "Weight"
+      ],
+      [
+        "Narrator",
+        "Neural Networks and Deep Learning"
+      ],
+      [
+        "Continuous Function",
+        "Output"
+      ],
+      [
+        "Artificial Neural Network",
+        "Artificial Neuron"
+      ],
+      [
+        "Enrollment Quota",
+        "Nano Degree Course"
+      ],
+      [
+        "AI",
+        "Artificial General Intelligence (AGI)"
+      ],
+      [
+        "Perceptron",
+        "Threshold"
+      ],
+      [
+        "Image Comparison Algorithm",
+        "License Plate Photo"
+      ],
+      [
+        "Continuous Function",
+        "Sigmoid Function"
+      ],
+      [
+        "AI Expert",
+        "Douglas Hofstadter"
+      ],
+      [
+        "Training",
+        "Weight"
+      ]
+    ],
+    "count": 36,
+    "create_time": 1769001910,
+    "update_time": 1769001910,
+    "_id": "doc-7fa0f1d079cce0d3f93ea8a1820caf82"
+  },
+  "doc-6993ce492207f4f21e44d2611edc1e49": {
+    "relation_pairs": [
+      [
+        "机器学习",
+        "深度学习"
+      ],
+      [
+        "Azure机器学习",
+        "深度学习"
+      ],
+      [
+        "Azure机器学习",
+        "Foundry模型"
+      ],
+      [
+        "Decoder",
+        "Encoder"
+      ],
+      [
+        "深度学习",
+        "迁移学习"
+      ],
+      [
+        "Encoder",
+        "Transformer"
+      ],
+      [
+        "Attention Sublayer",
+        "Transformer"
+      ],
+      [
+        "深度学习",
+        "生成对抗网络"
+      ],
+      [
+        "Discriminator",
+        "Synthetic Content"
+      ],
+      [
+        "人工神经网络",
+        "深度学习"
+      ],
+      [
+        "Decoder",
+        "Transformer"
+      ],
+      [
+        "GPU",
+        "深度学习"
+      ],
+      [
+        "Microsoft Azure China",
+        "Microsoft Azure Global Edition"
+      ],
+      [
+        "深度学习",
+        "转换器"
+      ],
+      [
+        "Azure机器学习",
+        "Microsoft Azure Global Edition"
+      ],
+      [
+        "Attention",
+        "Attention Sublayer"
+      ],
+      [
+        "解码器",
+        "转换器"
+      ],
+      [
+        "PyTorch",
+        "迁移学习"
+      ],
+      [
+        "人工智能",
+        "生成式AI"
+      ],
+      [
+        "人工智能",
+        "机器学习"
+      ],
+      [
+        "编码器",
+        "转换器"
+      ],
+      [
+        "机器学习",
+        "特征提取"
+      ]
+    ],
+    "count": 22,
+    "create_time": 1769001988,
+    "update_time": 1769001988,
+    "_id": "doc-6993ce492207f4f21e44d2611edc1e49"
+  },
+  "doc-250e3986b4dd98f48693c0cff1f6d083": {
+    "relation_pairs": [
+      [
+        "机器学习",
+        "深度学习"
+      ],
+      [
+        "IBM watsonx.ai",
+        "机器学习功能"
+      ],
+      [
+        "IBM",
+        "生成式人工智能"
+      ],
+      [
+        "IBM",
+        "IBM Consulting AI服务"
+      ],
+      [
+        "IBM",
+        "数据管理"
+      ],
+      [
+        "Google",
+        "神经网络"
+      ],
+      [
+        "IBM",
+        "从推行AI项目到实现盈利报告"
+      ],
+      [
+        "IBM",
+        "让AI充分发挥作用指南"
+      ],
+      [
+        "IBM watsonx.ai",
+        "生成式AI"
+      ],
+      [
+        "体式AI",
+        "生成式AI"
+      ],
+      [
+        "IBM",
+        "解锁生成式AI + ML的强大功能电子书"
+      ],
+      [
+        "AI投资",
+        "生成式AI"
+      ],
+      [
+        "AI构建器",
+        "IBM watsonx.ai"
+      ],
+      [
+        "IBM watsonx.ai",
+        "基础模型"
+      ],
+      [
+        "AI新时代",
+        "指南"
+      ],
+      [
+        "数据管理",
+        "混合AI就绪型架构"
+      ],
+      [
+        "IBM",
+        "IBM业界领先的AI专业知识和解决方案组合"
+      ],
+      [
+        "AI应用程序",
+        "IBM业界领先的AI专业知识和解决方案组合"
+      ],
+      [
+        "2024年AI实际应用报告",
+        "IBM"
+      ],
+      [
+        "无监督学习",
+        "监督学习"
+      ],
+      [
+        "生成式AI + ML",
+        "电子书"
+      ],
+      [
+        "深度学习",
+        "神经网络"
+      ],
+      [
+        "人工智能",
+        "机器学习"
+      ],
+      [
+        "Amazon",
+        "机器学习"
+      ],
+      [
+        "IBM",
+        "树立信任，从容自信指南"
+      ],
+      [
+        "投资回报率",
+        "生成式AI"
+      ],
+      [
+        "AI应用程序",
+        "IBM watsonx.ai"
+      ],
+      [
+        "IBM",
+        "IBM watsonx.ai"
+      ],
+      [
+        "IBM",
+        "智能体式人工智能"
+      ],
+      [
+        "指南",
+        "生成式AI"
+      ]
+    ],
+    "count": 30,
+    "create_time": 1769002067,
+    "update_time": 1769002067,
+    "_id": "doc-250e3986b4dd98f48693c0cff1f6d083"
+  },
+  "doc-cb25bd59eb20459d90d689a472568aea": {
+    "relation_pairs": [
+      [
+        "AI",
+        "Google Cloud"
+      ],
+      [
+        "Machine Learning",
+        "TPU"
+      ],
+      [
+        "Google Cloud",
+        "Machine Learning"
+      ],
+      [
+        "Audit Logs",
+        "Google Cloud"
+      ],
+      [
+        "AI",
+        "CPU"
+      ],
+      [
+        "Google Cloud",
+        "Google Distributed Cloud Air-Gapped"
+      ],
+      [
+        "Google Cloud",
+        "Pay-As-You-Go Pricing"
+      ],
+      [
+        "Fitbit Data",
+        "Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "Relational Database Service"
+      ],
+      [
+        "API Deployment And Development Management Service",
+        "Google Cloud"
+      ],
+      [
+        "$300 Credit",
+        "Google Cloud"
+      ],
+      [
+        "Cloud Run",
+        "Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "Vertex AI"
+      ],
+      [
+        "GKE",
+        "Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "SQL Server On Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "Kubernetes Plugins"
+      ],
+      [
+        "Google Cloud",
+        "Oracle Workload Migration"
+      ],
+      [
+        "GPU",
+        "Machine Learning"
+      ],
+      [
+        "Always Free Tier",
+        "Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "VMware Workload Migration"
+      ],
+      [
+        "Continuous Delivery",
+        "Google Cloud"
+      ],
+      [
+        "Google Cloud",
+        "Red Hat On Google Cloud"
+      ],
+      [
+        "Gemini For Google Cloud",
+        "Google Cloud"
+      ]
+    ],
+    "count": 23,
+    "create_time": 1769002154,
+    "update_time": 1769002154,
+    "_id": "doc-cb25bd59eb20459d90d689a472568aea"
+  },
+  "doc-9fcf6610f361d14578f6d58fe5b5ea26": {
+    "relation_pairs": [
+      [
+        "动态规划",
+        "反向传播"
+      ],
+      [
+        "反向传播",
+        "误差"
+      ],
+      [
+        "反向传播",
+        "输入层"
+      ],
+      [
+        "反向传播",
+        "输出层"
+      ],
+      [
+        "反向传播",
+        "梯度"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769002176,
+    "update_time": 1769002176,
+    "_id": "doc-9fcf6610f361d14578f6d58fe5b5ea26"
+  },
+  "doc-09961ed14d51e2b7bb5974e42ff8dedd": {
+    "relation_pairs": [
+      [
+        "Backpropagation",
+        "Objective Function"
+      ],
+      [
+        "参数梯度",
+        "梯度计算"
+      ],
+      [
+        "Loss Term L",
+        "Objective Function"
+      ],
+      [
+        "Hidden Layer Variable",
+        "Output Layer Variable"
+      ],
+      [
+        "Gradient Of Objective Function With Respect To Hidden Layer Weight Parameter",
+        "Input Variable X"
+      ],
+      [
+        "Gradient Of Objective Function With Respect To Output Layer Weight Parameter",
+        "Regularization Term"
+      ],
+      [
+        "Gradient Of Objective Function With Respect To Hidden Layer Variable",
+        "Gradient Of Objective Function With Respect To Intermediate Variable Z"
+      ],
+      [
+        "参数梯度",
+        "正则化项"
+      ],
+      [
+        "Gradient Of Objective Function With Respect To Hidden Layer Weight Parameter",
+        "Regularization Term"
+      ],
+      [
+        "参数梯度",
+        "损失函数"
+      ],
+      [
+        "Backpropagation",
+        "Chain Rule"
+      ],
+      [
+        "Backpropagation",
+        "Forward Propagation"
+      ],
+      [
+        "参数梯度",
+        "隐藏层变量"
+      ],
+      [
+        "Hidden Layer Variable",
+        "Intermediate Variable Z"
+      ],
+      [
+        "Activation Function",
+        "Hidden Layer Variable"
+      ],
+      [
+        "参数梯度",
+        "模型参数"
+      ],
+      [
+        "Hidden Layer Variable",
+        "Hidden Layer Weight Parameter"
+      ],
+      [
+        "Objective Function",
+        "Regularization Term"
+      ],
+      [
+        "反向传播",
+        "正向传播"
+      ],
+      [
+        "Output Layer Variable",
+        "Output Layer Weight Parameter"
+      ],
+      [
+        "Gradient Of Objective Function With Respect To Output",
+        "Gradient Of Objective Function With Respect To Output Layer Weight Parameter"
+      ]
+    ],
+    "count": 21,
+    "create_time": 1769002258,
+    "update_time": 1769002258,
+    "_id": "doc-09961ed14d51e2b7bb5974e42ff8dedd"
+  },
+  "doc-e3f063f3b413fbd20b9634ee1bc86c59": {
+    "relation_pairs": [
+      [
+        "Strogatz",
+        "非线性动力学系统"
+      ],
+      [
+        "学习率",
+        "梯度下降法"
+      ],
+      [
+        "反向传播",
+        "非线性动力学"
+      ],
+      [
+        "Doctor of Philosophy",
+        "科学"
+      ],
+      [
+        "盛昭瀚",
+        "非线性动力系统分析引论"
+      ],
+      [
+        "神经网络",
+        "非线性动力学系统"
+      ],
+      [
+        "混沌理论",
+        "蝴蝶效应"
+      ],
+      [
+        "混沌理论",
+        "非线性动力学系统"
+      ],
+      [
+        "非线性动力系统分析引论",
+        "马军海"
+      ],
+      [
+        "梯度下降法",
+        "随机梯度下降法"
+      ],
+      [
+        "批量梯度下降法",
+        "梯度下降法"
+      ],
+      [
+        "权重参数",
+        "梯度下降法"
+      ],
+      [
+        "三体问题",
+        "非线性动力学系统"
+      ],
+      [
+        "神经网络",
+        "误差损失函数"
+      ],
+      [
+        "小批量梯度下降法",
+        "梯度下降法"
+      ],
+      [
+        "CRC Press",
+        "NONLINEAR DYNAMICS AND CHAOS with Applications to Physics, Biology, Chemistry, and Engineering (second edition)"
+      ],
+      [
+        "损失函数",
+        "梯度下降法"
+      ],
+      [
+        "埃文",
+        "蝴蝶效应"
+      ],
+      [
+        "科学出版社",
+        "非线性动力系统分析引论"
+      ],
+      [
+        "激活函数",
+        "神经网络"
+      ],
+      [
+        "反向传播",
+        "链式法则"
+      ],
+      [
+        "反向传播",
+        "神经元"
+      ],
+      [
+        "反向传播",
+        "神经网络"
+      ],
+      [
+        "梯度下降法",
+        "误差损失函数"
+      ],
+      [
+        "Doctor of Philosophy",
+        "艺术"
+      ],
+      [
+        "反向传播",
+        "激活函数"
+      ]
+    ],
+    "count": 26,
+    "create_time": 1769002338,
+    "update_time": 1769002338,
+    "_id": "doc-e3f063f3b413fbd20b9634ee1bc86c59"
+  },
+  "doc-7844fb38c827827af06d614fe4afb4df": {
+    "relation_pairs": [
+      [
+        "反向传播",
+        "节点"
+      ],
+      [
+        "反向传播",
+        "局部导数"
+      ],
+      [
+        "信号E",
+        "反向传播"
+      ],
+      [
+        "局部导数",
+        "正向传播"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769002360,
+    "update_time": 1769002360,
+    "_id": "doc-7844fb38c827827af06d614fe4afb4df"
+  },
+  "doc-10c76eb7b6589378a533aee8633d6ad4": {
+    "relation_pairs": [
+      [
+        "AI开发生命周期",
+        "IBM watsonx.ai"
+      ],
+      [
+        "工作流程",
+        "生成式AI"
+      ],
+      [
+        "生成式AI",
+        "运营"
+      ],
+      [
+        "IBM watsonx.ai",
+        "生成式AI"
+      ],
+      [
+        "反向传播",
+        "生成式AI"
+      ],
+      [
+        "Michael Nielsen",
+        "神经网络与深度学习"
+      ],
+      [
+        "激活函数",
+        "隐藏单元"
+      ],
+      [
+        "反向传播",
+        "损失函数"
+      ],
+      [
+        "反向传播",
+        "神经网络与深度学习"
+      ],
+      [
+        "反向传播",
+        "监督学习"
+      ],
+      [
+        "AI构建器",
+        "生成式AI"
+      ],
+      [
+        "IBM Granite",
+        "生成式AI"
+      ],
+      [
+        "反向传播",
+        "多层感知器"
+      ],
+      [
+        "反向传播",
+        "梯度下降算法"
+      ],
+      [
+        "权重",
+        "神经网络"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "神经网络",
+        "输出层"
+      ],
+      [
+        "损失函数",
+        "误差函数"
+      ],
+      [
+        "反向传播",
+        "深度学习模型"
+      ],
+      [
+        "激活函数",
+        "神经网络"
+      ],
+      [
+        "双曲正切函数",
+        "激活函数"
+      ],
+      [
+        "成本函数",
+        "损失函数"
+      ],
+      [
+        "IBM",
+        "IBM watsonx.ai"
+      ],
+      [
+        "AI应用程序",
+        "IBM watsonx.ai"
+      ],
+      [
+        "投资回报率",
+        "生成式AI"
+      ],
+      [
+        "损失函数",
+        "梯度下降算法"
+      ],
+      [
+        "Softmax函数",
+        "激活函数"
+      ],
+      [
+        "IBM",
+        "Think Newsletter"
+      ],
+      [
+        "偏置项",
+        "神经网络"
+      ],
+      [
+        "神经网络",
+        "隐藏层"
+      ]
+    ],
+    "count": 30,
+    "create_time": 1769002470,
+    "update_time": 1769002470,
+    "_id": "doc-10c76eb7b6589378a533aee8633d6ad4"
+  },
+  "doc-a729e7ced2028bbfeb4754b6a72084b3": {
+    "relation_pairs": [
+      [
+        "前向传播",
+        "反向传播"
+      ],
+      [
+        "单隐藏层多层感知机",
+        "隐藏变量"
+      ],
+      [
+        "单隐藏层多层感知机",
+        "输出层变量"
+      ],
+      [
+        "反向传播",
+        "自动微分"
+      ],
+      [
+        "Forward Propagation",
+        "Hidden Variable h"
+      ],
+      [
+        "参数",
+        "反向传播"
+      ],
+      [
+        "Frobenius范数",
+        "L2正则化"
+      ],
+      [
+        "梯度",
+        "链式规则"
+      ],
+      [
+        "Parameter W^{(2)}",
+        "Regularization Term s"
+      ],
+      [
+        "反向传播",
+        "梯度"
+      ],
+      [
+        "L2正则化",
+        "权重衰减"
+      ],
+      [
+        "Partial s/Partial W^{(2)}",
+        "Regularization Term s"
+      ],
+      [
+        "Objective Function J",
+        "Partial J/Partial s"
+      ],
+      [
+        "前向传播",
+        "小批量随机梯度下降"
+      ],
+      [
+        "Objective Function J",
+        "Partial J/Partial L"
+      ],
+      [
+        "Parameter W^{(1)}",
+        "Regularization Term s"
+      ],
+      [
+        "Partial s/Partial W^{(1)}",
+        "Regularization Parameter λ"
+      ],
+      [
+        "L2正则化",
+        "目标函数"
+      ],
+      [
+        "Backpropagation",
+        "Forward Propagation"
+      ],
+      [
+        "Loss Term L",
+        "Objective Function J"
+      ],
+      [
+        "反向传播",
+        "链式规则"
+      ],
+      [
+        "Optimization Algorithm",
+        "Parameter W^{(1)}"
+      ],
+      [
+        "损失函数",
+        "目标函数"
+      ],
+      [
+        "Backpropagation",
+        "Hidden Variable h"
+      ],
+      [
+        "损失函数",
+        "样本标签"
+      ],
+      [
+        "Backpropagation",
+        "Computational Graph"
+      ],
+      [
+        "Optimization Algorithm",
+        "Parameter W^{(2)}"
+      ],
+      [
+        "Partial s/Partial W^{(2)}",
+        "Regularization Parameter λ"
+      ],
+      [
+        "Objective Function J",
+        "Regularization Term s"
+      ],
+      [
+        "张量",
+        "自动微分"
+      ],
+      [
+        "正则化损失",
+        "目标函数"
+      ],
+      [
+        "反向传播",
+        "计算图"
+      ],
+      [
+        "操作符",
+        "计算图"
+      ],
+      [
+        "Chain Rule",
+        "Partial J/Partial W^{(2)}"
+      ],
+      [
+        "Partial s/Partial W^{(1)}",
+        "Regularization Term s"
+      ]
+    ],
+    "count": 35,
+    "create_time": 1769002554,
+    "update_time": 1769002554,
+    "_id": "doc-a729e7ced2028bbfeb4754b6a72084b3"
+  },
+  "doc-92d9fc2fcb5c3187adc0d3da64c15ae8": {
+    "relation_pairs": [
+      [
+        "CC 4.0 BY-SA版权协议",
+        "博主"
+      ],
+      [
+        "反向传播算法",
+        "梯度下降"
+      ],
+      [
+        "梯度",
+        "梯度下降法"
+      ],
+      [
+        "BP算法",
+        "链式求导法则"
+      ],
+      [
+        "AI大模型学习资源",
+        "实战学习"
+      ],
+      [
+        "w5",
+        "误差E"
+      ],
+      [
+        "AI大模型学习资源",
+        "视频教程"
+      ],
+      [
+        "Hadamard乘积",
+        "公式1"
+      ],
+      [
+        "反向传播算法",
+        "陈唯源"
+      ],
+      [
+        "前向传播算法",
+        "反向传播算法"
+      ],
+      [
+        "卷积神经网络",
+        "反向传播算法"
+      ],
+      [
+        "反向传播算法",
+        "链式法则"
+      ],
+      [
+        "神经元",
+        "输入值"
+      ],
+      [
+        "反向传播",
+        "误差"
+      ],
+      [
+        "net o1",
+        "w5"
+      ],
+      [
+        "反向传播",
+        "损失函数"
+      ],
+      [
+        "AI大模型学习资源",
+        "面试题"
+      ],
+      [
+        "反向传播",
+        "梯度下降法"
+      ],
+      [
+        "人工神经网络",
+        "反向传播算法"
+      ],
+      [
+        "反向传播算法",
+        "权重"
+      ],
+      [
+        "国外某网站",
+        "第一组图"
+      ],
+      [
+        "反向传播算法",
+        "激活函数"
+      ],
+      [
+        "CNN",
+        "反向传播算法"
+      ],
+      [
+        "权重系数",
+        "神经元"
+      ],
+      [
+        "AI大模型学习资源",
+        "精品AI大模型学习书籍手册"
+      ],
+      [
+        "公式1",
+        "公式2"
+      ],
+      [
+        "RNN",
+        "反向传播算法"
+      ],
+      [
+        "Adam优化器",
+        "梯度下降"
+      ],
+      [
+        "激活函数",
+        "神经元"
+      ],
+      [
+        "链式求导法则",
+        "链式法则"
+      ],
+      [
+        "偏置",
+        "反向传播算法"
+      ],
+      [
+        "out o1",
+        "误差E"
+      ],
+      [
+        "net o1",
+        "out o1"
+      ],
+      [
+        "反向传播算法",
+        "梯度"
+      ],
+      [
+        "反向传播",
+        "计算图"
+      ],
+      [
+        "AI大模型全套学习路线图",
+        "AI大模型学习资源"
+      ],
+      [
+        "前向传播",
+        "神经网络"
+      ],
+      [
+        "反向传播",
+        "神经网络"
+      ],
+      [
+        "CSDN",
+        "反向传播算法"
+      ],
+      [
+        "机器学习算法与自然语言处理公众号",
+        "陈楠"
+      ],
+      [
+        "BP算法",
+        "反向传播"
+      ],
+      [
+        "反向传播",
+        "权重"
+      ]
+    ],
+    "count": 42,
+    "create_time": 1769002668,
+    "update_time": 1769002668,
+    "_id": "doc-92d9fc2fcb5c3187adc0d3da64c15ae8"
+  },
+  "doc-b0c9962abc15c97c8cc9a40c8f13e070": {
+    "relation_pairs": [
+      [
+        "Hidden Layer",
+        "Weight Coefficient"
+      ],
+      [
+        "Error",
+        "Output Layer"
+      ],
+      [
+        "Neural Network",
+        "Random Initialization"
+      ],
+      [
+        "Neuron",
+        "Weight Coefficient"
+      ],
+      [
+        "Activation Function",
+        "Sigmoid Function"
+      ],
+      [
+        "Gradient Descent",
+        "Weight Coefficient"
+      ],
+      [
+        "Feed Forward",
+        "Neural Network"
+      ],
+      [
+        "Activation Function",
+        "Neuron"
+      ],
+      [
+        "Neural Network",
+        "Training Set"
+      ],
+      [
+        "Bias",
+        "Neuron Layer"
+      ],
+      [
+        "Error",
+        "Partial Derivative"
+      ],
+      [
+        "Error",
+        "Squared Error"
+      ],
+      [
+        "Neuron",
+        "Total Net Input"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1769002720,
+    "update_time": 1769002720,
+    "_id": "doc-b0c9962abc15c97c8cc9a40c8f13e070"
+  },
+  "doc-d22adf07bd762e4e32d9bceea2fa6218": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "CNN",
+        "卷积神经网络"
+      ],
+      [
+        "ConvNets",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769002735,
+    "update_time": 1769002735,
+    "_id": "doc-d22adf07bd762e4e32d9bceea2fa6218"
+  },
+  "doc-37f0a7ef7d63be3d8878c173058865c3": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "生物学"
+      ],
+      [
+        "卷积神经网络",
+        "推荐系统"
+      ],
+      [
+        "卷积神经网络",
+        "图像数据"
+      ],
+      [
+        "卷积神经网络",
+        "群论"
+      ],
+      [
+        "LeNet模型",
+        "卷积神经网络"
+      ],
+      [
+        "卷积层",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "计算机视觉"
+      ],
+      [
+        "卷积神经网络",
+        "多通道"
+      ],
+      [
+        "全连接的多层感知机",
+        "卷积神经网络"
+      ],
+      [
+        "GPU",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "填充"
+      ],
+      [
+        "卷积神经网络",
+        "循环神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "步幅"
+      ],
+      [
+        "卷积神经网络",
+        "图结构数据"
+      ],
+      [
+        "卷积神经网络",
+        "汇聚层"
+      ]
+    ],
+    "count": 15,
+    "create_time": 1769002789,
+    "update_time": 1769002789,
+    "_id": "doc-37f0a7ef7d63be3d8878c173058865c3"
+  },
+  "doc-4748f90dd65ccac3d7f0e4da7f935778": {
+    "relation_pairs": [
+      [
+        "Hubel",
+        "卷积神经网络"
+      ],
+      [
+        "计算机视觉",
+        "面部解锁"
+      ],
+      [
+        "感知器",
+        "神经网络单元"
+      ],
+      [
+        "卷积神经网络",
+        "反向传播算法"
+      ],
+      [
+        "Convolution Operation",
+        "Feature Map"
+      ],
+      [
+        "激活函数",
+        "非线性"
+      ],
+      [
+        "卷积神经网络",
+        "多层堆叠"
+      ],
+      [
+        "Biological Visual System",
+        "Convolutional Neural Network"
+      ],
+      [
+        "卷积神经网络",
+        "输入层"
+      ],
+      [
+        "卷积神经网络",
+        "构建模块"
+      ],
+      [
+        "感知器",
+        "神经元"
+      ],
+      [
+        "Computer Vision",
+        "Image Generation"
+      ],
+      [
+        "神经网络",
+        "连接"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Input Layer"
+      ],
+      [
+        "Filter",
+        "Weight"
+      ],
+      [
+        "Wiesel",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "训练"
+      ],
+      [
+        "全连接层",
+        "卷积神经网络"
+      ],
+      [
+        "Image",
+        "Tensor"
+      ],
+      [
+        "Height",
+        "Image"
+      ],
+      [
+        "卷积神经网络",
+        "输出层"
+      ],
+      [
+        "天善智能",
+        "数据挖掘"
+      ],
+      [
+        "机器学习",
+        "深度学习"
+      ],
+      [
+        "Convolution Kernel",
+        "Filter"
+      ],
+      [
+        "Faster R-CNN",
+        "卷积神经网络"
+      ],
+      [
+        "二维矩阵",
+        "输入层"
+      ],
+      [
+        "外部刺激",
+        "感知器"
+      ],
+      [
+        "Artificial Intelligence",
+        "Deep Learning"
+      ],
+      [
+        "微分",
+        "数学方程"
+      ],
+      [
+        "卷积神经网络",
+        "层级化特征提取"
+      ],
+      [
+        "Convolution Operation",
+        "Convolutional Neural Network"
+      ],
+      [
+        "Computer Vision",
+        "Convolutional Neural Network"
+      ],
+      [
+        "Convolution Operation",
+        "Local Feature"
+      ],
+      [
+        "CAJ文档",
+        "知网"
+      ],
+      [
+        "Padding",
+        "Zero-Padding"
+      ],
+      [
+        "卷积神经网络",
+        "滤波器"
+      ],
+      [
+        "智能医疗保健",
+        "计算机视觉"
+      ],
+      [
+        "卷积层",
+        "激活函数"
+      ],
+      [
+        "二维卷积层",
+        "空间维度"
+      ],
+      [
+        "卷积平摊",
+        "深度学习"
+      ],
+      [
+        "Convolution Operation",
+        "Data Window"
+      ],
+      [
+        "应用方法",
+        "讲义"
+      ],
+      [
+        "卷积神经网络",
+        "腾讯云"
+      ],
+      [
+        "卷积神经网络",
+        "基础CNN"
+      ],
+      [
+        "Convolution Layer",
+        "Convolutional Neural Network"
+      ],
+      [
+        "数学方程",
+        "线性代数"
+      ],
+      [
+        "下采样",
+        "池化层"
+      ],
+      [
+        "Activation Function",
+        "ReLU"
+      ],
+      [
+        "卷积操作",
+        "卷积神经网络"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Traditional Neural Network"
+      ],
+      [
+        "卷积神经网络",
+        "激活层"
+      ],
+      [
+        "Computer Vision",
+        "Object Detection"
+      ],
+      [
+        "感知器",
+        "电信号"
+      ],
+      [
+        "卷积层",
+        "卷积核"
+      ],
+      [
+        "Convolution Operation",
+        "Zero-Padding"
+      ],
+      [
+        "自助零售",
+        "计算机视觉"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Translation Invariance"
+      ],
+      [
+        "卷积层",
+        "卷积神经网络"
+      ],
+      [
+        "人工智能AI",
+        "天善智能"
+      ],
+      [
+        "卷积操作",
+        "输入图像"
+      ],
+      [
+        "人工神经网络",
+        "卷积神经网络"
+      ],
+      [
+        "Channel",
+        "RGB Color Model"
+      ],
+      [
+        "卷积操作",
+        "卷积核"
+      ],
+      [
+        "Depth",
+        "Image"
+      ],
+      [
+        "卷积神经网络",
+        "池化层"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Deep Learning"
+      ],
+      [
+        "卷积神经网络",
+        "生物视觉系统"
+      ],
+      [
+        "Activation Function",
+        "Convolution Layer"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Image"
+      ],
+      [
+        "人工智能",
+        "深度学习"
+      ],
+      [
+        "卷积神经网络",
+        "图像识别"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Human Visual Processing"
+      ],
+      [
+        "卷积神经网络",
+        "图像处理"
+      ],
+      [
+        "Image",
+        "Width"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "Mask R-CNN",
+        "卷积神经网络"
+      ],
+      [
+        "人工智能",
+        "卷积神经网络"
+      ],
+      [
+        "Convolution Operation",
+        "Filter"
+      ],
+      [
+        "Convolution Operation",
+        "Output Feature Map"
+      ],
+      [
+        "自动驾驶",
+        "计算机视觉"
+      ],
+      [
+        "卷积神经网络",
+        "计算机视觉"
+      ],
+      [
+        "商业智能BI",
+        "天善智能"
+      ],
+      [
+        "Image",
+        "Pixel"
+      ],
+      [
+        "Convolution Operation",
+        "Stride"
+      ],
+      [
+        "输入层",
+        "颜色通道"
+      ],
+      [
+        "SSD",
+        "卷积神经网络"
+      ],
+      [
+        "架构设计",
+        "讲义"
+      ],
+      [
+        "卷积神经网络",
+        "知网"
+      ],
+      [
+        "PaddlePaddle",
+        "手写数字识别"
+      ],
+      [
+        "自动修图",
+        "计算机视觉"
+      ],
+      [
+        "突触",
+        "连接"
+      ],
+      [
+        "二维卷积层",
+        "卷积神经网络"
+      ],
+      [
+        "数学方程",
+        "文章"
+      ],
+      [
+        "ReLU",
+        "激活函数"
+      ],
+      [
+        "天善智能",
+        "数据爱好者交流群"
+      ],
+      [
+        "大数据分析",
+        "天善智能"
+      ],
+      [
+        "CAJ工具",
+        "CAJ文档"
+      ],
+      [
+        "Image",
+        "RGB Color Model"
+      ],
+      [
+        "卷积神经网络",
+        "平移不变性"
+      ],
+      [
+        "神经网络",
+        "节点"
+      ],
+      [
+        "全链接层",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 101,
+    "create_time": 1769002959,
+    "update_time": 1769002959,
+    "_id": "doc-4748f90dd65ccac3d7f0e4da7f935778"
+  },
+  "doc-c79065b95e8586e85c1d4a6dfcdb5d37": {
+    "relation_pairs": [
+      [
+        "卷积层",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习系统"
+      ],
+      [
+        "循环神经网络",
+        "深度学习系统"
+      ],
+      [
+        "CNN架构",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769002981,
+    "update_time": 1769002981,
+    "_id": "doc-c79065b95e8586e85c1d4a6dfcdb5d37"
+  },
+  "doc-c79b805e7da972f5a80b0f9eb1144d75": {
+    "relation_pairs": [
+      [
+        "Convolutional Neural Networks",
+        "Deep Learning"
+      ],
+      [
+        "卷积神经网络",
+        "卷积计算"
+      ],
+      [
+        "Convolutional Neural Networks",
+        "Feedforward Neural Networks"
+      ],
+      [
+        "前馈神经网络",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "Convolutional Computation",
+        "Convolutional Neural Networks"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769003014,
+    "update_time": 1769003014,
+    "_id": "doc-c79b805e7da972f5a80b0f9eb1144d75"
+  },
+  "doc-225c135f952fba89e32fc67dcf80d0f5": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "音频"
+      ],
+      [
+        "卷积神经网络",
+        "图像"
+      ],
+      [
+        "ConvNet",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "时间序列"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "信号",
+        "卷积神经网络"
+      ],
+      [
+        "CNN",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769003046,
+    "update_time": 1769003046,
+    "_id": "doc-225c135f952fba89e32fc67dcf80d0f5"
+  },
+  "doc-2a3ed384e5cd9787590d994e1b861e3a": {
+    "relation_pairs": [
+      [
+        "AI",
+        "体验"
+      ],
+      [
+        "watsonx.ai",
+        "基础模型"
+      ],
+      [
+        "CNN",
+        "图像任务"
+      ],
+      [
+        "Convolutional Layer",
+        "Convolutional Neural Network (CNN)"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Medical Imaging Diagnosis"
+      ],
+      [
+        "Convolutional Layer",
+        "Rectified Linear Unit (ReLU)"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "IBM"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Pooling Layer"
+      ],
+      [
+        "AI",
+        "商业价值"
+      ],
+      [
+        "CNN",
+        "计算机视觉模型"
+      ],
+      [
+        "CNN",
+        "VGGNet"
+      ],
+      [
+        "Kernel (Filter)",
+        "Receptive Field"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Parameter Sharing"
+      ],
+      [
+        "AI模型",
+        "利益相关者要求"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Image Recognition"
+      ],
+      [
+        "AI",
+        "实时决策"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Fully Connected Layer"
+      ],
+      [
+        "CNN",
+        "watsonx.ai"
+      ],
+      [
+        "Convolutional Layer",
+        "RGB"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Feature Hierarchy"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Local Receptive Field"
+      ],
+      [
+        "IBM Granite",
+        "护栏选项"
+      ],
+      [
+        "Convolutional Layer",
+        "Kernel (Filter)"
+      ],
+      [
+        "指南面向CEO的生成式AI指南",
+        "风险"
+      ],
+      [
+        "IBM",
+        "Watson Studio"
+      ],
+      [
+        "IBM Granite",
+        "代码"
+      ],
+      [
+        "AI计划",
+        "报告2024年AI实际应用"
+      ],
+      [
+        "IBM Granite",
+        "时间序列"
+      ],
+      [
+        "AI",
+        "关键工作流程"
+      ],
+      [
+        "AI模型",
+        "成本"
+      ],
+      [
+        "AI模型",
+        "性能"
+      ],
+      [
+        "性能",
+        "最佳模型"
+      ],
+      [
+        "AI",
+        "运营"
+      ],
+      [
+        "投资",
+        "指南面向CEO的生成式AI指南"
+      ],
+      [
+        "Overfitting",
+        "Pooling Layer"
+      ],
+      [
+        "最佳模型",
+        "风险"
+      ],
+      [
+        "CNN",
+        "ResNet"
+      ],
+      [
+        "利益相关者要求",
+        "最佳模型"
+      ],
+      [
+        "Non-Linearity",
+        "Rectified Linear Unit (ReLU)"
+      ],
+      [
+        "AI模型",
+        "风险"
+      ],
+      [
+        "Autonomous Driving Perception",
+        "Convolutional Neural Network (CNN)"
+      ],
+      [
+        "Convolutional Layer",
+        "Feature Map"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Intelligent Security"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Object Detection"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "指南面向CEO的生成式AI指南",
+        "生成式AI"
+      ],
+      [
+        "AI投资",
+        "回报"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Traditional Feedforward Neural Network"
+      ],
+      [
+        "AI应用程序",
+        "IBM Granite"
+      ],
+      [
+        "IBM Granite",
+        "语言"
+      ],
+      [
+        "AlexNet",
+        "CNN"
+      ],
+      [
+        "AI模型",
+        "数据集"
+      ],
+      [
+        "CNN",
+        "Watson Studio"
+      ],
+      [
+        "CNN",
+        "GoogLeNet"
+      ],
+      [
+        "最佳模型",
+        "部署需求"
+      ],
+      [
+        "AI模型",
+        "部署需求"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "LeNet-5"
+      ],
+      [
+        "Computer Vision",
+        "Convolutional Neural Network (CNN)"
+      ],
+      [
+        "成本",
+        "最佳模型"
+      ],
+      [
+        "IBM",
+        "watsonx.ai"
+      ],
+      [
+        "watsonx.ai",
+        "机器学习"
+      ],
+      [
+        "watsonx.ai",
+        "生成式AI"
+      ],
+      [
+        "CNN",
+        "LeNet-5"
+      ],
+      [
+        "AI应用程序",
+        "watsonx.ai"
+      ],
+      [
+        "Convolutional Neural Network (CNN)",
+        "Structured Data"
+      ]
+    ],
+    "count": 65,
+    "create_time": 1769003207,
+    "update_time": 1769003207,
+    "_id": "doc-2a3ed384e5cd9787590d994e1b861e3a"
+  },
+  "doc-df57bc33c49fe522c66616c1a4be5336": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "大型图像处理"
+      ],
+      [
+        "人工神经元",
+        "卷积神经网络"
+      ],
+      [
+        "前馈神经网络",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769003219,
+    "update_time": 1769003219,
+    "_id": "doc-df57bc33c49fe522c66616c1a4be5336"
+  },
+  "doc-8e1305a63a0b2c4b823467f52bfa4ab8": {
+    "relation_pairs": [
+      [
+        "MNIST模型",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "福岛邦彦"
+      ],
+      [
+        "手写字符识别",
+        "神经认知模型"
+      ],
+      [
+        "卷积神经网络",
+        "计算机学者"
+      ],
+      [
+        "GoogleNet",
+        "卷积神经网络"
+      ],
+      [
+        "LeNet",
+        "美国邮政系统"
+      ],
+      [
+        "2x2矩阵",
+        "池化层"
+      ],
+      [
+        "数字化信号",
+        "输入层"
+      ],
+      [
+        "卷积核",
+        "空间平移不变性"
+      ],
+      [
+        "Google",
+        "卷积神经网络"
+      ],
+      [
+        "卷积层",
+        "卷积核"
+      ],
+      [
+        "ZFNet",
+        "卷积神经网络"
+      ],
+      [
+        "Linear",
+        "PyTorch"
+      ],
+      [
+        "数学家",
+        "计算机学者"
+      ],
+      [
+        "卷积层",
+        "池化层"
+      ],
+      [
+        "二维图像",
+        "卷积层"
+      ],
+      [
+        "二维离散卷积",
+        "卷积核"
+      ],
+      [
+        "图像分类",
+        "深度卷积网络"
+      ],
+      [
+        "感受野",
+        "特征图"
+      ],
+      [
+        "Conv2d",
+        "PyTorch"
+      ],
+      [
+        "VGGNet",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "计算机视觉"
+      ],
+      [
+        "池化层",
+        "过拟合"
+      ],
+      [
+        "LeNet",
+        "手写数字识别"
+      ],
+      [
+        "卷积层",
+        "深度卷积网络"
+      ],
+      [
+        "SGD",
+        "学习率"
+      ],
+      [
+        "局部池化",
+        "池化层"
+      ],
+      [
+        "ResNet",
+        "网络模型退化问题"
+      ],
+      [
+        "VGGNet",
+        "牛津大学"
+      ],
+      [
+        "卷积层",
+        "卷积神经网络"
+      ],
+      [
+        "MNIST模型",
+        "SGD"
+      ],
+      [
+        "AlexNet",
+        "超高识别率"
+      ],
+      [
+        "AlexNet",
+        "层叠的卷积层"
+      ],
+      [
+        "MaxPool2d",
+        "PyTorch"
+      ],
+      [
+        "卷积层",
+        "激活函数"
+      ],
+      [
+        "CNN",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "手写体数字"
+      ],
+      [
+        "卷积神经网络",
+        "车型"
+      ],
+      [
+        "ResNet",
+        "卷积神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "池化层"
+      ],
+      [
+        "1x1卷积",
+        "GoogleNet"
+      ],
+      [
+        "生物视觉系统",
+        "福岛邦彦"
+      ],
+      [
+        "Yann LeCun",
+        "卷积神经网络"
+      ],
+      [
+        "MNIST模型",
+        "交叉熵"
+      ],
+      [
+        "全连接层",
+        "卷积神经网络"
+      ],
+      [
+        "生理学家",
+        "计算机学者"
+      ],
+      [
+        "卷积层",
+        "特征图"
+      ],
+      [
+        "全连接层",
+        "过拟合"
+      ],
+      [
+        "AlexNet",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 49,
+    "create_time": 1769003362,
+    "update_time": 1769003362,
+    "_id": "doc-8e1305a63a0b2c4b823467f52bfa4ab8"
+  },
+  "doc-e101b215c048456f8049a66e9ebd2c54": {
+    "relation_pairs": [
+      [
+        "无监督学习",
+        "自编码器"
+      ],
+      [
+        "编码",
+        "自编码器"
+      ],
+      [
+        "深度前馈神经网络",
+        "自编码器"
+      ],
+      [
+        "神经网络",
+        "自编码器"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769003381,
+    "update_time": 1769003381,
+    "_id": "doc-e101b215c048456f8049a66e9ebd2c54"
+  },
+  "doc-cc43c5c5bb53711c8b6a6ae6cdc8e9c8": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "序列"
+      ],
+      [
+        "循环神经网络",
+        "深度学习"
+      ],
+      [
+        "序列",
+        "循环神经网络"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "注意力池化",
+        "词元序列"
+      ],
+      [
+        "注意力机制",
+        "注意力池化"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769003422,
+    "update_time": 1769003422,
+    "_id": "doc-cc43c5c5bb53711c8b6a6ae6cdc8e9c8"
+  },
+  "doc-0a82bdcf222bdb547252e178dfe4d622": {
+    "relation_pairs": [
+      [
+        "生成模型",
+        "自动编码器"
+      ],
+      [
+        "特征学习",
+        "自动编码器"
+      ],
+      [
+        "自动编码器",
+        "解码器"
+      ],
+      [
+        "数据降维",
+        "自动编码器"
+      ],
+      [
+        "神经网络",
+        "自动编码器"
+      ],
+      [
+        "编码器",
+        "自动编码器"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769003441,
+    "update_time": 1769003441,
+    "_id": "doc-0a82bdcf222bdb547252e178dfe4d622"
+  },
+  "doc-0c8c61555719c99f2248173e3fd5ae4f": {
+    "relation_pairs": [
+      [
+        "前馈神经网络",
+        "自编码器"
+      ]
+    ],
+    "count": 1,
+    "create_time": 1769003450,
+    "update_time": 1769003450,
+    "_id": "doc-0c8c61555719c99f2248173e3fd5ae4f"
+  },
+  "doc-261214465e9e66011cd2c39022b3dc6b": {
+    "relation_pairs": [
+      [
+        "Neural network methods for Natural Language Processing",
+        "Springer"
+      ],
+      [
+        "Large Language Models",
+        "Transformers"
+      ],
+      [
+        "Decoder",
+        "Encoder-Decoder Architecture"
+      ],
+      [
+        "OReilly",
+        "Transformers for Natural Language Processing"
+      ],
+      [
+        "Encoder",
+        "Encoder-Decoder Architecture"
+      ],
+      [
+        "Generative AI",
+        "IBM watsonx.ai"
+      ],
+      [
+        "IBM",
+        "IBM watsonx.ai"
+      ],
+      [
+        "Computational Linguistics",
+        "Natural Language Processing"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "Natural Language Processing with Transformers",
+        "OReilly"
+      ],
+      [
+        "BERT",
+        "Transformers"
+      ],
+      [
+        "Hands-on Large Language Models",
+        "OReilly"
+      ],
+      [
+        "Foundation Models",
+        "IBM watsonx.ai"
+      ],
+      [
+        "AI News",
+        "Think Newsletter"
+      ],
+      [
+        "Natural Language Processing",
+        "Speech Recognition"
+      ],
+      [
+        "Martin, J.",
+        "Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1769003536,
+    "update_time": 1769003536,
+    "_id": "doc-261214465e9e66011cd2c39022b3dc6b"
+  },
+  "doc-93860b80c6ea559ea9b38a8562c8df8c": {
+    "relation_pairs": [
+      [
+        "多层感知机",
+        "输入层"
+      ],
+      [
+        "前馈神经网络",
+        "多层感知机"
+      ],
+      [
+        "多层感知机",
+        "隐藏层"
+      ],
+      [
+        "多层感知机",
+        "输出层"
+      ],
+      [
+        "反向传播算法",
+        "多层感知机"
+      ],
+      [
+        "Frank Rosenblatt",
+        "多层感知机"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769003565,
+    "update_time": 1769003565,
+    "_id": "doc-93860b80c6ea559ea9b38a8562c8df8c"
+  },
+  "doc-2bd963b40a794cdd2a7befd072b521f8": {
+    "relation_pairs": [
+      [
+        "多层感知机",
+        "深度网络"
+      ],
+      [
+        "多层感知机",
+        "神经元"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1769003576,
+    "update_time": 1769003576,
+    "_id": "doc-2bd963b40a794cdd2a7befd072b521f8"
+  },
+  "doc-8bed972d3227719ebad6c051fae785c9": {
+    "relation_pairs": [
+      [
+        "Gradient",
+        "ReLU"
+      ],
+      [
+        "Gradient",
+        "Sigmoid"
+      ],
+      [
+        "Activation Function",
+        "ReLU"
+      ],
+      [
+        "Sigmoid",
+        "Tanh"
+      ],
+      [
+        "Gradient",
+        "Tanh"
+      ],
+      [
+        "Activation Function",
+        "Sigmoid"
+      ],
+      [
+        "Activation Function",
+        "Tanh"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769003610,
+    "update_time": 1769003610,
+    "_id": "doc-8bed972d3227719ebad6c051fae785c9"
+  },
+  "doc-80c468f42f64d269b4538a150a4f94cd": {
+    "relation_pairs": [
+      [
+        "SARSA",
+        "强化学习"
+      ],
+      [
+        "多智能体",
+        "强化学习"
+      ],
+      [
+        "Q学习",
+        "强化学习"
+      ],
+      [
+        "RLHF",
+        "强化学习"
+      ],
+      [
+        "Self-play",
+        "强化学习"
+      ],
+      [
+        "Keras",
+        "TensorFlow"
+      ],
+      [
+        "强化学习",
+        "时序差分"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769003677,
+    "update_time": 1769003677,
+    "_id": "doc-80c468f42f64d269b4538a150a4f94cd"
+  },
+  "doc-6d725020748a8a4cbf40cdbf97928919": {
+    "relation_pairs": [
+      [
+        "多层感知机",
+        "非线性激活函数"
+      ],
+      [
+        "连续函数",
+        "非线性激活函数"
+      ],
+      [
+        "多层感知机",
+        "隐含层"
+      ],
+      [
+        "单层感知机",
+        "多层感知机"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769003697,
+    "update_time": 1769003697,
+    "_id": "doc-6d725020748a8a4cbf40cdbf97928919"
+  },
+  "doc-88c27f8b7b31c4aea51cfc3d8f79a013": {
+    "relation_pairs": [
+      [
+        "深度学习",
+        "研究"
+      ],
+      [
+        "研究",
+        "认知神经科学"
+      ],
+      [
+        "有效学习",
+        "随机梯度下降"
+      ],
+      [
+        "损失函数地形",
+        "随机梯度下降"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769003717,
+    "update_time": 1769003717,
+    "_id": "doc-88c27f8b7b31c4aea51cfc3d8f79a013"
+  },
+  "doc-92f537cdcce6583c2c63c400d634feaf": {
+    "relation_pairs": [
+      [
+        "类脑智能技术",
+        "计算神经科学"
+      ],
+      [
+        "机器学习",
+        "脑功能"
+      ],
+      [
+        "机器学习",
+        "脑科学数据"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769003737,
+    "update_time": 1769003737,
+    "_id": "doc-92f537cdcce6583c2c63c400d634feaf"
+  },
+  "doc-9ed0526c7eff8b1a424224e53050b149": {
+    "relation_pairs": [
+      [
+        "深度学习",
+        "计算神经科学"
+      ],
+      [
+        "Coursera",
+        "计算神经科学"
+      ],
+      [
+        "深度学习",
+        "计算认知"
+      ],
+      [
+        "Coursera",
+        "计算认知"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769003755,
+    "update_time": 1769003755,
+    "_id": "doc-9ed0526c7eff8b1a424224e53050b149"
+  },
+  "doc-ceba1324d8578bf32520312053ae6580": {
+    "relation_pairs": [
+      [
+        "Norbert",
+        "Pitts"
+      ],
+      [
+        "Yann LeCun",
+        "神经科学"
+      ],
+      [
+        "Geoffrey Hinton",
+        "反向传播算法"
+      ],
+      [
+        "Deep Learning",
+        "Network Search"
+      ],
+      [
+        "AlphaGo",
+        "深度学习"
+      ],
+      [
+        "Walter Pitts",
+        "Warren McCulloch"
+      ],
+      [
+        "Geoffrey Hinton",
+        "玻尔兹曼机"
+      ],
+      [
+        "Gottfried Wilhelm Leibniz",
+        "Logical Machine"
+      ],
+      [
+        "AlphaGo",
+        "强化学习"
+      ],
+      [
+        "Carnap",
+        "Walter Pitts"
+      ],
+      [
+        "Advertising Push",
+        "Deep Learning"
+      ],
+      [
+        "Jim Anderson",
+        "Talking Nets"
+      ],
+      [
+        "James Anderson",
+        "Talking Nets"
+      ],
+      [
+        "Deep Learning",
+        "Deep Learning Revolution"
+      ],
+      [
+        "University Of Chicago",
+        "Walter Pitts"
+      ],
+      [
+        "Pitts",
+        "芝加哥大学"
+      ],
+      [
+        "人工神经网络",
+        "监督学习"
+      ],
+      [
+        "Google",
+        "深脑"
+      ],
+      [
+        "MIT Press",
+        "Talking Nets"
+      ],
+      [
+        "Deep Learning",
+        "Website Filtering"
+      ],
+      [
+        "Deep Learning",
+        "Image Recognition"
+      ],
+      [
+        "A Logical Calculus Of The Ideas Immanent In Nervous Activity",
+        "McCulloch-Pitts Network"
+      ],
+      [
+        "人工神经网络",
+        "深度学习"
+      ],
+      [
+        "Artificial Intelligence",
+        "McCulloch-Pitts Network"
+      ],
+      [
+        "Geoffrey Hinton",
+        "神经科学"
+      ],
+      [
+        "Geoffrey Hinton",
+        "Terry Sejnowski"
+      ],
+      [
+        "Finite Automata",
+        "McCulloch-Pitts Network"
+      ],
+      [
+        "AlphaGo",
+        "深脑"
+      ],
+      [
+        "Artificial Neural Network",
+        "Learning"
+      ],
+      [
+        "强化学习",
+        "深脑"
+      ],
+      [
+        "Deep Learning",
+        "Yann LeCun"
+      ],
+      [
+        "University Of Illinois",
+        "Warren McCulloch"
+      ],
+      [
+        "Computational Neuroscience",
+        "McCulloch-Pitts Network"
+      ],
+      [
+        "Principia Mathematica",
+        "Walter Pitts"
+      ],
+      [
+        "MIT",
+        "Pitts"
+      ],
+      [
+        "AlphaGo",
+        "Ke Jie"
+      ],
+      [
+        "Bertrand Russell",
+        "Walter Pitts"
+      ],
+      [
+        "Deep Learning",
+        "Yoshua Bengio"
+      ],
+      [
+        "Lettvin",
+        "Talking Nets"
+      ],
+      [
+        "Deep Learning",
+        "Geoffrey Hinton"
+      ],
+      [
+        "Christian Ideology",
+        "Geoffrey Hinton"
+      ],
+      [
+        "Christian Ideology",
+        "Hinton"
+      ],
+      [
+        "McCulloch–Pitts神经元",
+        "Warren McCulloch"
+      ],
+      [
+        "AlphaGo",
+        "李世石"
+      ],
+      [
+        "Jim Anderson",
+        "Lettvin"
+      ],
+      [
+        "Deep Learning",
+        "Synapse"
+      ],
+      [
+        "Learning",
+        "Synapse"
+      ],
+      [
+        "Geoffrey Hinton",
+        "Talking Nets"
+      ],
+      [
+        "Geoffrey Hinton",
+        "Google"
+      ],
+      [
+        "Edward Rosenfeld",
+        "Talking Nets"
+      ],
+      [
+        "McCulloch–Pitts神经元",
+        "Pitts"
+      ],
+      [
+        "Deep Learning",
+        "Language Translation"
+      ],
+      [
+        "Connection Strength Matrix",
+        "McCulloch-Pitts Network"
+      ],
+      [
+        "Deep Learning",
+        "Nature"
+      ],
+      [
+        "Alan Turing",
+        "Universal Computing Engine"
+      ],
+      [
+        "Yann LeCun",
+        "卷积神经网络"
+      ],
+      [
+        "Geoffrey Hinton",
+        "深度学习"
+      ],
+      [
+        "Geoffrey Hinton",
+        "人工神经网络"
+      ],
+      [
+        "Geoffrey Hinton",
+        "Yann LeCun"
+      ],
+      [
+        "Hinton",
+        "Talking Nets"
+      ]
+    ],
+    "count": 60,
+    "create_time": 1769003895,
+    "update_time": 1769003895,
+    "_id": "doc-ceba1324d8578bf32520312053ae6580"
+  },
+  "doc-03a5749c6bb89c89b202fa903dbb847f": {
+    "relation_pairs": [
+      [
+        "深度学习",
+        "神经网络"
+      ],
+      [
+        "人生外挂",
+        "科学实证"
+      ],
+      [
+        "Excel",
+        "神经网络"
+      ],
+      [
+        "科学实证",
+        "运气"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769003930,
+    "update_time": 1769003930,
+    "_id": "doc-03a5749c6bb89c89b202fa903dbb847f"
+  },
+  "doc-a0a9ca6f9242eabc77977a8fe45c5022": {
+    "relation_pairs": [
+      [
+        "张江国际脑库",
+        "生物医学大数据中心"
+      ],
+      [
+        "张江国际脑影像中心",
+        "生物医学影像中心"
+      ],
+      [
+        "认知神经科学",
+        "认知神经科学中心"
+      ],
+      [
+        "教育部重点实验室",
+        "认知神经科学"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004005,
+    "update_time": 1769004005,
+    "_id": "doc-a0a9ca6f9242eabc77977a8fe45c5022"
+  },
+  "doc-99be6d80a8d1a4129da56c2930cc8b6d": {
+    "relation_pairs": [
+      [
+        "物理学",
+        "蛋白质结构预测"
+      ],
+      [
+        "王天尧",
+        "生物信息学"
+      ],
+      [
+        "三维空间结构",
+        "蛋白质结构预测"
+      ],
+      [
+        "三维空间结构",
+        "生理功能"
+      ],
+      [
+        "氨基酸序列",
+        "蛋白质结构预测"
+      ],
+      [
+        "蛋白质结构预测",
+        "计算机计算模拟方法"
+      ],
+      [
+        "2024",
+        "王天尧"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769004026,
+    "update_time": 1769004026,
+    "_id": "doc-99be6d80a8d1a4129da56c2930cc8b6d"
+  },
+  "doc-c5eafae240ac5d07dadf7c4eb744e8eb": {
+    "relation_pairs": [
+      [
+        "深度学习",
+        "蛋白质结构预测"
+      ],
+      [
+        "机器学习",
+        "蛋白质结构预测"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1769004051,
+    "update_time": 1769004051,
+    "_id": "doc-c5eafae240ac5d07dadf7c4eb744e8eb"
+  },
+  "doc-62c73611ffdf6388dc832abdf23ad216": {
+    "relation_pairs": [
+      [
+        "ESMFold",
+        "蛋白质结构"
+      ],
+      [
+        "ESMFold",
+        "深度学习"
+      ],
+      [
+        "ESMFold",
+        "氨基酸序列"
+      ],
+      [
+        "ESMFold",
+        "FAIR"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004070,
+    "update_time": 1769004070,
+    "_id": "doc-62c73611ffdf6388dc832abdf23ad216"
+  },
+  "doc-94655c02fc2c25c9a0fd0b9bf8d8dc6f": {
+    "relation_pairs": [
+      [
+        "AlphaFold",
+        "AlphaFold2"
+      ],
+      [
+        "Albert Lasker Basic Medical Research Award",
+        "John Jumper"
+      ],
+      [
+        "AlphaFold2",
+        "《自然》周刊"
+      ],
+      [
+        "Massive Papers",
+        "大数据"
+      ],
+      [
+        "江珀",
+        "空间立体结构"
+      ],
+      [
+        "AlphaFold",
+        "江珀"
+      ],
+      [
+        "AlphaFold2 Algorithm",
+        "DeepMind"
+      ],
+      [
+        "Albert Lasker Basic Medical Research Award",
+        "Demis Hassabis"
+      ],
+      [
+        "AI工具",
+        "大数据"
+      ],
+      [
+        "Genome Sequencing Results",
+        "大数据"
+      ],
+      [
+        "AlphaFold2",
+        "AlphaFold2 Paper"
+      ],
+      [
+        "AlphaFold2",
+        "Protein Sequence"
+      ],
+      [
+        "江珀",
+        "进化理念"
+      ],
+      [
+        "AlphaFold2",
+        "CASP 14"
+      ],
+      [
+        "机器有效学习策略",
+        "江珀"
+      ],
+      [
+        "AlphaFold2",
+        "蛋白质结构预测"
+      ],
+      [
+        "AlphaFold2",
+        "生命科学研究"
+      ],
+      [
+        "AlphaFold2",
+        "《科学》周刊"
+      ],
+      [
+        "自然-方法学",
+        "蛋白质结构预测"
+      ],
+      [
+        "AlphaFold",
+        "DeepMind"
+      ],
+      [
+        "传统算法",
+        "江珀"
+      ]
+    ],
+    "count": 21,
+    "create_time": 1769004153,
+    "update_time": 1769004153,
+    "_id": "doc-94655c02fc2c25c9a0fd0b9bf8d8dc6f"
+  },
+  "doc-02f3c5dec4cb0c3b0004aa9d7c2bbffb": {
+    "relation_pairs": [
+      [
+        "D-I-TASSER",
+        "郑伟"
+      ],
+      [
+        "CASP",
+        "D-I-TASSER"
+      ],
+      [
+        "Bioinformatics",
+        "Nankai Statistics"
+      ],
+      [
+        "Nankai Statistics",
+        "Nature Cancer"
+      ],
+      [
+        "Biomedical Interdisciplinary Field",
+        "Nankai Statistics"
+      ],
+      [
+        "D-I-TASSER",
+        "抗体筛选与优化"
+      ],
+      [
+        "Nankai Statistics",
+        "Structural Prediction Algorithm"
+      ],
+      [
+        "D-I-TASSER",
+        "孤儿蛋白"
+      ],
+      [
+        "D-I-TASSER",
+        "张阳"
+      ],
+      [
+        "AlphaFold3",
+        "D-I-TASSER"
+      ],
+      [
+        "D-I-TASSER",
+        "罕见病致病基因识别"
+      ],
+      [
+        "Cumulative Citations Of 3500+",
+        "Nankai Statistics"
+      ],
+      [
+        "D-I-TASSER",
+        "多结构域蛋白"
+      ],
+      [
+        "Circulation",
+        "Nankai Statistics"
+      ],
+      [
+        "Nankai Statistics",
+        "Nature Biotechnology"
+      ],
+      [
+        "PNAS",
+        "郑伟"
+      ],
+      [
+        "Nankai Statistics",
+        "Natural Language Processing"
+      ],
+      [
+        "Nature Biotechnology",
+        "郑伟"
+      ],
+      [
+        "Nankai Statistics",
+        "Nature Communications"
+      ],
+      [
+        "Nature Communications",
+        "郑伟"
+      ],
+      [
+        "Nankai University",
+        "Nankai University News Center"
+      ],
+      [
+        "Nankai Statistics",
+        "Over 50 Articles"
+      ],
+      [
+        "Nankai Statistics",
+        "Nature Methods"
+      ],
+      [
+        "Mathematical Epidemiology",
+        "Nankai Statistics"
+      ],
+      [
+        "Gut",
+        "Nankai Statistics"
+      ],
+      [
+        "Nature Methods",
+        "郑伟"
+      ],
+      [
+        "Biostatistics",
+        "Nankai Statistics"
+      ],
+      [
+        "D-I-TASSER",
+        "病毒感染性预测"
+      ],
+      [
+        "International Protein Structure And Function Prediction Competitions",
+        "Nankai Statistics"
+      ],
+      [
+        "Nankai Statistics",
+        "Nature Communication"
+      ],
+      [
+        "DMFold",
+        "郑伟"
+      ],
+      [
+        "D-I-TASSER",
+        "Lydia Freddolino"
+      ],
+      [
+        "Multiple Championships",
+        "Nankai Statistics"
+      ],
+      [
+        "Nankai Statistics",
+        "Nankai University"
+      ],
+      [
+        "Nearly 100,000 Users",
+        "Structural Prediction Algorithm"
+      ],
+      [
+        "Epidemic Situation Analysis Reports",
+        "Nankai Statistics"
+      ],
+      [
+        "D-I-TASSER",
+        "辅助冷冻电镜结构解析"
+      ],
+      [
+        "Dozens Of Papers",
+        "Nankai Statistics"
+      ],
+      [
+        "D-I-TASSER",
+        "人类基因组"
+      ],
+      [
+        "Nankai Statistics",
+        "PNAS"
+      ],
+      [
+        "AlphaFold2",
+        "D-I-TASSER"
+      ],
+      [
+        "Over 100 Countries",
+        "Structural Prediction Algorithm"
+      ],
+      [
+        "Computer Vision",
+        "Nankai Statistics"
+      ],
+      [
+        "南开大学",
+        "郑伟"
+      ]
+    ],
+    "count": 44,
+    "create_time": 1769004251,
+    "update_time": 1769004251,
+    "_id": "doc-02f3c5dec4cb0c3b0004aa9d7c2bbffb"
+  },
+  "doc-d23247c8edaf8929e7855d9186007c46": {
+    "relation_pairs": [
+      [
+        "AlphaFold 2",
+        "Amino Acid Sequence"
+      ],
+      [
+        "AlphaFold 2",
+        "CASP"
+      ],
+      [
+        "AlphaFold 2",
+        "MIT Technology Review"
+      ],
+      [
+        "AlphaFold 2",
+        "DeepMind"
+      ],
+      [
+        "Life Sciences",
+        "Protein Structure Prediction"
+      ],
+      [
+        "AlphaFold 2",
+        "Protein Structure Prediction"
+      ],
+      [
+        "Disease Understanding",
+        "Life Sciences"
+      ],
+      [
+        "AlphaFold 2",
+        "Fifty-Year Old Grand Challenge Of Biology"
+      ],
+      [
+        "Drug Discovery",
+        "Life Sciences"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1769004303,
+    "update_time": 1769004303,
+    "_id": "doc-d23247c8edaf8929e7855d9186007c46"
+  },
+  "doc-8ac6b800c024bfc59d45d5769abdcb86": {
+    "relation_pairs": [
+      [
+        "基因组数据分析",
+        "深度学习技术"
+      ],
+      [
+        "概念性框架",
+        "畜禽基因组学研究"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1769004317,
+    "update_time": 1769004317,
+    "_id": "doc-8ac6b800c024bfc59d45d5769abdcb86"
+  },
+  "doc-dcad4a5abb7347f0e6403bab97eb576b": {
+    "relation_pairs": [
+      [
+        "MIT 6.874",
+        "深度学习"
+      ],
+      [
+        "MIT 6.874",
+        "基因组学"
+      ],
+      [
+        "MIT 6.874",
+        "机器学习"
+      ],
+      [
+        "MIT 6.874",
+        "计算机科学"
+      ],
+      [
+        "MIT 6.874",
+        "麻省理工学院"
+      ],
+      [
+        "MIT 6.874",
+        "生命科学"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769004343,
+    "update_time": 1769004343,
+    "_id": "doc-dcad4a5abb7347f0e6403bab97eb576b"
+  },
+  "doc-41671c7e5bea6a9ae05e6b008b3a38f2": {
+    "relation_pairs": [
+      [
+        "Deep Learning In Life Sciences",
+        "Regulatory Genomics"
+      ],
+      [
+        "20.390",
+        "Deep Learning In Life Sciences"
+      ],
+      [
+        "20.490",
+        "Deep Learning In Life Sciences"
+      ],
+      [
+        "Deep Learning In Life Sciences",
+        "Prof."
+      ],
+      [
+        "Deep Learning In Life Sciences",
+        "Spring 2021"
+      ],
+      [
+        "Deep Learning In Life Sciences",
+        "生物信息学"
+      ],
+      [
+        "Deep Learning In Life Sciences",
+        "HST.506"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769004377,
+    "update_time": 1769004377,
+    "_id": "doc-41671c7e5bea6a9ae05e6b008b3a38f2"
+  },
+  "doc-7d901977dd7e6d929821ca079c401c7e": {
+    "relation_pairs": [
+      [
+        "AlphaFold",
+        "Protein Property"
+      ],
+      [
+        "Deep Neural Network",
+        "Protein"
+      ],
+      [
+        "Deep Neural Network",
+        "DeepMind"
+      ],
+      [
+        "AlphaFold",
+        "Deep Neural Network"
+      ],
+      [
+        "Deep Neural Network",
+        "Gene Sequence"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769004397,
+    "update_time": 1769004397,
+    "_id": "doc-7d901977dd7e6d929821ca079c401c7e"
+  },
+  "doc-13f6a612ad21f33701d7916a1d76aa3e": {
+    "relation_pairs": [
+      [
+        "AlphaFold",
+        "Sequence"
+      ],
+      [
+        "Multiple Sequence Alignment (MSA)",
+        "Traditional Tools"
+      ],
+      [
+        "Physical Model",
+        "Traditional Tools"
+      ],
+      [
+        "AlphaFold",
+        "Artificial Neural Network"
+      ],
+      [
+        "Simple Machine Learning",
+        "Traditional Tools"
+      ],
+      [
+        "AlphaFold",
+        "Structure"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769004425,
+    "update_time": 1769004425,
+    "_id": "doc-13f6a612ad21f33701d7916a1d76aa3e"
+  },
+  "doc-5899806c994fc2f391826abc901a8669": {
+    "relation_pairs": [
+      [
+        "AlphaFold",
+        "Protein Structures"
+      ],
+      [
+        "AlphaFold",
+        "Deep Learning"
+      ],
+      [
+        "AlphaFold",
+        "Protein Sequences"
+      ],
+      [
+        "AlphaFold",
+        "Bioinformatics"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004443,
+    "update_time": 1769004443,
+    "_id": "doc-5899806c994fc2f391826abc901a8669"
+  },
+  "doc-3692370e0fbe26ddf6ddebef5657ecc2": {
+    "relation_pairs": [
+      [
+        "AlphaFold2",
+        "Protein Structure Prediction"
+      ],
+      [
+        "Albert Lasker Basic Medical Research Award",
+        "John Jumper"
+      ],
+      [
+        "AI Tools",
+        "Big Data"
+      ],
+      [
+        "AlphaFold",
+        "DeepMind"
+      ],
+      [
+        "AlphaFold2",
+        "Life Sciences Research"
+      ],
+      [
+        "AlphaFold",
+        "Jiang Po"
+      ],
+      [
+        "Albert Lasker Basic Medical Research Award",
+        "Demis Hassabis"
+      ],
+      [
+        "AlphaFold2",
+        "CASP Competition"
+      ],
+      [
+        "AlphaFold2",
+        "GDT Score"
+      ],
+      [
+        "AlphaFold2",
+        "Science"
+      ],
+      [
+        "AlphaFold2",
+        "Nature"
+      ],
+      [
+        "Algorithm",
+        "DeepMind"
+      ],
+      [
+        "AlphaFold2",
+        "Paper"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1769004506,
+    "update_time": 1769004506,
+    "_id": "doc-3692370e0fbe26ddf6ddebef5657ecc2"
+  },
+  "doc-82b403277dd4d1f793acce70ac7e2f82": {
+    "relation_pairs": [
+      [
+        "AlphaDev",
+        "Sorting Program"
+      ],
+      [
+        "AlphaDev",
+        "Small Sorting Algorithm"
+      ],
+      [
+        "AlphaDev",
+        "Google DeepMind"
+      ],
+      [
+        "Human Benchmark",
+        "Small Sorting Algorithm"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004526,
+    "update_time": 1769004526,
+    "_id": "doc-82b403277dd4d1f793acce70ac7e2f82"
+  },
+  "doc-b1d2ad62c7c26e8ff618cb6a7b89c7df": {
+    "relation_pairs": [
+      [
+        "Bioinformatics",
+        "Protein Design"
+      ],
+      [
+        "David Baker",
+        "Research Papers"
+      ],
+      [
+        "Citations",
+        "David Baker"
+      ],
+      [
+        "David Baker",
+        "University Of Washington"
+      ],
+      [
+        "David Baker",
+        "Protein Design"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769004546,
+    "update_time": 1769004546,
+    "_id": "doc-b1d2ad62c7c26e8ff618cb6a7b89c7df"
+  },
+  "doc-224a7273b9442fd233a7ec61f799fa44": {
+    "relation_pairs": [
+      [
+        "Jumper, J",
+        "Nature"
+      ],
+      [
+        "多序列比对",
+        "预测距离分布"
+      ],
+      [
+        "二面角分布",
+        "结构优化"
+      ],
+      [
+        "全原子的位置坐标",
+        "输出"
+      ],
+      [
+        "CASP14",
+        "DeepMind slides"
+      ],
+      [
+        "Alphafold模型架构",
+        "Jumper, J"
+      ],
+      [
+        "Alphafold2",
+        "蛋白质结构预测"
+      ],
+      [
+        "Distance Map信息",
+        "输入"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "蛋白质骨架初始Residue Gas"
+      ],
+      [
+        "Alphafold2",
+        "Chapter1"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "全原子的位置坐标"
+      ],
+      [
+        "结构优化",
+        "预测距离分布"
+      ],
+      [
+        "Protein backbone = gas of 3-D rigid bodies",
+        "Residue Gas"
+      ],
+      [
+        "Alphafold2",
+        "Evoformer"
+      ],
+      [
+        "1D与2D信息",
+        "Attention"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "序列信息"
+      ],
+      [
+        "lDDT-Cα",
+        "输出"
+      ],
+      [
+        "Alphafold2",
+        "End-to-end架构"
+      ],
+      [
+        "Alphafold2",
+        "主要特点"
+      ],
+      [
+        "IPA (Invariant Point Attention)",
+        "重要架构"
+      ],
+      [
+        "Evoformer",
+        "用于结构预测的Attention架构"
+      ],
+      [
+        "Alphafold2",
+        "Attention"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "lDDT-Cα"
+      ],
+      [
+        "CASP14",
+        "DeepMind"
+      ],
+      [
+        "二面角分布",
+        "多序列比对"
+      ],
+      [
+        "蛋白质骨架初始Residue Gas",
+        "输入"
+      ],
+      [
+        "Residue Gas",
+        "重要架构"
+      ],
+      [
+        "Evoformer",
+        "更强大的MSA & Templates"
+      ],
+      [
+        "Alphafold2",
+        "DeepMind"
+      ],
+      [
+        "Alphafold2",
+        "Recycling多轮迭代"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "Alphafold2"
+      ],
+      [
+        "Alphafold2",
+        "Nature"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "Residue Gas"
+      ],
+      [
+        "Alphafold模型架构",
+        "Chapter2"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "Distance Map信息"
+      ],
+      [
+        "Recycling多轮迭代",
+        "多输出"
+      ],
+      [
+        "3D Equivariant Structure Module",
+        "IPA (Invariant Point Attention)"
+      ],
+      [
+        "序列信息",
+        "输入"
+      ]
+    ],
+    "count": 38,
+    "create_time": 1769004684,
+    "update_time": 1769004684,
+    "_id": "doc-224a7273b9442fd233a7ec61f799fa44"
+  },
+  "doc-cfa0a8834ed9c35960b3f0264cbc2d1d": {
+    "relation_pairs": [
+      [
+        "Patent Data",
+        "Protein Structure Prediction"
+      ],
+      [
+        "High-Quality Development",
+        "Protein Structure Prediction"
+      ],
+      [
+        "Protein Structure Prediction",
+        "Technological Evolution"
+      ],
+      [
+        "Application Trends",
+        "Protein Structure Prediction"
+      ],
+      [
+        "Opportunities And Challenges",
+        "Protein Structure Prediction"
+      ],
+      [
+        "Protein Structure Prediction",
+        "Regional Distribution"
+      ],
+      [
+        "Major Applicants",
+        "Protein Structure Prediction"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769004715,
+    "update_time": 1769004715,
+    "_id": "doc-cfa0a8834ed9c35960b3f0264cbc2d1d"
+  },
+  "doc-201fcd200de194e722ae83a479174b8b": {
+    "relation_pairs": [
+      [
+        "Deep-Algotrading",
+        "Regression Analysis"
+      ],
+      [
+        "Financial Data",
+        "Reinforcement Learning"
+      ],
+      [
+        "Deep-Algotrading",
+        "Time Series Forecasting"
+      ],
+      [
+        "LSTM",
+        "Time Series Forecasting"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004751,
+    "update_time": 1769004751,
+    "_id": "doc-201fcd200de194e722ae83a479174b8b"
+  },
+  "doc-001d35968d5312a9b345486c646a5cf9": {
+    "relation_pairs": [
+      [
+        "Deep Reinforcement Learning (DRL)",
+        "Strategy Inputs And Outputs"
+      ],
+      [
+        "Algorithmic Trading",
+        "Market Participants"
+      ],
+      [
+        "Deep Reinforcement Learning (DRL)",
+        "Incentive Function"
+      ],
+      [
+        "Algorithmic Trading",
+        "Deep Reinforcement Learning (DRL)"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769004772,
+    "update_time": 1769004772,
+    "_id": "doc-001d35968d5312a9b345486c646a5cf9"
+  },
+  "doc-a21e1bb9888d36e0f2daf5ed5c43c4f3": {
+    "relation_pairs": [
+      [
+        "Back-Testing Results",
+        "期望收益"
+      ],
+      [
+        "Back-Testing Results",
+        "胜率"
+      ],
+      [
+        "Back-Testing Results",
+        "平均亏损"
+      ],
+      [
+        "Back-Testing Results",
+        "交易次数"
+      ],
+      [
+        "Back-Testing Results",
+        "High-Frequency Trading Strategy"
+      ],
+      [
+        "Back-Testing Results",
+        "平均盈利"
+      ],
+      [
+        "Back-Testing Results",
+        "盈亏比"
+      ],
+      [
+        "CNN",
+        "High-Frequency Trading Strategy"
+      ],
+      [
+        "ANN",
+        "High-Frequency Trading Strategy"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1769004808,
+    "update_time": 1769004808,
+    "_id": "doc-a21e1bb9888d36e0f2daf5ed5c43c4f3"
+  },
+  "doc-4c95d5a15ed3f57bef9a360c159df34a": {
+    "relation_pairs": [
+      [
+        "卷积神经网络",
+        "特征工程"
+      ],
+      [
+        "Autoencoder",
+        "Market Risk"
+      ],
+      [
+        "基本面分析",
+        "量化交易"
+      ],
+      [
+        "市场环境",
+        "深度学习"
+      ],
+      [
+        "CNN",
+        "K線圖"
+      ],
+      [
+        "Deep Learning Model",
+        "Financial Market Data"
+      ],
+      [
+        "Transformer",
+        "价格预测"
+      ],
+      [
+        "Autoencoder",
+        "Reconstruction Error"
+      ],
+      [
+        "Capital Allocation Module",
+        "Modular Strategy Architecture"
+      ],
+      [
+        "价格预测",
+        "收盘价"
+      ],
+      [
+        "Autoencoder",
+        "Fraudulent Behavior"
+      ],
+      [
+        "深度学习",
+        "量化交易"
+      ],
+      [
+        "時間序列數據",
+        "長短期記憶網路"
+      ],
+      [
+        "深度学习",
+        "经典因子模型"
+      ],
+      [
+        "Deep Learning",
+        "Multi-Modal Learning"
+      ],
+      [
+        "樣本數限制",
+        "深度學習模型"
+      ],
+      [
+        "技术指标",
+        "深度学习"
+      ],
+      [
+        "Multiple Backtesting",
+        "Overfitting"
+      ],
+      [
+        "深度学习",
+        "资金分配模型"
+      ],
+      [
+        "时间序列数据",
+        "长短期记忆网络"
+      ],
+      [
+        "Deep Learning Model",
+        "High-Frequency Trading Strategy"
+      ],
+      [
+        "价格预测",
+        "最高价"
+      ],
+      [
+        "Out-Of-Sample Testing",
+        "Overfitting"
+      ],
+      [
+        "另類數據",
+        "自然語言處理"
+      ],
+      [
+        "买入信号",
+        "卷积神经网络"
+      ],
+      [
+        "深度学习",
+        "高维数据"
+      ],
+      [
+        "Backtesting",
+        "Deep Learning Model"
+      ],
+      [
+        "卷积神经网络",
+        "短期交易策略"
+      ],
+      [
+        "Deep Learning Model",
+        "GPU"
+      ],
+      [
+        "梯度消失/爆炸問題",
+        "長短期記憶網路"
+      ],
+      [
+        "Deep Learning Model",
+        "Overfitting"
+      ],
+      [
+        "价格预测",
+        "最低价"
+      ],
+      [
+        "Black Box Problem",
+        "Explainable AI (XAI)"
+      ],
+      [
+        "CNN",
+        "技術指標"
+      ],
+      [
+        "Transformer",
+        "金融時間序列預測"
+      ],
+      [
+        "CNN",
+        "頭肩頂"
+      ],
+      [
+        "深度學習模型",
+        "高頻交易"
+      ],
+      [
+        "Autoencoder",
+        "Risk Management Module"
+      ],
+      [
+        "RNN",
+        "深度學習模型"
+      ],
+      [
+        "自動編碼器",
+        "風險管理"
+      ],
+      [
+        "循环神经网络",
+        "时间序列数据"
+      ],
+      [
+        "套利機會",
+        "深度學習模型"
+      ],
+      [
+        "Deep Learning Model",
+        "Model Monitoring Mechanism"
+      ],
+      [
+        "投資組合",
+        "深度學習模型"
+      ],
+      [
+        "Multi-Modal Learning",
+        "Quantitative Trading"
+      ],
+      [
+        "Deep Learning",
+        "Quantitative Trading"
+      ],
+      [
+        "Arthur",
+        "Documentation"
+      ],
+      [
+        "深度學習模型",
+        "資料品質"
+      ],
+      [
+        "价格预测",
+        "长短期记忆网络"
+      ],
+      [
+        "卖出信号",
+        "卷积神经网络"
+      ],
+      [
+        "Cross-Validation",
+        "Overfitting"
+      ],
+      [
+        "CNN",
+        "雙底"
+      ],
+      [
+        "Deep Learning Model",
+        "Market Non-Stationarity"
+      ],
+      [
+        "Deep Learning Model",
+        "Hybrid Strategy"
+      ],
+      [
+        "统计模型",
+        "量化交易"
+      ],
+      [
+        "Modular Strategy Architecture",
+        "Signal Generation Module"
+      ],
+      [
+        "微觀市場結構數據",
+        "深度學習模型"
+      ],
+      [
+        "深度学习",
+        "统计套利策略"
+      ],
+      [
+        "循环神经网络",
+        "高频交易"
+      ],
+      [
+        "价格预测",
+        "成交量"
+      ],
+      [
+        "多因子模型",
+        "深度學習模型"
+      ],
+      [
+        "Federated Learning",
+        "Quantitative Trading"
+      ],
+      [
+        "深度学习",
+        "维度灾难"
+      ],
+      [
+        "价格预测",
+        "开盘价"
+      ],
+      [
+        "Federated Learning",
+        "Financial Institution"
+      ],
+      [
+        "CNN",
+        "深度學習模型"
+      ],
+      [
+        "Black Box Problem",
+        "Deep Learning Model"
+      ],
+      [
+        "卷积神经网络",
+        "高频交易"
+      ],
+      [
+        "Deep Learning Model",
+        "Real-Time Trading"
+      ],
+      [
+        "Deep Learning Model",
+        "Forward Testing"
+      ],
+      [
+        "K线图",
+        "卷积神经网络"
+      ]
+    ],
+    "count": 71,
+    "create_time": 1769004973,
+    "update_time": 1769004973,
+    "_id": "doc-4c95d5a15ed3f57bef9a360c159df34a"
+  },
+  "doc-858e73004375c211a45ff338fb81b219": {
+    "relation_pairs": [
+      [
+        "数据探索",
+        "高强度计算平台"
+      ],
+      [
+        "交易员",
+        "高强度计算平台"
+      ],
+      [
+        "模型消耗",
+        "高强度计算平台"
+      ],
+      [
+        "交易员",
+        "深度学习技术"
+      ],
+      [
+        "Nvidia Gpu",
+        "高强度计算平台"
+      ],
+      [
+        "Gpu",
+        "交易员"
+      ],
+      [
+        "模型开发/评分",
+        "高强度计算平台"
+      ],
+      [
+        "Kinetica数据库",
+        "高强度计算平台"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1769005006,
+    "update_time": 1769005006,
+    "_id": "doc-858e73004375c211a45ff338fb81b219"
+  },
+  "doc-b7f8fbd8112b2a87e0edad2549687469": {
+    "relation_pairs": [
+      [
+        "反欺诈",
+        "机器学习"
+      ],
+      [
+        "中低频量化",
+        "基金经理"
+      ],
+      [
+        "因子",
+        "深度学习"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "周末假期效应"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "数据清洗预处理"
+      ],
+      [
+        "Image 65",
+        "二维码"
+      ],
+      [
+        "基础分析",
+        "象牙山李宝库"
+      ],
+      [
+        "财务分析",
+        "量化数据分析"
+      ],
+      [
+        "中低频量化",
+        "机器学习"
+      ],
+      [
+        "深度学习",
+        "量化交易"
+      ],
+      [
+        "quant-computer",
+        "深度学习"
+      ],
+      [
+        "反欺诈",
+        "深度学习"
+      ],
+      [
+        "上市公司",
+        "研究员"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "噪音"
+      ],
+      [
+        "个股利好利空",
+        "厚积薄发磨一剑"
+      ],
+      [
+        "Panel_Trader",
+        "其它机器学习方法"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "大盘板块大涨大跌"
+      ],
+      [
+        "象牙山李宝库",
+        "财务分析"
+      ],
+      [
+        "仅在正文下讨论",
+        "讨论区"
+      ],
+      [
+        "工程师",
+        "推荐系统"
+      ],
+      [
+        "Barra",
+        "风险控制"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "懂股票又懂机器学习的人"
+      ],
+      [
+        "机器学习",
+        "高频量化"
+      ],
+      [
+        "敬畏常识",
+        "模型"
+      ],
+      [
+        "仅在正文下讨论",
+        "站内推荐"
+      ],
+      [
+        "Panel_Trader",
+        "线性模型"
+      ],
+      [
+        "推荐系统",
+        "机器学习"
+      ],
+      [
+        "Python",
+        "象牙山李宝库"
+      ],
+      [
+        "基股传声",
+        "雪球"
+      ],
+      [
+        "机器学习",
+        "线性模型"
+      ],
+      [
+        "几分钟",
+        "财务分析"
+      ],
+      [
+        "Panel_Trader",
+        "达人认证"
+      ],
+      [
+        "几十人团队",
+        "象牙山李宝库"
+      ],
+      [
+        "中低频量化",
+        "数据量"
+      ],
+      [
+        "敬畏常识",
+        "知识的修饰器"
+      ],
+      [
+        "中低频量化",
+        "主观的研究员"
+      ],
+      [
+        "推荐系统",
+        "深度学习"
+      ],
+      [
+        "数据量",
+        "高频量化"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "美股"
+      ],
+      [
+        "厚积薄发磨一剑",
+        "股票"
+      ],
+      [
+        "quant-computer",
+        "量化"
+      ],
+      [
+        "Image 64",
+        "企业微信"
+      ],
+      [
+        "中低频量化",
+        "信噪比"
+      ],
+      [
+        "机器学习",
+        "量化交易"
+      ],
+      [
+        "象牙山李宝库",
+        "高盛"
+      ],
+      [
+        "人工智障",
+        "机器学习"
+      ],
+      [
+        "噪音",
+        "无效数据"
+      ],
+      [
+        "敬畏常识",
+        "机器学习"
+      ],
+      [
+        "因子",
+        "机器学习"
+      ],
+      [
+        "象牙山李宝库",
+        "量化交易"
+      ],
+      [
+        "深度学习",
+        "高频量化"
+      ],
+      [
+        "中低频量化",
+        "线性模型"
+      ],
+      [
+        "象牙山李宝库",
+        "高频交易"
+      ],
+      [
+        "信噪比",
+        "高频量化"
+      ],
+      [
+        "基股传声",
+        "量化投资"
+      ],
+      [
+        "Panel_Trader",
+        "深度学习"
+      ],
+      [
+        "基本面量化投资",
+        "象牙山李宝库"
+      ],
+      [
+        "quant-computer",
+        "机器学习"
+      ],
+      [
+        "几个小时",
+        "研究员"
+      ]
+    ],
+    "count": 59,
+    "create_time": 1769005193,
+    "update_time": 1769005193,
+    "_id": "doc-b7f8fbd8112b2a87e0edad2549687469"
+  },
+  "doc-ead8239d6c7d35f7d27952face0dd715": {
+    "relation_pairs": [
+      [
+        "深度学习",
+        "风控建模方法"
+      ],
+      [
+        "S1",
+        "风控建模方法"
+      ],
+      [
+        "用户数据",
+        "结构化数据"
+      ],
+      [
+        "云端数据库",
+        "风控建模方法"
+      ],
+      [
+        "初步筛选",
+        "风控建模方法"
+      ],
+      [
+        "金融学",
+        "风控建模方法"
+      ],
+      [
+        "用户数据",
+        "风控建模方法"
+      ],
+      [
+        "用户数据",
+        "非结构化数据"
+      ],
+      [
+        "S2",
+        "风控建模方法"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1769005219,
+    "update_time": 1769005219,
+    "_id": "doc-ead8239d6c7d35f7d27952face0dd715"
+  },
+  "doc-6d22dc080f5fd339b89bf3f7732fc258": {
+    "relation_pairs": [
+      [
+        "DOI 10.12012/CJoE2024-0092",
+        "Deep Learning and Corporate Bond Credit Risk"
+      ],
+      [
+        "Deep Learning and Corporate Bond Credit Risk",
+        "Yihao Lin"
+      ],
+      [
+        "China Journal of Econometrics",
+        "Deep Learning and Corporate Bond Credit Risk"
+      ],
+      [
+        "Bailin Chai",
+        "Deep Learning and Corporate Bond Credit Risk"
+      ],
+      [
+        "Deep Learning and Corporate Bond Credit Risk",
+        "Fuwei Jiang"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769005255,
+    "update_time": 1769005255,
+    "_id": "doc-6d22dc080f5fd339b89bf3f7732fc258"
+  },
+  "doc-fe2c7c19ec682c0e709a26a55e0b8005": {
+    "relation_pairs": [
+      [
+        "Chio et al.",
+        "Recurrent Neural Network"
+      ],
+      [
+        "Deep Learning",
+        "Interpretability"
+      ],
+      [
+        "Deep Learning",
+        "Electronic Health Records"
+      ],
+      [
+        "Gated Recurrent Unit",
+        "Recurrent Neural Network"
+      ],
+      [
+        "Chio et al.",
+        "Electronic Health Records"
+      ],
+      [
+        "K-Nearest Neighbors",
+        "Recurrent Neural Network"
+      ],
+      [
+        "One-Hot Vector",
+        "Recurrent Neural Network"
+      ],
+      [
+        "Stroke Prediction Model",
+        "Wang et al."
+      ],
+      [
+        "Khosla et al.",
+        "Support Vector Machine"
+      ],
+      [
+        "Calibration",
+        "Stroke Prediction Model"
+      ],
+      [
+        "L1 Regularized Logistic Regression",
+        "Support Vector Machine"
+      ],
+      [
+        "KDD",
+        "Khosla et al."
+      ],
+      [
+        "Khosla et al.",
+        "Margin-Based Censored Regression"
+      ],
+      [
+        "Discrimination",
+        "Stroke Prediction Model"
+      ],
+      [
+        "Recurrent Neural Network",
+        "Temporal Relation"
+      ],
+      [
+        "Logistic Regression Model",
+        "Recurrent Neural Network"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Deep Learning"
+      ],
+      [
+        "Framingham Heart Study",
+        "Wang TJ"
+      ],
+      [
+        "C-Statistic",
+        "Discrimination"
+      ],
+      [
+        "Deep Learning",
+        "Recurrent Neural Network"
+      ]
+    ],
+    "count": 20,
+    "create_time": 1769005395,
+    "update_time": 1769005395,
+    "_id": "doc-fe2c7c19ec682c0e709a26a55e0b8005"
+  },
+  "doc-2103a1c2471cc6226897b2080204b309": {
+    "relation_pairs": [
+      [
+        "IBM",
+        "IBM Privacy Statement"
+      ],
+      [
+        "人工智能模型",
+        "求职者筛选系统"
+      ],
+      [
+        "机器学习",
+        "模型风险管理"
+      ],
+      [
+        "Federal Reserve",
+        "SR 11-7"
+      ],
+      [
+        "IBM CIO Organization",
+        "IBM Openpages"
+      ],
+      [
+        "人工智能模型",
+        "训练数据集"
+      ],
+      [
+        "模型风险管理监管指南",
+        "美联储"
+      ],
+      [
+        "模型风险管理",
+        "金融机构"
+      ],
+      [
+        "生成式人工智能",
+        "金融预测"
+      ],
+      [
+        "IBM",
+        "IBM Cloud Pak For Business Automation"
+      ],
+      [
+        "模型风险管理",
+        "模型风险管理软件"
+      ],
+      [
+        "Generative AI For Business",
+        "Virtual Agent"
+      ],
+      [
+        "CEO",
+        "Generative AI For Business"
+      ],
+      [
+        "机器学习",
+        "模型验证"
+      ],
+      [
+        "人工智能模型",
+        "医疗保健预测软件"
+      ],
+      [
+        "IBM",
+        "Think Newsletter"
+      ],
+      [
+        "机器学习",
+        "模型监控"
+      ],
+      [
+        "模型风险管理监管指南",
+        "货币监理署"
+      ],
+      [
+        "模型风险管理",
+        "模型风险管理监管指南"
+      ]
+    ],
+    "count": 19,
+    "create_time": 1769005541,
+    "update_time": 1769005541,
+    "_id": "doc-2103a1c2471cc6226897b2080204b309"
+  },
+  "doc-dd790e22e66ff566c3fcba5e9ed475b3": {
+    "relation_pairs": [
+      [
+        "Area Under the Curve of Receiver Operating Characteristic (AUC)",
+        "Deep Neural Network (DNN)"
+      ],
+      [
+        "Training Phase",
+        "Training Set"
+      ],
+      [
+        "Binary Classification Problem",
+        "Deep Neural Network (DNN)"
+      ],
+      [
+        "Deep Neural Network (DNN)",
+        "Supervisory Machine Learning Algorithm"
+      ],
+      [
+        "Benchmark Model",
+        "Figure 2"
+      ],
+      [
+        "Data Processing Procedure",
+        "Deep Neural Network (DNN)"
+      ],
+      [
+        "Dataset",
+        "Training Set"
+      ],
+      [
+        "Data Processing Procedure",
+        "Internal Data Science Laboratory"
+      ],
+      [
+        "Area Under the Curve of Receiver Operating Characteristic (AUC)",
+        "Test Set"
+      ],
+      [
+        "Dataset",
+        "Empirical Results"
+      ],
+      [
+        "Model Parameters",
+        "Training Phase"
+      ],
+      [
+        "Dataset",
+        "Test Set"
+      ],
+      [
+        "Hong Kong Monetary Authority (HKMA)",
+        "Internal Data Science Laboratory"
+      ],
+      [
+        "Machine Learning Algorithm",
+        "Training Phase"
+      ]
+    ],
+    "count": 14,
+    "create_time": 1769005628,
+    "update_time": 1769005628,
+    "_id": "doc-dd790e22e66ff566c3fcba5e9ed475b3"
+  },
+  "doc-d5073dc88c604f20a0eefda8a24a1214": {
+    "relation_pairs": [
+      [
+        "基于机器学习算法",
+        "金融行业"
+      ],
+      [
+        "基于规则的方法",
+        "规则库"
+      ],
+      [
+        "交易行为特征",
+        "规则库"
+      ],
+      [
+        "基于规则的方法",
+        "金融行业"
+      ],
+      [
+        "交易欺诈风险",
+        "金融行业"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769005661,
+    "update_time": 1769005661,
+    "_id": "doc-d5073dc88c604f20a0eefda8a24a1214"
+  },
+  "doc-a6a52780a97b8eca9204ad8ed2f86840": {
+    "relation_pairs": [
+      [
+        "图",
+        "图嵌入特征"
+      ],
+      [
+        "样本数据",
+        "欺诈应用检测方法"
+      ],
+      [
+        "移动广告数据",
+        "预处理"
+      ],
+      [
+        "图",
+        "结构数据"
+      ],
+      [
+        "欺诈应用检测方法",
+        "结构数据"
+      ],
+      [
+        "欺诈应用检测方法",
+        "移动广告数据"
+      ],
+      [
+        "欺诈应用检测方法",
+        "深度学习"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769005742,
+    "update_time": 1769005742,
+    "_id": "doc-a6a52780a97b8eca9204ad8ed2f86840"
+  },
+  "doc-c00652dd3948d32546676fffc8064300": {
+    "relation_pairs": [
+      [
+        "AI Agent风控模型",
+        "企业"
+      ],
+      [
+        "AI Agent风控模型",
+        "信誉"
+      ],
+      [
+        "AI Agent风控模型",
+        "用户行为"
+      ],
+      [
+        "AI Agent风控模型",
+        "资产"
+      ],
+      [
+        "AI Agent风控模型",
+        "实时欺诈检测算法"
+      ],
+      [
+        "AI Agent风控模型",
+        "交易模式"
+      ],
+      [
+        "AI Agent风控模型",
+        "深度学习"
+      ],
+      [
+        "AI Agent风控模型",
+        "潜在欺诈行为"
+      ],
+      [
+        "AI Agent风控模型",
+        "历史数据"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1769005797,
+    "update_time": 1769005797,
+    "_id": "doc-c00652dd3948d32546676fffc8064300"
+  },
+  "doc-ac1ed9e88e425ab885199259d92315e5": {
+    "relation_pairs": [
+      [
+        "Deep Learning",
+        "Deep Learning Models"
+      ],
+      [
+        "Deep Learning Models",
+        "Fraud Detection"
+      ],
+      [
+        "Deep Learning Models",
+        "Scalability"
+      ],
+      [
+        "Fraud Detection",
+        "Machine Learning"
+      ],
+      [
+        "Deep Learning",
+        "Fraud Detection"
+      ],
+      [
+        "Deep Learning Models",
+        "False Positives"
+      ],
+      [
+        "Deep Learning Models",
+        "Real-Time Detection"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769005839,
+    "update_time": 1769005839,
+    "_id": "doc-ac1ed9e88e425ab885199259d92315e5"
+  },
+  "doc-7ae4a8c47961536abb443d07e622440b": {
+    "relation_pairs": [
+      [
+        "深度学习图神经网络",
+        "端到端近乎实时反欺诈系统"
+      ],
+      [
+        "图神经网络模型",
+        "蓝图架构"
+      ],
+      [
+        "深度图库",
+        "蓝图架构"
+      ],
+      [
+        "异构图",
+        "深度图库"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769005884,
+    "update_time": 1769005884,
+    "_id": "doc-7ae4a8c47961536abb443d07e622440b"
+  },
+  "doc-b3378e1cd34422d214370ca24a5f17ef": {
+    "relation_pairs": [
+      [
+        "Implementation Guide",
+        "Real-Time Anti-Fraud Solution"
+      ],
+      [
+        "Graph Database",
+        "Real-Time Anti-Fraud Solution"
+      ],
+      [
+        "Configuration Steps",
+        "Implementation Guide"
+      ],
+      [
+        "Deep Learning Graph Neural Networks",
+        "Real-Time Anti-Fraud Solution"
+      ],
+      [
+        "Amazon Web Services",
+        "Real-Time Anti-Fraud Solution"
+      ],
+      [
+        "Architectural Considerations",
+        "Implementation Guide"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769005936,
+    "update_time": 1769005936,
+    "_id": "doc-b3378e1cd34422d214370ca24a5f17ef"
+  },
+  "doc-98217948cb9ad0bfdb25f3db0b7cd900": {
+    "relation_pairs": [
+      [
+        "GBDT",
+        "GBDT→GRU→RF三明治结构"
+      ],
+      [
+        "深度学习欺诈侦测模型",
+        "真实数据"
+      ],
+      [
+        "GBDT→GRU→RF三明治结构",
+        "深度学习欺诈侦测模型"
+      ],
+      [
+        "保险业务",
+        "深度学习欺诈侦测模型"
+      ],
+      [
+        "GBDT→GRU→RF三明治结构",
+        "RF"
+      ],
+      [
+        "三方工程师",
+        "深度学习欺诈侦测模型"
+      ],
+      [
+        "三方工程师",
+        "仿真验证"
+      ],
+      [
+        "深度学习欺诈侦测模型",
+        "银行"
+      ],
+      [
+        "仿真验证",
+        "深度学习欺诈侦测模型"
+      ],
+      [
+        "深度学习欺诈侦测模型",
+        "骗保检测"
+      ],
+      [
+        "伪卡欺诈侦测",
+        "深度学习欺诈侦测模型"
+      ],
+      [
+        "三方工程师",
+        "真实数据"
+      ],
+      [
+        "GBDT→GRU→RF三明治结构",
+        "GRU"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1769005999,
+    "update_time": 1769005999,
+    "_id": "doc-98217948cb9ad0bfdb25f3db0b7cd900"
+  },
+  "doc-ef7f8964a21d37b73c54e1e69f0b0005": {
+    "relation_pairs": [
+      [
+        "Traditional Fraud Detection Systems",
+        "Verification Latency"
+      ],
+      [
+        "本文的方法",
+        "金融领域"
+      ],
+      [
+        "Deep Auto-Encoders",
+        "Training Set"
+      ],
+      [
+        "Corca, Inc.",
+        "© 2026 Corca, Inc. All rights reserved."
+      ],
+      [
+        "Multi-layer Feed-forward Neural Network",
+        "Tanh Function"
+      ],
+      [
+        "Artificial Intelligence",
+        "Traditional Fraud Detection Systems"
+      ],
+      [
+        "Machine Learning",
+        "Traditional Fraud Detection Systems"
+      ],
+      [
+        "AUC Score",
+        "Bat Algorithm"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Kaggle Credit Card Fraud Detection Dataset"
+      ],
+      [
+        "Corca, Inc.",
+        "E-mail: moonlight@corca.ai"
+      ],
+      [
+        "检测方法",
+        "系统"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Multi-layer Feed-forward Neural Network"
+      ],
+      [
+        "Class Imbalance",
+        "Credit Card Fraud Detection: A Deep Learning Approach"
+      ],
+      [
+        "Multi-layer Feed-forward Neural Network",
+        "Validation Set"
+      ],
+      [
+        "Multi-layer Feed-forward Neural Network",
+        "Z-score Standardization"
+      ],
+      [
+        "CEO Younghyun Chung",
+        "Corca, Inc."
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Financial Transactions"
+      ],
+      [
+        "Concept Drift",
+        "Credit Card Fraud Detection: A Deep Learning Approach"
+      ],
+      [
+        "Bat Algorithm",
+        "Credit Card Fraud Detection: A Deep Learning Approach"
+      ],
+      [
+        "系统",
+        "金融领域"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Scikit-learn"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Moonlight"
+      ],
+      [
+        "Contact 02-6925-6978",
+        "Corca, Inc."
+      ],
+      [
+        "Business Registration Number 271-86-02206",
+        "Corca, Inc."
+      ],
+      [
+        "Fuzzy Logic",
+        "Traditional Fraud Detection Systems"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Financial Field"
+      ],
+      [
+        "6F, 11-8 Teheran-ro 77-gil, Gangnam-gu, Seoul, Republic of Korea, 06159",
+        "Corca, Inc."
+      ],
+      [
+        "Deep Auto-Encoders",
+        "Mean Squared Error (MSE)"
+      ],
+      [
+        "大数据",
+        "深度学习"
+      ],
+      [
+        "Class Imbalance",
+        "Traditional Fraud Detection Systems"
+      ],
+      [
+        "Bat Algorithm",
+        "Global Best Position"
+      ],
+      [
+        "Concept Drift",
+        "Traditional Fraud Detection Systems"
+      ],
+      [
+        "Credit Card Fraud Detection: A Deep Learning Approach",
+        "Deep Auto-Encoders"
+      ],
+      [
+        "Deep Auto-Encoders",
+        "Test Set"
+      ],
+      [
+        "Confusion Matrix",
+        "Scikit-learn"
+      ],
+      [
+        "Deep Auto-Encoders",
+        "Reconstruction Method"
+      ]
+    ],
+    "count": 36,
+    "create_time": 1769006204,
+    "update_time": 1769006204,
+    "_id": "doc-ef7f8964a21d37b73c54e1e69f0b0005"
+  },
+  "doc-f8a385ef6ec16dbfeda21e87bfc82a5e": {
+    "relation_pairs": [
+      [
+        "DTGNN-FD",
+        "实时风险建模"
+      ],
+      [
+        "河北金融学院",
+        "统计与数据科学学院"
+      ],
+      [
+        "河北金融学院",
+        "韩祝华"
+      ],
+      [
+        "李峰",
+        "河北金融学院"
+      ],
+      [
+        "DTGNN-FD",
+        "实时信用卡欺诈检测"
+      ],
+      [
+        "河北金融学院",
+        "陈雪"
+      ],
+      [
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究",
+        "李峰"
+      ],
+      [
+        "DTGNN-FD",
+        "用户表征"
+      ],
+      [
+        "河北省金融科技应用重点实验室",
+        "河北金融学院"
+      ],
+      [
+        "DTGNN-FD",
+        "复杂时序模式"
+      ],
+      [
+        "DOI: 10.12677/csa.2025.1511295",
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究"
+      ],
+      [
+        "信用卡欺诈",
+        "动态时序图神经网络模型"
+      ],
+      [
+        "DTGNN-FD",
+        "动态时序图神经网络模型"
+      ],
+      [
+        "李惠先",
+        "河北金融学院"
+      ],
+      [
+        "Credit Card Fraud Detection Approach Based on a Dynamic Temporal Graph Neural Network",
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究"
+      ],
+      [
+        "DTGNN-FD",
+        "连续时间动态图"
+      ],
+      [
+        "信用卡欺诈",
+        "图神经网络"
+      ],
+      [
+        "DTGNN-FD",
+        "Recall"
+      ],
+      [
+        "DTGNN-FD",
+        "金融欺诈数据集"
+      ],
+      [
+        "信用卡欺诈",
+        "金融科技"
+      ],
+      [
+        "保定",
+        "河北金融学院"
+      ],
+      [
+        "DTGNN-FD",
+        "F1-Score"
+      ],
+      [
+        "DTGNN-FD",
+        "时间感知注意力"
+      ],
+      [
+        "检测延迟",
+        "静态快照"
+      ],
+      [
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究",
+        "韩祝华"
+      ],
+      [
+        "DTGNN-FD",
+        "门控记忆机制"
+      ],
+      [
+        "时序信息丢失",
+        "静态快照"
+      ],
+      [
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究",
+        "李惠先"
+      ],
+      [
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究",
+        "计算机科学与应用"
+      ],
+      [
+        "图神经网络",
+        "静态快照"
+      ],
+      [
+        "基于动态时序图神经网络的信用卡欺诈检测方法研究",
+        "陈雪"
+      ],
+      [
+        "河北金融学院",
+        "金融科技学院"
+      ],
+      [
+        "DTGNN-FD",
+        "基线模型"
+      ],
+      [
+        "DTGNN-FD",
+        "流式交易"
+      ]
+    ],
+    "count": 34,
+    "create_time": 1769006378,
+    "update_time": 1769006378,
+    "_id": "doc-f8a385ef6ec16dbfeda21e87bfc82a5e"
+  },
+  "doc-fd544a0511ae2b1911f2ec7bdc2235ae": {
+    "relation_pairs": [
+      [
+        "NNLM模型",
+        "深度学习模型"
+      ],
+      [
+        "深度学习模型",
+        "自然语言"
+      ],
+      [
+        "NNLM模型",
+        "统计语言模型"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769006395,
+    "update_time": 1769006395,
+    "_id": "doc-fd544a0511ae2b1911f2ec7bdc2235ae"
+  },
+  "doc-1eb9c8a9254475c3a6672347d5ac549f": {
+    "relation_pairs": [
+      [
+        "神经网络",
+        "端到端设计"
+      ],
+      [
+        "向量",
+        "神经网络"
+      ],
+      [
+        "深度学习工程师",
+        "神经网络"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769006412,
+    "update_time": 1769006412,
+    "_id": "doc-1eb9c8a9254475c3a6672347d5ac549f"
+  },
+  "doc-747e06575d3f3c246eac89670d12c86e": {
+    "relation_pairs": [
+      [
+        "15节",
+        "深度学习架构"
+      ],
+      [
+        "8.3节",
+        "自然语言处理"
+      ],
+      [
+        "Word2vec",
+        "词元"
+      ],
+      [
+        "GloVe",
+        "词元"
+      ],
+      [
+        "深度学习架构",
+        "自然语言处理任务"
+      ],
+      [
+        "子词嵌入模型",
+        "词元"
+      ],
+      [
+        "文本表示",
+        "深度学习架构"
+      ],
+      [
+        "大型语料库",
+        "自监督学习"
+      ],
+      [
+        "文本表示",
+        "自监督学习"
+      ],
+      [
+        "海量文本数据",
+        "自监督学习"
+      ],
+      [
+        "BERT",
+        "文本表示"
+      ],
+      [
+        "图14.1",
+        "文本表示"
+      ],
+      [
+        "文本表示",
+        "自然语言处理"
+      ],
+      [
+        "文本表示",
+        "词元"
+      ],
+      [
+        "BERT",
+        "Transformer编码器"
+      ],
+      [
+        "9.5节",
+        "自然语言处理"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1769006475,
+    "update_time": 1769006475,
+    "_id": "doc-747e06575d3f3c246eac89670d12c86e"
+  },
+  "doc-afea3fd8f33940c9cfe692c11adfe3b5": {
+    "relation_pairs": [
+      [
+        "AI Solution",
+        "Appier"
+      ],
+      [
+        "孫民",
+        "自然語言處理"
+      ],
+      [
+        "Appier Blog",
+        "Marketing Technology Trends"
+      ],
+      [
+        "深度學習",
+        "自然語言處理"
+      ],
+      [
+        "Appier",
+        "孙民"
+      ],
+      [
+        "深度学习",
+        "词向量"
+      ],
+      [
+        "孙民",
+        "深度学习"
+      ],
+      [
+        "千人千面",
+        "廣告創意素材"
+      ],
+      [
+        "Appier",
+        "Appier部落格"
+      ],
+      [
+        "Appier",
+        "Appier Blog"
+      ],
+      [
+        "獲取新客",
+        "白皮書"
+      ],
+      [
+        "情感分析",
+        "自然語言處理"
+      ],
+      [
+        "Plaster",
+        "自然语言处理"
+      ],
+      [
+        "孫民",
+        "深度學習"
+      ],
+      [
+        "Appier Blog",
+        "Best Practice Cases"
+      ],
+      [
+        "深度學習",
+        "白皮書"
+      ],
+      [
+        "旅遊公司",
+        "關鍵字清單"
+      ],
+      [
+        "Appier Blog",
+        "Automated Marketing"
+      ],
+      [
+        "Appier Blog",
+        "Contextual Advertising"
+      ],
+      [
+        "Reddit",
+        "语料库"
+      ],
+      [
+        "传统方法",
+        "孙民"
+      ],
+      [
+        "Appier",
+        "白皮書"
+      ],
+      [
+        "关键词营销",
+        "词向量"
+      ],
+      [
+        "人工智慧",
+        "情感分析"
+      ],
+      [
+        "Agentic AI",
+        "人工智慧"
+      ],
+      [
+        "人工智慧",
+        "聊天機器人"
+      ],
+      [
+        "深度学习",
+        "语料库"
+      ],
+      [
+        "人工智慧",
+        "廣告創意素材"
+      ],
+      [
+        "Vector Space",
+        "词向量"
+      ],
+      [
+        "深度学习",
+        "自然语言处理"
+      ],
+      [
+        "Seed Data",
+        "深度学习"
+      ],
+      [
+        "深度學習",
+        "行銷自動化"
+      ],
+      [
+        "Clear Plaster",
+        "深度学习"
+      ],
+      [
+        "Appier Blog",
+        "Industry Trends"
+      ],
+      [
+        "人工智慧",
+        "種子資料"
+      ],
+      [
+        "自然語言處理",
+        "詞向量"
+      ]
+    ],
+    "count": 36,
+    "create_time": 1769006660,
+    "update_time": 1769006660,
+    "_id": "doc-afea3fd8f33940c9cfe692c11adfe3b5"
+  },
+  "doc-38b1076024c94a070f64f72dcaea1102": {
+    "relation_pairs": [
+      [
+        "NLP预处理",
+        "程序"
+      ],
+      [
+        "NLP预处理",
+        "原始文本"
+      ],
+      [
+        "NLP预处理",
+        "深度学习模型"
+      ],
+      [
+        "NLP预处理",
+        "机器学习模型"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769006698,
+    "update_time": 1769006698,
+    "_id": "doc-38b1076024c94a070f64f72dcaea1102"
+  },
+  "doc-b572e7e95c9e5e07043de0b3cb587187": {
+    "relation_pairs": [
+      [
+        "人工智能",
+        "自然语言处理"
+      ],
+      [
+        "人类语言",
+        "计算语言学"
+      ],
+      [
+        "深度学习模型",
+        "自然语言处理"
+      ],
+      [
+        "自然语言处理",
+        "计算语言学"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769006728,
+    "update_time": 1769006728,
+    "_id": "doc-b572e7e95c9e5e07043de0b3cb587187"
+  },
+  "doc-7890c6c195439c2a8d6fe49741a8156c": {
+    "relation_pairs": [
+      [
+        "人人都是产品经理",
+        "达观数据"
+      ],
+      [
+        "Beam Search",
+        "Generative Summarization"
+      ],
+      [
+        "强化学习",
+        "深度学习"
+      ],
+      [
+        "依存文法分析",
+        "词位置分析"
+      ],
+      [
+        "Attention",
+        "Generative Summarization"
+      ],
+      [
+        "深度学习",
+        "特征工程"
+      ],
+      [
+        "卷积",
+        "过滤器"
+      ],
+      [
+        "机器翻译",
+        "自然语言处理"
+      ],
+      [
+        "知识图谱",
+        "自然语言处理"
+      ],
+      [
+        "统计机器学习",
+        "语料库"
+      ],
+      [
+        "RNN",
+        "深度学习"
+      ],
+      [
+        "Word2Vec",
+        "表示学习"
+      ],
+      [
+        "人工智能",
+        "视觉"
+      ],
+      [
+        "互信息",
+        "特征工程"
+      ],
+      [
+        "上下文特征",
+        "深度学习"
+      ],
+      [
+        "文本分类",
+        "长短期记忆网络"
+      ],
+      [
+        "Block N",
+        "Deep Pyramid CNN"
+      ],
+      [
+        "依存文法分析",
+        "语义归一化"
+      ],
+      [
+        "Word2Vec",
+        "泛化能力"
+      ],
+      [
+        "Generative Summarization",
+        "News Headline Generation"
+      ],
+      [
+        "枣庄",
+        "潍坊"
+      ],
+      [
+        "News Headline Generation",
+        "News Website"
+      ],
+      [
+        "Char-Level Embedding",
+        "Manual Features"
+      ],
+      [
+        "传统机器学习",
+        "深度学习"
+      ],
+      [
+        "并行计算",
+        "深度学习"
+      ],
+      [
+        "TF-IDF",
+        "特征工程"
+      ],
+      [
+        "AlphaGo项目",
+        "David Silver"
+      ],
+      [
+        "机器学习",
+        "深度学习"
+      ],
+      [
+        "Decoding",
+        "Generative Summarization"
+      ],
+      [
+        "Ct",
+        "细胞状态"
+      ],
+      [
+        "Deep Learning",
+        "Plaintiff Lawyer"
+      ],
+      [
+        "中文分词",
+        "命名实体识别"
+      ],
+      [
+        "Bi-LSTM",
+        "Sequence Labeling"
+      ],
+      [
+        "CRF",
+        "Deep Learning"
+      ],
+      [
+        "主题模型",
+        "篇章"
+      ],
+      [
+        "One-Hot编码",
+        "Word2Vec"
+      ],
+      [
+        "Word2Vec",
+        "向量相似度"
+      ],
+      [
+        "情感分析",
+        "文本分类"
+      ],
+      [
+        "Baseline",
+        "达观杯算法大赛"
+      ],
+      [
+        "细胞状态",
+        "长短期记忆网络"
+      ],
+      [
+        "GRU",
+        "LSTM"
+      ],
+      [
+        "Bi-LSTM",
+        "LSTM"
+      ],
+      [
+        "商用工具",
+        "自然语言处理"
+      ],
+      [
+        "人工智能",
+        "语言"
+      ],
+      [
+        "对抗网络",
+        "深度学习"
+      ],
+      [
+        "图像分类",
+        "图像描述"
+      ],
+      [
+        "Knowledge Base",
+        "人工智能"
+      ],
+      [
+        "Ct-1",
+        "细胞状态"
+      ],
+      [
+        "深度学习",
+        "迁移学习"
+      ],
+      [
+        "中文分词",
+        "开源工具"
+      ],
+      [
+        "Bi-LSTM",
+        "Sequence Dependency"
+      ],
+      [
+        "RNN",
+        "长短期记忆网络"
+      ],
+      [
+        "GPU",
+        "深度学习"
+      ],
+      [
+        "序列标注",
+        "机器翻译"
+      ],
+      [
+        "Deep Pyramin CNN",
+        "单层CNN"
+      ],
+      [
+        "Char-Level Embedding",
+        "Word-Level Embedding"
+      ],
+      [
+        "N元语法模型",
+        "深度学习"
+      ],
+      [
+        "人工智能",
+        "听觉"
+      ],
+      [
+        "卷积",
+        "步长"
+      ],
+      [
+        "Bi-LSTM",
+        "CRF"
+      ],
+      [
+        "Deep Pyramid CNN",
+        "Semantic Level"
+      ],
+      [
+        "威海",
+        "山东"
+      ],
+      [
+        "CNN",
+        "图像识别网络"
+      ],
+      [
+        "Context",
+        "LSTM"
+      ],
+      [
+        "人工智能",
+        "机器学习"
+      ],
+      [
+        "CNN",
+        "Feature Map"
+      ],
+      [
+        "CNN",
+        "卷积"
+      ],
+      [
+        "佛山",
+        "广东"
+      ],
+      [
+        "CRF",
+        "Sequence Labeling"
+      ],
+      [
+        "卷积",
+        "图像分类"
+      ],
+      [
+        "文本挖掘",
+        "自然语言处理"
+      ],
+      [
+        "Feature Map",
+        "单层CNN"
+      ],
+      [
+        "Attention",
+        "Word Level"
+      ],
+      [
+        "Word2Vec",
+        "语义计算"
+      ],
+      [
+        "卷积",
+        "文本分类"
+      ],
+      [
+        "Max-Pooling",
+        "单层CNN"
+      ],
+      [
+        "威海",
+        "枣庄"
+      ],
+      [
+        "威海",
+        "潍坊"
+      ],
+      [
+        "Attention",
+        "Sentence Level"
+      ],
+      [
+        "文章建模",
+        "篇章"
+      ],
+      [
+        "人工智能",
+        "自然语言处理"
+      ],
+      [
+        "Label System",
+        "Sequence Labeling"
+      ],
+      [
+        "互联网时代",
+        "深度学习"
+      ],
+      [
+        "CNN",
+        "深度学习"
+      ],
+      [
+        "LSTM",
+        "上下文特征"
+      ],
+      [
+        "BMES",
+        "Sequence Labeling"
+      ],
+      [
+        "CNN",
+        "Deep Pyramid CNN"
+      ],
+      [
+        "统计机器学习",
+        "自然语言处理"
+      ],
+      [
+        "自然语言处理",
+        "规则引擎"
+      ],
+      [
+        "信息增益",
+        "特征工程"
+      ],
+      [
+        "传统机器学习",
+        "特征工程"
+      ],
+      [
+        "特征工程",
+        "经典机器学习"
+      ],
+      [
+        "篇章",
+        "达观"
+      ],
+      [
+        "Attention",
+        "Deep Pyramid CNN"
+      ],
+      [
+        "LSTM",
+        "深度学习"
+      ],
+      [
+        "David Silver",
+        "深度学习"
+      ],
+      [
+        "CNN",
+        "Max-Pooling"
+      ]
+    ],
+    "count": 97,
+    "create_time": 1769007112,
+    "update_time": 1769007112,
+    "_id": "doc-7890c6c195439c2a8d6fe49741a8156c"
+  },
+  "doc-2143f772a74d69830b87fea511a6e614": {
+    "relation_pairs": [
+      [
+        "GPT-4",
+        "报告"
+      ],
+      [
+        "文档处理",
+        "自然语言处理"
+      ],
+      [
+        "统计NLP",
+        "自然语言处理"
+      ],
+      [
+        "计算语言学",
+        "语义分析"
+      ],
+      [
+        "Microsoft Cortana",
+        "聊天机器人"
+      ],
+      [
+        "GPT-4",
+        "产品描述"
+      ],
+      [
+        "Sentiment Analysis",
+        "Text Analysis"
+      ],
+      [
+        "Healthcare Industry",
+        "Natural Language Processing"
+      ],
+      [
+        "Ibm Embedded Ai",
+        "Ibm Granite"
+      ],
+      [
+        "数据输入",
+        "自然语言处理"
+      ],
+      [
+        "Feature Extraction",
+        "Tf-Idf"
+      ],
+      [
+        "Bag of Words",
+        "特征提取"
+      ],
+      [
+        "文本清理",
+        "标点符号"
+      ],
+      [
+        "原始文本",
+        "文本预处理"
+      ],
+      [
+        "情感分析",
+        "讽刺"
+      ],
+      [
+        "数据",
+        "自然语言处理"
+      ],
+      [
+        "统计NLP",
+        "词性标注"
+      ],
+      [
+        "Natural Language Processing",
+        "Natural Language Understanding"
+      ],
+      [
+        "TF-IDF",
+        "特征提取"
+      ],
+      [
+        "小写转换",
+        "文本预处理"
+      ],
+      [
+        "Feature Extraction",
+        "Natural Language Processing"
+      ],
+      [
+        "基于规则的NLP",
+        "语法规则"
+      ],
+      [
+        "Natural Language Processing",
+        "Tensorflow"
+      ],
+      [
+        "情感分析",
+        "通信路由"
+      ],
+      [
+        "Natural Language Processing",
+        "Text Analysis"
+      ],
+      [
+        "机器学习",
+        "自然语言处理"
+      ],
+      [
+        "GPT-4",
+        "文章"
+      ],
+      [
+        "困惑",
+        "情感分析"
+      ],
+      [
+        "Microsoft",
+        "Microsoft Cortana"
+      ],
+      [
+        "Natural Language Processing",
+        "Natural Language Toolkit"
+      ],
+      [
+        "图像生成模型",
+        "生成式人工智能"
+      ],
+      [
+        "文本预处理",
+        "标记化"
+      ],
+      [
+        "自然语言处理",
+        "连贯性"
+      ],
+      [
+        "数字表示",
+        "特征提取"
+      ],
+      [
+        "命名实体识别",
+        "自然语言处理"
+      ],
+      [
+        "统计建模",
+        "自然语言处理"
+      ],
+      [
+        "意图理解",
+        "自然语言处理"
+      ],
+      [
+        "文本清理",
+        "特殊字符"
+      ],
+      [
+        "深度学习",
+        "自然语言处理"
+      ],
+      [
+        "基于规则的NLP",
+        "自然语言处理"
+      ],
+      [
+        "Named Entity Recognition",
+        "Text Analysis"
+      ],
+      [
+        "文本挖掘",
+        "模式"
+      ],
+      [
+        "关键字匹配",
+        "搜索引擎"
+      ],
+      [
+        "自然语言处理",
+        "问题解答数字助理"
+      ],
+      [
+        "聊天机器人",
+        "自然语言处理"
+      ],
+      [
+        "Natural Language Processing",
+        "Stemming"
+      ],
+      [
+        "自然语言处理",
+        "语言翻译"
+      ],
+      [
+        "GPT-4",
+        "创意写作内容"
+      ],
+      [
+        "数据科学",
+        "计算语言学"
+      ],
+      [
+        "Amazon",
+        "Amazon Alexa"
+      ],
+      [
+        "自然语言处理",
+        "风格"
+      ],
+      [
+        "文本清理",
+        "文本预处理"
+      ],
+      [
+        "Contextual Embeddings",
+        "Feature Extraction"
+      ],
+      [
+        "大型语言模型",
+        "生成式人工智能"
+      ],
+      [
+        "生成式人工智能",
+        "自然语言处理"
+      ],
+      [
+        "自然语言处理",
+        "计算机科学"
+      ],
+      [
+        "客户支持",
+        "自然语言处理"
+      ],
+      [
+        "企业数据系统",
+        "自然语言处理"
+      ],
+      [
+        "Insurance Industry",
+        "Natural Language Processing"
+      ],
+      [
+        "网络搜索",
+        "自然语言处理"
+      ],
+      [
+        "怀疑",
+        "情感分析"
+      ],
+      [
+        "自然语言处理",
+        "语音命令"
+      ],
+      [
+        "相关性",
+        "自然语言处理"
+      ],
+      [
+        "自然语言处理",
+        "语气"
+      ],
+      [
+        "法律文书",
+        "自然语言处理"
+      ],
+      [
+        "特征提取",
+        "自然语言处理"
+      ],
+      [
+        "Apple Siri",
+        "聊天机器人"
+      ],
+      [
+        "文本预处理",
+        "词干提取"
+      ],
+      [
+        "Natural Language Processing",
+        "Text Cleaning"
+      ],
+      [
+        "客户评论",
+        "非结构化文本数据"
+      ],
+      [
+        "GPT-4",
+        "自然语言处理"
+      ],
+      [
+        "意图理解",
+        "用户查询"
+      ],
+      [
+        "Dependency Parsing",
+        "Text Analysis"
+      ],
+      [
+        "文本挖掘",
+        "自然语言处理"
+      ],
+      [
+        "Feature Extraction",
+        "Glove"
+      ],
+      [
+        "Text Analysis",
+        "Topic Modeling"
+      ],
+      [
+        "社交媒体帖子",
+        "非结构化文本数据"
+      ],
+      [
+        "文本挖掘",
+        "趋势"
+      ],
+      [
+        "自然语言处理",
+        "语音操作的GPS系统"
+      ],
+      [
+        "Human Language",
+        "Nlp Models"
+      ],
+      [
+        "上下文",
+        "意图理解"
+      ],
+      [
+        "情感分析",
+        "文本挖掘"
+      ],
+      [
+        "人工智能",
+        "自然语言处理"
+      ],
+      [
+        "文档检索",
+        "自然语言处理"
+      ],
+      [
+        "新闻文章",
+        "非结构化文本数据"
+      ],
+      [
+        "Natural Language Toolkit",
+        "Python"
+      ],
+      [
+        "Feature Extraction",
+        "Word2Vec"
+      ],
+      [
+        "句法分析",
+        "计算语言学"
+      ],
+      [
+        "GPT-4",
+        "营销文案"
+      ],
+      [
+        "文本预处理",
+        "自然语言处理"
+      ],
+      [
+        "Ibm",
+        "Ibm Granite"
+      ],
+      [
+        "停用词删除",
+        "文本预处理"
+      ],
+      [
+        "Bag Of Words",
+        "Feature Extraction"
+      ],
+      [
+        "电子邮件",
+        "自然语言处理"
+      ],
+      [
+        "文本挖掘",
+        "非结构化文本数据"
+      ],
+      [
+        "态度",
+        "情感分析"
+      ],
+      [
+        "Part-Of-Speech Tagging",
+        "Text Analysis"
+      ],
+      [
+        "自然语言处理",
+        "计算语言学"
+      ],
+      [
+        "Amazon Alexa",
+        "聊天机器人"
+      ],
+      [
+        "Apple",
+        "Apple Siri"
+      ],
+      [
+        "情感",
+        "情感分析"
+      ],
+      [
+        "数字",
+        "文本清理"
+      ],
+      [
+        "文本预处理",
+        "词形还原"
+      ],
+      [
+        "搜索引擎",
+        "自然语言处理"
+      ]
+    ],
+    "count": 104,
+    "create_time": 1769007562,
+    "update_time": 1769007562,
+    "_id": "doc-2143f772a74d69830b87fea511a6e614"
+  },
+  "doc-3ac3b580cca11b5e1d0122810a6ec5f5": {
+    "relation_pairs": [
+      [
+        "Add & Norm Layer",
+        "Residual Connection"
+      ],
+      [
+        "Decoder Block",
+        "Input Matrix X"
+      ],
+      [
+        "Final Output Z",
+        "Multi-Head Attention"
+      ],
+      [
+        "Encoder",
+        "Encoder Block"
+      ],
+      [
+        "Cross-Attention",
+        "Value (V)"
+      ],
+      [
+        "Add & Norm Layer",
+        "Layer Normalization"
+      ],
+      [
+        "Add & Norm Layer",
+        "Decoder Block"
+      ],
+      [
+        "Multi-Head Attention",
+        "Self-Attention"
+      ],
+      [
+        "Attention Mechanism",
+        "Self-Attention"
+      ],
+      [
+        "Decoder Block",
+        "Transformer"
+      ],
+      [
+        "Deep Learning",
+        "Transformer"
+      ],
+      [
+        "Multi-Head Attention",
+        "Output Matrices Z1 to Z8"
+      ],
+      [
+        "Concat",
+        "Multi-Head Attention"
+      ],
+      [
+        "Encoder Block",
+        "Transformer"
+      ],
+      [
+        "Cross-Attention",
+        "Key (K)"
+      ],
+      [
+        "Decoder Block",
+        "Multi-Head Attention"
+      ],
+      [
+        "Encoder Block",
+        "Feed Forward"
+      ],
+      [
+        "Encoder Block",
+        "Multi-Head Attention"
+      ],
+      [
+        "Add & Norm Layer",
+        "Encoder Block"
+      ],
+      [
+        "Position Encoding",
+        "Transformer"
+      ],
+      [
+        "Linear Layer",
+        "Multi-Head Attention"
+      ],
+      [
+        "Embedding",
+        "Transformer"
+      ],
+      [
+        "Encoder Block",
+        "Output Matrix O"
+      ],
+      [
+        "Decoder",
+        "Decoder Block"
+      ],
+      [
+        "Cross-Attention",
+        "Query (Q)"
+      ],
+      [
+        "Attention Mechanism",
+        "Cross-Attention"
+      ],
+      [
+        "Mask Matrix",
+        "Masked Multi-Head Attention"
+      ]
+    ],
+    "count": 27,
+    "create_time": 1769007718,
+    "update_time": 1769007718,
+    "_id": "doc-3ac3b580cca11b5e1d0122810a6ec5f5"
+  },
+  "doc-778f83860f7db1907e0da6e0cb412723": {
+    "relation_pairs": [
+      [
+        "Self-Attention Mechanism",
+        "Transformer"
+      ],
+      [
+        "Attention Mechanism",
+        "Transformer"
+      ],
+      [
+        "Article",
+        "Attention Mechanism"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769007750,
+    "update_time": 1769007750,
+    "_id": "doc-778f83860f7db1907e0da6e0cb412723"
+  },
+  "doc-e77bf0e5ecd6a42625cc947b20dfaca8": {
+    "relation_pairs": [
+      [
+        "Transformer模型",
+        "多头注意力"
+      ],
+      [
+        "Transformer模型",
+        "自注意力"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1769007761,
+    "update_time": 1769007761,
+    "_id": "doc-e77bf0e5ecd6a42625cc947b20dfaca8"
+  },
+  "doc-ad8f11550a8a8807684e7ecc93a2a801": {
+    "relation_pairs": [
+      [
+        "Positional Encoding",
+        "Transformer Encoder"
+      ],
+      [
+        "Call Method",
+        "Transformer Encoder"
+      ],
+      [
+        "Embedding",
+        "Transformer Encoder"
+      ],
+      [
+        "Forward Method",
+        "Transformer Encoder"
+      ],
+      [
+        "EncoderBlock",
+        "Transformer Encoder"
+      ],
+      [
+        "Transformer Encoder",
+        "Valid Lengths"
+      ],
+      [
+        "Transformer Encoder",
+        "Transformer Encoder Block"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769007844,
+    "update_time": 1769007844,
+    "_id": "doc-ad8f11550a8a8807684e7ecc93a2a801"
+  },
+  "doc-0724c887b70d220c530dcfaee28003c1": {
+    "relation_pairs": [
+      [
+        "Conferences And Publications",
+        "NeurIPS"
+      ],
+      [
+        "Machine Learning",
+        "Unsupervised Learning"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Igor Mordatch"
+      ],
+      [
+        "Machine Learning",
+        "Reinforcement Learning"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Pieter Abbeel"
+      ],
+      [
+        "CVPR",
+        "Conferences And Publications"
+      ],
+      [
+        "Machine Learning",
+        "Supervised Learning"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Michael Laskin"
+      ],
+      [
+        "AAAI",
+        "Conferences And Publications"
+      ],
+      [
+        "Conferences And Publications",
+        "ICML"
+      ],
+      [
+        "Conferences And Publications",
+        "ICLR"
+      ],
+      [
+        "Conferences And Publications",
+        "Machine Learning (Journal)"
+      ],
+      [
+        "Aditya Grover",
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling"
+      ],
+      [
+        "Aravind Rajeswaran",
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling"
+      ],
+      [
+        "Conferences And Publications",
+        "IJCAI"
+      ],
+      [
+        "Conferences And Publications",
+        "JMLR"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Kevin Lu"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Kimin Lee"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "arXiv"
+      ],
+      [
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling",
+        "Lili Chen"
+      ],
+      [
+        "Aravind Srinivas",
+        "Decision Transformer: Reinforcement Learning via Sequence Modeling"
+      ],
+      [
+        "Learning Curve (Machine Learning)",
+        "Model Diagnostics"
+      ]
+    ],
+    "count": 22,
+    "create_time": 1769007997,
+    "update_time": 1769007997,
+    "_id": "doc-0724c887b70d220c530dcfaee28003c1"
+  },
+  "doc-07c6d2ca0b23fef78261afa6105b1fe0": {
+    "relation_pairs": [
+      [
+        "Hugging Face",
+        "Transformers"
+      ],
+      [
+        "GPT",
+        "Transformers Library"
+      ],
+      [
+        "NLP",
+        "Transformers"
+      ],
+      [
+        "BERT",
+        "Transformers Library"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769008029,
+    "update_time": 1769008029,
+    "_id": "doc-07c6d2ca0b23fef78261afa6105b1fe0"
+  },
+  "doc-93658308ac482857335fb970db2d1193": {
+    "relation_pairs": [
+      [
+        "Autoregressive Decoder-Only LLM",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "Positional Encoding",
+        "Transformer Model"
+      ],
+      [
+        "Large Language Model (LLM)",
+        "Meta Llama"
+      ],
+      [
+        "Large Language Model (LLM)",
+        "Transformer Model"
+      ],
+      [
+        "Self-Attention Mechanism",
+        "Transformer Model"
+      ],
+      [
+        "Ai Investment",
+        "Survey Of 2,000 Organizations"
+      ],
+      [
+        "Query Vector",
+        "Weight Matrix WQ"
+      ],
+      [
+        "Value Vector",
+        "Weight Matrix WV"
+      ],
+      [
+        "NLP",
+        "Transformer Model"
+      ],
+      [
+        "Autoregressive Decoder-Only LLM",
+        "Claude"
+      ],
+      [
+        "Token",
+        "Tokenization"
+      ],
+      [
+        "Anthropic",
+        "Claude"
+      ],
+      [
+        "CNN",
+        "Transformer Model"
+      ],
+      [
+        "Embedding",
+        "Token"
+      ],
+      [
+        "RNN",
+        "Transformer Model"
+      ],
+      [
+        "Generative Ai",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "Linear Layer",
+        "Weight Matrix WK"
+      ],
+      [
+        "Generative AI",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "ChatGPT",
+        "GPT-3"
+      ],
+      [
+        "Linear Layer",
+        "Weight Matrix WQ"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Machine Learning"
+      ],
+      [
+        "Feedforward Neural Network Layer",
+        "Transformer Model"
+      ],
+      [
+        "Key Vector",
+        "Weight Matrix WK"
+      ],
+      [
+        "Large Language Model (LLM)",
+        "Token"
+      ],
+      [
+        "IBM Granite",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "User-Friendly Interface"
+      ],
+      [
+        "Autoregressive Decoder-Only LLM",
+        "GPT-3"
+      ],
+      [
+        "Multi-Head Attention",
+        "Self-Attention Mechanism"
+      ],
+      [
+        "GPT-3",
+        "OpenAI"
+      ],
+      [
+        "Claude",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "GPT-3",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "Ai Builders",
+        "Generative Ai"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Industry Standard Apis And Sdks"
+      ],
+      [
+        "Query, Key, Value Vectors",
+        "Token"
+      ],
+      [
+        "Ai Development Lifecycle",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "Linear Layer",
+        "Weight Matrix WV"
+      ],
+      [
+        "Machine Translation",
+        "Transformer Model"
+      ],
+      [
+        "Embedding",
+        "Query, Key, Value Vectors"
+      ],
+      [
+        "Attention Head",
+        "Positional Encoding"
+      ],
+      [
+        "Ceos",
+        "Generative Ai"
+      ]
+    ],
+    "count": 41,
+    "create_time": 1769008235,
+    "update_time": 1769008235,
+    "_id": "doc-93658308ac482857335fb970db2d1193"
+  },
+  "doc-a6f32e4615a0137e965400eba7166c47": {
+    "relation_pairs": [
+      [
+        "Hung-yi Lee",
+        "Transformer"
+      ],
+      [
+        "Lecture Slides",
+        "Lecture Video"
+      ],
+      [
+        "354000 Subscribers",
+        "Lecture Video"
+      ],
+      [
+        "DOC_ID: chunk-6db04701",
+        "Linguistics"
+      ],
+      [
+        "Hung-yi Lee",
+        "YouTube Channel"
+      ],
+      [
+        "26 Mar 2021",
+        "Lecture Video"
+      ],
+      [
+        "DOC_ID: chunk-6db04701",
+        "Lecture Video"
+      ],
+      [
+        "Hung-yi Lee",
+        "Lecture Video"
+      ],
+      [
+        "125 Comments",
+        "Lecture Video"
+      ],
+      [
+        "Lecture Video",
+        "Machine Learning 2021"
+      ],
+      [
+        "283126 Views",
+        "Lecture Video"
+      ],
+      [
+        "2878 Likes",
+        "Lecture Video"
+      ]
+    ],
+    "count": 12,
+    "create_time": 1769008303,
+    "update_time": 1769008303,
+    "_id": "doc-a6f32e4615a0137e965400eba7166c47"
+  },
+  "doc-4fcfe2fa03fc2203cba1b55a8668dc72": {
+    "relation_pairs": [
+      [
+        "大语言模型",
+        "语言"
+      ],
+      [
+        "大模型",
+        "深度学习"
+      ],
+      [
+        "抖音推荐算法",
+        "机器学习"
+      ],
+      [
+        "学习路线",
+        "系统资料"
+      ],
+      [
+        "BERT",
+        "大模型"
+      ],
+      [
+        "大数据",
+        "数据分析"
+      ],
+      [
+        "GPT",
+        "多模态通信"
+      ],
+      [
+        "AI黑话揭秘",
+        "大模型"
+      ],
+      [
+        "人工智能",
+        "狭义AI"
+      ],
+      [
+        "深度学习",
+        "语音助手"
+      ],
+      [
+        "大模型",
+        "浙江大学人工智能教育教学研究中心"
+      ],
+      [
+        "学习计划",
+        "学习路线"
+      ],
+      [
+        "AI模型",
+        "数据"
+      ],
+      [
+        "LLM",
+        "人工智能"
+      ],
+      [
+        "医学影像识别",
+        "深度学习"
+      ],
+      [
+        "LLM",
+        "大模型"
+      ],
+      [
+        "大数据模型",
+        "大语言模型"
+      ],
+      [
+        "浙江大学人工智能教育教学研究中心",
+        "深度学习"
+      ],
+      [
+        "机器学习",
+        "监督学习"
+      ],
+      [
+        "具身人工智能",
+        "大语言模型"
+      ],
+      [
+        "人工智能",
+        "扫地机器人"
+      ],
+      [
+        "机器学习",
+        "深度学习"
+      ],
+      [
+        "大语言模型",
+        "深度学习"
+      ],
+      [
+        "RL",
+        "机器学习"
+      ],
+      [
+        "机器学习",
+        "逻辑回归"
+      ],
+      [
+        "人工智能",
+        "通用AI"
+      ],
+      [
+        "循环神经网络",
+        "深度学习"
+      ],
+      [
+        "垂直模型",
+        "通用人工智能"
+      ],
+      [
+        "AIGC",
+        "人工智能"
+      ],
+      [
+        "AI黑话揭秘",
+        "LLM"
+      ],
+      [
+        "AI黑话揭秘",
+        "人工智能"
+      ],
+      [
+        "人工智能",
+        "大模型"
+      ],
+      [
+        "大语言模型",
+        "自然语言处理"
+      ],
+      [
+        "人工神经网络",
+        "深度学习"
+      ],
+      [
+        "人工智能",
+        "数据"
+      ],
+      [
+        "大模型",
+        "自然语言处理"
+      ],
+      [
+        "GPT",
+        "规划"
+      ],
+      [
+        "支付宝信用评分",
+        "机器学习"
+      ],
+      [
+        "AI黑话揭秘",
+        "机器学习"
+      ],
+      [
+        "AI黑话揭秘",
+        "深度学习"
+      ],
+      [
+        "数据分析",
+        "数据挖掘"
+      ],
+      [
+        "GPT-3",
+        "LLM"
+      ],
+      [
+        "人工智能",
+        "模型部署"
+      ],
+      [
+        "求实",
+        "谭铁牛"
+      ],
+      [
+        "GitHub Copilot",
+        "大语言模型"
+      ],
+      [
+        "AIGC",
+        "自然语言处理"
+      ],
+      [
+        "模型",
+        "算法"
+      ],
+      [
+        "自然语言处理",
+        "自然语言生成"
+      ],
+      [
+        "人工智能",
+        "浙江大学人工智能教育教学研究中心"
+      ],
+      [
+        "深度学习",
+        "深度学习框架"
+      ],
+      [
+        "ChatGPT",
+        "大语言模型"
+      ],
+      [
+        "推荐系统",
+        "机器学习"
+      ],
+      [
+        "Siri",
+        "人工智能"
+      ],
+      [
+        "AI黑话揭秘",
+        "Agent"
+      ],
+      [
+        "GPT",
+        "推理"
+      ],
+      [
+        "人工智能",
+        "大语言模型"
+      ],
+      [
+        "Transformer架构",
+        "大语言模型"
+      ],
+      [
+        "人工智能",
+        "机器学习"
+      ],
+      [
+        "大语言模型",
+        "预训练"
+      ],
+      [
+        "强化学习",
+        "机器学习"
+      ],
+      [
+        "人工智能",
+        "机器人技术"
+      ],
+      [
+        "大模型",
+        "预训练-微调范式"
+      ],
+      [
+        "人工智能",
+        "深度学习"
+      ],
+      [
+        "人工智能",
+        "人脸识别"
+      ],
+      [
+        "GPT",
+        "大语言模型"
+      ],
+      [
+        "Agent",
+        "人工智能"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "人工智能",
+        "计算机视觉"
+      ],
+      [
+        "人工智能",
+        "模型"
+      ],
+      [
+        "人工智能",
+        "自然语言处理"
+      ],
+      [
+        "自然语言处理",
+        "自然语言理解"
+      ],
+      [
+        "机器学习",
+        "金融风控"
+      ],
+      [
+        "无监督学习",
+        "机器学习"
+      ],
+      [
+        "人工智能",
+        "算法"
+      ],
+      [
+        "深度学习",
+        "神经网络"
+      ],
+      [
+        "人工智能",
+        "谭铁牛"
+      ],
+      [
+        "人工智能",
+        "垂直模型"
+      ],
+      [
+        "人工智能",
+        "大数据"
+      ],
+      [
+        "大语言模型",
+        "语言模型"
+      ],
+      [
+        "Scaling Law",
+        "大语言模型"
+      ],
+      [
+        "大模型",
+        "机器学习"
+      ],
+      [
+        "协同过滤",
+        "机器学习"
+      ]
+    ],
+    "count": 82,
+    "create_time": 1769008614,
+    "update_time": 1769008614,
+    "_id": "doc-4fcfe2fa03fc2203cba1b55a8668dc72"
+  },
+  "doc-3678971988880bb3960a90e15878444d": {
+    "relation_pairs": [
+      [
+        "大语言模型",
+        "自监督学习方法"
+      ],
+      [
+        "无标记文本",
+        "自监督学习方法"
+      ],
+      [
+        "大语言模型",
+        "深度神经网络"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769008640,
+    "update_time": 1769008640,
+    "_id": "doc-3678971988880bb3960a90e15878444d"
+  },
+  "doc-73a35fceff57d2bc7e2ac85fbd5203b4": {
+    "relation_pairs": [
+      [
+        "Model Training",
+        "PyTorch Scaled Dot Product Attention"
+      ],
+      [
+        "BLOOM Model",
+        "BigScience Team"
+      ],
+      [
+        "Knowledge Base",
+        "RAG"
+      ],
+      [
+        "Decoder-Only Model",
+        "Large Language Model"
+      ],
+      [
+        "Large Language Model",
+        "Supervised Fine-Tuning"
+      ],
+      [
+        "Encoder-Decoder Model",
+        "Large Language Model"
+      ],
+      [
+        "Prompt Engineering",
+        "RAG"
+      ],
+      [
+        "Large Language Model",
+        "Transformer Architecture"
+      ],
+      [
+        "Mistral AI",
+        "Mistral Model"
+      ],
+      [
+        "Encoder-Decoder Attention",
+        "Encoder-Decoder Model"
+      ],
+      [
+        "Encoder-Only Model",
+        "Large Language Model"
+      ],
+      [
+        "GPT",
+        "Large Language Model"
+      ],
+      [
+        "Precision Loss",
+        "Quantization"
+      ],
+      [
+        "LLM",
+        "RAG"
+      ],
+      [
+        "LLama 3.3",
+        "Large Language Model"
+      ],
+      [
+        "Large Language Model",
+        "Retrieval-Augmented Generation"
+      ],
+      [
+        "Large Language Model",
+        "Multimodal Large Language Models"
+      ],
+      [
+        "Large Language Model",
+        "Prompt Engineering"
+      ],
+      [
+        "Few-Shot Learning",
+        "Prompt Engineering"
+      ],
+      [
+        "Large Language Model",
+        "Modelscope-Classroom"
+      ],
+      [
+        "Prompt Lookup Decoding",
+        "Speculative Decoding"
+      ],
+      [
+        "GPT-4",
+        "LLama 3.2"
+      ],
+      [
+        "GPT-4",
+        "Large Language Model"
+      ],
+      [
+        "Fine-Tuning",
+        "Prompt Engineering"
+      ],
+      [
+        "Prompt Engineering",
+        "Zero-Shot Learning"
+      ],
+      [
+        "Large Language Model",
+        "Model Training and Fine-Tuning"
+      ],
+      [
+        "Large Language Model",
+        "Reward Model Training"
+      ],
+      [
+        "LLaMA",
+        "Meta"
+      ],
+      [
+        "LLaMA",
+        "Large Language Model"
+      ],
+      [
+        "Knowledge Base",
+        "Retrieval-Augmented Generation"
+      ],
+      [
+        "Static KV-Cache",
+        "Torch.compile"
+      ],
+      [
+        "Fine-Tuning",
+        "Torch.compile"
+      ]
+    ],
+    "count": 32,
+    "create_time": 1769008807,
+    "update_time": 1769008807,
+    "_id": "doc-73a35fceff57d2bc7e2ac85fbd5203b4"
+  },
+  "doc-1a52d4be6b8f3e7719d553c603ce9c9f": {
+    "relation_pairs": [
+      [
+        "GDPR",
+        "LLM"
+      ],
+      [
+        "容量指导规划",
+        "红帽AI"
+      ],
+      [
+        "代理式AI",
+        "生成式AI"
+      ],
+      [
+        "HIPAA",
+        "LLM"
+      ],
+      [
+        "Transformer架构",
+        "参数"
+      ],
+      [
+        "LLM",
+        "代理式AI"
+      ],
+      [
+        "Granite系列LLM",
+        "红帽® 企业Linux® AI"
+      ],
+      [
+        "AI监管",
+        "GDPR"
+      ],
+      [
+        "SLM",
+        "红帽AI"
+      ],
+      [
+        "LLM",
+        "深度学习"
+      ],
+      [
+        "代理式AI",
+        "编排"
+      ],
+      [
+        "Transformer架构",
+        "无监督学习"
+      ],
+      [
+        "LLM",
+        "SLM"
+      ],
+      [
+        "AI平台",
+        "模型上下文协议(MCP)"
+      ],
+      [
+        "LLM",
+        "专有的商业数据"
+      ],
+      [
+        "人类偏见",
+        "歧视性算法"
+      ],
+      [
+        "统计学上的偏差",
+        "训练数据"
+      ],
+      [
+        "LLM",
+        "Transformer架构"
+      ],
+      [
+        "LLM提示词",
+        "存储支持"
+      ],
+      [
+        "LLM",
+        "数据准备"
+      ],
+      [
+        "透明度",
+        "黑箱"
+      ],
+      [
+        "AI平台",
+        "红帽® 企业Linux® AI"
+      ],
+      [
+        "LLM",
+        "运维成本"
+      ],
+      [
+        "检索增强生成(RAG)",
+        "知识源"
+      ],
+      [
+        "LLM",
+        "第三方提供商"
+      ],
+      [
+        "AI监管",
+        "人工监督"
+      ],
+      [
+        "LLM",
+        "数据分析"
+      ],
+      [
+        "LLM",
+        "营销信息"
+      ],
+      [
+        "人类偏见",
+        "训练数据"
+      ],
+      [
+        "包容性",
+        "训练数据"
+      ],
+      [
+        "深度学习",
+        "训练数据"
+      ],
+      [
+        "AI工作负载",
+        "分布式推理"
+      ],
+      [
+        "LLM",
+        "跨文化交流"
+      ],
+      [
+        "AI监管",
+        "AI系统安全防护"
+      ],
+      [
+        "LLM",
+        "语言翻译"
+      ],
+      [
+        "数据准备",
+        "词元化"
+      ],
+      [
+        "LLM",
+        "客户支持"
+      ],
+      [
+        "LLM提示词",
+        "计算资源"
+      ],
+      [
+        "LLM",
+        "内容生成"
+      ],
+      [
+        "LLM",
+        "人机回圈"
+      ],
+      [
+        "AI监管",
+        "HIPAA"
+      ],
+      [
+        "AI监管",
+        "人机回圈"
+      ],
+      [
+        "LLM",
+        "个性化内容"
+      ],
+      [
+        "LLM",
+        "红帽AI"
+      ],
+      [
+        "LLM",
+        "客户反馈"
+      ],
+      [
+        "AI监管",
+        "数据监管"
+      ],
+      [
+        "LLM",
+        "聊天机器人"
+      ],
+      [
+        "多样性",
+        "训练数据"
+      ],
+      [
+        "LLM",
+        "检索增强生成(RAG)"
+      ],
+      [
+        "LLM",
+        "机器学习模型"
+      ],
+      [
+        "无监督学习",
+        "深度学习"
+      ],
+      [
+        "AI监管",
+        "问责框架"
+      ],
+      [
+        "可解释性",
+        "黑箱"
+      ],
+      [
+        "人类偏见",
+        "偏见输出"
+      ],
+      [
+        "LLM",
+        "客户信息"
+      ],
+      [
+        "llm-d",
+        "分布式推理"
+      ],
+      [
+        "LLM",
+        "市场趋势"
+      ]
+    ],
+    "count": 57,
+    "create_time": 1769009099,
+    "update_time": 1769009099,
+    "_id": "doc-1a52d4be6b8f3e7719d553c603ce9c9f"
+  },
+  "doc-1bb6bf3f22f6625482a3700d160f6e81": {
+    "relation_pairs": [
+      [
+        "Large Language Model",
+        "NeOn-GPT"
+      ],
+      [
+        "Fine-Tuning",
+        "Large Language Model"
+      ],
+      [
+        "RLHF",
+        "Reinforcement Learning"
+      ],
+      [
+        "Topics, Authors, and Institutions",
+        "arXiv Papers"
+      ],
+      [
+        "Hallucination",
+        "Large Language Model"
+      ],
+      [
+        "Cultural Bias",
+        "DIKWP Research Group"
+      ],
+      [
+        "DIKWP Research Group",
+        "Occupational Bias"
+      ],
+      [
+        "Age Bias",
+        "DIKWP Research Group"
+      ],
+      [
+        "DIKWP Research Group",
+        "International Standard Evaluation"
+      ],
+      [
+        "Large Language Model",
+        "Model Collapse"
+      ],
+      [
+        "Self-Supervised Learning",
+        "Supervised Learning"
+      ],
+      [
+        "DIKWP Research Group",
+        "Regional Bias"
+      ],
+      [
+        "Transformer Architecture",
+        "Vision Transformer"
+      ],
+      [
+        "NeOn-GPT",
+        "PDF"
+      ],
+      [
+        "Autoencoder",
+        "Variational Autoencoder"
+      ],
+      [
+        "Foundation Model",
+        "Large Language Model"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1769009242,
+    "update_time": 1769009242,
+    "_id": "doc-1bb6bf3f22f6625482a3700d160f6e81"
+  },
+  "doc-c73155a0054fe7510b458e0f7fe666b7": {
+    "relation_pairs": [
+      [
+        "Brex",
+        "Brex's Prompt Engineering Guide"
+      ],
+      [
+        "Gpt",
+        "State Of Gpt"
+      ],
+      [
+        "Openai",
+        "Openai Official Quickstart Documentation"
+      ],
+      [
+        "Agent",
+        "Llm Powered Autonomous Agents"
+      ],
+      [
+        "Api Reference",
+        "Openai Official Quickstart Documentation"
+      ],
+      [
+        "Deep Dive Into Llms Like Chatgpt",
+        "Large Language Model"
+      ],
+      [
+        "Andrej Karpathy",
+        "Deep Dive Into Llms Like Chatgpt"
+      ],
+      [
+        "Andrej Karpathy",
+        "State Of Gpt"
+      ],
+      [
+        "Chatgpt Prompt Engineering For Developers",
+        "Prompt Engineering"
+      ],
+      [
+        "A Survey Of Prompt Engineering Methods In Large Language Models For Different Nlp Tasks",
+        "Prompt Engineering"
+      ],
+      [
+        "Build A Large Language Model (From Scratch)",
+        "Large Model Application Development"
+      ],
+      [
+        "Brex's Prompt Engineering Guide",
+        "Prompt Engineering"
+      ],
+      [
+        "A Survey Of Prompt Engineering Methods In Large Language Models For Different Nlp Tasks",
+        "Nlp Tasks"
+      ],
+      [
+        "Openai",
+        "Openai Cookbook"
+      ]
+    ],
+    "count": 14,
+    "create_time": 1769009335,
+    "update_time": 1769009335,
+    "_id": "doc-c73155a0054fe7510b458e0f7fe666b7"
+  },
+  "doc-f394bd66e077e288f0b983860f06c440": {
+    "relation_pairs": [
+      [
+        "AI-Driven Application",
+        "Gemini"
+      ],
+      [
+        "Vertex AI",
+        "Vertex AI Agent Builder"
+      ],
+      [
+        "Google AI",
+        "Large Language Model (LLM)"
+      ],
+      [
+        "Prompt",
+        "Vertex AI"
+      ],
+      [
+        "Google Cloud",
+        "Vertex AI"
+      ],
+      [
+        "Gemini",
+        "Gemini API"
+      ],
+      [
+        "Google Cloud",
+        "Google DeepMind"
+      ],
+      [
+        "Customer Engagement Suite with Google AI",
+        "Dialogflow"
+      ],
+      [
+        "Gemini",
+        "Google DeepMind"
+      ],
+      [
+        "Large Language Model (LLM)",
+        "Neural Network"
+      ],
+      [
+        "Large Language Model (LLM)",
+        "Text Data"
+      ],
+      [
+        "Gemini",
+        "Vertex AI"
+      ],
+      [
+        "Generative AI",
+        "Vertex AI"
+      ],
+      [
+        "Generative AI on Vertex AI",
+        "Vertex AI"
+      ]
+    ],
+    "count": 14,
+    "create_time": 1769009424,
+    "update_time": 1769009424,
+    "_id": "doc-f394bd66e077e288f0b983860f06c440"
+  },
+  "doc-70cc6b4326bedb7c4b61745cce643075": {
+    "relation_pairs": [
+      [
+        "图像处理",
+        "深度学习技术"
+      ],
+      [
+        "海洋监测",
+        "遥感图像分析"
+      ],
+      [
+        "国土资源管理",
+        "遥感图像分析"
+      ],
+      [
+        "深度学习技术",
+        "遥感图像"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1769009454,
+    "update_time": 1769009454,
+    "_id": "doc-70cc6b4326bedb7c4b61745cce643075"
+  },
+  "doc-81494149ccc19d39342ca4e7f5dc4668": {
+    "relation_pairs": [
+      [
+        "国内外研究现状与进展",
+        "本研究"
+      ],
+      [
+        "变化检测",
+        "深度神经网络"
+      ],
+      [
+        "深度神经网络",
+        "遥感图像分类"
+      ],
+      [
+        "多模态数据",
+        "深度神经网络"
+      ],
+      [
+        "深度神经网络",
+        "语义分割"
+      ],
+      [
+        "本研究",
+        "深度神经网络"
+      ],
+      [
+        "地球科学",
+        "遥感图像分类"
+      ],
+      [
+        "深度神经网络",
+        "目标检测"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1769009508,
+    "update_time": 1769009508,
+    "_id": "doc-81494149ccc19d39342ca4e7f5dc4668"
+  },
+  "doc-d03520804df199a76ce35edbbeca10f8": {
+    "relation_pairs": [
+      [
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection",
+        "Zhang B"
+      ],
+      [
+        "Chen Z C",
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection"
+      ],
+      [
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection",
+        "Morphologically Supervised PCA-Net"
+      ],
+      [
+        "Gao L R",
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection"
+      ],
+      [
+        "IEEE Geoscience and Remote Sensing Letters",
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection"
+      ],
+      [
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection",
+        "Wang Y H"
+      ],
+      [
+        "Imbalanced Learning-Based Automatic SAR Images Change Detection",
+        "SAR Images"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769009545,
+    "update_time": 1769009545,
+    "_id": "doc-d03520804df199a76ce35edbbeca10f8"
+  },
+  "doc-326a81b79c40b3a07062403d80063e34": {
+    "relation_pairs": [
+      [
+        "复杂背景干扰",
+        "遥感图像目标检测"
+      ],
+      [
+        "尺度不变性",
+        "遥感图像目标检测"
+      ],
+      [
+        "样本量少",
+        "遥感图像目标检测"
+      ],
+      [
+        "旋转不变性",
+        "遥感图像目标检测"
+      ],
+      [
+        "典型遥感图像目标",
+        "遥感图像目标检测"
+      ],
+      [
+        "深度学习",
+        "遥感图像目标检测"
+      ],
+      [
+        "多波段数据检测",
+        "遥感图像目标检测"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1769009591,
+    "update_time": 1769009591,
+    "_id": "doc-326a81b79c40b3a07062403d80063e34"
+  },
+  "doc-fb89c8462c112775ff8e6c43e7d050e8": {
+    "relation_pairs": [
+      [
+        "Deep Learning",
+        "Evaluation System"
+      ],
+      [
+        "Evaluation System",
+        "Hardware Consumption"
+      ],
+      [
+        "Test Datasets",
+        "VggNet"
+      ],
+      [
+        "Deep Learning",
+        "Global Features"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Deep Learning"
+      ],
+      [
+        "DenseNet",
+        "Test Datasets"
+      ],
+      [
+        "Global Features",
+        "Local Features"
+      ],
+      [
+        "Global Features",
+        "Satellite Remote Sensing Image Retrieval"
+      ],
+      [
+        "Evaluation System",
+        "Feature Extraction Time"
+      ],
+      [
+        "ResNet-18",
+        "Test Datasets"
+      ],
+      [
+        "Evaluation System",
+        "Precision@K"
+      ],
+      [
+        "Deep Learning",
+        "ResNet-18"
+      ],
+      [
+        "Average Ranking",
+        "Evaluation System"
+      ],
+      [
+        "Evaluation System",
+        "Feature Similarity Calculation Time"
+      ],
+      [
+        "Deep Learning",
+        "VggNet"
+      ],
+      [
+        "Global Features",
+        "Satellite Remote Sensing Image Positioning"
+      ],
+      [
+        "Deep Learning",
+        "DenseNet"
+      ]
+    ],
+    "count": 17,
+    "create_time": 1769009684,
+    "update_time": 1769009684,
+    "_id": "doc-fb89c8462c112775ff8e6c43e7d050e8"
+  },
+  "doc-f63d6eb86a6dff5d8cb2c08238a0e76e": {
+    "relation_pairs": [
+      [
+        "Deep Learning",
+        "VGG"
+      ],
+      [
+        "Faster R-CNN",
+        "Object Detection"
+      ],
+      [
+        "Deep Learning",
+        "GoogleNet"
+      ],
+      [
+        "Deep Learning",
+        "Lv Xiangyang"
+      ],
+      [
+        "Image Segmentation",
+        "SegNet"
+      ],
+      [
+        "Disaster Monitoring",
+        "Remote Sensing Image"
+      ],
+      [
+        "Object Detection",
+        "R-CNN"
+      ],
+      [
+        "R Language",
+        "Structural Equation Model (SEM)"
+      ],
+      [
+        "Fast R-CNN",
+        "Object Detection"
+      ],
+      [
+        "Bayesian Model",
+        "R Language"
+      ],
+      [
+        "SWAP Agricultural Model",
+        "Sensitivity Analysis"
+      ],
+      [
+        "Object Detection",
+        "SSD"
+      ],
+      [
+        "Ecosystem Service Assessment",
+        "PLUS-InVEST Model"
+      ],
+      [
+        "Object Detection",
+        "YOLO"
+      ],
+      [
+        "Deep Learning",
+        "Remote Sensing Image"
+      ],
+      [
+        "Deep Learning",
+        "ResNet"
+      ],
+      [
+        "Image Segmentation",
+        "U-Net"
+      ],
+      [
+        "Climate Change Impact",
+        "SWAP Agricultural Model"
+      ],
+      [
+        "Deep Learning",
+        "PyTorch"
+      ],
+      [
+        "Remote Sensing Image",
+        "Urban Planning"
+      ],
+      [
+        "ICP Filing Number 07017567-12",
+        "Science Net"
+      ],
+      [
+        "Precision Agriculture",
+        "Remote Sensing Image"
+      ],
+      [
+        "AlexNet",
+        "Deep Learning"
+      ],
+      [
+        "Deep Learning",
+        "Object Detection"
+      ],
+      [
+        "Biomedical New Materials",
+        "Sustainable Resources"
+      ],
+      [
+        "Deep Learning",
+        "DenseNet"
+      ],
+      [
+        "FCN",
+        "Image Segmentation"
+      ],
+      [
+        "Mineral Exploration",
+        "Remote Sensing Image"
+      ],
+      [
+        "Deep Learning",
+        "Image Segmentation"
+      ],
+      [
+        "PLUS-InVEST Model",
+        "Scenario Simulation"
+      ],
+      [
+        "TRP Channel Protein",
+        "Water Transport"
+      ],
+      [
+        "Lavaan",
+        "Structural Equation Modeling (SEM)"
+      ],
+      [
+        "Archiver",
+        "Science Net"
+      ],
+      [
+        "Object Detection",
+        "mAP"
+      ],
+      [
+        "Climate Change",
+        "SWAP Agricultural Model"
+      ]
+    ],
+    "count": 35,
+    "create_time": 1769009873,
+    "update_time": 1769009873,
+    "_id": "doc-f63d6eb86a6dff5d8cb2c08238a0e76e"
+  },
+  "doc-4a38cf117c062d1c34ec79abbff9e244": {
+    "relation_pairs": [
+      [
+        "人工智能",
+        "气候学"
+      ],
+      [
+        "气候数据",
+        "气候模型"
+      ],
+      [
+        "人工智能",
+        "研究人员"
+      ],
+      [
+        "地球观测卫星",
+        "气候数据"
+      ],
+      [
+        "人工智能",
+        "气候数据"
+      ],
+      [
+        "气候学",
+        "研究人员"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1769009909,
+    "update_time": 1769009909,
+    "_id": "doc-4a38cf117c062d1c34ec79abbff9e244"
+  },
+  "doc-babf4b9b036bdc4286b6ed4dc016cba8": {
+    "relation_pairs": [
+      [
+        "This Study",
+        "Weather And Climate Forecasting"
+      ],
+      [
+        "DFS-M",
+        "DFS-S"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1769009938,
+    "update_time": 1769009938,
+    "_id": "doc-babf4b9b036bdc4286b6ed4dc016cba8"
+  },
+  "doc-b7e84880c36323dbbf1d92748718a1d1": {
+    "relation_pairs": [
+      [
+        "深度学习地球系统模型",
+        "热带气旋"
+      ],
+      [
+        "Cresswell-Clay",
+        "深度学习地球系统模型"
+      ],
+      [
+        "东北风暴",
+        "深度学习地球系统模型"
+      ],
+      [
+        "北半球大气阻塞事件",
+        "极端天气"
+      ],
+      [
+        "北半球大气阻塞事件",
+        "深度学习地球系统模型"
+      ],
+      [
+        "深度学习地球系统模型",
+        "耦合模式比对计划第六阶段"
+      ],
+      [
+        "耦合模式比对计划第六阶段",
+        "计算气候研究"
+      ],
+      [
+        "海洋",
+        "深度学习地球系统模型"
+      ],
+      [
+        "机器学习",
+        "深度学习地球系统模型"
+      ],
+      [
+        "印度夏季季风",
+        "深度学习地球系统模型"
+      ],
+      [
+        "大气",
+        "深度学习地球系统模型"
+      ],
+      [
+        "AGU Advances",
+        "Eos"
+      ],
+      [
+        "传统模型",
+        "机器学习"
+      ],
+      [
+        "年际变化",
+        "深度学习地球系统模型"
+      ],
+      [
+        "气候",
+        "深度学习地球系统模型"
+      ]
+    ],
+    "count": 15,
+    "create_time": 1769010039,
+    "update_time": 1769010039,
+    "_id": "doc-b7e84880c36323dbbf1d92748718a1d1"
+  },
+  "doc-ed300ee31268ac8e853d58a7e20740f0": {
+    "relation_pairs": [
+      [
+        "Artificial Neural Network",
+        "Copula Entropy Method"
+      ],
+      [
+        "Deep Learning In Neural Networks: An Overview",
+        "Shi X J"
+      ],
+      [
+        "Deep Learning In Neural Networks: An Overview",
+        "Shi Z R"
+      ],
+      [
+        "Artificial Neural Network Hydrologic Models",
+        "Prediction Interval"
+      ],
+      [
+        "Deep Learning",
+        "Meteorological Elements Forecasting Method"
+      ],
+      [
+        "Meteorological Elements Forecasting Method",
+        "Neural Network"
+      ],
+      [
+        "Artificial Neural Network",
+        "Rainfall-Runoff Process"
+      ],
+      [
+        "Computational Intelligence",
+        "Deep Neural Network Modeling"
+      ],
+      [
+        "Long Short Term Memory",
+        "Meteorological Elements Forecasting Method"
+      ],
+      [
+        "Deep Learning In Neural Networks: An Overview",
+        "Wan H G"
+      ],
+      [
+        "Deep Neural Network Modeling",
+        "Information Granularity"
+      ],
+      [
+        "Hydrological Early Warning System",
+        "Meteorological Forecast"
+      ],
+      [
+        "Ensemble Of Neural Networks",
+        "Weather Forecasting"
+      ],
+      [
+        "Deep Learning Runoff Model",
+        "Hydrological Early Warning System"
+      ],
+      [
+        "Big Data Weather Forecasting",
+        "Deep Neural Network Modeling"
+      ],
+      [
+        "Monthly Rainfall Forecasting",
+        "One-Dimensional Deep Convolutional Neural Network"
+      ],
+      [
+        "Artificial Neural Network",
+        "Flood Forecasting"
+      ]
+    ],
+    "count": 17,
+    "create_time": 1769010148,
+    "update_time": 1769010148,
+    "_id": "doc-ed300ee31268ac8e853d58a7e20740f0"
+  },
+  "doc-506b50fbb39065edcc65dbbbc31a2bd7": {
+    "relation_pairs": [
+      [
+        "数值天气预报产品",
+        "训练数据集"
+      ],
+      [
+        "天气现象观测数据",
+        "训练数据集"
+      ],
+      [
+        "天气现象预报方法",
+        "深度学习"
+      ],
+      [
+        "深度学习网络模型",
+        "训练数据集"
+      ],
+      [
+        "天气现象预报方法",
+        "数值天气预报"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1769010182,
+    "update_time": 1769010182,
+    "_id": "doc-506b50fbb39065edcc65dbbbc31a2bd7"
+  },
+  "doc-ffd1a702a5052372a15a2cc72ea7ca01": {
+    "relation_pairs": [
+      [
+        "数值天气预报模式",
+        "深度学习方法"
+      ],
+      [
+        "可解释性",
+        "深度学习方法"
+      ],
+      [
+        "学者",
+        "深度学习方法"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769010208,
+    "update_time": 1769010208,
+    "_id": "doc-ffd1a702a5052372a15a2cc72ea7ca01"
+  },
+  "doc-a6b4a600bac8a52a4a59aa8136dc667e": {
+    "relation_pairs": [
+      [
+        "迭代预报模型",
+        "预报误差"
+      ],
+      [
+        "RMSE",
+        "直接预报模型"
+      ],
+      [
+        "直接预报模型",
+        "迭代预报模型"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769010232,
+    "update_time": 1769010232,
+    "_id": "doc-a6b4a600bac8a52a4a59aa8136dc667e"
+  },
+  "doc-333ff749c2940b520a06027eb3c17eac": {
+    "relation_pairs": [
+      [
+        "Machine Learning",
+        "Weather Forecasting"
+      ],
+      [
+        "Weather Forecast",
+        "Weather Forecasting"
+      ],
+      [
+        "Real-Time Data",
+        "Weather Forecasting"
+      ],
+      [
+        "Extreme Weather Warning",
+        "Weather Forecasting"
+      ],
+      [
+        "Deep Learning",
+        "Weather Forecasting"
+      ],
+      [
+        "LSTM Algorithm",
+        "Weather Forecasting"
+      ],
+      [
+        "Hadoop",
+        "Historical Data"
+      ],
+      [
+        "Historical Data",
+        "Hive"
+      ],
+      [
+        "Real-Time Data",
+        "Spark"
+      ],
+      [
+        "Visualization Dashboard",
+        "Weather Forecasting"
+      ],
+      [
+        "Life Index",
+        "Weather Forecasting"
+      ],
+      [
+        "Historical Data",
+        "Weather Forecasting"
+      ]
+    ],
+    "count": 12,
+    "create_time": 1769010301,
+    "update_time": 1769010301,
+    "_id": "doc-333ff749c2940b520a06027eb3c17eac"
+  },
+  "doc-5837f0d5dd6a7cba90da952aebd39e90": {
+    "relation_pairs": [
+      [
+        "GISTEMP v4",
+        "Lenssen et al."
+      ],
+      [
+        "CERA-20C",
+        "Laloyaux et al."
+      ],
+      [
+        "CRUTEM5",
+        "HadCRUT5"
+      ],
+      [
+        "基于深度学习的北极地区格点化地表气温重建",
+        "极地缺测"
+      ],
+      [
+        "北极地区",
+        "基于深度学习的北极地区格点化地表气温重建"
+      ],
+      [
+        "GHCN v4",
+        "NOAAGlobalTemp-Interim"
+      ],
+      [
+        "CERA-20C",
+        "ECMWF"
+      ],
+      [
+        "ERSST v5",
+        "GISTEMP v4"
+      ],
+      [
+        "Rigor et al.",
+        "optimal interpolation"
+      ],
+      [
+        "全球温度变化",
+        "极地缺测"
+      ],
+      [
+        "20CRv3",
+        "Compo et al."
+      ],
+      [
+        "报告内容",
+        "智能气候预测"
+      ],
+      [
+        "HadCRUT5",
+        "Morice et al."
+      ],
+      [
+        "1850年至今HadCRUT5观测覆盖情况",
+        "HadCRUT5"
+      ],
+      [
+        "Dahlgren et al.",
+        "Most of the Arctic"
+      ],
+      [
+        "CRUTEM5",
+        "Kadow et al."
+      ],
+      [
+        "HadCRUT5",
+        "HadSST4"
+      ],
+      [
+        "BEST",
+        "Rohde et al."
+      ],
+      [
+        "NOAAGlobalTemp-Interim",
+        "Vose et al."
+      ],
+      [
+        "ECMWF",
+        "ERA5"
+      ],
+      [
+        "HadSST4",
+        "Kadow et al."
+      ],
+      [
+        "CRUTEM4",
+        "Vaccaro et al."
+      ],
+      [
+        "BEST",
+        "Berkeley Earth"
+      ],
+      [
+        "ERA5",
+        "Hersbach et al."
+      ],
+      [
+        "BEST",
+        "ERSST v5"
+      ],
+      [
+        "HadSST3",
+        "Vaccaro et al."
+      ],
+      [
+        "GHCN v4",
+        "GISTEMP v4"
+      ],
+      [
+        "HadCRUT5",
+        "Huang et al."
+      ],
+      [
+        "北极缺测",
+        "研究目的"
+      ],
+      [
+        "ERSST v5",
+        "NOAAGlobalTemp-Interim"
+      ],
+      [
+        "北极地区",
+        "地表空气温度数据集"
+      ],
+      [
+        "BEST",
+        "GHCN v4"
+      ]
+    ],
+    "count": 32,
+    "create_time": 1769010527,
+    "update_time": 1769010527,
+    "_id": "doc-5837f0d5dd6a7cba90da952aebd39e90"
+  },
+  "doc-44aa5ced4dbdd708f5b101c55c7bb894": {
+    "relation_pairs": [
+      [
+        "Long M S",
+        "Wang Y B"
+      ],
+      [
+        "Shi X J",
+        "Wang H"
+      ],
+      [
+        "König M",
+        "Mecikalski J R"
+      ],
+      [
+        "Gagne II D J",
+        "McGovern A"
+      ],
+      [
+        "Billet J",
+        "DeLisi M"
+      ],
+      [
+        "Zheng Y G",
+        "Zhou K H"
+      ],
+      [
+        "Kim M",
+        "Park H"
+      ],
+      [
+        "Billet J",
+        "Smith B G"
+      ],
+      [
+        "Yao D",
+        "Zheng Y G"
+      ],
+      [
+        "Chen Z R",
+        "Shi X J"
+      ],
+      [
+        "Carey L D",
+        "Mecikalski J R"
+      ],
+      [
+        "Sheng J",
+        "Zheng Y G"
+      ],
+      [
+        "Li X L",
+        "Mecikalski J R"
+      ],
+      [
+        "Lagerquist R",
+        "McGovern A"
+      ],
+      [
+        "Wang J M",
+        "Wang Y B"
+      ],
+      [
+        "Feng Y R",
+        "Wilson J W"
+      ],
+      [
+        "Zheng Y G",
+        "Zhu W J"
+      ],
+      [
+        "Mackenzie W M Jr",
+        "Mecikalski J R"
+      ],
+      [
+        "Köenig M",
+        "Mecikalski J R"
+      ],
+      [
+        "Chen M",
+        "Wilson J W"
+      ],
+      [
+        "Gagne II D J",
+        "Haupt S E"
+      ],
+      [
+        "Im J",
+        "Kim M"
+      ],
+      [
+        "Elmore K L",
+        "McGovern A"
+      ]
+    ],
+    "count": 23,
+    "create_time": 1769010672,
+    "update_time": 1769010672,
+    "_id": "doc-44aa5ced4dbdd708f5b101c55c7bb894"
+  },
+  "doc-ea37ab1462f7ff56b1e76b106d6df9dd": {
+    "relation_pairs": [
+      [
+        "Abstract",
+        "深度学习"
+      ],
+      [
+        "DOI: 10.12677/acpp.2025.145279",
+        "深度学习"
+      ],
+      [
+        "技术演进",
+        "深度学习"
+      ],
+      [
+        "DOI: 10.12677/acpp.2025.145279",
+        "杨媛"
+      ],
+      [
+        "华南师范大学马克思主义学院",
+        "杨媛"
+      ],
+      [
+        "华南师范大学马克思主义学院",
+        "广东广州"
+      ],
+      [
+        "学习范式",
+        "深度学习"
+      ],
+      [
+        "School of Marxism, South China Normal University",
+        "华南师范大学马克思主义学院"
+      ],
+      [
+        "哲学进展",
+        "杨媛"
+      ],
+      [
+        "人工智能",
+        "关键词"
+      ],
+      [
+        "关键词",
+        "技术哲学"
+      ],
+      [
+        "Technical Path and Philosophical Review of Deep Learning",
+        "深度学习"
+      ],
+      [
+        "关键词",
+        "深度学习"
+      ],
+      [
+        "杨媛",
+        "深度学习"
+      ],
+      [
+        "人工智能",
+        "深度学习"
+      ],
+      [
+        "技术哲学",
+        "深度学习"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1769010765,
+    "update_time": 1769010765,
+    "_id": "doc-ea37ab1462f7ff56b1e76b106d6df9dd"
+  },
+  "doc-520def31c8675778cae230b17d8f6b02": {
+    "relation_pairs": [
+      [
+        "Cameron J. Buckner",
+        "From Deep Learning to Rational Machines"
+      ],
+      [
+        "Deep Learning",
+        "Neural Networks"
+      ],
+      [
+        "Deep Learning",
+        "From Deep Learning to Rational Machines"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1769010783,
+    "update_time": 1769010783,
+    "_id": "doc-520def31c8675778cae230b17d8f6b02"
+  },
+  "doc-56ba072dd517d40a45be43bb193491e8": {
+    "relation_pairs": [
+      [
+        "哲学价值",
+        "类本质"
+      ],
+      [
+        "主动性和被动性的悖论",
+        "王田"
+      ],
+      [
+        "自由、平等与民主理念",
+        "近代启蒙思想家"
+      ],
+      [
+        "情感",
+        "魏犇群"
+      ],
+      [
+        "哲学思考",
+        "无人之境"
+      ],
+      [
+        "哲学思考",
+        "技术逻辑"
+      ],
+      [
+        "人工智能",
+        "文化"
+      ],
+      [
+        "人工智能",
+        "赵立"
+      ],
+      [
+        "人工智能",
+        "哲学史"
+      ],
+      [
+        "主体概念",
+        "人工智能"
+      ],
+      [
+        "古希腊哲人",
+        "早期科学与数学"
+      ],
+      [
+        "人工智能时代",
+        "赵立"
+      ],
+      [
+        "王田",
+        "资本逻辑"
+      ],
+      [
+        "王田",
+        "霍克海默"
+      ],
+      [
+        "哲学学者",
+        "深度求索"
+      ],
+      [
+        "哲学",
+        "技术哲学"
+      ],
+      [
+        "伦理学",
+        "技术哲学"
+      ],
+      [
+        "哲学",
+        "算法"
+      ],
+      [
+        "古希腊哲人",
+        "哲学思考"
+      ],
+      [
+        "人工智能",
+        "数字偏见"
+      ],
+      [
+        "智能驾驶事故归责问题",
+        "生成式人工智能"
+      ],
+      [
+        "主持人",
+        "人机协同"
+      ],
+      [
+        "人工智能技术",
+        "算法"
+      ],
+      [
+        "理解",
+        "生成式人工智能"
+      ],
+      [
+        "哲学是世界观和方法论的统一",
+        "哲学研究"
+      ],
+      [
+        "哲学逻辑",
+        "技术逻辑"
+      ],
+      [
+        "人类劳动",
+        "马克思劳动价值论"
+      ],
+      [
+        "中共北京市委党校〔北京行政学院〕哲学与文化教研部",
+        "王田"
+      ],
+      [
+        "张颖天",
+        "戴宁馨"
+      ],
+      [
+        "光明日报",
+        "张颖天"
+      ],
+      [
+        "算法价值",
+        "魏犇群"
+      ],
+      [
+        "哲学价值",
+        "算法价值"
+      ],
+      [
+        "人工智能技术",
+        "赵立"
+      ],
+      [
+        "数据要素",
+        "马克思劳动价值论"
+      ],
+      [
+        "人与机器身份悖论",
+        "王田"
+      ],
+      [
+        "人类社会",
+        "马克思主义"
+      ],
+      [
+        "人工智能",
+        "政治"
+      ],
+      [
+        "形而上学",
+        "技术哲学"
+      ],
+      [
+        "人工智能",
+        "信息可靠性"
+      ],
+      [
+        "人与技术的关系",
+        "赵立"
+      ],
+      [
+        "道德",
+        "魏犇群"
+      ],
+      [
+        "三位青年学者",
+        "专家"
+      ],
+      [
+        "哲学思考",
+        "马克思主义"
+      ],
+      [
+        "理性",
+        "魏犇群"
+      ],
+      [
+        "劳作",
+        "算法价值"
+      ],
+      [
+        "王田",
+        "辩证思维方法"
+      ],
+      [
+        "信息处理",
+        "算法价值"
+      ],
+      [
+        "人工智能",
+        "深度学习算法"
+      ],
+      [
+        "人",
+        "哲学母题"
+      ],
+      [
+        "劳动价值论",
+        "王田"
+      ],
+      [
+        "哲学价值",
+        "批判性洞察"
+      ],
+      [
+        "人类智慧",
+        "算法"
+      ],
+      [
+        "人民网",
+        "全国哲学社会科学工作办公室"
+      ],
+      [
+        "人工智能",
+        "活劳动"
+      ],
+      [
+        "光明日报",
+        "戴宁馨"
+      ],
+      [
+        "主持人",
+        "哲学"
+      ],
+      [
+        "人工智能",
+        "伦理"
+      ],
+      [
+        "科学",
+        "霍克海默"
+      ],
+      [
+        "实证科学的思维方式",
+        "赵立"
+      ],
+      [
+        "人工智能",
+        "哲学思考"
+      ],
+      [
+        "主持人",
+        "人工智能"
+      ],
+      [
+        "哲学",
+        "哲学史"
+      ],
+      [
+        "哲学",
+        "逻辑"
+      ],
+      [
+        "人工智能",
+        "大型语言模型"
+      ],
+      [
+        "哲学",
+        "技术决定论"
+      ],
+      [
+        "主动性被动性悖论",
+        "王田"
+      ],
+      [
+        "三位青年学者",
+        "人工智能时代"
+      ],
+      [
+        "人工智能的哲学",
+        "魏犇群"
+      ],
+      [
+        "主持人",
+        "马克思劳动价值论"
+      ],
+      [
+        "人工智能",
+        "数据安全性"
+      ],
+      [
+        "人工智能时代",
+        "哲学"
+      ],
+      [
+        "原创焦虑",
+        "哲学学者"
+      ],
+      [
+        "哲学",
+        "唯算法"
+      ],
+      [
+        "人工智能技术",
+        "高度数学形式化的算法"
+      ],
+      [
+        "王田",
+        "知识获取加速化知识增量受限悖论"
+      ],
+      [
+        "意识",
+        "魏犇群"
+      ],
+      [
+        "哲学",
+        "魏犇群"
+      ],
+      [
+        "人工智能",
+        "数字劳动"
+      ],
+      [
+        "生成式人工智能",
+        "隐私保护问题"
+      ],
+      [
+        "人工智能",
+        "经济"
+      ],
+      [
+        "算法",
+        "认识世界"
+      ],
+      [
+        "哲学事件",
+        "生成式人工智能"
+      ],
+      [
+        "人工智能",
+        "哲学研究"
+      ],
+      [
+        "哲学价值",
+        "魏犇群"
+      ],
+      [
+        "改造世界",
+        "算法"
+      ],
+      [
+        "赵立",
+        "黄昏起飞的密涅瓦猫头鹰"
+      ],
+      [
+        "人与机器身份悖论",
+        "索菲娅"
+      ],
+      [
+        "人",
+        "人工智能"
+      ],
+      [
+        "大数据技术",
+        "数据安全性"
+      ],
+      [
+        "人工智能的哲学",
+        "人的哲学"
+      ],
+      [
+        "人工智能",
+        "劳动者"
+      ],
+      [
+        "哲学价值",
+        "意义创造"
+      ],
+      [
+        "批判性反思",
+        "赵立"
+      ],
+      [
+        "生成式人工智能",
+        "道德地位问题"
+      ],
+      [
+        "哲学思考",
+        "近代启蒙思想家"
+      ],
+      [
+        "劳动解放论",
+        "算法价值"
+      ],
+      [
+        "科学技术",
+        "赵立"
+      ],
+      [
+        "科学思维方法",
+        "辩证法"
+      ],
+      [
+        "AI",
+        "数理逻辑"
+      ],
+      [
+        "主体性创造",
+        "哲学学者"
+      ],
+      [
+        "生成式人工智能",
+        "魏犇群"
+      ],
+      [
+        "数字偏见",
+        "数字鸿沟"
+      ],
+      [
+        "技术哲学",
+        "知识论"
+      ],
+      [
+        "人类尺度",
+        "王田"
+      ],
+      [
+        "人工智能",
+        "王田"
+      ],
+      [
+        "社会",
+        "魏犇群"
+      ],
+      [
+        "人工智能",
+        "技术哲学"
+      ],
+      [
+        "人类的思维劳动生产活动",
+        "哲学研究"
+      ],
+      [
+        "人的自由全面发展",
+        "哲学价值"
+      ],
+      [
+        "哲学",
+        "辩证法"
+      ],
+      [
+        "哲学逻",
+        "技术逻辑"
+      ],
+      [
+        "人工智能",
+        "哲学学者"
+      ],
+      [
+        "哲学研究",
+        "赵立"
+      ],
+      [
+        "人工智能时代",
+        "算法"
+      ],
+      [
+        "技术逻辑",
+        "王田"
+      ]
+    ],
+    "count": 115,
+    "create_time": 1769011276,
+    "update_time": 1769011276,
+    "_id": "doc-56ba072dd517d40a45be43bb193491e8"
+  }
+}

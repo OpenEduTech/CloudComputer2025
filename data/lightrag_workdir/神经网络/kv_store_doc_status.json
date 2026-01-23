@@ -1,0 +1,1354 @@
+{
+  "doc-380e2aedf9b91dc7de5d8747a6aa5723": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-380e2aedf9b91dc7de5d8747a6aa5723"
+    ],
+    "content_summary": "[DOC_ID: chunk-1211cef1]\n[领域: 数学]\n然而对于任意一个概率分布，可以定义一个称为**熵（entropy）**的量，它具有许多符合信息度量的直观要求。 熵是随机变量不确定度的度量，也是平均意义上描述随",
+    "content_length": 114,
+    "created_at": "2026-01-21T05:19:35.367208+00:00",
+    "updated_at": "2026-01-21T05:19:47.103646+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_051935_1d307e3b",
+    "metadata": {
+      "processing_start_time": 1768972775,
+      "processing_end_time": 1768972787
+    }
+  },
+  "doc-9e4905d7255ffcf74cb7aad95daffceb": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-9e4905d7255ffcf74cb7aad95daffceb"
+    ],
+    "content_summary": "[DOC_ID: chunk-33e05f74]\n[领域: 数学]\n在信息论中，熵是接收的每条消息中包含的信息的平均量，又被称为信息熵、信源熵、平均自信息量。这里，“消息”代表来自分布或数据流中的事件、样本或特征。熵的单位通常为比特，",
+    "content_length": 117,
+    "created_at": "2026-01-21T05:19:47.155533+00:00",
+    "updated_at": "2026-01-21T05:20:09.252221+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_051947_08031a4c",
+    "metadata": {
+      "processing_start_time": 1768972787,
+      "processing_end_time": 1768972809
+    }
+  },
+  "doc-638c79cbb743dead1aa6af99fd6d0fcb": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-638c79cbb743dead1aa6af99fd6d0fcb"
+    ],
+    "content_summary": "[DOC_ID: chunk-79ba9cca]\n[领域: 数学]\n网络 N E d  th   k  C max ks 16 CA-GrQc 4158 13422 6.049 0.0556 0.06 6.4559 0.556 43 Facebook 324 2218 3.053 0.0466 0.05 13.691 0.465 18 Netscience 379 914 6.041 0.1246 0.13 4.8232 0.741 8 Protain 2783 6726 4.839...",
+    "content_length": 1212,
+    "created_at": "2026-01-21T05:20:09.261096+00:00",
+    "updated_at": "2026-01-21T05:21:11.566239+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052009_bce72bca",
+    "metadata": {
+      "processing_start_time": 1768972809,
+      "processing_end_time": 1768972871
+    }
+  },
+  "doc-b0156872199d42b66461b7109077a437": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b0156872199d42b66461b7109077a437"
+    ],
+    "content_summary": "[DOC_ID: chunk-39fc0041]\n[领域: 数学]\n$$ \\left\\{ \\begin{array}{l} p\\_i-\\lambda \\frac{1}{2^{l\\_{i}}}\\ln r=0\\\\ \\sum\\_i{\\frac{1}{2^{l\\_{i}}}}-1-u^2=0\\\\ -2\\lambda u=0\\\\ \\end{array} \\right. $$ H(p)=\\sum\\_{x} p(x) \\log \\_{2}\\left(\\frac{1}{p(x)}\\right) $$. $$ H...",
+    "content_length": 892,
+    "created_at": "2026-01-21T05:21:11.601571+00:00",
+    "updated_at": "2026-01-21T05:22:14.176743+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052111_47d27f6a",
+    "metadata": {
+      "processing_start_time": 1768972871,
+      "processing_end_time": 1768972934
+    }
+  },
+  "doc-03892a1548c3ca50ed164db6a524dac7": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-03892a1548c3ca50ed164db6a524dac7"
+    ],
+    "content_summary": "[DOC_ID: chunk-66ef397f]\n[领域: 数学]\n# Your connection is not private. Attackers might be trying to steal your information from **www.showmeai.tech** (for example, passwords, messages, or credit cards). Learn more about this warning. net::ERR\\_CERT\\_DAT...",
+    "content_length": 1108,
+    "created_at": "2026-01-21T05:22:14.236484+00:00",
+    "updated_at": "2026-01-21T05:22:47.595745+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052214_6678b1ba",
+    "metadata": {
+      "processing_start_time": 1768972934,
+      "processing_end_time": 1768972967
+    }
+  },
+  "doc-bcb9e2b1f343c904193b0f647416ae0e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-bcb9e2b1f343c904193b0f647416ae0e"
+    ],
+    "content_summary": "[DOC_ID: chunk-59022553]\n[领域: 数学]\n- 【分解】一篇入门之-矩阵LU分解(一)：Doolittle分解. - 【分解】一篇入门之-矩阵LU分解(二)：Crout分解. - 【分解】一篇入门之-矩阵LU分解(三)：Cholesky分解. # 【原理】一篇入门之-KL散度是什么. 作者 : 老饼 发表日期 : 2023-10-11 06:40:40 更新日期 : 2025-06-25 00:02:50. > **本站原创文章，转载请说明来自****《老饼讲解-机器学习...",
+    "content_length": 517,
+    "created_at": "2026-01-21T05:23:01.678043+00:00",
+    "updated_at": "2026-01-21T05:24:02.841089+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052301_1fc931b0",
+    "metadata": {
+      "processing_start_time": 1768972981,
+      "processing_end_time": 1768973042
+    }
+  },
+  "doc-e7d56d1a1382da4ef9c8e90e4d8fd39f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e7d56d1a1382da4ef9c8e90e4d8fd39f"
+    ],
+    "content_summary": "[DOC_ID: chunk-efec745e]\n[领域: 数学]\nKL散度是用来度量使用基于Q的编码来编码来自P的样本平均所需的额外的比特个数。 典型情况下，P表示数据的真实分布，Q表示数据的理论分布，模型分布，或P的近似分布。",
+    "content_length": 115,
+    "created_at": "2026-01-21T05:24:02.894350+00:00",
+    "updated_at": "2026-01-21T05:24:10.912832+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052402_f765926b",
+    "metadata": {
+      "processing_start_time": 1768973042,
+      "processing_end_time": 1768973050
+    }
+  },
+  "doc-0c9d3f43376e35055643ae46b0d5a233": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0c9d3f43376e35055643ae46b0d5a233"
+    ],
+    "content_summary": "[DOC_ID: chunk-6a935178]\n[领域: 数学]\n相对熵（relative entropy）又称为KL散度（Kullback–Leibler divergence，简称KLD）[1]，信息散度（information divergence），信息增益（information gain）。 KL散度是两个概率分布P和Q差别的非对称性的度量。 KL散度是用来 度量使用基于Q的编码来编码来自P的样本平均所需的额外的位元数。 典型情况下，P表示数据的真实分布，Q表示数据的理论分布，模型...",
+    "content_length": 1768,
+    "created_at": "2026-01-21T05:24:10.967154+00:00",
+    "updated_at": "2026-01-21T05:25:58.833817+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052410_9ca1adba",
+    "metadata": {
+      "processing_start_time": 1768973051,
+      "processing_end_time": 1768973158
+    }
+  },
+  "doc-726d03cb1277ab1c0a32f929ee13c3fc": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-726d03cb1277ab1c0a32f929ee13c3fc"
+    ],
+    "content_summary": "[DOC_ID: chunk-b87836e0]\n[领域: 数学]\n在大多数比较学习概率分布和源概率分布的目标函数中，KL散度被用来衡量它们之间的差异。 与Wasserstein距离（推土机距离）和Bhattacharyya距离等真正的度量",
+    "content_length": 120,
+    "created_at": "2026-01-21T05:25:58.888193+00:00",
+    "updated_at": "2026-01-21T05:26:30.603837+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052558_4dcc689b",
+    "metadata": {
+      "processing_start_time": 1768973158,
+      "processing_end_time": 1768973190
+    }
+  },
+  "doc-d4b315e54e592e86c3a5acfef7099954": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d4b315e54e592e86c3a5acfef7099954"
+    ],
+    "content_summary": "[DOC_ID: chunk-1c5bf4f7]\n[领域: 数学]\n最大熵模型. 最大熵原理认为，在所有可能的分布中，熵最大的分布是最好的。 例如：. 没有任何约束的情况下，均匀分布时熵最大，所以选取均匀分布作为模型是最好的。 满足",
+    "content_length": 116,
+    "created_at": "2026-01-21T05:26:30.654977+00:00",
+    "updated_at": "2026-01-21T05:26:39.029840+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052630_089f62d0",
+    "metadata": {
+      "processing_start_time": 1768973190,
+      "processing_end_time": 1768973199
+    }
+  },
+  "doc-e4d6318364157e6228ebc39c8c646b45": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e4d6318364157e6228ebc39c8c646b45"
+    ],
+    "content_summary": "[DOC_ID: chunk-e20b79a4]\n[领域: 数学]\n将最大化网络熵作为目标函数，并结合概率约束、成本约束、空间约束，研究表明模型有一个唯一的解。在各种物种中，这种模型的拟合效果相当好。值得注意的是，线虫虽然没有脑",
+    "content_length": 114,
+    "created_at": "2026-01-21T05:26:39.076153+00:00",
+    "updated_at": "2026-01-21T05:27:04.905256+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052639_c8752603",
+    "metadata": {
+      "processing_start_time": 1768973199,
+      "processing_end_time": 1768973224
+    }
+  },
+  "doc-f34ecacf5f99ee02bae6647b8bd65153": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f34ecacf5f99ee02bae6647b8bd65153"
+    ],
+    "content_summary": "[DOC_ID: chunk-a18f4808]\n[领域: 数学]\n最大熵模型(maximum entropy model， MaxEnt)也是很典型的分类算法了，它和逻辑回归类似，都是属于对数线性分类模型。在损失函数优化的过程中，使用了和",
+    "content_length": 120,
+    "created_at": "2026-01-21T05:27:04.966986+00:00",
+    "updated_at": "2026-01-21T05:27:30.048447+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052704_29072438",
+    "metadata": {
+      "processing_start_time": 1768973224,
+      "processing_end_time": 1768973250
+    }
+  },
+  "doc-8985837bff3264915ed561ec4d80111b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-8985837bff3264915ed561ec4d80111b"
+    ],
+    "content_summary": "[DOC_ID: chunk-e4414f7b]\n[领域: 数学]\n再加上，如果提取了多个特征，那么特征函数的数目将是非常可观的。因此，最大熵模型的主要工作在于（人工）提取特征，当完成了特征提取后，最大熵模型给出了一种最佳的利用特征的",
+    "content_length": 117,
+    "created_at": "2026-01-21T05:27:30.110896+00:00",
+    "updated_at": "2026-01-21T05:27:44.298981+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052730_87a7bfd2",
+    "metadata": {
+      "processing_start_time": 1768973250,
+      "processing_end_time": 1768973264
+    }
+  },
+  "doc-23713b5f1cb0ee19178382510009449e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-23713b5f1cb0ee19178382510009449e"
+    ],
+    "content_summary": "[DOC_ID: chunk-11c1cc44]\n[领域: 数学]\n3. Softmax（最大熵模型）： Softmax函数常用于多分类问题，它可以将输出层的多个连续值转换为概率分布。在文本分类中，每个类别的概率由softmax函数计算得出。",
+    "content_length": 121,
+    "created_at": "2026-01-21T05:27:44.348285+00:00",
+    "updated_at": "2026-01-21T05:28:12.473417+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052744_74e75c90",
+    "metadata": {
+      "processing_start_time": 1768973264,
+      "processing_end_time": 1768973292
+    }
+  },
+  "doc-cc6067addf268ef66582cbf6b3b6c3c0": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-faa76b2118855e8e73676c027eae5ca1",
+      "chunk-ea0643cdcdc8c7cc8b817ff03ae21ed4",
+      "chunk-1aee14dcece6506b2fb182a424fefbd5",
+      "chunk-40c170209efa5da46edeea817792b434"
+    ],
+    "content_summary": "[DOC_ID: chunk-c5bef79e]\n[领域: 数学]\n论文：Information theory: A foundation for complexity science. 论文标题：Information theory: A foundation for complexity science. 作者：Golan, Amos, Harte, John. 摘要：Modeling and inference are central to most areas of science an...",
+    "content_length": 5095,
+    "created_at": "2026-01-21T05:28:12.538219+00:00",
+    "updated_at": "2026-01-21T05:31:27.890365+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_052812_0f26f33e",
+    "metadata": {
+      "processing_start_time": 1768973292,
+      "processing_end_time": 1768973487
+    }
+  },
+  "doc-39fe5cddbd852d7e5e0202a65cc33f68": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-39fe5cddbd852d7e5e0202a65cc33f68"
+    ],
+    "content_summary": "[DOC_ID: chunk-81ee8106]\n[领域: 物理学-热力学]\n热力学信息神经网络采用归纳偏差来执行热力学第一和第二定律的强制执行。为构建这些偏差，假定系统的metriplectic演化。与未经过信息的黑盒子网络相比，这提供了出色的结果。",
+    "content_length": 126,
+    "created_at": "2026-01-21T05:31:27.980505+00:00",
+    "updated_at": "2026-01-21T05:31:50.817689+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053127_f19a40a6",
+    "metadata": {
+      "processing_start_time": 1768973487,
+      "processing_end_time": 1768973510
+    }
+  },
+  "doc-aedc5bd9c6d5647339e7b59deea0f006": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-aedc5bd9c6d5647339e7b59deea0f006"
+    ],
+    "content_summary": "[DOC_ID: chunk-b54ad366]\n[领域: 物理学-热力学]\n. 热力学第二定律总结.pdf · 热力学第二定律（英语：second law of thermodynamics）是热力学的三条基本定律之一，表述热力学过程的不可逆性——孤立系统",
+    "content_length": 129,
+    "created_at": "2026-01-21T05:31:50.902164+00:00",
+    "updated_at": "2026-01-21T05:32:01.656191+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053150_e5813292",
+    "metadata": {
+      "processing_start_time": 1768973510,
+      "processing_end_time": 1768973521
+    }
+  },
+  "doc-3d4f48678a6a9741d580dce26948f201": {
+    "status": "processed",
+    "chunks_count": 8,
+    "chunks_list": [
+      "chunk-728fd00b31adc6c169bac4b11f4d064a",
+      "chunk-e1923dd5beb8906f6b5c75a359732d8a",
+      "chunk-54a0d4972c29a80d85d0bae2eef78577",
+      "chunk-3a748b94de215b941d68d078dd68dd6d",
+      "chunk-eec0721be9c4be236261d47be592d37a",
+      "chunk-477b045a573ebc356439c0b836643741",
+      "chunk-890027492eed3ffaa84135ada616a525",
+      "chunk-0826cf20559726ef1bbfbd76138a113d"
+    ],
+    "content_summary": "[DOC_ID: chunk-429ed358]\n[领域: 物理学-热力学]\n### 郭毅可：人类智能和机器智能共生共融的科学逻辑. 选择字号：大 中 小 本文共阅读 4595 次 更新时间：2026-01-01 15:55. 摘要：人类智能与机器智能并非彼此隔绝，二者走向共生共融具有深刻的必然性，这一论断根植于“物理同源、数学同构”的底层逻辑。从智能的第一性原理审视，所有智能形态的本质，均是系统通过吸收信息以抵抗熵增、维系自身秩序的能力。在物理层面，碳基大脑与硅基芯片同为遵循此定律的精密信息化...",
+    "content_length": 10991,
+    "created_at": "2026-01-21T05:32:01.761627+00:00",
+    "updated_at": "2026-01-21T05:36:36.635142+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053201_59710440",
+    "metadata": {
+      "processing_start_time": 1768973522,
+      "processing_end_time": 1768973796
+    }
+  },
+  "doc-d0e494da55d171b3a3a8b96678397514": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d0e494da55d171b3a3a8b96678397514"
+    ],
+    "content_summary": "[DOC_ID: chunk-0d431aeb]\n[领域: 物理学-热力学]\n机器学习算法三：深度神经网络，神经网络实践第三步. 20 天前· 来自专栏深度 ... 热力学第二定律。 2、玻尔兹曼机. 1）玻尔兹曼机由杰弗里·辛顿(Geoffrey Hinton)和",
+    "content_length": 133,
+    "created_at": "2026-01-21T05:36:36.777095+00:00",
+    "updated_at": "2026-01-21T05:37:01.624561+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053636_8f3b69dd",
+    "metadata": {
+      "processing_start_time": 1768973796,
+      "processing_end_time": 1768973821
+    }
+  },
+  "doc-cc989a9fb47a8cd36db8fe7fb353106b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cc989a9fb47a8cd36db8fe7fb353106b"
+    ],
+    "content_summary": "[DOC_ID: chunk-fd2b2177]\n[领域: 物理学-热力学]\n本研究基于图神经网络开发了代谢反应标准吉布斯自由能预测工具——dGbyG，将验证集预测误差的中位数由现有最优方法的5.33 kJ/mol减小到4.11 kJ/mol，并对人类",
+    "content_length": 126,
+    "created_at": "2026-01-21T05:36:54.233134+00:00",
+    "updated_at": "2026-01-21T05:37:14.608895+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053654_b9f523aa",
+    "metadata": {
+      "processing_start_time": 1768973814,
+      "processing_end_time": 1768973834
+    }
+  },
+  "doc-76741d601c3b02adb5beb29cf0c31924": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-76741d601c3b02adb5beb29cf0c31924"
+    ],
+    "content_summary": "[DOC_ID: chunk-ca625b4a]\n[领域: 物理学-热力学]\n克劳修斯（Rudolf Clausius）从宏观热现象（如热传递、做功）定义熵，而玻尔兹曼 ... Hopfield网络由物理学家John Hopfield于1982年提出，是一种离散型反馈神经网络（递归神经网络",
+    "content_length": 145,
+    "created_at": "2026-01-21T05:37:14.755567+00:00",
+    "updated_at": "2026-01-21T05:37:59.797802+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053714_d02638c3",
+    "metadata": {
+      "processing_start_time": 1768973834,
+      "processing_end_time": 1768973879
+    }
+  },
+  "doc-6135ecccd835afdfdaba2f58578ed61e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6135ecccd835afdfdaba2f58578ed61e"
+    ],
+    "content_summary": "[DOC_ID: chunk-30b926d3]\n[领域: 物理学-热力学]\n用最初引入熵概念的德国物理学家克劳修斯的话说：. “熵一直在努力走向最大值”. 当热 ... 这一指标在用于分类问题的神经网络训练中得到了广泛应用，是最常用的损失",
+    "content_length": 120,
+    "created_at": "2026-01-21T05:37:59.952132+00:00",
+    "updated_at": "2026-01-21T05:38:21.721352+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053759_d26b6127",
+    "metadata": {
+      "processing_start_time": 1768973879,
+      "processing_end_time": 1768973901
+    }
+  },
+  "doc-ed0ca1ab77e5b700d5a4eb0d861cccb4": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ed0ca1ab77e5b700d5a4eb0d861cccb4"
+    ],
+    "content_summary": "[DOC_ID: chunk-007533b9]\n[领域: 物理学-热力学]\n1865年，德国物理学家鲁道夫·克劳修斯（Rudolf Clausius）首次提出了熵的 ... 你的大脑神经网络: 学习时→ 建立有序连接(降低熵); 不复习→ 连接",
+    "content_length": 123,
+    "created_at": "2026-01-21T05:38:21.872250+00:00",
+    "updated_at": "2026-01-21T05:38:28.303844+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053821_17b7299c",
+    "metadata": {
+      "processing_start_time": 1768973901,
+      "processing_end_time": 1768973908
+    }
+  },
+  "doc-1248b4cdb9c5b6a4f15c20d0991319ae": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-1248b4cdb9c5b6a4f15c20d0991319ae"
+    ],
+    "content_summary": "[DOC_ID: chunk-5e8e0750]\n[领域: 物理学-热力学]\n热力学第二定律的数学表述主要借助克劳修斯所引入的 熵 的概念，下边的式子描述了热力学系统中熵的增减: $$\\Delta S = \\frac{\\Delta Q}{T}$$. 变量S被定义",
+    "content_length": 131,
+    "created_at": "2026-01-21T05:38:28.438097+00:00",
+    "updated_at": "2026-01-21T05:38:50.150554+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053828_a8569e87",
+    "metadata": {
+      "processing_start_time": 1768973908,
+      "processing_end_time": 1768973930
+    }
+  },
+  "doc-31dfc0a8415a0647f471a1cab88d6e36": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-31dfc0a8415a0647f471a1cab88d6e36"
+    ],
+    "content_summary": "[DOC_ID: chunk-2c01e4b3]\n[领域: 物理学-热力学]\n熵（Entropy）是热力学、统计物理和信息论中的核心概念，用于描述系统的无序程度或混乱度。熵的概念最早由德国物理学家鲁道夫·克劳修斯（Rudolf Clausius）",
+    "content_length": 123,
+    "created_at": "2026-01-21T05:38:50.303549+00:00",
+    "updated_at": "2026-01-21T05:39:11.560183+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053850_21c3a259",
+    "metadata": {
+      "processing_start_time": 1768973930,
+      "processing_end_time": 1768973951
+    }
+  },
+  "doc-74f709ca5bbf7d60213a39cdce19a507": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-74f709ca5bbf7d60213a39cdce19a507"
+    ],
+    "content_summary": "[DOC_ID: chunk-2b73d1db]\n[领域: 物理学-热力学]\n熵的定义：S=k⋅ln⁡WS = k \\cdot \\ln WS=k⋅lnW，其中SSS表示熵，kkk是玻尔兹曼常数，WWW是系统可能的状态数（微观状态数）。这个公式就像是把房间的杂乱程度（熵）",
+    "content_length": 135,
+    "created_at": "2026-01-21T05:39:11.712351+00:00",
+    "updated_at": "2026-01-21T05:39:34.543858+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053911_8c1bfe15",
+    "metadata": {
+      "processing_start_time": 1768973951,
+      "processing_end_time": 1768973974
+    }
+  },
+  "doc-a27259397f49437041a5c155ca0adfa1": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a27259397f49437041a5c155ca0adfa1"
+    ],
+    "content_summary": "[DOC_ID: chunk-16206ac4]\n[领域: 物理学-热力学]\n既然自由熵为负，那么可以认为这可能是传统玻尔兹曼测度的结果，因此把自由熵当成随机变量，考虑其统计分布并且服从大偏差原理(即P(S)~e -Nr(S) ，其中r(S)称",
+    "content_length": 122,
+    "created_at": "2026-01-21T05:39:34.699180+00:00",
+    "updated_at": "2026-01-21T05:39:56.924686+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053934_74c94d4b",
+    "metadata": {
+      "processing_start_time": 1768973974,
+      "processing_end_time": 1768973996
+    }
+  },
+  "doc-2a2578aca1988c90b1a9c10b69b57cda": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2a2578aca1988c90b1a9c10b69b57cda"
+    ],
+    "content_summary": "[DOC_ID: chunk-a2d8c362]\n[领域: 物理学-热力学]\n| ``` 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 ``` | ``` # X is an array with n * m, n samples and m features every sample def mbatch_backprop(self, X, y): delt...",
+    "content_length": 633,
+    "created_at": "2026-01-21T05:39:57.078053+00:00",
+    "updated_at": "2026-01-21T05:40:32.267359+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_053957_4d4f868d",
+    "metadata": {
+      "processing_start_time": 1768973997,
+      "processing_end_time": 1768974032
+    }
+  },
+  "doc-3e9c56763968dc5abd8ddc1332aa273c": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3e9c56763968dc5abd8ddc1332aa273c"
+    ],
+    "content_summary": "[DOC_ID: chunk-e54151c2]\n[领域: 物理学-热力学]\n2020年Zhang等提出离散传递熵（dispersion transfer entropy，DTE）算法对符号化过程进行优化。该算法依据Ragwitz准则，使用离散模式动态地选择参数，解决了序列符号化过程中的",
+    "content_length": 144,
+    "created_at": "2026-01-21T05:40:32.417340+00:00",
+    "updated_at": "2026-01-21T05:41:04.633708+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054032_6e056b82",
+    "metadata": {
+      "processing_start_time": 1768974032,
+      "processing_end_time": 1768974064
+    }
+  },
+  "doc-82dd7e184547eda32bd10d04c1cae982": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-82dd7e184547eda32bd10d04c1cae982"
+    ],
+    "content_summary": "[DOC_ID: chunk-ab9c732a]\n[领域: 信息论]\n本书作者Simon Haykin 长期从事神经网络的研究,其关于神经网络的系列教材是国际上 ... 第10章探讨如何将来自于香农(Shannon)信息论的原则作为工具来实现非监督学习。这.",
+    "content_length": 129,
+    "created_at": "2026-01-21T05:41:04.797801+00:00",
+    "updated_at": "2026-01-21T05:41:27.624628+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054104_5c791ef8",
+    "metadata": {
+      "processing_start_time": 1768974064,
+      "processing_end_time": 1768974087
+    }
+  },
+  "doc-0662825c74f8b5ee226b4f32d6eae491": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0662825c74f8b5ee226b4f32d6eae491"
+    ],
+    "content_summary": "[DOC_ID: chunk-4188a4ea]\n[领域: 信息论]\n因此以深度自适应神经网络为代表的动态神经网络近年来引起了广泛的关. 注,该类 ... 根据香农信息熵,网络关于样本x 的预. 测不确定性可以由熵H ( x )来表示: H ( x )=",
+    "content_length": 127,
+    "created_at": "2026-01-21T05:41:27.788381+00:00",
+    "updated_at": "2026-01-21T05:42:02.309336+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054127_31e8ad0c",
+    "metadata": {
+      "processing_start_time": 1768974087,
+      "processing_end_time": 1768974122
+    }
+  },
+  "doc-f10f1d00e42dd5c9205033fe49f4f520": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f10f1d00e42dd5c9205033fe49f4f520"
+    ],
+    "content_summary": "[DOC_ID: chunk-c75254be]\n[领域: 信息论]\n同一视角组下的多视图间彼此共享网络参数，不同视角组获取的多视图使用不同网络参数。网络训练过程分为2步：(1)首先利用图像数据集ImageNet对网络进行预训练；(2)然后基于步骤",
+    "content_length": 124,
+    "created_at": "2026-01-21T05:42:02.468660+00:00",
+    "updated_at": "2026-01-21T05:42:24.330465+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054202_9dd1354f",
+    "metadata": {
+      "processing_start_time": 1768974122,
+      "processing_end_time": 1768974144
+    }
+  },
+  "doc-dc26f10df4bfd7aac2de935884b8ad3f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-dc26f10df4bfd7aac2de935884b8ad3f"
+    ],
+    "content_summary": "[DOC_ID: chunk-11e1e09b]\n[领域: 信息论]\n本发明结合模型输出特征向量和文本数据的特征，分别使用基尼不纯度和香农熵定义了衡量测试用例被错误分类可能性大小的函数，本发明首先分别依据这两个函数对测试用例排序，将",
+    "content_length": 116,
+    "created_at": "2026-01-21T05:42:24.521822+00:00",
+    "updated_at": "2026-01-21T05:42:57.677683+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054224_6d83e33b",
+    "metadata": {
+      "processing_start_time": 1768974144,
+      "processing_end_time": 1768974177
+    }
+  },
+  "doc-c236f82f4d1c6b66d541fbb6f8076051": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c236f82f4d1c6b66d541fbb6f8076051"
+    ],
+    "content_summary": "[DOC_ID: chunk-6d891d61]\n[领域: 信息论]\n突破香农极限的 ... 麻省理工学院的研究团队在《SCIENCE ADVANCES》发表的研究中，提出名为\"乘法模拟频率变换光学神经网络\"(MAFT-ONN)的创新架构。",
+    "content_length": 120,
+    "created_at": "2026-01-21T05:42:57.854026+00:00",
+    "updated_at": "2026-01-21T05:43:19.466983+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054257_d254b916",
+    "metadata": {
+      "processing_start_time": 1768974177,
+      "processing_end_time": 1768974199
+    }
+  },
+  "doc-b3aee2cd221856b5ea7d30d3400aa8dd": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b3aee2cd221856b5ea7d30d3400aa8dd"
+    ],
+    "content_summary": "[DOC_ID: chunk-a83d8910]\n[领域: 信息论]\n脉冲耦合神经网络, 并行点火模型, 图像增强, 最大香农熵, 图. 像分割. 中图分类号 ... PCNN), 是一种不同于传统人工神经网络的新型神经网络,. 它有着生物学的背景",
+    "content_length": 124,
+    "created_at": "2026-01-21T05:43:19.648568+00:00",
+    "updated_at": "2026-01-21T05:43:42.907664+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054319_2fc307ae",
+    "metadata": {
+      "processing_start_time": 1768974199,
+      "processing_end_time": 1768974222
+    }
+  },
+  "doc-8c2cb0873e78699bf2531a59b921954f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-8c2cb0873e78699bf2531a59b921954f"
+    ],
+    "content_summary": "[DOC_ID: chunk-a5d66dff]\n[领域: 信息论]\n摘要: 为提升复杂环境下网络信道特性的表征能力，设计描述舰船通信网络信号动态变化特性的数学模型。依据坎贝尔定理，通过节点之间的泊松点过程，构建舰船通信网络的信道",
+    "content_length": 115,
+    "created_at": "2026-01-21T05:43:43.082887+00:00",
+    "updated_at": "2026-01-21T05:44:14.899706+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054343_b0257cc9",
+    "metadata": {
+      "processing_start_time": 1768974223,
+      "processing_end_time": 1768974254
+    }
+  },
+  "doc-33949af9012de6222abbb5ee9e909273": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-33949af9012de6222abbb5ee9e909273"
+    ],
+    "content_summary": "[DOC_ID: chunk-33b57564]\n[领域: 信息论]\n電機控制#磁場導向控制#磁場導向#FOC #交流電機#交流電機控制回路設計#磁场定向控制#葉志鈞#叶志钧#信息熵#Entropy #ai 《交流電機FOC Sensorless",
+    "content_length": 123,
+    "created_at": "2026-01-21T05:44:15.060966+00:00",
+    "updated_at": "2026-01-21T05:44:45.711938+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054415_ba3f9198",
+    "metadata": {
+      "processing_start_time": 1768974255,
+      "processing_end_time": 1768974285
+    }
+  },
+  "doc-16faf1b1fda0ac11c029462efdf1a6f5": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-a6f27f56460cd35be08035e374a80238",
+      "chunk-e19131f5f89a9bc65d85c1a09afb2973",
+      "chunk-e01785b3e2f06c5896c3aec7204ebd49",
+      "chunk-56a41b95a520be32c97da3124e41c828"
+    ],
+    "content_summary": "[DOC_ID: chunk-5a7b7410]\n[领域: 信息论]\n# **信息熵、交叉熵、相对熵**. 发布日期：2022-08-28 编辑日期：2022-08-28 阅读量：2412. ## 前言. 在机器学习领域，当然也包括自然语言处理领域，**信息论**是一个基础内容。离开信息论想要讨论清楚NLP是非常困难的。. 因此，本文主要是为了给下一步的自然语言处理做理论基础铺垫，尽量不涉及公式，而是从**直观的角度来理清信息论的直觉逻辑**，这比罗列公式更有助于加深理解。. ## 香农生平. ...",
+    "content_length": 5537,
+    "created_at": "2026-01-21T05:44:45.895706+00:00",
+    "updated_at": "2026-01-21T05:47:19.684526+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054445_9e5b033c",
+    "metadata": {
+      "processing_start_time": 1768974285,
+      "processing_end_time": 1768974439
+    }
+  },
+  "doc-0da87cc9d247bbbc97d0642c59a0a3ce": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0da87cc9d247bbbc97d0642c59a0a3ce"
+    ],
+    "content_summary": "[DOC_ID: chunk-b5d062ff]\n[领域: 信息论]\n给定一串要传输的文本信息，其中字母的出现概率为( )，其最佳编码长度为log_2p(x)，整段文本的平均编码长度为-\\sum_xp(x)\\log_2p(x)，即底为2 的熵. 在对分布( )",
+    "content_length": 130,
+    "created_at": "2026-01-21T05:47:19.929585+00:00",
+    "updated_at": "2026-01-21T05:47:47.383385+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054719_13e546fe",
+    "metadata": {
+      "processing_start_time": 1768974439,
+      "processing_end_time": 1768974467
+    }
+  },
+  "doc-c78284e4671aee8befd9c6871d1db529": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c78284e4671aee8befd9c6871d1db529"
+    ],
+    "content_summary": "[DOC_ID: chunk-be93bba6]\n[领域: 信息论]\n编码定理是信息论的核心理论，1948年由克劳德·香农在《通信的数学理论》中首次提出信道容量概念，证明存在可使错误概率任意小的编码方法。该定理推动汉明码、卷积码等纠错码",
+    "content_length": 118,
+    "created_at": "2026-01-21T05:47:47.576236+00:00",
+    "updated_at": "2026-01-21T05:48:15.412919+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054747_2c93f8e5",
+    "metadata": {
+      "processing_start_time": 1768974467,
+      "processing_end_time": 1768974495
+    }
+  },
+  "doc-5d34d389fc9a72d98bce995b723199a6": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-5d34d389fc9a72d98bce995b723199a6"
+    ],
+    "content_summary": "[DOC_ID: chunk-73ba9ac1]\n[领域: 信息论]\n... 编码定理和信道编码定理。从数学观点看,这些定理是最优编码的存. 在定理。但从工程观点看,这些定理不是结构性的,不能从定理的结果直接得出实现最优编码. 的具体途径。",
+    "content_length": 120,
+    "created_at": "2026-01-21T05:48:15.608404+00:00",
+    "updated_at": "2026-01-21T05:48:38.900655+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054815_d54614f2",
+    "metadata": {
+      "processing_start_time": 1768974495,
+      "processing_end_time": 1768974518
+    }
+  },
+  "doc-5b929f1d50e05258f54389ac4f58f0ae": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-5b929f1d50e05258f54389ac4f58f0ae"
+    ],
+    "content_summary": "[DOC_ID: chunk-6131370e]\n[领域: 信息论]\n[20] TODERICI G, VINCENT D, JOHNSTON N,et al.Full resolu-tion image compression with recurrent neural net-works[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. Successive refinemen...",
+    "content_length": 936,
+    "created_at": "2026-01-21T05:48:39.071571+00:00",
+    "updated_at": "2026-01-21T05:49:29.975828+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054839_b73fccc6",
+    "metadata": {
+      "processing_start_time": 1768974519,
+      "processing_end_time": 1768974569
+    }
+  },
+  "doc-29b81edcfc109c880298f79878843454": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-29b81edcfc109c880298f79878843454"
+    ],
+    "content_summary": "[DOC_ID: chunk-e6c38f5e]\n[领域: 统计力学]\n玻尔兹曼机是一种适用于解决包含了大量“弱”约束的约束满足问题的并行计算结构。这里的并行计算结构就是人工神经网络。“弱”约束是相对“强”约束而言的。“强”约束条件是",
+    "content_length": 117,
+    "created_at": "2026-01-21T05:49:30.200691+00:00",
+    "updated_at": "2026-01-21T05:49:52.254778+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054930_1e32f6a5",
+    "metadata": {
+      "processing_start_time": 1768974570,
+      "processing_end_time": 1768974592
+    }
+  },
+  "doc-74ac9b8a3a08c569f1c072b77c552920": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-74ac9b8a3a08c569f1c072b77c552920"
+    ],
+    "content_summary": "[DOC_ID: chunk-e30c4628]\n[领域: 统计力学]\n受限波尔兹曼机（Restricted Boltzmann Machines, RBMs）是无监督学习中的一个关键模型，主要用于特征学习和数据建模。它们是基于能量的随机神经网络，由可见",
+    "content_length": 127,
+    "created_at": "2026-01-21T05:49:55.764827+00:00",
+    "updated_at": "2026-01-21T05:50:19.030665+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_054955_8c77a161",
+    "metadata": {
+      "processing_start_time": 1768974595,
+      "processing_end_time": 1768974619
+    }
+  },
+  "doc-93a18801c2737ad9536660fe9501c9d8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-93a18801c2737ad9536660fe9501c9d8"
+    ],
+    "content_summary": "[DOC_ID: chunk-e030d53d]\n[领域: 统计力学]\n深度玻尔兹曼机是一种以受限玻尔兹曼机(Restricted Boltzmann Machine，RBM)为基础的深度学习模型，其本质是一种特殊构造的神经网络。深度玻尔兹曼机由多层受限玻尔兹曼机",
+    "content_length": 132,
+    "created_at": "2026-01-21T05:50:19.286941+00:00",
+    "updated_at": "2026-01-21T05:50:38.053416+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055019_defce5ab",
+    "metadata": {
+      "processing_start_time": 1768974619,
+      "processing_end_time": 1768974638
+    }
+  },
+  "doc-b2aa136f0a91bbc88ed87eed07a66512": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b2aa136f0a91bbc88ed87eed07a66512"
+    ],
+    "content_summary": "[DOC_ID: chunk-1ab11c63]\n[领域: 统计力学]\n在一般的玻尔兹曼机中隐藏单元之间可以相互连接构成循环神经网络，这使得模型难以进行有效的学习，但若对隐藏单元之间的层内连接进行限制，便可以很好的训练用于处理实际问题，",
+    "content_length": 118,
+    "created_at": "2026-01-21T05:50:38.275516+00:00",
+    "updated_at": "2026-01-21T05:50:53.776719+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055038_674cd930",
+    "metadata": {
+      "processing_start_time": 1768974638,
+      "processing_end_time": 1768974653
+    }
+  },
+  "doc-673b334bee153545178b73f52b190891": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-673b334bee153545178b73f52b190891"
+    ],
+    "content_summary": "[DOC_ID: chunk-db26d099]\n[领域: 统计力学]\n历史地位：Hopfield 网络在1980 年代神经网络复兴中起到了重要作用，为后来神经网络的记忆机制和递归结构提供了基础。同时，Hopfield 网络的能量最小化思想影响了后来的玻尔兹",
+    "content_length": 129,
+    "created_at": "2026-01-21T05:50:53.994409+00:00",
+    "updated_at": "2026-01-21T05:51:07.272167+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055053_4d9c3679",
+    "metadata": {
+      "processing_start_time": 1768974654,
+      "processing_end_time": 1768974667
+    }
+  },
+  "doc-52188c2297ba9ea322f462b96137a3c3": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-52188c2297ba9ea322f462b96137a3c3"
+    ],
+    "content_summary": "[DOC_ID: chunk-6952095b]\n[领域: 统计力学]\n# HopField Network and Restricted Boltzmann Machine (RBM). 本文简要介绍HopField网络和受限玻尔兹曼机（Restricted Boltzmann Machine, RBM）的原理。. 设共有N个神经元，$ x\\_i $为第i个神经元的输入，$ w\\_{ij} $为神经元i和j之间的权值（在无自反馈型HopField网络中，$ w\\_{ii} = 0$，即神经元不...",
+    "content_length": 1620,
+    "created_at": "2026-01-21T05:51:07.535702+00:00",
+    "updated_at": "2026-01-21T05:52:27.215960+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055107_504bc669",
+    "metadata": {
+      "processing_start_time": 1768974667,
+      "processing_end_time": 1768974747
+    }
+  },
+  "doc-e1dd53dde2d567ed67b1ff39a2e656e1": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-e378397631b5d452d5eb095ebbfde434",
+      "chunk-1fc2a79f5ff94f4338a312c2e0a2db74"
+    ],
+    "content_summary": "[DOC_ID: chunk-b41307dc]\n[领域: 统计力学]\n# 刘建平Pinard. 在前面我们讲到了深度学习的两类神经网络模型的原理，第一类是前向的神经网络，即DNN和CNN。第二类是有反馈的神经网络，即RNN和LSTM。今天我们就总结下深度学习里的第三类神经网络模型：玻尔兹曼机。主要关注于这类模型中的受限玻尔兹曼机（Restricted Boltzmann Machine，以下简称RBM）， RBM模型及其推广在工业界比如推荐系统中得到了广泛的应用。. 玻尔兹曼机是一大类的神经网...",
+    "content_length": 2888,
+    "created_at": "2026-01-21T05:52:27.445252+00:00",
+    "updated_at": "2026-01-21T05:54:11.939710+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055227_3cfb8273",
+    "metadata": {
+      "processing_start_time": 1768974747,
+      "processing_end_time": 1768974851
+    }
+  },
+  "doc-9be983c468c91cc26e854198668abadf": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-9be983c468c91cc26e854198668abadf"
+    ],
+    "content_summary": "[DOC_ID: chunk-7b6798cb]\n[领域: 统计力学]\n本文提出了一种新的时间 网 络 嵌入方法M2DNE，它结合了 微 观 和 宏 观 动 态 ，以捕获 网 络 结构和时间特性的演变。实际上，时间 网 络 是普遍存在的，它通常是在 微 观 和 宏 观 动 态 方面随时间演化的。 微 观 动力学详细描述了 网 络 结构的形成过程， 宏 观 动力学是指 网 络 规模的演化模式。",
+    "content_length": 197,
+    "created_at": "2026-01-21T05:54:12.163742+00:00",
+    "updated_at": "2026-01-21T05:54:34.556998+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055412_8a5ecef9",
+    "metadata": {
+      "processing_start_time": 1768974852,
+      "processing_end_time": 1768974874
+    }
+  },
+  "doc-e0eade45db8d5fa19aa9c81c7da0ecef": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e0eade45db8d5fa19aa9c81c7da0ecef"
+    ],
+    "content_summary": "[DOC_ID: chunk-8e298a1c]\n[领域: 统计力学]\n2005年，美国印第安纳大学的奥拉夫·斯庞斯（Olaf Sporns）首先提出了“ 神 经 连接组学”（Connectomics）的概念，一门以研究 神 经 网 络 连接为主的新学科应运而生。 生物体内的 神 经 功能连接图谱是每个生物进行任何行为的 神 经 学基础。",
+    "content_length": 170,
+    "created_at": "2026-01-21T05:54:34.802190+00:00",
+    "updated_at": "2026-01-21T05:54:59.495920+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055434_538d29db",
+    "metadata": {
+      "processing_start_time": 1768974874,
+      "processing_end_time": 1768974899
+    }
+  },
+  "doc-c78a1678dd8dd1d890f89ffee94c2631": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c78a1678dd8dd1d890f89ffee94c2631"
+    ],
+    "content_summary": "[DOC_ID: chunk-d196641b]\n[领域: 统计力学]\n当 神 经 科学家追踪大脑区域之间的连接时，他们着眼于 神 经 元。 这是大脑细胞被生物电讯号激活时的连接 网 络 。 神 经 元相互连接，通过复杂的 神 经 回路传递电讯号。 人脑内有着860亿个手拉手的 神 经 元。",
+    "content_length": 146,
+    "created_at": "2026-01-21T05:54:59.737204+00:00",
+    "updated_at": "2026-01-21T05:55:33.235306+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055459_c2b8e264",
+    "metadata": {
+      "processing_start_time": 1768974899,
+      "processing_end_time": 1768974933
+    }
+  },
+  "doc-3fa882df56ee354fb7b7e6d63cec74d9": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3fa882df56ee354fb7b7e6d63cec74d9"
+    ],
+    "content_summary": "[DOC_ID: chunk-12ec740e]\n[领域: 统计力学]\n像，并发表一系列脑 神 经 连结与脑 网 络 造影技术论文，引领脑 神 经 准确成像，使于临床磁共振仪短时间内取得复杂弥散 神 经 影像与脑 神 经 网 络 。会议主题：树兰俊杰科学Talk第三十五期-脑与 神 经 科学— 宏 观 介 观 微 观 尺度上的连接与涌现. 会议时间：2022/07/28 14:00-17:00.",
+    "content_length": 199,
+    "created_at": "2026-01-21T05:55:33.521006+00:00",
+    "updated_at": "2026-01-21T05:56:21.712532+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055533_9e078c9d",
+    "metadata": {
+      "processing_start_time": 1768974933,
+      "processing_end_time": 1768974981
+    }
+  },
+  "doc-f922579134fc1d01217fc44031832b5f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f922579134fc1d01217fc44031832b5f"
+    ],
+    "content_summary": "[DOC_ID: chunk-9bea0279]\n[领域: 统计力学]\n基于人工 神 经 网 络 的固体推进剂细 观 损伤与 宏 观 刚度映射关系. 张滔韬1, 2, 杨玉新2在单轴拉伸(Uniaxial Tension, UT)、等双轴拉伸(Equibiaxial Tension, ET)、纯剪切(Pure Shear, PS)三种变形条件下的 宏 观 刚度预报能力。",
+    "content_length": 186,
+    "created_at": "2026-01-21T05:56:21.960330+00:00",
+    "updated_at": "2026-01-21T05:57:00.230949+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055621_513ca9d2",
+    "metadata": {
+      "processing_start_time": 1768974981,
+      "processing_end_time": 1768975020
+    }
+  },
+  "doc-f35d76c7980a2da4b4bac2aba77d73e7": {
+    "status": "processed",
+    "chunks_count": 6,
+    "chunks_list": [
+      "chunk-3017e1ef0fe1ecc38a99f6da86ad2c02",
+      "chunk-7dfbc91c9b402abe636a1533d1036084",
+      "chunk-3c411bf3eba58c89e49b5bb56fce33e5",
+      "chunk-b332af60e3fc8fedacf0ad7703f20c18",
+      "chunk-7a3587ecc73a04aa2e8c9c6682b98cec",
+      "chunk-ea8a6fc4ba2e7bba693b03aaff3df4db"
+    ],
+    "content_summary": "[DOC_ID: chunk-74e8d199]\n[领域: 统计力学]\n１８０１０００００１１０１３ １３闫雯．ｆｂｄ ３７卷１期 ２０１８年２月 中 国 生 物 医 学 工 程 学 报 ＣｈｉｎｅｓｅＪｏｕｒｎａｌｏｆＢｉｏｍｅｄｉｃａｌＥｎｇｉｎｅｅｒｉｎｇ Ｖｏｌ．３７ Ｎｏ．１ Ｆｅｂｒｕａｒｙ ２０１８ ｄｏｉ：１０􀆰３９６９／ｊ．ｉｓｓｎ．０２５８⁃８０２１􀆰２０１８􀆰０１􀆰００ 收稿日期：２０１７⁃０３⁃１６，录用日期：２０１７⁃１０⁃１３ 基金项目：国家自然科学基金（８１７７１９...",
+    "content_length": 5205,
+    "created_at": "2026-01-21T05:57:01.113899+00:00",
+    "updated_at": "2026-01-21T05:59:59.188620+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055701_1664e4fb",
+    "metadata": {
+      "processing_start_time": 1768975021,
+      "processing_end_time": 1768975199
+    }
+  },
+  "doc-ce6ef636e7f1aba9c1d2e5f6ef438c33": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ce6ef636e7f1aba9c1d2e5f6ef438c33"
+    ],
+    "content_summary": "[DOC_ID: chunk-3095317b]\n[领域: 统计力学]\n图2 水分子及水分子的 微 观 堆积结构. 水的这些特殊的物理化学性质都是源于水的 微 观 结构。 一个自由的水分子是由两个氢(H)和一个氧(O)组成的H2O（如图2上部左），两个氢和氧的化学键夹角大约为105度。",
+    "content_length": 143,
+    "created_at": "2026-01-21T05:59:51.761096+00:00",
+    "updated_at": "2026-01-21T06:00:15.221089+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_055951_549e9930",
+    "metadata": {
+      "processing_start_time": 1768975191,
+      "processing_end_time": 1768975215
+    }
+  },
+  "doc-7f7cfd0cd4e85028a17edf6e5da1190c": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7f7cfd0cd4e85028a17edf6e5da1190c"
+    ],
+    "content_summary": "[DOC_ID: chunk-2017a15e]\n[领域: 统计力学]\n[3] WANG Q X， DING S L， LI Y， et al.The Allen Mouse Brain Common Coordinate Framework: a 3D refer-ence atlas ［J］ .Cell， 2020， 181 （4） ： 936-953.e20. [11] HAN Y Y， KEBSCHULL J M， CAMPBELL R A A， et al.The logic of s...",
+    "content_length": 665,
+    "created_at": "2026-01-21T06:00:15.515504+00:00",
+    "updated_at": "2026-01-21T06:01:25.511971+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060015_4d6bb0a7",
+    "metadata": {
+      "processing_start_time": 1768975215,
+      "processing_end_time": 1768975285
+    }
+  },
+  "doc-bc6cd88a44423ac7bc4a08969a8b99f8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-bc6cd88a44423ac7bc4a08969a8b99f8"
+    ],
+    "content_summary": "[DOC_ID: chunk-1716cb3a]\n[领域: 统计力学]\n（1）网络的输出层配分函数等于输入数据也即一维伊辛模型有的配分函数，. 并且在训练过程中当时间t 从0 到∞ 变化时始终保持配分函数的值不变。 f(x1w. (t). 1j. +x2w. (t).",
+    "content_length": 134,
+    "created_at": "2026-01-21T06:01:25.806563+00:00",
+    "updated_at": "2026-01-21T06:01:52.400286+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060125_65c51726",
+    "metadata": {
+      "processing_start_time": 1768975285,
+      "processing_end_time": 1768975312
+    }
+  },
+  "doc-7d7618b6fffb013ab6c5a2ca3a3fea50": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7d7618b6fffb013ab6c5a2ca3a3fea50"
+    ],
+    "content_summary": "[DOC_ID: chunk-c7102035]\n[领域: 统计力学]\n... 网络的配分函数为. 其中. 是L的第i个特征值，配分函数有明确的物理含义，其表示保留在所有原始节点上的信息量。 图1：空手道俱乐部网络的配分函数. 图1",
+    "content_length": 116,
+    "created_at": "2026-01-21T06:01:52.685509+00:00",
+    "updated_at": "2026-01-21T06:02:18.791741+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060152_47d5db02",
+    "metadata": {
+      "processing_start_time": 1768975312,
+      "processing_end_time": 1768975338
+    }
+  },
+  "doc-36562522576eae8192339d548d0a1406": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-36562522576eae8192339d548d0a1406"
+    ],
+    "content_summary": "[DOC_ID: chunk-78091bba]\n[领域: 统计力学]\n... 配分函数的场景。它不能降低计算开销，但是在神经网络的背景下降低batchsize 带来的显存的节省是天量的，而通信和存储往往比计算贵。 发布于2025-06",
+    "content_length": 118,
+    "created_at": "2026-01-21T06:02:19.078854+00:00",
+    "updated_at": "2026-01-21T06:02:41.935423+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060219_15430108",
+    "metadata": {
+      "processing_start_time": 1768975339,
+      "processing_end_time": 1768975361
+    }
+  },
+  "doc-08c978d767db01aaeef63f40ea958f51": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-08c978d767db01aaeef63f40ea958f51"
+    ],
+    "content_summary": "[DOC_ID: chunk-53389998]\n[领域: 统计力学]\n基于分数的生成模型是一种生成模型，它通过定义一个分数函数来描述数据的分布。这个分数函数通常被称为\"配分函数\"（partition function）或\"能量函数\"（energy",
+    "content_length": 124,
+    "created_at": "2026-01-21T06:02:49.533616+00:00",
+    "updated_at": "2026-01-21T06:02:53.068191+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060249_f271b0c8",
+    "metadata": {
+      "processing_start_time": 1768975361,
+      "processing_end_time": 1768975373
+    }
+  },
+  "doc-5b96b65f16399f35c9b04de8b22d0796": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-5b96b65f16399f35c9b04de8b22d0796"
+    ],
+    "content_summary": "[DOC_ID: chunk-f326307e]\n[领域: 统计力学]\n文章提出了一种创新的动力配分函数高效计算的方法[图1]。 该方法采用循环神经网络、PixelCNN和Transformer等自回归生成模型，结合强化学习技术，学习并预测",
+    "content_length": 120,
+    "created_at": "2026-01-21T06:02:53.339832+00:00",
+    "updated_at": "2026-01-21T06:03:17.772153+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060253_3a0fd84b",
+    "metadata": {
+      "processing_start_time": 1768975373,
+      "processing_end_time": 1768975397
+    }
+  },
+  "doc-f5c5908d5644515cf8bcda82498e6671": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f5c5908d5644515cf8bcda82498e6671"
+    ],
+    "content_summary": "[DOC_ID: chunk-4ba79a58]\n[领域: 统计力学]\n通过最大似然学习无向模型特别困难的原因在于配分函数依赖于参数。 对数似然相对于参数的梯度具有一项对应于配分函数的梯度： ∇θlogp(x;θ)=∇θlog˜p(x;θ)−∇θlogZ(θ).",
+    "content_length": 131,
+    "created_at": "2026-01-21T06:03:18.096268+00:00",
+    "updated_at": "2026-01-21T06:03:41.961866+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060318_39093cfb",
+    "metadata": {
+      "processing_start_time": 1768975398,
+      "processing_end_time": 1768975421
+    }
+  },
+  "doc-882f6cc5b251194ec83bb3e0280e7611": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-882f6cc5b251194ec83bb3e0280e7611"
+    ],
+    "content_summary": "[DOC_ID: chunk-b9060847]\n[领域: 统计力学]\n分母或归一化常数，有时也称为配分函数（其对数称为对数-配分函数）。该名称的起源来自统计物理学中一个模拟粒子群分布的方程。 public NDArray softmax(NDArray X)",
+    "content_length": 130,
+    "created_at": "2026-01-21T06:03:42.260030+00:00",
+    "updated_at": "2026-01-21T06:04:18.869321+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060342_9f6ab916",
+    "metadata": {
+      "processing_start_time": 1768975422,
+      "processing_end_time": 1768975458
+    }
+  },
+  "doc-f18946bdfdf43151c934dc17cbcb459e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f18946bdfdf43151c934dc17cbcb459e"
+    ],
+    "content_summary": "[DOC_ID: chunk-e91b05d3]\n[领域: 统计力学]\nRev. D， 2019， 100： 054510 [11] Yu J F， Xie Z Y， Meurice Y et al. Rev. B， 2016， 94： 075143； Liu W Y， Dong S， Wang C et al. Rev. B， 2012， 85： 205119 [41] Xie Z Y， Liao H J， Huang R Z et al. Rev. B， 2017， 96： 045128 [...",
+    "content_length": 532,
+    "created_at": "2026-01-21T06:04:19.649644+00:00",
+    "updated_at": "2026-01-21T06:05:16.712058+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060419_ef4bc2c5",
+    "metadata": {
+      "processing_start_time": 1768975459,
+      "processing_end_time": 1768975516
+    }
+  },
+  "doc-c83ff92607271cc36071ca55ac4a8385": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c83ff92607271cc36071ca55ac4a8385"
+    ],
+    "content_summary": "[DOC_ID: chunk-b281d7dd]\n[领域: 机器学习]\n交叉熵刻画的是实际输出（概率）与期望输出（概率）的距离，也就是交叉熵的值越小，两个概率分布就越接近。假设概率分布p为期望输出，概率分布q为实际输出，H(p,q)",
+    "content_length": 116,
+    "created_at": "2026-01-21T06:05:17.043208+00:00",
+    "updated_at": "2026-01-21T06:05:44.191660+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060517_ef39dc70",
+    "metadata": {
+      "processing_start_time": 1768975517,
+      "processing_end_time": 1768975544
+    }
+  },
+  "doc-c110f5c53d8d82646eee2498b51ba01a": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c110f5c53d8d82646eee2498b51ba01a"
+    ],
+    "content_summary": "[DOC_ID: chunk-18f8d8f0]\n[领域: 机器学习]\n在神经网络训练中，要将输入数据实际的类别概率分布与模型预测的类别概率分布之间的误差（即损失）从输出端向输入端传递，以便来优化模型参数。下面简单介绍根据交叉熵计算得到",
+    "content_length": 118,
+    "created_at": "2026-01-21T06:05:44.527982+00:00",
+    "updated_at": "2026-01-21T06:06:33.983131+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060544_63bf50bb",
+    "metadata": {
+      "processing_start_time": 1768975544,
+      "processing_end_time": 1768975593
+    }
+  },
+  "doc-04c7bf4ab86cafa8d0bdc6180c0f4db5": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+    ],
+    "content_summary": "[DOC_ID: chunk-1a3d3093]\n[领域: 机器学习]\n交叉熵损失函数（Cross Entropy Loss）在人工智能领域，尤其是深度学习中，是用于衡量模型预测结果与实际标签之间的差异的重要工具。它源于信息论中的熵和相对",
+    "content_length": 119,
+    "created_at": "2026-01-21T06:06:34.294301+00:00",
+    "updated_at": "2026-01-21T06:07:09.767816+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060634_3747e096",
+    "metadata": {
+      "processing_start_time": 1768975594,
+      "processing_end_time": 1768975629
+    }
+  },
+  "doc-2a3c466ac638775ff887f28337c2a65f": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-408bf4ea5cb0bf2933de13a97fd69ee6",
+      "chunk-810fec6799c7d5d8ae38f77aabcec3dc"
+    ],
+    "content_summary": "[DOC_ID: chunk-267f1493]\n[领域: 机器学习]\n简单来说，损失函数追踪人工智能 (AI) 模型输出的错误程度。它通过量化给定输入的预测值（即模型输出）与实际值或*标准答案*之间的差异（“损失”）来实现。如果模型的预测值准确，则损失会很小。如果预测值不准确，损失就很大。. ### 专家为您带来最新的 AI 趋势. 获取有关最重要且最有趣的 AI 新闻的精选洞察分析。订阅我们的每周 Think 时事通讯。请参阅 IBM 隐私声明。. ### 均方误差 (MSE). 均方误差损...",
+    "content_length": 1841,
+    "created_at": "2026-01-21T06:07:02.340725+00:00",
+    "updated_at": "2026-01-21T06:08:40.965604+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060702_d30831e5",
+    "metadata": {
+      "processing_start_time": 1768975622,
+      "processing_end_time": 1768975720
+    }
+  },
+  "doc-93b5920864ffe7c0f735f87ccf578d34": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-93b5920864ffe7c0f735f87ccf578d34"
+    ],
+    "content_summary": "[DOC_ID: chunk-7e13310c]\n[领域: 机器学习]\n（1）(4') 信息增益决策树中熵的计算中Ent(D) 什么时候取最大（小）值？值是多少？ （2）(6') 和18年期末类似，根据表格计算信息增益决策树的第一个选择分支。 （3）(6') 简述信息增益",
+    "content_length": 136,
+    "created_at": "2026-01-21T06:08:41.336095+00:00",
+    "updated_at": "2026-01-21T06:09:10.354337+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060841_7daa5b7f",
+    "metadata": {
+      "processing_start_time": 1768975721,
+      "processing_end_time": 1768975750
+    }
+  },
+  "doc-62fad8ab846c9df991d8fe50bdf2edf6": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-62fad8ab846c9df991d8fe50bdf2edf6"
+    ],
+    "content_summary": "[DOC_ID: chunk-1d19ba1b]\n[领域: 机器学习]\n2 信息增益. 信息增益是用于度量特征对于决策树的贡献的一个度量标准。信息增益可以通过以下公式计算：. I G ( S , A ) = H ( S ) − ∑ v ∈ A ∣ S",
+    "content_length": 125,
+    "created_at": "2026-01-21T06:09:10.696406+00:00",
+    "updated_at": "2026-01-21T06:10:00.684698+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_060910_0e2cf10b",
+    "metadata": {
+      "processing_start_time": 1768975750,
+      "processing_end_time": 1768975800
+    }
+  },
+  "doc-a79596200294b5109fdd0cf885110f83": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a79596200294b5109fdd0cf885110f83"
+    ],
+    "content_summary": "[DOC_ID: chunk-dbd019af]\n[领域: 机器学习]\n3. **决策树（Decision Tree）**：决策树是一种基于树状结构进行决策的模型，适用于分类和回归任务。手写实现时，会涉及选择最佳分割特征（如信息增益、基尼不",
+    "content_length": 120,
+    "created_at": "2026-01-21T06:10:01.442350+00:00",
+    "updated_at": "2026-01-21T06:10:22.878668+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061001_d050d4bf",
+    "metadata": {
+      "processing_start_time": 1768975801,
+      "processing_end_time": 1768975822
+    }
+  },
+  "doc-a4d1d3bf1c5551379c10b7d809d654b0": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-b5a3719d78ce70f7d68e86833b8aa9a9",
+      "chunk-b787493679d2ca259f397315e308f4b1",
+      "chunk-3fc4861498cff05f95c61b9202e2155c",
+      "chunk-53ac52739a03e942236087bac0208db0"
+    ],
+    "content_summary": "[DOC_ID: chunk-9740e9e0]\n[领域: 机器学习]\n决策树（Decision Tree）-ID3、C4.5、CART比较. 决策树是一种**基本的分类和回归方法**。决策树呈树形结构，在分类问题中，表示基于特征对实例进行分类的过程。它可以认为是if-then规则的集合，也可以认为是定义在特征空间和类空间上的条件概率分布。学习时，利用训练数据，根据损失函数最小化的原则建立决策树模型。预测时，对新的数据，利用决策树模型进行分类。决策树学习通常包括三个步骤：**特征选择、决策树的生...",
+    "content_length": 4738,
+    "created_at": "2026-01-21T06:10:22.721324+00:00",
+    "updated_at": "2026-01-21T06:12:26.981416+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061022_3f69f4bd",
+    "metadata": {
+      "processing_start_time": 1768975822,
+      "processing_end_time": 1768975946
+    }
+  },
+  "doc-faa47dbbd25c1dde4b3c2e2c2052c496": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-331e8c8473a3dbee58697ad677051f43",
+      "chunk-37b06bc80ac6550d31f35870a6bd024f"
+    ],
+    "content_summary": "[DOC_ID: chunk-c15d98fe]\n[领域: 机器学习]\n## 作者. ## 什么是决策树？. 决策树学习采用分而治之的策略，通过执行贪心搜索来识别决策树中的最佳分割点。然后，以自上而下的递归方式重复此分割过程，直到所有或大多数记录都被归类到特定的类标签下。. 所有数据点是否都被归类为同质集合在很大程度上取决于决策树的复杂性。较小的决策树更容易获得纯净叶节点，即单个类中的数据点。然而，随着决策树规模的增大，维持这种纯度变得越来越困难，通常会出现指定子树内的数据过少的情况。这种情况被...",
+    "content_length": 1935,
+    "created_at": "2026-01-21T06:12:27.322727+00:00",
+    "updated_at": "2026-01-21T06:14:27.736298+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061227_18627e5c",
+    "metadata": {
+      "processing_start_time": 1768975947,
+      "processing_end_time": 1768976067
+    }
+  },
+  "doc-074ae094f32d31b781b0e74bdeb88703": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-074ae094f32d31b781b0e74bdeb88703"
+    ],
+    "content_summary": "[DOC_ID: chunk-d191d067]\n[领域: 机器学习]\n# Your connection is not private. Attackers might be trying to steal your information from **www.showmeai.tech** (for example, passwords, messages, or credit cards). Learn more about this warning. net::ERR\\_CERT\\_D...",
+    "content_length": 1110,
+    "created_at": "2026-01-21T06:14:28.175950+00:00",
+    "updated_at": "2026-01-21T06:15:01.332682+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061428_ea589082",
+    "metadata": {
+      "processing_start_time": 1768976068,
+      "processing_end_time": 1768976101
+    }
+  },
+  "doc-c4744de0d06b9e7e6066f6751368db57": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-2f3b241c528a53767a4138490b41e2f0",
+      "chunk-92f40240065404b9b3529cf829f8077c",
+      "chunk-16343ccef51a9f838ddefbe4951cc3c0"
+    ],
+    "content_summary": "[DOC_ID: chunk-f65fc231]\n[领域: 机器学习]\n第九讲： Bayes分类、熵、决策树、特征选择 徐玥珠 张锦岳 2020 年6 月24 日 目录 嬰嬮嬱 孂孡孹孥孳分类嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮 嬱 嬰嬮嬱嬮嬱 代价函数 嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮 嬱 嬰嬮嬱嬮嬲 孂孡孹孥孳公式嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮嬮 嬲 嬰嬮嬱嬮嬳 模型嬮嬮嬮嬮...",
+    "content_length": 2266,
+    "created_at": "2026-01-21T06:15:01.680028+00:00",
+    "updated_at": "2026-01-21T06:16:57.860139+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061501_97fe8506",
+    "metadata": {
+      "processing_start_time": 1768976101,
+      "processing_end_time": 1768976217
+    }
+  },
+  "doc-2dd1a13b5c662bd9e747f8aa4b9d3361": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2dd1a13b5c662bd9e747f8aa4b9d3361"
+    ],
+    "content_summary": "[DOC_ID: chunk-270416cd]\n[领域: 机器学习]\n最大熵模型(Maximum Entropy Model)是一种基于概率的方法，用于构建概率模型。它的核心思想是在给定一组约束条件的情况下，选择熵最大的概率分布作为模型。",
+    "content_length": 120,
+    "created_at": "2026-01-21T06:16:58.223031+00:00",
+    "updated_at": "2026-01-21T06:17:13.329588+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061658_e2901e7d",
+    "metadata": {
+      "processing_start_time": 1768976218,
+      "processing_end_time": 1768976233
+    }
+  },
+  "doc-d6085544a08784bc3999c91c72c5594a": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d6085544a08784bc3999c91c72c5594a"
+    ],
+    "content_summary": "[DOC_ID: chunk-4572c2c7]\n[领域: 机器学习]\n所以一般的分类问题，很少直接用最大熵模型。尤其是深度学习算法流行后，多层神经网络强大的拟合能力和优良的性能，使得我们在通常的分类问题中，几乎不会再使用最大熵模型了。",
+    "content_length": 118,
+    "created_at": "2026-01-21T06:17:13.552458+00:00",
+    "updated_at": "2026-01-21T06:17:37.383354+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_061713_7e24ed71",
+    "metadata": {
+      "processing_start_time": 1768976233,
+      "processing_end_time": 1768976257
+    }
+  }
+}

@@ -1,0 +1,4614 @@
+{
+  "doc-9e4905d7255ffcf74cb7aad95daffceb": {
+    "relation_pairs": [
+      [
+        "信息熵",
+        "熵"
+      ],
+      [
+        "比特",
+        "熵"
+      ],
+      [
+        "平均自信息量",
+        "熵"
+      ],
+      [
+        "信息论",
+        "熵"
+      ],
+      [
+        "信源熵",
+        "熵"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768972809,
+    "update_time": 1768972809,
+    "_id": "doc-9e4905d7255ffcf74cb7aad95daffceb"
+  },
+  "doc-638c79cbb743dead1aa6af99fd6d0fcb": {
+    "relation_pairs": [
+      [
+        "Correlation Experiment",
+        "Infection Probability"
+      ],
+      [
+        "Correlation Experiment",
+        "SIR Model"
+      ],
+      [
+        "Node Influence",
+        "SIR Model"
+      ],
+      [
+        "Node Influence",
+        "PageRank"
+      ],
+      [
+        "EMCNN",
+        "Node Influence"
+      ],
+      [
+        "Node Importance Ranking",
+        "Node Influence"
+      ],
+      [
+        "Degree",
+        "Node Influence"
+      ],
+      [
+        "Correlation Experiment",
+        "Network"
+      ],
+      [
+        "Community Structure",
+        "Degree"
+      ],
+      [
+        "Infection Count",
+        "SIR Model"
+      ],
+      [
+        "H-index",
+        "Node Influence"
+      ],
+      [
+        "InfGCN",
+        "Node Influence"
+      ]
+    ],
+    "count": 12,
+    "create_time": 1768972871,
+    "update_time": 1768972871,
+    "_id": "doc-638c79cbb743dead1aa6af99fd6d0fcb"
+  },
+  "doc-b0156872199d42b66461b7109077a437": {
+    "relation_pairs": [
+      [
+        "概率分布",
+        "相对熵"
+      ],
+      [
+        "概率分布",
+        "熵"
+      ],
+      [
+        "联合熵",
+        "随机变量"
+      ],
+      [
+        "互信息",
+        "条件熵"
+      ],
+      [
+        "互信息",
+        "熵"
+      ],
+      [
+        "互信息",
+        "随机变量"
+      ],
+      [
+        "交叉熵",
+        "概率分布"
+      ],
+      [
+        "对数似然比",
+        "编码长度"
+      ],
+      [
+        "互信息",
+        "联合熵"
+      ],
+      [
+        "交叉熵",
+        "相对熵"
+      ],
+      [
+        "熵",
+        "相对熵"
+      ],
+      [
+        "交叉熵",
+        "熵"
+      ],
+      [
+        "条件熵",
+        "联合熵"
+      ],
+      [
+        "条件熵",
+        "熵"
+      ],
+      [
+        "条件熵",
+        "随机变量"
+      ],
+      [
+        "熵",
+        "联合熵"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1768972934,
+    "update_time": 1768972934,
+    "_id": "doc-b0156872199d42b66461b7109077a437"
+  },
+  "doc-03892a1548c3ca50ed164db6a524dac7": {
+    "relation_pairs": [
+      [
+        "Security Certificate",
+        "TrustAsia DV TLS RSA CA 2025"
+      ],
+      [
+        "Attackers",
+        "Information"
+      ],
+      [
+        "ERR_CERT_DATE_INVALID",
+        "Security Certificate"
+      ],
+      [
+        "Security Certificate",
+        "www.showmeai.tech"
+      ],
+      [
+        "PEM Encoded Chain",
+        "Security Certificate"
+      ],
+      [
+        "ERR_CERT_DATE_INVALID",
+        "System Clock"
+      ],
+      [
+        "Attackers",
+        "www.showmeai.tech"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1768972967,
+    "update_time": 1768972967,
+    "_id": "doc-03892a1548c3ca50ed164db6a524dac7"
+  },
+  "doc-bcb9e2b1f343c904193b0f647416ae0e": {
+    "relation_pairs": [
+      [
+        "KL散度",
+        "分布"
+      ],
+      [
+        "KL散度",
+        "Kullback-Leibler Divergence"
+      ],
+      [
+        "Distribution Q(X)",
+        "KL散度"
+      ],
+      [
+        "KL散度",
+        "信息熵"
+      ],
+      [
+        "Doolittle分解",
+        "矩阵LU分解"
+      ],
+      [
+        "Distribution P(X)",
+        "KL散度"
+      ],
+      [
+        "KL Divergence Formula",
+        "KL散度"
+      ],
+      [
+        "Crout分解",
+        "矩阵LU分解"
+      ],
+      [
+        "老饼",
+        "老饼讲解-机器学习"
+      ],
+      [
+        "Cholesky分解",
+        "矩阵LU分解"
+      ],
+      [
+        "www.bbbdata.com",
+        "老饼讲解-机器学习"
+      ],
+      [
+        "矩阵LU分解",
+        "老饼"
+      ],
+      [
+        "KL散度",
+        "交叉熵"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1768973042,
+    "update_time": 1768973042,
+    "_id": "doc-bcb9e2b1f343c904193b0f647416ae0e"
+  },
+  "doc-e7d56d1a1382da4ef9c8e90e4d8fd39f": {
+    "relation_pairs": [
+      [
+        "KL散度",
+        "分布P"
+      ],
+      [
+        "分布Q",
+        "基于Q的编码"
+      ],
+      [
+        "KL散度",
+        "分布Q"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768973050,
+    "update_time": 1768973050,
+    "_id": "doc-e7d56d1a1382da4ef9c8e90e4d8fd39f"
+  },
+  "doc-0c9d3f43376e35055643ae46b0d5a233": {
+    "relation_pairs": [
+      [
+        "概率分布Q",
+        "相对熵"
+      ],
+      [
+        "92.47% Correct Rate",
+        "Shuai Wang"
+      ],
+      [
+        "D_KL(Q||P)",
+        "相对熵"
+      ],
+      [
+        "变分自编码器",
+        "相对熵"
+      ],
+      [
+        "Kullback",
+        "相对熵"
+      ],
+      [
+        "Focal-KLD",
+        "单通道多说话人识别框架"
+      ],
+      [
+        "Leibler",
+        "相对熵"
+      ],
+      [
+        "概率分布P",
+        "相对熵"
+      ],
+      [
+        "Focal-KLD",
+        "Shuai Wang"
+      ],
+      [
+        "熵",
+        "相对熵"
+      ],
+      [
+        "KL散度",
+        "Kullback–Leibler Divergence"
+      ],
+      [
+        "Diederik P. Kingma",
+        "变分自编码器"
+      ],
+      [
+        "Max Welling",
+        "变分自编码器"
+      ],
+      [
+        "Focal-KLD",
+        "Hard Samples"
+      ],
+      [
+        "信息散度",
+        "相对熵"
+      ],
+      [
+        "KL散度",
+        "相对熵"
+      ],
+      [
+        "KLD",
+        "KL散度"
+      ],
+      [
+        "Neural Network",
+        "单通道多说话人识别框架"
+      ],
+      [
+        "Baseline System",
+        "单通道多说话人识别框架"
+      ],
+      [
+        "55.83% Correct Rate",
+        "Shuai Wang"
+      ],
+      [
+        "D_KL(p||q)",
+        "相对熵"
+      ],
+      [
+        "信息增益",
+        "相对熵"
+      ],
+      [
+        "相对熵",
+        "贝叶斯推理"
+      ],
+      [
+        "交叉熵",
+        "相对熵"
+      ]
+    ],
+    "count": 24,
+    "create_time": 1768973158,
+    "update_time": 1768973158,
+    "_id": "doc-0c9d3f43376e35055643ae46b0d5a233"
+  },
+  "doc-726d03cb1277ab1c0a32f929ee13c3fc": {
+    "relation_pairs": [
+      [
+        "KL散度",
+        "概率分布"
+      ],
+      [
+        "Wasserstein距离",
+        "概率分布"
+      ],
+      [
+        "比较学习",
+        "目标函数"
+      ],
+      [
+        "Bhattacharyya距离",
+        "概率分布"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768973190,
+    "update_time": 1768973190,
+    "_id": "doc-726d03cb1277ab1c0a32f929ee13c3fc"
+  },
+  "doc-d4b315e54e592e86c3a5acfef7099954": {
+    "relation_pairs": [
+      [
+        "均匀分布",
+        "最大熵原理"
+      ],
+      [
+        "最大熵原理",
+        "最大熵模型"
+      ],
+      [
+        "最大熵原理",
+        "熵"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768973199,
+    "update_time": 1768973199,
+    "_id": "doc-d4b315e54e592e86c3a5acfef7099954"
+  },
+  "doc-e4d6318364157e6228ebc39c8c646b45": {
+    "relation_pairs": [
+      [
+        "目标函数",
+        "网络熵"
+      ],
+      [
+        "模型",
+        "物种"
+      ],
+      [
+        "成本约束",
+        "模型"
+      ],
+      [
+        "模型",
+        "解"
+      ],
+      [
+        "拟合效果",
+        "模型"
+      ],
+      [
+        "模型",
+        "空间约束"
+      ],
+      [
+        "概率约束",
+        "模型"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1768973224,
+    "update_time": 1768973224,
+    "_id": "doc-e4d6318364157e6228ebc39c8c646b45"
+  },
+  "doc-f34ecacf5f99ee02bae6647b8bd65153": {
+    "relation_pairs": [
+      [
+        "最大熵模型",
+        "逻辑回归"
+      ],
+      [
+        "对数线性分类模型",
+        "逻辑回归"
+      ],
+      [
+        "对数线性分类模型",
+        "最大熵模型"
+      ],
+      [
+        "损失函数",
+        "最大熵模型"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768973250,
+    "update_time": 1768973250,
+    "_id": "doc-f34ecacf5f99ee02bae6647b8bd65153"
+  },
+  "doc-8985837bff3264915ed561ec4d80111b": {
+    "relation_pairs": [
+      [
+        "最大熵模型",
+        "特征函数"
+      ],
+      [
+        "最大熵模型",
+        "特征"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1768973264,
+    "update_time": 1768973264,
+    "_id": "doc-8985837bff3264915ed561ec4d80111b"
+  },
+  "doc-23713b5f1cb0ee19178382510009449e": {
+    "relation_pairs": [
+      [
+        "Softmax函数",
+        "连续值"
+      ],
+      [
+        "Softmax",
+        "概率分布"
+      ],
+      [
+        "最大熵模型",
+        "概率分布"
+      ],
+      [
+        "Softmax函数",
+        "类别"
+      ],
+      [
+        "Softmax",
+        "多分类问题"
+      ],
+      [
+        "Softmax",
+        "输出层"
+      ],
+      [
+        "文本分类",
+        "最大熵模型"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1768973292,
+    "update_time": 1768973292,
+    "_id": "doc-23713b5f1cb0ee19178382510009449e"
+  },
+  "doc-cc6067addf268ef66582cbf6b3b6c3c0": {
+    "relation_pairs": [
+      [
+        "Palfrey",
+        "数量选择模型"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "个体代谢率"
+      ],
+      [
+        "最大熵原理",
+        "最大熵原理马尔可夫问题"
+      ],
+      [
+        "Jakob Bernoulli",
+        "Probability Theory"
+      ],
+      [
+        "Jakob Bernoulli",
+        "Principle Of Insufficient Reason"
+      ],
+      [
+        "Claude Shannon",
+        "Information Entropy"
+      ],
+      [
+        "John Skilling",
+        "Maximum Entropy Principle"
+      ],
+      [
+        "生态学",
+        "非平衡热力学系统"
+      ],
+      [
+        "Information Theory",
+        "Maximum Entropy Principle"
+      ],
+      [
+        "拉格朗日乘子",
+        "最大熵原理马尔可夫问题"
+      ],
+      [
+        "Foley",
+        "统计均衡理论"
+      ],
+      [
+        "报价集",
+        "统计均衡理论"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "状态变量"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "种内空间聚集度"
+      ],
+      [
+        "参考文献[75]",
+        "复杂经济体"
+      ],
+      [
+        "不确定性",
+        "概率分布W"
+      ],
+      [
+        "生态结构函数",
+        "空间分布"
+      ],
+      [
+        "Foley",
+        "最大熵原理"
+      ],
+      [
+        "最大熵原理马尔可夫问题",
+        "观察到的信息Y和X"
+      ],
+      [
+        "外生变量",
+        "条件概率"
+      ],
+      [
+        "量子响应均衡",
+        "随机最优反应均衡"
+      ],
+      [
+        "熵",
+        "统计均衡理论"
+      ],
+      [
+        "广义的最大熵原理马尔可夫问题",
+        "最大熵原理"
+      ],
+      [
+        "MET E",
+        "广义的最大熵原理马尔可夫问题"
+      ],
+      [
+        "McKelvey",
+        "随机最优反应均衡"
+      ],
+      [
+        "MaxCal",
+        "模糊性"
+      ],
+      [
+        "DynaMETE",
+        "广义的最大熵原理马尔可夫问题"
+      ],
+      [
+        "Complexity Science",
+        "Information Theory"
+      ],
+      [
+        "等级组织",
+        "马尔可夫过程"
+      ],
+      [
+        "Scharfenaker",
+        "最大熵原理"
+      ],
+      [
+        "Edwin Thompson Jaynes",
+        "Information Entropy"
+      ],
+      [
+        "代谢比例定律",
+        "生态结构函数"
+      ],
+      [
+        "参考文献[16]",
+        "随机理论"
+      ],
+      [
+        "Logit均衡",
+        "随机最优反应均衡"
+      ],
+      [
+        "最大似然Logit模型",
+        "熵"
+      ],
+      [
+        "不确定性",
+        "广义方法"
+      ],
+      [
+        "Golan",
+        "最大熵原理"
+      ],
+      [
+        "金融市场",
+        "马尔可夫过程"
+      ],
+      [
+        "最大熵原理马尔可夫问题",
+        "联合熵"
+      ],
+      [
+        "条件概率",
+        "马尔可夫过程"
+      ],
+      [
+        "最大熵原理马尔可夫问题",
+        "过渡概率"
+      ],
+      [
+        "因果解释",
+        "过渡概率"
+      ],
+      [
+        "MaxCal",
+        "广义的最大熵原理马尔可夫问题"
+      ],
+      [
+        "Leontief Input-Output Model",
+        "Social Accounting Matrix"
+      ],
+      [
+        "Foley",
+        "报价集"
+      ],
+      [
+        "广义的最大熵原理马尔可夫问题",
+        "经典的最大熵原理"
+      ],
+      [
+        "最大熵原理",
+        "马尔科夫例子"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "状态方程"
+      ],
+      [
+        "Maximum Entropy Principle",
+        "Uniform Distribution"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "物种多样性"
+      ],
+      [
+        "误差结构",
+        "随机最优反应均衡"
+      ],
+      [
+        "反应函数",
+        "随机最优反应均衡"
+      ],
+      [
+        "最大熵原理",
+        "经济学"
+      ],
+      [
+        "Palfrey",
+        "随机最优反应均衡"
+      ],
+      [
+        "MaxCal",
+        "复杂数据"
+      ],
+      [
+        "Pierre-Simon Laplace",
+        "Statistical Inference"
+      ],
+      [
+        "Inference",
+        "Modeling"
+      ],
+      [
+        "Jaynes",
+        "统计力学"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "最大熵原理"
+      ],
+      [
+        "广义方法",
+        "模型复杂性"
+      ],
+      [
+        "McKelvey",
+        "数量选择模型"
+      ],
+      [
+        "参考文献[16]",
+        "复杂经济体"
+      ],
+      [
+        "广义方法",
+        "稳定状态"
+      ],
+      [
+        "MaxCal",
+        "不确定性"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "空间分布"
+      ],
+      [
+        "因果解释",
+        "连续外生变量"
+      ],
+      [
+        "物种的种群增长",
+        "马尔可夫过程"
+      ],
+      [
+        "市场",
+        "统计均衡理论"
+      ],
+      [
+        "Golan",
+        "主体生产"
+      ],
+      [
+        "最大熵原理",
+        "矩阵平衡问题"
+      ],
+      [
+        "Edwin Thompson Jaynes",
+        "Maximum Entropy Principle"
+      ],
+      [
+        "MaxCal",
+        "马尔科夫框架"
+      ],
+      [
+        "Pierre-Simon Laplace",
+        "Principle Of Insufficient Reason"
+      ],
+      [
+        "市场主体",
+        "报价集"
+      ],
+      [
+        "Golan",
+        "企业规模分布"
+      ],
+      [
+        "Foley",
+        "市场的统计均衡理论"
+      ],
+      [
+        "MaxCal",
+        "路径"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "生态结构函数"
+      ],
+      [
+        "信息论",
+        "博弈论"
+      ],
+      [
+        "METE (生态学最大熵原理)",
+        "物种丰度"
+      ],
+      [
+        "MaxCal",
+        "外部因素"
+      ],
+      [
+        "参考文献[75]",
+        "随机理论"
+      ],
+      [
+        "Maximum Entropy Principle",
+        "Shannon Entropy"
+      ],
+      [
+        "最大熵原理马尔可夫问题",
+        "香农熵"
+      ],
+      [
+        "因果解释",
+        "离散外生变量"
+      ]
+    ],
+    "count": 85,
+    "create_time": 1768973487,
+    "update_time": 1768973487,
+    "_id": "doc-cc6067addf268ef66582cbf6b3b6c3c0"
+  },
+  "doc-39fe5cddbd852d7e5e0202a65cc33f68": {
+    "relation_pairs": [
+      [
+        "归纳偏差",
+        "热力学信息神经网络"
+      ],
+      [
+        "热力学信息神经网络",
+        "黑盒子网络"
+      ],
+      [
+        "热力学信息神经网络",
+        "热力学第二定律"
+      ],
+      [
+        "热力学信息神经网络",
+        "热力学第一定律"
+      ],
+      [
+        "Metriplectic演化",
+        "归纳偏差"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768973510,
+    "update_time": 1768973510,
+    "_id": "doc-39fe5cddbd852d7e5e0202a65cc33f68"
+  },
+  "doc-aedc5bd9c6d5647339e7b59deea0f006": {
+    "relation_pairs": [
+      [
+        "热力学",
+        "热力学第二定律"
+      ]
+    ],
+    "count": 1,
+    "create_time": 1768973521,
+    "update_time": 1768973521,
+    "_id": "doc-aedc5bd9c6d5647339e7b59deea0f006"
+  },
+  "doc-3d4f48678a6a9741d580dce26948f201": {
+    "relation_pairs": [
+      [
+        "自由能",
+        "自由能框架"
+      ],
+      [
+        "智能的第一性原理",
+        "结构化组织方式"
+      ],
+      [
+        "大脑",
+        "贝叶斯定理"
+      ],
+      [
+        "突触可塑性",
+        "赫布学习定律"
+      ],
+      [
+        "DNA双螺旋结构",
+        "中心法则"
+      ],
+      [
+        "认知科学",
+        "贝叶斯大脑"
+      ],
+      [
+        "神经元网络",
+        "突触"
+      ],
+      [
+        "人类智能",
+        "碳基大脑"
+      ],
+      [
+        "人类智能",
+        "机器智能"
+      ],
+      [
+        "aisixiang.com",
+        "爱思想"
+      ],
+      [
+        "李德毅",
+        "物理同源"
+      ],
+      [
+        "人脑",
+        "反问题"
+      ],
+      [
+        "计算机器与智能",
+        "阿兰·图灵"
+      ],
+      [
+        "现代神经网络",
+        "连接主义"
+      ],
+      [
+        "控制论：或关于在动物和机器中控制和通讯的科学",
+        "诺伯特·维纳"
+      ],
+      [
+        "反熵增能力",
+        "生物演化"
+      ],
+      [
+        "人类智能",
+        "郭毅可"
+      ],
+      [
+        "后验",
+        "贝叶斯定理"
+      ],
+      [
+        "低层级感觉区",
+        "高层级皮层"
+      ],
+      [
+        "人类智能",
+        "递归式共进化"
+      ],
+      [
+        "自然",
+        "詹姆斯·沃森"
+      ],
+      [
+        "图灵测试",
+        "智能"
+      ],
+      [
+        "共同演化",
+        "递归式共进化"
+      ],
+      [
+        "熵",
+        "自由能原理"
+      ],
+      [
+        "热力学第二定律",
+        "熵"
+      ],
+      [
+        "论可计算数及其在判定问题上的应用",
+        "阿兰·图灵"
+      ],
+      [
+        "中心法则",
+        "蛋白质"
+      ],
+      [
+        "神经元网络",
+        "记忆"
+      ],
+      [
+        "好奇心",
+        "智能体"
+      ],
+      [
+        "智能机器",
+        "硅基材料"
+      ],
+      [
+        "溯因推理",
+        "贝叶斯定理"
+      ],
+      [
+        "贝叶斯定理",
+        "贝叶斯理论"
+      ],
+      [
+        "图灵测试",
+        "阿兰·图灵"
+      ],
+      [
+        "思想实验",
+        "意识"
+      ],
+      [
+        "信息论",
+        "智能"
+      ],
+      [
+        "图灵",
+        "现代神经网络"
+      ],
+      [
+        "信息论",
+        "克劳德·艾尔伍德·香农"
+      ],
+      [
+        "下一个词元预测",
+        "大语言模型"
+      ],
+      [
+        "硅基材料",
+        "算法"
+      ],
+      [
+        "学习",
+        "自由能原理"
+      ],
+      [
+        "现代神经网络",
+        "维纳"
+      ],
+      [
+        "图1",
+        "大语言模型"
+      ],
+      [
+        "生命",
+        "负熵"
+      ],
+      [
+        "图灵测试",
+        "大模型时代"
+      ],
+      [
+        "好奇心",
+        "探索"
+      ],
+      [
+        "电子元件",
+        "碳基神经元"
+      ],
+      [
+        "语言模型",
+        "贝叶斯定理"
+      ],
+      [
+        "探索",
+        "欣赏"
+      ],
+      [
+        "现代神经网络",
+        "赫布学习定律"
+      ],
+      [
+        "大脑",
+        "大语言模型"
+      ],
+      [
+        "人有人的用处：控制论与社会",
+        "诺伯特·维纳"
+      ],
+      [
+        "硅基智能体",
+        "碳基智能体"
+      ],
+      [
+        "数学同构",
+        "机器智能"
+      ],
+      [
+        "控制论",
+        "诺伯特·维纳"
+      ],
+      [
+        "归纳推理",
+        "贝叶斯定理"
+      ],
+      [
+        "机器智能",
+        "郭毅可"
+      ],
+      [
+        "智能的第一性原理",
+        "熵增"
+      ],
+      [
+        "埃尔温·薛定谔",
+        "生命是什么？"
+      ],
+      [
+        "图灵机",
+        "阿兰·图灵"
+      ],
+      [
+        "机器智能",
+        "递归式共进化"
+      ],
+      [
+        "人工智能驱动的术语国际传播：模式变革与实践路径",
+        "周智婉"
+      ],
+      [
+        "自由能原理",
+        "记忆"
+      ],
+      [
+        "机器智能",
+        "自由能原理"
+      ],
+      [
+        "记忆",
+        "赫布学习定律"
+      ],
+      [
+        "思想",
+        "文字"
+      ],
+      [
+        "感知数据",
+        "认知模型"
+      ],
+      [
+        "弗朗西斯·克里克",
+        "詹姆斯·沃森"
+      ],
+      [
+        "大脑",
+        "预测误差"
+      ],
+      [
+        "机器智能",
+        "硅基芯片"
+      ],
+      [
+        "利用",
+        "探索"
+      ],
+      [
+        "智能",
+        "预测误差"
+      ],
+      [
+        "人工智能驱动的术语国际传播：模式变革与实践路径",
+        "王辉"
+      ],
+      [
+        "假设生成",
+        "探索"
+      ],
+      [
+        "人类智能",
+        "贝叶斯大脑"
+      ],
+      [
+        "2025年世界人工智能大会",
+        "杰弗里·辛顿"
+      ],
+      [
+        "中心法则",
+        "弗朗西斯·克里克"
+      ],
+      [
+        "人类智能",
+        "数学同构"
+      ],
+      [
+        "物理同源、数学同构",
+        "贝叶斯大脑"
+      ],
+      [
+        "图灵测试",
+        "语言能力"
+      ],
+      [
+        "控制论",
+        "智能"
+      ],
+      [
+        "埃尔温·薛定谔",
+        "负熵"
+      ],
+      [
+        "人脑",
+        "莱尔·华特森"
+      ],
+      [
+        "机器智能",
+        "连接主义"
+      ],
+      [
+        "人类智能",
+        "物理同源"
+      ],
+      [
+        "细胞",
+        "蛋白质"
+      ],
+      [
+        "神经元",
+        "赫布学习定律"
+      ],
+      [
+        "主动推断",
+        "智能体"
+      ],
+      [
+        "自由能原理",
+        "贝叶斯定理"
+      ],
+      [
+        "大语言模型",
+        "训练语料"
+      ],
+      [
+        "生命",
+        "自由能原理"
+      ],
+      [
+        "主动推断",
+        "自由能框架"
+      ],
+      [
+        "智能",
+        "神经元"
+      ],
+      [
+        "埃尔温·薛定谔",
+        "非周期性晶体"
+      ],
+      [
+        "熵增",
+        "自由能原理"
+      ],
+      [
+        "大脑",
+        "突触"
+      ],
+      [
+        "ixiang.com/data/170628.html",
+        "爱思想"
+      ],
+      [
+        "前额叶",
+        "高层级皮层"
+      ],
+      [
+        "SuperAdmin",
+        "爱思想"
+      ],
+      [
+        "唐纳德·赫布",
+        "赫布学习定律"
+      ],
+      [
+        "人类智能",
+        "杰弗里·辛顿"
+      ],
+      [
+        "思想实验",
+        "杰弗里·辛顿"
+      ],
+      [
+        "人类",
+        "智能机器"
+      ],
+      [
+        "信息",
+        "熵增"
+      ],
+      [
+        "机器学习",
+        "梯度下降"
+      ],
+      [
+        "数学同构",
+        "李德毅"
+      ],
+      [
+        "主动推断",
+        "智能"
+      ],
+      [
+        "人工智能驱动的术语国际传播：模式变革与实践路径",
+        "杨涛"
+      ],
+      [
+        "大脑",
+        "自由能原理"
+      ],
+      [
+        "碳基神经元",
+        "神经元"
+      ],
+      [
+        "似然",
+        "贝叶斯定理"
+      ],
+      [
+        "人类",
+        "反熵增能力"
+      ],
+      [
+        "DNA双螺旋结构",
+        "生命"
+      ],
+      [
+        "智能机制",
+        "算法"
+      ],
+      [
+        "贝叶斯大脑",
+        "贝叶斯定理"
+      ],
+      [
+        "卡尔·弗里斯顿",
+        "自由能原理"
+      ],
+      [
+        "自由能原理",
+        "贝叶斯大脑"
+      ],
+      [
+        "人工智能看哲学",
+        "李德毅"
+      ],
+      [
+        "具身智能",
+        "自由能框架"
+      ],
+      [
+        "智能",
+        "自由能原理"
+      ],
+      [
+        "自由能最小化",
+        "行动"
+      ],
+      [
+        "世界模型",
+        "自由能原理"
+      ],
+      [
+        "人机协同",
+        "共生共融"
+      ],
+      [
+        "弗朗西斯·克里克",
+        "自然"
+      ],
+      [
+        "行动",
+        "认知"
+      ],
+      [
+        "机器智能",
+        "物理同源"
+      ],
+      [
+        "低层级感觉区",
+        "视觉皮层"
+      ],
+      [
+        "DNA双螺旋结构",
+        "詹姆斯·沃森"
+      ],
+      [
+        "文字",
+        "语言"
+      ],
+      [
+        "反向传播",
+        "机器学习"
+      ],
+      [
+        "先验",
+        "贝叶斯定理"
+      ],
+      [
+        "思想实验",
+        "神经元"
+      ],
+      [
+        "利用",
+        "强化学习"
+      ],
+      [
+        "思想实验",
+        "电子元件"
+      ],
+      [
+        "反馈回路",
+        "机器学习"
+      ],
+      [
+        "新证据",
+        "旧模型"
+      ],
+      [
+        "熵",
+        "生命"
+      ],
+      [
+        "自由能最小化",
+        "认知"
+      ],
+      [
+        "人类",
+        "治理机制"
+      ],
+      [
+        "DNA双螺旋结构",
+        "弗朗西斯·克里克"
+      ]
+    ],
+    "count": 139,
+    "create_time": 1768973796,
+    "update_time": 1768973796,
+    "_id": "doc-3d4f48678a6a9741d580dce26948f201"
+  },
+  "doc-d0e494da55d171b3a3a8b96678397514": {
+    "relation_pairs": [
+      [
+        "杰弗里·辛顿",
+        "玻尔兹曼机"
+      ],
+      [
+        "Geoffrey Hinton",
+        "玻尔兹曼机"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1768973821,
+    "update_time": 1768973821,
+    "_id": "doc-d0e494da55d171b3a3a8b96678397514"
+  },
+  "doc-cc989a9fb47a8cd36db8fe7fb353106b": {
+    "relation_pairs": [
+      [
+        "dGbyG",
+        "图神经网络"
+      ],
+      [
+        "dGbyG",
+        "预测误差"
+      ],
+      [
+        "现有最优方法",
+        "预测误差"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768973834,
+    "update_time": 1768973834,
+    "_id": "doc-cc989a9fb47a8cd36db8fe7fb353106b"
+  },
+  "doc-76741d601c3b02adb5beb29cf0c31924": {
+    "relation_pairs": [
+      [
+        "克劳修斯",
+        "宏观热现象"
+      ],
+      [
+        "Hopfield网络",
+        "离散型反馈神经网络"
+      ],
+      [
+        "宏观热现象",
+        "热传递"
+      ],
+      [
+        "克劳修斯",
+        "熵"
+      ],
+      [
+        "Hopfield网络",
+        "递归神经网络"
+      ],
+      [
+        "Hopfield网络",
+        "John Hopfield"
+      ],
+      [
+        "做功",
+        "宏观热现象"
+      ],
+      [
+        "热力学",
+        "物理学"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1768973879,
+    "update_time": 1768973879,
+    "_id": "doc-76741d601c3b02adb5beb29cf0c31924"
+  },
+  "doc-6135ecccd835afdfdaba2f58578ed61e": {
+    "relation_pairs": [
+      [
+        "损失函数",
+        "神经网络"
+      ],
+      [
+        "分类问题",
+        "神经网络"
+      ],
+      [
+        "克劳修斯",
+        "熵"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768973901,
+    "update_time": 1768973901,
+    "_id": "doc-6135ecccd835afdfdaba2f58578ed61e"
+  },
+  "doc-ed0ca1ab77e5b700d5a4eb0d861cccb4": {
+    "relation_pairs": [
+      [
+        "熵",
+        "鲁道夫·克劳修斯"
+      ],
+      [
+        "大脑神经网络",
+        "熵"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1768973908,
+    "update_time": 1768973908,
+    "_id": "doc-ed0ca1ab77e5b700d5a4eb0d861cccb4"
+  },
+  "doc-1248b4cdb9c5b6a4f15c20d0991319ae": {
+    "relation_pairs": [
+      [
+        "热力学第二定律",
+        "熵"
+      ],
+      [
+        "克劳修斯",
+        "熵"
+      ],
+      [
+        "热力学系统",
+        "熵"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768973930,
+    "update_time": 1768973930,
+    "_id": "doc-1248b4cdb9c5b6a4f15c20d0991319ae"
+  },
+  "doc-31dfc0a8415a0647f471a1cab88d6e36": {
+    "relation_pairs": [
+      [
+        "熵",
+        "鲁道夫·克劳修斯"
+      ],
+      [
+        "熵",
+        "统计物理"
+      ],
+      [
+        "热力学",
+        "熵"
+      ],
+      [
+        "信息论",
+        "熵"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768973951,
+    "update_time": 1768973951,
+    "_id": "doc-31dfc0a8415a0647f471a1cab88d6e36"
+  },
+  "doc-74f709ca5bbf7d60213a39cdce19a507": {
+    "relation_pairs": [
+      [
+        "公式S=k*lnW",
+        "玻尔兹曼"
+      ],
+      [
+        "公式S=k*lnW",
+        "熵"
+      ],
+      [
+        "公式S=k*lnW",
+        "玻尔兹曼常数"
+      ],
+      [
+        "公式S=k*lnW",
+        "微观状态数"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768973974,
+    "update_time": 1768973974,
+    "_id": "doc-74f709ca5bbf7d60213a39cdce19a507"
+  },
+  "doc-a27259397f49437041a5c155ca0adfa1": {
+    "relation_pairs": [
+      [
+        "P(S)~e -Nr(S)",
+        "r(S)"
+      ],
+      [
+        "P(S)~e -Nr(S)",
+        "大偏差原理"
+      ],
+      [
+        "传统玻尔兹曼测度",
+        "自由熵"
+      ],
+      [
+        "大偏差原理",
+        "自由熵"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768973996,
+    "update_time": 1768973996,
+    "_id": "doc-a27259397f49437041a5c155ca0adfa1"
+  },
+  "doc-2a2578aca1988c90b1a9c10b69b57cda": {
+    "relation_pairs": [
+      [
+        "quadratic_cost",
+        "y"
+      ],
+      [
+        "X",
+        "mbatch_backprop"
+      ],
+      [
+        "X",
+        "quadratic_cost"
+      ],
+      [
+        "mbatch_backprop",
+        "y"
+      ],
+      [
+        "delta_w",
+        "mbatch_backprop"
+      ],
+      [
+        "MSE",
+        "quadratic_cost"
+      ],
+      [
+        "mbatch_backprop",
+        "samples"
+      ],
+      [
+        "delta_b",
+        "mbatch_backprop"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1768974032,
+    "update_time": 1768974032,
+    "_id": "doc-2a2578aca1988c90b1a9c10b69b57cda"
+  },
+  "doc-3e9c56763968dc5abd8ddc1332aa273c": {
+    "relation_pairs": [
+      [
+        "Ragwitz准则",
+        "离散模式"
+      ],
+      [
+        "DTE算法",
+        "符号化过程"
+      ],
+      [
+        "Zhang",
+        "离散传递熵"
+      ],
+      [
+        "DTE算法",
+        "离散传递熵"
+      ],
+      [
+        "DTE算法",
+        "序列符号化过程"
+      ],
+      [
+        "Dispersion Transfer Entropy",
+        "Parameter Selection"
+      ],
+      [
+        "DTE算法",
+        "Ragwitz准则"
+      ],
+      [
+        "2020",
+        "Zhang"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1768974064,
+    "update_time": 1768974064,
+    "_id": "doc-3e9c56763968dc5abd8ddc1332aa273c"
+  },
+  "doc-82dd7e184547eda32bd10d04c1cae982": {
+    "relation_pairs": [
+      [
+        "Information Theory",
+        "Shannon"
+      ],
+      [
+        "Simon Haykin",
+        "The Book"
+      ],
+      [
+        "Information Theory",
+        "Unsupervised Learning"
+      ],
+      [
+        "Chapter 10",
+        "The Book"
+      ],
+      [
+        "Neural Networks",
+        "Simon Haykin"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768974087,
+    "update_time": 1768974087,
+    "_id": "doc-82dd7e184547eda32bd10d04c1cae982"
+  },
+  "doc-0662825c74f8b5ee226b4f32d6eae491": {
+    "relation_pairs": [
+      [
+        "动态神经网络",
+        "深度自适应神经网络"
+      ],
+      [
+        "样本x",
+        "熵"
+      ],
+      [
+        "信息熵",
+        "熵"
+      ],
+      [
+        "信息熵",
+        "香农"
+      ],
+      [
+        "熵",
+        "预测不确定性"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768974122,
+    "update_time": 1768974122,
+    "_id": "doc-0662825c74f8b5ee226b4f32d6eae491"
+  },
+  "doc-f10f1d00e42dd5c9205033fe49f4f520": {
+    "relation_pairs": [
+      [
+        "同一视角组",
+        "多视图"
+      ],
+      [
+        "多视图",
+        "网络参数"
+      ],
+      [
+        "步骤",
+        "网络训练过程"
+      ],
+      [
+        "图像数据集ImageNet",
+        "预训练"
+      ],
+      [
+        "网络训练过程",
+        "预训练"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768974144,
+    "update_time": 1768974144,
+    "_id": "doc-f10f1d00e42dd5c9205033fe49f4f520"
+  },
+  "doc-dc26f10df4bfd7aac2de935884b8ad3f": {
+    "relation_pairs": [
+      [
+        "排序",
+        "测试用例"
+      ],
+      [
+        "文本数据",
+        "本发明"
+      ],
+      [
+        "基尼不纯度",
+        "测试用例"
+      ],
+      [
+        "测试用例",
+        "衡量测试用例被错误分类可能性大小的函数"
+      ],
+      [
+        "本发明",
+        "衡量测试用例被错误分类可能性大小的函数"
+      ],
+      [
+        "本发明",
+        "香农熵"
+      ],
+      [
+        "测试用例",
+        "香农熵"
+      ],
+      [
+        "本发明",
+        "模型输出特征向量"
+      ],
+      [
+        "基尼不纯度",
+        "本发明"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1768974177,
+    "update_time": 1768974177,
+    "_id": "doc-dc26f10df4bfd7aac2de935884b8ad3f"
+  },
+  "doc-c236f82f4d1c6b66d541fbb6f8076051": {
+    "relation_pairs": [
+      [
+        "乘法模拟频率变换光学神经网络",
+        "麻省理工学院"
+      ],
+      [
+        "SCIENCE ADVANCES",
+        "麻省理工学院"
+      ],
+      [
+        "乘法模拟频率变换光学神经网络",
+        "香农极限"
+      ],
+      [
+        "MAFT-ONN",
+        "乘法模拟频率变换光学神经网络"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768974199,
+    "update_time": 1768974199,
+    "_id": "doc-c236f82f4d1c6b66d541fbb6f8076051"
+  },
+  "doc-8c2cb0873e78699bf2531a59b921954f": {
+    "relation_pairs": [
+      [
+        "舰船通信网络",
+        "节点"
+      ],
+      [
+        "数学模型",
+        "网络信道特性"
+      ],
+      [
+        "信道",
+        "泊松点过程"
+      ],
+      [
+        "泊松点过程",
+        "节点"
+      ],
+      [
+        "数学模型",
+        "舰船通信网络"
+      ],
+      [
+        "信号动态变化特性",
+        "数学模型"
+      ],
+      [
+        "坎贝尔定理",
+        "数学模型"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1768974254,
+    "update_time": 1768974254,
+    "_id": "doc-8c2cb0873e78699bf2531a59b921954f"
+  },
+  "doc-33949af9012de6222abbb5ee9e909273": {
+    "relation_pairs": [
+      [
+        "Entropy",
+        "信息熵"
+      ],
+      [
+        "磁场定向控制",
+        "磁場導向控制"
+      ],
+      [
+        "叶志钧",
+        "葉志鈞"
+      ],
+      [
+        "FOC",
+        "磁場導向控制"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768974285,
+    "update_time": 1768974285,
+    "_id": "doc-33949af9012de6222abbb5ee9e909273"
+  },
+  "doc-16faf1b1fda0ac11c029462efdf1a6f5": {
+    "relation_pairs": [
+      [
+        "编码",
+        "通信系统"
+      ],
+      [
+        "信息论",
+        "克劳德·艾尔伍德·香农"
+      ],
+      [
+        "信息论",
+        "自然语言处理"
+      ],
+      [
+        "模型预测分布",
+        "真实分布"
+      ],
+      [
+        "交叉熵",
+        "太阳从西边升起"
+      ],
+      [
+        "交叉熵",
+        "太阳从东边升起"
+      ],
+      [
+        "彩票",
+        "彩票机构员工"
+      ],
+      [
+        "克劳德·艾尔伍德·香农",
+        "密码学"
+      ],
+      [
+        "四川",
+        "女孩"
+      ],
+      [
+        "Alfred Noble协会美国工程师奖",
+        "克劳德·艾尔伍德·香农"
+      ],
+      [
+        "交叉熵",
+        "损失函数"
+      ],
+      [
+        "H(X)",
+        "交叉熵"
+      ],
+      [
+        "信息",
+        "信息论"
+      ],
+      [
+        "小北",
+        "彩票"
+      ],
+      [
+        "A Symbolic Analysis of Relay and Switching Circuits",
+        "Transactions of the American Institute of Electrical Engineers"
+      ],
+      [
+        "信息量",
+        "硬币"
+      ],
+      [
+        "地球",
+        "小北"
+      ],
+      [
+        "信息传递模型",
+        "信息论"
+      ],
+      [
+        "交叉熵",
+        "后验分布"
+      ],
+      [
+        "熵",
+        "高中"
+      ],
+      [
+        "交叉熵",
+        "通信模型"
+      ],
+      [
+        "信息量",
+        "四川"
+      ],
+      [
+        "小北",
+        "彩票中心主任"
+      ],
+      [
+        "信息量",
+        "小北"
+      ],
+      [
+        "分类任务",
+        "文本"
+      ],
+      [
+        "交叉熵",
+        "神经网络"
+      ],
+      [
+        "克劳德·艾尔伍德·香农",
+        "数字通信理论"
+      ],
+      [
+        "克劳德·艾尔伍德·香农",
+        "通信的一个数学理论"
+      ],
+      [
+        "太阳从西边升起",
+        "流浪地球"
+      ],
+      [
+        "交叉熵",
+        "先验分布"
+      ],
+      [
+        "交叉熵",
+        "小北"
+      ],
+      [
+        "信息论",
+        "神经网络"
+      ],
+      [
+        "交叉熵",
+        "震惊程度"
+      ],
+      [
+        "分类任务",
+        "社会"
+      ],
+      [
+        "信息量",
+        "概率"
+      ],
+      [
+        "分类任务",
+        "家庭"
+      ],
+      [
+        "信息论",
+        "机器学习"
+      ],
+      [
+        "信道",
+        "通信系统"
+      ],
+      [
+        "交叉熵",
+        "信息量"
+      ],
+      [
+        "小北",
+        "彩票系统"
+      ],
+      [
+        "信息传递模型",
+        "信道"
+      ],
+      [
+        "信息熵",
+        "信息论"
+      ],
+      [
+        "分类任务",
+        "政治"
+      ],
+      [
+        "信息传递模型",
+        "编码"
+      ],
+      [
+        "信息传递模型",
+        "信源"
+      ],
+      [
+        "交叉熵",
+        "概率分布"
+      ],
+      [
+        "女孩",
+        "男孩"
+      ],
+      [
+        "分类任务",
+        "历史"
+      ],
+      [
+        "JioNLP Article",
+        "神经网络"
+      ],
+      [
+        "信息量",
+        "太阳"
+      ],
+      [
+        "KL散度",
+        "相对熵"
+      ],
+      [
+        "分类任务",
+        "娱乐"
+      ],
+      [
+        "信息论",
+        "通信系统"
+      ],
+      [
+        "刘慈欣",
+        "流浪地球"
+      ],
+      [
+        "四川",
+        "男孩"
+      ],
+      [
+        "交叉熵",
+        "信息论"
+      ],
+      [
+        "JioNLP Article",
+        "交叉熵"
+      ],
+      [
+        "A Symbolic Analysis of Relay and Switching Circuits",
+        "克劳德·艾尔伍德·香农"
+      ],
+      [
+        "分类任务",
+        "神经网络"
+      ],
+      [
+        "信息熵",
+        "熵"
+      ],
+      [
+        "信息发送方",
+        "通信系统"
+      ],
+      [
+        "信息熵",
+        "随机变量"
+      ],
+      [
+        "分类任务",
+        "科技"
+      ],
+      [
+        "分类任务",
+        "类别"
+      ],
+      [
+        "分类任务",
+        "经济"
+      ],
+      [
+        "交叉熵",
+        "相对熵"
+      ],
+      [
+        "KL(p||q)",
+        "相对熵"
+      ],
+      [
+        "交叉熵",
+        "女孩"
+      ],
+      [
+        "信宿",
+        "信息传递模型"
+      ],
+      [
+        "信息接收方",
+        "通信系统"
+      ],
+      [
+        "二战",
+        "克劳德·艾尔伍德·香农"
+      ],
+      [
+        "神经网络",
+        "通信模型"
+      ]
+    ],
+    "count": 72,
+    "create_time": 1768974439,
+    "update_time": 1768974439,
+    "_id": "doc-16faf1b1fda0ac11c029462efdf1a6f5"
+  },
+  "doc-0da87cc9d247bbbc97d0642c59a0a3ce": {
+    "relation_pairs": [
+      [
+        "分布",
+        "字母"
+      ],
+      [
+        "出现概率",
+        "最佳编码长度"
+      ],
+      [
+        "字母",
+        "文本信息"
+      ],
+      [
+        "出现概率",
+        "字母"
+      ],
+      [
+        "平均编码长度",
+        "熵"
+      ],
+      [
+        "平均编码长度",
+        "最佳编码长度"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768974467,
+    "update_time": 1768974467,
+    "_id": "doc-0da87cc9d247bbbc97d0642c59a0a3ce"
+  },
+  "doc-c78284e4671aee8befd9c6871d1db529": {
+    "relation_pairs": [
+      [
+        "克劳德·香农",
+        "通信的数学理论"
+      ],
+      [
+        "卷积码",
+        "编码定理"
+      ],
+      [
+        "信道容量",
+        "克劳德·香农"
+      ],
+      [
+        "信息论",
+        "编码定理"
+      ],
+      [
+        "信道容量",
+        "通信的数学理论"
+      ],
+      [
+        "纠错码",
+        "编码定理"
+      ],
+      [
+        "汉明码",
+        "编码定理"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1768974495,
+    "update_time": 1768974495,
+    "_id": "doc-c78284e4671aee8befd9c6871d1db529"
+  },
+  "doc-5d34d389fc9a72d98bce995b723199a6": {
+    "relation_pairs": [
+      [
+        "数学观点",
+        "编码定理"
+      ],
+      [
+        "信道编码定理",
+        "最优编码"
+      ],
+      [
+        "信道编码定理",
+        "数学观点"
+      ],
+      [
+        "工程观点",
+        "编码定理"
+      ],
+      [
+        "最优编码",
+        "编码定理"
+      ],
+      [
+        "信道编码定理",
+        "工程观点"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768974518,
+    "update_time": 1768974518,
+    "_id": "doc-5d34d389fc9a72d98bce995b723199a6"
+  },
+  "doc-5b929f1d50e05258f54389ac4f58f0ae": {
+    "relation_pairs": [
+      [
+        "Full Resolution Image Compression With Recurrent Neural Networks",
+        "IEEE Conference on Computer Vision and Pattern Recognition"
+      ],
+      [
+        "2018 IEEE International Conference On Acoustics, Speech And Signal Processing (ICASSP)",
+        "Deep Learning For Joint Source-Channel Coding Of Text"
+      ],
+      [
+        "Full Resolution Image Compression With Recurrent Neural Networks",
+        "Toderici G"
+      ],
+      [
+        "2019 Data Compression Conference (DCC)",
+        "M To 1 Joint Source-Channel Coding Of Gaussian Sources Via Dichotomy Of The Input Space Based On Deep Learning"
+      ],
+      [
+        "Full Resolution Image Compression With Recurrent Neural Networks",
+        "Vincent D"
+      ],
+      [
+        "IEEE 20th International Workshop On Signal Processing Advances In Wireless Communications (SPAWC)",
+        "Successive Refinement Of Images With Deep Joint Source-Channel Coding"
+      ],
+      [
+        "Full Resolution Image Compression With Recurrent Neural Networks",
+        "Johnston N"
+      ],
+      [
+        "Deep Joint Source-Channel Coding For Wireless Image Retrieval",
+        "ICASSP 2020 IEEE International Conference On Acoustics, Speech And Signal Processing (ICASSP)"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1768974569,
+    "update_time": 1768974569,
+    "_id": "doc-5b929f1d50e05258f54389ac4f58f0ae"
+  },
+  "doc-29b81edcfc109c880298f79878843454": {
+    "relation_pairs": [
+      [
+        "并行计算结构",
+        "玻尔兹曼机"
+      ],
+      [
+        "人工神经网络",
+        "并行计算结构"
+      ],
+      [
+        "弱约束",
+        "强约束"
+      ],
+      [
+        "玻尔兹曼机",
+        "约束满足问题"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768974592,
+    "update_time": 1768974592,
+    "_id": "doc-29b81edcfc109c880298f79878843454"
+  },
+  "doc-74ac9b8a3a08c569f1c072b77c552920": {
+    "relation_pairs": [
+      [
+        "Energy-Based Model",
+        "Restricted Boltzmann Machines"
+      ],
+      [
+        "Feature Learning",
+        "Restricted Boltzmann Machines"
+      ],
+      [
+        "Data Modeling",
+        "Restricted Boltzmann Machines"
+      ],
+      [
+        "Restricted Boltzmann Machines",
+        "Unsupervised Learning"
+      ],
+      [
+        "Restricted Boltzmann Machines",
+        "Stochastic Neural Network"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768974619,
+    "update_time": 1768974619,
+    "_id": "doc-74ac9b8a3a08c569f1c072b77c552920"
+  },
+  "doc-93a18801c2737ad9536660fe9501c9d8": {
+    "relation_pairs": [
+      [
+        "受限玻尔兹曼机",
+        "深度玻尔兹曼机"
+      ],
+      [
+        "深度玻尔兹曼机",
+        "神经网络"
+      ],
+      [
+        "深度学习模型",
+        "深度玻尔兹曼机"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768974638,
+    "update_time": 1768974638,
+    "_id": "doc-93a18801c2737ad9536660fe9501c9d8"
+  },
+  "doc-b2aa136f0a91bbc88ed87eed07a66512": {
+    "relation_pairs": [
+      [
+        "玻尔兹曼机",
+        "隐藏单元"
+      ],
+      [
+        "循环神经网络",
+        "隐藏单元"
+      ],
+      [
+        "层内连接",
+        "隐藏单元"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1768974653,
+    "update_time": 1768974653,
+    "_id": "doc-b2aa136f0a91bbc88ed87eed07a66512"
+  },
+  "doc-673b334bee153545178b73f52b190891": {
+    "relation_pairs": [
+      [
+        "玻尔兹曼机",
+        "能量最小化思想"
+      ],
+      [
+        "Hopfield网络",
+        "能量最小化思想"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1768974667,
+    "update_time": 1768974667,
+    "_id": "doc-673b334bee153545178b73f52b190891"
+  },
+  "doc-52188c2297ba9ea322f462b96137a3c3": {
+    "relation_pairs": [
+      [
+        "HopField Network",
+        "Neuron"
+      ],
+      [
+        "HopField网络",
+        "离散型HopField网络"
+      ],
+      [
+        "HopField网络",
+        "能量函数"
+      ],
+      [
+        "能量函数",
+        "能量增量"
+      ],
+      [
+        "状态",
+        "神经元"
+      ],
+      [
+        "权重",
+        "神经元"
+      ],
+      [
+        "神经元",
+        "阈值"
+      ],
+      [
+        "HopField网络",
+        "权重矩阵"
+      ],
+      [
+        "HopField网络",
+        "神经元"
+      ],
+      [
+        "Discrete HopField Network",
+        "Sgn Function"
+      ],
+      [
+        "Neuron",
+        "Weight"
+      ],
+      [
+        "Neuron",
+        "Threshold"
+      ],
+      [
+        "Restricted Boltzmann Machine (Rbm)",
+        "Visible Unit"
+      ],
+      [
+        "Energy Function",
+        "HopField Network"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "可见单元"
+      ],
+      [
+        "Neuron",
+        "State"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "隐藏单元"
+      ],
+      [
+        "离散型HopField网络",
+        "符号函数"
+      ],
+      [
+        "HopField网络",
+        "递推式"
+      ],
+      [
+        "Discrete HopField Network",
+        "HopField Network"
+      ],
+      [
+        "Hidden Unit",
+        "Restricted Boltzmann Machine (Rbm)"
+      ]
+    ],
+    "count": 21,
+    "create_time": 1768974747,
+    "update_time": 1768974747,
+    "_id": "doc-52188c2297ba9ea322f462b96137a3c3"
+  },
+  "doc-e1dd53dde2d567ed67b1ff39a2e656e1": {
+    "relation_pairs": [
+      [
+        "Hidden Unit H",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "Gibbs Sampling",
+        "Markov Chain Monte Carlo (Mcmc)"
+      ],
+      [
+        "DNN",
+        "前向神经网络"
+      ],
+      [
+        "CNN",
+        "前向神经网络"
+      ],
+      [
+        "概率分布P(v,h)",
+        "能量函数"
+      ],
+      [
+        "深度学习",
+        "玻尔兹曼机"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "权重矩阵W"
+      ],
+      [
+        "对数损失函数",
+        "梯度计算"
+      ],
+      [
+        "G.",
+        "Restricted Boltzmann Machines For Collaborative Filtering"
+      ],
+      [
+        "Restricted Boltzmann Machine (Rbm)",
+        "Visible Unit V"
+      ],
+      [
+        "偏倚系数向量b",
+        "受限玻尔兹曼机"
+      ],
+      [
+        "RNN",
+        "反馈神经网络"
+      ],
+      [
+        "Probability Distribution",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "Contrastive Divergence",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "Gradient Descent",
+        "Probability Distribution"
+      ],
+      [
+        "Aaron Courville",
+        "Deep Learning"
+      ],
+      [
+        "反馈神经网络",
+        "深度学习"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "能量函数"
+      ],
+      [
+        "归一化系数Z",
+        "概率分布P(v,h)"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "深度玻尔兹曼机"
+      ],
+      [
+        "Gradient Formula",
+        "Parameter B"
+      ],
+      [
+        "LSTM",
+        "反馈神经网络"
+      ],
+      [
+        "Contrastive Divergence",
+        "Gibbs Sampling"
+      ],
+      [
+        "刘建平Pinard",
+        "深度学习"
+      ],
+      [
+        "Blog Post",
+        "刘建平Pinard"
+      ],
+      [
+        "Gradient Descent",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "Gradient Formula",
+        "Parameter W"
+      ],
+      [
+        "sigmoid激活函数",
+        "受限玻尔兹曼机"
+      ],
+      [
+        "Gradient Formula",
+        "Parameter A"
+      ],
+      [
+        "Collaborative Filtering",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "偏倚系数向量a",
+        "受限玻尔兹曼机"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "隐藏层"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "对数损失函数"
+      ],
+      [
+        "受限玻尔兹曼机",
+        "玻尔兹曼机"
+      ],
+      [
+        "Contrastive Divergence",
+        "Sample Gradient"
+      ],
+      [
+        "Deep Learning",
+        "Yoshua Bengio"
+      ],
+      [
+        "Gradient Formula",
+        "Restricted Boltzmann Machine (Rbm)"
+      ],
+      [
+        "Deep Learning",
+        "Ian Goodfellow"
+      ],
+      [
+        "A Practical Guide To Training Restricted Boltzmann Machines",
+        "G."
+      ],
+      [
+        "受限玻尔兹曼机",
+        "可见层"
+      ],
+      [
+        "前向神经网络",
+        "深度学习"
+      ]
+    ],
+    "count": 41,
+    "create_time": 1768974851,
+    "update_time": 1768974851,
+    "_id": "doc-e1dd53dde2d567ed67b1ff39a2e656e1"
+  },
+  "doc-9be983c468c91cc26e854198668abadf": {
+    "relation_pairs": [
+      [
+        "M2DNE",
+        "宏观动态"
+      ],
+      [
+        "宏观动态",
+        "时间网络"
+      ],
+      [
+        "M2DNE",
+        "微观动态"
+      ],
+      [
+        "微观动态",
+        "网络结构"
+      ],
+      [
+        "M2DNE",
+        "时间网络"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768974874,
+    "update_time": 1768974874,
+    "_id": "doc-9be983c468c91cc26e854198668abadf"
+  },
+  "doc-e0eade45db8d5fa19aa9c81c7da0ecef": {
+    "relation_pairs": [
+      [
+        "Neural Functional Connectivity Map",
+        "Neural Network Connections"
+      ],
+      [
+        "Neural Functional Connectivity Map",
+        "Organism"
+      ],
+      [
+        "Connectomics",
+        "Neural Network Connections"
+      ],
+      [
+        "Connectomics",
+        "Olaf Sporns"
+      ],
+      [
+        "Connectomics",
+        "Neural Functional Connectivity Map"
+      ],
+      [
+        "Indiana University",
+        "Olaf Sporns"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768974899,
+    "update_time": 1768974899,
+    "_id": "doc-e0eade45db8d5fa19aa9c81c7da0ecef"
+  },
+  "doc-c78a1678dd8dd1d890f89ffee94c2631": {
+    "relation_pairs": [
+      [
+        "神经元",
+        "连接网络"
+      ],
+      [
+        "神经元",
+        "神经回路"
+      ],
+      [
+        "大脑区域",
+        "神经科学家"
+      ],
+      [
+        "生物电讯号",
+        "神经元"
+      ],
+      [
+        "神经元",
+        "神经科学家"
+      ],
+      [
+        "人脑",
+        "神经元"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768974933,
+    "update_time": 1768974933,
+    "_id": "doc-c78a1678dd8dd1d890f89ffee94c2631"
+  },
+  "doc-3fa882df56ee354fb7b7e6d63cec74d9": {
+    "relation_pairs": [
+      [
+        "2022/07/28",
+        "树兰俊杰科学Talk第三十五期"
+      ],
+      [
+        "14:00-17:00",
+        "树兰俊杰科学Talk第三十五期"
+      ],
+      [
+        "临床磁共振仪",
+        "复杂弥散神经影像"
+      ],
+      [
+        "介观尺度",
+        "脑与神经科学"
+      ],
+      [
+        "微观尺度",
+        "脑与神经科学"
+      ],
+      [
+        "树兰俊杰科学Talk第三十五期",
+        "脑与神经科学"
+      ],
+      [
+        "涌现",
+        "连接"
+      ],
+      [
+        "临床磁共振仪",
+        "脑神经网络"
+      ],
+      [
+        "宏观尺度",
+        "脑与神经科学"
+      ],
+      [
+        "脑神经连结",
+        "脑网络造影技术"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1768974981,
+    "update_time": 1768974981,
+    "_id": "doc-3fa882df56ee354fb7b7e6d63cec74d9"
+  },
+  "doc-f922579134fc1d01217fc44031832b5f": {
+    "relation_pairs": [
+      [
+        "人工神经网络",
+        "映射关系"
+      ],
+      [
+        "单轴拉伸",
+        "宏观刚度预报能力"
+      ],
+      [
+        "宏观刚度",
+        "细观损伤"
+      ],
+      [
+        "张滔韬",
+        "杨玉新"
+      ],
+      [
+        "宏观刚度预报能力",
+        "纯剪切"
+      ],
+      [
+        "宏观刚度预报能力",
+        "等双轴拉伸"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768975020,
+    "update_time": 1768975020,
+    "_id": "doc-f922579134fc1d01217fc44031832b5f"
+  },
+  "doc-f35d76c7980a2da4b4bac2aba77d73e7": {
+    "relation_pairs": [
+      [
+        "生物医学工程高精尖创新中心",
+        "许燕"
+      ],
+      [
+        "Beihang University",
+        "Key Laboratory Of Biomechanics And Mechanobiology"
+      ],
+      [
+        "Convolutional Layer",
+        "Convolutional Neural Network"
+      ],
+      [
+        "定量分析",
+        "有丝分裂数目"
+      ],
+      [
+        "国家科学技术重大专项",
+        "深度学习在数字病理中的应用"
+      ],
+      [
+        "卷积",
+        "深度学习"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Weight Sharing"
+      ],
+      [
+        "池化",
+        "深度学习"
+      ],
+      [
+        "Backpropagation Algorithm",
+        "Rumelhart"
+      ],
+      [
+        "深度学习",
+        "组织分割"
+      ],
+      [
+        "定量分析",
+        "病理医生"
+      ],
+      [
+        "Pathological Diagnosis",
+        "Pathologist"
+      ],
+      [
+        "GPU",
+        "深度学习"
+      ],
+      [
+        "Activation Function",
+        "Convolutional Layer"
+      ],
+      [
+        "Average-Pooling",
+        "Pooling Layer"
+      ],
+      [
+        "Deep Learning in Digital Pathology",
+        "中国生物医学工程学报"
+      ],
+      [
+        "Pathological Analysis",
+        "Pathologist"
+      ],
+      [
+        "国家自然科学基金",
+        "深度学习在数字病理中的应用"
+      ],
+      [
+        "Research Institute Of Beihang University",
+        "Shenzhen"
+      ],
+      [
+        "AlexNet",
+        "Krizhevsky"
+      ],
+      [
+        "数字病理",
+        "病理切片"
+      ],
+      [
+        "AI Technology",
+        "Pathological Diagnosis"
+      ],
+      [
+        "人工智能技术",
+        "病理分析"
+      ],
+      [
+        "Beihang University",
+        "Beijing Advanced Innovation Center For Biomedical Engineering"
+      ],
+      [
+        "Department Of Pathology, School Of Medicine, Zhejiang University",
+        "Hangzhou"
+      ],
+      [
+        "最大池化层",
+        "深度神经网络"
+      ],
+      [
+        "Pathological Analysis",
+        "Prognosis"
+      ],
+      [
+        "人工智能",
+        "深度学习"
+      ],
+      [
+        "定量分析",
+        "病理切片"
+      ],
+      [
+        "Beijing",
+        "Beijing Advanced Innovation Center For Biomedical Engineering"
+      ],
+      [
+        "Pathological Analysis",
+        "Quantitative Analysis"
+      ],
+      [
+        "定性分析",
+        "定量分析"
+      ],
+      [
+        "深度学习",
+        "细胞检测"
+      ],
+      [
+        "Convolutional Layer",
+        "Feature Map"
+      ],
+      [
+        "北京航空航天大学",
+        "许燕"
+      ],
+      [
+        "Pathologist",
+        "Prognostic Assessment"
+      ],
+      [
+        "AI Technology",
+        "Deep Neural Network"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Fully Connected Layer"
+      ],
+      [
+        "ReLU Function",
+        "Vanishing Gradient Problem"
+      ],
+      [
+        "Beijing",
+        "Microsoft Research"
+      ],
+      [
+        "Digital Pathology Analysis",
+        "This Paper"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Pooling Layer"
+      ],
+      [
+        "Cancer",
+        "Pathology"
+      ],
+      [
+        "定量分析",
+        "肿瘤的实质与间质的比例"
+      ],
+      [
+        "Backpropagation Algorithm",
+        "Cost Function"
+      ],
+      [
+        "AlexNet",
+        "ImageNet"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Traditional Recognition Algorithm"
+      ],
+      [
+        "北京航空航天大学",
+        "汤烨"
+      ],
+      [
+        "Convolutional Layer",
+        "ReLU Function"
+      ],
+      [
+        "定量分析",
+        "黏液湖和癌细胞的比例"
+      ],
+      [
+        "深圳科创委",
+        "深度学习在数字病理中的应用"
+      ],
+      [
+        "Pathological Diagnosis",
+        "Pathological Slice"
+      ],
+      [
+        "传统机器学习算法",
+        "深度学习"
+      ],
+      [
+        "Dropout",
+        "深度学习"
+      ],
+      [
+        "AlexNet",
+        "深度神经网络"
+      ],
+      [
+        "111项目",
+        "深度学习在数字病理中的应用"
+      ],
+      [
+        "Artificial Intelligence",
+        "Qualitative Analysis"
+      ],
+      [
+        "病理切片",
+        "癌症诊断"
+      ],
+      [
+        "数字病理",
+        "深度学习"
+      ],
+      [
+        "Beihang University",
+        "State Key Laboratory Of Software Development Environment"
+      ],
+      [
+        "Cancer Classification And Grading",
+        "Deep Learning"
+      ],
+      [
+        "定量分析",
+        "深度学习"
+      ],
+      [
+        "Overfitting",
+        "Pooling Layer"
+      ],
+      [
+        "深度学习",
+        "癌症分类"
+      ],
+      [
+        "来茂德",
+        "浙江大学医学院"
+      ],
+      [
+        "Key Laboratory Of Biomechanics And Mechanobiology",
+        "Ministry Of Education"
+      ],
+      [
+        "深度学习",
+        "癌症分级"
+      ],
+      [
+        "卷积神经网络",
+        "深度学习"
+      ],
+      [
+        "Artificial Intelligence",
+        "Whole Slide Pathology"
+      ],
+      [
+        "Zisserman",
+        "深度神经网络"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Local Receptive Field"
+      ],
+      [
+        "Deep Learning",
+        "This Paper"
+      ],
+      [
+        "北京市自然科学基金",
+        "深度学习在数字病理中的应用"
+      ],
+      [
+        "Deep Learning",
+        "Digital Pathology"
+      ],
+      [
+        "张益肇",
+        "微软亚洲研究院"
+      ],
+      [
+        "AlexNet",
+        "Deep Neural Network"
+      ],
+      [
+        "ReLU函数",
+        "深度学习"
+      ],
+      [
+        "北京航空航天大学",
+        "闫雯"
+      ],
+      [
+        "Max-Pooling",
+        "Pooling Layer"
+      ],
+      [
+        "Deep Neural Network",
+        "Image Classification"
+      ],
+      [
+        "全片数字化图像",
+        "数字病理"
+      ],
+      [
+        "深度学习在数字病理中的应用",
+        "软件开发环境国家重点实验室"
+      ],
+      [
+        "Convolutional Layer",
+        "Weight Sharing"
+      ],
+      [
+        "Cell And Tissue Detection And Segmentation",
+        "Deep Learning"
+      ],
+      [
+        "Convolutional Neural Network",
+        "Cost Function"
+      ]
+    ],
+    "count": 85,
+    "create_time": 1768975199,
+    "update_time": 1768975199,
+    "_id": "doc-f35d76c7980a2da4b4bac2aba77d73e7"
+  },
+  "doc-ce6ef636e7f1aba9c1d2e5f6ef438c33": {
+    "relation_pairs": [
+      [
+        "图2",
+        "水分子"
+      ],
+      [
+        "图2",
+        "微观堆积结构"
+      ],
+      [
+        "微观堆积结构",
+        "物理化学性质"
+      ],
+      [
+        "氧",
+        "水分子"
+      ],
+      [
+        "氢",
+        "水分子"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768975215,
+    "update_time": 1768975215,
+    "_id": "doc-ce6ef636e7f1aba9c1d2e5f6ef438c33"
+  },
+  "doc-7f7cfd0cd4e85028a17edf6e5da1190c": {
+    "relation_pairs": [
+      [
+        "Nature",
+        "The Logic Of Single-Cell Projections From Visual Cortex"
+      ],
+      [
+        "Allen Mouse Brain Common Coordinate Framework",
+        "Ding S L"
+      ],
+      [
+        "Hippocampal Contribution To Ordinal Psychological Time In The Human Brain",
+        "Journal Of Cognitive Neuroscience"
+      ],
+      [
+        "High-Performance Brain-To-Text Communication Via Handwriting",
+        "Hochberg L R"
+      ],
+      [
+        "High-Performance Brain-To-Text Communication Via Handwriting",
+        "Willett F R"
+      ],
+      [
+        "Avansino D T",
+        "High-Performance Brain-To-Text Communication Via Handwriting"
+      ],
+      [
+        "Allen Mouse Brain Common Coordinate Framework",
+        "Li Y"
+      ],
+      [
+        "Campbell R A A",
+        "The Logic Of Single-Cell Projections From Visual Cortex"
+      ],
+      [
+        "Kebschull J M",
+        "The Logic Of Single-Cell Projections From Visual Cortex"
+      ],
+      [
+        "Allen Mouse Brain Common Coordinate Framework",
+        "Cell"
+      ],
+      [
+        "Hippocampal Contribution To Ordinal Psychological Time In The Human Brain",
+        "Prabhu P"
+      ],
+      [
+        "High-Performance Brain-To-Text Communication Via Handwriting",
+        "Nature"
+      ],
+      [
+        "Allen Mouse Brain Common Coordinate Framework",
+        "Wang Q X"
+      ],
+      [
+        "Gauthier B",
+        "Hippocampal Contribution To Ordinal Psychological Time In The Human Brain"
+      ],
+      [
+        "Hippocampal Contribution To Ordinal Psychological Time In The Human Brain",
+        "Kotegar K A"
+      ],
+      [
+        "Han Y Y",
+        "The Logic Of Single-Cell Projections From Visual Cortex"
+      ]
+    ],
+    "count": 16,
+    "create_time": 1768975285,
+    "update_time": 1768975285,
+    "_id": "doc-7f7cfd0cd4e85028a17edf6e5da1190c"
+  },
+  "doc-bc6cd88a44423ac7bc4a08969a8b99f8": {
+    "relation_pairs": [
+      [
+        "输入数据",
+        "输出层配分函数"
+      ],
+      [
+        "训练过程",
+        "配分函数"
+      ],
+      [
+        "网络",
+        "输出层配分函数"
+      ],
+      [
+        "输出层配分函数",
+        "配分函数"
+      ],
+      [
+        "一维伊辛模型",
+        "输入数据"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768975312,
+    "update_time": 1768975312,
+    "_id": "doc-bc6cd88a44423ac7bc4a08969a8b99f8"
+  },
+  "doc-7d7618b6fffb013ab6c5a2ca3a3fea50": {
+    "relation_pairs": [
+      [
+        "信息量",
+        "配分函数"
+      ],
+      [
+        "特征值",
+        "网络"
+      ],
+      [
+        "网络",
+        "配分函数"
+      ],
+      [
+        "图1",
+        "空手道俱乐部网络"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768975338,
+    "update_time": 1768975338,
+    "_id": "doc-7d7618b6fffb013ab6c5a2ca3a3fea50"
+  },
+  "doc-36562522576eae8192339d548d0a1406": {
+    "relation_pairs": [
+      [
+        "Batchsize",
+        "显存"
+      ],
+      [
+        "存储",
+        "计算开销"
+      ],
+      [
+        "Batchsize",
+        "神经网络"
+      ],
+      [
+        "计算开销",
+        "通信"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768975361,
+    "update_time": 1768975361,
+    "_id": "doc-36562522576eae8192339d548d0a1406"
+  },
+  "doc-5b96b65f16399f35c9b04de8b22d0796": {
+    "relation_pairs": [
+      [
+        "创新方法",
+        "动力配分函数"
+      ],
+      [
+        "Transformer",
+        "自回归生成模型"
+      ],
+      [
+        "PixelCNN",
+        "自回归生成模型"
+      ],
+      [
+        "创新方法",
+        "自回归生成模型"
+      ],
+      [
+        "创新方法",
+        "强化学习"
+      ],
+      [
+        "循环神经网络",
+        "自回归生成模型"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768975397,
+    "update_time": 1768975397,
+    "_id": "doc-5b96b65f16399f35c9b04de8b22d0796"
+  },
+  "doc-f5c5908d5644515cf8bcda82498e6671": {
+    "relation_pairs": [
+      [
+        "对数似然",
+        "配分函数"
+      ],
+      [
+        "无向模型",
+        "配分函数"
+      ],
+      [
+        "无向模型",
+        "最大似然学习"
+      ],
+      [
+        "∇θlogZ(θ)",
+        "对数似然"
+      ],
+      [
+        "∇θlog˜p(x;θ)",
+        "对数似然"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768975421,
+    "update_time": 1768975421,
+    "_id": "doc-f5c5908d5644515cf8bcda82498e6671"
+  },
+  "doc-882f6cc5b251194ec83bb3e0280e7611": {
+    "relation_pairs": [
+      [
+        "粒子群",
+        "统计物理学"
+      ],
+      [
+        "统计物理学",
+        "配分函数"
+      ],
+      [
+        "softmax",
+        "归一化常数"
+      ],
+      [
+        "对数-配分函数",
+        "配分函数"
+      ],
+      [
+        "NDArray",
+        "softmax"
+      ],
+      [
+        "归一化常数",
+        "配分函数"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768975458,
+    "update_time": 1768975458,
+    "_id": "doc-882f6cc5b251194ec83bb3e0280e7611"
+  },
+  "doc-f18946bdfdf43151c934dc17cbcb459e": {
+    "relation_pairs": [
+      [
+        "Rev. B",
+        "Wang L"
+      ],
+      [
+        "Liao H J",
+        "Rev. B"
+      ],
+      [
+        "Liang X",
+        "Rev. B"
+      ],
+      [
+        "Meurice Y",
+        "Rev. B"
+      ],
+      [
+        "Huang R Z",
+        "Rev. B"
+      ],
+      [
+        "Chen J",
+        "Rev. B"
+      ],
+      [
+        "Rev. B",
+        "Xie Z Y"
+      ],
+      [
+        "Dong S",
+        "Rev. B"
+      ],
+      [
+        "Rev. B",
+        "Yu J F"
+      ],
+      [
+        "Lin P Z",
+        "Rev. B"
+      ],
+      [
+        "Han Y J",
+        "Rev. B"
+      ],
+      [
+        "Liu J G",
+        "Rev. B"
+      ],
+      [
+        "Rev. B",
+        "Wang C"
+      ],
+      [
+        "Dong S J",
+        "Rev. B"
+      ],
+      [
+        "Liu W Y",
+        "Rev. B"
+      ]
+    ],
+    "count": 15,
+    "create_time": 1768975516,
+    "update_time": 1768975516,
+    "_id": "doc-f18946bdfdf43151c934dc17cbcb459e"
+  },
+  "doc-c83ff92607271cc36071ca55ac4a8385": {
+    "relation_pairs": [
+      [
+        "期望输出",
+        "概率分布"
+      ],
+      [
+        "交叉熵",
+        "实际输出"
+      ],
+      [
+        "实际输出",
+        "概率分布"
+      ],
+      [
+        "交叉熵",
+        "机器学习"
+      ],
+      [
+        "交叉熵",
+        "期望输出"
+      ],
+      [
+        "交叉熵",
+        "概率分布"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768975544,
+    "update_time": 1768975544,
+    "_id": "doc-c83ff92607271cc36071ca55ac4a8385"
+  },
+  "doc-c110f5c53d8d82646eee2498b51ba01a": {
+    "relation_pairs": [
+      [
+        "误差",
+        "输出端"
+      ],
+      [
+        "损失",
+        "误差"
+      ],
+      [
+        "模型预测",
+        "类别概率分布"
+      ],
+      [
+        "交叉熵",
+        "误差"
+      ],
+      [
+        "模型预测",
+        "误差"
+      ],
+      [
+        "类别概率分布",
+        "输入数据"
+      ],
+      [
+        "模型参数",
+        "神经网络训练"
+      ],
+      [
+        "误差",
+        "输入数据"
+      ],
+      [
+        "神经网络训练",
+        "输入数据"
+      ],
+      [
+        "误差",
+        "输入端"
+      ],
+      [
+        "交叉熵",
+        "交叉熵计算"
+      ]
+    ],
+    "count": 11,
+    "create_time": 1768975593,
+    "update_time": 1768975593,
+    "_id": "doc-c110f5c53d8d82646eee2498b51ba01a"
+  },
+  "doc-04c7bf4ab86cafa8d0bdc6180c0f4db5": {
+    "relation_pairs": [
+      [
+        "交叉熵损失函数",
+        "相对熵"
+      ],
+      [
+        "交叉熵损失函数",
+        "熵"
+      ],
+      [
+        "交叉熵损失函数",
+        "深度学习"
+      ],
+      [
+        "交叉熵损失函数",
+        "信息论"
+      ],
+      [
+        "交叉熵损失函数",
+        "人工智能"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1768975629,
+    "update_time": 1768975629,
+    "_id": "doc-04c7bf4ab86cafa8d0bdc6180c0f4db5"
+  },
+  "doc-2a3c466ac638775ff887f28337c2a65f": {
+    "relation_pairs": [
+      [
+        "Foundation Models",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "Huber损失",
+        "超参数δ"
+      ],
+      [
+        "L2损失",
+        "均方误差"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Machine Learning"
+      ],
+      [
+        "AI Applications",
+        "Language"
+      ],
+      [
+        "Generative AI",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "Huber损失",
+        "平均绝对误差"
+      ],
+      [
+        "Business Value",
+        "Key Workflows"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Workflow"
+      ],
+      [
+        "AI Applications",
+        "Time Series"
+      ],
+      [
+        "平均绝对误差",
+        "损失函数"
+      ],
+      [
+        "Business Value",
+        "Operations"
+      ],
+      [
+        "Experience",
+        "Key Workflows"
+      ],
+      [
+        "L1损失",
+        "平均绝对误差"
+      ],
+      [
+        "Key Workflows",
+        "Real-Time Decision-Making"
+      ],
+      [
+        "均方误差",
+        "梯度下降"
+      ],
+      [
+        "IBM",
+        "调查报告"
+      ],
+      [
+        "人工智能模型",
+        "损失函数"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "SDKs"
+      ],
+      [
+        "分类交叉熵损失",
+        "概率分布"
+      ],
+      [
+        "Experience",
+        "Operations"
+      ],
+      [
+        "均方误差",
+        "损失函数"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "Huber损失",
+        "均方误差"
+      ],
+      [
+        "IBM",
+        "Think时事通讯"
+      ],
+      [
+        "损失函数",
+        "铰链损失"
+      ],
+      [
+        "分类交叉熵损失",
+        "损失函数"
+      ],
+      [
+        "AI Applications",
+        "Operations"
+      ],
+      [
+        "Huber损失",
+        "平滑L1损失"
+      ],
+      [
+        "二次损失",
+        "均方误差"
+      ],
+      [
+        "Operations",
+        "Real-Time Decision-Making"
+      ],
+      [
+        "AI Development Lifecycle",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "AI Applications",
+        "Key Workflows"
+      ],
+      [
+        "AI Applications",
+        "Guardrail Options"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "User-Friendly Interface"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Powerful AI Solutions"
+      ],
+      [
+        "AI Applications",
+        "Code"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Industry-Standard APIs"
+      ],
+      [
+        "IBM",
+        "指南"
+      ],
+      [
+        "AI Plans",
+        "Survey"
+      ]
+    ],
+    "count": 40,
+    "create_time": 1768975720,
+    "update_time": 1768975720,
+    "_id": "doc-2a3c466ac638775ff887f28337c2a65f"
+  },
+  "doc-93b5920864ffe7c0f735f87ccf578d34": {
+    "relation_pairs": [
+      [
+        "信息增益",
+        "熵"
+      ],
+      [
+        "Ent(D)",
+        "熵"
+      ],
+      [
+        "18年期末",
+        "表格"
+      ],
+      [
+        "信息增益",
+        "信息增益决策树"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768975750,
+    "update_time": 1768975750,
+    "_id": "doc-93b5920864ffe7c0f735f87ccf578d34"
+  },
+  "doc-62fad8ab846c9df991d8fe50bdf2edf6": {
+    "relation_pairs": [
+      [
+        "熵",
+        "玻尔兹曼"
+      ],
+      [
+        "信息增益",
+        "决策树"
+      ],
+      [
+        "最大熵原理",
+        "熵"
+      ],
+      [
+        "信息增益",
+        "特征"
+      ],
+      [
+        "热力学第二定律",
+        "熵"
+      ],
+      [
+        "信息增益",
+        "公式"
+      ],
+      [
+        "熵",
+        "耗散结构"
+      ],
+      [
+        "公式S=k*lnW",
+        "玻尔兹曼"
+      ],
+      [
+        "生命是什么",
+        "薛定谔"
+      ],
+      [
+        "熵",
+        "薛定谔"
+      ],
+      [
+        "熵",
+        "香农"
+      ]
+    ],
+    "count": 11,
+    "create_time": 1768975800,
+    "update_time": 1768975800,
+    "_id": "doc-62fad8ab846c9df991d8fe50bdf2edf6"
+  },
+  "doc-a79596200294b5109fdd0cf885110f83": {
+    "relation_pairs": [
+      [
+        "决策树",
+        "分类"
+      ],
+      [
+        "决策树",
+        "回归"
+      ],
+      [
+        "信息增益",
+        "决策树"
+      ],
+      [
+        "决策树",
+        "基尼不纯度"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1768975822,
+    "update_time": 1768975822,
+    "_id": "doc-a79596200294b5109fdd0cf885110f83"
+  },
+  "doc-a4d1d3bf1c5551379c10b7d809d654b0": {
+    "relation_pairs": [
+      [
+        "最优特征A",
+        "最优特征值a"
+      ],
+      [
+        "CART",
+        "决策树"
+      ],
+      [
+        "CART算法",
+        "基尼系数"
+      ],
+      [
+        "CART算法",
+        "训练集D"
+      ],
+      [
+        "CCP剪枝法",
+        "完全树T_0"
+      ],
+      [
+        "ID3",
+        "决策树"
+      ],
+      [
+        "ID3",
+        "阈值"
+      ],
+      [
+        "决策树",
+        "特征选择"
+      ],
+      [
+        "数据集D1",
+        "最优特征A"
+      ],
+      [
+        "决策树",
+        "决策树的剪枝"
+      ],
+      [
+        "数据集D2",
+        "最优特征A"
+      ],
+      [
+        "信息增益",
+        "信息增益比"
+      ],
+      [
+        "剪枝",
+        "过拟合"
+      ],
+      [
+        "NP难问题",
+        "启发式方法"
+      ],
+      [
+        "CART",
+        "基尼系数"
+      ],
+      [
+        "决策树",
+        "异或"
+      ],
+      [
+        "信息增益",
+        "特征A_g"
+      ],
+      [
+        "ID3",
+        "信息增益"
+      ],
+      [
+        "决策树",
+        "神经网络"
+      ],
+      [
+        "叶结点t",
+        "树T"
+      ],
+      [
+        "NP难问题",
+        "决策树"
+      ],
+      [
+        "剪枝",
+        "剪枝系数"
+      ],
+      [
+        "信息增益",
+        "基尼系数"
+      ],
+      [
+        "ID3",
+        "训练集"
+      ],
+      [
+        "剪枝",
+        "损失函数"
+      ],
+      [
+        "叶结点",
+        "经验熵"
+      ],
+      [
+        "ID3",
+        "特征集"
+      ],
+      [
+        "信息增益",
+        "阈值ε"
+      ],
+      [
+        "特征A_g",
+        "特征值A_gi"
+      ],
+      [
+        "损失函数",
+        "经验熵"
+      ],
+      [
+        "决策树",
+        "决策树的生成"
+      ],
+      [
+        "决策树",
+        "集成学习"
+      ],
+      [
+        "CCP剪枝法",
+        "后剪枝"
+      ],
+      [
+        "CCP剪枝法",
+        "经验熵"
+      ],
+      [
+        "叶结点t",
+        "经验熵"
+      ],
+      [
+        "PEP剪枝法",
+        "后剪枝"
+      ],
+      [
+        "C4.5",
+        "决策树"
+      ],
+      [
+        "决策树",
+        "过拟合"
+      ],
+      [
+        "C4.5",
+        "信息增益比"
+      ],
+      [
+        "C4.5算法",
+        "PEP剪枝法"
+      ],
+      [
+        "CART算法",
+        "CCP剪枝法"
+      ]
+    ],
+    "count": 41,
+    "create_time": 1768975946,
+    "update_time": 1768975946,
+    "_id": "doc-a4d1d3bf1c5551379c10b7d809d654b0"
+  },
+  "doc-faa47dbbd25c1dde4b3c2e2c2052c496": {
+    "relation_pairs": [
+      [
+        "C4.5",
+        "增益比"
+      ],
+      [
+        "Foundation Models",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "IBM",
+        "IBM watsonx.ai"
+      ],
+      [
+        "决策树",
+        "纯净叶节点"
+      ],
+      [
+        "决策树",
+        "贪心搜索"
+      ],
+      [
+        "Generative AI",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "CART",
+        "Leo Breiman"
+      ],
+      [
+        "决策树",
+        "类标签"
+      ],
+      [
+        "AI Applications",
+        "Business Value"
+      ],
+      [
+        "IBM watsonx.ai",
+        "生成式AI"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Machine Learning Capabilities"
+      ],
+      [
+        "修剪",
+        "决策树"
+      ],
+      [
+        "AI Applications",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "决策树",
+        "数据碎片"
+      ],
+      [
+        "AI Applications",
+        "Experience"
+      ],
+      [
+        "C4.5",
+        "信息增益"
+      ],
+      [
+        "C4.5",
+        "ID3"
+      ],
+      [
+        "2,000 Organizations",
+        "Survey"
+      ],
+      [
+        "CART",
+        "基尼系数"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "SDKs"
+      ],
+      [
+        "交叉验证",
+        "决策树"
+      ],
+      [
+        "决策树",
+        "奥卡姆剃刀"
+      ],
+      [
+        "ID3",
+        "信息增益"
+      ],
+      [
+        "IBM",
+        "IBM Granite"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Workflows"
+      ],
+      [
+        "IBM",
+        "Think时事通讯"
+      ],
+      [
+        "决策树",
+        "机器学习"
+      ],
+      [
+        "Hunt算法",
+        "ID3"
+      ],
+      [
+        "C4.5",
+        "Ross Quinlan"
+      ],
+      [
+        "ID3",
+        "熵"
+      ],
+      [
+        "决策树",
+        "分而治之"
+      ],
+      [
+        "2024年AI实际应用",
+        "IBM"
+      ],
+      [
+        "AI Development Lifecycle",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "AI Applications",
+        "Key Workflows"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "User-Friendly Interface"
+      ],
+      [
+        "AI Applications",
+        "Real-Time Decision-Making"
+      ],
+      [
+        "IBM Watsonx.Ai",
+        "Industry-Standard APIs"
+      ],
+      [
+        "ID3",
+        "Ross Quinlan"
+      ],
+      [
+        "决策树",
+        "过拟合"
+      ],
+      [
+        "AI Solutions",
+        "IBM Watsonx.Ai"
+      ],
+      [
+        "AI Applications",
+        "Operations"
+      ]
+    ],
+    "count": 41,
+    "create_time": 1768976067,
+    "update_time": 1768976067,
+    "_id": "doc-faa47dbbd25c1dde4b3c2e2c2052c496"
+  },
+  "doc-074ae094f32d31b781b0e74bdeb88703": {
+    "relation_pairs": [
+      [
+        "Security Certificate",
+        "TrustAsia DV TLS RSA CA 2025"
+      ],
+      [
+        "Nov 12, 2025",
+        "Security Certificate"
+      ],
+      [
+        "ERR_CERT_DATE_INVALID",
+        "Security Certificate"
+      ],
+      [
+        "ERR_CERT_DATE_INVALID",
+        "Jan 13, 2026"
+      ],
+      [
+        "Security Certificate",
+        "www.showmeai.tech"
+      ],
+      [
+        "DOC_ID: chunk-d191d067",
+        "机器学习"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768976101,
+    "update_time": 1768976101,
+    "_id": "doc-074ae094f32d31b781b0e74bdeb88703"
+  },
+  "doc-c4744de0d06b9e7e6066f6751368db57": {
+    "relation_pairs": [
+      [
+        "Bayes公式",
+        "P(y)"
+      ],
+      [
+        "最大熵原则",
+        "熵"
+      ],
+      [
+        "h",
+        "贝叶斯最优分类器"
+      ],
+      [
+        "其他决策树",
+        "决策树"
+      ],
+      [
+        "先验分布",
+        "均匀分布"
+      ],
+      [
+        "机器学习",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "λi,j",
+        "代价函数"
+      ],
+      [
+        "Bayes公式",
+        "P(x|y)"
+      ],
+      [
+        "0.1.1代价函数",
+        "代价函数"
+      ],
+      [
+        "决策树",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "Bayes公式",
+        "判别式模型"
+      ],
+      [
+        "最小二乘法",
+        "生成式模型"
+      ],
+      [
+        "不确定性",
+        "熵"
+      ],
+      [
+        "Bayes分类",
+        "模型"
+      ],
+      [
+        "期望",
+        "骰子"
+      ],
+      [
+        "徐玥珠",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "lnL",
+        "朴素贝叶斯分类器"
+      ],
+      [
+        "概率分布",
+        "骰子"
+      ],
+      [
+        "Bayes公式",
+        "P(y|x)"
+      ],
+      [
+        "事件域",
+        "骰子"
+      ],
+      [
+        "Bayes公式",
+        "生成式模型"
+      ],
+      [
+        "P(c|x)",
+        "判别式模型"
+      ],
+      [
+        "ID3决策树",
+        "决策树"
+      ],
+      [
+        "朴素贝叶斯分类器",
+        "线性回归"
+      ],
+      [
+        "熵",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "似然函数Li",
+        "线性回归"
+      ],
+      [
+        "Bayes分类",
+        "代价函数"
+      ],
+      [
+        "Bayes分类",
+        "贝叶斯最优分类器"
+      ],
+      [
+        "似然函数",
+        "自然对数"
+      ],
+      [
+        "0.1 Bayes分类",
+        "Bayes分类"
+      ],
+      [
+        "Bayes公式",
+        "P(x, y)"
+      ],
+      [
+        "最大熵原理",
+        "熵"
+      ],
+      [
+        "噪音ϵi",
+        "线性回归"
+      ],
+      [
+        "特征选择",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "目录",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "C4.5决策树",
+        "决策树"
+      ],
+      [
+        "Bayes分类",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "P(c)",
+        "生成式模型"
+      ],
+      [
+        "2020年6月24日",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "先验分布",
+        "生成式模型"
+      ],
+      [
+        "张锦岳",
+        "第九讲： Bayes分类、熵、决策树、特征选择"
+      ],
+      [
+        "P(x|c)",
+        "生成式模型"
+      ],
+      [
+        "Bayes公式",
+        "Bayes分类"
+      ]
+    ],
+    "count": 43,
+    "create_time": 1768976217,
+    "update_time": 1768976217,
+    "_id": "doc-c4744de0d06b9e7e6066f6751368db57"
+  },
+  "doc-d6085544a08784bc3999c91c72c5594a": {
+    "relation_pairs": [
+      [
+        "多层神经网络",
+        "拟合能力"
+      ],
+      [
+        "分类问题",
+        "最大熵模型"
+      ],
+      [
+        "最大熵模型",
+        "深度学习算法"
+      ],
+      [
+        "多层神经网络",
+        "性能"
+      ],
+      [
+        "分类问题",
+        "深度学习算法"
+      ],
+      [
+        "多层神经网络",
+        "深度学习算法"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1768976257,
+    "update_time": 1768976257,
+    "_id": "doc-d6085544a08784bc3999c91c72c5594a"
+  }
+}

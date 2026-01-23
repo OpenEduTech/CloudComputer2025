@@ -1,0 +1,4 @@
+.python-version
+.venv/
+bge-large-zh-v1.5/
+lightrag_workdir/

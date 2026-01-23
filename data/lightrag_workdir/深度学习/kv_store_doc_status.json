@@ -1,0 +1,2067 @@
+{
+  "doc-cb5e07f0bad1ec285e66b4df8be69531": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cb5e07f0bad1ec285e66b4df8be69531"
+    ],
+    "content_summary": "[DOC_ID: chunk-424249e7]\n[领域: 计算机科学]\n深度学习模型可以识别复杂的图片、文本和声音等数据模式，从而生成准确的见解和预测。神经网络是深度学习的底层技术。它由分层结构中的互连节点或神经元组成。节点在协调的",
+    "content_length": 117,
+    "created_at": "2026-01-21T13:22:54.591874+00:00",
+    "updated_at": "2026-01-21T13:23:16.112530+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132254_5f7b79b7",
+    "metadata": {
+      "processing_start_time": 1769001774,
+      "processing_end_time": 1769001796
+    }
+  },
+  "doc-7fa0f1d079cce0d3f93ea8a1820caf82": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-c8c18ca634546204b03cd44a9bdee917",
+      "chunk-90d06b6fbc58cfba3d096615baf2b706"
+    ],
+    "content_summary": "[DOC_ID: chunk-8f20a124]\n[领域: 计算机科学]\n前两天，我读到 Michael Nielsen 的开源教材《神经网络与深度学习》（Neural Networks and Deep Learning），意外发现里面的解释非常好懂。下面，我就按照这本书，介绍什么是神经网络。. 既然思考的基础是神经元，如果能够\"人造神经元\"（artificial neuron），就能组成人工神经网络，模拟思考。上个世纪六十年代，提出了最早的\"人造神经元\"模型，叫做\"感知器\"（perceptr...",
+    "content_length": 2652,
+    "created_at": "2026-01-21T13:23:16.143893+00:00",
+    "updated_at": "2026-01-21T13:25:10.050715+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132316_0584650a",
+    "metadata": {
+      "processing_start_time": 1769001796,
+      "processing_end_time": 1769001910
+    }
+  },
+  "doc-6993ce492207f4f21e44d2611edc1e49": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-0a7f0ecd8f00998a373494f4a3fd9ab4",
+      "chunk-eb903a35c2a682651dd2704f765bb4c6"
+    ],
+    "content_summary": "[DOC_ID: chunk-65fe4226]\n[领域: 计算机科学]\n跳至主要内容 跳到 Ask Learn 聊天体验. 请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。. 下载 Microsoft Edge 有关 Internet Explorer 和 Microsoft Edge 的详细信息. #### 通过. Facebook x.com 共享 LinkedIn 电子邮件. 你当前正在访问 Microsoft Azure Global Edition 技术...",
+    "content_length": 2251,
+    "created_at": "2026-01-21T13:25:10.079028+00:00",
+    "updated_at": "2026-01-21T13:26:28.766470+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132510_d9883a83",
+    "metadata": {
+      "processing_start_time": 1769001910,
+      "processing_end_time": 1769001988
+    }
+  },
+  "doc-250e3986b4dd98f48693c0cff1f6d083": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-1e18404a1598e3f3a1e3304e3abfc2c0",
+      "chunk-d7b8dfbe2e2307428f725f64c9ea6c19"
+    ],
+    "content_summary": "[DOC_ID: chunk-2b6b9c22]\n[领域: 计算机科学]\n虽然人工智能 (AI)、机器学习 (ML)、深度学习和神经网络是相关技术，但这些术语经常被交替使用，这经常导致人们混淆它们之间的区别。这篇博客文章将澄清一些模糊之处。. ## AI 、机器学习、深度学习和神经网络之间有何关联？. 理解 AI、机器学习、深度学习和神经网络的最简单方法是将它们视为从大到小排序的一系列 AI 系统，且系统间为包含关系。. AI 是统领性系统。机器学习是 AI 的一个子集。深度学习是机器学习的一个...",
+    "content_length": 2085,
+    "created_at": "2026-01-21T13:26:28.802254+00:00",
+    "updated_at": "2026-01-21T13:27:47.443435+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132628_c3691fd7",
+    "metadata": {
+      "processing_start_time": 1769001988,
+      "processing_end_time": 1769002067
+    }
+  },
+  "doc-cb25bd59eb20459d90d689a472568aea": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cb25bd59eb20459d90d689a472568aea"
+    ],
+    "content_summary": "[DOC_ID: chunk-ab0b2d35]\n[领域: 计算机科学]\n如需详细了解人工智能和机器学习如何为您的业务提供帮助，请在此处详细了解 Google Cloud 的 AI 和机器学习产品及解决方案。. 新客户最高可获享 $300 赠金，用于试用 Vertex AI 和其他 Google Cloud 产品。. | | 不固定。简单的 AI 可在基础硬件上运行。 | 通常可在标准 CPU 上运行，但复杂模型更依赖计算能力。 | 由于需要进行大规模并行计算，通常依赖高性能计算资源，特别是 G...",
+    "content_length": 1129,
+    "created_at": "2026-01-21T13:27:47.483564+00:00",
+    "updated_at": "2026-01-21T13:29:14.956016+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132747_5230a3da",
+    "metadata": {
+      "processing_start_time": 1769002067,
+      "processing_end_time": 1769002154
+    }
+  },
+  "doc-9fcf6610f361d14578f6d58fe5b5ea26": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-9fcf6610f361d14578f6d58fe5b5ea26"
+    ],
+    "content_summary": "[DOC_ID: chunk-0b442e5f]\n[领域: 计算机科学]\n反向传播利用动态规划的思想来高效地计算梯度。动态规划是一种通过将问题分解为子问题并存储其结果以避免重复计算的技术。反向传播正是通过从输出层向输入层逐层计算误差，",
+    "content_length": 117,
+    "created_at": "2026-01-21T13:29:15.002621+00:00",
+    "updated_at": "2026-01-21T13:29:36.731644+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132915_60f9abd9",
+    "metadata": {
+      "processing_start_time": 1769002155,
+      "processing_end_time": 1769002176
+    }
+  },
+  "doc-09961ed14d51e2b7bb5974e42ff8dedd": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-75a5bc7ce82bf1f70e397344566d62eb",
+      "chunk-29234d7a518b3ee30e3ee9cbc39d7e68"
+    ],
+    "content_summary": "[DOC_ID: chunk-29e5074e]\n[领域: 计算机科学]\n其中\\(\\boldsymbol{W}^{(1)} \\in \\mathbb{R}^{h \\times d}\\)是隐藏层的权重参数。把中间变量\\(\\boldsymbol{z} \\in \\mathbb{R}^h\\)输入按元素运算的激活函数\\(\\phi\\)后，将得到向量长度为\\(h\\)的隐藏层变量. 隐藏层变量\\(\\boldsymbol{h}\\)也是一个中间变量。假设输出层参数只有权重\\(\\boldsymbol{W}^{(2)} ...",
+    "content_length": 2921,
+    "created_at": "2026-01-21T13:29:36.786465+00:00",
+    "updated_at": "2026-01-21T13:30:58.925100+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_132936_a916e7bd",
+    "metadata": {
+      "processing_start_time": 1769002176,
+      "processing_end_time": 1769002258
+    }
+  },
+  "doc-e3f063f3b413fbd20b9634ee1bc86c59": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-ecf37963c494ecfacb6a6432c237dd3b",
+      "chunk-a815fcba7c08869c15a406f42f940fb2"
+    ],
+    "content_summary": "[DOC_ID: chunk-38f599cc]\n[领域: 计算机科学]\n# 3-3 反向传播的深入理解. 反向传播（Back Propagation）是深度学习中的核心算法，几乎是所有神经网络训练学习的基础。对它的认知十分重要，但初学者往往会陷入两个极端：要么只浅显的明白是误差的传递，但对于为什么倒推及怎么计算不熟悉；要么陷入数学公式和细节，只会一个个例子却看不清全貌。能否既深刻理解，又好记不忘呢？. “哪怕是小小的蝴蝶扇动一下翅膀，也能造成千里之外的飓风”，这就是混沌理论中著名的蝴蝶效应（...",
+    "content_length": 3098,
+    "created_at": "2026-01-21T13:30:58.997229+00:00",
+    "updated_at": "2026-01-21T13:32:18.526207+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133058_e4d19a8e",
+    "metadata": {
+      "processing_start_time": 1769002259,
+      "processing_end_time": 1769002338
+    }
+  },
+  "doc-7844fb38c827827af06d614fe4afb4df": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7844fb38c827827af06d614fe4afb4df"
+    ],
+    "content_summary": "[DOC_ID: chunk-f89c5726]\n[领域: 计算机科学]\n如上图所示，反向传播的计算顺序是，将信号 E 乘以节点的局部导数 ∂ y ∂ x ，然后将结果传递给下一个节点。这里所说的局部导数是指正向传播中 y = f ( x ) 的导数，也就是 y",
+    "content_length": 131,
+    "created_at": "2026-01-21T13:32:18.587929+00:00",
+    "updated_at": "2026-01-21T13:32:40.316411+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133218_26611dc9",
+    "metadata": {
+      "processing_start_time": 1769002338,
+      "processing_end_time": 1769002360
+    }
+  },
+  "doc-10c76eb7b6589378a533aee8633d6ad4": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-072c6009a64360fcdc975b14582a2c8c",
+      "chunk-0e8d4ef62e491849bee6335c81b740ee"
+    ],
+    "content_summary": "[DOC_ID: chunk-652cb8bb]\n[领域: 计算机科学]\n反向传播是一种机器学习技术，对优化神经网络至关重要。它有助于使用梯度下降算法更新网络权重，这就是深度学习模型推动现代人工智能 (AI) “学习”的方式。. 这三个相互交织的流程（其一为用于跟踪不同输入中模型误差的损失函数，其二为反向传播该误差以了解网络的不同部分是如何导致该误差的，其三则是可相应调整模型权重的梯度下降算法）便是深度学习模型的“学习”方式。因此，从最基本的多层感知器到用于生成式 AI 的复杂深度神经网络架构，...",
+    "content_length": 1936,
+    "created_at": "2026-01-21T13:32:40.381847+00:00",
+    "updated_at": "2026-01-21T13:34:30.092153+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133240_8eeb289f",
+    "metadata": {
+      "processing_start_time": 1769002360,
+      "processing_end_time": 1769002470
+    }
+  },
+  "doc-a729e7ced2028bbfeb4754b6a72084b3": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-3a728b359622810cd77efd2985a7fcfd",
+      "chunk-22b82197e907c906b6de43d41ffe2efe"
+    ],
+    "content_summary": "[DOC_ID: chunk-96381a94]\n[领域: 计算机科学]\n前向传播、反向传播和计算图¶ Open the notebook in Colab Open the notebook in Colab Open the notebook in Colab Open the notebook in Colab Open the notebook in SageMaker Studio Lab. 我们已经学习了如何用小批量随机梯度下降训练模型。 然而当实现该算法时，我们只考虑了通过*前向传...",
+    "content_length": 2673,
+    "created_at": "2026-01-21T13:34:30.162225+00:00",
+    "updated_at": "2026-01-21T13:35:54.807364+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133430_c2af7c39",
+    "metadata": {
+      "processing_start_time": 1769002470,
+      "processing_end_time": 1769002554
+    }
+  },
+  "doc-92d9fc2fcb5c3187adc0d3da64c15ae8": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-a5ecc39f0afdf3e1ae562d6befd49d9a",
+      "chunk-95faa80d73b4394851b10e9cc65232d2",
+      "chunk-03ea8b90f698c0a32f89ceeecd701030"
+    ],
+    "content_summary": "[DOC_ID: chunk-75be8312]\n[领域: 计算机科学]\n最新推荐文章于 2025-12-17 10:46:47 发布. 于 2019-05-15 11:37:33 发布. CC 4.0 BY-SA版权. 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。. + - CASE 1（图示讲解，看不太懂没关系，看第二组图）. - CASE 2（具体计算举例，嫌麻烦的可直接看这个，强烈推荐！！！！！）. 如果去问一下了解BP算法的人...",
+    "content_length": 3726,
+    "created_at": "2026-01-21T13:35:54.909339+00:00",
+    "updated_at": "2026-01-21T13:37:48.363571+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133554_21ac236c",
+    "metadata": {
+      "processing_start_time": 1769002554,
+      "processing_end_time": 1769002668
+    }
+  },
+  "doc-b0c9962abc15c97c8cc9a40c8f13e070": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b0c9962abc15c97c8cc9a40c8f13e070"
+    ],
+    "content_summary": "[DOC_ID: chunk-615fc181]\n[领域: 计算机科学]\n更新隐含层的权重系数 92 for in range(len(self.hidden_layer.neurons)): 93 for in range(len(self.hidden_layer.neurons[h].weights)): 94 95 # ∂Eⱼ/∂wᵢ = ∂E/∂zⱼ * ∂zⱼ/∂wᵢ 96 self.hidden_layer.neurons[h].calculate_pd_total_net_inp...",
+    "content_length": 2762,
+    "created_at": "2026-01-21T13:37:48.469142+00:00",
+    "updated_at": "2026-01-21T13:38:40.552462+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133748_b1c0a7f4",
+    "metadata": {
+      "processing_start_time": 1769002668,
+      "processing_end_time": 1769002720
+    }
+  },
+  "doc-d22adf07bd762e4e32d9bceea2fa6218": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d22adf07bd762e4e32d9bceea2fa6218"
+    ],
+    "content_summary": "[DOC_ID: chunk-d4a5d2de]\n[领域: 计算机科学]\n... 深度学习，发现哪种方法适合您的具体应用，并探索您可能会遇到的一些挑战。 在本视频中探索卷积神经网络（也称为CNN或ConvNets）的基础。 您将学习3个",
+    "content_length": 118,
+    "created_at": "2026-01-21T13:38:40.653354+00:00",
+    "updated_at": "2026-01-21T13:38:55.338899+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133840_cc7f6570",
+    "metadata": {
+      "processing_start_time": 1769002720,
+      "processing_end_time": 1769002735
+    }
+  },
+  "doc-37f0a7ef7d63be3d8878c173058865c3": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-37f0a7ef7d63be3d8878c173058865c3"
+    ],
+    "content_summary": "[DOC_ID: chunk-637f05cd]\n[领域: 计算机科学]\n在前面的章节中，我们遇到过图像数据。 这种数据的每个样本都由一个二维像素网格组成， 每个像素可能是一个或者多个数值，取决于是黑白还是彩色图像。 到目前为止，我们处理这类结构丰富的数据的方式还不够有效。 我们仅仅通过将图像数据展平成一维向量而忽略了每个图像的空间结构信息，再将数据送入一个全连接的多层感知机中。 因为这些网络特征元素的顺序是不变的，因此最优的结果是利用先验知识，即利用相近像素之间的相互关联性，从图像数据中学习得...",
+    "content_length": 891,
+    "created_at": "2026-01-21T13:38:55.455648+00:00",
+    "updated_at": "2026-01-21T13:39:49.510256+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133855_a2579ca7",
+    "metadata": {
+      "processing_start_time": 1769002735,
+      "processing_end_time": 1769002789
+    }
+  },
+  "doc-4748f90dd65ccac3d7f0e4da7f935778": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-9654c79f59367cfc9f7483a23aec5794",
+      "chunk-61775650edeed94f49f7144412443478",
+      "chunk-8fdf6fb33dcdd2dacd4cd9bce21714bc",
+      "chunk-cb9ff55215bc8081de2f351af1fd25fe"
+    ],
+    "content_summary": "[DOC_ID: chunk-4896491a]\n[领域: 计算机科学]\n已于 2023-09-25 19:15:35 修改. CC 4.0 BY-SA版权. 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。. 于 2023-09-24 21:27:05 首次发布. ## 引言：. 卷积神经网络（Convolutional Neural Network，CNN）是一种在计算机视觉领域取得了巨大成功的深度学习模型。它们的设计灵感来自于生物学中...",
+    "content_length": 6086,
+    "created_at": "2026-01-21T13:39:49.631489+00:00",
+    "updated_at": "2026-01-21T13:42:39.967384+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_133949_fde82d75",
+    "metadata": {
+      "processing_start_time": 1769002789,
+      "processing_end_time": 1769002959
+    }
+  },
+  "doc-c79065b95e8586e85c1d4a6dfcdb5d37": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c79065b95e8586e85c1d4a6dfcdb5d37"
+    ],
+    "content_summary": "[DOC_ID: chunk-5198d991]\n[领域: 计算机科学]\n有两种具备不同架构的主要深度学习系统类型：卷积神经网络（CNN）和循环神经网络（RNN）。 CNN 架构. CNN 有三个层组：. 卷积层使用预配置的筛选条件从输入的数据中提取信息。",
+    "content_length": 128,
+    "created_at": "2026-01-21T13:42:40.122064+00:00",
+    "updated_at": "2026-01-21T13:43:01.579668+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134240_22439a0c",
+    "metadata": {
+      "processing_start_time": 1769002960,
+      "processing_end_time": 1769002981
+    }
+  },
+  "doc-c79b805e7da972f5a80b0f9eb1144d75": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c79b805e7da972f5a80b0f9eb1144d75"
+    ],
+    "content_summary": "[DOC_ID: chunk-3772c747]\n[领域: 计算机科学]\n卷积神经网络（Convolutional Neural Networks, CNN）是一类包含卷积计算且具有深度结构的前馈神经网络（Feedforward Neural Networks），是深度学习（deep learning）的代表",
+    "content_length": 155,
+    "created_at": "2026-01-21T13:43:01.729939+00:00",
+    "updated_at": "2026-01-21T13:43:34.956190+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134301_4d59462c",
+    "metadata": {
+      "processing_start_time": 1769002981,
+      "processing_end_time": 1769003014
+    }
+  },
+  "doc-225c135f952fba89e32fc67dcf80d0f5": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-225c135f952fba89e32fc67dcf80d0f5"
+    ],
+    "content_summary": "[DOC_ID: chunk-7913493a]\n[领域: 计算机科学]\n卷积神经网络（CNN 或ConvNet）是一种直接从数据中学习的深度学习网络架构。 CNN 特别适合在图像中寻找模式以识别对象、类和类别。它们也能很好地对音频、时间序列和信号",
+    "content_length": 124,
+    "created_at": "2026-01-21T13:43:35.098431+00:00",
+    "updated_at": "2026-01-21T13:44:06.272158+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134335_6adeb1ea",
+    "metadata": {
+      "processing_start_time": 1769003015,
+      "processing_end_time": 1769003046
+    }
+  },
+  "doc-2a3ed384e5cd9787590d994e1b861e3a": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-2d11b22a41860af6077284a29530e1e0",
+      "chunk-6ea76c6cb7ba7180cc09124704c29e42"
+    ],
+    "content_summary": "[DOC_ID: chunk-75298eae]\n[领域: 计算机科学]\n# 什么是卷积神经网络 (CNN)？. 卷积神经网络 (CNN) 是一类专为图像识别与目标检测设计的深度学习模型。通过卷积层、池化层与全连接层组合，CNN 能自动提取图像特征并完成分类任务。. IBM 在 Watson Studio 和 watsonx.ai 平台中提供卷积神经网络 (CNN) 架构支持，助力医疗影像诊断、自动驾驶感知和智能安防等应用实现高性能部署。. ## 卷积神经网络 (CNN) 如何工作？. 卷积层是...",
+    "content_length": 2377,
+    "created_at": "2026-01-21T13:44:06.454273+00:00",
+    "updated_at": "2026-01-21T13:46:47.290348+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134406_b2fd5c0a",
+    "metadata": {
+      "processing_start_time": 1769003046,
+      "processing_end_time": 1769003207
+    }
+  },
+  "doc-df57bc33c49fe522c66616c1a4be5336": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-df57bc33c49fe522c66616c1a4be5336"
+    ],
+    "content_summary": "[DOC_ID: chunk-ab08cdfb]\n[领域: 计算机科学]\n卷积神经网络（英语：convolutional neural network，缩写：CNN）是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。",
+    "content_length": 132,
+    "created_at": "2026-01-21T13:46:40.018702+00:00",
+    "updated_at": "2026-01-21T13:46:59.275968+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134640_3135860c",
+    "metadata": {
+      "processing_start_time": 1769003200,
+      "processing_end_time": 1769003219
+    }
+  },
+  "doc-8e1305a63a0b2c4b823467f52bfa4ab8": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-0424a179537a1b36c1d9bf13f9a5a922",
+      "chunk-0a618e37c4fa120a22ba1b02c9ff4878"
+    ],
+    "content_summary": "[DOC_ID: chunk-325cdbee]\n[领域: 计算机科学]\n# 3-4 卷积神经网络. 如果说神经网络是个黑盒子，吃进去数据，吐出来结果，那么不同神经网络的最大区别就是肚子里的网络结构。卷积神经网络有什么过人之处呢？我们首先来宏观的看一下它的网络结构。. 卷积神经网络英文为Convolutional Neural Network，简称CNN，模型结构如下图所示。. 左侧是输入层，可以是文字、语音、图像、视频等各种数字化信号。最右边是输出层，一般是分类的类别及其概率。比如我们要识别...",
+    "content_length": 2855,
+    "created_at": "2026-01-21T13:46:59.431346+00:00",
+    "updated_at": "2026-01-21T13:49:22.003903+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134659_a6d6d6a4",
+    "metadata": {
+      "processing_start_time": 1769003219,
+      "processing_end_time": 1769003362
+    }
+  },
+  "doc-e101b215c048456f8049a66e9ebd2c54": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e101b215c048456f8049a66e9ebd2c54"
+    ],
+    "content_summary": "[DOC_ID: chunk-5f7ffd16]\n[领域: 认知神经科学]\n自编码器（auto-encoder）是一类执行无监督学习任务的神经网络结构，它的目的是学习一组数据的重新表达，也就是编码。 在结构上，自编码器是包含若干隐藏层的深度前馈神经",
+    "content_length": 124,
+    "created_at": "2026-01-21T13:49:22.182604+00:00",
+    "updated_at": "2026-01-21T13:49:41.997993+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134922_74e1da21",
+    "metadata": {
+      "processing_start_time": 1769003362,
+      "processing_end_time": 1769003381
+    }
+  },
+  "doc-cc43c5c5bb53711c8b6a6ae6cdc8e9c8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cc43c5c5bb53711c8b6a6ae6cdc8e9c8"
+    ],
+    "content_summary": "[DOC_ID: chunk-b539fb0c]\n[领域: 认知神经科学]\n在深度学习中，经常使用卷积神经网络（CNN）或循环神经网络（RNN）对序列进行编码。 想象一下，有了注意力机制之后，我们将词元序列输入注意力池化中， 以便同一组",
+    "content_length": 118,
+    "created_at": "2026-01-21T13:49:42.166141+00:00",
+    "updated_at": "2026-01-21T13:50:22.641893+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_134942_036440a0",
+    "metadata": {
+      "processing_start_time": 1769003382,
+      "processing_end_time": 1769003422
+    }
+  },
+  "doc-0a82bdcf222bdb547252e178dfe4d622": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0a82bdcf222bdb547252e178dfe4d622"
+    ],
+    "content_summary": "[DOC_ID: chunk-61bda500]\n[领域: 认知神经科学]\n自动编码器(AutoEncoder)是神经网络的一种,一般来讲自动编码器包括两部分:编码器和解码器,编码器和解码器相互串联合作,实现数据的降维或特征学习,现在也广泛用于生成模型",
+    "content_length": 126,
+    "created_at": "2026-01-21T13:50:15.381503+00:00",
+    "updated_at": "2026-01-21T13:50:41.070262+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135015_9ef3604d",
+    "metadata": {
+      "processing_start_time": 1769003415,
+      "processing_end_time": 1769003441
+    }
+  },
+  "doc-0c8c61555719c99f2248173e3fd5ae4f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0c8c61555719c99f2248173e3fd5ae4f"
+    ],
+    "content_summary": "[DOC_ID: chunk-e56f03da]\n[领域: 认知神经科学]\n（1）自编码器是前馈神经网络的一种，最开始主要用于数据的降维以及特征的抽取，随着技术的不断发展，现在也被用于生成模型中，可用来生成图片等。 （2）前馈神经网络是有监督学习，",
+    "content_length": 124,
+    "created_at": "2026-01-21T13:50:41.250059+00:00",
+    "updated_at": "2026-01-21T13:50:50.303409+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135041_0f490d94",
+    "metadata": {
+      "processing_start_time": 1769003441,
+      "processing_end_time": 1769003450
+    }
+  },
+  "doc-261214465e9e66011cd2c39022b3dc6b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-261214465e9e66011cd2c39022b3dc6b"
+    ],
+    "content_summary": "[DOC_ID: chunk-5de23bbf]\n[领域: 认知神经科学]\n### 专家为您带来最新的 AI 趋势. 获取有关最重要且最有趣的 AI 新闻的精选洞察分析。订阅我们的每周 Think 时事通讯。请参阅 IBM 隐私声明。. ## 编码器-解码器架构. ## 编码器-解码器模型工作原理. ### 编码器. 想要从 AI 投资中获得更好的回报吗？了解如何通过帮助您最优秀的人才构建和提供创新的新解决方案，在关键领域扩展生成式人工智能来推动变革。. IBM Granite 是我们开放式、性...",
+    "content_length": 1489,
+    "created_at": "2026-01-21T13:50:50.470496+00:00",
+    "updated_at": "2026-01-21T13:52:16.604258+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135050_1314853e",
+    "metadata": {
+      "processing_start_time": 1769003450,
+      "processing_end_time": 1769003536
+    }
+  },
+  "doc-93860b80c6ea559ea9b38a8562c8df8c": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-93860b80c6ea559ea9b38a8562c8df8c"
+    ],
+    "content_summary": "[DOC_ID: chunk-3cac9f99]\n[领域: 认知神经科学]\n多层感知机（MLP） 是一种前馈神经网络，最早由Frank Rosenblatt 在1950 年代提出，并在1980 年代通过反向传播算法取得重大进展。MLP 由输入层、隐藏层和输出",
+    "content_length": 129,
+    "created_at": "2026-01-21T13:52:29.701186+00:00",
+    "updated_at": "2026-01-21T13:52:45.313291+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135229_ded6bbcb",
+    "metadata": {
+      "processing_start_time": 1769003549,
+      "processing_end_time": 1769003565
+    }
+  },
+  "doc-2bd963b40a794cdd2a7befd072b521f8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2bd963b40a794cdd2a7befd072b521f8"
+    ],
+    "content_summary": "[DOC_ID: chunk-9cdb6498]\n[领域: 认知神经科学]\n在本章中，我们将介绍你的第一个真正的深度网络。最简单的深度网络称为多层感知机， 它们由多层神经元组成，每一层都与下面一层（从中接收输入）和上面一层（反过来影响当前层的",
+    "content_length": 121,
+    "created_at": "2026-01-21T13:52:45.508266+00:00",
+    "updated_at": "2026-01-21T13:52:56.639355+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135245_08b4426f",
+    "metadata": {
+      "processing_start_time": 1769003565,
+      "processing_end_time": 1769003576
+    }
+  },
+  "doc-8bed972d3227719ebad6c051fae785c9": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-8bed972d3227719ebad6c051fae785c9"
+    ],
+    "content_summary": "[DOC_ID: chunk-2b8bd67d]\n[领域: 认知神经科学]\nplot(x, y, 'x','relu(x)', figsize =(5,2.5)). numpy(), 'x','relu(x)', figsize =(5,2.5)). numpy(), 'x','relu(x)', figsize =(5,2.5)). grad, 'x', 'grad of relu', figsize =(5,2.5)). grad, 'x', 'grad of relu', figsize ...",
+    "content_length": 1181,
+    "created_at": "2026-01-21T13:52:56.850960+00:00",
+    "updated_at": "2026-01-21T13:53:30.384958+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135256_003d240e",
+    "metadata": {
+      "processing_start_time": 1769003576,
+      "processing_end_time": 1769003610
+    }
+  },
+  "doc-80c468f42f64d269b4538a150a4f94cd": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-80c468f42f64d269b4538a150a4f94cd"
+    ],
+    "content_summary": "[DOC_ID: chunk-58e1affb]\n[领域: 认知神经科学]\n| 范式 * 监督学习 * 无监督学习 * 线上机器学习 * 元学习&action=edit&redlink=1 \"元学习 (计算机科学)（页面不存在）\")（英语：Meta-learning (computer science) \"en:Meta-learning (computer science)\")） * 半监督学习 * 自监督学习 * 强化学习 * 基于规则的机器学习（英语：Rule-based machine ...",
+    "content_length": 1391,
+    "created_at": "2026-01-21T13:53:30.571117+00:00",
+    "updated_at": "2026-01-21T13:54:37.060788+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135330_5c8ccfa7",
+    "metadata": {
+      "processing_start_time": 1769003610,
+      "processing_end_time": 1769003677
+    }
+  },
+  "doc-6d725020748a8a4cbf40cdbf97928919": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6d725020748a8a4cbf40cdbf97928919"
+    ],
+    "content_summary": "[DOC_ID: chunk-94824c1b]\n[领域: 认知神经科学]\n8.3 隐含层与多层感知机 · 区间内的问题可以选用 ·。MLP 相比于单层感知机的表达能力提升，关键就在于非线性激活函数的复合。理论上可以证明，任意一个 · 上的连续函数，都可以",
+    "content_length": 128,
+    "created_at": "2026-01-21T13:54:37.266962+00:00",
+    "updated_at": "2026-01-21T13:54:57.024403+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135437_8b64702d",
+    "metadata": {
+      "processing_start_time": 1769003677,
+      "processing_end_time": 1769003697
+    }
+  },
+  "doc-88c27f8b7b31c4aea51cfc3d8f79a013": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-88c27f8b7b31c4aea51cfc3d8f79a013"
+    ],
+    "content_summary": "[DOC_ID: chunk-b8a60b69]\n[领域: 认知神经科学]\n这项研究深入探讨了在深度学习中通过随机梯度下降（SGD）与损失函数地形（landscape） 相互作用而实现有效学习的机制。我们发现，在SGD导航损失函数地形时，它",
+    "content_length": 120,
+    "created_at": "2026-01-21T13:54:57.305697+00:00",
+    "updated_at": "2026-01-21T13:55:17.367333+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135457_af9bdc6d",
+    "metadata": {
+      "processing_start_time": 1769003697,
+      "processing_end_time": 1769003717
+    }
+  },
+  "doc-92f537cdcce6583c2c63c400d634feaf": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-92f537cdcce6583c2c63c400d634feaf"
+    ],
+    "content_summary": "[DOC_ID: chunk-22ad52c2]\n[领域: 认知神经科学]\n可以说，没有世界一流的计算神经科学，就不可能有世界一流的类脑智能技术创新。反过来，机器学习（包括深度学习）能引进新的方法来处理脑科学数据，新的思路来模拟脑功能。",
+    "content_length": 118,
+    "created_at": "2026-01-21T13:55:17.562249+00:00",
+    "updated_at": "2026-01-21T13:55:37.457613+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135517_a151c499",
+    "metadata": {
+      "processing_start_time": 1769003717,
+      "processing_end_time": 1769003737
+    }
+  },
+  "doc-9ed0526c7eff8b1a424224e53050b149": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-9ed0526c7eff8b1a424224e53050b149"
+    ],
+    "content_summary": "[DOC_ID: chunk-5aefad9f]\n[领域: 认知神经科学]\n第二步，请的深度学习的基础，我觉得掌握深度学习的基本知识很有必要，我推荐动手学 ... 如果要继续加深对计算认知和计算神经科学的理解：. 推荐Coursera上面的",
+    "content_length": 120,
+    "created_at": "2026-01-21T13:55:37.690462+00:00",
+    "updated_at": "2026-01-21T13:55:55.326333+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135537_baeaac77",
+    "metadata": {
+      "processing_start_time": 1769003737,
+      "processing_end_time": 1769003755
+    }
+  },
+  "doc-ceba1324d8578bf32520312053ae6580": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-6de93055a89fdb2a0b2d1eab2a75410c",
+      "chunk-c9ebca01c6cfa5bfc38e623dde85f68c",
+      "chunk-e7712ad4739a66b6cf3b8376df6a6837"
+    ],
+    "content_summary": "[DOC_ID: chunk-5fd284c9]\n[领域: 认知神经科学]\n#### 李澄宇 机器学习与神经科学. 十二岁的流浪汉Walter Pitts1,2,3 被一群黑帮匪徒追打，躲进了一个图书馆。打手们骂骂咧咧的找了一圈以后走了。Walter却没离开，他的注意力完全被一套三卷本的书吸引了：Alfred North Whitehead 与 Bertrand Russell 合著的 Principia Mathematica 。这是作者为纯数学提供逻辑基础的雄心勃勃的大部头著作，努力构建严谨...",
+    "content_length": 4024,
+    "created_at": "2026-01-21T13:55:55.532145+00:00",
+    "updated_at": "2026-01-21T13:58:15.879068+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135555_7c08d64a",
+    "metadata": {
+      "processing_start_time": 1769003755,
+      "processing_end_time": 1769003895
+    }
+  },
+  "doc-03a5749c6bb89c89b202fa903dbb847f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-03a5749c6bb89c89b202fa903dbb847f"
+    ],
+    "content_summary": "[DOC_ID: chunk-b321b1e4]\n[领域: 认知神经科学]\n9分钟带你了解神经网络&深度学习(Excel还原神经网络计算). 607 views ... 科學實證的「人生外掛」總整理，即學即用! / 科學驗證：運氣是想出來的",
+    "content_length": 120,
+    "created_at": "2026-01-21T13:58:16.106686+00:00",
+    "updated_at": "2026-01-21T13:58:50.804841+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135816_488a207a",
+    "metadata": {
+      "processing_start_time": 1769003896,
+      "processing_end_time": 1769003930
+    }
+  },
+  "doc-3954d1f048ce5cd91b5693da96becc81": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3954d1f048ce5cd91b5693da96becc81"
+    ],
+    "content_summary": "[DOC_ID: chunk-3ad2432e]\n[领域: 认知神经科学]\nby 焦李成 · 2019 · Cited by 3 — 类脑智能旨在模拟人脑神经元的运行机制、感知模式与认知机理,借助机器强大的信息. 整合、搜索、计算等能力,以软硬件联合的智能新形态构造接近人类水平的智能机器,是未来",
+    "content_length": 148,
+    "created_at": "2026-01-21T13:58:51.036307+00:00",
+    "updated_at": "2026-01-21T13:59:03.456277+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135851_058bb30d",
+    "metadata": {
+      "processing_start_time": 1769003931,
+      "processing_end_time": 1769003943
+    }
+  },
+  "doc-a0a9ca6f9242eabc77977a8fe45c5022": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a0a9ca6f9242eabc77977a8fe45c5022"
+    ],
+    "content_summary": "[DOC_ID: chunk-a3329ce0]\n[领域: 认知神经科学]\n#### 固定科研人员(按首字母拼音顺序）. #### 兼职科研人员. #### 行政管理. #### 博士后. #### （专任）工程师/助理研究员. #### 来访学者. #### 教育部重点实验室. #### 认知神经科学中心. #### 生物医学影像中心（张江国际脑影像中心）. #### 生物医学大数据中心(张江国际脑库)\"). #### 神经与智能工程中心. #### 全脑计算平台. #### 群体神经科学中心...",
+    "content_length": 576,
+    "created_at": "2026-01-21T13:59:03.680695+00:00",
+    "updated_at": "2026-01-21T14:00:05.652651+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_135903_961e888a",
+    "metadata": {
+      "processing_start_time": 1769003943,
+      "processing_end_time": 1769004005
+    }
+  },
+  "doc-99be6d80a8d1a4129da56c2930cc8b6d": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-99be6d80a8d1a4129da56c2930cc8b6d"
+    ],
+    "content_summary": "[DOC_ID: chunk-9f04a41b]\n[领域: 生物信息学]\nby 王天尧 · 2024 · Cited by 1 — 蛋白质结构预测通常指借助计算机计算模拟方法从氨基酸序列推断其三维空间结构. 而空间结构决定其生理功能，故结构预测问题尤为重要. 基于单纯物理学的预测仅能应对较短",
+    "content_length": 146,
+    "created_at": "2026-01-21T14:00:06.681031+00:00",
+    "updated_at": "2026-01-21T14:00:26.938725+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140006_2c0157a1",
+    "metadata": {
+      "processing_start_time": 1769004006,
+      "processing_end_time": 1769004026
+    }
+  },
+  "doc-c5eafae240ac5d07dadf7c4eb744e8eb": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c5eafae240ac5d07dadf7c4eb744e8eb"
+    ],
+    "content_summary": "[DOC_ID: chunk-bcc5aa82]\n[领域: 生物信息学]\n本文首先介绍了蛋. 白质结构预测的背景和重要性，然后详细阐述了机器学习和深度学习在蛋白质结构预测中的应用，包括常用的. 算法、模型架构以及优化策略。最后，本文展望了",
+    "content_length": 119,
+    "created_at": "2026-01-21T14:00:27.162488+00:00",
+    "updated_at": "2026-01-21T14:00:51.465907+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140027_b162cbe7",
+    "metadata": {
+      "processing_start_time": 1769004027,
+      "processing_end_time": 1769004051
+    }
+  },
+  "doc-62c73611ffdf6388dc832abdf23ad216": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-62c73611ffdf6388dc832abdf23ad216"
+    ],
+    "content_summary": "[DOC_ID: chunk-0a5a78a5]\n[领域: 生物信息学]\n... 深度学习的算法，因其预测准确而闻名于世来自FAIR 的ESMFold 是另一种基于深度学习的高精度方法，用于根据氨基酸序列预测蛋白质结构。ESMFold 以大型",
+    "content_length": 121,
+    "created_at": "2026-01-21T14:00:51.738606+00:00",
+    "updated_at": "2026-01-21T14:01:10.980086+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140051_765db9fc",
+    "metadata": {
+      "processing_start_time": 1769004051,
+      "processing_end_time": 1769004070
+    }
+  },
+  "doc-94655c02fc2c25c9a0fd0b9bf8d8dc6f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-94655c02fc2c25c9a0fd0b9bf8d8dc6f"
+    ],
+    "content_summary": "[DOC_ID: chunk-30a2aa14]\n[领域: 生物信息学]\nDeepMind 公司决定改进 AlphaFold 系统，但经过 6 个月尝试后却远远未达预期，不得不开始重新调整思路，首先进行人事变动。. 江珀带领年轻团队对 AlphaFold 最初版本进行了重新梳理，在此基础上展开全面调整和改进，对每个细节给予挖掘以期达到尽善尽美。比如，他们引入空间立体结构和进化理念、整合已有蛋白质结构的详细信息如原子半径和键角等、完善机器有效学习策略以利于从有限数据中提取最大信息，特别是抛弃传统算...",
+    "content_length": 1735,
+    "created_at": "2026-01-21T14:01:11.217146+00:00",
+    "updated_at": "2026-01-21T14:02:33.091074+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140111_a3fdb41a",
+    "metadata": {
+      "processing_start_time": 1769004071,
+      "processing_end_time": 1769004153
+    }
+  },
+  "doc-02f3c5dec4cb0c3b0004aa9d7c2bbffb": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-a4bf6e4cf6f9e616e1d6f994a99479a8",
+      "chunk-95ce0b0b365782f95d313a054721a437"
+    ],
+    "content_summary": "[DOC_ID: chunk-ef27d008]\n[领域: 生物信息学]\n| 首页 | 南开要闻 | 媒体南开 | 南开校史 | 光影南开 | 南开故事 | 南开大学报 | 视频 | 广播 | |. | | | | --- | | 您当前的位置 ： 南开大学 >> 南开要闻 | | | | --- | | 南开团队开发高精度蛋白质结构预测算法 | | 来源： 南开大学新闻网发稿时间：2025-06-06 17:43 | | **南开新闻网讯**（通讯员 倪文韬 王萁淇）5月23日，南开大学统计与...",
+    "content_length": 2385,
+    "created_at": "2026-01-21T14:02:33.350408+00:00",
+    "updated_at": "2026-01-21T14:04:11.555672+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140233_49d8f5a5",
+    "metadata": {
+      "processing_start_time": 1769004153,
+      "processing_end_time": 1769004251
+    }
+  },
+  "doc-d23247c8edaf8929e7855d9186007c46": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d23247c8edaf8929e7855d9186007c46"
+    ],
+    "content_summary": "[DOC_ID: chunk-64584f52]\n[领域: 生物信息学]\nPropelled by press releases from CASP and DeepMind,AlphaFold 2's success received wide media attention.As well as news pieces in the specialist science press, such as *Nature \"Nature (journal)\")*,*Science \"Science...",
+    "content_length": 1187,
+    "created_at": "2026-01-21T14:04:11.834017+00:00",
+    "updated_at": "2026-01-21T14:05:03.437607+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140411_ab47e250",
+    "metadata": {
+      "processing_start_time": 1769004251,
+      "processing_end_time": 1769004303
+    }
+  },
+  "doc-8ac6b800c024bfc59d45d5769abdcb86": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-8ac6b800c024bfc59d45d5769abdcb86"
+    ],
+    "content_summary": "[DOC_ID: chunk-62248d47]\n[领域: 生物信息学]\n通过深入分析，本文旨在阐述深度学习技术在增强基因组数据分析的准确性和处理能力方面的作用，并构建一个概念性框架，以指导畜禽基因组学研究策略的发展及其在具体场景下的",
+    "content_length": 117,
+    "created_at": "2026-01-21T14:05:03.718622+00:00",
+    "updated_at": "2026-01-21T14:05:17.293453+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140503_1e9444c2",
+    "metadata": {
+      "processing_start_time": 1769004303,
+      "processing_end_time": 1769004317
+    }
+  },
+  "doc-dcad4a5abb7347f0e6403bab97eb576b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-dcad4a5abb7347f0e6403bab97eb576b"
+    ],
+    "content_summary": "[DOC_ID: chunk-9ea06c7f]\n[领域: 生物信息学]\nMIT 6.874 是全球顶校麻省理工MIT 开设的生命科学与计算机科学的交叉专业课程。课程广泛地介绍了基因组学、生命科学领域中，机器学习/深度学习的基础知识和前沿挑战；并使用",
+    "content_length": 125,
+    "created_at": "2026-01-21T14:05:17.545942+00:00",
+    "updated_at": "2026-01-21T14:05:43.160573+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140517_8e2954ab",
+    "metadata": {
+      "processing_start_time": 1769004317,
+      "processing_end_time": 1769004343
+    }
+  },
+  "doc-41671c7e5bea6a9ae05e6b008b3a38f2": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-41671c7e5bea6a9ae05e6b008b3a38f2"
+    ],
+    "content_summary": "[DOC_ID: chunk-18295298]\n[领域: 生物信息学]\nDeep Learning in Life Sciences - Lecture 07 - Regulatory Genomics (Spring 2021) 6.874/6.802/20.390/20.490/HST.506 Spring 2021 Prof.",
+    "content_length": 168,
+    "created_at": "2026-01-21T14:05:43.412871+00:00",
+    "updated_at": "2026-01-21T14:06:17.330742+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140543_e2c0d6ac",
+    "metadata": {
+      "processing_start_time": 1769004343,
+      "processing_end_time": 1769004377
+    }
+  },
+  "doc-7d901977dd7e6d929821ca079c401c7e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7d901977dd7e6d929821ca079c401c7e"
+    ],
+    "content_summary": "[DOC_ID: chunk-f2d08722]\n[领域: 生物信息学]\nAlphaFold 构建的模型都依赖深度神经网络，这些经过训练的神经网络可以从基因序列中预测蛋白质的属性。DeepMind 的研究人员表示，神经网络预测的蛋白质属性主要有：（a）",
+    "content_length": 126,
+    "created_at": "2026-01-21T14:06:17.589455+00:00",
+    "updated_at": "2026-01-21T14:06:37.782178+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140617_70be2206",
+    "metadata": {
+      "processing_start_time": 1769004377,
+      "processing_end_time": 1769004397
+    }
+  },
+  "doc-13f6a612ad21f33701d7916a1d76aa3e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-13f6a612ad21f33701d7916a1d76aa3e"
+    ],
+    "content_summary": "[DOC_ID: chunk-b92f6a4b]\n[领域: 生物信息学]\nAlphaFold使用人工神经网络直接学习序列和结构之间的复杂关系，而传统的工具多依赖于物理模型或简单的机器学习。（二）多序列比对（MSA）。有些传统工具虽然也",
+    "content_length": 117,
+    "created_at": "2026-01-21T14:06:38.421896+00:00",
+    "updated_at": "2026-01-21T14:07:05.515391+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140638_35d22317",
+    "metadata": {
+      "processing_start_time": 1769004398,
+      "processing_end_time": 1769004425
+    }
+  },
+  "doc-5899806c994fc2f391826abc901a8669": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-5899806c994fc2f391826abc901a8669"
+    ],
+    "content_summary": "[DOC_ID: chunk-b76f90a7]\n[领域: 生物信息学]\n02 技术原理：AlphaFold的运作方式. AlphaFold的技术核心是将深度学习与生物信息学结合，通过分析大量蛋白质序列和结构数据，学习序列与结构之间的关系。",
+    "content_length": 120,
+    "created_at": "2026-01-21T14:07:05.814082+00:00",
+    "updated_at": "2026-01-21T14:07:23.126217+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140705_745db190",
+    "metadata": {
+      "processing_start_time": 1769004425,
+      "processing_end_time": 1769004443
+    }
+  },
+  "doc-3692370e0fbe26ddf6ddebef5657ecc2": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3692370e0fbe26ddf6ddebef5657ecc2"
+    ],
+    "content_summary": "[DOC_ID: chunk-d10a669b]\n[领域: 生物信息学]\nDeepMind 公司决定改进 AlphaFold 系统，但经过 6 个月尝试后却远远未达预期，不得不开始重新调整思路，首先进行人事变动。. 江珀带领年轻团队对 AlphaFold 最初版本进行了重新梳理，在此基础上展开全面调整和改进，对每个细节给予挖掘以期达到尽善尽美。比如，他们引入空间立体结构和进化理念、整合已有蛋白质结构的详细信息如原子半径和键角等、完善机器有效学习策略以利于从有限数据中提取最大信息，特别是抛弃传统算...",
+    "content_length": 1735,
+    "created_at": "2026-01-21T14:07:23.392123+00:00",
+    "updated_at": "2026-01-21T14:08:26.895969+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140723_218795cf",
+    "metadata": {
+      "processing_start_time": 1769004443,
+      "processing_end_time": 1769004506
+    }
+  },
+  "doc-82b403277dd4d1f793acce70ac7e2f82": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-82b403277dd4d1f793acce70ac7e2f82"
+    ],
+    "content_summary": "[DOC_ID: chunk-8e84417d]\n[领域: 生物信息学]\n谷歌DeepMind 训练了一个叫做AlphaDev 的强化学习智能体，用来寻找更好的排序程序。它从头开始发现了小型排序算法，这些算法的性能优于之前已知的人类基准，",
+    "content_length": 119,
+    "created_at": "2026-01-21T14:08:27.157780+00:00",
+    "updated_at": "2026-01-21T14:08:46.236163+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140827_3f645613",
+    "metadata": {
+      "processing_start_time": 1769004507,
+      "processing_end_time": 1769004526
+    }
+  },
+  "doc-b1d2ad62c7c26e8ff618cb6a7b89c7df": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b1d2ad62c7c26e8ff618cb6a7b89c7df"
+    ],
+    "content_summary": "[DOC_ID: chunk-eacde1ca]\n[领域: 生物信息学]\n要说谁是引领蛋白质设计的世界级大师，美国华盛顿大学的David Baker 教授可谓是当之无愧，作为该领域的顶级专家，Baker 在蛋白质方向发表研究论文700 余篇，引用量累计",
+    "content_length": 126,
+    "created_at": "2026-01-21T14:08:46.500183+00:00",
+    "updated_at": "2026-01-21T14:09:06.177415+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140846_fc2f5c3c",
+    "metadata": {
+      "processing_start_time": 1769004526,
+      "processing_end_time": 1769004546
+    }
+  },
+  "doc-224a7273b9442fd233a7ec61f799fa44": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-224a7273b9442fd233a7ec61f799fa44"
+    ],
+    "content_summary": "[DOC_ID: chunk-b1e21024]\n[领域: 生物信息学]\nNature, 2020, 577(7792): 706-710 多序列比对 预测距离分布和 二面角分布 结构优化 Chapter1 蛋白质结构预测 Alphafold2 的整体架构：在2020公布的信息 Picture taken from DeepMind slides in CASP14 8 主要特点： • End-to-end架构 • 1D与2D信息之间使用 了Attention • 3D Equivariant（...",
+    "content_length": 879,
+    "created_at": "2026-01-21T14:09:06.467275+00:00",
+    "updated_at": "2026-01-21T14:11:24.676480+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_140906_c82910dc",
+    "metadata": {
+      "processing_start_time": 1769004546,
+      "processing_end_time": 1769004684
+    }
+  },
+  "doc-cfa0a8834ed9c35960b3f0264cbc2d1d": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cfa0a8834ed9c35960b3f0264cbc2d1d"
+    ],
+    "content_summary": "[DOC_ID: chunk-720cb100]\n[领域: 生物信息学]\nIn order to better understand the current research status of protein structure prediction globally and scientifically promote the high-quality development of the protein structure prediction industry, this paper, ...",
+    "content_length": 459,
+    "created_at": "2026-01-21T14:11:25.016394+00:00",
+    "updated_at": "2026-01-21T14:11:55.816883+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141125_a51ff0ed",
+    "metadata": {
+      "processing_start_time": 1769004685,
+      "processing_end_time": 1769004715
+    }
+  },
+  "doc-201fcd200de194e722ae83a479174b8b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-201fcd200de194e722ae83a479174b8b"
+    ],
+    "content_summary": "[DOC_ID: chunk-36a1c9f8]\n[领域: 金融学]\ndeep-algotrading 是一个面向学习者的资源库，它涵盖了从简单的回归分析到复杂的时间序列预测技术，如LSTM（长短时记忆网络）以及利用金融数据的强化学习方法",
+    "content_length": 119,
+    "created_at": "2026-01-21T14:11:56.124532+00:00",
+    "updated_at": "2026-01-21T14:12:31.757719+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141156_da325aa0",
+    "metadata": {
+      "processing_start_time": 1769004716,
+      "processing_end_time": 1769004751
+    }
+  },
+  "doc-001d35968d5312a9b345486c646a5cf9": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-001d35968d5312a9b345486c646a5cf9"
+    ],
+    "content_summary": "[DOC_ID: chunk-8061036e]\n[领域: 金融学]\n市场参与者对算法交易有着普遍需求。本文从深度强化学习（Deep Reinforcement Learning, DRL）视角分析了算法交易的实现，包括策略输入输出、激励函数与",
+    "content_length": 122,
+    "created_at": "2026-01-21T14:12:32.462185+00:00",
+    "updated_at": "2026-01-21T14:12:52.384676+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141232_469e2493",
+    "metadata": {
+      "processing_start_time": 1769004752,
+      "processing_end_time": 1769004772
+    }
+  },
+  "doc-a21e1bb9888d36e0f2daf5ed5c43c4f3": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a21e1bb9888d36e0f2daf5ed5c43c4f3"
+    ],
+    "content_summary": "[DOC_ID: chunk-f71ed7c0]\n[领域: 金融学]\n3 B a c k -t e s t i n g r e s u l t s o f h i g h -f r e q u e n c y t r a d i n g s t r a t e g y b a s e d o nA N N p 交易次数 胜率 平均盈利 平均亏损 盈亏比 期望收益 0 . 4 B a c k -t e s t i n g r e s u l t s o f h i g h -f r e q u e...",
+    "content_length": 338,
+    "created_at": "2026-01-21T14:12:52.694625+00:00",
+    "updated_at": "2026-01-21T14:13:28.084964+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141252_475af73e",
+    "metadata": {
+      "processing_start_time": 1769004772,
+      "processing_end_time": 1769004808
+    }
+  },
+  "doc-4c95d5a15ed3f57bef9a360c159df34a": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-279be5ddf8d39d85d83b28cea5971411",
+      "chunk-82bdb1406dfe17a400fa95a5a4727859",
+      "chunk-2dc1c848682669d15114cbb84e3cd6b4",
+      "chunk-d9ecda3ea425b03f3129938c0ba44219"
+    ],
+    "content_summary": "[DOC_ID: chunk-0c337178]\n[领域: 金融学]\n首頁 » 深度學習（Deep Learning）在量化交易中的實踐. 深度學習作為人工智慧領域的顛覆性技術，正以前所未有的速度改變著各行各業，金融領域的量化交易也不例外。傳統的量化交易策略，主要依賴於技術指標、基本面分析或統計模型，這些方法在處理複雜、非線性的市場數據時往往力有未逮。然而，具備強大學習能力和模式識別特性的深度神經網路，為量化交易帶來了全新的視角與工具 。本文將深入探討深度學習在量化交易中的應用場景、模型選擇、所...",
+    "content_length": 4533,
+    "created_at": "2026-01-21T14:13:28.386765+00:00",
+    "updated_at": "2026-01-21T14:16:13.587092+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141328_78833380",
+    "metadata": {
+      "processing_start_time": 1769004808,
+      "processing_end_time": 1769004973
+    }
+  },
+  "doc-858e73004375c211a45ff338fb81b219": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-858e73004375c211a45ff338fb81b219"
+    ],
+    "content_summary": "[DOC_ID: chunk-99997519]\n[领域: 金融学]\n如今，借助先进的GPU 和深度学习技术，交易员能够在搭载 Kinetica 数据库和NVIDIA GPU 的单一高强度计算平台上执行数据探索、模型开发/评分和模型消耗等繁重",
+    "content_length": 121,
+    "created_at": "2026-01-21T14:16:14.047889+00:00",
+    "updated_at": "2026-01-21T14:16:46.334714+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141614_0b6328ce",
+    "metadata": {
+      "processing_start_time": 1769004974,
+      "processing_end_time": 1769005006
+    }
+  },
+  "doc-b7f8fbd8112b2a87e0edad2549687469": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-0ff265f7709913907a277247870f20cc",
+      "chunk-6bc1d4e50f0179dd98e01918a3be7977",
+      "chunk-7b1e8c21b7d64e83d4ee433e43a86a4b"
+    ],
+    "content_summary": "[DOC_ID: chunk-f12dfcfe]\n[领域: 金融学]\n量化交易里能否用到机器学习、深度学习？个人是做量化投资的，之前是做中低频的量化，近两年转到了做高频，也就是日内的T0。天外有天，人外有人，以下的观点是从个人的...-雪球. 发布于 2022-11-27 22:07来自雪球. 来源：雪球App，作者： 基股传声，（https://xueqiu.com/1248905760/236421068）. 天外有天，人外有人，以下的观点是**从个人的研发路径得到的结论**，有问题欢迎讨论...",
+    "content_length": 3325,
+    "created_at": "2026-01-21T14:16:46.733017+00:00",
+    "updated_at": "2026-01-21T14:19:53.685958+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141646_bd30378e",
+    "metadata": {
+      "processing_start_time": 1769005006,
+      "processing_end_time": 1769005193
+    }
+  },
+  "doc-ead8239d6c7d35f7d27952face0dd715": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ead8239d6c7d35f7d27952face0dd715"
+    ],
+    "content_summary": "[DOC_ID: chunk-1d1aaa31]\n[领域: 金融学]\n本发明提出了一种基于深度学习的风控建模方法，包括如下步骤：S1，通过云端数据库获取用户数据，将用户数据区分为结构化数据和非结构化数据，并将用户数据进行初步筛选；S2，",
+    "content_length": 118,
+    "created_at": "2026-01-21T14:19:54.028008+00:00",
+    "updated_at": "2026-01-21T14:20:19.747926+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_141954_c4e1747f",
+    "metadata": {
+      "processing_start_time": 1769005194,
+      "processing_end_time": 1769005219
+    }
+  },
+  "doc-6d22dc080f5fd339b89bf3f7732fc258": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6d22dc080f5fd339b89bf3f7732fc258"
+    ],
+    "content_summary": "[DOC_ID: chunk-9e5b3be3]\n[领域: 金融学]\n#### 模态框（Modal）标题. #### 模态框（Modal）标题. ISSN 2097-2326 (Online) ISSN 2096-9732 (Print) CN 10-1738/F. | | | | | --- | --- | | Deep Learning and Corporate Bond Credit Risk Fuwei JIANG, Bailin CHAI, Yihao LIN China Journ...",
+    "content_length": 305,
+    "created_at": "2026-01-21T14:20:20.119662+00:00",
+    "updated_at": "2026-01-21T14:20:55.699528+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142020_e4cea7b8",
+    "metadata": {
+      "processing_start_time": 1769005220,
+      "processing_end_time": 1769005255
+    }
+  },
+  "doc-fe2c7c19ec682c0e709a26a55e0b8005": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-fe2c7c19ec682c0e709a26a55e0b8005"
+    ],
+    "content_summary": "[DOC_ID: chunk-6fafc19e]\n[领域: 金融学]\n传统的疾病风险预测主要基于 Cox 比例风险回归模型（简称 Cox 模型）及逻辑回归模型。例如，[Wang et al. 脑卒中预测模型的评估考虑了校准度（calibration）及区分度（discrimination）。校准度是指预测结果和实际结果的一致度，用 Hosmer-Lemeshow（H-L）统计量评价；区分度采用 c 统计，即受试者工作特征曲线（receiver operating characteristic c...",
+    "content_length": 1819,
+    "created_at": "2026-01-21T14:20:56.150706+00:00",
+    "updated_at": "2026-01-21T14:23:15.351046+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142056_829fdd51",
+    "metadata": {
+      "processing_start_time": 1769005256,
+      "processing_end_time": 1769005395
+    }
+  },
+  "doc-2103a1c2471cc6226897b2080204b309": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2103a1c2471cc6226897b2080204b309"
+    ],
+    "content_summary": "[DOC_ID: chunk-6a44d421]\n[领域: 金融学]\n## 作者. ## 什么是模型风险管理？. 例如，金融机构依靠一系列模型来进行定价、估值以及检测和防止欺诈和洗钱，以及开展其他金融服务。模型的使用往往会带来风险，这使得模型风险管理 (MRM) 成为企业必须考虑的一项重要因素。. 通过 Think 时事通讯，了解有关 AI、自动化、数据等方面最重要且最有趣的行业趋势。请参阅 IBM 隐私声明。. 您的订阅将以英语提供。每份时事通讯都包含取消订阅链接。您可以在此管理您的订阅或取消...",
+    "content_length": 1655,
+    "created_at": "2026-01-21T14:23:16.215592+00:00",
+    "updated_at": "2026-01-21T14:25:41.731873+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142316_63242881",
+    "metadata": {
+      "processing_start_time": 1769005396,
+      "processing_end_time": 1769005541
+    }
+  },
+  "doc-dd790e22e66ff566c3fcba5e9ed475b3": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-dd790e22e66ff566c3fcba5e9ed475b3"
+    ],
+    "content_summary": "[DOC_ID: chunk-0ddba3b7]\n[领域: 金融学]\n訓練模型 與人類從經驗中學習的情況相若，機器學習演算法 會重複進行某項任務，每次都會略為調整其方法， 以期得出較佳結果。這個程序所需要巨大的運算能 力是一般桌面電腦無法應付的。有見及此，我們借 助金管局 「數碼化計劃」 下開發的內部數據科學實驗 室 （可視之為一台超級電腦） ，在數分鐘內就能完成 這項數據處理程序。 在訓練階段，機器學習演算法會從 「訓練組」 隨機抽 取觀察結果，並運用從輸入項得到的資訊構建一個 最能有效解釋輸...",
+    "content_length": 930,
+    "created_at": "2026-01-21T14:25:34.428189+00:00",
+    "updated_at": "2026-01-21T14:27:08.675081+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142534_1130fb73",
+    "metadata": {
+      "processing_start_time": 1769005534,
+      "processing_end_time": 1769005628
+    }
+  },
+  "doc-d5073dc88c604f20a0eefda8a24a1214": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d5073dc88c604f20a0eefda8a24a1214"
+    ],
+    "content_summary": "[DOC_ID: chunk-538751b1]\n[领域: 金融学]\n目前，金融行业对交易欺诈风险的侦测方式主要有两种：基于规. 则和基于机器学习算法。基于规则的方法是通过不断建立、更新. 基于交易行为特征的规则库，并在交易发生时，通过",
+    "content_length": 118,
+    "created_at": "2026-01-21T14:27:09.042931+00:00",
+    "updated_at": "2026-01-21T14:27:41.994714+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142709_a36f64f7",
+    "metadata": {
+      "processing_start_time": 1769005629,
+      "processing_end_time": 1769005661
+    }
+  },
+  "doc-a6a52780a97b8eca9204ad8ed2f86840": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a6a52780a97b8eca9204ad8ed2f86840"
+    ],
+    "content_summary": "[DOC_ID: chunk-97d34885]\n[领域: 金融学]\n本发明公开了一种基于深度学习的欺诈应用检测方法，包括步骤：1)获取移动广告数据，进行预处理；2)提取结构数据和样本数据；3)基于结构数据构建图并获取图嵌入特征，基于样本",
+    "content_length": 119,
+    "created_at": "2026-01-21T14:27:42.388139+00:00",
+    "updated_at": "2026-01-21T14:29:02.950979+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142742_1eae825b",
+    "metadata": {
+      "processing_start_time": 1769005662,
+      "processing_end_time": 1769005742
+    }
+  },
+  "doc-c00652dd3948d32546676fffc8064300": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c00652dd3948d32546676fffc8064300"
+    ],
+    "content_summary": "[DOC_ID: chunk-86f2ceb0]\n[领域: 金融学]\nAI Agent风控模型是一种基于深度学习的实时欺诈检测算法实现。它通过分析用户行为、交易模式和历史数据，识别潜在的欺诈行为，从而帮助企业保护其资产和信誉。这种模型可以",
+    "content_length": 119,
+    "created_at": "2026-01-21T14:29:03.825741+00:00",
+    "updated_at": "2026-01-21T14:29:57.984101+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142903_b14712d1",
+    "metadata": {
+      "processing_start_time": 1769005743,
+      "processing_end_time": 1769005797
+    }
+  },
+  "doc-ac1ed9e88e425ab885199259d92315e5": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ac1ed9e88e425ab885199259d92315e5"
+    ],
+    "content_summary": "[DOC_ID: chunk-37527ca8]\n[领域: 金融学]\n在进行欺诈检测时，从机器学习转向深度学习可能会产生重大的业务影响。深度学习模型提高了检测欺诈活动的准确性，实现了实时检测并减少了误报。这些模型具有高度的可扩展性，",
+    "content_length": 116,
+    "created_at": "2026-01-21T14:29:58.471397+00:00",
+    "updated_at": "2026-01-21T14:30:39.659917+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_142958_cd559be8",
+    "metadata": {
+      "processing_start_time": 1769005798,
+      "processing_end_time": 1769005839
+    }
+  },
+  "doc-7ae4a8c47961536abb443d07e622440b": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7ae4a8c47961536abb443d07e622440b"
+    ],
+    "content_summary": "[DOC_ID: chunk-f410bb2d]\n[领域: 金融学]\n本指南演示了一种基于深度学习图神经网络的端到端、近乎实时反欺诈系统。该蓝图架构使用深度图库（DGL）根据表格数据构造异构图，并训练图神经网络（GNN）模型以检测欺诈性",
+    "content_length": 118,
+    "created_at": "2026-01-21T14:30:47.928228+00:00",
+    "updated_at": "2026-01-21T14:31:24.228305+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143047_db46ef05",
+    "metadata": {
+      "processing_start_time": 1769005847,
+      "processing_end_time": 1769005884
+    }
+  },
+  "doc-b3378e1cd34422d214370ca24a5f17ef": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b3378e1cd34422d214370ca24a5f17ef"
+    ],
+    "content_summary": "[DOC_ID: chunk-6810cdce]\n[领域: 金融学]\n利用图数据库支持实时反欺诈的检测. 本实施指南介绍了在Amazon Web Services (AWS) 云中部署基于深度学习图神经网络的实时反欺诈解决方案的架构注意事项和配置步骤。 它",
+    "content_length": 128,
+    "created_at": "2026-01-21T14:31:24.693131+00:00",
+    "updated_at": "2026-01-21T14:32:16.663789+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143124_3ec760d9",
+    "metadata": {
+      "processing_start_time": 1769005884,
+      "processing_end_time": 1769005936
+    }
+  },
+  "doc-98217948cb9ad0bfdb25f3db0b7cd900": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-98217948cb9ad0bfdb25f3db0b7cd900"
+    ],
+    "content_summary": "[DOC_ID: chunk-3c401ea4]\n[领域: 金融学]\n针对新的深度学习欺诈侦测模型，三方工程师分别针对伪卡欺诈. 侦测，骗保检测等银行、保险业务常见应用场景，采用真实数据进. 行了多项仿真验证。GBDT→GRU→RF三明治结构欺诈侦",
+    "content_length": 124,
+    "created_at": "2026-01-21T14:32:17.059701+00:00",
+    "updated_at": "2026-01-21T14:33:19.036543+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143217_4def6447",
+    "metadata": {
+      "processing_start_time": 1769005937,
+      "processing_end_time": 1769005999
+    }
+  },
+  "doc-ef7f8964a21d37b73c54e1e69f0b0005": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-9f34e4a3e164d008eba0c74c96804047",
+      "chunk-5e9c7c6b034fa0090c148c9fb494cca9"
+    ],
+    "content_summary": "[DOC_ID: chunk-29976635]\n[领域: 金融学]\n本页面提供全球最准确、精炼的论文《Credit Card Fraud Detection: A Deep Learning Approach》摘要。通过Moonlight这款AI研究助手，您可以轻松快速地理解所阅读的所有论文。通过https://www.themoonlight.io/ 安装Chrome扩展，或直接在网页上传文件即可使用。Moonlight针对您的需求提供以下功能： - 文本解释： AI帮助您轻松理解复杂概念和...",
+    "content_length": 2246,
+    "created_at": "2026-01-21T14:33:19.495299+00:00",
+    "updated_at": "2026-01-21T14:36:44.496029+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143319_94e9cc72",
+    "metadata": {
+      "processing_start_time": 1769005999,
+      "processing_end_time": 1769006204
+    }
+  },
+  "doc-f8a385ef6ec16dbfeda21e87bfc82a5e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f8a385ef6ec16dbfeda21e87bfc82a5e"
+    ],
+    "content_summary": "[DOC_ID: chunk-6d20e98f]\n[领域: 金融学]\nDOI: 10.12677/csa.2025.1511295 基于动态时序图神经网络的信用卡欺诈检测 方法研究 李 峰1,2，李惠先2，陈 雪2，韩祝华3* 1河北金融学院河北省金融科技应用重点实验室，河北 保定 2河北金融学院金融科技学院，河北 保定 3河北金融学院统计与数据科学学院，河北 保定 收稿日期：2025年10月12日；录用日期：2025年11月12日；发布日期：2025年11月24日 摘 要 信用卡欺诈是金融科技...",
+    "content_length": 1175,
+    "created_at": "2026-01-21T14:36:45.098942+00:00",
+    "updated_at": "2026-01-21T14:39:38.945605+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143645_471795c2",
+    "metadata": {
+      "processing_start_time": 1769006205,
+      "processing_end_time": 1769006378
+    }
+  },
+  "doc-fd544a0511ae2b1911f2ec7bdc2235ae": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-fd544a0511ae2b1911f2ec7bdc2235ae"
+    ],
+    "content_summary": "[DOC_ID: chunk-01793f07]\n[领域: 语言学]\n直到2013 年，随着越来越多的研究者使用深度学习模型来处理自然语言，NNLM 模型才被重新发掘，并成为使用神经网络建模语言的经典范例。NNLM 模型的思路与统计语言模型保持一致",
+    "content_length": 124,
+    "created_at": "2026-01-21T14:39:39.403400+00:00",
+    "updated_at": "2026-01-21T14:39:55.166851+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143939_8772d773",
+    "metadata": {
+      "processing_start_time": 1769006379,
+      "processing_end_time": 1769006395
+    }
+  },
+  "doc-1eb9c8a9254475c3a6672347d5ac549f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-1eb9c8a9254475c3a6672347d5ac549f"
+    ],
+    "content_summary": "[DOC_ID: chunk-1f20b2ef]\n[领域: 语言学]\n由于神经网络各层之间、各个神经网络之间的“交流语言”为向量，所以深度学习工程师可以轻松地将多个神经网络组合起来，形成一种端到端的设计。比如之前谈到的情感分析案例中，",
+    "content_length": 117,
+    "created_at": "2026-01-21T14:39:56.021604+00:00",
+    "updated_at": "2026-01-21T14:40:12.662292+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_143956_8d0d7cc9",
+    "metadata": {
+      "processing_start_time": 1769006396,
+      "processing_end_time": 1769006412
+    }
+  },
+  "doc-747e06575d3f3c246eac89670d12c86e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-747e06575d3f3c246eac89670d12c86e"
+    ],
+    "content_summary": "[DOC_ID: chunk-0fdee808]\n[领域: 语言学]\n人与人之间需要交流。 出于人类这种基本需要，每天都有大量的书面文本产生。 比如，社交媒体、聊天应用、电子邮件、产品评论、新闻文章、 研究论文和书籍中的丰富文本， 使计算机能够理解它们以提供帮助或基于人类语言做出决策变得至关重要。. *自然语言处理*是指研究使用自然语言的计算机和人类之间的交互。 在实践中，使用自然语言处理技术来处理和分析文本数据是非常常见的， 例如 8.3节的语言模型 和 9.5节的机器翻译模型。. 要理解文本...",
+    "content_length": 909,
+    "created_at": "2026-01-21T14:40:13.129639+00:00",
+    "updated_at": "2026-01-21T14:41:15.212986+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_144013_4e801698",
+    "metadata": {
+      "processing_start_time": 1769006413,
+      "processing_end_time": 1769006475
+    }
+  },
+  "doc-afea3fd8f33940c9cfe692c11adfe3b5": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-5ec46d561fc83169cc4cb16171e4b90d",
+      "chunk-23a71ac8e1e391c0d5c2b9361cf23dc1",
+      "chunk-93d921ef5f299976a4f4ffe79dfe7521"
+    ],
+    "content_summary": "[DOC_ID: chunk-fa1d0700]\n[领域: 语言学]\n# 深度學習：自然語言處理的秘密武器. 自然語言處理 ( **Natural Language Processing** **，簡稱** **NLP** ) 正逐步改變人工智慧理解人類的想法與行為的方式，而其中深度學習更扮演著至關重要的角色。在此演變下，品牌與行銷應如何從中受益？. 有時，在嘗試建構人工智慧的過程中，才能體會到人類心智的複雜性。自然語言處理便是一個很好的例子，該技術致力於探討人工智慧如何辨別人類語言中的細微差異...",
+    "content_length": 2777,
+    "created_at": "2026-01-21T14:41:15.625178+00:00",
+    "updated_at": "2026-01-21T14:44:20.851338+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_144115_2d9f3ed8",
+    "metadata": {
+      "processing_start_time": 1769006475,
+      "processing_end_time": 1769006660
+    }
+  },
+  "doc-38b1076024c94a070f64f72dcaea1102": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-38b1076024c94a070f64f72dcaea1102"
+    ],
+    "content_summary": "[DOC_ID: chunk-f7e042be]\n[领域: 语言学]\nNLP 预处理是指将原始文本准备好，以供程序或机器学习模型分析的过程。要将文本转换成深度学习模型更容易分析的格式，就必须对其进行NLP 预处理。 有几种NLP 预处理",
+    "content_length": 118,
+    "created_at": "2026-01-21T14:44:28.674609+00:00",
+    "updated_at": "2026-01-21T14:44:58.654162+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_144428_32a82352",
+    "metadata": {
+      "processing_start_time": 1769006668,
+      "processing_end_time": 1769006698
+    }
+  },
+  "doc-b572e7e95c9e5e07043de0b3cb587187": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b572e7e95c9e5e07043de0b3cb587187"
+    ],
+    "content_summary": "[DOC_ID: chunk-fec3396a]\n[领域: 语言学]\n自然语言处理（NLP）结合计算语言学、预测性人工智能和深度学习模型处理人类语言。 计算语言学. 计算语言学是使用计算机和软件工具理解和构建人类语言模型的科学。研究",
+    "content_length": 116,
+    "created_at": "2026-01-21T14:44:51.303275+00:00",
+    "updated_at": "2026-01-21T14:45:28.416501+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_144451_5cce62d6",
+    "metadata": {
+      "processing_start_time": 1769006691,
+      "processing_end_time": 1769006728
+    }
+  },
+  "doc-7890c6c195439c2a8d6fe49741a8156c": {
+    "status": "processed",
+    "chunks_count": 5,
+    "chunks_list": [
+      "chunk-ba24370cf2cd1eb19282998e57cddade",
+      "chunk-012b11b19422c013994d2348ab5422de",
+      "chunk-c19e0a082e14fb0e3e54b47fab68066a",
+      "chunk-330f64bec90f2f131895d2de62adeb6f",
+      "chunk-432af570193bd3df6d564434ee8bfbbb"
+    ],
+    "content_summary": "[DOC_ID: chunk-8f2d4779]\n[领域: 语言学]\n## 深度学习、机器学习与NLP的前世今生. 2 评论 16426 浏览 72 收藏 29 分钟. > 随着深度学习的发展，自然语言处理领域的难题也得到了不断突破，AlphaGo项目的主要负责人David Silver曾说“深度学习 （DL）+ 强化学习 （RL）= 人工智能（AI）”。目前深度学习在自然语言处理上主要有哪些应用？在工程实践中是否会有哪些瓶颈？. ## 一、为什么做文本挖掘. 简单来说：NLP的目的是让机器能够...",
+    "content_length": 6972,
+    "created_at": "2026-01-21T14:45:20.212643+00:00",
+    "updated_at": "2026-01-21T14:51:52.175562+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_144520_5bbeb72a",
+    "metadata": {
+      "processing_start_time": 1769006720,
+      "processing_end_time": 1769007112
+    }
+  },
+  "doc-2143f772a74d69830b87fea511a6e614": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-0e7e40a218a89d1fc6c27eae7e866792",
+      "chunk-59b5b5bb9f78f0060c833f3b8b091e05"
+    ],
+    "content_summary": "[DOC_ID: chunk-4de64ac3]\n[领域: 语言学]\n# 什么是 NLP（自然语言处理）？. ## 什么是 NLP？. 自然语言处理 (NLP) 是计算机科学和人工智能 (AI) 的一个子领域，它使用机器学习来使计算机能够理解人类语言并与之交流。. NLP 通过将计算语言学（基于规则的人类语言建模）与统计建模、机器学习 (ML) 和深度学习相结合，使计算机和数字设备能够识别、理解和生成文本和语音。. NLP 研究有助于推动生成式 AI 时代的到来，其涉及从大型语言模型 (LLM)...",
+    "content_length": 3171,
+    "created_at": "2026-01-21T14:51:52.671384+00:00",
+    "updated_at": "2026-01-21T14:59:22.486962+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_145152_2178d0c2",
+    "metadata": {
+      "processing_start_time": 1769007112,
+      "processing_end_time": 1769007562
+    }
+  },
+  "doc-3ac3b580cca11b5e1d0122810a6ec5f5": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3ac3b580cca11b5e1d0122810a6ec5f5"
+    ],
+    "content_summary": "[DOC_ID: chunk-f9b73650]\n[领域: 语言学]\n最新推荐文章于 2025-11-25 10:01:10 发布. 于 2021-09-15 11:07:26 发布. 上图是论文中 Transformer 的内部结构图，左侧为 Encoder block，右侧为 Decoder block。红色圈中的部分为 Multi-Head Attention，是由多个 Self-Attention组成的，可以看到 Encoder block 包含一个 Multi-Head Attenti...",
+    "content_length": 1460,
+    "created_at": "2026-01-21T14:59:23.059723+00:00",
+    "updated_at": "2026-01-21T15:01:58.351596+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_145923_a7dc2986",
+    "metadata": {
+      "processing_start_time": 1769007563,
+      "processing_end_time": 1769007718
+    }
+  },
+  "doc-778f83860f7db1907e0da6e0cb412723": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-778f83860f7db1907e0da6e0cb412723"
+    ],
+    "content_summary": "[DOC_ID: chunk-adc7557b]\n[领域: 语言学]\nTransformer是一个利用注意力机制来提高模型训练速度的模型。关于注意力机制可以参看这篇文章，trasnformer可以说是完全基于自注意力机制的一个深度学习模型，因为它适用",
+    "content_length": 125,
+    "created_at": "2026-01-21T15:01:58.894594+00:00",
+    "updated_at": "2026-01-21T15:02:30.335119+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150158_b360cf58",
+    "metadata": {
+      "processing_start_time": 1769007718,
+      "processing_end_time": 1769007750
+    }
+  },
+  "doc-e77bf0e5ecd6a42625cc947b20dfaca8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e77bf0e5ecd6a42625cc947b20dfaca8"
+    ],
+    "content_summary": "[DOC_ID: chunk-69ff27f5]\n[领域: 语言学]\n这节课我们主要学习了Transformer模型。在学习时，我们主要应该关注两个核心机制：自注意力、多头注意力。搞懂Transformer的注意力机制后，我们基本就理解了",
+    "content_length": 119,
+    "created_at": "2026-01-21T15:02:22.965702+00:00",
+    "updated_at": "2026-01-21T15:02:41.629272+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150222_8564a9ce",
+    "metadata": {
+      "processing_start_time": 1769007742,
+      "processing_end_time": 1769007761
+    }
+  },
+  "doc-f11a177649a52b5177411e9ce9bb9885": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f11a177649a52b5177411e9ce9bb9885"
+    ],
+    "content_summary": "[DOC_ID: chunk-c082491d]\n[领域: 语言学]\nTransformer 是一種神經網路架構，可將輸入序列轉換或變更為輸出序列。Transformer 透過學習內容並追蹤序列元件之間的關係來做到這一點。例如，考慮這個輸入序列：「天空",
+    "content_length": 126,
+    "created_at": "2026-01-21T15:02:50.621318+00:00",
+    "updated_at": "2026-01-21T15:03:00.488622+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150250_8a59b5e1",
+    "metadata": {
+      "processing_start_time": 1769007770,
+      "processing_end_time": 1769007780
+    }
+  },
+  "doc-ad8f11550a8a8807684e7ecc93a2a801": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ad8f11550a8a8807684e7ecc93a2a801"
+    ],
+    "content_summary": "[DOC_ID: chunk-338a909d]\n[领域: 语言学]\nLayer): \"\"\"transformer编码器块\"\"\" def __init__(self, key_size, query_size, value_size, num_hiddens, norm_shape, ffn_num_input, ffn_num_hiddens, num_heads, dropout, use_bias = False,** kwargs): super(EncoderBlock, self)....",
+    "content_length": 1733,
+    "created_at": "2026-01-21T15:02:53.080498+00:00",
+    "updated_at": "2026-01-21T15:04:04.186529+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150253_bb766fcb",
+    "metadata": {
+      "processing_start_time": 1769007773,
+      "processing_end_time": 1769007844
+    }
+  },
+  "doc-0724c887b70d220c530dcfaee28003c1": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-0724c887b70d220c530dcfaee28003c1"
+    ],
+    "content_summary": "[DOC_ID: chunk-139ece35]\n[领域: 语言学]\n* English \"Transformer (deep learning) – 英语\"). * Simple English \"Transformer (machine learning model) – Simple English\"). * Српски / srpski \"Transformator (model mašinskog učenja) – 塞尔维亚语\"). | 范式 * 监督学习 * 無監督學習 * 線上...",
+    "content_length": 1300,
+    "created_at": "2026-01-21T15:04:04.787518+00:00",
+    "updated_at": "2026-01-21T15:06:37.107893+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150404_4d7119a4",
+    "metadata": {
+      "processing_start_time": 1769007844,
+      "processing_end_time": 1769007997
+    }
+  },
+  "doc-07c6d2ca0b23fef78261afa6105b1fe0": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-07c6d2ca0b23fef78261afa6105b1fe0"
+    ],
+    "content_summary": "[DOC_ID: chunk-9263bcd9]\n[领域: 语言学]\nTransformers 是由Hugging Face 开发的一个NLP 包，支持加载目前绝大部分的预训练模型。随着BERT、GPT 等大规模语言模型的兴起，越来越多的公司和研究者采用Transformers 库",
+    "content_length": 141,
+    "created_at": "2026-01-21T15:06:37.736440+00:00",
+    "updated_at": "2026-01-21T15:07:09.903412+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150637_d0a43b17",
+    "metadata": {
+      "processing_start_time": 1769007997,
+      "processing_end_time": 1769008029
+    }
+  },
+  "doc-93658308ac482857335fb970db2d1193": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-670e03b55717cd9c769f3cf5e85b2686",
+      "chunk-833d835632b095e419f4a96b3c5dac04"
+    ],
+    "content_summary": "[DOC_ID: chunk-a663405c]\n[领域: 语言学]\nSenior Staff Writer, AI Models. 转换器模型是一种神经网络架构，擅长处理顺序数据，最知名的是与大型语言模型 (LLM) 的关联。转换器模型在人工智能 (AI) 的其他领域（例如计算机视觉、语音识别和时间序列预测）也展现出卓越的性能。. 仅自回归解码器的 LLM，例如促成 OpenAI ChatGPT 发布的 GPT-3（生成式预训练转换器的缩写）模型，催化了生成式 AI 的现代纪元。. 转换器模型...",
+    "content_length": 2096,
+    "created_at": "2026-01-21T15:07:10.827780+00:00",
+    "updated_at": "2026-01-21T15:10:35.044206+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_150710_048c0d4f",
+    "metadata": {
+      "processing_start_time": 1769008030,
+      "processing_end_time": 1769008235
+    }
+  },
+  "doc-a6f32e4615a0137e965400eba7166c47": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a6f32e4615a0137e965400eba7166c47"
+    ],
+    "content_summary": "[DOC_ID: chunk-6db04701]\n[领域: 语言学]\n【機器學習2021】Transformer (上) Hung-yi Lee 354000 subscribers 2878 likes 283126 views 26 Mar 2021 slides: https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf 125 comments",
+    "content_length": 221,
+    "created_at": "2026-01-21T15:10:35.645651+00:00",
+    "updated_at": "2026-01-21T15:11:43.128999+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_151035_a5ee6cde",
+    "metadata": {
+      "processing_start_time": 1769008235,
+      "processing_end_time": 1769008303
+    }
+  },
+  "doc-4fcfe2fa03fc2203cba1b55a8668dc72": {
+    "status": "processed",
+    "chunks_count": 5,
+    "chunks_list": [
+      "chunk-6003c974467b7a903cb83abef6cc2e24",
+      "chunk-bae01b8f0bc3c1509b035bf0d8ee1771",
+      "chunk-48a8f8eb7c58289118bd89b3aa9c47b3",
+      "chunk-c0eefe5184862c24ce2da501217562b3",
+      "chunk-d59c5769fc2d8973bb797259108a6319"
+    ],
+    "content_summary": "[DOC_ID: chunk-26b58d63]\n[领域: 语言学]\n已于 2025-02-23 17:57:45 修改. CC 4.0 BY-SA版权. 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。. 于 2025-02-23 17:51:48 首次发布. 人工智能（AI）、机器学习（ML）、深度学习（DL）和大语言模型（LLM）之间是**逐层包含且技术递进**的关系，具体如下：. 人工智能（AI） ⊃ 机器学习（ML） ⊃ 深度学习...",
+    "content_length": 6906,
+    "created_at": "2026-01-21T15:11:43.665728+00:00",
+    "updated_at": "2026-01-21T15:16:54.676353+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_151143_06383473",
+    "metadata": {
+      "processing_start_time": 1769008303,
+      "processing_end_time": 1769008614
+    }
+  },
+  "doc-3678971988880bb3960a90e15878444d": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-3678971988880bb3960a90e15878444d"
+    ],
+    "content_summary": "[DOC_ID: chunk-581f76e1]\n[领域: 语言学]\n大语言模型（Large Language Models，LLM）是一种由包含数百亿以上权重的深度神经网络构建的语言模型，使用自监督学习方法通过大量无标记文本进行训练。",
+    "content_length": 118,
+    "created_at": "2026-01-21T15:16:55.285000+00:00",
+    "updated_at": "2026-01-21T15:17:20.836784+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_151655_cba74c5d",
+    "metadata": {
+      "processing_start_time": 1769008615,
+      "processing_end_time": 1769008640
+    }
+  },
+  "doc-73a35fceff57d2bc7e2ac85fbd5203b4": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-4f9864ecff092ef091c227f6ebb2d69f",
+      "chunk-0222ac86b3d60100ac5d03d88a69654e"
+    ],
+    "content_summary": "[DOC_ID: chunk-1db5dc88]\n[领域: 语言学]\n# 落痕的寒假. ## 今天也要加油鸭. # [[深度学习] 大模型学习1-大语言模型基础知识](https://www.cnblogs.com/luohenyueji/p/18644847 \"发布于 2024-12-31 22:21\"). 大语言模型（Large Language Model，LLM）是一类基于Transformer架构的深度学习模型，主要用于处理与自然语言相关的各种任务。简单来说，当用户输入文本时，模型会生...",
+    "content_length": 3191,
+    "created_at": "2026-01-21T15:17:21.825986+00:00",
+    "updated_at": "2026-01-21T15:20:07.890831+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_151721_57281ff9",
+    "metadata": {
+      "processing_start_time": 1769008641,
+      "processing_end_time": 1769008807
+    }
+  },
+  "doc-1a52d4be6b8f3e7719d553c603ce9c9f": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-1b739ad6a105eb84f8c6e5dd40826bdc",
+      "chunk-4d514ef014c3cb4cb7fc652928e9a4a4"
+    ],
+    "content_summary": "[DOC_ID: chunk-2f4801f3]\n[领域: 语言学]\n**数据准备。**收集、清理和整理用于训练 LLM 的原始数据。此步骤涉及数据清理（删除重复项和错误）、数据过滤（删除有偏见、淫亵或受版权保护的内容），以及词元化（将文本分解为模型可理解的单元）。. ### **LLM 和 Transformer**. Transformer 架构涉及数百万或数十亿个参数，这些参数使它能够捕捉复杂的语言模式和细微差别。事实上，“大语言模型”中的“大”字指的就是运行 LLM 所需的大量参数。. ...",
+    "content_length": 2221,
+    "created_at": "2026-01-21T15:20:08.453543+00:00",
+    "updated_at": "2026-01-21T15:24:59.964683+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_152008_943ea4e3",
+    "metadata": {
+      "processing_start_time": 1769008808,
+      "processing_end_time": 1769009099
+    }
+  },
+  "doc-1bb6bf3f22f6625482a3700d160f6e81": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-1bb6bf3f22f6625482a3700d160f6e81"
+    ],
+    "content_summary": "[DOC_ID: chunk-a4d0b3a2]\n[领域: 语言学]\nNeOn-GPT: A Large Language Model-Powered Pipeline for Ontology Learning (PDF). Topics, Authors, and Institutions in Large Language Model Research: Trends from 17K arXiv Papers. \"Ranking of Large Language Model (LLM)...",
+    "content_length": 1057,
+    "created_at": "2026-01-21T15:25:00.082112+00:00",
+    "updated_at": "2026-01-21T15:27:22.350592+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_152500_cf1efbca",
+    "metadata": {
+      "processing_start_time": 1769009100,
+      "processing_end_time": 1769009242
+    }
+  },
+  "doc-c73155a0054fe7510b458e0f7fe666b7": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c73155a0054fe7510b458e0f7fe666b7"
+    ],
+    "content_summary": "[DOC_ID: chunk-9450a680]\n[领域: 语言学]\n# Search code, repositories, users, issues, pull requests... You signed in with another tab or window. You signed out in another tab or window. You switched accounts on another tab or window. ## 0x00 学习路径. + Prompt ...",
+    "content_length": 1090,
+    "created_at": "2026-01-21T15:27:22.980757+00:00",
+    "updated_at": "2026-01-21T15:28:55.457318+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_152722_ea34a6f1",
+    "metadata": {
+      "processing_start_time": 1769009243,
+      "processing_end_time": 1769009335
+    }
+  },
+  "doc-f394bd66e077e288f0b983860f06c440": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f394bd66e077e288f0b983860f06c440"
+    ],
+    "content_summary": "[DOC_ID: chunk-e8523e5c]\n[领域: 语言学]\n## 由先进的 Google AI 驱动的大语言模型. Google Cloud 将由 Google DeepMind 开发和测试的创新技术融入我们的企业级 AI 平台，使客户可以直接用于构建和提供生成式 AI 功能，无需准备，无需等待。. * Google Cloud 提供哪些 LLM 服务？. * LLM 在 Google Cloud 中是如何运作的？. Vertex AI 支持访问 Gemini，这是 Google De...",
+    "content_length": 1270,
+    "created_at": "2026-01-21T15:28:56.500430+00:00",
+    "updated_at": "2026-01-21T15:30:24.123653+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_152856_4809ad06",
+    "metadata": {
+      "processing_start_time": 1769009336,
+      "processing_end_time": 1769009424
+    }
+  },
+  "doc-70cc6b4326bedb7c4b61745cce643075": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-70cc6b4326bedb7c4b61745cce643075"
+    ],
+    "content_summary": "[DOC_ID: chunk-890ac9f3]\n[领域: 地球科学]\n摘要：. 遥感图像分析在国土资源管理、海洋监测等领域有着极为广阔的应用前景。深度学习技术已在图像处理领域取得突破性进展，然而，遥感图像固有的尺寸大、目标小而密集",
+    "content_length": 116,
+    "created_at": "2026-01-21T15:30:24.817912+00:00",
+    "updated_at": "2026-01-21T15:30:54.844486+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153024_b7559c57",
+    "metadata": {
+      "processing_start_time": 1769009424,
+      "processing_end_time": 1769009454
+    }
+  },
+  "doc-81494149ccc19d39342ca4e7f5dc4668": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-81494149ccc19d39342ca4e7f5dc4668"
+    ],
+    "content_summary": "[DOC_ID: chunk-551b549b]\n[领域: 地球科学]\n本研究系统地综述了深度神经网络在遥感图像分类、目标检测、语义分割和变化检测等关键任务中的应用，分析了国内外在该领域的研究现状与进展。此外，本研究还探讨了多模态数据",
+    "content_length": 117,
+    "created_at": "2026-01-21T15:30:55.429302+00:00",
+    "updated_at": "2026-01-21T15:31:48.589659+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153055_c177de9f",
+    "metadata": {
+      "processing_start_time": 1769009455,
+      "processing_end_time": 1769009508
+    }
+  },
+  "doc-d03520804df199a76ce35edbbeca10f8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d03520804df199a76ce35edbbeca10f8"
+    ],
+    "content_summary": "[DOC_ID: chunk-af9389ef]\n[领域: 地球科学]\nImbal‐ anced learning-based automatic SAR images change detection by morphologically supervised PCA-Net. IEEE Geoscience and Remote Sensing Letters, 16(4): 554-558 [DOI: 10.1109/lgrs.2018.2878420] Wang Y H, Gao L R...",
+    "content_length": 273,
+    "created_at": "2026-01-21T15:31:41.170265+00:00",
+    "updated_at": "2026-01-21T15:32:25.534734+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153141_ad8d16c4",
+    "metadata": {
+      "processing_start_time": 1769009501,
+      "processing_end_time": 1769009545
+    }
+  },
+  "doc-326a81b79c40b3a07062403d80063e34": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-326a81b79c40b3a07062403d80063e34"
+    ],
+    "content_summary": "[DOC_ID: chunk-2d442d76]\n[领域: 地球科学]\n从尺度不变性、旋转不变性、复杂背景干扰、样本量少和多波段数据检测5个角度出发，总结了近几年基于深度学习的遥感图像目标检测方法。此外，对典型遥感图像目标的检测难点和",
+    "content_length": 117,
+    "created_at": "2026-01-21T15:32:26.042896+00:00",
+    "updated_at": "2026-01-21T15:33:11.991701+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153226_b483ec0d",
+    "metadata": {
+      "processing_start_time": 1769009546,
+      "processing_end_time": 1769009591
+    }
+  },
+  "doc-fb89c8462c112775ff8e6c43e7d050e8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-fb89c8462c112775ff8e6c43e7d050e8"
+    ],
+    "content_summary": "[DOC_ID: chunk-5e9e4efd]\n[领域: 地球科学]\nIn order to explore the feasibility of deep learning derived global features for satellite remote sensing image retrieval and positioning without auxiliary parameters, an evaluation system considering both effectiv...",
+    "content_length": 1216,
+    "created_at": "2026-01-21T15:33:12.634107+00:00",
+    "updated_at": "2026-01-21T15:34:44.415255+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153312_a50ca35b",
+    "metadata": {
+      "processing_start_time": 1769009592,
+      "processing_end_time": 1769009684
+    }
+  },
+  "doc-f63d6eb86a6dff5d8cb2c08238a0e76e": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-b80301dc089946e283419441a33451d1",
+      "chunk-d0c5f3de9954bb6c66fcfdce01302cf9"
+    ],
+    "content_summary": "[DOC_ID: chunk-d428b834]\n[领域: 地球科学]\n## **lvxiangyang�ĸ��˲�������**. # ����PyTorch����ѧϰң��Ӱ������������Ŀ�����⡢�ָң��Ӱ����������ѧϰ�Ż�ʵ������Ӧ��. ���� 1398 ���Ķ� 2025-9-25 09:40 |���˷���:ң��|ϵͳ����:���бʼ�. ң��Ӱ�񲻶ϱ���������Ӧ���ڿ�����̽����׼ũҵ�����й滮����ҵ...",
+    "content_length": 2163,
+    "created_at": "2026-01-21T15:34:45.068993+00:00",
+    "updated_at": "2026-01-21T15:37:53.333592+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153445_f91d48f8",
+    "metadata": {
+      "processing_start_time": 1769009685,
+      "processing_end_time": 1769009873
+    }
+  },
+  "doc-4a38cf117c062d1c34ec79abbff9e244": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-4a38cf117c062d1c34ec79abbff9e244"
+    ],
+    "content_summary": "[DOC_ID: chunk-36429fb7]\n[领域: 地球科学]\n随着地球观测卫星的增多，气候模型变得丰富起来，逐渐成为一个数据问题。 研究人员开始尝试把人工智能与气候学相结合，分析海量的气候数据，以期发现新的气候模型并提升天气",
+    "content_length": 117,
+    "created_at": "2026-01-21T15:37:54.357163+00:00",
+    "updated_at": "2026-01-21T15:38:29.429377+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153754_53357bd9",
+    "metadata": {
+      "processing_start_time": 1769009874,
+      "processing_end_time": 1769009909
+    }
+  },
+  "doc-babf4b9b036bdc4286b6ed4dc016cba8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-babf4b9b036bdc4286b6ed4dc016cba8"
+    ],
+    "content_summary": "[DOC_ID: chunk-c1f894a4]\n[领域: 地球科学]\n通过将DFS-M和DFS-S模型对于不同时次的预报进行结合，可以得到效果更加均衡的预报。本研究可以为基于深度学习的天气气候预报方法的选择提供新的思路。 关键词: 天气气候预报",
+    "content_length": 123,
+    "created_at": "2026-01-21T15:38:30.126122+00:00",
+    "updated_at": "2026-01-21T15:38:58.645395+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153830_b95c1e1b",
+    "metadata": {
+      "processing_start_time": 1769009910,
+      "processing_end_time": 1769009938
+    }
+  },
+  "doc-b7e84880c36323dbbf1d92748718a1d1": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b7e84880c36323dbbf1d92748718a1d1"
+    ],
+    "content_summary": "[DOC_ID: chunk-e2dc7886]\n[领域: 地球科学]\n# 机器学习模拟千年气候. ### Share this:. * Click to print (Opens in new window) Print. * Click to email a link to a friend (Opens in new window) Email. * Click to share on Bluesky (Opens in new window) Bluesky. * Click to sh...",
+    "content_length": 1500,
+    "created_at": "2026-01-21T15:38:59.278638+00:00",
+    "updated_at": "2026-01-21T15:40:39.428440+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_153859_d50b6705",
+    "metadata": {
+      "processing_start_time": 1769009939,
+      "processing_end_time": 1769010039
+    }
+  },
+  "doc-ed300ee31268ac8e853d58a7e20740f0": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ed300ee31268ac8e853d58a7e20740f0"
+    ],
+    "content_summary": "[DOC_ID: chunk-d665a7cc]\n[领域: 地球科学]\nMeteorological elements forecasting method based on deep learning[J]. Key words: meteorological forecast deep learning neural network long short term memory. | $ J(x) = {(x - {x\\_b})^{\\rm{T}}}{B^{ - 1}}(x - {x\\_b})...",
+    "content_length": 1145,
+    "created_at": "2026-01-21T15:40:32.078973+00:00",
+    "updated_at": "2026-01-21T15:42:28.112402+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154032_6ab9b0ef",
+    "metadata": {
+      "processing_start_time": 1769010032,
+      "processing_end_time": 1769010148
+    }
+  },
+  "doc-506b50fbb39065edcc65dbbbc31a2bd7": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-506b50fbb39065edcc65dbbbc31a2bd7"
+    ],
+    "content_summary": "[DOC_ID: chunk-26687d01]\n[领域: 地球科学]\n本发明公开了一种基于深度学习和数值天气预报的天气现象预报方法，包括：根据数值天气预报产品和天气现象观测数据，构建训练数据集；根据深度学习网络模型对所述训练数据集",
+    "content_length": 116,
+    "created_at": "2026-01-21T15:42:29.217424+00:00",
+    "updated_at": "2026-01-21T15:43:02.802036+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154229_dcdf6e37",
+    "metadata": {
+      "processing_start_time": 1769010149,
+      "processing_end_time": 1769010182
+    }
+  },
+  "doc-ffd1a702a5052372a15a2cc72ea7ca01": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ffd1a702a5052372a15a2cc72ea7ca01"
+    ],
+    "content_summary": "[DOC_ID: chunk-53d34872]\n[领域: 地球科学]\n在气象预报应用领域，已有学者对深度学习方法. 的可解释性展开了深入讨论 ... . 基于深度学习改进数值天气预报模式和预报. 的研究及挑战. 气象科技进展，11（3",
+    "content_length": 118,
+    "created_at": "2026-01-21T15:43:03.462896+00:00",
+    "updated_at": "2026-01-21T15:43:28.112049+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154303_710401bb",
+    "metadata": {
+      "processing_start_time": 1769010183,
+      "processing_end_time": 1769010208
+    }
+  },
+  "doc-a6b4a600bac8a52a4a59aa8136dc667e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a6b4a600bac8a52a4a59aa8136dc667e"
+    ],
+    "content_summary": "[DOC_ID: chunk-dd4154a7]\n[领域: 地球科学]\n研究结果表明，两个直接预报模型对整体预报时段的预报效果明显优于迭代预报模型，直接预报模型的RMSE比迭代预报模型低19%。随着预报时次的增加，迭代预报模型的预报误差累积",
+    "content_length": 120,
+    "created_at": "2026-01-21T15:43:28.797953+00:00",
+    "updated_at": "2026-01-21T15:43:52.918215+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154328_ad9130f0",
+    "metadata": {
+      "processing_start_time": 1769010208,
+      "processing_end_time": 1769010232
+    }
+  },
+  "doc-333ff749c2940b520a06027eb3c17eac": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-333ff749c2940b520a06027eb3c17eac"
+    ],
+    "content_summary": "[DOC_ID: chunk-72f952a2]\n[领域: 地球科学]\n真实预测未来7天的天气气象数据，使用多种机器学习和深度学习LSTM算法，采集全国各省历史、实时数据（天气预报、极端天气预警、生活指数），可视化大屏，Hadoop、Spark、Hive",
+    "content_length": 127,
+    "created_at": "2026-01-21T15:43:53.975253+00:00",
+    "updated_at": "2026-01-21T15:45:01.483748+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154353_cac5c9a5",
+    "metadata": {
+      "processing_start_time": 1769010233,
+      "processing_end_time": 1769010301
+    }
+  },
+  "doc-5837f0d5dd6a7cba90da952aebd39e90": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-5837f0d5dd6a7cba90da952aebd39e90"
+    ],
+    "content_summary": "[DOC_ID: chunk-01e65843]\n[领域: 地球科学]\nAARes-ConvLSTM 均方根误差 预报技巧 报告内容 智能气候预测的理念与案例 基于机器学习方法的中国降水预测 基于中尺度气象同化预报和深度学习的风速预报 光伏电站太阳辐射超短期预报 基于深度学习的北极地区格点化地表气温重建 气象人工智能未来发展思考 • 已有研究表明：极地缺测对研究全球温度变化存 在明显的影响 • 重建一套覆盖30°N以北的地表空气温度数据集 • 北极地区相对于中纬度观测十分有限 • 数据最少的地方...",
+    "content_length": 912,
+    "created_at": "2026-01-21T15:45:02.120710+00:00",
+    "updated_at": "2026-01-21T15:48:47.351902+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154502_fde81569",
+    "metadata": {
+      "processing_start_time": 1769010302,
+      "processing_end_time": 1769010527
+    }
+  },
+  "doc-44aa5ced4dbdd708f5b101c55c7bb894": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-44aa5ced4dbdd708f5b101c55c7bb894"
+    ],
+    "content_summary": "[DOC_ID: chunk-5fe70e58]\n[领域: 地球科学]\nZheng Y G, Zhu W J, Yao D, et al, 2016b. Zheng Y G, Zhou K H, Sheng J, et al, 2015. | Billet J, DeLisi M, Smith B G, et al, 1997. | Gagne II D J, McGovern A, Haupt S E, et al, 2017. | Kim M, Im J, Park H, et al, 20...",
+    "content_length": 660,
+    "created_at": "2026-01-21T15:48:47.555978+00:00",
+    "updated_at": "2026-01-21T15:51:12.685981+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_154847_651b55e0",
+    "metadata": {
+      "processing_start_time": 1769010527,
+      "processing_end_time": 1769010672
+    }
+  },
+  "doc-ea37ab1462f7ff56b1e76b106d6df9dd": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ea37ab1462f7ff56b1e76b106d6df9dd"
+    ],
+    "content_summary": "[DOC_ID: chunk-79e9cb14]\n[领域: 哲学]\nDOI: 10.12677/acpp.2025.145279 深度学习的技术路径与哲学审视 杨 媛 华南师范大学马克思主义学院，广东 广州 收稿日期：2025年5月1日；录用日期：2025年5月23日；发布日期：2025年5月31日 摘 要 作为人工智能领域的核心技术之一，深度学习在近年来的研究和应用层面都取得了显著进展。本文从技 术演进、学习范式对深度学习进行哲学角度审视。首先梳理深度学习的发展脉络，然后深入讨论了深度 学习的...",
+    "content_length": 1034,
+    "created_at": "2026-01-21T15:51:13.800447+00:00",
+    "updated_at": "2026-01-21T15:52:45.767273+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_155113_86265e69",
+    "metadata": {
+      "processing_start_time": 1769010673,
+      "processing_end_time": 1769010765
+    }
+  },
+  "doc-520def31c8675778cae230b17d8f6b02": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-520def31c8675778cae230b17d8f6b02"
+    ],
+    "content_summary": "[DOC_ID: chunk-90d802f3]\n[领域: 哲学]\nCameron J. Buckner的《From Deep Learning to Rational Machines》介绍了深度学习的哲学涵义。 从2015年开始，深度学习神经网络已经开始从根本上改变",
+    "content_length": 135,
+    "created_at": "2026-01-21T15:52:38.411877+00:00",
+    "updated_at": "2026-01-21T15:53:03.348614+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_155238_08ef2384",
+    "metadata": {
+      "processing_start_time": 1769010758,
+      "processing_end_time": 1769010783
+    }
+  },
+  "doc-56ba072dd517d40a45be43bb193491e8": {
+    "status": "processed",
+    "chunks_count": 5,
+    "chunks_list": [
+      "chunk-dd306af31a739643f5fdb50f2073ec63",
+      "chunk-c9369fc176f49069a39d1f5e88729d68",
+      "chunk-47b980b33218327b53ee86797118fbb8",
+      "chunk-1583b867ca44e12600f0775616185d52",
+      "chunk-9443f3ff3d63c86fe69beb12e077ee15"
+    ],
+    "content_summary": "[DOC_ID: chunk-96b9853f]\n[领域: 哲学]\n# 张颖天 戴宁馨：人工智能时代的哲学思考. *张颖天 戴宁馨**2025年05月12日09:06**来源：光明日报*. **“哲学是世界观和方法论的统一。”无论是面对过去、现在，还是未来，哲学思考始终在探究人类认知的边界。随着人工智能时代的到来，科技与人类未来关系的认知成为哲学研究的重要视域，也促使哲学研究者们进一步反思人类的本质、人工智能的属性以及二者之间的关系。为此，本刊特组织三位青年学者围绕人工智能时代的哲学研究面临的挑...",
+    "content_length": 7274,
+    "created_at": "2026-01-21T15:53:04.098135+00:00",
+    "updated_at": "2026-01-21T16:01:16.920241+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260121_155304_187df47f",
+    "metadata": {
+      "processing_start_time": 1769010784,
+      "processing_end_time": 1769011276
+    }
+  }
+}
