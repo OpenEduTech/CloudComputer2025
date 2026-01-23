@@ -4,7 +4,7 @@ import { message } from 'antd';
 // Create base Axios instance with configuration
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
-  timeout: 120000, // 120秒，用于LLM调用
+  timeout: 200000, // 120秒，用于LLM调用
   headers: {
     'Content-Type': 'application/json',
   },

@@ -9,10 +9,8 @@ import {
   Space,
   Typography,
   message,
-  Spin,
 } from 'antd';
 import UploadArea from '../components/UploadArea';
-import * as materialApi from '../api/material';
 import * as quizApi from '../api/quiz';
 
 const { Title, Paragraph } = Typography;
@@ -62,16 +60,18 @@ export const Home: React.FC = () => {
       const values = await form.validateFields();
       setGeneratingQuiz(true);
 
+
+
       const quiz = await quizApi.generateQuiz(
         parsedContent,
         values.title,
         values.count
       );
-
       message.success('测验生成成功！');
       setIsModalVisible(false);
       navigate(`/quiz/${quiz.id}`);
     } catch (error: any) {
+      message.destroy('generating'); // 确保关闭加载提示
       if (error.errorFields) {
         // Form validation error - don't show message
         return;
@@ -114,7 +114,19 @@ export const Home: React.FC = () => {
         okText="生成"
         cancelText="取消"
         centered
+        maskClosable={false}
+        closable={!generatingQuiz}
       >
+        {generatingQuiz && (
+          <div style={{ marginBottom: 16, padding: 12, background: '#e6f7ff', borderRadius: 4 }}>
+            <p style={{ margin: 0, color: '#1890ff' }}>
+              ⏱️ 正在生成题目...
+            </p>
+            <p style={{ margin: '8px 0 0 0', fontSize: 12, color: '#666' }}>
+              系统正在分析学习材料并生成适合您年级的题目，请耐心等待
+            </p>
+          </div>
+        )}
         <Form
           form={form}
           layout="vertical"
@@ -131,7 +143,7 @@ export const Home: React.FC = () => {
               { min: 3, message: '标题至少需要3个字符' },
             ]}
           >
-            <Input placeholder="请输入测验标题" style={{ minHeight: '44px' }} />
+            <Input placeholder="请输入测验标题" style={{ minHeight: '44px' }} disabled={generatingQuiz} />
           </Form.Item>
 
           <Form.Item
@@ -147,8 +159,15 @@ export const Home: React.FC = () => {
               max={50}
               style={{ width: '100%', minHeight: '44px' }}
               placeholder="请输入题目数量"
+              disabled={generatingQuiz}
             />
           </Form.Item>
+          
+          {!generatingQuiz && (
+            <div style={{ padding: 8, background: '#fffbe6', borderRadius: 4, fontSize: 12 }}>
+              💡 提示：题目数量越多，生成时间越长。建议首次尝试选择 5-10 道题目。
+            </div>
+          )}
         </Form>
       </Modal>
     </div>

@@ -103,13 +103,13 @@ const ResultCard: React.FC<ResultCardProps> = memo(({
             </Paragraph>
 
             {/* Detailed Analysis */}
-            {result.analysis && (
+            {(result.explanation || result.analysis) && (
               <>
                 <Text strong style={{ marginTop: 12, display: 'block', fontSize: 'clamp(14px, 2vw, 16px)' }}>
                   详细分析:
                 </Text>
                 <Paragraph style={{ marginBottom: 0, fontSize: 'clamp(14px, 2vw, 16px)' }}>
-                  {result.analysis}
+                  {result.explanation || result.analysis}
                 </Paragraph>
               </>
             )}

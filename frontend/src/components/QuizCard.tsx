@@ -180,7 +180,9 @@ const QuizCard: React.FC<QuizCardProps> = memo(({
             >
               <Space direction="vertical" style={{ width: '100%' }}>
                 <Text strong>解析:</Text>
-                <Paragraph style={{ marginBottom: 0 }}>{result.explanation}</Paragraph>
+                <Paragraph style={{ marginBottom: 0 }}>
+                  {result.explanation || result.analysis || result.feedback}
+                </Paragraph>
 
                 {/* Personalized Feedback */}
                 {result.personalized_feedback && (

@@ -7,7 +7,9 @@ export interface GradingResult {
   score: number;
   feedback: string;
   error_type?: string; // "concept", "logic", "expression"
-  analysis: string;
+  analysis?: string;
+  explanation?: string;
+  personalized_feedback?: string;
 }
 
 export interface QuizResult {

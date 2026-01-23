@@ -76,8 +76,8 @@ const UploadArea: React.FC<UploadAreaProps> = ({ onUploadSuccess, onUploadError 
       
       return false; // Prevent automatic upload
     },
-    customRequest: async ({ file, onSuccess, onError }) => {
-      console.log('⚠️ customRequest 被调用（这不应该发生）:', (file as File).name);
+    customRequest: async (options) => {
+      console.log('⚠️ customRequest 被调用（这不应该发生）:', (options.file as File).name);
     },
     onDrop: (e) => {
       console.log('Dropped files', e.dataTransfer.files);

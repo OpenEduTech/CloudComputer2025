@@ -11,20 +11,22 @@ import {
   Row,
   Col,
   Divider,
+  Button,
+  message as antMessage,
 } from 'antd';
 import {
   BookOutlined,
   TrophyOutlined,
   BulbOutlined,
   WarningOutlined,
+  ReloadOutlined,
 } from '@ant-design/icons';
-import { getMistakeAnalysis } from '../api/analysis';
+import { getMistakeAnalysis, refreshMistakeAnalysis } from '../api/analysis';
 import { MistakeBookSkeleton } from '../components/SkeletonLoader';
 import type { MistakeAnalysis } from '../types/analysis';
 import ResultCard from '../components/ResultCard';
 
 const { Title, Paragraph, Text } = Typography;
-const { Panel } = Collapse;
 
 /**
  * Mistake Book page
@@ -51,6 +53,17 @@ export const MistakeBook: React.FC = () => {
       setError(err.message || '加载错题分析失败');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleRefresh = async () => {
+    try {
+      antMessage.loading({ content: '正在刷新分析...', key: 'refresh', duration: 0 });
+      const data = await refreshMistakeAnalysis();
+      setMistakeData(data);
+      antMessage.success({ content: '分析已刷新！', key: 'refresh' });
+    } catch (err: any) {
+      antMessage.error({ content: err.message || '刷新失败', key: 'refresh' });
     }
   };
 
@@ -129,13 +142,22 @@ export const MistakeBook: React.FC = () => {
     <div style={{ padding: '12px' }} className="fade-in">
       {/* Page Header */}
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <div>
-          <Title level={2} style={{ fontSize: 'clamp(20px, 5vw, 30px)' }}>
-            <BookOutlined /> 错题本
-          </Title>
-          <Paragraph style={{ fontSize: 'clamp(14px, 2vw, 16px)', color: '#666' }}>
-            回顾您的错题并从中学习，提高您的理解能力
-          </Paragraph>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div>
+            <Title level={2} style={{ fontSize: 'clamp(20px, 5vw, 30px)' }}>
+              <BookOutlined /> 错题本
+            </Title>
+            <Paragraph style={{ fontSize: 'clamp(14px, 2vw, 16px)', color: '#666' }}>
+              回顾您的错题并从中学习，提高您的理解能力
+            </Paragraph>
+          </div>
+          <Button 
+            icon={<ReloadOutlined />} 
+            onClick={handleRefresh}
+            style={{ marginTop: 8 }}
+          >
+            刷新分析
+          </Button>
         </div>
 
         {/* Weak Points Summary - Requirements: 7.1, 7.2 */}
@@ -201,17 +223,17 @@ export const MistakeBook: React.FC = () => {
           <Title level={3} style={{ fontSize: 'clamp(18px, 4vw, 24px)' }}>
             按错误类型分类
           </Title>
-          <Collapse defaultActiveKey={[Object.keys(mistakesByErrorType)[0]]}>
-            {Object.entries(mistakesByErrorType).map(([errorType, mistakes]) => (
-              <Panel
-                header={
-                  <Space>
-                    <Tag color="red">{errorType}</Tag>
-                    <Text>{mistakes.length} 个错误</Text>
-                  </Space>
-                }
-                key={errorType}
-              >
+          <Collapse 
+            defaultActiveKey={[Object.keys(mistakesByErrorType)[0]]}
+            items={Object.entries(mistakesByErrorType).map(([errorType, mistakes]) => ({
+              key: errorType,
+              label: (
+                <Space>
+                  <Tag color="red">{errorType}</Tag>
+                  <Text>{mistakes.length} 个错误</Text>
+                </Space>
+              ),
+              children: (
                 <Space direction="vertical" style={{ width: '100%' }}>
                   {mistakes.map((mistake, index) => (
                     <ResultCard
@@ -223,9 +245,9 @@ export const MistakeBook: React.FC = () => {
                     />
                   ))}
                 </Space>
-              </Panel>
-            ))}
-          </Collapse>
+              )
+            }))}
+          />
         </div>
 
         <Divider />
@@ -235,18 +257,17 @@ export const MistakeBook: React.FC = () => {
           <Title level={3} style={{ fontSize: 'clamp(18px, 4vw, 24px)' }}>
             按知识点分类
           </Title>
-          <Collapse>
-            {Object.entries(mistakesByKnowledgePoint).map(
-              ([knowledgePoint, mistakes]) => (
-                <Panel
-                  header={
-                    <Space>
-                      <Tag color="blue">{knowledgePoint}</Tag>
-                      <Text>{mistakes.length} 个错误</Text>
-                    </Space>
-                  }
-                  key={knowledgePoint}
-                >
+          <Collapse
+            items={Object.entries(mistakesByKnowledgePoint).map(
+              ([knowledgePoint, mistakes]) => ({
+                key: knowledgePoint,
+                label: (
+                  <Space>
+                    <Tag color="blue">{knowledgePoint}</Tag>
+                    <Text>{mistakes.length} 个错误</Text>
+                  </Space>
+                ),
+                children: (
                   <Space direction="vertical" style={{ width: '100%' }}>
                     {mistakes.map((mistake, index) => (
                       <ResultCard
@@ -258,10 +279,10 @@ export const MistakeBook: React.FC = () => {
                       />
                     ))}
                   </Space>
-                </Panel>
-              )
+                )
+              })
             )}
-          </Collapse>
+          />
         </div>
       </Space>
     </div>

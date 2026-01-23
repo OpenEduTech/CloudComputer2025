@@ -146,15 +146,16 @@ describe('Integration Tests - Complete Application Flow', () => {
       mockGetQuiz.mockResolvedValue({
         id: 'quiz-1',
         title: 'Test Quiz',
-        material_id: 'material-1',
         user_id: '1',
         questions: [
           {
             id: 'q1',
             type: 'multiple_choice',
-            question_text: 'What is 2+2?',
+            content: 'What is 2+2?',
             options: ['3', '4', '5', '6'],
             correct_answer: '4',
+            difficulty: 'easy',
+            knowledge_point: '基础',
           },
         ],
       });
@@ -185,7 +186,9 @@ describe('Integration Tests - Complete Application Flow', () => {
           {
             question_id: 'q1',
             is_correct: true,
-            explanation: 'Correct!',
+            score: 1,
+            feedback: 'Correct!',
+            analysis: 'Correct!',
           },
         ],
         overall_analysis: 'Great job!',
@@ -195,15 +198,16 @@ describe('Integration Tests - Complete Application Flow', () => {
       mockGetQuiz.mockResolvedValue({
         id: 'quiz-1',
         title: 'Test Quiz',
-        material_id: 'material-1',
         user_id: '1',
         questions: [
           {
             id: 'q1',
             type: 'multiple_choice',
-            question_text: 'What is 2+2?',
+            content: 'What is 2+2?',
             options: ['3', '4', '5', '6'],
             correct_answer: '4',
+            difficulty: 'easy',
+            knowledge_point: '基础',
           },
         ],
       });
@@ -298,15 +302,16 @@ describe('Integration Tests - Complete Application Flow', () => {
       mockGetQuiz.mockResolvedValue({
         id: 'quiz-1',
         title: 'Test Quiz',
-        material_id: 'material-1',
         user_id: '1',
         questions: [
           {
             id: 'q1',
             type: 'multiple_choice',
-            question_text: 'What is 2+2?',
+            content: 'What is 2+2?',
             options: ['3', '4', '5', '6'],
             correct_answer: '4',
+            difficulty: 'easy',
+            knowledge_point: '基础',
           },
         ],
       });
@@ -325,7 +330,9 @@ describe('Integration Tests - Complete Application Flow', () => {
           {
             question_id: 'q1',
             is_correct: true,
-            explanation: 'Correct!',
+            score: 1,
+            feedback: 'Correct!',
+            analysis: 'Correct!',
           },
         ],
         overall_analysis: 'Great job!',
