@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+.env/
+.env.*/
+.venv/
+
+# IDE / 编辑器
+.vscode/
+.idea/
+
+# 日志和临时文件
+*.log
+*.tmp
+*.swp
+*.DS_Store
+
+# 单元测试缓存
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 数据和模型缓存
+data/
+cache/
