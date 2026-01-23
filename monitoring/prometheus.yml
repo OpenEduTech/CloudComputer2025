@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongo1:27017', 'mongo2:27018', 'mongo3:27019']
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis1:6379', 'redis2:6380', 'redis3:6381', 'redis4:6382', 'redis5:6383', 'redis6:6384']
+
+  - job_name: 'learning_agent_app'
+    static_configs:
+      - targets: ['app:8501']
+    metrics_path: '/metrics'

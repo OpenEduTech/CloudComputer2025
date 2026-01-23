@@ -1,0 +1,385 @@
+version: '3.8'
+
+services:
+  # MongoDB副本集 - 主节点
+  mongo1:
+    image: mongo:latest
+    container_name: learning_agent_mongo1
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo1/db:/data/db
+      - ./data/mongo1/configdb:/data/configdb
+      - ./logs/mongo1:/var/log/mongodb
+    environment:
+      - MONGO_REPLICA_SET_NAME=rs0
+    networks:
+      - app_network
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--logpath", "/var/log/mongodb/mongod.log", "--logappend"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+        reservations:
+          cpus: "0.25"
+          memory: "256M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # MongoDB副本集 - 从节点1
+  mongo2:
+    image: mongo:latest
+    container_name: learning_agent_mongo2
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./data/mongo2/db:/data/db
+      - ./data/mongo2/configdb:/data/configdb
+      - ./logs/mongo2:/var/log/mongodb
+    environment:
+      - MONGO_REPLICA_SET_NAME=rs0
+    networks:
+      - app_network
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--logpath", "/var/log/mongodb/mongod.log", "--logappend"]
+    restart: unless-stopped
+    depends_on:
+      - mongo1
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+        reservations:
+          cpus: "0.25"
+          memory: "256M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # MongoDB副本集 - 从节点2
+  mongo3:
+    image: mongo:latest
+    container_name: learning_agent_mongo3
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./data/mongo3/db:/data/db
+      - ./data/mongo3/configdb:/data/configdb
+      - ./logs/mongo3:/var/log/mongodb
+    environment:
+      - MONGO_REPLICA_SET_NAME=rs0
+    networks:
+      - app_network
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--logpath", "/var/log/mongodb/mongod.log", "--logappend"]
+    restart: unless-stopped
+    depends_on:
+      - mongo2
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+        reservations:
+          cpus: "0.25"
+          memory: "256M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Redis集群 - 主节点1
+  redis1:
+    image: redis:alpine
+    container_name: learning_agent_redis1
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis1:/data
+      - ./logs/redis1:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # Redis集群 - 主节点2
+  redis2:
+    image: redis:alpine
+    container_name: learning_agent_redis2
+    ports:
+      - "6380:6379"
+    volumes:
+      - ./data/redis2:/data
+      - ./logs/redis2:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # Redis集群 - 主节点3
+  redis3:
+    image: redis:alpine
+    container_name: learning_agent_redis3
+    ports:
+      - "6381:6379"
+    volumes:
+      - ./data/redis3:/data
+      - ./logs/redis3:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # Redis集群 - 从节点1
+  redis4:
+    image: redis:alpine
+    container_name: learning_agent_redis4
+    ports:
+      - "6382:6379"
+    volumes:
+      - ./data/redis4:/data
+      - ./logs/redis4:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # Redis集群 - 从节点2
+  redis5:
+    image: redis:alpine
+    container_name: learning_agent_redis5
+    ports:
+      - "6383:6379"
+    volumes:
+      - ./data/redis5:/data
+      - ./logs/redis5:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # Redis集群 - 从节点3
+  redis6:
+    image: redis:alpine
+    container_name: learning_agent_redis6
+    ports:
+      - "6384:6379"
+    volumes:
+      - ./data/redis6:/data
+      - ./logs/redis6:/var/log/redis
+    command: redis-server --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --requirepass redis_password --masterauth redis_password --appendonly yes --logfile /var/log/redis/redis.log --loglevel notice
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  # 应用服务容器
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: streamlit-app  # 使用Streamlit应用阶段
+    container_name: learning_agent_app
+    ports:
+      - "8501:8501"  # Streamlit默认端口
+    volumes:
+      - ./:/app
+#      - .:/app
+      - ./data:/app/data
+      - ./temp:/app/temp
+      - ./logs/app:/app/logs
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_API_BASE=${OPENAI_API_BASE}
+      - OPENAI_CHAT_MODEL=${OPENAI_CHAT_MODEL}
+      - OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL}
+      - MONGO_URI=mongodb://root:example@mongo1:27017,mongo2:27017,mongo3:27017/study_agent_db?replicaSet=rs0&authSource=admin
+      - REDIS_CLUSTER_NODES=redis1:6379,redis2:6379,redis3:6379,redis4:6379,redis5:6379,redis6:6379
+      - REDIS_PASSWORD=redis_password
+      - LOG_LEVEL=INFO
+    networks:
+      - app_network
+    depends_on:
+      mongo1:
+        condition: service_started
+      mongo2:
+        condition: service_started
+      mongo3:
+        condition: service_started
+      redis1:
+        condition: service_healthy
+      redis2:
+        condition: service_healthy
+      redis3:
+        condition: service_healthy
+      redis4:
+        condition: service_healthy
+      redis5:
+        condition: service_healthy
+      redis6:
+        condition: service_healthy
+    restart: unless-stopped
+    # 移除不适用的健康检查（Streamlit不支持自定义路由）
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import socket; sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); result = sock.connect_ex(('localhost', 8501)); exit(0 if result == 0 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # 移除资源限制
+    deploy:
+      resources:
+      #   limits:
+      #     cpus: "1.0"
+      #     memory: "1G"
+        reservations:
+          cpus: "0.5"
+          memory: "1G"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  mongo_data:
+    driver: local
+  redis_data:
+    driver: local
+  app_data:
+    driver: local
+
+networks:
+  app_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,166 @@
+version: '3.8'
+
+services:
+  # 出题服务
+  quiz_generator_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learning_agent_quiz_generator
+    ports:
+      - "8001:8001"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./temp:/app/temp
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-your_api_key_here}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-https://open.bigmodel.cn/api/paas/v4}
+      - MONGO_URI=mongodb://root:example@mongo1:27017,mongo2:27017,mongo3:27017/study_agent_db?replicaSet=rs0&authSource=admin
+      - REDIS_CLUSTER_NODES=redis1:6379,redis2:6379,redis3:6379,redis4:6379,redis5:6379,redis6:6379
+      - REDIS_PASSWORD=redis_password
+      - LOG_LEVEL=INFO
+      - SERVICE_TYPE=quiz_generator
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import socket; sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); result = sock.connect_ex(('localhost', 8001)); exit(0 if result == 0 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: "1G"
+        reservations:
+          cpus: "0.5"
+          memory: "512M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # 判卷服务
+  quiz_grader_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learning_agent_quiz_grader
+    ports:
+      - "8002:8002"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./temp:/app/temp
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-your_api_key_here}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-https://open.bigmodel.cn/api/paas/v4}
+      - MONGO_URI=mongodb://root:example@mongo1:27017,mongo2:27017,mongo3:27017/study_agent_db?replicaSet=rs0&authSource=admin
+      - REDIS_CLUSTER_NODES=redis1:6379,redis2:6379,redis3:6379,redis4:6379,redis5:6379,redis6:6379
+      - REDIS_PASSWORD=redis_password
+      - LOG_LEVEL=INFO
+      - SERVICE_TYPE=quiz_grader
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import socket; sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); result = sock.connect_ex(('localhost', 8002)); exit(0 if result == 0 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: "1G"
+        reservations:
+          cpus: "0.5"
+          memory: "512M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # 错题管理服务
+  mistake_manager_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learning_agent_mistake_manager
+    ports:
+      - "8003:8003"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./temp:/app/temp
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-your_api_key_here}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-https://open.bigmodel.cn/api/paas/v4}
+      - MONGO_URI=mongodb://root:example@mongo1:27017,mongo2:27017,mongo3:27017/study_agent_db?replicaSet=rs0&authSource=admin
+      - REDIS_CLUSTER_NODES=redis1:6379,redis2:6379,redis3:6379,redis4:6379,redis5:6379,redis6:6379
+      - REDIS_PASSWORD=redis_password
+      - LOG_LEVEL=INFO
+      - SERVICE_TYPE=mistake_manager
+    networks:
+      - app_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import socket; sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); result = sock.connect_ex(('localhost', 8003)); exit(0 if result == 0 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+        reservations:
+          cpus: "0.25"
+          memory: "256M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # API网关
+  api_gateway:
+    image: nginx:alpine
+    container_name: learning_agent_api_gateway
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - app_network
+    depends_on:
+      - quiz_generator_service
+      - quiz_grader_service
+      - mistake_manager_service
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.1"
+          memory: "128M"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+networks:
+  app_network:
+    external: true

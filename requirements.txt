@@ -1,0 +1,22 @@
+streamlit
+flask
+langchain
+langchain-openai
+langchain-community
+pymongo
+redis
+pypdf
+faiss-cpu
+python-dotenv
+tiktoken
+pandas          # 用于数据处理和图表生成
+plotly          # 用于交互式图表
+# --- 新增依赖 ---
+pdf2image       # 用于将PDF转为图片传给视觉模型
+SpeechRecognition # 用于语音转文字
+pydub           # 音频格式转换
+bcrypt          # 用于密码哈希
+funasr          # 阿里 FunASR 语音识别
+modelscope      # 模型仓库
+torch           # 深度学习框架
+torchaudio      # 音频处理

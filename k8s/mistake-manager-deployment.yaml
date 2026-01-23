@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mistake-manager-service
+  namespace: learning-agent
+  labels:
+    app: mistake-manager
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mistake-manager
+  template:
+    metadata:
+      labels:
+        app: mistake-manager
+    spec:
+      containers:
+      - name: mistake-manager
+        image: learning-agent:mistake-manager:latest
+        ports:
+        - containerPort: 8003
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: learning-agent-secrets
+              key: openai-api-key
+        - name: OPENAI_API_BASE
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: openai-api-base
+        - name: MONGO_URI
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: mongo-uri
+        - name: REDIS_CLUSTER_NODES
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: redis-cluster-nodes
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: learning-agent-secrets
+              key: redis-password
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: learning-agent-config
+              key: log-level
+        - name: SERVICE_TYPE
+          value: "mistake_manager"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8003
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8003
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mistake-manager-service
+  namespace: learning-agent
+  labels:
+    app: mistake-manager
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8003
+    targetPort: 8003
+  selector:
+    app: mistake-manager
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mistake-manager-hpa
+  namespace: learning-agent
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: mistake-manager-service
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80

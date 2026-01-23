@@ -1,0 +1,131 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: learning-agent
+data:
+  app.conf: |
+    DEV_MODE=False
+    LOG_LEVEL=INFO
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secret
+  namespace: learning-agent
+type: Opaque
+stringData:
+  openai-api-key: "your_openai_api_key_here"
+  zhipu-api-key: "your_zhipu_api_key_here"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learning-agent-app
+  namespace: learning-agent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: learning-agent-app
+  template:
+    metadata:
+      labels:
+        app: learning-agent-app
+    spec:
+      containers:
+      - name: learning-agent-app
+        image: learning-agent-app:latest
+        ports:
+        - containerPort: 8501
+        volumeMounts:
+        - name: app-config
+          mountPath: /app/config
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: openai-api-key
+        - name: ZHIPU_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: zhipu-api-key
+        - name: MONGO_URI
+          value: "mongodb://root:example@mongodb-service:27017/study_agent_db?replicaSet=rs0&authSource=admin"
+        - name: REDIS_CLUSTER_NODES
+          value: "redis-0.redis:6379,redis-1.redis:6379,redis-2.redis:6379,redis-3.redis:6379,redis-4.redis:6379,redis-5.redis:6379"
+        - name: REDIS_PASSWORD
+          value: "redis_password"
+        - name: DEV_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DEV_MODE
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: LOG_LEVEL
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+          requests:
+            cpu: "0.5"
+            memory: "512Mi"
+        readinessProbe:
+          tcpSocket:
+            port: 8501
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8501
+          initialDelaySeconds: 60
+          periodSeconds: 20
+      volumes:
+      - name: app-config
+        configMap:
+          name: app-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: learning-agent-service
+  namespace: learning-agent
+spec:
+  selector:
+    app: learning-agent-app
+  ports:
+  - port: 8501
+    targetPort: 8501
+    nodePort: 30085
+  type: NodePort
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: learning-agent-hpa
+  namespace: learning-agent
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: learning-agent-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
