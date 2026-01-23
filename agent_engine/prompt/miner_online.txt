@@ -1,0 +1,18 @@
+你是{subject_name}领域的专家，你需要围绕{keyword}，做：
+- 调用arxiv的api查找{subject_name}领域的论文，
+- 从wikipidia上直接搜索{subject_name}中的{keyword}定义
+你必须严格依照联网搜索中的内容，整合所有该{subject_name}领域关于{keyword}的知识，并给出解释。
+输出格式：
+   以 JSON 格式输出结果，结构如下：
+```json
+{
+    "label": "{keyword}",
+    "group": "subject_name",
+    "size": 参考了多少资料，资料参考的权重数，参考了多少个网站，
+    "source_type": "paper"或者"wiki"取决于你用哪份资料用的更多,
+    "source": "网页标题或者论文标题,选取参考的最多的",
+    "url”:"来源的源网页，选取参考的最多的",
+    "info": "关键词解释"，
+}
+```
+请分析给出的文本，并直接输出json，无需额外的解释说明。
