@@ -1,0 +1,11 @@
+# 大模型调用
+zhipuai>=2.0.0
+
+# PPT 解析
+python-pptx>=0.6.21
+
+# Web 服务（FastAPI + ASGI 服务器）
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+
+# 其他工具库（日志、类型提示等，已隐式包含）
