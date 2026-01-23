@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # 1. 你的 Python 后端服务
+  backend:
+    build: .
+    container_name: quiz_backend
+    ports:
+      - "8000:8000"  # 映射到电脑的 8000 端口
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      # 在这里填你的 Key，或者读取 .env 文件
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+    networks:
+      - quiz_net
+
+  # 2. Redis 数据库服务
+  redis:
+    image: redis:alpine
+    container_name: quiz_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data # 数据持久化，重启容器数据不丢
+    networks:
+      - quiz_net
+
+volumes:
+  redis_data:
+
+networks:
+  quiz_net:
