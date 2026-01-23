@@ -1,0 +1,7 @@
+[build_index_ollama] loaded records: 146 from data/parsed_docs.jsonl
+[build_index_ollama] ollama_host=http://127.0.0.1:11434, embed_model=nomic-embed-text
+[build_index_ollama] prepared chunks: 302
+[build_index_ollama] after id-dedup: 296
+embed+add:   0%|          | 0/10 [00:00<?, ?it/s]embed+add:  10%|¨€         | 1/10 [00:02<00:23,  2.63s/it]embed+add:  20%|¨€¨€        | 2/10 [00:04<00:15,  1.95s/it]embed+add:  30%|¨€¨€¨€       | 3/10 [00:05<00:12,  1.74s/it]embed+add:  40%|¨€¨€¨€¨€      | 4/10 [00:07<00:10,  1.76s/it]embed+add:  50%|¨€¨€¨€¨€¨€     | 5/10 [00:08<00:08,  1.68s/it]embed+add:  60%|¨€¨€¨€¨€¨€¨€    | 6/10 [00:10<00:06,  1.67s/it]embed+add:  70%|¨€¨€¨€¨€¨€¨€¨€   | 7/10 [00:12<00:04,  1.63s/it]embed+add:  80%|¨€¨€¨€¨€¨€¨€¨€¨€  | 8/10 [00:13<00:03,  1.60s/it]embed+add:  90%|¨€¨€¨€¨€¨€¨€¨€¨€¨€ | 9/10 [00:15<00:01,  1.57s/it]embed+add: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 10/10 [00:15<00:00,  1.21s/it]embed+add: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 10/10 [00:15<00:00,  1.56s/it]
+[build_index_ollama] DONE. manifest saved to index/index_manifest_ollama.json
+[build_index_ollama] Chroma persist dir: index/chroma, collection: rag_docs_ollama

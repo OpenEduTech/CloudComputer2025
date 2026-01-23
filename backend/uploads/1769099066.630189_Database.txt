@@ -1,0 +1,638 @@
+SQL语句详细知识点总结
+
+SQL（Structured Query Language，结构化查询语言）是用于管理关系型数据库的标准语言，核心功能包括数据定义、数据操作、数据控制和事务控制四大类。以下是各模块详细知识点梳理，涵盖语法、用法、示例及注意事项，适配学习与实操场景。
+
+一、SQL基础核心（通用知识点）
+
+1. 基本概念与规范
+
+- 大小写规则：SQL关键字（如SELECT、INSERT）不区分大小写，但建议大写以提升可读性；表名、字段名的大小写敏感性取决于数据库（MySQL默认不敏感，Oracle默认敏感）。
+
+- 语句结尾：每条SQL语句以分号（;）结尾，部分数据库（如MySQL）在单行执行时可省略，但批量执行时必须添加。
+
+- 注释语法：单行注释用“-- ”（双横杠+空格）；多行注释用“/* 注释内容 */”；MySQL支持单行注释用“# ”（井号+空格）。
+
+- 标识符命名：表名、字段名需以字母开头，可包含字母、数字、下划线（_），不能使用SQL关键字（如TABLE、WHERE），若需使用关键字需用反引号（`）（MySQL）或双引号（"）（Oracle）包裹。
+
+2. 数据类型（核心基础，字段定义必用）
+
+不同数据库数据类型略有差异，以下为通用常用类型，适配MySQL、Oracle、PostgreSQL主流数据库：
+
+类型分类
+
+具体类型
+
+说明
+
+示例
+
+数值型
+
+INT/INTEGER
+
+4字节整数，范围-2^31~2^31-1
+
+age INT
+
+数值型
+
+BIGINT
+
+8字节整数，范围-2^63~2^63-1
+
+id BIGINT
+
+数值型
+
+DECIMAL(p,s)/NUMERIC
+
+定点数，p为总位数，s为小数位数（精准存储金额等）
+
+price DECIMAL(10,2)
+
+字符型
+
+VARCHAR(n)
+
+可变长度字符串，n为最大长度（节省空间）
+
+name VARCHAR(50)
+
+字符型
+
+CHAR(n)
+
+固定长度字符串，n为固定长度（适合短字符串，如性别）
+
+gender CHAR(1)
+
+日期时间型
+
+DATE
+
+仅存储日期，格式'YYYY-MM-DD'
+
+birth_date DATE
+
+日期时间型
+
+DATETIME
+
+存储日期+时间，格式'YYYY-MM-DD HH:MM:SS'
+
+create_time DATETIME
+
+其他类型
+
+TEXT、BOOLEAN、BLOB
+
+TEXT存储长文本；BOOLEAN等价于TINYINT(1)（0=false，1=true）；BLOB存储二进制数据（如图片）
+
+content TEXT、is_valid BOOLEAN
+
+二、数据定义语言（DDL）—— 定义数据库结构
+
+核心作用：创建、修改、删除数据库、表、视图、索引等数据库对象，关键字：CREATE、ALTER、DROP、TRUNCATE。
+
+1. 数据库操作（Database）
+
+- 创建数据库：CREATE DATABASE [IF NOT EXISTS] 数据库名 [CHARSET 字符集] [COLLATE 排序规则];
+示例：CREATE DATABASE IF NOT EXISTS school CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
+说明：IF NOT EXISTS 避免重复创建报错；utf8mb4 支持emoji表情，推荐作为默认字符集。
+
+- 查看数据库：SHOW DATABASES;（查看所有数据库）；USE 数据库名;（切换到目标数据库）；SELECT DATABASE();（查看当前所在数据库）。
+
+- 修改数据库：主要修改字符集和排序规则，ALTER DATABASE 数据库名 CHARSET 新字符集 COLLATE 新排序规则;。
+
+- 删除数据库：DROP DATABASE [IF EXISTS] 数据库名;
+说明：IF EXISTS 避免删除不存在的数据库报错；删除后数据不可逆，谨慎操作。
+
+2. 表操作（Table，核心重点）
+
+（1）创建表
+
+语法：CREATE TABLE [IF NOT EXISTS] 表名 (
+      字段名1 数据类型 [约束条件],
+      字段名2 数据类型 [约束条件],
+      ...
+      [主键约束/外键约束等全局约束]
+    ) [ENGINE 存储引擎] [CHARSET 字符集];
+
+示例（创建学生表）：
+
+CREATE TABLE IF NOT EXISTS student (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT, -- 主键+自增
+  name VARCHAR(50) NOT NULL COMMENT '姓名', -- 非空约束+注释
+  gender CHAR(1) DEFAULT '男' COMMENT '性别', -- 默认值约束
+  age INT CHECK (age > 0 AND age < 150) COMMENT '年龄', -- 检查约束
+  student_no VARCHAR(20) UNIQUE NOT NULL COMMENT '学号', -- 唯一约束+非空
+  class_id BIGINT COMMENT '班级ID，关联班级表',
+  create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  FOREIGN KEY (class_id) REFERENCES class(id) -- 外键约束，关联class表的id字段
+) ENGINE=InnoDB CHARSET=utf8mb4 COMMENT '学生表';
+
+（2）约束条件（核心，保证数据完整性）
+
+约束是创建表时对字段的规则限制，避免无效数据插入，分为字段级约束和表级约束：
+
+- 主键约束（PRIMARY KEY）：唯一标识一条记录，非空且唯一；一张表只能有一个主键，可由单个字段或多个字段组成（复合主键）。
+        
+示例：单字段主键 id BIGINT PRIMARY KEY；复合主键 PRIMARY KEY (student_no, class_id)。
+
+- 自增约束（AUTO_INCREMENT）：仅适用于整数类型主键，插入数据时自动生成递增数值（MySQL专属，Oracle用序列+触发器实现）。
+
+- 非空约束（NOT NULL）：字段值不能为空，插入/更新时必须赋值。
+
+- 唯一约束（UNIQUE）：字段值在表中唯一，但可以为空（多个NULL值不冲突）；一张表可有多个唯一约束。
+
+- 默认值约束（DEFAULT）：字段未赋值时，自动使用默认值；默认值可是常量、函数（如CURRENT_TIMESTAMP获取当前时间）。
+
+- 检查约束（CHECK）：限制字段值的范围或格式（MySQL 8.0+支持，之前版本语法支持但无效）。
+
+- 外键约束（FOREIGN KEY）：关联两张表，子表外键字段值必须来自父表主键字段值；用于保证数据关联性，避免孤立数据。
+        
+注意：父表字段必须是主键或唯一约束；删除父表记录时，需设置级联规则（ON DELETE CASCADE 级联删除，ON DELETE SET NULL 设为NULL）。
+
+（3）修改表结构（ALTER TABLE）
+
+语法：ALTER TABLE 表名 操作类型;，常见操作类型：
+
+- 添加字段：ALTER TABLE 表名 ADD 字段名 数据类型 [约束条件] [FIRST|AFTER 已有字段];
+示例：ALTER TABLE student ADD phone VARCHAR(20) UNIQUE AFTER name;
+
+- 修改字段：修改数据类型 ALTER TABLE 表名 MODIFY 字段名 新数据类型 [约束条件];；修改字段名+类型ALTER TABLE 表名 CHANGE 旧字段名 新字段名 新数据类型 [约束条件];
+示例：ALTER TABLE student MODIFY age TINYINT;、ALTER TABLE student CHANGE phone mobile VARCHAR(20);
+
+- 删除字段：ALTER TABLE 表名 DROP 字段名;（删除字段会丢失该字段所有数据，谨慎操作）
+
+- 修改表名：ALTER TABLE 旧表名 RENAME TO 新表名;
+
+- 添加约束：添加主键ALTER TABLE 表名 ADD PRIMARY KEY (字段名);；添加外键 ALTER TABLE 子表名 ADD FOREIGN KEY (子表字段) REFERENCES 父表名(父表字段) ON DELETE CASCADE;
+
+- 删除约束：删除主键 ALTER TABLE 表名 DROP PRIMARY KEY;；删除唯一约束 ALTER TABLE 表名 DROP INDEX 约束名;；删除外键 ALTER TABLE 表名 DROP FOREIGN KEY 外键名;
+
+（4）删除表与清空表
+
+- 删除表（DROP TABLE）：DROP TABLE [IF EXISTS] 表名;，删除表结构及所有数据，不可逆。
+
+- 清空表（TRUNCATE TABLE）：TRUNCATE TABLE 表名;，清空表中所有数据，但保留表结构；自增字段会重置为初始值；无法回滚（与DELETE区别）。
+
+- DROP vs TRUNCATE vs DELETE：DELETE是DML语句，可带WHERE条件删除部分数据，支持回滚；TRUNCATE是DDL语句，清空全表，不支持回滚，效率比DELETE高；DROP是DDL语句，删除表/库，不可逆。
+
+（5）查看表结构
+
+- 查看表基本信息：DESC 表名;（MySQL）、DESCRIBE 表名;（通用）。
+
+- 查看表创建语句：SHOW CREATE TABLE 表名;（查看完整创建语法，包括约束、存储引擎等）。
+
+- 查看当前数据库所有表：SHOW TABLES;。
+
+3. 索引操作（INDEX，优化查询核心）
+
+索引是加速数据查询的数据库对象，通过构建索引结构（如B+树）减少数据扫描范围，提升查询效率，但会降低插入/更新/删除效率（需维护索引）。
+
+- 创建索引：
+        
+普通索引：CREATE INDEX 索引名 ON 表名(字段名);
+唯一索引：CREATE UNIQUE INDEX 索引名 ON 表名(字段名);（字段值唯一，可空）
+        
+复合索引：CREATE INDEX 索引名 ON 表名(字段1, 字段2);（遵循“最左前缀原则”，查询时需匹配左起字段）
+        
+主键索引：创建主键时自动生成，无需手动创建。
+
+- 删除索引：DROP INDEX 索引名 ON 表名;（MySQL）、DROP INDEX 索引名 FROM 表名;（Oracle）。
+
+- 查看索引：SHOW INDEX FROM 表名;（MySQL）、SELECT * FROM USER_INDEXES WHERE TABLE_NAME='表名';（Oracle）。
+
+- 索引使用原则：高频查询字段（WHERE、JOIN、ORDER BY后的字段）适合建索引；低频查询、频繁修改的字段不适合建索引；字段值重复率高（如性别）不适合建索引；复合索引优先把查询频率高的字段放前面。
+
+4. 视图操作（VIEW，简化查询）
+
+视图是虚拟表，基于查询结果构建，不存储实际数据，仅存储查询语句；用于简化复杂查询、隐藏敏感数据、控制数据访问权限。
+
+- 创建视图：CREATE VIEW 视图名 AS SELECT 字段1, 字段2... FROM 表名 [WHERE 条件];
+示例：CREATE VIEW student_class AS SELECT s.name, s.age, c.class_name FROM student s JOIN class c ON s.class_id = c.id;
+
+- 查询视图：与查询表一致，SELECT * FROM 视图名 [WHERE 条件];。
+
+- 修改视图：ALTER VIEW 视图名 AS 新查询语句;。
+
+- 删除视图：DROP VIEW [IF EXISTS] 视图名;。
+
+- 注意事项：视图可嵌套（基于视图创建视图）；部分视图支持更新（需满足单表来源、无聚合函数等条件）；复杂视图（含GROUP BY、DISTINCT等）仅支持查询，不支持更新。
+
+三、数据操作语言（DML）—— 操作表中数据
+
+核心作用：插入、删除、更新表中的数据，关键字：INSERT、DELETE、UPDATE；支持事务回滚，操作后需COMMIT提交（或ROLLBACK回滚）。
+
+1. 插入数据（INSERT，核心）
+
+（1）基本语法
+
+- 指定字段插入：INSERT INTO 表名(字段1, 字段2, ...) VALUES(值1, 值2, ...);（推荐，字段顺序可与表结构不一致，值需与字段一一对应）
+        
+示例：INSERT INTO student(name, age, student_no) VALUES('张三', 18, '2024001');
+
+- 不指定字段插入：INSERT INTO 表名 VALUES(值1, 值2, ...);（值的顺序必须与表结构字段顺序完全一致，不推荐，表结构修改后易出错）
+
+- 批量插入：INSERT INTO 表名(字段1, 字段2, ...) VALUES(值1, 值2, ...), (值1, 值2, ...), ...;（效率比多次单条插入高）
+        
+示例：INSERT INTO student(name, age, student_no) VALUES('张三', 18, '2024001'), ('李四', 19, '2024002');
+
+- 查询插入（将一张表的查询结果插入另一张表）：INSERT INTO 目标表名(字段1, 字段2, ...) SELECT 字段1, 字段2... FROM 源表名 [WHERE 条件];
+注意：目标表需提前创建，字段类型与源表匹配。
+
+（2）插入注意事项
+
+- 值的类型、长度必须与字段定义一致，如VARCHAR字段值需用单引号（'）包裹，日期类型值格式需正确（'YYYY-MM-DD'）。
+
+- 非空约束字段必须赋值，默认值约束字段可省略赋值（自动用默认值）。
+
+- 自增主键字段无需赋值，插入时自动生成递增数值。
+
+2. 更新数据（UPDATE，核心）
+
+（1）基本语法
+
+UPDATE 表名 SET 字段1=值1, 字段2=值2... [WHERE 条件] [LIMIT 条数];
+
+示例：
+
+- 更新单条数据：UPDATE student SET age=19 WHERE id=1;
+
+- 更新多条数据：UPDATE student SET class_id=2 WHERE age > 20;
+
+- 限制更新条数（MySQL专属）：UPDATE student SET gender='女' WHERE class_id=1 LIMIT 5;
+
+（2）关键注意事项
+
+- 严禁省略WHERE条件：省略WHERE会更新表中所有数据，造成严重数据错误（如UPDATE student SET age=19;会更新所有学生的年龄）。
+
+- 更新外键字段时，需保证值存在于父表主键字段中，否则触发外键约束报错。
+
+- 更新带索引的字段时，会触发索引维护，效率较低，批量更新建议避开高峰期。
+
+3. 删除数据（DELETE，核心）
+
+（1）基本语法
+
+DELETE FROM 表名 [WHERE 条件] [LIMIT 条数];
+
+示例：
+
+- 删除单条数据：DELETE FROM student WHERE id=1;
+
+- 删除多条数据：DELETE FROM student WHERE class_id=2;
+
+- 限制删除条数（MySQL专属）：DELETE FROM student WHERE age < 16 LIMIT 3;
+
+（2）关键注意事项
+
+- 严禁省略WHERE条件：省略WHERE会删除表中所有数据（等价于TRUNCATE，但支持回滚）。
+
+- 删除带外键关联的子表数据时，需先删除子表数据，再删除父表数据（或设置外键级联删除规则）。
+
+- DELETE删除数据后，自增字段不会重置（与TRUNCATE区别），如需重置需手动ALTER TABLE修改自增起始值。
+
+四、数据查询语言（DQL）—— 核心重点，查询数据
+
+核心作用：从表中查询所需数据，关键字：SELECT；是SQL中最常用、最复杂的部分，涵盖单表查询、多表查询、聚合查询、子查询等。
+
+基础语法结构（顺序固定，不可颠倒）：SELECT 字段列表 FROM 表名 [WHERE 条件] [GROUP BY 分组字段] [HAVING 分组条件] [ORDER BY 排序字段] [LIMIT 分页参数];
+
+1. 单表查询（基础，必掌握）
+
+（1）查询所有字段
+
+SELECT * FROM 表名;（*代表所有字段，仅用于快速测试，生产环境不推荐，效率低且字段顺序变更后易出错）
+
+（2）查询指定字段
+
+SELECT 字段1, 字段2, ... FROM 表名;（推荐，明确查询字段，提升效率）
+
+示例：SELECT name, age, student_no FROM student;
+
+（3）字段别名（AS）
+
+语法：SELECT 字段名 AS 别名 FROM 表名;（AS可省略，字段名与别名之间用空格分隔）
+
+示例：SELECT name AS 姓名, age 年龄 FROM student;（查询结果中字段显示为别名）
+
+（4）去重查询（DISTINCT）
+
+语法：SELECT DISTINCT 字段名 FROM 表名;（去除查询结果中重复的记录，仅保留一条）
+
+示例：SELECT DISTINCT class_id FROM student;（查询所有不重复的班级ID）
+
+注意：DISTINCT作用于所有查询字段，而非单个字段；如SELECT DISTINCT name, age FROM student;是去除name和age都相同的记录。
+
+（5）条件查询（WHERE，核心）
+
+通过WHERE子句筛选符合条件的记录，支持比较运算符、逻辑运算符、特殊运算符：
+
+运算符类型
+
+具体运算符
+
+说明
+
+示例
+
+比较运算符
+
+=、!=、<>、>、<、>=、<=
+
+!=和<>均表示不等于；=用于等值匹配（NULL值不能用=，需用IS NULL）
+
+WHERE age > 18、WHERE gender <> '男'
+
+逻辑运算符
+
+AND、OR、NOT
+
+AND：同时满足多个条件；OR：满足任意一个条件；NOT：取反
+
+WHERE age >18 AND class_id=2、NOT (age <16)
+
+范围运算符
+
+BETWEEN...AND...、IN()
+
+BETWEEN：在指定范围（含边界）；IN：匹配列表中的任意一个值
+
+WHERE age BETWEEN 16 AND 20、WHERE class_id IN (1,2,3)
+
+模糊匹配
+
+LIKE、NOT LIKE
+
+搭配通配符：%（匹配任意0个或多个字符）、_（匹配任意1个字符）
+
+WHERE name LIKE '张%'（姓张的人）、WHERE name LIKE '李_'（名字2字且姓李）
+
+空值判断
+
+IS NULL、IS NOT NULL
+
+NULL值不能用=或!=判断，必须用IS NULL/IS NOT NULL
+
+WHERE phone IS NULL、WHERE email IS NOT NULL
+
+（6）排序查询（ORDER BY）
+
+语法：SELECT 字段列表 FROM 表名 [WHERE 条件] ORDER BY 字段1 [ASC|DESC], 字段2 [ASC|DESC];
+
+- ASC：升序排列（默认，可省略）；DESC：降序排列。
+
+- 支持多字段排序：先按字段1排序，字段1值相同时按字段2排序。
+
+- 示例：SELECT name, age FROM student WHERE class_id=1 ORDER BY age DESC, name ASC;（按年龄降序，年龄相同按姓名升序）
+
+（7）分页查询（LIMIT，MySQL专属；Oracle用ROWNUM）
+
+语法：SELECT 字段列表 FROM 表名 [WHERE 条件] ORDER BY 字段 LIMIT 起始索引, 每页条数;
+
+- 起始索引：从0开始（第一页起始索引为0，第二页为每页条数，以此类推）。
+
+- 简化写法（第一页）：LIMIT 每页条数;（等价于LIMIT 0, 每页条数）。
+
+- 示例：SELECT * FROM student LIMIT 0, 10;（第一页，10条/页）；SELECT * FROM student LIMIT 10, 10;（第二页）。
+
+- Oracle分页示例：SELECT * FROM (SELECT t.*, ROWNUM rn FROM student t WHERE ROWNUM <= 20) WHERE rn > 10;（第二页，10条/页）。
+
+2. 聚合查询（GROUP BY + 聚合函数，统计分析）
+
+聚合函数用于对一组数据进行统计计算，返回单个值；常与GROUP BY子句搭配使用（分组统计），支持的聚合函数：
+
+（1）常用聚合函数
+
+- COUNT()：统计记录条数，COUNT(*)统计所有记录（包括NULL），COUNT(字段名)统计非NULL字段的记录数。
+
+- SUM()：计算数值字段的总和（忽略NULL值）。
+
+- AVG()：计算数值字段的平均值（忽略NULL值）。
+
+- MAX()：获取字段的最大值（忽略NULL值）。
+
+- MIN()：获取字段的最小值（忽略NULL值）。
+
+（2）分组统计（GROUP BY）
+
+语法：SELECT 分组字段, 聚合函数(字段名) AS 别名 FROM 表名 [WHERE 条件] GROUP BY 分组字段 [HAVING 分组条件];
+
+示例：
+
+- 统计每个班级的学生人数：SELECT class_id, COUNT(*) AS 学生人数 FROM student GROUP BY class_id;
+
+- 统计每个班级的平均年龄（仅统计年龄>16的学生）：SELECT class_id, AVG(age) AS 平均年龄 FROM student WHERE age >16 GROUP BY class_id;
+
+（3）分组筛选（HAVING）
+
+HAVING用于筛选分组后的结果（与WHERE的区别：WHERE筛选分组前的记录，HAVING筛选分组后的结果；HAVING可使用聚合函数，WHERE不能）。
+
+示例：统计学生人数>30的班级：SELECT class_id, COUNT(*) AS 学生人数 FROM student GROUP BY class_id HAVING COUNT(*) >30;
+
+3. 多表查询（JOIN，核心难点）
+
+多表查询用于从多个关联表中获取数据，核心是通过外键建立表间关联，常用JOIN类型：内连接、左连接、右连接、全连接（部分数据库支持）。
+
+前提：假设有两张表，student（学生表，含class_id外键）和class（班级表，含id主键）。
+
+（1）内连接（INNER JOIN，默认JOIN）
+
+语法：SELECT 字段列表 FROM 表1 [INNER] JOIN 表2 ON 表1.外键字段 = 表2.主键字段 [WHERE 条件];
+
+作用：只查询两张表中匹配（外键=主键）的记录，不匹配的记录不显示。
+
+示例：查询学生姓名及所属班级名称：SELECT s.name AS 姓名, c.class_name AS 班级名称 FROM student s INNER JOIN class c ON s.class_id = c.id;
+
+（2）左连接（LEFT JOIN / LEFT OUTER JOIN）
+
+语法：SELECT 字段列表 FROM 表1 LEFT [OUTER] JOIN 表2 ON 表1.外键字段 = 表2.主键字段 [WHERE 条件];
+
+作用：查询左表（表1）的所有记录，即使右表（表2）没有匹配的记录，右表字段显示为NULL。
+
+示例：查询所有学生的姓名及所属班级名称（无班级的学生也显示）：SELECT s.name AS 姓名, c.class_name AS 班级名称 FROM student s LEFT JOIN class c ON s.class_id = c.id;
+
+（3）右连接（RIGHT JOIN / RIGHT OUTER JOIN）
+
+语法：SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 表1.外键字段 = 表2.主键字段 [WHERE 条件];
+
+作用：查询右表（表2）的所有记录，即使左表（表1）没有匹配的记录，左表字段显示为NULL。
+
+示例：查询所有班级及班级中的学生姓名（无学生的班级也显示）：SELECT c.class_name AS 班级名称, s.name AS 姓名 FROM student s RIGHT JOIN class c ON s.class_id = c.id;
+
+（4）全连接（FULL JOIN，Oracle支持，MySQL不直接支持）
+
+作用：查询两张表的所有记录，匹配的记录合并显示，不匹配的记录对应字段显示为NULL。
+
+MySQL替代方案：左连接 + UNION + 右连接（去重）：SELECT s.name, c.class_name FROM student s LEFT JOIN class c ON s.class_id = c.id UNION SELECT s.name, c.class_name FROM student s RIGHT JOIN class c ON s.class_id = c.id;
+
+（5）多表连接注意事项
+
+- 多表连接时需给表起别名（如s代表student，c代表class），简化语法。
+
+- ON后面是表间关联条件（外键=主键），WHERE后面是筛选条件。
+
+- 三张及以上表连接时，依次添加JOIN语句，如表1 JOIN 表2 ON ... JOIN 表3 ON ...。
+
+4. 子查询（嵌套查询，复杂场景）
+
+子查询是将一个查询语句（子查询）嵌套在另一个查询语句（主查询）中，子查询的结果作为主查询的条件或数据源；子查询需用括号（）包裹，可分为单行子查询、多行子查询、关联子查询。
+
+（1）单行子查询（返回一条记录）
+
+常用运算符：=、>、<、>=、<=、!=。
+
+示例：查询年龄大于平均年龄的学生：SELECT name, age FROM student WHERE age > (SELECT AVG(age) FROM student);
+
+（2）多行子查询（返回多条记录）
+
+常用运算符：IN（匹配任意一个值）、ANY（匹配任意一个满足条件的值）、ALL（匹配所有值）、EXISTS（判断是否存在记录）。
+
+示例1：查询属于1班或2班的学生：SELECT name, class_id FROM student WHERE class_id IN (SELECT id FROM class WHERE class_name IN ('1班', '2班'));
+
+示例2：查询存在学生的班级：SELECT class_name FROM class WHERE EXISTS (SELECT * FROM student WHERE student.class_id = class.id);
+
+（3）关联子查询（子查询与主查询有关联，逐行匹配）
+
+子查询中使用主查询的字段，实现逐行筛选。
+
+示例：查询每个班级中年龄最大的学生：SELECT name, class_id, age FROM student s1 WHERE age = (SELECT MAX(age) FROM student s2 WHERE s2.class_id = s1.class_id);
+
+（4）子查询注意事项
+
+- 子查询可嵌套多层，但嵌套层数越多，效率越低，建议控制在3层以内。
+
+- EXISTS子查询优先判断是否存在记录，效率比IN子查询高（尤其数据量大时）。
+
+- 子查询的SELECT字段需与主查询条件匹配（单行子查询返回单个值，多行子查询返回多个值）。
+
+五、数据控制语言（DCL）—— 权限管理
+
+核心作用：管理数据库用户的创建、删除及权限分配，关键字：GRANT、REVOKE、CREATE USER、DROP USER。
+
+1. 用户管理
+
+- 创建用户：CREATE USER '用户名'@'主机地址' IDENTIFIED BY '密码';
+示例：CREATE USER 'student_user'@'localhost' IDENTIFIED BY '123456';（localhost表示仅本地访问，%表示任意主机访问）
+
+- 修改用户密码：ALTER USER '用户名'@'主机地址' IDENTIFIED BY '新密码';
+
+- 删除用户：DROP USER '用户名'@'主机地址';
+
+- 查看用户：SELECT user, host FROM mysql.user;（MySQL，需管理员权限）
+
+2. 权限分配（GRANT）
+
+语法：GRANT 权限列表 ON 数据库名.表名 TO '用户名'@'主机地址' [WITH GRANT OPTION];
+
+- 权限列表：常用权限包括SELECT（查询）、INSERT（插入）、UPDATE（更新）、DELETE（删除）、CREATE（创建）、DROP（删除）、ALL PRIVILEGES（所有权限）。
+
+- 数据库名.表名：*.*表示所有数据库所有表；school.*表示school数据库所有表；school.student表示school数据库的student表。
+
+- WITH GRANT OPTION：允许该用户将自己的权限授予其他用户。
+
+- 示例：授予student_user用户school数据库所有表的查询和插入权限：GRANT SELECT, INSERT ON school.* TO 'student_user'@'localhost';
+
+3. 权限回收（REVOKE）
+
+语法：REVOKE 权限列表 ON 数据库名.表名 FROM '用户名'@'主机地址';
+
+示例：回收student_user用户school数据库student表的删除权限：REVOKE DELETE ON school.student FROM 'student_user'@'localhost';
+
+4. 权限生效
+
+授予或回收权限后，需执行FLUSH PRIVILEGES;（MySQL）使权限立即生效。
+
+六、事务控制语言（TCL）—— 事务管理
+
+事务是一组不可分割的SQL操作集合，要么全部执行成功（COMMIT），要么全部执行失败（ROLLBACK），核心用于保证数据一致性（如转账操作：扣款和到账必须同时成功或同时失败）。
+
+1. 事务的ACID特性（核心）
+
+- 原子性（Atomicity）：事务中的所有操作要么全部成功，要么全部失败，无中间状态（如转账时扣款成功但到账失败，事务回滚，扣款恢复）。
+
+- 一致性（Consistency）：事务执行前后，数据总量保持一致（如转账时A账户扣款100，B账户到账100，总金额不变）。
+
+- 隔离性（Isolation）：多个事务同时执行时，事务之间相互隔离，一个事务的执行不会影响其他事务（避免脏读、不可重复读、幻读）。
+
+- 持久性（Durability）：事务执行成功（COMMIT）后，数据永久保存到磁盘，即使断电也不会丢失。
+
+2. 事务控制语句
+
+- 开启事务：START TRANSACTION; 或 BEGIN;（默认情况下，MySQL自动提交事务，开启事务后需手动提交）。
+
+- 提交事务：COMMIT;（事务执行成功，将操作结果永久保存到数据库）。
+
+- 回滚事务：ROLLBACK;（事务执行失败，撤销所有操作，恢复到事务开启前的状态）。
+
+- 保存点：SAVEPOINT 保存点名称;（在事务中设置保存点，回滚时可指定回滚到保存点，而非整个事务）；ROLLBACK TO 保存点名称;（回滚到指定保存点）。
+
+3. 事务隔离级别（解决并发问题）
+
+数据库默认隔离级别不同（MySQL默认可重复读，Oracle默认读已提交），隔离级别越高，并发问题越少，但效率越低。
+
+隔离级别
+
+脏读
+
+不可重复读
+
+幻读
+
+说明
+
+读未提交（Read Uncommitted）
+
+允许
+
+允许
+
+允许
+
+最低隔离级别，可读取其他事务未提交的数据（脏数据）
+
+读已提交（Read Committed）
+
+禁止
+
+允许
+
+允许
+
+只能读取其他事务已提交的数据（避免脏读）
+
+可重复读（Repeatable Read）
+
+禁止
+
+禁止
+
+允许
+
+同一事务中多次读取同一数据，结果一致（避免不可重复读）
+
+串行化（Serializable）
+
+禁止
+
+禁止
+
+禁止
+
+最高隔离级别，事务串行执行（无并发问题，效率最低）
+
+隔离级别相关操作：
+
+- 查看当前隔离级别：SELECT @@transaction_isolation;（MySQL 8.0+）。
+
+- 设置隔离级别：SET TRANSACTION ISOLATION LEVEL 隔离级别;（如SET TRANSACTION ISOLATION LEVEL READ COMMITTED;）。
+
+七、SQL高级补充知识点
+
+1. 常用函数
+
+数据库提供内置函数，简化数据处理，分为字符串函数、日期函数、数值函数：
+
+- 字符串函数：CONCAT(字符串1, 字符串2)（拼接字符串）、LEN(字符串)/LENGTH(字符串)（获取长度）、SUBSTRING(字符串, 起始位置, 长度)（截取字符串）、UPPER(字符串)（转大写）、LOWER(字符串)（转小写）。

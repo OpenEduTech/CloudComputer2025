@@ -1,0 +1,46 @@
+# FastAPI and Server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib==1.7.4
+bcrypt==4.0.1
+
+# Database
+motor==3.3.2
+pymongo==4.6.1
+redis==5.0.1
+neo4j==5.16.0
+
+# AI/ML
+langchain==0.1.5
+langchain-openai==0.0.5
+langchain-community==0.0.17
+openai==1.10.0
+faiss-cpu==1.7.4
+sentence-transformers==2.3.1
+tiktoken==0.5.2
+
+# Document Processing
+PyMuPDF==1.23.20
+python-docx==1.1.0
+pdfplumber==0.10.4
+pytesseract==0.3.10
+Pillow==10.2.0
+opencv-python-headless==4.9.0.80
+
+# NLP
+nltk==3.8.1
+spacy==3.7.2
+
+# Utils
+pydantic==2.5.3
+email-validator
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+aiofiles==23.2.1
+httpx==0.26.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3

@@ -1,0 +1,9 @@
+{
+  "jsonl": "data/parsed_docs.jsonl",
+  "persist_dir": "..\\index\\chroma",
+  "collection": "rag_docs_ollama",
+  "ollama_host": "http://localhost:11435",
+  "embedding_model": "nomic-embed-text",
+  "total_records": 4485,
+  "total_chunks_added": 4637
+}

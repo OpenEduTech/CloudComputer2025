@@ -1,0 +1,21 @@
+# ---- Web Framework ----
+fastapi>=0.110.0
+uvicorn>=0.29.0
+python-multipart>=0.0.9
+
+# ---- AI & Torch (Core) ----
+# 锁定 numpy<2 以避免 "module compiled against API version 0x..." 错误
+numpy<2.0.0
+torch>=2.2.0
+
+# ---- RAG & Embeddings ----
+transformers>=4.40.0
+sentence-transformers>=2.7.0
+FlagEmbedding>=1.2.10
+chromadb>=0.5.0
+
+# ---- Graph Database ----
+neo4j>=5.14.0
+
+# ---- Orchestration (Optional but good to have) ----
+langchain-community>=0.2.0
