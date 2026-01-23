@@ -1,0 +1,162 @@
+version: '3.8'
+
+services:
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL数据库
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=ppt_agent
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin123
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Milvus 向量数据库
+  milvus-standalone:
+    image: milvusdb/milvus:v2.3.0
+    container_name: milvus-standalone
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    command:
+      - milvus
+      - run
+      - standalone
+    environment:
+      - ETCD_ENDPOINTS=etcd:2379
+      - MINIO_ADDRESS=minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+    depends_on:
+      etcd:
+        condition: service_started
+      minio:
+        condition: service_healthy
+    volumes:
+      - milvus-data:/var/lib/milvus
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 30s
+      retries: 10
+      start_period: 180s
+
+  # Milvus 依赖服务
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: milvus-etcd
+    environment:
+      - ETCD_AUTO_COMPACTION_MODE=revision
+      - ETCD_AUTO_COMPACTION_RETENTION=1000
+      - ETCD_QUOTA_BACKEND_BYTES=4294967296
+      - ALLOW_NONE_AUTHENTICATION=yes
+    volumes:
+      - etcd-data:/etcd
+    command: etcd -advertise-client-urls=http://0.0.0.0:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  minio:
+    image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+    container_name: milvus-minio
+    environment:
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+    volumes:
+      - minio-data:/data
+    command: minio server /data --console-address ":9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 5
+
+  # PPT智能体主服务 - 修复版
+  ppt-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+      - "8501:8501"
+    environment:
+      - SILICONFLOW_API_KEY=${SILICONFLOW_API_KEY}
+      - MILVUS_HOST=milvus-standalone
+      - MILVUS_PORT=19530
+      - PYTHONUNBUFFERED=1
+      # 添加关键环境变量
+      - HF_ENDPOINT=https://hf-mirror.com
+      - HF_HUB_DISABLE_TELEMETRY=1
+      - STREAMLIT_SERVER_FILE_WATCHER_TYPE=poll
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=admin
+      - DB_USER=admin
+      - DB_PASSWORD=admin123
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./model_cache:/app/model_cache
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      milvus-standalone:
+        condition: service_healthy
+    restart: unless-stopped
+    # 修复命令 - 所有参数在一行
+    command: >
+      sh -c "
+        export HF_ENDPOINT=https://hf-mirror.com &&
+        export HF_HUB_DISABLE_TELEMETRY=1 &&
+        cd /app &&
+        echo '🚀 启动API服务...' &&
+        python main.py --mode api &
+        echo '⏳ 等待API启动（可能需要60秒下载模型）...' &&
+        sleep 60 &&
+        echo '🌐 启动Web界面...' &&
+        streamlit run web_app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=poll --browser.serverAddress=0.0.0.0 --browser.serverPort=8501
+      "
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8010/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s  # 增加启动等待时间
+
+volumes:
+  postgres-data:
+  milvus-data:
+  etcd-data:
+  minio-data:
