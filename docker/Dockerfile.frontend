@@ -1,0 +1,10 @@
+FROM nginx:alpine
+
+# 复制前端文件
+COPY frontend/ /usr/share/nginx/html/
+
+# 复制nginx配置
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
