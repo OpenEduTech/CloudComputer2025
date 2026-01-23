@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Force-directed 力导图</title>
+  <style>
+    ::-webkit-scrollbar { display: none; }
+    html, body { overflow: hidden; margin: 0; }
+
+    .container {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      height: 100vh;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+
+    .controls {
+      border: 1px solid black;
+      z-index: 100;
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      overflow-y: auto;
+    }
+
+    #edge_info {
+      border: 1px solid black;
+      z-index: 100;
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      overflow-y: auto;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      min-width: 60px;
+      white-space: nowrap;
+    }
+
+    input[type="text"], select, textarea {
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 4px;
+    }
+
+    button {
+      padding: 5px 12px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    #mountNode {
+      flex: 1;
+      height: 100%;
+      min-height: 600px;
+      border: 1px solid #ccc;
+      flex-shrink: 1;
+    }
+
+    .big_container{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+<div class="big_container" >
+<div class="container">
+  <div class="controls">
+    <div class="control-group">
+      <label for="search">搜索:</label>
+      <input type="text" id="search" placeholder="输入节点名称">
+      <button id="searchbtn">确认</button>
+    </div>
+    <div class="control-group">
+      <label for="node1">起点:</label>
+      <select id="node1">
+        <option value="">选择起点</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="node2">终点:</label>
+      <select id="node2">
+        <option value="">选择终点</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <input type="checkbox" id="findMode">
+      <label for="findMode">启用寻路模式</label>
+    </div>
+    <div class="control-group" style="justify-content: flex-end;">
+      <button id="findbtn">开始寻路</button>
+    </div>
+  </div>
+
+  <div id="edge_info">
+    <div class="form-group">
+      <label for="edge_source">来源：</label>
+      <input type="text" id="edge_source">
+    </div>
+    <div class="form-group">
+      <label for="edge_target">去向：</label>
+      <input type="text" id="edge_target">
+    </div>
+    <div class="form-group">
+      <label for="strength">强度：</label>
+      <input type="text" id="strength">
+    </div>
+    <div class="form-group">
+      <label for="relation">关联：</label>
+      <textarea id="relation" name="relation" rows="5" cols="40"></textarea>
+    </div>
+  </div>
+
+
+</div>
+<div id="mountNode"></div>
+</div>
+<script src="https://gw.alipayobjects.com/os/lib/antv/g6/4.3.11/dist/g6.min.js"></script>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
