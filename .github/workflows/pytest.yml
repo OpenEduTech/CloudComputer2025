@@ -1,0 +1,95 @@
+name: pytest
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'models/**'
+      - 'test/**'
+      - 'main.py'
+      - 'requirements.txt'
+      - '.github/workflows/pytest.yml'
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'models/**'
+      - 'test/**'
+      - 'main.py'
+      - 'requirements.txt'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: ['3.12']
+      fail-fast: false
+
+    services:
+      mongodb:
+        image: mongo:7.0
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: password123
+          MONGO_INITDB_DATABASE: learning_agent
+        options: >-
+          --health-cmd "mongosh --eval 'db.adminCommand(\"ping\")' || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-timeout
+
+      - name: Run pytest
+        env:
+          MONGO_URI: mongodb://root:password123@localhost:27017/learning_agent?authSource=admin
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          pytest test/ -v \
+            --tb=short \
+            --cov=models \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            --timeout=30
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+
+      - name: Generate test report
+        if: always()
+        run: |
+          pytest test/ -v --tb=short > test-report-${{ matrix.python-version }}.txt 2>&1 || true
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-${{ matrix.python-version }}
+          path: test-report-${{ matrix.python-version }}.txt
+          retention-days: 30
