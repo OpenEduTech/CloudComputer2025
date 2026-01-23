@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # 1. 后端服务 (FastAPI + Agent)
+  backend:
+    build: ./backend
+    container_name: learning_agent_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      - REDIS_URL=redis://redis:6379
+      # 从 .env 文件读取 API Key
+      - OPENAI_API_KEY=${OPENAI_API_KEY} 
+      - OPENAI_API_BASE=${OPENAI_API_BASE}
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - app-network
+
+  # 2. 前端服务 (Streamlit)
+  frontend:
+    build: ./frontend
+    container_name: learning_agent_frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  # 3. 数据库 (MongoDB - 用于存储错题本/持久化记忆)
+  mongo:
+    image: mongo:latest
+    container_name: learning_agent_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+  # 4. 缓存 (Redis - 用于暂存对话状态/任务队列)
+  redis:
+    image: redis:alpine
+    container_name: learning_agent_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo_data:

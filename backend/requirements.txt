@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+langchain
+langchain-openai
+pymongo
+redis
+python-multipart
