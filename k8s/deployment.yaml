@@ -1,0 +1,225 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: knowledge-graph
+    component: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: knowledge-graph
+      component: backend
+  template:
+    metadata:
+      labels:
+        app: knowledge-graph
+        component: backend
+    spec:
+      containers:
+        - name: backend
+          image: knowledge-graph-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+              name: http
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: kg-secrets
+                  key: openai-api-key
+            - name: NEO4J_URI
+              value: "bolt://neo4j:7687"
+            - name: NEO4J_USER
+              value: "neo4j"
+            - name: NEO4J_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kg-secrets
+                  key: neo4j-password
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: LOG_LEVEL
+              value: "INFO"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: knowledge-graph
+    component: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: knowledge-graph
+      component: frontend
+  template:
+    metadata:
+      labels:
+        app: knowledge-graph
+        component: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: knowledge-graph-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: http
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: neo4j
+  labels:
+    app: knowledge-graph
+    component: neo4j
+spec:
+  serviceName: neo4j
+  replicas: 1
+  selector:
+    matchLabels:
+      app: knowledge-graph
+      component: neo4j
+  template:
+    metadata:
+      labels:
+        app: knowledge-graph
+        component: neo4j
+    spec:
+      containers:
+        - name: neo4j
+          image: neo4j:5.15-community
+          ports:
+            - containerPort: 7474
+              name: http
+            - containerPort: 7687
+              name: bolt
+          env:
+            - name: NEO4J_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: kg-secrets
+                  key: neo4j-auth
+            - name: NEO4J_dbms_memory_heap_initial__size
+              value: "512m"
+            - name: NEO4J_dbms_memory_heap_max__size
+              value: "2G"
+          volumeMounts:
+            - name: neo4j-data
+              mountPath: /data
+            - name: neo4j-logs
+              mountPath: /logs
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "3Gi"
+              cpu: "2000m"
+  volumeClaimTemplates:
+    - metadata:
+        name: neo4j-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+    - metadata:
+        name: neo4j-logs
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    app: knowledge-graph
+    component: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: knowledge-graph
+      component: redis
+  template:
+    metadata:
+      labels:
+        app: knowledge-graph
+        component: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+              name: redis
+          command:
+            - redis-server
+            - --appendonly
+            - "yes"
+          volumeMounts:
+            - name: redis-data
+              mountPath: /data
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:
+            claimName: redis-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

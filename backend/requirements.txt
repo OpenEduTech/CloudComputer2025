@@ -1,0 +1,25 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+
+# LLM和智能体
+openai==1.10.0
+langchain==0.1.4
+langchain-openai==0.0.5
+langchain-community==0.0.16
+
+# 数据库
+neo4j==5.16.0
+redis==5.0.1
+
+# 工具库
+httpx==0.26.0
+tenacity==8.2.3
+python-json-logger==2.0.7
+
+# 测试
+pytest==7.4.4
+pytest-asyncio==0.23.3
+
