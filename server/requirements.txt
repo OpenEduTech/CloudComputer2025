@@ -1,0 +1,78 @@
+# PatPat-Inconsistency-Hunter 后端依赖
+
+# Web框架
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+
+# 数据验证
+pydantic==2.9.2
+pydantic-settings==2.5.2
+email-validator==2.1.0
+
+# HTTP客户端
+httpx==0.27.2
+aiohttp==3.9.5  # 异步HTTP客户端（用于下载Markdown中的网络图片）
+
+# 数据库
+sqlalchemy==2.0.35
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Redis
+redis==5.1.1
+
+# JSON处理
+json-repair==0.30.0
+
+# 日志
+loguru==0.7.2
+rich==13.9.2
+
+# 异步工具
+tqdm==4.66.5
+aiofiles==23.2.1
+
+# 环境变量
+python-dotenv==1.0.1
+
+# WebSocket
+websockets==13.1
+
+# 认证相关
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# 文档导出和解析
+python-docx==1.1.0
+weasyprint>=62.0  # PDF 导出（支持 HTML/CSS 和图片）- 使用新版本避免pydyf兼容性问题
+reportlab==4.2.0
+pypdf2==3.0.1
+pdfplumber==0.11.0  # 更好的 PDF 解析（支持表格、格式）
+pymupdf==1.24.0  # PyMuPDF (fitz) - 强大的 PDF 处理，支持图片提取
+markdown==3.7
+bleach==6.1.0
+pillow==10.4.0  # PIL 图片处理
+
+# ==================== 视觉模型依赖 ====================
+# InternVL 视觉模型依赖
+
+# PyTorch (CPU 版本，通用兼容)
+# 如果有 NVIDIA GPU，可以安装 CUDA 版本获得更好性能
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Transformers 和视觉模型相关
+transformers>=4.40.0
+accelerate>=0.27.0  # 模型加速
+einops>=0.7.0
+decord>=0.6.0  # 视频帧处理（LocalInternVL 依赖）
+timm>=0.9.0  # PyTorch Image Models（InternVL 依赖）
+opencv-python-headless>=4.8.0  # 图像处理（无GUI版本）
+scipy>=1.11.0  # 科学计算
+
+# ==================== LangGraph 依赖（可选）====================
+# 用于增强的 Agent 工作流
+# langgraph>=0.0.40  # 如果需要完整的 LangGraph 功能
+
