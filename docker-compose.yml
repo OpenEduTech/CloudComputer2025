@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # MongoDB 数据库服务
+  mongodb:
+    image: mongo:7.0
+    container_name: learning-agent-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: learning_agent
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    networks:
+      - learning-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Python 应用服务
+  app:
+    image: ghcr.io/noob-num17/ai-quiz:sha-9d90d07  # 更新为最新的 tag
+    container_name: learning-agent-app
+    environment:
+      # MongoDB 连接配置
+      MONGO_URI: mongodb://root:password123@mongodb:27017/learning_agent?authSource=admin
+      # OpenAI 配置（需要在运行时设置）
+      OPENAI_API_KEY: sk-hxpkpcjxfgysnggjprvnognsoplbejgjvgntthsqkofcmnvz
+      OPENAI_BASE_URL: https://api.siliconflow.cn/v1
+      OPENAI_MODEL: deepseek-ai/DeepSeek-V3.2
+      EMBEDDING_MODEL: Qwen/Qwen3-Embedding-8B
+      # 流式输出配置
+      ENABLE_STREAM: "True"
+      DEBUG: "False"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - learning-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb_data:
+  mongodb_config:
+
+networks:
+  learning-network:
+    driver: bridge

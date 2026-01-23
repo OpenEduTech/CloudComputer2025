@@ -1,0 +1,9 @@
+openai
+pymongo
+pypdf
+python-dotenv
+tiktoken
+rich
+questionary
+numpy
+pydantic
