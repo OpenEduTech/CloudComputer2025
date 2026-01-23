@@ -1,0 +1,131 @@
+version: '3.8'
+
+services:
+  # Frontend React application
+  frontend:
+    build:
+      context: .
+      target: development  # Use development stage for hot reload
+    volumes:
+      - .:/app  # Mount source code for hot reload
+      - /app/node_modules  # Don't mount node_modules to avoid conflicts
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://backend:8080
+      - REACT_APP_AGENT_SERVICE_URL=http://agent-service:8001
+    env_file:
+      - dev.env
+    networks:
+      - app-network
+
+  # Backend API service
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: knowledge-graph-backend
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./back/app:/app/app
+      - ./back/mock_data:/app/mock_data
+      - ./dev.env:/app/dev.env
+    env_file:
+      - dev.env
+    environment:
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USERNAME=neo4j
+      - NEO4J_PASSWORD=password123
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    depends_on:
+      - neo4j
+      - redis
+      - agent-service
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Agent service
+  agent-service:
+    build:
+      context: ./back/agent-service
+      dockerfile: Dockerfile.agent
+    container_name: knowledge-graph-agent
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+    env_file:
+      - dev.env
+    volumes:
+      - ./back/agent-service:/app
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:8001/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Neo4j database
+  neo4j:
+    image: neo4j:5-community
+    container_name: knowledge-graph-neo4j
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_PLUGINS=["apoc"]
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "password123", "RETURN 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Redis cache
+  redis:
+    image: redis:7-alpine
+    container_name: knowledge-graph-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins:
+  redis_data:

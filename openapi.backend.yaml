@@ -1,0 +1,249 @@
+openapi: 3.0.3
+info:
+  title: Backend API - 跨学科知识图谱系统
+  version: 1.0.0
+  description: |
+    对外后端接口（前端调用）。
+    说明：
+    - /api/v1/graph/build：提交概念，生成 GraphJSON（符合 schema/graph.schema.json）
+    - /api/v1/graph/{normalized_concept}：获取缓存结果
+    - /api/v1/graph/health：健康检查
+
+servers:
+  - url: http://localhost:8080
+
+tags:
+  - name: Graph
+    description: 图谱生成与查询
+  - name: System
+    description: 系统与健康检查
+
+paths:
+  /api/v1/graph/build:
+    post:
+      tags: [Graph]
+      summary: 生成跨学科知识图谱（GraphJSON）
+      description: |
+        输入一个核心概念词（中文为主），后端将调用 Agent Service 生成 GraphJSON，
+        并进行结构校验、去重/合并/规模控制等处理后返回。
+      operationId: buildGraph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BuildGraphRequest"
+            examples:
+              entropy:
+                summary: 示例-熵
+                value:
+                  concept: "熵"
+                  options:
+                    domains: ["数学","物理","计算机/AI","生物/神经科学","社会科学/经济学"]
+                    max_nodes: 30
+                    max_edges: 50
+                    min_confidence: 0.55
+                    return_intermediate: false
+      responses:
+        "200":
+          description: 成功返回 GraphJSON（符合 schema/graph.schema.json）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GraphJSON"
+        "400":
+          description: 输入不合法
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                invalidInput:
+                  value:
+                    error:
+                      code: INVALID_INPUT
+                      message: "concept 不能为空或过长（1~60）"
+        "409":
+          description: 任务冲突（可选：同一概念正在生成）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                conflict:
+                  value:
+                    error:
+                      code: TASK_CONFLICT
+                      message: "同一 normalized_concept 的生成任务正在进行"
+        "429":
+          description: 限流（前端或系统限流）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                rateLimit:
+                  value:
+                    error:
+                      code: RATE_LIMITED
+                      message: "请求过于频繁，请稍后重试"
+        "502":
+          description: Agent 失败或输出不合规（已重试仍失败）
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                agentFailed:
+                  value:
+                    error:
+                      code: AGENT_FAILED
+                      message: "Agent 输出校验失败，已重试仍不通过"
+        "500":
+          description: 服务内部错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /api/v1/graph/{normalized_concept}:
+    get:
+      tags: [Graph]
+      summary: 获取缓存/历史图谱结果
+      description: |
+        通过 normalized_concept 获取已生成并缓存的 GraphJSON。
+      operationId: getGraphByNormalizedConcept
+      parameters:
+        - name: normalized_concept
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+          description: 规范化概念（用于缓存键）
+      responses:
+        "200":
+          description: 返回 GraphJSON
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GraphJSON"
+        "404":
+          description: 未找到
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                notFound:
+                  value:
+                    error:
+                      code: NOT_FOUND
+                      message: "未找到该概念的图谱缓存"
+
+  /api/v1/graph/health:
+    get:
+      tags: [System]
+      summary: 后端健康检查
+      operationId: healthCheck
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    enum: ["ok"]
+
+components:
+  schemas:
+    BuildGraphRequest:
+      type: object
+      additionalProperties: false
+      required: [concept]
+      properties:
+        concept:
+          type: string
+          description: 输入核心概念（中文为主）
+          minLength: 1
+          maxLength: 60
+        options:
+          $ref: "#/components/schemas/BuildGraphOptions"
+
+    BuildGraphOptions:
+      type: object
+      additionalProperties: false
+      description: 可选项：用于控制生成规模、学科域、置信度阈值等
+      properties:
+        domains:
+          type: array
+          description: 指定学科域（默认使用系统预设 5 域）
+          items:
+            $ref: "#/components/schemas/Domain"
+          minItems: 1
+          uniqueItems: true
+        max_nodes:
+          type: integer
+          minimum: 5
+          maximum: 100
+          default: 30
+        max_edges:
+          type: integer
+          minimum: 0
+          maximum: 200
+          default: 50
+        min_confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.55
+        return_intermediate:
+          type: boolean
+          default: false
+          description: |
+            是否返回中间产物（用于演示/调试）。
+            若为 true，后端可在响应 meta.notes 或扩展字段中携带摘要信息（实现可选）。
+
+    Domain:
+      type: string
+      enum: ["数学", "物理", "计算机/AI", "生物/神经科学", "社会科学/经济学"]
+
+    GraphJSON:
+      type: object
+      description: |
+        图谱生成结果（GraphJSON v1.1）。
+        详细字段约束以 schema/graph.schema.json 为准（本 OpenAPI 做接口级描述）。
+      required: [meta, nodes, edges]
+      properties:
+        meta:
+          type: object
+        nodes:
+          type: array
+          items:
+            type: object
+        edges:
+          type: array
+          items:
+            type: object
+
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              description: 错误码
+            message:
+              type: string
+              description: 错误描述（面向前端展示/调试）

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>知识图谱测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>知识图谱API测试</h1>
+    
+    <div>
+        <h2>1. 健康检查</h2>
+        <button onclick="testHealth()">测试后端健康</button>
+        <button onclick="testAgentHealth()">测试Agent健康</button>
+        <div id="healthResult"></div>
+    </div>
+    
+    <div>
+        <h2>2. 生成图谱</h2>
+        <input type="text" id="concept" value="人工智能" placeholder="输入概念">
+        <button onclick="generateGraph()">生成图谱</button>
+        <div id="generateResult"></div>
+    </div>
+    
+    <div>
+        <h2>3. 查询图谱</h2>
+        <input type="text" id="queryConcept" value="人工智能" placeholder="查询概念">
+        <button onclick="queryGraph()">查询图谱</button>
+        <div id="queryResult"></div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        const AGENT_BASE = 'http://localhost:8001';
+        
+        function testHealth() {
+            axios.get(API_BASE + '/health')
+                .then(response => {
+                    document.getElementById('healthResult').innerHTML = 
+                        `<pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    document.getElementById('healthResult').innerHTML = 
+                        `错误: ${error.message}`;
+                });
+        }
+        
+        function testAgentHealth() {
+            axios.get(AGENT_BASE + '/healthz')
+                .then(response => {
+                    document.getElementById('healthResult').innerHTML = 
+                        `<pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    document.getElementById('healthResult').innerHTML = 
+                        `错误: ${error.message}`;
+                });
+        }
+        
+        function generateGraph() {
+            const concept = document.getElementById('concept').value;
+            axios.post(API_BASE + '/api/graph/build', {
+                concept: concept,
+                force_refresh: true
+            })
+            .then(response => {
+                document.getElementById('generateResult').innerHTML = 
+                    `<pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                
+                // 等待3秒后查询任务状态
+                setTimeout(() => {
+                    queryTaskStatus(response.data.task_id);
+                }, 3000);
+            })
+            .catch(error => {
+                document.getElementById('generateResult').innerHTML = 
+                    `错误: ${error.message}`;
+            });
+        }
+        
+        function queryTaskStatus(taskId) {
+            axios.get(API_BASE + '/api/task/status?task_id=' + taskId)
+                .then(response => {
+                    document.getElementById('generateResult').innerHTML += 
+                        `<br><strong>任务状态:</strong><pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                });
+        }
+        
+        function queryGraph() {
+            const concept = document.getElementById('queryConcept').value;
+            axios.get(API_BASE + '/api/graph/query?concept=' + encodeURIComponent(concept))
+                .then(response => {
+                    document.getElementById('queryResult').innerHTML = 
+                        `<pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    document.getElementById('queryResult').innerHTML = 
+                        `错误: ${error.message}`;
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+```json
+{
+  "nodes": [
+    {
+      "id": "Empowerment",
+      "label": "赋能",
+      "field": "核心",
+      "type": "core",
+      "summary": "赋能是指赋予个体或组织能力、权力或资源，使其能够自主决策、采取行动并实现目标的过程。它是跨学科研究的核心概念，强调从依赖外部到自我驱动的转变。",
+      "aliases": ["赋权", "授权", "Empower"],
+      "importance": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "id": "Power_Law_Distribution",
+      "label": "幂律分布",
+      "field": "数学",
+      "type": "bridge",
+      "summary": "幂律分布描述了一个量是另一个量的幂次方的函数关系，其图形在双对数坐标下呈直线。与赋能的关联较弱，主要为方法论类比：赋能过程可能导致资源或影响力的分布呈现幂律特征（少数个体获得极大能力），可用此统计模型描述不平等或集中现象。",
+      "aliases": ["Power Law"],
+      "importance": 0.65,
+      "confidence": 0.5
+    },
+    {
+      "id": "Potential_Energy",
+      "label": "势能",
+      "field": "物理",
+      "type": "normal",
+      "summary": "势能是存储于系统内的能量，源于物体间相互作用或相对位置，可转化为动能做功。与赋能构成可解释类比：赋能类似于赋予系统“势能”，使其具备未来行动和产生影响的潜在能力，强调从静态储备到动态释放的转变。",
+      "aliases": ["Potential", "位能"],
+      "importance": 0.6,
+      "confidence": 0.55
+    },
+    {
+      "id": "Reinforcement_Learning",
+      "label": "强化学习",
+      "field": "计算机/AI",
+      "type": "normal",
+      "summary": "强化学习是机器学习范式，智能体通过与环境交互，根据奖励信号学习最优策略以最大化累积回报。它是赋能的核心技术应用：通过算法赋予智能体自主决策和优化行动的能力，实现从感知到行动的闭环赋能。",
+      "aliases": ["RL"],
+      "importance": 0.85,
+      "confidence": 0.9
+    },
+    {
+      "id": "Agent",
+      "label": "智能体",
+      "field": "计算机/AI",
+      "type": "bridge",
+      "summary": "智能体是能够感知环境、自主决策并执行动作以实现目标的实体（如软件机器人）。它是赋能的作用对象和载体：赋能的核心目标就是构建或增强智能体的自主能力，使其能在复杂环境中有效运作。",
+      "aliases": ["Agent-based", "主体"],
+      "importance": 0.8,
+      "confidence": 0.85
+    },
+    {
+      "id": "Neural_Plasticity",
+      "label": "神经可塑性",
+      "field": "生物/神经科学",
+      "type": "normal",
+      "summary": "神经可塑性指大脑神经网络的结构和功能随经验、学习或损伤而改变的能力。它是赋能的内在生物机制：赋能（如教育、训练）通过增强神经连接和功能重组，赋予个体新的认知或行为能力，体现了生理层面的能力塑造。",
+      "aliases": ["Brain Plasticity", "突触可塑性"],
+      "importance": 0.75,
+      "confidence": 0.8
+    },
+    {
+      "id": "Autonomy_Support",
+      "label": "自主支持",
+      "field": "生物/神经科学",
+      "type": "normal",
+      "summary": "自主支持是指环境（如家庭、教育）提供选择、鼓励自我发起并减少控制，以满足个体基本心理需求（自主、胜任、归属）。它是赋能的心理社会干预手段：通过创造支持性环境，促进个体内在动机和发展，实现心理赋能。",
+      "aliases": [],
+      "importance": 0.7,
+      "confidence": 0.75
+    },
+    {
+      "id": "Empowerment_Evaluation",
+      "label": "赋能式评估",
+      "field": "社会科学/经济学",
+      "type": "normal",
+      "summary": "赋能式评估是一种参与式评估方法，旨在帮助项目参与者掌握评估技能，利用评估结果改进自身工作并增强项目效能。它是赋能理念在评估领域的直接应用：将评估从外部评判工具转变为内部能力建设过程，赋予参与者自我改进的权力。",
+      "aliases": ["Empowerment Evaluation Approach"],
+      "importance": 0.9,
+      "confidence": 0.95
+    },
+    {
+      "id": "Microfinance",
+      "label": "小额信贷",
+      "field": "社会科学/经济学",
+      "type": "normal",
+      "summary": "小额信贷是为低收入人群或小微企业提供小额度贷款、储蓄、保险等金融服务的模式。它是赋能的经济工具应用：通过提供金融资源和服务，赋予贫困或边缘群体经济能力，使其能够创业、投资并改善生计，实现经济赋能。",
+      "aliases": ["Microcredit"],
+      "importance": 0.8,
+      "confidence": 0.85
+    },
+    {
+      "id": "Participatory_Governance",
+      "label": "参与式治理",
+      "field": "社会科学/经济学",
+      "type": "bridge",
+      "summary": "参与式治理是让公民直接参与公共决策、资源分配和管理过程的制度安排。它是赋能的政治社会实现形式：通过制度设计赋予公民参与权和影响力，使其从被治理对象转变为共同治理者，实现政治和社会赋能。",
+      "aliases": ["参与式民主"],
+      "importance": 0.85,
+      "confidence": 0.9
+    },
+    {
+      "id": "Information_Asymmetry",
+      "label": "信息不对称",
+      "field": "社会科学/经济学",
+      "type": "normal",
+      "summary": "信息不对称指交易或互动中一方比另一方拥有更多或更优质的信息。与赋能的关联较弱，主要为方法论类比：赋能可被视为减少信息不对称的过程（如教育提供知识），赋予弱势方更平等的决策能力，是分析赋能障碍的经济学视角。",
+      "aliases": [],
+      "importance": 0.55,
+      "confidence": 0.5
+    },
+    {
+      "id": "Optimization_Objective",
+      "label": "优化目标函数",
+      "field": "数学",
+      "type": "normal",
+      "summary": "优化目标函数是数学优化问题中需要最大化或最小化的函数。与赋能的关联较弱，主要为方法论映射：在形式化赋能过程时，可将其建模为优化问题，其中目标函数代表要赋予的能力或期望结果，为量化赋能效果提供数学框架。",
+      "aliases": ["Objective Function"],
+      "importance": 0.5,
+      "confidence": 0.45
+    }
+  ]
+}
+```

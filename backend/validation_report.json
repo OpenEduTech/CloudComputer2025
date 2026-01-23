@@ -1,0 +1,16 @@
+{
+  "测试时间": "2025-01-19",
+  "测试目标": "验证A同学的OpenAPI和Mock数据",
+  "文件路径": {
+    "openapi": "C:\\Users\\86178\\Desktop\\云计算\\大作业\\openapi.agent.yaml",
+    "schema": "C:\\Users\\86178\\Desktop\\云计算\\大作业\\graph.schema.json",
+    "sample_mock": "C:\\Users\\86178\\Desktop\\云计算\\大作业\\backend\\mock_data\\sample_graph.json",
+    "backend_root": "C:\\Users\\86178\\Desktop\\云计算\\大作业\\backend"
+  },
+  "结果": {
+    "OpenAPI文档验证": "通过",
+    "Mock数据Schema验证": "通过",
+    "OpenAPI请求格式检查": "通过",
+    "数据格式对比": "通过"
+  }
+}

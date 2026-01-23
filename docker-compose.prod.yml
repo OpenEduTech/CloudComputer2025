@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Frontend React application (production)
+  frontend:
+    build:
+      context: .
+      target: production  # Use production stage
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Backend API service
+  backend:
+    image: your-registry/backend:latest  # Replace with your actual image
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV=production
+      # Add other environment variables as needed
+    networks:
+      - app-network
+    restart: unless-stopped
+    depends_on:
+      - agent-service
+
+  # Agent service
+  agent-service:
+    image: your-registry/agent-service:latest  # Replace with your actual image
+    ports:
+      - "8001:8001"
+    environment:
+      - ENV=production
+      # Add other environment variables as needed
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
