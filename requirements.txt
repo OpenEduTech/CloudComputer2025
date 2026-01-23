@@ -1,0 +1,9 @@
+# 核心依赖（版本稳定，适配本地Neo4j）
+langchain==0.2.1
+langchain-openai==0.1.7
+langchain-community==0.2.1
+tavily-python==0.3.4
+neo4j==5.18.0
+python-dotenv==1.0.1
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
