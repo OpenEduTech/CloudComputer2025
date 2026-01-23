@@ -1,5 +1,9 @@
 # 跨学科知识图谱 — 本地与 Docker 部署说明
 
+演示视频：通过网盘分享的文件：第6组演示视频
+链接: https://pan.baidu.com/s/1eug_QuGtkAlUOqskgzpARA?pwd=3idk 提取码: 3idk 
+--来自百度网盘超级会员v4的分享
+
 本仓库包含一个前端（React + Vite）、后端（FastAPI）、Agent（LLM 驱动的多步骤构建服务）、Redis（缓存）与 Neo4j（图数据库）的完整项目。此文档目的是帮助开发者和运维人员在本地或使用 Docker Compose 时快速上手，并包含常见故障排查步骤。
 
 > 注意：仓库已去掉敏感密钥。请使用 `dev.env`（未提交）放置真实密钥，仓库中提供 `dev.env.example` 作为模板。
