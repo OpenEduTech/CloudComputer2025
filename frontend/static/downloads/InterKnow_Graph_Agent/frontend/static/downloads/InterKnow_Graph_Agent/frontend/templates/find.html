@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN" style="height:100%; width:100%">
+<head>
+    <meta charset="utf-8">
+    <title>知识查询 - 跨学科知识图谱智能体</title>
+</head>
+
+<body style="background-color: #789c8c; height:100%;">
+    <div class="nav">
+        <link type="text/css" href="frontend/static/css/navigater.css" rel="stylesheet">
+        <ul class="navlist">
+            <li class="btli"><a href="index.html">项目首页</a>
+                <ul class="droplist">
+                    <li><a href="index.html">项目首页</a></li>
+                </ul>
+            </li>
+            <li class="btli"><a href="graph.html">可视化大屏</a>
+                <ul class="droplist">
+                    <li><a href="graph.html">绘制知识图谱</a></li>
+                    <li><a href="find.html">知识查询</a></li>
+                </ul>
+            </li>
+            <li class="btli"><a href="">资源下载</a>
+                <ul class="droplist">
+                    <li><a href="/download/source">项目压缩包</a></li>
+                </ul>
+            </li>
+            <li class="btli"><a href="">技术总结</a>
+                <ul class="droplist">
+                    <li><a href="https://www.volcengine.com/">大模型入口</a></li>
+                    <li><a href="https://echarts.apache.org/zh/index.html">图表工具</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:16px; height: calc(100% - 80px); box-sizing: border-box;">
+        <!-- 左侧：搜索历史 -->
+        <div id="historyPane" style="width:30%; background: rgba(34,69,53,0.9); border-radius:8px; padding:12px; color:#fff; overflow:auto;">
+            <h3 style="margin-top:0; text-align:center;">搜索历史</h3>
+            <ul id="historyList" style="list-style:none; padding:0; margin:0;">
+                <!-- 历史项由 JS 填充 -->
+            </ul>
+            <div style="margin-top:12px; text-align:center;">
+                <button id="clearHistoryBtn" class="ik-btn full">清除历史</button>
+            </div>
+        </div>
+
+        <!-- 右侧：聊天区域 -->
+        <div style="width:70%; display:flex; flex-direction:column; gap:8px;">
+            <!-- 上部：会话展示（80%） -->
+            <div id="chatDisplay" style="flex:8; background: rgb(19,65,43); border-radius:8px; padding:12px; overflow:auto; color:#fff;">
+                <!-- 会话消息由 JS 填充 -->
+            </div>
+            <!-- 下部：输入区（20%） -->
+            <div style="flex:2; background: rgba(159,124,37,0.95); border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; gap:8px; align-items:flex-start;">
+                    <textarea id="userInput" class="ik-input" placeholder="在此输入查询或与模型对话..." style="flex:1; height:100%; min-height:64px; resize:none;"></textarea>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <button id="sendBtn" class="ik-btn">发送</button>
+                        <button id="saveHistoryBtn" class="ik-btn">保存到历史</button>
+                    </div>
+                </div>
+                <div style="display:flex; gap:8px; justify-content:space-between; align-items:flex-start; padding-top:4px;">
+                    <div></div>
+                    <div>
+                        <label class="ik-label"><input id="autoScroll" type="checkbox" checked> 自动滚动</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="frontend/static/css/styles.css">
+    <script src="frontend/static/js/find.js"></script>
+</body>
+</html>

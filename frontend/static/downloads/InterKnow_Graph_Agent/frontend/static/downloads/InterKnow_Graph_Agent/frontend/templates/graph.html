@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN" style="height: 100%; width: 100%">
+<head>
+    <meta charset="utf-8">
+    <title>跨学科知识图谱智能体</title>
+</head>
+
+<body style="background-color: #789c8c;">
+    <!-- 导航栏 -->
+    <div class="nav">
+        <link type="text/css" href="frontend/static/css/navigater.css" rel="stylesheet">
+        <ul class="navlist">
+            <li class="btli"><a href="index.html">项目首页</a>
+                <ul class="droplist">
+                    <li><a href="index.html">项目首页</a></li>
+                </ul>
+            </li>
+            <li class="btli"><a href="graph.html">可视化大屏</a>
+                <ul class="droplist">
+                    <li><a href="graph.html">绘制知识图谱</a></li>
+                    <li><a href="find.html">知识查询</a></li>
+                </ul>
+            </li>
+            
+            <li class="btli"><a href="">资源下载</a>
+                <ul class="droplist">
+                    <li><a href="/download/source">项目压缩包</a></li>
+                </ul>
+            </li>
+            <li class="btli"><a href="">技术总结</a>
+                <ul class="droplist">
+                    <li><a href="https://www.volcengine.com/">大模型入口</a></li>
+                    <li><a href="https://echarts.apache.org/zh/index.html">图表工具</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="graph" style="padding: 16px 20px; height:100%">
+        <link rel="stylesheet" href="frontend/static/css/styles.css" />
+        <script src="frontend/static/js_lib/echarts.min.js"></script>
+        <section class="controls">
+            <input id="conceptInput" placeholder="输入核心概念（例如：熵）" />
+            <button id="queryBtn">查询</button>
+            <button id="loadSampleBtn">加载样例</button>
+            <input id="fileInput" type="file" accept="application/json" />
+            <button id="exportBtn">导出 JSON</button>
+            <label class="inline">
+                <input id="skipBackend" type="checkbox" />
+                离线模式(跳过后端)
+            </label>
+        </section>
+        <main style="background:rgb(19, 65, 43); border-radius:6px; overflow:hidden;height: 100%;">
+            <div id="chart" class="chart" style="height: 600px;"></div>
+            <aside id="infoPanel" class="info" style="background:rgb(30, 92, 62);border-radius:6px;">点击节点查看详情</aside>
+        </main>
+        <script src="frontend/static/js/app.js"></script>
+    </div>
+
+    <script src="frontend/static/js_lib/echarts.min.js"></script>
+    <script src="frontend/static/js/app.js"></script>
+
+
+</body>
+</html>

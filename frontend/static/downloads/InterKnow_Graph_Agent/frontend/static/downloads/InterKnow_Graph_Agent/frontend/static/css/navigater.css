@@ -1,0 +1,40 @@
+@charset "utf-8";
+.nav{
+	height: 80px;
+	background: rgb(19, 65, 43);
+}
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+.btli{
+	float:left;
+	width: 15%;
+	line-height: 80px;
+	text-align: center;
+	font-size: 22px;
+}
+.navlist a{
+	color: #ffffff;
+	display: block;
+}
+.navlist a:hover{
+	background: #243011;
+}
+.droplist{
+	position: absolute;
+	background: #3c5b4d;
+	width: 15%;
+	display: none;
+	border-radius: 6px;
+	overflow:hidden;
+	z-index: 999;
+}
+.btli:hover .droplist{
+	display:block;
+}
+.droplist li{
+	border-top: 1px solid #56766e;
+}
