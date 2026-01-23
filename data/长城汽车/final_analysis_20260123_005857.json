@@ -1,0 +1,143 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_005857",
+  "global_summary": "**全局总结：**  \n长城汽车在2020-2021年乘行业复苏与政策红利东风，股价暴涨794%，远超乘用车指数（202%），核心驱动在于战略转型为“科技出行公司”，以模块化平台（兼容5大动力）应对技术路线分化，同时调整目标（销量下调、利润坚守100亿）转向高质量发展。员工双休制与研发降本模式凸显管理优化，短期利空（销量收缩）但长期利好（技术+利润导向）。行业整体震荡分化，智能化/灵活化车企更易突围。\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 10,
+  "decisions": [
+    {
+      "field": "长城汽车股价涨幅",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "794%（2020年6月30日-2021年10月29日）",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "长城汽车战略转型与产品周期共振，叠加行业复苏红利，资本市场对其成长性给予极高溢价。"
+    },
+    {
+      "field": "乘用车行业指数涨幅",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "202%（同期申万乘用车指数）",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "疫情后需求释放叠加政策刺激，行业整体回暖但分化明显，长城表现远超同业。"
+    },
+    {
+      "field": "战略转型阶段",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "科技出行升级时期（2020年7月启动）",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从单一产品竞争转向技术平台化布局，体现车企向科技公司转型的行业趋势。"
+    },
+    {
+      "field": "归元平台兼容动力形式",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "PHEV/HEV/BEV/FCEV/ICE五大动力",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "拒绝技术路线站队，通过模块化平台应对全球市场差异化能源政策与消费需求。"
+    },
+    {
+      "field": "2025年销量目标",
+      "status": "decreased",
+      "old_value": "249万辆（原计划）",
+      "value": "180万辆（调整后）",
+      "change": "249万辆（原计划） -> 180万辆（调整后）（-69.00万）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从规模优先转向利润导向，反映车企在激烈竞争中更注重经营质量而非市场份额。"
+    },
+    {
+      "field": "净利润目标",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "坚守100亿元",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "在销量目标下调背景下坚持利润指标，凸显成本控制与高端化产品策略成效。"
+    },
+    {
+      "field": "员工制度",
+      "status": "improved",
+      "old_value": "单双休/大小周",
+      "value": "完整双休制",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "对抗行业内卷的人才保留策略，通过改善工作平衡提升组织效率与创新能力。"
+    },
+    {
+      "field": "技术研发投入方向",
+      "status": "新增",
+      "old_value": "无记录",
+      "value": "\"工具+数据+平台\"降本模式",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "通过标准化研发体系降低对单一人力资源的依赖，应对行业技术人才短缺挑战。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共4篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "[PDF] 长城汽车：深蹲蓄力",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202308181595076338_1.pdf",
+      "source": "media",
+      "published_at": "2020-01"
+    },
+    {
+      "title": "长城又干了件大事 - 盖世汽车社区- Gasgoo",
+      "url": "https://i.gasgoo.com/news/70443305.html",
+      "source": "media",
+      "published_at": "2026-01-20"
+    },
+    {
+      "title": "[PDF] 汽车行业2026年十大趋势及投资策略",
+      "url": "https://pdf.dfcfw.com/pdf/H301_AP202601061815848340_1.pdf",
+      "source": "media",
+      "published_at": "2026-1-5"
+    },
+    {
+      "title": "长城汽车“超级母体”落地50余款新车将覆盖全球市场 - 东方财富",
+      "url": "https://finance.eastmoney.com/a/202601223626965557.html",
+      "source": "media",
+      "published_at": null
+    }
+  ]
+}

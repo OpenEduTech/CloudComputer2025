@@ -1,0 +1,136 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_021342",
+  "global_summary": "**长城汽车行业全局总结（利好）**  \n长城汽车正加速全球化与智能化转型，海外销量增长20%至60万辆，技术研发聚焦AI智驾与超级平台，降本增效显著（毛利率提升至19.8%）。供应链开放协同+新能源50余款车型布局，推动“技术出海”替代传统出口模式。整体看，战略升级带动规模与盈利双升，行业竞争力强化，趋势明确向好。\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 10,
+  "decisions": [
+    {
+      "field": "海外销量",
+      "status": "increased",
+      "old_value": "50万辆",
+      "value": "60万辆",
+      "change": "50万辆 -> 60万辆（+10.00万）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "长城汽车全球化战略加速推进，通过高价值车型投放和本地化研发实现市场份额扩张。"
+    },
+    {
+      "field": "研发投入方向",
+      "status": "upgraded",
+      "old_value": "传统动力总成+智能化",
+      "value": "AI大模型+端到端智驾+九州超算中心",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "技术研发重心向AI驱动转型，形成智能驾驶领域'一步快步步快'的先发优势。"
+    },
+    {
+      "field": "产品平台架构",
+      "status": "consolidated",
+      "old_value": "多平台并行",
+      "value": "归元超级母体平台",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "模块化平台整合降低30%研发成本，实现全球市场全动力全品类覆盖。"
+    },
+    {
+      "field": "供应链体系",
+      "status": "expanded",
+      "old_value": "垂直整合",
+      "value": "生态合作伙伴500+家",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从封闭自研转向开放协同，增强供应链抗风险能力并降低零部件成本。"
+    },
+    {
+      "field": "出口模式",
+      "status": "transformed",
+      "old_value": "产品出口",
+      "value": "技术+品牌+制造+供应链生态出海",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从贸易型出口升级为价值型出海，构建全球研发生产销售一体化体系。"
+    },
+    {
+      "field": "新能源车型规划",
+      "status": "specified",
+      "old_value": "未明确数量",
+      "value": "50余款全球车型",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "加速新能源产品矩阵布局，覆盖PHEV/BEV/FCEV等多技术路线应对各国政策。"
+    },
+    {
+      "field": "毛利率",
+      "status": "increased",
+      "old_value": "16.16%",
+      "value": "19.80%",
+      "change": "16.16% -> 19.80%（+3.64pp）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "规模效应+高价值车型占比提升，带动整体盈利结构优化。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共5篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "长城汽车“超级母体”落地50余款新车将覆盖全球市场 - 东方财富",
+      "url": "https://finance.eastmoney.com/a/202601223626965557.html",
+      "source": "media",
+      "published_at": null
+    },
+    {
+      "title": "[PDF] 長城汽車股份有限公司GREAT WALL MOTOR COMPANY LIMITED",
+      "url": "https://stockn.xueqiu.com/02333/20200424097423.pdf",
+      "source": "media",
+      "published_at": "2020-1"
+    },
+    {
+      "title": "[PDF] 当我们在谈论AIGC",
+      "url": "https://runwise.co/wp-content/uploads/2024/06/%E5%88%9B%E6%96%B0%E7%A0%94%E6%8A%A5%EF%BD%9C2024%E5%B9%B4%E4%B8%AD%E5%9B%BDAIGC%E8%A1%8C%E4%B8%9A%E5%BA%94%E7%94%A8%E4%BB%B7%E5%80%BC%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_%E7%94%B2%E5%AD%90%E5%85%89%E5%B9%B4.pdf",
+      "source": "media",
+      "published_at": "2024-5"
+    },
+    {
+      "title": "[PDF] 长城汽车（601633） 看好新能源转型！哈弗新能源核心增量！",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202302221583569163_1.pdf",
+      "source": "media",
+      "published_at": null
+    },
+    {
+      "title": "[PDF] 中国制造业企业出海白皮书： - 踏浪前行",
+      "url": "https://assets.kpmg.com/content/dam/kpmg/cn/pdf/zh/2024/04/chinese-manufacturing-enterprises-globalization-white-paper.pdf",
+      "source": "media",
+      "published_at": null
+    }
+  ]
+}

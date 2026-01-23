@@ -1,0 +1,98 @@
+{
+  "keyword": "无人机",
+  "generated_at": "20260123_005309",
+  "global_summary": "【无人机行业全局总结】  \n政策红利+技术爆发驱动行业进入高速成长期，**强烈利好**。国家首次将低空经济列为战略产业，资源倾斜明确；专利激增（24.4万件）和eVTOL商业化落地显示创新与市场双突破。竞争焦点转向飞控算法等软件壁垒，头部企业优势加剧。但商业秘密与数据合规成新挑战，野蛮生长阶段终结。整体看，行业从硬件制造向“智能空中生态”跃迁，技术主导者将收割红利。（99字）\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 7,
+  "decisions": [
+    {
+      "field": "无人机产业政策支持",
+      "status": "new",
+      "old_value": "尚未记录历史指标",
+      "value": "升格为国家战略性新兴产业",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "国家层面首次将低空经济纳入战略布局，预示财政补贴、技术研发等资源将加速倾斜。"
+    },
+    {
+      "field": "低空经济产业规模",
+      "status": "new",
+      "old_value": "尚未记录历史指标",
+      "value": "2024年专利申请总量24.4万件",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "official",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "中国企业正通过专利壁垒快速抢占技术制高点，行业进入创新密集爆发期。"
+    },
+    {
+      "field": "核心技术领域",
+      "status": "new",
+      "old_value": "尚未记录历史指标",
+      "value": "飞控算法/能源系统/GNC算法构成技术壁垒",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "official",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "行业竞争焦点从硬件制造转向软件定义，算法能力成为企业分水岭。"
+    },
+    {
+      "field": "商业化进程",
+      "status": "new",
+      "old_value": "尚未记录历史指标",
+      "value": "eVTOL即将商业化",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "official",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "电动垂直起降技术突破临界点，城市空中交通（UAM）市场启动在即。"
+    },
+    {
+      "field": "合规治理需求",
+      "status": "new",
+      "old_value": "尚未记录历史指标",
+      "value": "商业秘密保护成为核心议题",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "official",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "行业爆发性增长倒逼企业建立数据安全体系，合规能力将影响融资估值。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共3篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "[PDF] 低空经济的黄金时代：解构行业生态; 助力企业绘就增长蓝图",
+      "url": "https://assets.kpmg.com/content/dam/kpmg/cn/pdf/zh/2025/10/the-golden-age-of-low-altitude-economy.pdf",
+      "source": "media",
+      "published_at": "2025-2"
+    },
+    {
+      "title": "[PDF] 中国无人机产业投资促进报告",
+      "url": "https://fdi.mofcom.gov.cn/resource/pdf/2020/03/02/f7aed877d27a4f13830ce84ecf684c8e.pdf",
+      "source": "official",
+      "published_at": "2020-03-02"
+    },
+    {
+      "title": "[PDF] 中国工业无人机行业发展趋势研究与未来投资分析报告(2022-2029年)",
+      "url": "https://www.chinabaogao.com/pdf/28/71/572871.pdf",
+      "source": "media",
+      "published_at": "2022-5"
+    }
+  ]
+}

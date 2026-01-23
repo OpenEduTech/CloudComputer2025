@@ -1,0 +1,9 @@
+dashscope
+langchain-community
+langchain-core
+langchain-openai
+langchain-text-splitters
+pydantic
+pypdf
+requests
+tavily-python

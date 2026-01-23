@@ -1,0 +1,149 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_010449",
+  "global_summary": "长城汽车行业正从高增长红利期转向战略深耕期，整体趋势**震荡偏利好**。短期股价波动反映市场对其巴西工厂等事件驱动的敏感度提升；中长期看，其通过全品类覆盖（7大品类）、多动力技术布局（PHEV/FCEV等）和平台化研发（归元平台）构建全球化竞争力，同时主动下调销量目标转向质量发展。海外本土化（巴西工厂）和人才争夺（\"35+计划\"）加速破局，但需警惕技术路线差异化（拒做增程）的市场接受度风险。核心逻辑：从\"野蛮生长\"到\"精耕细作\"，能否兑现技术红利成关键。\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 10,
+  "decisions": [
+    {
+      "field": "股价表现",
+      "status": "volatile",
+      "old_value": "2020年6月-2021年10月涨幅794%",
+      "value": "2026年早盘涨超9%（巴西工厂启动）",
+      "change": "2020年6月-2021年10月涨幅794% -> 2026年早盘涨超9%（巴西工厂启动）（+6.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从历史性暴涨到短期事件驱动波动，反映企业从成长红利期进入战略兑现期。"
+    },
+    {
+      "field": "战略重心",
+      "status": "expanded",
+      "old_value": "SUV/皮卡单点突破",
+      "value": "归元平台全品类覆盖（7大品类50余款车型）",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "产品矩阵全面升级，体现从细分市场专家向全球化全能选手的转型决心。"
+    },
+    {
+      "field": "技术路线",
+      "status": "diversified",
+      "old_value": "聚焦纯电/燃油",
+      "value": "兼容PHEV/HEV/BEV/FCEV/ICE五大动力",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "动力技术多元化布局，应对全球市场差异化的能源政策与基建条件。"
+    },
+    {
+      "field": "销量目标",
+      "status": "adjusted",
+      "old_value": "2025年132.37万辆（+7.33%）",
+      "value": "2026年下调至180万辆（原计划249万）",
+      "change": "2025年132.37万辆（+7.33%） -> 2026年下调至180万辆（原计划249万）（+1.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "主动收缩规模目标，转向利润优先的质量发展模式。"
+    },
+    {
+      "field": "研发投入",
+      "status": "optimized",
+      "old_value": "2021-2022年毛利率16%-19%",
+      "value": "归元平台模块化研发",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "平台化研发降低单车型开发成本，支撑多动力多品类战略。"
+    },
+    {
+      "field": "全球化",
+      "status": "accelerated",
+      "old_value": "出口占比未明确",
+      "value": "巴西工厂全面投产",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "海外本土化生产突破贸易壁垒，降低关税和物流成本。"
+    },
+    {
+      "field": "人才战略",
+      "status": "enhanced",
+      "old_value": "常规招聘",
+      "value": "\"35+计划\"+股权激励+家庭关怀",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "争夺资深技术人才，应对智能电动汽车的跨学科研发需求。"
+    },
+    {
+      "field": "行业定位",
+      "status": "differentiated",
+      "old_value": "跟随电动化趋势",
+      "value": "\"打死不做增程\"的差异化宣言",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "拒绝技术同质化内卷，强化全栈自研的技术品牌形象。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共5篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "[PDF] 长城汽车：深蹲蓄力",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202308181595076338_1.pdf",
+      "source": "media",
+      "published_at": "2020-01"
+    },
+    {
+      "title": "长城又干了件大事 - 盖世汽车社区- Gasgoo",
+      "url": "https://i.gasgoo.com/news/70443305.html",
+      "source": "media",
+      "published_at": "2026-01-20"
+    },
+    {
+      "title": "[PDF] 汽车行业2026年十大趋势及投资策略",
+      "url": "https://pdf.dfcfw.com/pdf/H301_AP202601061815848340_1.pdf",
+      "source": "media",
+      "published_at": "2026-1-5"
+    },
+    {
+      "title": "[PDF] 华为数字平台构建数字中国底座成为数字世界内核",
+      "url": "https://e-file.huawei.com/-/media/EBG/Images/publication/content/digital-transformation-extra-2/ICT24-cn-0429.pdf",
+      "source": "media",
+      "published_at": null
+    },
+    {
+      "title": "长城汽车“超级母体”落地50余款新车将覆盖全球市场 - 东方财富",
+      "url": "https://finance.eastmoney.com/a/202601223626965557.html",
+      "source": "media",
+      "published_at": null
+    }
+  ]
+}

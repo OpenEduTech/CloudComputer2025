@@ -1,0 +1,136 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_011206",
+  "global_summary": "**长城汽车行业全局总结（100字内）**  \n长城汽车正从激进扩张转向**高质量全球化**：股价回归理性，战略聚焦平台化技术（放弃增程、强化五大动力），销量目标下调但利润导向明确。巴西工厂投产标志**本地化破局**，研发/管理升级（模块化平台、人才机制）构建长期壁垒。行业整体**震荡分化**，车企竞争从“量”转向“质”，长城通过技术聚焦与全球落地应对内卷，利好转折需观察海外产能爬坡及技术变现效率。\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 10,
+  "decisions": [
+    {
+      "field": "股价涨幅",
+      "status": "decreased",
+      "old_value": "794% (2020年6月-2021年10月)",
+      "value": "早盘涨超9% (2026年巴西工厂启动)",
+      "change": "794% (2020年6月-2021年10月) -> 早盘涨超9% (2026年巴西工厂启动)（-785.00pp）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从历史性暴涨回归常态增长，反映企业从资本驱动转向实体产能落地的战略转型。"
+    },
+    {
+      "field": "战略定位",
+      "status": "evolved",
+      "old_value": "三周期共振（行业/战略/产品）",
+      "value": "归元平台体系化作战（全品牌/全品类/全动力）",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从单一市场突破转向全球化技术平台竞争，体现车企在技术路线分化时代的整合能力建设。"
+    },
+    {
+      "field": "技术路线",
+      "status": "focused",
+      "old_value": "多动力并行（燃油/纯电/混动）",
+      "value": "明确拒绝增程技术，专注五大动力平台",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "通过技术路线取舍强化差异化优势，避免陷入同质化内卷竞争。"
+    },
+    {
+      "field": "销量目标",
+      "status": "adjusted",
+      "old_value": "2025年预测276万辆（+52.1%）",
+      "value": "2026年下调至180万辆",
+      "change": "2025年预测276万辆（+52.1%） -> 2026年下调至180万辆（+1.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "主动收缩规模目标换取利润质量，反映车企从增长优先转向效益优先的战略调整。"
+    },
+    {
+      "field": "研发重点",
+      "status": "upgraded",
+      "old_value": "车型密集投放",
+      "value": "归元平台模块化设计",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "研发重心从单一产品转向底层架构创新，通过平台化降低全球市场适配成本。"
+    },
+    {
+      "field": "全球化",
+      "status": "accelerated",
+      "old_value": "出口结构优化",
+      "value": "巴西工厂全面投产",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从贸易出口升级为本地化生产，应对国际贸易壁垒的深度全球化布局。"
+    },
+    {
+      "field": "管理机制",
+      "status": "innovated",
+      "old_value": "传统考核体系",
+      "value": "35+人才计划+双休制度",
+      "change": null,
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "通过组织变革对抗行业内卷，建立可持续的人才竞争力护城河。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共5篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "[PDF] 长城汽车：深蹲蓄力",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202308181595076338_1.pdf",
+      "source": "media",
+      "published_at": "2020-01"
+    },
+    {
+      "title": "长城又干了件大事 - 盖世汽车社区- Gasgoo",
+      "url": "https://i.gasgoo.com/news/70443305.html",
+      "source": "media",
+      "published_at": "2026-01-20"
+    },
+    {
+      "title": "[PDF] 汽车行业2026年十大趋势及投资策略",
+      "url": "https://pdf.dfcfw.com/pdf/H301_AP202601061815848340_1.pdf",
+      "source": "media",
+      "published_at": "2026-1-5"
+    },
+    {
+      "title": "长城汽车“超级母体”落地50余款新车将覆盖全球市场 - 东方财富",
+      "url": "https://finance.eastmoney.com/a/202601223626965557.html",
+      "source": "media",
+      "published_at": null
+    },
+    {
+      "title": "[PDF] 当我们在谈论AIGC",
+      "url": "https://runwise.co/wp-content/uploads/2024/06/%E5%88%9B%E6%96%B0%E7%A0%94%E6%8A%A5%EF%BD%9C2024%E5%B9%B4%E4%B8%AD%E5%9B%BDAIGC%E8%A1%8C%E4%B8%9A%E5%BA%94%E7%94%A8%E4%BB%B7%E5%80%BC%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_%E7%94%B2%E5%AD%90%E5%85%89%E5%B9%B4.pdf",
+      "source": "media",
+      "published_at": null
+    }
+  ]
+}

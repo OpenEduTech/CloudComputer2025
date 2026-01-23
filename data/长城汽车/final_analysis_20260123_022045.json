@@ -1,0 +1,13 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_022045",
+  "global_summary": "针对 长城汽车 行业，本次巡检未发现显著的指标变动。",
+  "raw_sources_count": 10,
+  "decisions": [],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共0篇，详见 sources（标题+链接清单）。",
+  "sources": []
+}

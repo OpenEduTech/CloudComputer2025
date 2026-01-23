@@ -1,0 +1,28 @@
+services:
+  name: industry-radar
+  component: fc
+  props:
+    region: cn-hangzhou
+    service:
+      name: industry-radar-service
+      description: 行研雷达服务
+    function:
+      name: industry-radar-func
+      description: 行研雷达函数
+      runtime: python3.9
+      handler: codes/trigger_layer.handler
+      memorySize: 128
+      timeout: 30
+    triggers:
+      - name: timer-trigger
+        type: timer
+        config:
+          cronExpression: '0 0 */6 * * *'
+          payload: '{"keyword": "半导体"}'
+
+# 使用说明：
+# 1. 安装 Serverless Devs CLI (s)
+# 2. 将本目录作为部署包，在命令行运行：
+#    s deploy
+# 3. 在控制台或 s.yaml 中配置环境变量：SILICONFLOW_API_KEY、OSS 相关凭据
+# 备注：如果你的团队使用不同的 region 或 runtime，请修改 above fields。
