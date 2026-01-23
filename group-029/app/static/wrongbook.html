@@ -1,0 +1,158 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>错题本</title>
+    <style>
+      :root {
+        --ink: #2a241f;
+        --paper: #fff8f0;
+        --accent: #c36a2d;
+        --shadow: 0 14px 30px rgba(0,0,0,0.08);
+      }
+      body {
+        margin: 0;
+        font-family: "LXGW WenKai", "STKaiti", "Songti SC", "Noto Serif SC", serif;
+        background: #f5f1e8;
+        color: var(--ink);
+      }
+      header {
+        padding: 18px 24px;
+        background: linear-gradient(120deg, #f8d7a8, #f3c893);
+        border-bottom: 2px solid #e7b57c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      main { padding: 20px 24px; }
+      .card {
+        margin: 12px 0;
+        padding: 12px;
+        background: var(--paper);
+        border: 1px solid #e7d5c3;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #f1e3d6;
+        margin-right: 6px;
+        margin-bottom: 6px;
+      }
+      button {
+        padding: 8px 12px;
+        border: none;
+        background: var(--accent);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .muted {
+        color: #8c7b6f;
+        font-size: 13px;
+      }
+      .chart {
+        height: 280px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>错题本（全局）</h2>
+      <a href="/" class="muted">返回主页</a>
+    </header>
+    <main>
+      <button id="refreshBtn">刷新</button>
+      <div id="summary" class="card"></div>
+      <div id="chart" class="card chart"></div>
+      <div id="items"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script>
+      const summaryDiv = document.getElementById("summary");
+      const itemsDiv = document.getElementById("items");
+      const chartDiv = document.getElementById("chart");
+      const refreshBtn = document.getElementById("refreshBtn");
+      let chartInstance = null;
+
+      function renderChart(summary) {
+        const data = Object.entries(summary.by_keyword || {})
+          .map(([name, value]) => ({ name, value }));
+        if (!chartInstance) {
+          chartInstance = echarts.init(chartDiv);
+          window.addEventListener("resize", () => {
+            chartInstance && chartInstance.resize();
+          });
+        }
+        if (data.length === 0) {
+          chartDiv.innerHTML = "暂无关键词统计数据";
+          return;
+        }
+        chartInstance.setOption({
+          tooltip: { trigger: "item" },
+          series: [
+            {
+              type: "pie",
+              radius: ["35%", "70%"],
+              avoidLabelOverlap: true,
+              itemStyle: { borderRadius: 8, borderColor: "#fff", borderWidth: 2 },
+              label: { color: "#2a241f" },
+              data
+            }
+          ]
+        });
+      }
+
+      async function loadWrongbook() {
+        const res = await fetch("/wrongbook/all");
+        if (!res.ok) {
+          summaryDiv.textContent = "错题本加载失败";
+          return;
+        }
+        const data = await res.json();
+        const summary = data.summary || { total: 0, by_keyword: {} };
+        const summaryList = Object.entries(summary.by_keyword || {})
+          .map(([k, v]) => `<span class="pill">${k}：${v}</span>`)
+          .join("");
+        const suggestion = summary.suggestion
+          || (summary.total > 0
+            ? "建议优先复习错题关键词对应章节，并完成同类练习。"
+            : "当前无错题，可提升题量或难度。");
+        summaryDiv.innerHTML = `<div>错题数：${data.total_wrong}</div>
+                                <div style="margin-top:6px;"><strong>关键词统计</strong></div>
+                                <div>${summaryList || "暂无统计"}</div>
+                                <div style="margin-top:6px;">建议：${suggestion}</div>`;
+        renderChart(summary);
+        itemsDiv.innerHTML = "";
+        data.items.forEach((w) => {
+          const div = document.createElement("div");
+          div.className = "card";
+          div.innerHTML = `<div><strong>${w.qid}</strong> ${w.question}</div>
+                           <div>你的答案：${w.user_answer}</div>
+                           <div>正确答案：${w.correct_answer}</div>
+                           <div>解析：${w.explanation}</div>
+                           <div class="muted">会话：${w.session_id}</div>
+                           <button data-del="${w.record_id}">删除</button>`;
+          itemsDiv.appendChild(div);
+        });
+        document.querySelectorAll("[data-del]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-del");
+            if (!id) {
+              return;
+            }
+            await fetch(`/wrongbook/${id}`, { method: "DELETE" });
+            loadWrongbook();
+          };
+        });
+      }
+
+      refreshBtn.onclick = loadWrongbook;
+      loadWrongbook();
+    </script>
+  </body>
+</html>

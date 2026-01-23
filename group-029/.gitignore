@@ -1,0 +1,11 @@
+﻿# 忽略本地环境与缓存文件
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.idea/
+.vscode/
+*.log
+data/

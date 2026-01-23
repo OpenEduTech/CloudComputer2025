@@ -1,0 +1,808 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>学习评估与巩固智能体</title>
+    <style>
+      :root {
+        --bg: #f5f1e8;
+        --ink: #2a241f;
+        --accent: #c36a2d;
+        --paper: #fff8f0;
+        --muted: #8c7b6f;
+        --ok: #1f7a4c;
+        --bad: #b12b2b;
+        --shadow: 0 16px 32px rgba(0,0,0,0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "LXGW WenKai", "STKaiti", "Songti SC", "Noto Serif SC", serif;
+        background:
+          radial-gradient(circle at 12% 8%, #fde3c2, #f5f1e8 60%),
+          linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
+        color: var(--ink);
+      }
+      header {
+        padding: 24px 32px;
+        background: linear-gradient(120deg, #f8d7a8, #f3c893);
+        border-bottom: 2px solid #e7b57c;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+      }
+      h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: 1px; }
+      h2 { font-size: 18px; margin: 0 0 10px; }
+      h3 { font-size: 15px; margin: 12px 0 6px; }
+      p { margin: 0; color: var(--muted); }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .header-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .header-actions a {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #fff3e6;
+        border: 1px solid #e7b57c;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 280px 1fr 1fr;
+        gap: 18px;
+        padding: 24px 32px 40px;
+      }
+      section,
+      aside {
+        background: var(--paper);
+        border: 1px solid #e7d5c3;
+        border-radius: 12px;
+        padding: 16px 18px;
+        box-shadow: var(--shadow);
+      }
+      label { display: block; margin: 10px 0 6px; }
+      input[type="file"],
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #d6c3b2;
+        border-radius: 6px;
+        background: #fff;
+      }
+      textarea { min-height: 80px; }
+      button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        border: none;
+        background: var(--accent);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.08s ease, box-shadow 0.2s ease;
+        box-shadow: 0 6px 14px rgba(195,106,45,0.25);
+      }
+      button:hover { transform: translateY(-1px); }
+      button:disabled { background: #c9a48d; cursor: not-allowed; }
+      .status { margin-top: 8px; color: var(--muted); font-size: 13px; }
+      .status.ok { color: var(--ok); }
+      .status.warn { color: var(--bad); }
+      .question-card {
+        margin: 12px 0;
+        padding: 10px;
+        border: 1px dashed #d7c6b5;
+        border-radius: 10px;
+        background: #fffdf9;
+      }
+      .score { font-weight: bold; color: #7a3e00; }
+      .tag {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+        margin-left: 6px;
+      }
+      .tag.right { background: #d9f4e3; color: var(--ok); }
+      .tag.wrong { background: #fde2e2; color: var(--bad); }
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #f1e3d6;
+        margin-right: 6px;
+      }
+      .spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #d4b79b;
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .error {
+        margin-top: 8px;
+        padding: 8px;
+        border: 1px solid #f2b5b5;
+        background: #fdeaea;
+        border-radius: 6px;
+        color: #7a1d1d;
+        display: none;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .session-item details {
+        padding: 8px 0;
+      }
+      .session-item summary {
+        cursor: pointer;
+      }
+      .session-meta {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+      }
+      .empty {
+        padding: 12px;
+        border-radius: 10px;
+        background: #f7efe5;
+        color: var(--muted);
+        font-size: 13px;
+        border: 1px dashed #e4cdbb;
+        margin-top: 8px;
+      }
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .chat-box {
+        margin: 12px 0;
+        padding: 10px;
+        border: 1px solid #e4cdbb;
+        border-radius: 12px;
+        background: #fffdf9;
+      }
+      .chat-messages {
+        max-height: 220px;
+        overflow-y: auto;
+        padding: 6px;
+        background: #fff7ef;
+        border-radius: 8px;
+      }
+      .chat-msg {
+        margin: 6px 0;
+        padding: 6px 8px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      .chat-msg.user { background: #fde8d3; }
+      .chat-msg.bot { background: #f1eee9; }
+      .chat-sources {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .chat-input {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .chat-input input {
+        flex: 1;
+      }
+      @media (max-width: 1100px) {
+        main { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>学习评估与巩固智能体</h1>
+        <p>上传教材 → 自动出题 → 作答判卷 → 错题复盘</p>
+      </div>
+      <div class="header-actions">
+        <a href="/wrongbook" target="_blank">错题本</a>
+      </div>
+    </header>
+    <main>
+      <aside>
+        <h2>会话列表</h2>
+        <div class="status" id="sessionInfo">当前会话：未生成</div>
+        <button id="refreshSessionsBtn">刷新会话列表</button>
+        <label for="sessionSearch">搜索会话</label>
+        <input id="sessionSearch" type="text" placeholder="输入关键词过滤" />
+        <div class="status" id="sessionListStatus">暂无会话</div>
+        <div id="sessionList"></div>
+      </aside>
+
+      <section>
+        <h2>流程区</h2>
+        <h3>0. 对话式入口</h3>
+        <div class="chat-box">
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input">
+            <input id="chatInput" type="text" placeholder="输入指令或问题，例如：出题 3 2 4:4:2 / 判卷 / 这个概念的定义与应用是什么？" />
+            <button id="chatSendBtn">发送</button>
+          </div>
+          <div class="hint">指令：上传、出题 数量、判卷、重置、文本:内容、帮助；非指令将自动进入问答。</div>
+        </div>
+        <h3>1. 上传 PDF</h3>
+        <input id="pdfFile" type="file" accept=".pdf" />
+        <div class="status" id="fileName">未选择文件</div>
+        <button id="uploadBtn">上传并解析</button>
+        <div class="status" id="uploadStatus">未上传</div>
+        <div class="error" id="uploadError"></div>
+        <div class="hint">或直接粘贴文本生成会话：</div>
+        <textarea id="rawText" placeholder="在此粘贴教材或笔记文本"></textarea>
+        <button id="textBtn">用文本创建会话</button>
+
+        <h3 style="margin-top:16px;">2. 生成题目</h3>
+        <div class="grid">
+          <div>
+            <label>选择题数量</label>
+            <input id="mcqCount" type="number" min="1" max="10" value="3" />
+          </div>
+          <div>
+            <label>简答题数量</label>
+            <input id="saCount" type="number" min="1" max="6" value="2" />
+          </div>
+        </div>
+        <label>难度梯度（易:中:难）</label>
+        <input id="difficultyRatio" type="text" value="4:4:2" />
+        <div class="hint">建议总题量不超过 12 题，保证生成质量。</div>
+        <button id="genBtn" disabled>生成题目</button>
+        <div class="status" id="genStatus">等待会话</div>
+        <div class="error" id="genError"></div>
+
+        <h3 style="margin-top:16px;">3. 作答与判卷</h3>
+        <button id="gradeBtn" disabled>提交判卷</button>
+        <button id="resetBtn" style="margin-left:6px;">一键重置</button>
+        <div class="status" id="gradeStatus">等待题目</div>
+        <div class="error" id="gradeError"></div>
+      </section>
+
+      <section>
+        <h2>结果区</h2>
+        <h3>题目列表</h3>
+        <div id="questionsEmpty" class="empty">尚未生成题目，请先上传教材并生成题目。</div>
+        <div id="questions"></div>
+
+        <h3 style="margin-top:16px;">判卷结果</h3>
+        <div id="gradeEmpty" class="empty">等待判卷结果。</div>
+        <div id="gradeResult"></div>
+      </section>
+    </main>
+
+    <script>
+      const state = {
+        sessionId: "",
+        sessionName: "",
+        questions: [],
+        grade: null
+      };
+
+      const uploadBtn = document.getElementById("uploadBtn");
+      const genBtn = document.getElementById("genBtn");
+      const gradeBtn = document.getElementById("gradeBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const refreshSessionsBtn = document.getElementById("refreshSessionsBtn");
+      const sessionInfo = document.getElementById("sessionInfo");
+      const uploadStatus = document.getElementById("uploadStatus");
+      const uploadError = document.getElementById("uploadError");
+      const fileName = document.getElementById("fileName");
+      const genStatus = document.getElementById("genStatus");
+      const genError = document.getElementById("genError");
+      const difficultyRatio = document.getElementById("difficultyRatio");
+      const gradeStatus = document.getElementById("gradeStatus");
+      const gradeError = document.getElementById("gradeError");
+      const textBtn = document.getElementById("textBtn");
+      const rawText = document.getElementById("rawText");
+      const chatMessages = document.getElementById("chatMessages");
+      const chatInput = document.getElementById("chatInput");
+      const chatSendBtn = document.getElementById("chatSendBtn");
+      const questionsDiv = document.getElementById("questions");
+      const gradeResult = document.getElementById("gradeResult");
+      const questionsEmpty = document.getElementById("questionsEmpty");
+      const gradeEmpty = document.getElementById("gradeEmpty");
+      const sessionListStatus = document.getElementById("sessionListStatus");
+      const sessionListDiv = document.getElementById("sessionList");
+      const sessionSearch = document.getElementById("sessionSearch");
+
+      function setError(el, msg) {
+        if (!msg) {
+          el.textContent = "";
+          el.style.display = "none";
+          return;
+        }
+        el.textContent = msg;
+        el.style.display = "block";
+      }
+
+      function resetView() {
+        state.sessionId = "";
+        state.sessionName = "";
+        state.questions = [];
+        state.grade = null;
+        document.getElementById("pdfFile").value = "";
+        rawText.value = "";
+        fileName.textContent = "未选择文件";
+        uploadStatus.textContent = "未上传";
+        sessionInfo.textContent = "当前会话：未生成";
+        genStatus.textContent = "等待会话";
+        gradeStatus.textContent = "等待题目";
+        questionsDiv.innerHTML = "";
+        gradeResult.innerHTML = "";
+        questionsEmpty.style.display = "block";
+        gradeEmpty.style.display = "block";
+        genBtn.disabled = true;
+        gradeBtn.disabled = true;
+        setError(uploadError, "");
+        setError(genError, "");
+        setError(gradeError, "");
+      }
+
+      function appendChat(role, text, sources = []) {
+        const div = document.createElement("div");
+        div.className = `chat-msg ${role}`;
+        div.textContent = text;
+        if (sources.length) {
+          const detail = document.createElement("details");
+          detail.className = "chat-sources";
+          const summary = document.createElement("summary");
+          summary.textContent = "查看证据片段";
+          detail.appendChild(summary);
+          sources.forEach((s) => {
+            const p = document.createElement("div");
+            p.textContent = s;
+            detail.appendChild(p);
+          });
+          div.appendChild(detail);
+        }
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function showChatHelp() {
+        appendChat("bot", "指令示例：上传 / 出题 3 2 4:4:2 / 判卷 / 重置 / 文本:你的内容 / 帮助");
+      }
+
+      function renderQuestions(savedAnswers = []) {
+        questionsDiv.innerHTML = "";
+        questionsEmpty.style.display = state.questions.length ? "none" : "block";
+        const answerMap = {};
+        savedAnswers.forEach((a) => {
+          answerMap[a.qid] = a.answer;
+        });
+        state.questions.forEach((q, idx) => {
+          const card = document.createElement("div");
+          card.className = "question-card";
+          const diff = q.difficulty ? `<span class="pill">难度：${q.difficulty}</span>` : "";
+          card.innerHTML = `<div><strong>Q${idx + 1} (${q.qtype})</strong> ${q.question} ${diff}</div>`;
+          if (q.options) {
+            const optList = q.options.map(o => `<div>${o}</div>`).join("");
+            card.innerHTML += `<div style="margin-top:6px;">${optList}</div>`;
+          }
+          card.innerHTML += `<label>你的答案</label>`;
+          if (q.qtype === "short_answer") {
+            card.innerHTML += `<textarea data-qid="${q.qid}">${answerMap[q.qid] || ""}</textarea>`;
+          } else {
+            card.innerHTML += `<input type="text" data-qid="${q.qid}" placeholder="例如：A" value="${answerMap[q.qid] || ""}" />`;
+          }
+          questionsDiv.appendChild(card);
+        });
+      }
+
+      function renderGrade(grade, answers = []) {
+        if (!grade) {
+          gradeResult.innerHTML = "";
+          gradeEmpty.style.display = "block";
+          return;
+        }
+        gradeEmpty.style.display = "none";
+        const answerMap = {};
+        answers.forEach((a) => {
+          answerMap[a.qid] = a.answer;
+        });
+        const correctCount = grade.items.filter(i => i.is_correct).length;
+        const totalCount = grade.items.length;
+        gradeResult.innerHTML = `<div class="score">总分：${grade.total_score} / ${totalCount * 2}</div>
+                                 <div>正确题数：${correctCount} / ${totalCount}</div>`;
+        grade.items.forEach((i) => {
+          const div = document.createElement("div");
+          div.className = "question-card";
+          const question = state.questions.find(q => q.qid === i.qid);
+          div.innerHTML = `<div><strong>${i.qid}</strong>
+                             <span class="tag ${i.is_correct ? "right" : "wrong"}">
+                               ${i.is_correct ? "正确" : "错误"}
+                             </span>
+                             得分 ${i.score}
+                           </div>
+                           <div>你的答案：${answerMap[i.qid] || "-"}</div>
+                           <div>参考答案：${question ? question.answer : "-"}</div>
+                           <div>解析：${i.explanation}</div>`;
+          gradeResult.appendChild(div);
+        });
+      }
+
+      document.getElementById("pdfFile").addEventListener("change", (e) => {
+        const f = e.target.files[0];
+        fileName.textContent = f ? `已选择：${f.name}` : "未选择文件";
+      });
+
+      uploadBtn.onclick = async () => {
+        setError(uploadError, "");
+        const file = document.getElementById("pdfFile").files[0];
+        if (!file) {
+          uploadStatus.textContent = "请选择 PDF 文件";
+          return;
+        }
+        uploadBtn.disabled = true;
+        uploadStatus.innerHTML = `<span class="spinner"></span>上传中...`;
+        const form = new FormData();
+        form.append("file", file);
+        const res = await fetch("/sessions", { method: "POST", body: form });
+        if (!res.ok) {
+          uploadStatus.textContent = "上传失败";
+          setError(uploadError, "上传或解析失败，请检查 PDF。");
+          uploadBtn.disabled = false;
+          return;
+        }
+        const data = await res.json();
+        resetView();
+        state.sessionId = data.session_id;
+        state.sessionName = data.name || data.session_id;
+        uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+        sessionInfo.textContent = `当前会话：${state.sessionName}`;
+        genBtn.disabled = false;
+        uploadBtn.disabled = false;
+        fetchSessions();
+      };
+
+      textBtn.onclick = async () => {
+        setError(uploadError, "");
+        const text = rawText.value.trim();
+        if (!text) {
+          uploadStatus.textContent = "请先粘贴文本";
+          return;
+        }
+        textBtn.disabled = true;
+        uploadStatus.innerHTML = `<span class="spinner"></span>文本处理中...`;
+        const res = await fetch("/sessions/text", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+        if (!res.ok) {
+          uploadStatus.textContent = "文本创建失败";
+          setError(uploadError, "文本解析失败，请检查内容。");
+          textBtn.disabled = false;
+          return;
+        }
+        const data = await res.json();
+        resetView();
+        state.sessionId = data.session_id;
+        state.sessionName = data.name || data.session_id;
+        uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+        sessionInfo.textContent = `当前会话：${state.sessionName}`;
+        genBtn.disabled = false;
+        textBtn.disabled = false;
+        fetchSessions();
+      };
+
+      async function createSessionFromText(text) {
+        const res = await fetch("/sessions/text", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+        if (!res.ok) {
+          throw new Error("文本创建失败");
+        }
+        return res.json();
+      }
+
+      function parseGenerateCommand(input) {
+        const match = input.match(/出题\s+(\d+)\s+(\d+)(?:\s+(\d+:\d+:\d+))?/);
+        if (!match) {
+          return null;
+        }
+        return {
+          mcq: Number(match[1]),
+          sa: Number(match[2]),
+          ratio: match[3] || "4:4:2"
+        };
+      }
+
+      chatSendBtn.onclick = async () => {
+        const text = chatInput.value.trim();
+        if (!text) {
+          return;
+        }
+        appendChat("user", text);
+        chatInput.value = "";
+
+        if (text.startsWith("文本:")) {
+          const content = text.slice(3).trim();
+          if (!content) {
+            appendChat("bot", "请在“文本:”后输入内容。");
+            return;
+          }
+          try {
+            const data = await createSessionFromText(content);
+            resetView();
+            state.sessionId = data.session_id;
+            state.sessionName = data.name || data.session_id;
+            uploadStatus.textContent = `会话创建成功，切分数：${data.chunk_count}`;
+            sessionInfo.textContent = `当前会话：${state.sessionName}`;
+            genBtn.disabled = false;
+            fetchSessions();
+            appendChat("bot", "已创建文本会话，可以继续“出题”。");
+          } catch {
+            appendChat("bot", "文本创建失败，请检查内容。");
+          }
+          return;
+        }
+
+        if (text === "上传") {
+          if (!document.getElementById("pdfFile").files[0]) {
+            appendChat("bot", "请先选择 PDF 文件，再输入“上传”。");
+            return;
+          }
+          await uploadBtn.onclick();
+          appendChat("bot", "已触发上传，请查看状态。");
+          return;
+        }
+
+        if (text.startsWith("出题")) {
+          const config = parseGenerateCommand(text);
+          if (!config) {
+            appendChat("bot", "格式示例：出题 3 2 4:4:2");
+            return;
+          }
+          document.getElementById("mcqCount").value = config.mcq;
+          document.getElementById("saCount").value = config.sa;
+          difficultyRatio.value = config.ratio;
+          await genBtn.onclick();
+          appendChat("bot", "已触发出题，请查看结果区。");
+          return;
+        }
+
+        if (text === "判卷") {
+          if (gradeBtn.disabled) {
+            appendChat("bot", "请先生成题目并填写答案。");
+            return;
+          }
+          await gradeBtn.onclick();
+          appendChat("bot", "已触发判卷，请查看结果区。");
+          return;
+        }
+
+        if (text === "重置") {
+          resetBtn.onclick();
+          appendChat("bot", "已重置会话状态。");
+          return;
+        }
+
+        if (text === "帮助") {
+          showChatHelp();
+          return;
+        }
+
+        // 默认走对话式问答接口
+        if (!state.sessionId) {
+          appendChat("bot", "请先上传 PDF 或创建文本会话。");
+          return;
+        }
+        try {
+          const res = await fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ session_id: state.sessionId, message: text })
+          });
+          if (!res.ok) {
+            appendChat("bot", "回答失败，请稍后重试。");
+            return;
+          }
+          const data = await res.json();
+          appendChat("bot", data.answer, data.sources || []);
+        } catch {
+          appendChat("bot", "调用失败，请检查网络或服务状态。");
+        }
+      };
+
+      showChatHelp();
+
+      genBtn.onclick = async () => {
+        setError(genError, "");
+        const mcqVal = Number(document.getElementById("mcqCount").value || 0);
+        const saVal = Number(document.getElementById("saCount").value || 0);
+        if (mcqVal <= 0 || saVal <= 0) {
+          genStatus.textContent = "生成失败";
+          setError(genError, "题目数量需为正整数。");
+          return;
+        }
+        genStatus.innerHTML = `<span class="spinner"></span>生成中...`;
+        genBtn.disabled = true;
+        const ratio = difficultyRatio.value.trim() || "4:4:2";
+        const body = {
+          session_id: state.sessionId,
+          num_mcq: mcqVal,
+          num_short: saVal,
+          difficulty_ratio: ratio
+        };
+        const res = await fetch("/questions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) {
+          genStatus.textContent = "生成失败";
+          setError(genError, "题目生成失败，请稍后重试。");
+          genBtn.disabled = false;
+          return;
+        }
+        const data = await res.json();
+        state.questions = data.questions;
+        state.grade = null;
+        genStatus.textContent = "生成完成";
+        renderQuestions();
+        renderGrade(null);
+        gradeBtn.disabled = false;
+        genBtn.disabled = false;
+        questionsDiv.scrollIntoView({ behavior: "smooth" });
+      };
+
+      gradeBtn.onclick = async () => {
+        setError(gradeError, "");
+        gradeStatus.innerHTML = `<span class="spinner"></span>判卷中...`;
+        gradeBtn.disabled = true;
+        const answers = [];
+        document.querySelectorAll("[data-qid]").forEach((el) => {
+          answers.push({ qid: el.getAttribute("data-qid"), answer: el.value });
+        });
+        const body = {
+          session_id: state.sessionId,
+          questions: state.questions,
+          answers: answers
+        };
+        const res = await fetch("/grade", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) {
+          gradeStatus.textContent = "判卷失败";
+          setError(gradeError, "判卷失败，请检查答案或稍后重试。");
+          gradeBtn.disabled = false;
+          return;
+        }
+        const data = await res.json();
+        gradeStatus.textContent = "判卷完成";
+        state.grade = data;
+        renderGrade(data, answers);
+        gradeResult.scrollIntoView({ behavior: "smooth" });
+        gradeBtn.disabled = false;
+      };
+
+      resetBtn.onclick = () => {
+        resetView();
+        fetchSessions();
+      };
+
+      function renderSessionList(sessions) {
+        const keyword = sessionSearch.value.trim();
+        const filtered = keyword
+          ? sessions.filter((s) => (s.name || s.session_id).includes(keyword))
+          : sessions;
+        sessionListDiv.innerHTML = "";
+        if (filtered.length === 0) {
+          sessionListStatus.textContent = keyword ? "没有匹配的会话" : "暂无会话";
+          return;
+        }
+        sessionListStatus.textContent = `共 ${filtered.length} 个会话`;
+        filtered.forEach((s) => {
+          const div = document.createElement("div");
+          div.className = "question-card session-item";
+          div.innerHTML = `<details>
+                             <summary><strong>${s.name || s.session_id}</strong></summary>
+                             <div class="session-meta">切分：${s.chunk_count}</div>
+                             <div class="session-meta">创建时间：${s.created_at}</div>
+                             <div class="session-meta">最近访问：${s.last_accessed || "-"}</div>
+                             <div class="actions">
+                               <button data-use="${s.session_id}" data-name="${s.name || s.session_id}">切换到该会话</button>
+                               <button data-rename="${s.session_id}" data-old="${s.name || s.session_id}">重命名</button>
+                               <button data-del="${s.session_id}">删除会话</button>
+                             </div>
+                           </details>`;
+          sessionListDiv.appendChild(div);
+        });
+        document.querySelectorAll("[data-use]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-use");
+            const name = e.target.getAttribute("data-name");
+            state.sessionId = id;
+            state.sessionName = name;
+            sessionInfo.textContent = `当前会话：${state.sessionName}`;
+            await loadSessionRecords(id);
+          };
+        });
+        document.querySelectorAll("[data-rename]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-rename");
+            const oldName = e.target.getAttribute("data-old");
+            const newName = window.prompt("请输入新的会话名称：", oldName);
+            if (!newName || !newName.trim()) {
+              return;
+            }
+            await fetch(`/sessions/${id}`, {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name: newName.trim() })
+            });
+            fetchSessions();
+          };
+        });
+        document.querySelectorAll("[data-del]").forEach((btn) => {
+          btn.onclick = async (e) => {
+            const id = e.target.getAttribute("data-del");
+            await fetch(`/sessions/${id}`, { method: "DELETE" });
+            if (state.sessionId === id) {
+              resetView();
+            }
+            fetchSessions();
+          };
+        });
+      }
+
+      async function fetchSessions() {
+        sessionListStatus.innerHTML = `<span class="spinner"></span>加载会话列表...`;
+        sessionListDiv.innerHTML = "";
+        const res = await fetch("/sessions");
+        if (!res.ok) {
+          sessionListStatus.textContent = "会话列表获取失败";
+          return;
+        }
+        const data = await res.json();
+        const sessions = data.sessions || [];
+        renderSessionList(sessions);
+      }
+
+      async function loadSessionRecords(sessionId) {
+        const res = await fetch(`/records/${sessionId}`);
+        if (!res.ok) {
+          return;
+        }
+        const data = await res.json();
+        state.questions = data.questions || [];
+        state.grade = data.grade || null;
+        renderQuestions(data.answers || []);
+        renderGrade(state.grade, data.answers || []);
+        genBtn.disabled = false;
+        gradeBtn.disabled = state.questions.length === 0;
+      }
+
+      refreshSessionsBtn.onclick = fetchSessions;
+      sessionSearch.addEventListener("input", fetchSessions);
+      fetchSessions();
+    </script>
+  </body>
+</html>
