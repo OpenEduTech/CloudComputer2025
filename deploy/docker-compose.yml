@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  # ---------------------------
+  # 1. 核心模型服务 (Ollama)
+  # ---------------------------
+  ollama:
+    image: ollama/ollama:latest
+    container_name: rag_ollama
+    ports:
+      - "11434:11434" # PDF 提到 11435，但容器内部通常是 11434，我们映射出来
+    volumes:
+      - ollama_storage:/root/.ollama
+    networks:
+      - rag_net
+    # 如果你有 NVIDIA 显卡，保留下面这段；如果没有，请注释掉 deploy 部分
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ---------------------------
+  # 2. 图数据库 (Neo4j)
+  # ---------------------------
+  neo4j:
+    image: neo4j:5.15.0
+    container_name: rag_neo4j
+    ports:
+      - "7474:7474" # HTTP 控制台
+      - "7687:7687" # Bolt 协议
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_PLUGINS=["apoc"]
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    networks:
+      - rag_net
+
+  # ---------------------------
+  # 3. 后端 API (RAG Service)
+  # ---------------------------
+  agent:
+    build:
+      context: ../            # 🌟 关键：上下文设为根目录，以便读取 data/ 和 docs/
+      dockerfile: deploy/backend.Dockerfile
+    container_name: rag_backend
+    ports:
+      - "8088:8088"           # 🌟 匹配 PDF 中的 8088 端口
+    volumes:
+      # 挂载索引文件，保证重启后 Chroma 数据不丢失
+      - ../index:/app/index
+      # 挂载 Prompt，方便热调整
+      - ../prompts:/app/prompts
+      # 挂载代码，开发时修改代码无需重建镜像 (可选)
+      - ../services:/app/services
+    environment:
+      # 容器间通信：使用服务名 (service name)
+      - OLLAMA_HOST=http://rag_ollama:11434
+      - NEO4J_URI=bolt://rag_neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password123
+    depends_on:
+      - ollama
+      - neo4j
+    networks:
+      - rag_net
+
+  # ---------------------------
+  # 4. 前端界面 (React)
+  # ---------------------------
+  frontend:
+    build:
+      context: ../
+      dockerfile: deploy/frontend.Dockerfile
+    container_name: rag_frontend
+    ports:
+      - "5173:80"             # 将容器的 80 (Nginx) 映射到宿主机的 5173
+    depends_on:
+      - agent
+    networks:
+      - rag_net
+
+networks:
+  rag_net:
+    driver: bridge
+
+volumes:
+  ollama_storage:
+  neo4j_data:
+  neo4j_logs:
