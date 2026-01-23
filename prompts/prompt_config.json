@@ -1,0 +1,19 @@
+"""Prompt配置"""
+
+PROMPT_CONFIG = {
+    "discovery": {
+        "system_role": "你是一个跨学科知识专家，擅长发现不同领域之间的深层联系。",
+        "temperature": 0.3,
+        "max_tokens": 2000
+    },
+    "verification": {
+        "system_role": "你是一个严谨的知识验证专家，负责核查信息的准确性。",
+        "temperature": 0.2,
+        "max_tokens": 1500
+    },
+    "graph_builder": {
+        "system_role": "你是一个图数据结构专家，擅长将知识转换为标准化的图结构。",
+        "temperature": 0.1,
+        "max_tokens": 2000
+    }
+}
