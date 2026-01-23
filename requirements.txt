@@ -1,0 +1,19 @@
+# ===== 核心Web框架 =====
+fastapi>=0.104.1          # 后端API框架
+uvicorn>=0.24.0           # ASGI服务器
+python-dotenv>=1.0.0      # 环境变量加载
+
+# ===== AI相关 =====
+openai>=1.4.0             # OpenAI API
+dashscope>=1.14.0         # 通义千问API
+openai-whisper>=20231106  # 语音转文字（核心）
+
+# ===== 文件处理 =====
+PyPDF2>=3.0.1             # PDF解析
+python-docx>=0.8.11       # Word解析
+ffmpeg-python>=0.2.0      # ffmpeg封装（音频处理）
+
+# ===== 基础依赖 =====
+numpy>=1.24.0             # 数值计算（whisper必需）
+redis>=5.0.0              # Redis缓存（如果用得到）
+python-multipart>=0.0.9

@@ -1,0 +1,51 @@
+# 删掉这行：version: "3.8"
+
+services:
+  # Python应用服务（你的出题系统）
+  exam-system:
+    build: . # 基于当前目录的Dockerfile构建镜像
+    container_name: exam-system
+    restart: always # 容器崩溃自动重启
+    environment:
+      # 覆盖.env里的配置（Docker环境下Redis主机名是redis）
+      - QWEN_API_KEY=sk-45fae6d8b0c24da195f8a3e443145849 # 直接填真实值
+      - REDIS_HOST=redis # Docker内部Redis容器名
+      - REDIS_PORT=6379
+      - WHISPER_CACHE=/app/.cache/whisper # Whisper模型缓存到容器内
+    volumes:
+      # 挂载本地目录到容器：方便访问本地文件（如PDF/音频/作答文件）
+      - ./data:/app/data # 本地data目录 → 容器/app/data
+      - ./whisper-cache:/app/.cache/whisper # 持久化Whisper模型，避免重复下载
+      - ./generated:/app/generated # 持久化生成的题目文件
+      # 新增：挂载当前目录到容器（确保view_mistakes.py同步更新）
+      - .:/app
+    working_dir: /app # 设置工作目录为/app
+    depends_on:
+      - redis # 先启动Redis，再启动应用
+    networks:
+      - exam-network
+    # 新增：保持容器运行（否则运行完main.py会退出）
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+  # Redis服务（记忆层/反思层用）
+  redis:
+    image: redis:7-alpine # 轻量版Redis
+    container_name: exam-redis
+    restart: always
+    ports:
+      - "6380:6379" # 宿主机6379端口映射到容器
+    volumes:
+      - redis-data:/data # 持久化Redis数据，重启不丢失
+    command: redis-server --appendonly yes # 开启AOF持久化
+    networks:
+      - exam-network
+
+# 自定义网络：让两个容器互通
+networks:
+  exam-network:
+    driver: bridge
+
+# 数据卷：持久化Redis和Whisper缓存
+volumes:
+  redis-data:
+  whisper-cache:
