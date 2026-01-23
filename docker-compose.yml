@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+  api:
+    build: ./services/api
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=${MONGO_URI:-mongodb://mongo:27017}
+      - MONGO_DB=${MONGO_DB:-learning_agent}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_BASE_URL=${LLM_BASE_URL:-https://api.siliconflow.cn/v1/chat/completions}
+      - LLM_MODEL=${LLM_MODEL:-deepseek-ai/DeepSeek-V3.2-Exp}
+    depends_on:
+      - mongo
+      - redis
+  mongo:
+    image: mongo:7
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+  redis:
+    image: redis:7-alpine
+    restart: always
+volumes:
+  mongo_data:
