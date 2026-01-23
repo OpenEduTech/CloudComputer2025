@@ -129,7 +129,7 @@ docker-compose down
 - 详细文档:  [USER_GUIDE_DETAILED.md](USER_GUIDE_DETAILED.md)
 - 技术文档:  [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)
 - API 文档:  http://localhost:8000/docs
-- DEMO视频：查看
+- DEMO视频：[DEMO](DEMO.mp4)
 
 
 ## 任务分工
