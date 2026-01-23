@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习评估智能体 - 控制台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1><i class="fas fa-brain"></i> 学习评估智能体</h1>
+            <p>智能学习伴侣</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" data-page="materials" id="zlgl">
+                    <i class="fas fa-book"></i> 资料管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-page="questions">
+                    <i class="fas fa-question-circle"></i> 题目生成
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-page="evaluation">
+                    <i class="fas fa-chart-line"></i> 学习评估
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-page="errors">
+                    <i class="fas fa-exclamation-triangle"></i> 错题本
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-page="profile">
+                    <i class="fas fa-user"></i> 个人中心
+                </a>
+            </li>
+        </ul>
+
+        <!-- 在侧边栏底部添加退出登录按钮 -->
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> 退出登录
+            </button>
+        </div>
+    </div>
+    
+    <!-- 主内容区 -->
+    <div class="main-content">
+        <div class="content-header">
+            <h2>📚 资料管理</h2>
+            <p>导入学习资料并配置题目生成参数</p>
+        </div>
+        
+        <div class="materials-container">
+            <!-- 左侧资料列表 -->
+            <div class="materials-sidebar">
+                <div class="card-header">
+                    <h3 class="card-title">我的资料</h3>
+                    <button class="btn btn-primary" id="newMaterialBtn">
+                        <i class="fas fa-plus"></i> 新建
+                    </button>
+                </div>
+                
+                <div id="materialsList">
+                    <!-- 资料列表将通过JavaScript动态生成 -->
+                    <div class="material-item active">
+                        <div class="material-title">计算机科学导论</div>
+                        <div class="material-meta">PDF • 最后更新：2024-01-15</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-title">机器学习笔记</div>
+                        <div class="material-meta">Markdown • 最后更新：2024-01-10</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧操作区域 -->
+            <div class="materials-content">
+                <!-- 导入新资料区域 -->
+                <div class="import-section">
+                    <div class="form-group">
+                        <label class="form-label">资料名称</label>
+                        <input type="text" class="form-control" id="materialName" placeholder="请输入资料名称">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">导入文件</label>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-secondary" id="importBtn">
+                                <i class="fas fa-upload"></i> 选择文件
+                            </button>
+                            <span id="selectedFile" style="align-self: center; color: #666;">未选择文件</span>
+                        </div>
+                        <small style="color: #666; display: block; margin-top: 5px;">
+                            支持格式：PDF, TXT, MD, DOCX
+                        </small>
+                    </div>
+                    
+                    <button class="btn btn-success" id="saveMaterialBtn">
+                        <i class="fas fa-save"></i> 保存资料
+                    </button>
+                </div>
+                
+                <!-- 出题配置区域 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">题目生成配置</h3>
+                        <button class="btn btn-primary" id="generateQuestionsBtn">
+                            <i class="fas fa-cogs"></i> 生成题目
+                        </button>
+                    </div>
+
+                    <!-- 难度选择 -->
+                    <div class="difficulty-selection">
+                        <span class="difficulty-label">题目难度</span>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn basic active" data-difficulty="basic">
+                                基础
+                            </button>
+                            <button class="difficulty-btn advanced" data-difficulty="advanced">
+                                提高
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="questionConfig">
+                        <!-- 选择题配置 -->
+                        <div class="question-type-row">
+                            <span class="question-type-label">选择题</span>
+                            <label class="switch">
+                                <input type="checkbox" id="multipleChoiceToggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <input type="number" class="question-count-input" id="multipleChoiceCount" 
+                                   value="10" min="1" max="50" placeholder="数量">
+                            <span>题</span>
+                        </div>
+                        
+                        <!-- 简答题配置 -->
+                        <div class="question-type-row">
+                            <span class="question-type-label">简答题</span>
+                            <label class="switch">
+                                <input type="checkbox" id="shortAnswerToggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <input type="number" class="question-count-input" id="shortAnswerCount" 
+                                   value="3" min="1" max="20" placeholder="数量" disabled>
+                            <span>题</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
