@@ -1,0 +1,111 @@
+{
+  "keyword": "长城汽车",
+  "generated_at": "20260123_015552",
+  "global_summary": "【长城汽车行业全局总结】  \n行业趋势：**震荡向上**。长城汽车从“产品出海”转向“技术生态出海”（巴西工厂落地），叠加超级平台整合与利润导向战略，凸显全球化与高端化决心。短期股价波动反映市场对产能本土化的乐观预期，但技术路线分化（弃增程押氢能）与存量市场竞争加剧风险并存。组织改革与人才升级成对抗内卷新抓手，长期看其技术定义能力与出海深度将决定能否突破行业瓶颈。（99字）  \n\n**核心逻辑**：利空（行业内卷/技术路线风险）＜利好（全球化+平台化+管理红利），震荡主因转型期投入与回报的时间差。\n\n仲裁：未发现明显多源冲突（官方>媒体>传闻优先级规则已启用）。",
+  "raw_sources_count": 6,
+  "decisions": [
+    {
+      "field": "股价表现",
+      "status": "volatile",
+      "old_value": "2020年6月30日-2021年10月29日涨幅794%",
+      "value": "2026年早盘涨超9%（巴西工厂启动）",
+      "change": "2020年6月30日-2021年10月29日涨幅794% -> 2026年早盘涨超9%（巴西工厂启动）（+6.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "股价从爆发式增长转为事件驱动波动，反映市场对长城全球化产能布局的关注超过早期产品周期红利。"
+    },
+    {
+      "field": "技术平台战略",
+      "status": "upgraded",
+      "old_value": "三大技术品牌转型科技出行公司（2020年）",
+      "value": "归元平台支持5大动力形式+7大品类（2026年）",
+      "change": "三大技术品牌转型科技出行公司（2020年） -> 归元平台支持5大动力形式+7大品类（2026年）（-2015.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "从多品牌分立转向超级集成平台，体现技术路线从跟随到定义的跨越，应对全球市场差异化需求能力显著增强。"
+    },
+    {
+      "field": "全球化战略",
+      "status": "expanded",
+      "old_value": "产品出口为主（2021年）",
+      "value": "技术+品牌+供应链生态出海（2026年）",
+      "change": "产品出口为主（2021年） -> 技术+品牌+供应链生态出海（2026年）（+5.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "出海模式从贸易型转向价值型，巴西工厂等本土化布局降低贸易壁垒风险，契合中国制造业高端化出海趋势。"
+    },
+    {
+      "field": "财务目标",
+      "status": "shifted",
+      "old_value": "规模优先（2021年销量增速17.5%）",
+      "value": "利润导向（2026年下调销量目标但坚守100亿净利润）",
+      "change": "规模优先（2021年销量增速17.5%） -> 利润导向（2026年下调销量目标但坚守100亿净利润）（+5.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "战略重心从市占率转向经营质量，反映行业从增量竞争进入存量优化阶段的核心诉求。"
+    },
+    {
+      "field": "动力技术路线",
+      "status": "focused",
+      "old_value": "纯电+混动并行（2021年）",
+      "value": "明确拒绝增程技术（2026年）",
+      "change": "纯电+混动并行（2021年） -> 明确拒绝增程技术（2026年）（+5.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "技术路线选择更趋差异化，避免同质化内卷，氢燃料等长线布局体现战略定力。"
+    },
+    {
+      "field": "组织管理",
+      "status": "improved",
+      "old_value": "传统制造体系（2021年）",
+      "value": "35+人才计划+完整双休制度（2026年）",
+      "change": "传统制造体系（2021年） -> 35+人才计划+完整双休制度（2026年）（-1986.00）",
+      "arbitration": {
+        "chosen_source": "media",
+        "pending_sources": [],
+        "conflicting_values": []
+      },
+      "reason": "人才战略从年龄红利转向经验红利，对抗行业内卷的制度改革或成吸引高端人才差异化优势。"
+    }
+  ],
+  "_notes": {
+    "default_compact": "默认精简：每条 decision 不包含 evidence/key_numbers/confidence/snippet",
+    "debug_optional": "如设置 INCLUDE_DEBUG_FIELDS=1，将额外包含 decision.confidence 与 decision.evidence(含quote/key_numbers/snippet)"
+  },
+  "evidence_summary": "证据来源：共3篇，详见 sources（标题+链接清单）。",
+  "sources": [
+    {
+      "title": "[PDF] 長城汽車股份有限公司GREAT WALL MOTOR COMPANY LIMITED",
+      "url": "https://stockn.xueqiu.com/02333/20200424097423.pdf",
+      "source": "media",
+      "published_at": "2020-1"
+    },
+    {
+      "title": "长城汽车“超级母体”落地50余款新车将覆盖全球市场 - 东方财富",
+      "url": "https://finance.eastmoney.com/a/202601223626965557.html",
+      "source": "media",
+      "published_at": "2026-01-22"
+    },
+    {
+      "title": "网通社汽车-更新-更全-更权威的全球汽车资讯",
+      "url": "https://www.news18a.com/news/storys_197038.html",
+      "source": "media",
+      "published_at": "2025-09-14"
+    }
+  ]
+}
