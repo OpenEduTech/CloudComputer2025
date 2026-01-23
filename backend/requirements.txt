@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+redis
+rq
+pymongo
+python-multipart
+openai
